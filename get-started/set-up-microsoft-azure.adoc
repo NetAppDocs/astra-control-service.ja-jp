@@ -1,0 +1,269 @@
+---
+sidebar: sidebar 
+permalink: get-started/set-up-microsoft-azure.html 
+keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking 
+summary: Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。 
+---
+= Microsoft Azure をセットアップする
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。
+
+
+
+== Azure のセットアップのクイックスタート
+
+これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。
+
+
+
+==== Azure Kubernetes Service の Astra Control Service の要件を確認
+
+[role="quick-margin-para"]
+クラスタが正常に機能していて Kubernetes バージョン 1.17 以降を実行していること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <<AKS cluster requirements,このステップの詳細をご覧ください>>。
+
+
+
+==== Azure NetApp Files に登録します
+
+[role="quick-margin-para"]
+Azure NetApp Files サービスへのアクセスを申請し、ネットアップリソースプロバイダを登録 <<Register for Azure NetApp Files,このステップの詳細をご覧ください>>。
+
+
+
+==== ネットアップアカウントを作成します
+
+[role="quick-margin-para"]
+Azure ポータルで、 Azure NetApp Files に移動して、ネットアップアカウントを作成します。 <<Create a NetApp account,このステップの詳細をご覧ください>>。
+
+
+
+==== 容量プールを設定
+
+[role="quick-margin-para"]
+永続ボリューム用に 1 つ以上の容量プールを設定します。 <<Set up a capacity pool,このステップの詳細をご覧ください>>。
+
+
+
+==== サブネットを Azure NetApp Files に委譲します
+
+[role="quick-margin-para"]
+サブネットを Azure NetApp Files に委譲し、 Astra Control サービスがそのサブネット内に永続的ボリュームを作成できるようにします。 <<Delegate a subnet to Azure NetApp Files,このステップの詳細をご覧ください>>。
+
+
+
+==== Azure サービスプリンシパルを作成します
+
+[role="quick-margin-para"]
+Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <<Create an Azure service principal,詳細な手順を参照してください>>。
+
+
+
+== AK クラスタの要件
+
+Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
+
+Kubernetes のバージョン:: クラスタで Kubernetes バージョン 1.17 以降が実行されている必要があります。
+イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
+クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
+Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
+サブスクリプション。:: クラスタは、 Azure NetApp Files が有効になっているサブスクリプションに含まれている必要があります。サブスクリプションはいつでも選択できます <<Register for Azure NetApp Files,Azure NetApp Files に登録します>>。
+VNet::
++
+--
+* クラスタは、 Azure NetApp Files 委任サブネットに直接アクセスできる VNet 内に存在する必要があります。 <<Delegate a subnet to Azure NetApp Files,委任されたサブネットを設定する方法について説明します>>。
+* Kubernetes クラスタが別の VNet 内の Azure NetApp Files 委任サブネットにピアリングされている VNet 内にある場合は、ピアリング接続の両側をオンラインにする必要があります。
+* Azure NetApp Files を使用した VNet （すぐにピア関係にある VNet を含む）で使用される IP 数のデフォルトの上限は 1 、 000 です。 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["Azure NetApp Files のリソース制限を確認します"^]。
++
+限界に近づくと、次の 2 つのオプションがあります。
+
++
+** 可能です https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-["制限の増加を要求します"^]。サポートが必要な場合は、ネットアップの担当者にお問い合わせください。
+** 新しい AKS クラスタを作成するときに、クラスタの新しいネットワークを指定します。新しいネットワークを作成したら、新しいサブネットをプロビジョニングし、そのサブネットを Azure NetApp Files に委譲します。
+
+
+
+
+--
+プライベートネットワーク:: クラスタでプライベートネットワークを有効にしないでください。
+外部のボリューム Snapshot コントローラ:: クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは K8s バージョン 1.21 以降ではデフォルトでインストールされますが、バージョン 1.17 、 1.18 、 1.19 、または 1.20 を実行しているクラスタでチェックする必要があります。 https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/volumes/snapshots.html["オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください"^]。
+
+
+
+
+=== CSI ボリュームスナップショットコントローラをインストールします
+
+要件のリストに記載されているように、 Kubernetes クラスタには CSI ボリュームスナップショットコントローラがインストールされている必要があります。次の手順に従って、クラスタにコントローラをインストールします。
+
+.Kubernetes クラスタバージョン 1.17 、 1.18 、および 1.19 の手順
+. ボリュームスナップショット SSD をインストールする。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. スナップショットコントローラを作成します。
++
+特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+.K8s バージョン 1.20 の手順
+. ボリュームスナップショット SSD をインストールする。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. スナップショットコントローラを作成します。
++
+特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+
+
+== Azure NetApp Files に登録します
+
+waitlist リクエストを送信して、 Azure NetApp Files へのアクセス権を取得します。承認が終わったら、ネットアップリソースプロバイダを登録する必要があります。
+
+.手順
+. https://aka.ms/azurenetappfiles["Azure NetApp Files にアクセスするために waitlist リクエストを提出します"^]。
+. Azure NetApp Files チームから確認の E メールが届きます。
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider["Azure NetApp Files のドキュメントに従って、ネットアップリソースプロバイダを登録してください"^]。
+
+
+
+
+== ネットアップアカウントを作成します
+
+アクセスを許可したら、 Azure NetApp Files でネットアップアカウントを作成します。
+
+.ステップ
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["Azure NetApp Files のドキュメントに従って、 Azure ポータルからネットアップアカウントを作成します"^]。
+
+
+
+
+== 容量プールをセットアップする
+
+Astra Control Service が容量プールに永続的ボリュームをプロビジョニングできるようにするには、 1 つ以上の容量プールが必要です。Astra Control Service では、容量プールを作成しない。
+
+Kubernetes アプリケーション用の容量プールを設定する際には、次の点を考慮してください。
+
+* 容量プールには、 Ultra 、 Premium 、または Standard のいずれかのサービスレベルを指定できます。これらのサービスレベルはそれぞれ、パフォーマンスのニーズに合わせて設計されています。Astra Control Service は、 3 つすべてをサポートします。
++
+Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。
+
++
+link:../learn/azure-storage.html["Azure NetApp Files のサービスレベルの詳細については、こちらをご覧ください"]。
+
+* Astra Control Service で保護するアプリケーションの容量プールを作成する前に、それらのアプリケーションに必要なパフォーマンスと容量を選択します。
++
+適切な容量をプロビジョニングすることで、ユーザは必要に応じて永続ボリュームを作成できるようになります。容量を使用できない場合は、永続ボリュームをプロビジョニングできません。
+
+* Azure NetApp Files 容量プールでは、手動または自動の QoS タイプを使用できます。Astra Control Service は、自動 QoS 容量プールをサポートします。手動の QoS 容量プールはサポートされません。
+
+
+.ステップ
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Azure NetApp Files のドキュメントに従って、自動 QoS 容量プールを設定します"^]。
+
+
+
+
+== サブネットを Azure NetApp Files に委譲します
+
+サブネットを Azure NetApp Files に委譲し、 Astra Control Service がそのサブネット内に永続的ボリュームを作成できるようにする必要があります。Azure NetApp Files を使用すると、 VNet 内の委譲されたサブネットを 1 つだけ設定できます。
+
+ピア VNet を使用している場合は、ピアリング接続の両側がオンラインである必要があります。 Kubernetes クラスタが配置されている VNet と、 Azure NetApp Files 委任サブネットが設定された VNet です。
+
+.ステップ
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Azure NetApp Files のドキュメントに従って、サブネットを Azure NetApp Files に委譲します"^]。
+
+
+10 分ほど待ってから、委任されたサブネットで実行されているコンピューティングを検出します。
+
+
+
+== Azure サービスプリンシパルを作成します
+
+Astra Control Service には、 Contributor ロールを割り当てられた Azure サービスプリンシパルが必要です。Astra Control Service では、このサービスプリンシパルを使用して、 Kubernetes アプリケーションデータの管理をお客様に代わって容易にします。
+
+サービスプリンシパルは、アプリケーション、サービス、およびツールで使用するために特別に作成される ID です。サービスプリンシパルにロールを割り当てると、 Azure の特定のリソースへのアクセスが制限されます。
+
+Azure CLI を使用してサービスプリンシパルを作成するには、次の手順に従います。出力は JSON ファイルに保存し、後で Astra Control Service に提供する必要があります。 https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli["CLI の使用の詳細については、 Azure のドキュメントを参照してください"^]。
+
+次の手順では、サービスプリンシパルを作成する権限があり、 Microsoft Azure SDK （ AZ コマンド）がマシンにインストールされていることを前提としています。
+
+.要件
+* サービスプリンシパルは、通常の認証を使用する必要があります。証明書はサポートされていません。
+* サービスプリンシパルに、 Azure サブスクリプションへの寄稿者または所有者のアクセス権が付与されている必要があります。
+* Azure サブスクリプションには、 AKS クラスタと Azure NetApp Files アカウントが含まれている必要があります。
+
+
+.手順
+. AKS クラスタが存在するサブスクリプションとテナント ID を特定します（これは Astra Control Service で管理するクラスタです）。
++
+[source, azureCLI]
+----
+az configure --list-defaults
+az account list --output table
+----
+. サービスプリンシパルを作成し、 Contributor ロールを割り当て、クラスタが存在するサブスクリプション全体にスコープを指定します。
++
+[source, azurecli]
+----
+az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+----
+. 作成された Azure CLI 出力は JSON ファイルとして保存します。
++
+Astra Control Service が AKS クラスタを検出し、 Kubernetes のデータ管理処理を管理できるように、このファイルを指定する必要があります。 link:../use/manage-credentials.html["Astra Control Service での資格情報の管理について説明します"]。
+
+. オプション： JSON ファイルにサブスクリプション ID を追加し、ファイルを選択すると Astra Control Service によって自動的に ID が入力されるようにします。
++
+それ以外の場合は、表示されたときに Astra Control Service でサブスクリプション ID を入力する必要があります。
+
++
+* 例 *
+
++
+[source, JSON]
+----
+{
+  "appId": "0db3929a-bfb0-4c93-baee-aaf8",
+  "displayName": "sp-example-dev-sandbox",
+  "name": "http://sp-example-dev-sandbox",
+  "password": "mypassword",
+  "tenant": "011cdf6c-7512-4805-aaf8-7721afd8ca37",
+  "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
+}
+----
+. オプション：サービスプリンシパルをテストします。
++
+[source, azurecli]
+----
+az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
+az group list --subscription SUBSCRIPTION-ID
+az aks list --subscription SUBSCRIPTION-ID
+az storage container list --subscription SUBSCRIPTION-ID
+----
+

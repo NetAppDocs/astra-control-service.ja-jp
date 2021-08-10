@@ -1,0 +1,81 @@
+---
+sidebar:
+  entries:
+  - title: Astra Control Service のドキュメント
+    url: "/index.html"
+  - section: release-notes
+  - section: get-started
+  - section: use
+  - title: REST API で自動化
+    url: "/automation.html"
+  - section: learn
+  - section: solutions
+  - section: support
+  - title: 法的通知
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: はじめに
+    links:
+    - title: Astra Control Service の詳細をご確認ください
+      url: "/get-started/intro.html"
+    - title: クイックスタート
+      url: "/get-started/quick-start.html"
+    - title: よく寄せられる質問
+      url: "/get-started/faq.html"
+  - title: Astra Control Service を使用
+    links:
+    - title: アプリケーションを管理します
+      url: "/use/manage-apps.html"
+    - title: アプリケーションを保護
+      url: "/use/protect-apps.html"
+    - title: アプリケーションを移行する
+      url: "/use/clone-apps.html"
+    - title: 請求を設定します
+      url: "/use/set-up-billing.html"
+  - title: Astra REST API を使用
+    links:
+    - title: はじめに
+      url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
+    - title: API リファレンス
+      url: https://docs.netapp.com/us-en/astra-automation/reference/api_reference.html
+    - title: API ワークフロー
+      url: https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html
+  - title: デモチュートリアル
+    links:
+    - title: Astra Control サービスのビデオ
+      url: "/get-started/videos.html"
+    - title: Jenkins をデプロイします
+      url: "/solutions/jenkins-deploy-from-helm-chart.html"
+    - title: MariaDB を導入します
+      url: "/solutions/mariadb-deploy-from-helm-chart.html"
+    - title: MySQL を導入
+      url: "/solutions/mysql-deploy-from-helm-chart.html"
+    - title: Postgres を導入する
+      url: "/solutions/postgres-deploy-from-helm-chart.html"
+  - title: Astra Control Center の略
+    links:
+    - title: Astra Control Center の概要
+      url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+    - title: 新機能
+      url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
+    - title: クイックスタート
+      url: https://docs.netapp.com/us-en/astra-control-center/get-started/quick-start.html
+  - title: 解決策概要
+    links:
+    - title: DataStax Enterprise Apache Cassandra with Astra Control 』を参照してください
+      url: https://cloud.netapp.com/hubfs/SB-4134-0321-DataStax-Cassandra-Guide%20(1).pdf
+    - title: Astra Control を使用した PostgreSQL DBaaS
+      url: https://cloud.netapp.com/hubfs/SB-4122-0221-PostgresSQL-DBaaS-with-Astra%20(2).pdf
+    - title: Astra Control を使用した MySQL DBaaS
+      url: https://cloud.netapp.com/hubfs/SB-4110-0221-MySQL-Astra%20(2).pdf
+    - title: Jenkins のライフサイクル管理を簡易化
+      url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
+  - title: ブログコミュニティ
+    links:
+    - title: スラックチャンネル
+      url: https://netapppub.slack.com/#astra
+    - title: Astra Control –ハイブリッドクラウド向けのアプリケーションデータ管理を簡易化
+      url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
+    - title: Cloud Central の Kubernetes Hub
+      url: https://cloud.netapp.com/kubernetes-hub

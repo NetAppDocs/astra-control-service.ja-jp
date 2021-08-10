@@ -1,0 +1,12 @@
+---
+section: solutions
+title: アプリケーションの導入
+entries:
+- title: Jenkins をデプロイします
+  url: "/solutions/jenkins-deploy-from-helm-chart.html"
+- title: MariaDB を導入します
+  url: "/solutions/mariadb-deploy-from-helm-chart.html"
+- title: MySQL を導入
+  url: "/solutions/mysql-deploy-from-helm-chart.html"
+- title: Postgres を導入する
+  url: "/solutions/postgres-deploy-from-helm-chart.html"

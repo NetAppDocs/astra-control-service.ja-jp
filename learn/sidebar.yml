@@ -1,0 +1,14 @@
+---
+section: learn
+title: 概念
+entries:
+- title: アーキテクチャとコンポーネント
+  url: "/learn/architecture.html"
+- title: AKS クラスタのストレージ
+  url: "/learn/azure-storage.html"
+- title: GKE クラスタ用のストレージ
+  url: "/learn/choose-class-and-size.html"
+- title: 検証済みのアプリケーションと標準のアプリケーションの比較
+  url: "/learn/validated-vs-standard.html"
+- title: カスタムアプリケーションを定義する
+  url: "/learn/define-custom-app.html"

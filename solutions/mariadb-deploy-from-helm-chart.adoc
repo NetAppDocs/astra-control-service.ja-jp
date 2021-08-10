@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: solutions/mariadb-deploy-from-helm-chart.html 
+keywords: helm chart, mariadb, deploy mariadb, helm chart, bitnami, astra, astra control, kubernetes 
+summary: Bitnami Helm チャートから MariaDB を導入する方法を説明します。クラスタに MariaDB を導入すると、 Astra Control を使用してアプリケーションを管理できます。 
+---
+= Helm チャートから MariaDB を導入します
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Bitnami Helm チャートから MariaDB を導入する方法を説明します。クラスタに MariaDB を導入すると、 Astra Control を使用してアプリケーションを管理できます。
+
+MariaDB は、 Astra 向けの検証済みアプリケーションです。 link:../learn/validated-vs-standard.html["検証済みアプリケーションと標準アプリケーションの違いをご確認ください"]。
+
+以下の手順は、 Astra Control Service と Astra Control Center の両方に適用されます。
+
+
+
+== 要件
+
+* Astra Control に追加されたクラスタ。
++
+
+NOTE: Astra Control Center では、最初にクラスタを Astra Control Center に追加するか、最初にアプリケーションを追加できます。
+
+* クラスタの適切な kubeconfig を使用してローカルマシンにインストールされている Helm （バージョン 3.2+ ）および Kubectl のバージョンを更新しました
+
+
+
+
+== MariaDB をインストールします
+
+このプロセスに関する 2 つの重要な注意事項：
+
+* アプリケーションは、クラスタを Astra Control Service に追加したあとに、以前には導入しないでください。Astra Control Center は、 Astra Control Center にクラスタを追加する前後のアプリケーションを受け入れます。
+* Helm チャートは、デフォルト以外の名前空間に展開する必要があります。
+
+
+.手順
+. Bitnami チャート repo を追加します。
++
+[listing]
+----
+helm repo add bitnami https://charts.bitnami.com/bitnami
+----
+. コマンドを使用して、 MariaDB を導入します。
++
+[listing]
+----
+Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+----
++
+
+NOTE: ボリュームサイズを変更する場合は、 Kibibyte （ KI ）、 Meibyte （ MI ）、または Gibyte （ Gi ）単位を使用します。
+
++
+ストレージクラスを定義する必要があるのは、次の場合のみです。
+
++
+** Astra Control サービスを使用していて、デフォルトのストレージクラスを使用しない場合。
+** Astra Control Center を使用していて、まだ Astra Control Center にクラスタをインポートしていない。あるいは、クラスタをインポートしたあとに、デフォルトのストレージクラスを使用する必要がなくなった場合。
+
+
+
+
+これにより、次の処理が行われます。
+
+* ネームスペースを作成します。
+* ネームスペースに MariaDB を導入します。
+* データベースを作成します。
+
+
+
+WARNING: 導入時にパスワードを設定するこの方法は安全ではありません。本番環境にはお勧めしません。
+
+ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。Astra Control を使用すると、アプリケーションをネームスペースレベルで管理したり、 Helm ラベルを使用して管理したりできます。

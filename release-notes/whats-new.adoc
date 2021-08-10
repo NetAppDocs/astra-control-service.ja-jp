@@ -1,0 +1,174 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new.html 
+keywords: what's new, bugs, bug fixes, new features, enhancements 
+summary: ネットアップは Astra Control Service を定期的に更新して、新機能、拡張機能、およびバグ修正を提供します。 
+---
+= Astra Control Service の新機能
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+ネットアップは Astra Control Service を定期的に更新して、新機能、拡張機能、およびバグ修正を提供します。
+
+
+
+== 2021 年 8 月 5 日
+
+このリリースには、次の新機能と機能拡張が含まれています。
+
+
+
+=== Astra Control Center の略
+
+Astra Control が新しい導入モデルで提供されるようになりました。_Astra Control Center_ は、データセンターにインストールして運用する自己管理ソフトウェアで、オンプレミスの Kubernetes クラスタで Kubernetes アプリケーションのライフサイクル管理を管理できます。
+
+https://docs.netapp.com/us-en/astra-control-center["詳細については、 Astra Control Center のマニュアルを参照してください"^]。
+
+
+
+=== 独自のバケットを用意します
+
+Astra がバックアップとクローンに使用するバケットを管理できるようになりました。これには、バケットを追加したり、クラウドプロバイダ内の Kubernetes クラスタのデフォルトバケットを変更したりすることができます。
+
+link:../use/manage-buckets.html["バケットの管理に関する詳細情報"]。
+
+
+
+== 2021 年 6 月 2 日
+
+このリリースには、バグの修正と Google Cloud のサポートに対する次の機能拡張が含まれています。
+
+
+
+=== 共有 VPC のサポート
+
+GCP プロジェクト内の GKE クラスタを、共有 VPC ネットワーク構成で管理できるようになりました。
+
+
+
+=== CVS サービスタイプの永続的ボリュームのサイズ
+
+Astra Control Service では、 CVS サービスのタイプを使用している場合、最小サイズ 300GiB の永続ボリュームが作成されるようになりました。
+
+link:../learn/choose-class-and-size.html["Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用する方法を説明します"]。
+
+
+
+=== コンテナで最適化された OS をサポート
+
+コンテナ最適化 OS が GKE ワーカーノードでサポートされるようになりました。これは、 Ubuntu のサポートに加えて追加されます。
+
+link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE クラスタの要件の詳細については、こちらをご覧ください"]。
+
+
+
+== 2021 年 4 月 15 日
+
+このリリースには、次の新機能と機能拡張が含まれています。
+
+
+
+=== AKS クラスタをサポートします
+
+Astra Control Service を使用して、 Azure Kubernetes Service （ AKS ）の管理対象の Kubernetes クラスタで実行されているアプリケーションを管理できるようになりました。
+
+link:../get-started/set-up-microsoft-azure.html["開始方法をご確認ください"]。
+
+
+
+=== REST API
+
+Astra Control REST API が使用できるようになりました。API は、最新のテクノロジと最新のベストプラクティスに基づいています。
+
+https://docs.netapp.com/us-en/astra-automation["REST API を使用してアプリケーションデータのライフサイクル管理を自動化する方法について説明します"^]。
+
+
+
+=== 年間サブスクリプション
+
+Astra Control サービスが、 _ Premium サブスクリプション _ を提供開始。
+
+アプリケーションパック _ ごとに最大 10 個のアプリケーションを管理できる年間サブスクリプションを使用して、割引価格で前払いします。ネットアップの営業担当に問い合わせて、組織に必要なパックをいくつでも購入してください。たとえば、 Astra Control Service から 30 個のアプリケーションを管理するために 3 パックを購入します。
+
+年間サブスクリプションで許可されている数を超えるアプリを管理した場合、アプリケーションごとに 1 分あたり 0.005 ドルの超過レート（ Premium PayGo と同じ）が課金されます。
+
+link:../get-started/intro.html#pricing["Astra Control サービスの価格設定の詳細をご確認ください"]。
+
+
+
+=== ネームスペースとアプリケーションの可視化
+
+[ 検出されたアプリ ] ページが強化され、名前空間とアプリの階層がよりわかりやすくなりました。名前空間を展開するだけで、その名前空間に含まれるアプリが表示されます。
+
+link:../use/manage-apps.html["アプリケーションの管理についての詳細は、こちらをご覧ください"]。
+
+image:screenshot-group.gif[""]
+
+
+
+=== ユーザインターフェイスの機能拡張
+
+データ保護ウィザードが強化され、操作が簡単になりました。たとえば、保護ポリシーウィザードを改良して、定義した保護スケジュールを簡単に確認できるようにしました。
+
+image:screenshot-protection-policy.gif[""]
+
+
+
+=== アクティビティの強化
+
+Astra Control アカウントのアクティビティの詳細を簡単に確認できるようになりました。
+
+* 管理対象アプリケーション、重大度レベル、ユーザ、および時間範囲でアクティビティリストをフィルタリングします。
+* Astra Control アカウントアクティビティを CSV ファイルにダウンロードします。
+* [ 計算（ Compute ） ] ページまたは [ アプリケーション（ Apps ） ] ページから、 [ 計算（ Compute ） ] または [ アプリケーション（ App ） ] を選択した後で、
+
+
+link:../use/view-account-activity.html["アカウントアクティビティの詳細については、こちらをご覧ください"]。
+
+
+
+== 2021 年 3 月 1 日
+
+Astra Control Service がをサポートするようになりました https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用します。
+
+この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
+
+Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 link:../learn/choose-class-and-size.html["サービスタイプの選択の詳細については、こちらをご覧ください"]。
+
+
+
+== 2021 年 1 月 25 日
+
+この度、 Astra Control Service が一般提供されるようになりました。ベータリリースから寄せられた多くのフィードバックを取り入れ、他にも注目すべき機能強化を行いました。
+
+* 請求書を利用できるようになり、フリープランからプレミアムプランに移行できるようになりました。 link:../use/set-up-billing.html["課金について詳しくは、こちらをご覧ください"]。
+* CVS - パフォーマンスサービスのタイプを使用している場合、 Astra Control Service では、 100GiB 以上の永続的ボリュームが作成されるようになりました。
+* Astra Control Service により、アプリケーションを迅速に検出できるようになりました。
+* これで、自分でアカウントを作成および削除できるようになりました。
+* Astra Control Service が Kubernetes コンピューティングにアクセスできなくなると、通知が改善されています。
++
+Astra Control Service では、切断されたコンピューティング用のアプリケーションを管理できないため、これらの通知は重要です。
+
+
+
+
+
+== 2020 年 12 月 17 日（ベータ版）
+
+主にバグ修正に重点を置いていますが、他にもいくつかの重要な機能強化を行いました。
+
+* 最初の Kubernetes コンピューティングを Astra Control Service に追加すると、クラスタが配置された地域にオブジェクトストアが作成されるようになりました。
+* 永続ボリュームの詳細が、コンピューティングレベルでストレージの詳細を表示すると表示されるようになりました。
++
+image:screenshot-compute-pvs.gif["Kubernetes クラスタにプロビジョニングされた永続ボリュームのスクリーンショット。"]
+
+* 既存の Snapshot またはバックアップからアプリケーションをリストアするオプションを追加しました。
++
+image:screenshot-app-restore.gif["アプリケーションの [ データ保護 ] タブのスクリーンショット。アクションドロップダウンをクリックして、 [ アプリケーションの復元 ] を選択できます。"]
+
+* Astra Control Service が管理している Kubernetes クラスタを削除すると、クラスタが「 Removed 」状態になります。その後、 Astra Control Service からクラスタを削除できます。
+* アカウント所有者は、他のユーザに割り当てられたロールを変更できるようになりました。
+* 請求用のセクションを追加しました。このセクションは、 Astra Control Service が General Availability （ GA ）用にリリースされたときに有効になります。
+

@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: use/manage-notifications.html 
+keywords: notifications, delete notifications, mark notifications as read 
+summary: アクションが完了または失敗すると、 Astra Control から通知が表示されます。たとえば、アプリケーションのバックアップが正常に完了した場合に通知が表示されます。 
+---
+= 通知を表示および管理します
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+アクションが完了または失敗すると、 Astra Control から通知が表示されます。たとえば、アプリケーションのバックアップが正常に完了した場合に通知が表示されます。
+
+未読通知の数は、インターフェイスの右上に表示されます。
+
+image:screenshot-unread-notifications.gif["未読通知の数を表示できる Astra Control インターフェイスを示すスクリーンショット。"]
+
+これらの通知を表示して、既読としてマークすることができます（未読の通知を消去する場合などに便利です）。
+
+.手順
+. 右上の未読通知の数をクリックします。
++
+image:screenshot-expand-notifications.gif["Astra Control インターフェイスで展開された通知を示すスクリーンショット。"]
+
+. 通知を確認し、 [ * 既読としてマークする * ] または [ * すべての通知を表示する * ] をクリックします。
++
+[ すべての通知を表示する *] をクリックすると、 [ 通知 ] ページがロードされます。
+
+. [*Notifications] ページで、通知を表示し、既読としてマークする通知を選択し、 [*Action] をクリックして [* 既読としてマークする *] を選択します。
+

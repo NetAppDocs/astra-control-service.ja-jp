@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: learn/architecture.html 
+keywords: astra, astra control, architecture, astra control center, kubernetes, netapp, clusters, trident, astra control service 
+summary: ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。 
+---
+= アーキテクチャとコンポーネント
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。
+
+image:architecture.png["Astra Control のアーキテクチャ図とコンポーネント"]
+
+
+
+== Astra Control コンポーネント
+
+* * Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra Control は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。
+* * Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールとして、 Docker と Kubernetes で管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。Trident を Astra Control とともに導入すると、設定済みの ONTAP ストレージバックエンドが含まれます。
+* * ストレージバックエンド * ： Astra Control Service で使用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["NetApp Cloud Volumes Service for Google Cloud"^] GKE クラスタおよびのバックエンドストレージとして AKS クラスタのバックエンドストレージとして。
++
+Astra Control Center は、 ONTAP AFF と FAS のストレージバックエンドを使用します。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
+
+* * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。
+
+
+
+
+== Astra Control インターフェイス
+
+さまざまなインターフェイスを使用してタスクを完了できます。
+
+* * ウェブユーザーインタフェース（ UI ） * ： Astra Control Service と Astra Control Center の両方が、同じ Web ベースの UI を使用して、アプリケーションの管理、移行、保護を行うことができます。UI を使用してユーザアカウントと設定を管理します。
+* * API* ： Astra Control Service と Astra Control Center は、どちらも同じ Astra API を使用します。API を使用するタスクは、 UI を使用するタスクと同じです。
+
+
+
+
+== を参照してください。
+
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center のドキュメント"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra API を使用"^]
+* https://netapp-trident.readthedocs.io/en/latest/["Trident のドキュメント"^]
+* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights のドキュメント"^]
+* https://docs.netapp.com/us-en/ontap/index.html["ONTAP のドキュメント"^]
+
