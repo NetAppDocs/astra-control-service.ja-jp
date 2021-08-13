@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-apps.html 
 keywords: manage app, discover app, ignore app 
-summary: Kubernetes コンピューティングを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。 
+summary: 'Kubernetes コンピューティングを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。' 
 ---
 = アプリの管理を開始します
 :hardbreaks:
@@ -36,7 +36,23 @@ Helm チャートから一般的なアプリケーションを展開する方法
 
 == アプリの管理
 
-Astra Control を使用すると、アプリケーションをネームスペースレベルまたは Kubernetes ラベルで管理できます。
+Astra Control は、クラスタで実行されているアプリケーションを検出すると、管理方法を選択するまで管理対象外になります。Astra Control のマネージドアプリケーションには、次のいずれかを使用できます。
+
+* ネームスペース。ネームスペース内のすべてのリソースを含みます
++
+image:diagram-managed-app1.png["この概念図は、 Astra がネームスペース内のすべてのリソースを管理する仕組みを示しています。"]
+
+* ネームスペース内に helm3 を使用して導入された個々のアプリケーション
++
+image:diagram-managed-app2.png["この概念図は、他のアプリケーションを含むネームスペースに配置された個々のアプリケーションを Astra が管理する様子を示しています。"]
+
+* Kubernetes ラベルで識別されるリソースのグループ（ Astra Control では _custom APP_in ）
++
+image:diagram-managed-app3.png["Kubernetes ラベルを基にカスタムアプリケーションを管理する Astra の概念図。"]
+
+
+
+以下のセクションでは、これらのオプションを使用してアプリケーションを管理する方法について説明します。
 
 
 

@@ -857,7 +857,6 @@
   <block id="841635950fb18e5b0f307e270b18753f" category="list-text"><block ref="841635950fb18e5b0f307e270b18753f" category="inline-link-macro-rx"></block></block>
   <block id="2d6d98fb621bf485983416d3fe4e23f0" category="list-text"><block ref="2d6d98fb621bf485983416d3fe4e23f0" category="inline-link-macro-rx"></block></block>
   <block id="0fae08f8fcd64cec619ae5065fc2aa88" category="section-title">アプリの管理</block>
-  <block id="2d077594684130c153af172197078ab1" category="paragraph">Astra Control を使用すると、アプリケーションをネームスペースレベルまたは Kubernetes ラベルで管理できます。</block>
   <block id="88c0a67bdf6030605c2de05383b4784a" category="section-title">ネームスペースでアプリケーションを管理します</block>
   <block id="fbcac7ea3c81bb3194babac595a5ade0" category="paragraph">アプリページの * 検出された * セクションには、名前空間と Helm によってインストールされたアプリ、またはそれらの名前空間内のカスタムラベル付きアプリが表示されます。各アプリケーションを個別に管理することも、ネームスペースレベルで管理することもできます。データ保護処理に必要な精度のレベルが重要になります。</block>
   <block id="8bfc4cb4fff96597635f56f65ebcede0" category="paragraph">たとえば、毎週同じ頻度で「 Maria 」のバックアップポリシーを設定したいのに、同じネームスペースにある「 MariaDB 」をバックアップする頻度を高く設定するとします。これらのニーズに基づいて、アプリケーションを個別に管理する必要があり、単一のネームスペースで管理する必要はありません。</block>
@@ -1377,4 +1376,15 @@
   <block id="e8565549b24f45f7b7a999f9a71bd282" category="section-title">PostgreSQL をインストール</block>
   <block id="6331969d8c82d3693df5ee6e46258442" category="list-text">次のコマンドを使用して PostgreSQL を導入します。</block>
   <block id="0a8c342a3be14e17eed2350af165e13a" category="list-text">ネームスペースに PostgreSQL を導入します。</block>
+  <block id="e80a2d3ab10c12a099b79d17f9452092" category="paragraph">Astra Control は、クラスタで実行されているアプリケーションを検出すると、管理方法を選択するまで管理対象外になります。Astra Control のマネージドアプリケーションには、次のいずれかを使用できます。</block>
+  <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">ネームスペース。ネームスペース内のすべてのリソースを含みます</block>
+  <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">この概念図は、 Astra がネームスペース内のすべてのリソースを管理する仕組みを示しています。</block>
+  <block id="5f5e029c480c6d454f7077a350ea7051" category="paragraph"><block ref="5f5e029c480c6d454f7077a350ea7051" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e050bda24d0aab071d42300cbd046e22" category="list-text">ネームスペース内に helm3 を使用して導入された個々のアプリケーション</block>
+  <block id="bc02e113923823bd80cf4509ac5dd0ea" category="inline-image-macro">この概念図は、他のアプリケーションを含むネームスペースに配置された個々のアプリケーションを Astra が管理する様子を示しています。</block>
+  <block id="aaa30264edbceaac1a9c4ae46e684508" category="paragraph"><block ref="aaa30264edbceaac1a9c4ae46e684508" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ae686937d504e3cd859c9520838b6c99" category="list-text">Kubernetes ラベルで識別されるリソースのグループ（ Astra Control では _custom APP_in ）</block>
+  <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">Kubernetes ラベルを基にカスタムアプリケーションを管理する Astra の概念図。</block>
+  <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下のセクションでは、これらのオプションを使用してアプリケーションを管理する方法について説明します。</block>
 </blocks>
