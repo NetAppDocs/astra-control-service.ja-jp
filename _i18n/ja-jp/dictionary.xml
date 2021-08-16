@@ -186,7 +186,6 @@
   <block id="b9877c5dbf359ad58f5080431075cb6d" category="list-text">[* Region* （ * 地域） ] で、地域とゾーンを選択します。</block>
   <block id="98f1f357710d50446d69f033d749f951" category="list-text">[ ネットワークの詳細 * ] で VPC を選択します。</block>
   <block id="2ff77b9545f9e4017797bb6c191c4987" category="paragraph">ネットワークピアリングを設定していない場合は、次の通知が表示されます。</block>
-  <block id="7723dc3216b468857875988633bd0a47" category="paragraph"><block ref="7723dc3216b468857875988633bd0a47" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dc2a6c9243f8deb98e6fe7fcb7e5d3ff" category="list-text">ボタンをクリックして、ネットワークピアリングのセットアップコマンドを表示します。</block>
   <block id="41897f6972633fb2d183e54a98f4f52e" category="list-text">コマンドをコピーし、 Cloud Shell で実行します。</block>
   <block id="2678a78c1e599c5a6c8db9f14d5c00c4" category="inline-link">Cloud Volumes Service for GCP のクイックスタート</block>
@@ -257,7 +256,6 @@
   <block id="3946d8b08dbcd33b3e5d7fc0e1384dec" category="inline-link-macro">AKS クラスタのストレージクラスについて学習します</block>
   <block id="a19a34a2b21fc32f9c330467fd8f7073" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block>。</block>
   <block id="2d072183006368402099ca5ce53ece5a" category="list-text">* レビューと承認 * ：構成の詳細を確認し、 * 計算の追加 * をクリックします。</block>
-  <block id="1f05f2fe66aefb2c9f59490c5c129349" category="paragraph"><block ref="1f05f2fe66aefb2c9f59490c5c129349" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e525048f7d08b462ebab4dacc8fc366b" category="paragraph">次のビデオでは、 GKE クラスタでの各手順を示しています。</block>
   <block id="4f4227e8eaa2c24c78198dd3270e2bf9" category="paragraph">Astra Control Service を使用すると、アプリケーションのバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">この FAQ は、質問に対する簡単な回答を探している場合に役立ちます。</block>
@@ -612,7 +610,6 @@
   <block id="f0bb5f816cd485bcccbc6528698e88f4" category="list-text">アプリケーションパック _ ごとに最大 10 個のアプリケーションを管理できる年間サブスクリプションを使用して、割引価格で前払いします。ネットアップの営業担当に問い合わせて、組織に必要なパックをいくつでも購入してください。たとえば、 Astra Control Service から 30 個のアプリケーションを管理するために 3 パックを購入します。年間サブスクリプションで許可されている数を超えるアプリを管理した場合、アプリケーションごとに 1 分あたり 0.005 ドルの超過レート（ Premium PayGo と同じ）が課金されます。</block>
   <block id="b7b192852402c2ca345a411875aaae75" category="paragraph">まだ Astra Control アカウントをお持ちでない場合は、 Premium サブスクリプションを購入すると Astra Control アカウントが自動的に作成されます。既存の無料プランがある場合は、自動的に Premium サブスクリプションに変換されます。</block>
   <block id="5018050a8afabce2a4f5990656c22220" category="paragraph">Astra Control アカウントを作成すると、無料プランに自動的にサインアップされます。Astra Control のダッシュボードには、現在管理している 10 個の無料アプリのうち、許可されているものをいくつ管理しているかが表示されます。</block>
-  <block id="a9c4aba908523b84c8ec8af6b0e59097" category="paragraph"><block ref="a9c4aba908523b84c8ec8af6b0e59097" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3748b09df32ade69551630a0a079c20a" category="paragraph">11 番目のアプリを管理しようとすると、 Astra Control から無料プランの制限に達したことが通知されます。その後、フリープランからプレミアムプランへのアップグレードを求めるプロンプトが表示されます。</block>
   <block id="7731109e347c1efee81b5b6103bf7027" category="paragraph">Premium プランにはいつでもアップグレードできます。アップグレード後、アカウントの _all_managed アプリの料金が Astra Control によって請求されます。最初の 10 個のアプリは、無料プランには含まれていません。</block>
   <block id="6b77f6ea2428949be628fe51587bf096" category="section-title">Google Cloud の請求</block>
@@ -648,7 +645,6 @@
   <block id="a48e367a6943ebbceece7d330cdded8c" category="list-text">[* プラン * ] で、 [* プレミアムサブスクリプション * ] に移動し、 [* セールスへのお問い合わせ ] をクリックします。</block>
   <block id="0a9e22b35c53b1b1d1b835a07879cb83" category="list-text">プロセスを開始するための詳細を営業チームに入力します。</block>
   <block id="57fb01c4fa6ba534ae1a897bf0353f71" category="paragraph">発注プロセスを進める際には、ネットアップの営業担当者からご連絡いたします。注文が完了すると、 Astra Control は請求タブに現在の計画を反映します。</block>
-  <block id="b6c8e0f844b86fd75bb49d5d7f92b6ab" category="paragraph"><block ref="b6c8e0f844b86fd75bb49d5d7f92b6ab" category="inline-image-macro-rx" type="image"></block></block>
   <block id="183088af30e3f3a1a11af65eceaefba6" category="section-title">現在のコストと請求履歴を表示します</block>
   <block id="b56850a923bd27b7f0b7f786c933404f" category="paragraph">Astra Control には、現在の月単位のコストと、アプリケーションごとの詳細な請求履歴が表示されます。</block>
   <block id="33cc485206429f77c02b6f99c5326daf" category="paragraph">現在のコストは、課金の概要の下に表示されます。</block>
@@ -826,7 +822,6 @@
   <block id="d634208090b405838694d5e6d1b488f1" category="list-text">アプリケーションのデスティネーションコンピューティングを選択します。</block>
   <block id="9aa1ea781ae5747b01a517a1ed4bd6d3" category="list-text">[* レビュー情報 * ] をクリックします。</block>
   <block id="6dbb469b36d9e432e7223dadffd8a7c8" category="list-text">* リストアの概要 * ：リストア操作の詳細を確認し、 * アプリの復元 * をクリックします。</block>
-  <block id="879eec20f9b1260c8aa5d3672e77e8d3" category="paragraph"><block ref="879eec20f9b1260c8aa5d3672e77e8d3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="67446286ca857d701032db886f475805" category="paragraph">Astra Control は、指定した情報に基づいてアプリケーションを復元します。</block>
   <block id="73e5c8ce985735a0c92b24da1a48a7fb" category="summary">既存のアプリケーションをクローニングして、同じ Kubernetes クラスタまたは別のクラスタに重複するアプリケーションを作成する。Kubernetes クラスタ間でアプリケーションとストレージを移動する必要がある場合は、クローニングが役立ちます。たとえば、 CI CD パイプラインや Kubernetes ネームスペース間でワークロードを移動できます。</block>
   <block id="0adcbb2b9c783786f0ac0b7cfb133292" category="doc">アプリケーションのクローン作成と移行</block>
@@ -841,7 +836,6 @@
   <block id="4270471e0c1a1cd103ba74cad8d545fb" category="list-text">クローンのデスティネーションコンピューティングを選択します。</block>
   <block id="b50343ac8865ee6508570846230e18d5" category="list-text">既存の Snapshot からクローンを作成するかバックアップを作成するかを選択します。このオプションを選択しない場合は、 Astra Control がアプリケーションの現在の状態からクローンを作成します。</block>
   <block id="e9ee4b284fca35cae9623535c7cc5189" category="list-text">* クローンの概要 * ：クローンの詳細を確認し、 * クローンアプリ * をクリックします。</block>
-  <block id="e2f1a62b487e5df37277530066176f0b" category="paragraph"><block ref="e2f1a62b487e5df37277530066176f0b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7314dfe17835f41d1b36686a0ec9c765" category="paragraph">Astra Control は、入力した情報に基づいてアプリケーションをクローニングします。</block>
   <block id="7fa390cadcf67cc7d7678d1a1bee8dcd" category="summary">Kubernetes コンピューティングを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。</block>
   <block id="5fb1db6350c7c4cb8be4f2defd16ebd8" category="inline-link-macro">Kubernetes コンピューティングを Astra Control に追加</block>
@@ -862,17 +856,13 @@
   <block id="8bfc4cb4fff96597635f56f65ebcede0" category="paragraph">たとえば、毎週同じ頻度で「 Maria 」のバックアップポリシーを設定したいのに、同じネームスペースにある「 MariaDB 」をバックアップする頻度を高く設定するとします。これらのニーズに基づいて、アプリケーションを個別に管理する必要があり、単一のネームスペースで管理する必要はありません。</block>
   <block id="475ed97241ce60dd40c138c07077aa08" category="paragraph">Astra Control を使用すると、階層の両方のレベル（名前空間とその名前空間内のアプリケーション）を個別に管理できますが、いずれか一方を選択することをお勧めします。Astra Control で実行したアクションは、ネームスペースレベルとアプリケーションレベルの両方で同時に実行される場合、失敗する可能性があります。</block>
   <block id="7456b57fbd6363e799b9140ba1f4f701" category="list-text">[* Apps * （アプリ） ] をクリックし、 [* Discovered * （検出されました</block>
-  <block id="6d83e7c8112c7198be8d3eedbaa43c09" category="paragraph"><block ref="6d83e7c8112c7198be8d3eedbaa43c09" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8becd0c5cc4d018d843024933b6f5998" category="list-text">検出されたネームスペースのリストを表示し、ネームスペースを展開してアプリケーションと関連リソースを表示します。</block>
   <block id="d5fe639b499759762c159b8de84b500f" category="paragraph">Astra Control では、 Helm アプリケーションとカスタムラベルの付いたアプリケーションが名前空間に表示されます。Helm ラベルがある場合は、タグアイコンで指定されます。</block>
   <block id="d6f8a6b20556aaa60e9078e6b3df4cd5" category="paragraph">次に、名前空間に 2 つのアプリケーションがある例を示します。</block>
-  <block id="81c63d33b9d6dddb4ff1dd2eb56adec4" category="paragraph"><block ref="81c63d33b9d6dddb4ff1dd2eb56adec4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c8e5b4e5d17fb1cf0756ed0f7caeadae" category="list-text">各アプリケーションを個別に管理するか、ネームスペースレベルで管理するかを決定します。</block>
   <block id="c06b80fdbc011a9dafa0f6c1030c330c" category="list-text">階層内の目的のレベルで、 [* アクション * （ * Actions * ） ] 列のドロップダウンリストをクリックし、 [ * 管理（ Manage ） ] をクリックします。</block>
-  <block id="a5cbe5a260037d78fe65e175720736b3" category="paragraph"><block ref="a5cbe5a260037d78fe65e175720736b3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="936739bc3ec1f2c3b2a04e180cbc7e86" category="list-text">アプリを管理しない場合は、目的のアプリの * アクション * 列のドロップダウンリストをクリックし、 * 無視 * をクリックします。</block>
   <block id="b03d32b8c5ff5695099912182a487db4" category="paragraph">たとえば、「 Jenkins 」ネームスペースですべてのアプリケーションを一緒に管理して、スナップショットポリシーとバックアップポリシーが同じになるようにする場合は、ネームスペースを管理し、ネームスペース内のアプリケーションは無視します。</block>
-  <block id="0307e6e3c7b7a381000903814606374b" category="paragraph"><block ref="0307e6e3c7b7a381000903814606374b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b921f272cfcf883e922b6fe018ad35ac" category="paragraph">管理対象として選択したアプリは、 [ 管理対象 * ] タブから利用できるようになりました。無視されたアプリは、 * 無視された * タブに移動します。新しいアプリケーションがインストールされると、検出されたタブにはアプリが表示されないため、見つけやすくなり、管理も簡単になります。</block>
   <block id="6af5a492909049f5a3f3a317f33387c5" category="section-title">Kubernetes ラベルでアプリケーションを管理</block>
   <block id="fafe7a62e8b3ae532bb18b06ccee820b" category="inline-link-macro">Kubernetes ラベルでアプリケーションを定義する方法については、こちらをご覧ください</block>
@@ -885,14 +875,10 @@
   <block id="3d471413130b445eb41cd48f3bb83dbb" category="list-text">* ラベル： * ラベルを入力するか、以下のリソースからラベルを選択してください。</block>
   <block id="63e2c72b31ac421e16112ad470a0aacb" category="list-text">* 選択したリソース * ：保護する Kubernetes リソース（ポッド、シークレット、永続ボリュームなど）を表示および管理します。</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">次に例を示します。</block>
-  <block id="01e802eee7c99583ffa082a4f8953f81" category="paragraph"><block ref="01e802eee7c99583ffa082a4f8953f81" category="inline-image-macro-rx" type="image"></block></block>
   <block id="65d915db12ce6d12b86418e9d59ba002" category="list-text">使用可能なラベルを表示するには、リソースを展開し、ラベルの数をクリックします。</block>
-  <block id="e2b6b294902e20aa63b78404ea7ee87d" category="paragraph"><block ref="e2b6b294902e20aa63b78404ea7ee87d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="86741b85afbee2998165d52e99ba2b0c" category="list-text">ラベルを 1 つ選択します。</block>
-  <block id="37d4a73e941aea22c9364f99022db815" category="paragraph"><block ref="37d4a73e941aea22c9364f99022db815" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4ee09935f26a58e275d621ea772fbbd8" category="paragraph">ラベルを選択すると、 [*Label*] フィールドにラベルが表示されます。Astra Control は、 [ 選択されていないリソース * ] セクションも更新して、選択したラベルと一致しないリソースを表示します。</block>
   <block id="0a032a00e4cd4d3d1677c6b5b518d743" category="list-text">* 選択されていないリソース * ：保護する必要がないアプリケーションリソースを確認します。</block>
-  <block id="5b89747f0a8baa18ab58c506c75bf082" category="paragraph"><block ref="5b89747f0a8baa18ab58c506c75bf082" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6932998101aae92351c4f34be10a83e5" category="list-text">[ カスタムアプリの定義 ] をクリックします。</block>
   <block id="d23192e8c76eebc71f36a162aed2bd8e" category="paragraph">Astra Control を使用すると、アプリケーションを管理できます。これで、 [* 管理対象 * （ * Managed * ） ] タブに表示されます。</block>
   <block id="f620b5e05e6e7eabf125361d9667f6bd" category="section-title">システムアプリケーションについて教えてください。</block>
@@ -981,12 +967,10 @@
   <block id="d97ae83d9ddeb23e7c2fc4a7d71e99ca" category="list-text">検出されたものの、まだ管理されていないアプリケーションの数。</block>
   <block id="0f70ff3da666ec1a8d90d5e3734f1a7d" category="paragraph">アプリケーションが検出された後で管理または無視するため、この数はゼロになるのが理想的です。さらに、ダッシュボードで検出されたアプリケーションの数を監視して、開発者がクラスタに新しいアプリケーションを追加するタイミングを特定します。</block>
   <block id="dfea95b6aef7a4ec30fd5891aff128fd" category="paragraph">これらは数字やステータスだけではなく、それぞれのステータスからドリルダウンすることができます。たとえば、アプリが完全に保護されていない場合は、アイコンの上にカーソルを置くと、完全に保護されていないアプリを特定できます。その理由が含まれます。</block>
-  <block id="7bb5a96ee1d752bc09a9564fbcb45dce" category="paragraph"><block ref="7bb5a96ee1d752bc09a9564fbcb45dce" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ebbf07879bd8efbbdce140357b7ffb9e" category="paragraph">コンピューティングタイルには、コンピューティングの健常性に関する同様の詳細が表示され、アプリと同様に詳細を確認できます。</block>
   <block id="4853ac5909bba59fd0ddaf13c9303742" category="summary">アプリケーションの管理を開始すると、アプリケーションのステータス、保護ステータス、ポッド、永続的ストレージなどを識別するための詳細が Astra Control に表示されます。</block>
   <block id="f8d33567c30a4afc7c2bd8cd718b0ec1" category="doc">アプリの状態と詳細を表示します</block>
   <block id="fa5fe34788e56d2fac1bbbcd7f415142" category="paragraph">アプリケーションの管理を開始すると、アプリケーションのステータス（正常かどうか）、保護ステータス（障害発生時に完全に保護されているかどうか）、ポッド、永続的ストレージなどを識別できる詳細が Astra Control に表示されます。</block>
-  <block id="37e4831fe9b8cca3e2fb3a182ba0233f" category="paragraph"><block ref="37e4831fe9b8cca3e2fb3a182ba0233f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="26b879f24d7c48d7eb357d8ad63a3bed" category="list-text">クリックすると、探している情報が表示されます。</block>
   <block id="660c8ca780937de069805678b0292feb" category="list-text">アプリステータス</block>
   <block id="b72757bde0673a4cfc165870b6360319" category="list-text">Kubernetes でのアプリケーションの状態を反映するステータスを提供します。たとえば、ポッドと永続ボリュームはオンラインか？アプリケーションが正常な状態でない場合は、 Kubernetes のログでクラスタの問題を調べてトラブルシューティングする必要があります。Astra Control では、壊れたアプリケーションを修正するための情報は提供されません。</block>
@@ -1009,7 +993,6 @@
   <block id="9f1a9252fa8e7cccfce329f81193d946" category="inline-link-macro">ネットアップのシリアル番号のサポートを有効にします</block>
   <block id="bc81d4a64e11b988c024ee890e91e099" category="paragraph">最初に実行する必要があります <block ref="50b527056876367f64e162872389171b" category="inline-link-macro-rx"></block> これらの非セルフサービスサポートオプションを使用するには、次の手順に従います。チャットや Web でのチケット発行、ケース管理には、ネットアップサポートサイト（ NSS ）の SSO アカウントが必要です。</block>
   <block id="a1c214630481371d4daa77b520664d2e" category="paragraph">メインメニューから * Support * タブを選択すると、 Astra Control UI からサポートオプションにアクセスできます。</block>
-  <block id="ee442c490fdf5e5e229f4a4900e529c2" category="paragraph"><block ref="ee442c490fdf5e5e229f4a4900e529c2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="07d41912a6ab6b97216f8cf89e93205c" category="section-title">セルフサポート</block>
   <block id="6b9b3535d917a5890db4ef00a3718361" category="paragraph">次のオプションは、 24 時間 365 日無料で利用できます。</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">ナレッジベース</block>
@@ -1029,7 +1012,6 @@
   <block id="f02d5b77bd725ef47a24df7e08285321" category="paragraph">クラウドデータサービス &gt; Astra * を選択します。</block>
   <block id="928c42e61d96311dd843410728f03e00" category="inline-link-macro">シリアル番号の詳細については、こちらをご覧ください</block>
   <block id="ebe0a961903a40ac9d1811d9fb5de23f" category="paragraph">Web チケットを開くには、「 941 」のシリアル番号を使用してください。 <block ref="422f2bb9f25b1e1a77e11bd3c7bab062" category="inline-link-macro-rx"></block>。</block>
-  <block id="0bfc2c8783c0e010d8bb057397cda980" category="paragraph"><block ref="0bfc2c8783c0e010d8bb057397cda980" category="inline-image-macro-rx" type="image"></block></block>
   <block id="998b5e98a07268d4a8f1fc7afd69c7fc" category="summary">アカウントを設定すると、 Astra Control は自動的にアカウントを登録してサポートを受けようとします。登録できない場合は、手動で登録してサポートを受けることができます。ネットアップのテクニカルサポートに問い合わせるには、サポート登録が必要です。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">サポートに登録します</block>
   <block id="afeb71cc4cb6fc5bb0db2f9866b02880" category="section-title">サポート登録を確認します</block>
@@ -1143,7 +1125,6 @@
   <block id="5ee8d4e880da1ab6adf2ef58cad52bc3" category="paragraph"><block ref="b64ad29284518b0972171e8bbb41ea75" category="inline-link-macro-rx"></block>。</block>
   <block id="9282f0c6796e0f17265209c00c2346fc" category="section-title">ユーザインターフェイスの機能拡張</block>
   <block id="ea71bdbbb619c5a614a77af5d8214a33" category="paragraph">データ保護ウィザードが強化され、操作が簡単になりました。たとえば、保護ポリシーウィザードを改良して、定義した保護スケジュールを簡単に確認できるようにしました。</block>
-  <block id="7ee22c47c9ced225afb279686afe4a22" category="paragraph"><block ref="7ee22c47c9ced225afb279686afe4a22" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f8d60fe9ffb24efb6e2d553fde81d26f" category="section-title">アクティビティの強化</block>
   <block id="df190078d46dda49c8775fd8c265a726" category="paragraph">Astra Control アカウントのアクティビティの詳細を簡単に確認できるようになりました。</block>
   <block id="a2b88dc15f93478f0229d71a6d7b0e3d" category="list-text">管理対象アプリケーション、重大度レベル、ユーザ、および時間範囲でアクティビティリストをフィルタリングします。</block>
@@ -1387,4 +1368,43 @@
   <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">Kubernetes ラベルを基にカスタムアプリケーションを管理する Astra の概念図。</block>
   <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下のセクションでは、これらのオプションを使用してアプリケーションを管理する方法について説明します。</block>
+  <block id="a732e2368bd2a5b981e292838ce79c63" category="inline-image-macro">Google Cloud コンソールのスクリーンショット。 View Commands How to Set Up Network Peering というボタンが表示されます。</block>
+  <block id="3078d99540b5f42a455476a35a92e58c" category="paragraph"><block ref="3078d99540b5f42a455476a35a92e58c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="342d96bb8b26fc21bd0ef71a5d047979" category="inline-image-macro">[ レビューと承認 ] ページを示すスクリーンショット。管理対象アプリケーションで選択した構成の概要が表示されます。</block>
+  <block id="ee769e73c12032ec317f9cc74037448a" category="paragraph"><block ref="aa0ffcb0ea40ad11a9a38aa9c7e39509" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a652491b41217a70e3507a8e3c6a7b8a" category="inline-image-macro">Astra ダッシュボードのスクリーンショット。リソースの概要と、利用を開始するためのリンクが表示されます。</block>
+  <block id="a3b2fd001bddeaca5085d6d53047a8bd" category="paragraph"><block ref="a3b2fd001bddeaca5085d6d53047a8bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bb35bc245c86566a5ceb846abef9975e" category="inline-image-macro">「アカウント」タブと、プレミアムサブスクリプションで有効になっているアカウントを示すスクリーンショット。</block>
+  <block id="d80a7e5c594f021275823f1385cddb6c" category="paragraph"><block ref="d80a7e5c594f021275823f1385cddb6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10d41ef8faeb35e6bce6bc1d8f14db60" category="inline-image-macro">リストア操作に関する情報を確認できるアプリケーションのリストアページのスクリーンショット。</block>
+  <block id="8c022a794c661eac28aa18d18386e4af" category="paragraph"><block ref="8c022a794c661eac28aa18d18386e4af" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="096e19c3dc95542287248a1c1458c65e" category="inline-image-macro">元のアプリケーションおよびクローン作成されたアプリケーションに関するクローン情報を確認するために使用できる [ クローンの概要 ] ダイアログボックスのスクリーンショット。</block>
+  <block id="cb15fda00d18a7bab68b70a468aebced" category="paragraph"><block ref="cb15fda00d18a7bab68b70a468aebced" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c7feb7f0739093141fa30c858b44903" category="inline-image-macro">[ アプリケーション（ Apps ） ] ページのスクリーンショット。 [ 検出（ Discovered ） ] タブが表示されます。</block>
+  <block id="f25e75ff35065f942eda2b53888c00ee" category="paragraph"><block ref="f25e75ff35065f942eda2b53888c00ee" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e8f45b89755848317f9650c2be8b21e2" category="inline-image-macro">名前空間が展開され、その名前空間に 2 つのアプリが表示されるアプリページのスクリーンショット。</block>
+  <block id="cef904bbcee1860f389a7033e8ee19e9" category="paragraph"><block ref="cef904bbcee1860f389a7033e8ee19e9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7208e43dc3503a6bbc8082c2a658257" category="inline-image-macro">[ アプリ ] ページの展開されたドロップダウンリストのスクリーンショット。名前空間またはアプリを管理または無視することを選択できます。</block>
+  <block id="b03ce2bb540ada8a01dd448fe891c904" category="paragraph"><block ref="b03ce2bb540ada8a01dd448fe891c904" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="588b0d3dabca4fcfff49bcf216d3533e" category="paragraph"><block ref="588b0d3dabca4fcfff49bcf216d3533e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9c796431fe45f6d4fad58c0584db361" category="inline-image-macro">設定マップや永続的ボリュームの要求など、保護可能なリソースのスクリーンショット。</block>
+  <block id="adcf39866e330b592f763c408bf213b9" category="paragraph"><block ref="adcf39866e330b592f763c408bf213b9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4d14ece9d7d4efb03ccad6b74672e35" category="inline-image-macro">リソースが展開され、そのリソースのラベル数を示すスクリーンショット。</block>
+  <block id="737654d194ed792547738e533cc7dfad" category="paragraph"><block ref="737654d194ed792547738e533cc7dfad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e50d0652269cef8db74f2a6e59cc9a5" category="inline-image-macro">ラベルの数をクリックしたあとに選択できるラベルのリストを示すスクリーンショット。</block>
+  <block id="ef49302b34034ad54f6858f9fde75907" category="paragraph"><block ref="ef49302b34034ad54f6858f9fde75907" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="65acbad890a1d87903f2731dba131e94" category="inline-image-macro">[ リソース ] ペインでラベルを選択した後に [ ラベル ] フィールドにラベルを表示するスクリーンショット。</block>
+  <block id="d73b1e47b116a7a04fc9e784c9c18381" category="paragraph"><block ref="d73b1e47b116a7a04fc9e784c9c18381" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fb73a1dcbda9bf8030c1f81c76c723e" category="inline-image-macro">完全に保護されていないアプリケーションの数にカーソルを合わせると表示されるツールチップを示すスクリーンショット。ツールチップには、アプリの名前と、アプリが完全に保護されていない理由が表示されます。</block>
+  <block id="143ffe33feb85f3a1668d4945c0be990" category="paragraph"><block ref="143ffe33feb85f3a1668d4945c0be990" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f78ed92291292a76167efd490de5dd6" category="inline-image-macro">アプリの概要ページのスクリーンショット。アプリのステータス、アプリ保護ステータス、保護スケジュールなどの詳細を表示できます。</block>
+  <block id="6b475c3aebc5699879c45f5996f9f6c8" category="paragraph"><block ref="6b475c3aebc5699879c45f5996f9f6c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3dee19ad1e22e678272d8365b6156a5" category="inline-image-macro">Astra Control のサポートページのスクリーンショット。リソースを表示して、ネットアップに問い合わせることができます。</block>
+  <block id="8be91fc1582bfc45323e97b707808aa3" category="paragraph"><block ref="8be91fc1582bfc45323e97b707808aa3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4de6f45f19d51d4e4a39a31451bed2e6" category="inline-image-macro">ネットアップサポートサイトの Web チケットのスクリーンショット。システムを選択し、問題の詳細を入力して、連絡先情報を指定する必要があります。</block>
+  <block id="35d3c782a5cd77a5bdc15c1f99546544" category="paragraph"><block ref="35d3c782a5cd77a5bdc15c1f99546544" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58a37706ad29b91b5ea0febd18591e9e" category="inline-image-macro">[ アプリケーション（ Apps ） ] ページのスクリーンショットで、 [ 検出（ Discovered ） ] タブが選択されて</block>
+  <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">Configure Protection Policy ダイアログボックスのスクリーンショット。 Hourly 、 Daily 、 Weekly 、および Monthly スケジュールを有効にできます。</block>
+  <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

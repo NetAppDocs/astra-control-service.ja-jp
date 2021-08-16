@@ -34,7 +34,7 @@ image:screenshot-restore-app.gif["アプリケーションページのスクリ�
 
 . * リストアの概要 * ：リストア操作の詳細を確認し、 * アプリの復元 * をクリックします。
 +
-image:screenshot-restore-summary.gif[""]
+image:screenshot-restore-summary.gif["リストア操作に関する情報を確認できるアプリケーションのリストアページのスクリーンショット。"]
 
 
 

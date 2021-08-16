@@ -31,7 +31,7 @@ image:screenshot-create-clone.gif["アプリページのスクリーンショッ
 
 . * クローンの概要 * ：クローンの詳細を確認し、 * クローンアプリ * をクリックします。
 +
-image:screenshot-clone-summary.gif[""]
+image:screenshot-clone-summary.gif["元のアプリケーションおよびクローン作成されたアプリケーションに関するクローン情報を確認するために使用できる [ クローンの概要 ] ダイアログボックスのスクリーンショット。"]
 
 
 

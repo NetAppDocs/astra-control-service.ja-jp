@@ -65,7 +65,7 @@ Astra Control Service は、サービスアカウントを使用して、 Google
 
 . * レビューと承認 * ：構成の詳細を確認し、 * 計算の追加 * をクリックします。
 +
-image:screenshot-compute-approve.gif[""]
+image:screenshot-compute-approve.gif["[ レビューと承認 ] ページを示すスクリーンショット。管理対象アプリケーションで選択した構成の概要が表示されます。"]
 
 
 

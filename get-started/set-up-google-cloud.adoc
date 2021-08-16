@@ -240,7 +240,7 @@ Google Cloud リージョンに適したサービスタイプを選択する必�
 ネットワークピアリングを設定していない場合は、次の通知が表示されます。
 
 +
-image:gcp-peering.gif[""]
+image:gcp-peering.gif["Google Cloud コンソールのスクリーンショット。 View Commands How to Set Up Network Peering というボタンが表示されます。"]
 
 . ボタンをクリックして、ネットワークピアリングのセットアップコマンドを表示します。
 . コマンドをコピーし、 Cloud Shell で実行します。

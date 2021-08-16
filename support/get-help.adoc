@@ -16,7 +16,7 @@ summary: ネットアップでは、 Astra Control をさまざまな方法で�
 
 メインメニューから * Support * タブを選択すると、 Astra Control UI からサポートオプションにアクセスできます。
 
-image:screenshot-support.gif[""]
+image:screenshot-support.gif["Astra Control のサポートページのスクリーンショット。リソースを表示して、ネットアップに問い合わせることができます。"]
 
 
 
@@ -54,4 +54,4 @@ Astra Control のシリアル番号を有効にすると、を作成してネッ
 
 Web チケットを開くには、「 941 」のシリアル番号を使用してください。 link:register-support.html["シリアル番号の詳細については、こちらをご覧ください"]。
 
-image:screenshot-web-ticket.gif[""]
+image:screenshot-web-ticket.gif["ネットアップサポートサイトの Web チケットのスクリーンショット。システムを選択し、問題の詳細を入力して、連絡先情報を指定する必要があります。"]

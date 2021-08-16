@@ -104,7 +104,7 @@ link:../get-started/intro.html#pricing["Astra Control サービスの価格設�
 
 link:../use/manage-apps.html["アプリケーションの管理についての詳細は、こちらをご覧ください"]。
 
-image:screenshot-group.gif[""]
+image:screenshot-group.gif["[ アプリケーション（ Apps ） ] ページのスクリーンショットで、 [ 検出（ Discovered ） ] タブが選択されて"]
 
 
 
@@ -112,7 +112,7 @@ image:screenshot-group.gif[""]
 
 データ保護ウィザードが強化され、操作が簡単になりました。たとえば、保護ポリシーウィザードを改良して、定義した保護スケジュールを簡単に確認できるようにしました。
 
-image:screenshot-protection-policy.gif[""]
+image:screenshot-protection-policy.gif["Configure Protection Policy ダイアログボックスのスクリーンショット。 Hourly 、 Daily 、 Weekly 、および Monthly スケジュールを有効にできます。"]
 
 
 

@@ -67,7 +67,7 @@ Astra Control を使用すると、階層の両方のレベル（名前空間と
 .手順
 . [* Apps * （アプリ） ] をクリックし、 [* Discovered * （検出されました
 +
-image:screenshot-app-discovery.gif[""]
+image:screenshot-app-discovery.gif["[ アプリケーション（ Apps ） ] ページのスクリーンショット。 [ 検出（ Discovered ） ] タブが表示されます。"]
 
 . 検出されたネームスペースのリストを表示し、ネームスペースを展開してアプリケーションと関連リソースを表示します。
 +
@@ -77,19 +77,19 @@ Astra Control では、 Helm アプリケーションとカスタムラベルの
 次に、名前空間に 2 つのアプリケーションがある例を示します。
 
 +
-image:screenshot-group.gif[""]
+image:screenshot-group.gif["名前空間が展開され、その名前空間に 2 つのアプリが表示されるアプリページのスクリーンショット。"]
 
 . 各アプリケーションを個別に管理するか、ネームスペースレベルで管理するかを決定します。
 . 階層内の目的のレベルで、 [* アクション * （ * Actions * ） ] 列のドロップダウンリストをクリックし、 [ * 管理（ Manage ） ] をクリックします。
 +
-image:screenshot-app-manage.gif[""]
+image:screenshot-app-manage.gif["[ アプリ ] ページの展開されたドロップダウンリストのスクリーンショット。名前空間またはアプリを管理または無視することを選択できます。"]
 
 . アプリを管理しない場合は、目的のアプリの * アクション * 列のドロップダウンリストをクリックし、 * 無視 * をクリックします。
 +
 たとえば、「 Jenkins 」ネームスペースですべてのアプリケーションを一緒に管理して、スナップショットポリシーとバックアップポリシーが同じになるようにする場合は、ネームスペースを管理し、ネームスペース内のアプリケーションは無視します。
 
 +
-image:screenshot-app-manage-and-ignore.gif[""]
+image:screenshot-app-manage-and-ignore.gif["[ アプリ ] ページの展開されたドロップダウンリストのスクリーンショット。名前空間またはアプリを管理または無視することを選択できます。"]
 
 
 
@@ -114,16 +114,16 @@ Astra Control の [ アプリ ] ページの上部には、「 * カスタムア
 次に例を示します。
 
 +
-image:screenshot-selected-resources.gif[""]
+image:screenshot-selected-resources.gif["設定マップや永続的ボリュームの要求など、保護可能なリソースのスクリーンショット。"]
 
 +
 *** 使用可能なラベルを表示するには、リソースを展開し、ラベルの数をクリックします。
 +
-image:screenshot-view-labels.gif[""]
+image:screenshot-view-labels.gif["リソースが展開され、そのリソースのラベル数を示すスクリーンショット。"]
 
 *** ラベルを 1 つ選択します。
 +
-image:screenshot-select-label.gif[""]
+image:screenshot-select-label.gif["ラベルの数をクリックしたあとに選択できるラベルのリストを示すスクリーンショット。"]
 
 +
 ラベルを選択すると、 [*Label*] フィールドにラベルが表示されます。Astra Control は、 [ 選択されていないリソース * ] セクションも更新して、選択したラベルと一致しないリソースを表示します。
@@ -132,7 +132,7 @@ image:screenshot-select-label.gif[""]
 
 .. * 選択されていないリソース * ：保護する必要がないアプリケーションリソースを確認します。
 +
-image:screenshot-selected-label.gif[""]
+image:screenshot-selected-label.gif["[ リソース ] ペインでラベルを選択した後に [ ラベル ] フィールドにラベルを表示するスクリーンショット。"]
 
 
 
