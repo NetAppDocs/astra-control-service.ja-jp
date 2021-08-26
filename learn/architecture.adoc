@@ -20,7 +20,7 @@ image:architecture.png["Astra Control のアーキテクチャ図とコンポー
 
 * * Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra Control は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。
 * * Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールとして、 Docker と Kubernetes で管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。Trident を Astra Control とともに導入すると、設定済みの ONTAP ストレージバックエンドが含まれます。
-* * ストレージバックエンド * ： Astra Control Service で使用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["NetApp Cloud Volumes Service for Google Cloud"^] GKE クラスタおよびのバックエンドストレージとして AKS クラスタのバックエンドストレージとして。
+* * ストレージバックエンド * ： Astra Control Service で使用 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^] GKE クラスタおよびのバックエンドストレージとして AKS クラスタのバックエンドストレージとして。
 +
 Astra Control Center は、 ONTAP AFF と FAS のストレージバックエンドを使用します。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
 
