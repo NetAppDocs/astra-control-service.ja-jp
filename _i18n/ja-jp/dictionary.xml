@@ -28,10 +28,7 @@
   <block id="058e20040046a4fb9ce23f043893c802" category="list-text">ネームスペースに MariaDB を導入します。</block>
   <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">データベースを作成します。</block>
   <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。Astra Control を使用すると、アプリケーションをネームスペースレベルで管理したり、 Helm ラベルを使用して管理したりできます。</block>
-  <block id="3a2733e04ebc062ff579b9025859743e" category="summary">標準の安定したグラフから MySQL を導入する方法を説明します。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
   <block id="1d738f7ceb4e38173282a543ee774dee" category="doc">Helm チャートから MySQL を導入します</block>
-  <block id="a99e9ada14f45aad894515c40ec30de5" category="inline-link">標準安定チャート</block>
-  <block id="a3e41147a59f53e5117fbfae93409ca3" category="paragraph">から MySQL を導入する方法について説明します<block ref="05e41c0f8c70278b3e46d9de55b9a4c9" category="inline-link-rx"></block>。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
   <block id="3a06cfb32360d8e0f898a3eff6ca85ec" category="paragraph">MySQL は Astra Control の検証済みアプリケーションです。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
   <block id="2f4f94cc5a0950a910a46c35cf923e05" category="section-title">MySQL をインストール</block>
   <block id="e13d9dd518c3f3a9ada2a60d9d1c6beb" category="list-text">Helm チャートをデフォルト以外の名前空間に展開することをお勧めします。</block>
@@ -1395,4 +1392,7 @@
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">Astra の通知</block>
   <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
+  <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">Bitnami Helm チャートから MySQL を導入する方法を説明します。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
+  <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm チャート</block>
+  <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">から MySQL を導入する方法について説明します<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
 </blocks>
