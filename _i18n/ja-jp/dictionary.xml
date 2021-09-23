@@ -38,12 +38,6 @@
   <block id="254257378902df079ba71f8378f0bbd9" category="doc">Helm チャートから Postgres を導入します</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">Bitnami Helm チャートから Jenkins をデプロイする方法について説明します。クラスタに Jenkins を導入したら、アプリケーションを Astra Control に登録できます。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">Helm チャートから Jenkins をデプロイします</block>
-  <block id="db8ec17bfebf1b75f269cb1a8955cb1f" category="paragraph">Jenkins は Astra Control 用の検証済みアプリケーションです。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="0c320ff93a31e2f55637d0776b8377f4" category="inline-link">Jenkins 用の Kubernetes プラグイン</block>
-  <block id="e7fd20fba91edea83cd789e5dd3145f7" category="paragraph">Astra Control は、現在のところをサポートしていません<block ref="7941b88a09668dbb84e99be4c077654b" category="inline-link-rx"></block>。プラグインを使用せずに Kubernetes クラスタで Jenkins を実行できます。プラグインは Jenkins クラスタに拡張性を提供します。</block>
-  <block id="1329521b4ee9e281002e69575656af51" category="section-title">Jenkins をインストールします</block>
-  <block id="edf97ce0355bb2ec287dafe27d9062d4" category="list-text">「 Jenkins 」ネームスペースを作成し、次のコマンドを使用して Jenkins を展開します。</block>
-  <block id="75a5e02d69cb7561b79d87479d3dbcad" category="list-text">正しいストレージクラスを設定します。</block>
   <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra Control Service を使用すると、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）の管理対象 Kubernetes クラスタで実行されているアプリケーションを管理できます。</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">サポートされる Kubernetes 環境</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">Astra Control Service 向け Google Cloud のセットアップ方法をご確認ください</block>
@@ -1206,21 +1200,6 @@
   <block id="73d58bce64935ac37f26ef1b6d250e13" category="paragraph">Astra Control Service は、 PVC でボリュームサイズの縮小が要求されても、 100GiB 以上の最小ボリュームサイズを使用して永続的ボリュームをプロビジョニングします。たとえば、 Helm チャートの PVC で 6GiB が要求された場合、 Astra Control Service は 100GiB のボリュームを自動的にプロビジョニングします。</block>
   <block id="7bdb5bed9124f4cb8ef00cb0eb64a04a" category="summary">Astra Control 、 Validated 、 Standard の 2 種類のアプリケーションを利用できます。これら 2 つのカテゴリの違いと、プロジェクトと戦略に与える可能性のある影響について説明します。</block>
   <block id="c8a8951e747490d31a329c8be8936189" category="doc">検証済みのアプリケーションと標準のアプリケーションの比較</block>
-  <block id="a4f58e10114ac3858ccee21f394e721e" category="paragraph">Astra Control には、 Validated と Standard の 2 種類のアプリケーションがあります。これら 2 つのカテゴリの違いと、プロジェクトと戦略に与える可能性のある影響について説明します。</block>
-  <block id="7d1cb03e94822990df4c59766603b06b" category="admonition">この 2 つのカテゴリは、「サポート対象」と「サポート対象外」と考える傾向があります。 しかし、ここでは、 Astra Control の「サポートされていない」アプリケーションなどのものはありません。Astra Control には任意のアプリケーションを追加できますが、検証済みのアプリケーションは、 Astra Control ワークフローを中心に構築された、標準のアプリケーションよりも多くのインフラを備えています。</block>
-  <block id="e8033fc2ca0e50685a7a51da706bf560" category="section-title">検証済みのアプリケーション</block>
-  <block id="7388dc32b164c94f50f4e5903d312739" category="paragraph">Astra Control の検証済みアプリケーションには、次のものがあります。</block>
-  <block id="f1feecd901e0cba755eb44088e989121" category="list-text">MySQL 0.3.22</block>
-  <block id="445e4d152c0ebe794c7409a75dc0a06d" category="list-text">MariaDB 14.14</block>
-  <block id="7c9564aed2d813b61abef14cb78f4b1b" category="list-text">PostgreSQL 11.7</block>
-  <block id="c41f183769d14afc51c6880beb24af93" category="list-text">Jenkins 2.249.1 LTS</block>
-  <block id="973fba3cfb5056972e457b763a806699" category="paragraph">検証済みアプリケーションの短いリストは、 Astra Control が認識するアプリケーションを表しています。Astra Control QA チームは、これらのアプリケーションを分析して確認し、完全なテストでリストアできることを確認しました。</block>
-  <block id="be90b572b10558193bf4128db92d64ff" category="paragraph">また、 Astra Control Development チームが検証済みのアプリケーションもチェックしており、データの安全性と一貫性を確保するためのカスタムワークフローを作成しています。たとえば、 Astra Control が PostgreSQL データベースのバックアップを作成する場合、最初にデータベースを休止します。バックアップが完了すると、 Astra Control はデータベースを通常の動作に復元します。</block>
-  <block id="1ab0ccfcd696f5ac57b9af7b716b47fa" category="paragraph">Astra Control で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすようにしてください。</block>
-  <block id="2f53eae73f378111a30ede6f1758a648" category="inline-link">サポートページのフィードバック E メールアドレスからお問い合わせください。</block>
-  <block id="473c85629704a57aea815bc7f44ca238" category="paragraph">今後検証するアプリをお知らせします。<block ref="9bdc2aa9d65645fef4eb390726a6b4b5" category="inline-link-rx"></block></block>
-  <block id="005a897ef8be58f196a3932bdcd4c7d4" category="section-title">標準アプリ</block>
-  <block id="3dd21a860f3331ffd3e236f2d75cb51d" category="paragraph">カスタムプログラムを含むその他のアプリは、標準アプリと見なされます。Astra Control を使用して、標準アプリケーションを追加および管理できます。また、標準アプリケーションの crash-consistent Snapshot とバックアップの基本的な作成も可能です。ただし、これらのアプリケーションを元の状態に戻すための QA テストは実施されていません。</block>
   <block id="dffb3f008a66e6ee72d3314057769ea5" category="summary">カスタムアプリケーションを作成すると、 Kubernetes クラスタの要素を 1 つのアプリケーションにグループ化できます。</block>
   <block id="8b9f069d5ee077bf6c98f579de6a71fb" category="doc">カスタムアプリケーションを定義します</block>
   <block id="1567558dc23e01e46fe4a434b8fd1943" category="paragraph">カスタムアプリケーションを使用すると、 Astra Control 操作に含めるものをより細かく制御できます。次のものが含まれます。</block>
@@ -1395,4 +1374,8 @@
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">Bitnami Helm チャートから MySQL を導入する方法を説明します。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm チャート</block>
   <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">から MySQL を導入する方法について説明します<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
+  <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API ライセンス</block>
+  <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
+  <block id="e8e0a6f955276be561895d1f7b9500be" category="paragraph"><block ref="e8e0a6f955276be561895d1f7b9500be" category="inline-link-macro-rx"></block></block>
+  <block id="2c0f8c5a84761b79b6e1174632297f5c" category="paragraph"><block ref="2c0f8c5a84761b79b6e1174632297f5c" category="inline-link-macro-rx"></block></block>
 </blocks>
