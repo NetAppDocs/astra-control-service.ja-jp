@@ -5,36 +5,9 @@
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="3e7ce18250825ebe097f3b6178f9d04a" category="summary">Bitnami Helm チャートから MariaDB を導入する方法を説明します。クラスタに MariaDB を導入すると、 Astra Control を使用してアプリケーションを管理できます。</block>
   <block id="6080ff5b6dc7bbad85ca9517a06dd7c4" category="doc">Helm チャートから MariaDB を導入します</block>
-  <block id="1c3f1447442e109dc23e7e797afb4a10" category="inline-link-macro">検証済みアプリケーションと標準アプリケーションの違いをご確認ください</block>
-  <block id="e8c7f57646eeebab499b45d9ad3be745" category="paragraph">MariaDB は、 Astra 向けの検証済みアプリケーションです。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="a5d80e4d072d6d19415d551335ac7924" category="paragraph">以下の手順は、 Astra Control Service と Astra Control Center の両方に適用されます。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要件</block>
-  <block id="ab18cc4346e2e3d8a032a31039afba17" category="list-text">Astra Control に追加されたクラスタ。</block>
-  <block id="321e17c956a0f11a93fb3113131da56e" category="admonition">Astra Control Center では、最初にクラスタを Astra Control Center に追加するか、最初にアプリケーションを追加できます。</block>
-  <block id="43d084833af96d5fa7b52fee8769b44d" category="list-text">クラスタの適切な kubeconfig を使用してローカルマシンにインストールされている Helm （バージョン 3.2+ ）および Kubectl のバージョンを更新しました</block>
-  <block id="4edc6e3711a7b2b1f3ee14f852711a72" category="section-title">MariaDB をインストールします</block>
-  <block id="bd6d523df7fc61f437b6bcf95c84e6ab" category="paragraph">このプロセスに関する 2 つの重要な注意事項：</block>
-  <block id="209d9f7d3ed72d86bff8e960b7efb31f" category="list-text">アプリケーションは、クラスタを Astra Control Service に追加したあとに、以前には導入しないでください。Astra Control Center は、 Astra Control Center にクラスタを追加する前後のアプリケーションを受け入れます。</block>
-  <block id="ea534a4997c41ebaeedc962e00a4862d" category="list-text">Helm チャートは、デフォルト以外の名前空間に展開する必要があります。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">手順</block>
-  <block id="dc702442c7de31408b54856404ef54c5" category="list-text">Bitnami チャート repo を追加します。</block>
-  <block id="03d31232188172ba57e277511835a7df" category="list-text">コマンドを使用して、 MariaDB を導入します。</block>
-  <block id="9834325e5db7a6fd1294df25eb3c3003" category="admonition">ボリュームサイズを変更する場合は、 Kibibyte （ KI ）、 Meibyte （ MI ）、または Gibyte （ Gi ）単位を使用します。</block>
-  <block id="cafa0dd1c432e6dbdb1fbdf59e566ad4" category="paragraph">ストレージクラスを定義する必要があるのは、次の場合のみです。</block>
-  <block id="1de9addd4871f1d857a3df16d960a0f0" category="list-text">Astra Control サービスを使用していて、デフォルトのストレージクラスを使用しない場合。</block>
-  <block id="9f661d823153d138cd0dd585255af30e" category="list-text">Astra Control Center を使用していて、まだ Astra Control Center にクラスタをインポートしていない。あるいは、クラスタをインポートしたあとに、デフォルトのストレージクラスを使用する必要がなくなった場合。</block>
-  <block id="a066057b0baac664a05fecacafe54676" category="paragraph">これにより、次の処理が行われます。</block>
-  <block id="5299efec4db7fee00fd52cc320607de2" category="list-text">ネームスペースを作成します。</block>
-  <block id="058e20040046a4fb9ce23f043893c802" category="list-text">ネームスペースに MariaDB を導入します。</block>
-  <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">データベースを作成します。</block>
-  <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。Astra Control を使用すると、アプリケーションをネームスペースレベルで管理したり、 Helm ラベルを使用して管理したりできます。</block>
   <block id="1d738f7ceb4e38173282a543ee774dee" category="doc">Helm チャートから MySQL を導入します</block>
-  <block id="3a06cfb32360d8e0f898a3eff6ca85ec" category="paragraph">MySQL は Astra Control の検証済みアプリケーションです。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="2f4f94cc5a0950a910a46c35cf923e05" category="section-title">MySQL をインストール</block>
-  <block id="e13d9dd518c3f3a9ada2a60d9d1c6beb" category="list-text">Helm チャートをデフォルト以外の名前空間に展開することをお勧めします。</block>
-  <block id="3d6981732463d68a06db716d371fdfa9" category="list-text">次のコマンドを使用して MySQL を導入します。</block>
-  <block id="970aeac42c94256cd1b3fff9b82095eb" category="list-text">ネームスペースに MySQL を導入します。</block>
-  <block id="e6da9fbe947bc16784aef00d8b644cf5" category="paragraph">ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。Astra Control を使用すると、名前を付けてアプリケーションを管理したり、ネームスペースレベルでアプリケーションを管理したり、 Helm ラベルを使用したりできます。</block>
   <block id="254257378902df079ba71f8378f0bbd9" category="doc">Helm チャートから Postgres を導入します</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">Bitnami Helm チャートから Jenkins をデプロイする方法について説明します。クラスタに Jenkins を導入したら、アプリケーションを Astra Control に登録できます。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">Helm チャートから Jenkins をデプロイします</block>
@@ -312,82 +285,7 @@
   <block id="70e9aa86ac0b41ade7ad4fce41b6d744" category="paragraph">いいえAstra Control で作成したスナップショットとバックアップは、 Astra Control でのみ管理できます。</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control は、 Kubernetes アプリケーションデータライフサイクル管理解決策で、ステートフルアプリケーションの運用を簡易化します。Kubernetes ワークロードの保護、バックアップ、移行を簡易化し、作業用アプリケーションのクローンを瞬時に作成できます。</block>
   <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control の概要</block>
-  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">の機能</block>
-  <block id="c66fd3d61ca9e5331b05a6bd70d4a1df" category="paragraph">Astra Control は、 Kubernetes アプリケーションデータのライフサイクル管理に不可欠な機能を提供</block>
-  <block id="842f680f400de3b6ee92728ef695d366" category="list-text">永続的ストレージを自動的に管理</block>
-  <block id="0a5245490d6d6f511bbdb3db35acfe54" category="list-text">アプリケーション対応のオンデマンドの Snapshot とバックアップを作成</block>
-  <block id="f107a6e34d3d0df36d460bc5b3a5fe8b" category="list-text">ポリシーベースのスナップショットおよびバックアップ操作を自動化します</block>
-  <block id="ae3099cc177fc161f80c6965fe89a71a" category="list-text">Kubernetes クラスタ間でアプリケーションとデータを移行</block>
-  <block id="053d6e036cc8c9d7a8c57234d6bfc574" category="list-text">本番環境からステージング環境にアプリケーションを簡単にクローニングできます</block>
-  <block id="1c26e7db082840fcbfcd87527c92e1aa" category="list-text">アプリケーションの稼働状態と保護状態を視覚化します</block>
-  <block id="3e09a55ad40337db37927865855151a9" category="list-text">バックアップと移行のワークフローを実装するには、ユーザインターフェイスまたは API を使用してください</block>
-  <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">導入モデル</block>
-  <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control には、次の 2 つの導入モデルがあります。</block>
-  <block id="5ac9f21bb5ada8cf5c614ea23fce4131" category="list-text">* Astra Control Service * ： Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で Kubernetes クラスタのアプリケーション対応データ管理を提供する、ネットアップが管理するサービス。</block>
-  <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。</block>
-  <block id="35b46e301702b6fcb16192f9f4cf4533" category="cell">Astra 制御サービス</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="cell">Astra Control Center の略</block>
-  <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">どのような方法で提供されますか？</block>
-  <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">ネットアップのフルマネージドクラウドサービス</block>
-  <block id="aff53210beade5ba79414ae13eb6b73d" category="cell">ソフトウェアとしてダウンロード、インストール、および管理します</block>
-  <block id="7cae1429bdc4131db46365e8fc893a77" category="cell">ホストされているのはどこですか？</block>
-  <block id="7ab48d8d90e46b91aa73c1832b7681f9" category="cell">ネットアップが選択したパブリッククラウドで実現</block>
-  <block id="6cc0042ffe94d2cdea2bf7b80705f4ef" category="cell">指定した Kubernetes クラスタで実行します</block>
-  <block id="a564f860d9dd9df279c4ea80b08d026a" category="cell">更新方法</block>
-  <block id="b2929741e98ca2c366d8d7dfda36e2b9" category="cell">管理はネットアップが行います</block>
-  <block id="091f846d60c1037c90ba7580f37ef9fa" category="cell">更新を管理します</block>
-  <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">アプリケーションデータ管理機能とは何ですか？</block>
-  <block id="6d23e94a1a5dc06559303503aa66bb54" category="cell">バックエンドストレージと外部サービスを除き、両方のプラットフォームで同じ機能を利用できます</block>
-  <block id="1ca7b72bd26cd5c5adf9a4ebc84be59b" category="cell">バックエンドストレージのサポートについて教えてください。</block>
-  <block id="d1c86529e5adfef0855455a2e0bd54bd" category="cell">ネットアップのクラウドサービス</block>
-  <block id="d6fc0eb1930e7e56affc953c237c5514" category="cell">NetApp ONTAP AFF および FAS システム</block>
-  <block id="4d9496325ef678735e8ac8b99b7a562b" category="section-title">サポートされているアプリケーション</block>
-  <block id="e10d583d2cd76b7b257cc090edd7af58" category="paragraph">Astra Control は、 Kubernetes クラスタで実行されるすべてのアプリケーションをサポートします。ネットアップでは、 Snapshot とバックアップの安全性と一貫性を確保するために、いくつかのアプリケーションの検証を行っています。</block>
-  <block id="413fa631b9dc3fae7db58555ebef88ac" category="inline-link-macro">検証済みのアプリケーションと標準のアプリケーションの違いをご確認ください</block>
-  <block id="bda41e5b5302f5503c219959b3ada5e4" category="paragraph"><block ref="5de926869bc882f86ce2ab88f9798e60" category="inline-link-macro-rx"></block>。</block>
-  <block id="3cf57593346f365ce163d769c70a8cab" category="paragraph">Astra Control で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすことを確認してください。</block>
-  <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra Control Service の仕組み</block>
-  <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service は、常時稼働し、最新の機能で更新される、ネットアップが管理するクラウドサービスです。複数のコンポーネントを利用して、アプリケーションデータのライフサイクル管理を実現します。</block>
-  <block id="29346571353a36c4c8e378195149db77" category="paragraph">Astra Control Service の概要は次のように機能します。</block>
-  <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">Astra Control Service の利用を開始するには、クラウドプロバイダをセットアップし、 Astra アカウントに登録します。</block>
-  <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">NetApp Cloud Volumes Service for Google Cloud</block>
-  <block id="13fcc9b8465f60b72f591715f581b2d7" category="list-text">GKE クラスタでは、 Astra Control Service はを使用します<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> を永続ボリュームのバックエンドストレージとして使用します。</block>
-  <block id="766e03fde5f400830f8365087232fdf8" category="list-text">AKS クラスタの場合、 Astra Control Service はを使用します<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> を永続ボリュームのバックエンドストレージとして使用します。</block>
-  <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">最初の Kubernetes コンピューティングを Astra Control サービスに追加します。Astra Control Service は、次の処理を実行します。</block>
-  <block id="e99f973393b40d224e0166ec9b211177" category="list-text">バックアップコピーが格納されるクラウドプロバイダアカウントにオブジェクトストアを作成します。</block>
-  <block id="2fe87449d125b0daf20d2fc8de53081e" category="paragraph">Azure では、 Astra Control Service によって、 BLOB コンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</block>
-  <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">クラスタに新しい admin ロールと Kubernetes サービスアカウントを作成します。</block>
-  <block id="d0d814f19c11e53389188aeb96b688e1" category="inline-link">ネットアップの Trident</block>
-  <block id="d4bc3d62cc55cc4c782ea688d17c4e4a" category="list-text">新しい admin ロールを使用してインストールします<block ref="5a65efdf35e241e6474d636afa409ccb" category="inline-link-rx"></block> をクリックして、 1 つ以上のストレージクラスを作成します。</block>
-  <block id="e940255251217819e17f4f7ab0a6f0cc" category="list-text">Trident を使用して、アプリケーション用の永続的ボリュームをプロビジョニング</block>
-  <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">この時点で、アプリケーションをクラスタに追加できます。永続ボリュームは、新しいデフォルトのストレージクラスでプロビジョニングされます。</block>
-  <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。</block>
-  <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</block>
-  <block id="e786ffd39fb455113d3fe53fbfe3d11b" category="inline-link-macro">無料プランからプレミアムプランにアップグレードして、請求を設定します</block>
-  <block id="3c67a6f3d3a9a533de732ddf327b6b2c" category="paragraph">Astra Control の無料プランを使用すると、最大 10 個のアプリをアカウントで管理できます。10 以上のアプリを管理するには、が必要です <block ref="d88bf1f0b11be830df6064746bab5c5c" category="inline-link-macro-rx"></block>。</block>
-  <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra Control Center の仕組み</block>
-  <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center は、お客様のプライベートクラウドでローカルに実行されます。</block>
-  <block id="9b04dea5fba4d366b92ef41197eae5e2" category="paragraph">最初のリリースでは、 Astra Control Center は ONTAP 9.5 以降を搭載した OpenShift Kubernetes クラスタと Trident ストレージバックエンドをサポートする予定です。</block>
-  <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、 Astra Control Center では、限定的な（ 7 日間の指標）監視と計測データを使用できます。また、オープン指標エンドポイントを介して Kubernetes の標準の監視ツール（ Prometheus や Grafana など）にエクスポートすることもできます。</block>
-  <block id="1bc8163319d46bff9915aa0226885a42" category="paragraph">Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップのサポートにトラブルシューティングと使用に関する情報を提供します。</block>
-  <block id="26849905a5aa23f71bc18ee28e352604" category="paragraph">Astra Control Center を試用するには、 90 日間の評価版ライセンスを使用します。評価版は、 E メールとコミュニティ（ Slack チャンネル）のオプションでサポートされています。また、製品内サポートダッシュボードから技術情報アーティクルやドキュメントにアクセスすることもできます。</block>
-  <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">要件</block>
-  <block id="ebd65e27e034512530c808d2d0aa364d" category="paragraph">Astra Control Center をインストールして使用するには、一定の要件を満たす必要があります<block ref="0a14e0fc52cf8d6c6274f9c6e777d67d" category="inline-link-rx"></block>。</block>
-  <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">Astra Control Center の概要は次のように機能します。</block>
-  <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">Astra Control Center をインストールします</block>
-  <block id="141fef2285846990a6e6c770d3b66fd7" category="list-text">Astra Control Center は、ローカル環境にインストールします。方法の詳細については、こちらをご覧ください<block ref="f475345d677789f4d639982aa82b248b" category="inline-link-rx"></block>。</block>
-  <block id="700b690f37b8bd2c5567e27f33a6ebc3" category="list-text">次のようなセットアップタスクを実行したとします。</block>
-  <block id="7201cacbec2885cd7fb3b75613cca8c9" category="list-text">ライセンスをセットアップする</block>
-  <block id="eb5c57b6e151d53821e4b23967e81377" category="list-text">最初のクラスタを追加します。</block>
-  <block id="c9907096d1eaf9ff75898674c5c5886c" category="list-text">クラスタを追加したときに検出されたバックエンドストレージを追加します。</block>
-  <block id="71aa2846410bae740856b6176a203f5f" category="list-text">アプリケーションバックアップを格納するオブジェクトストアバケットを追加します。</block>
-  <block id="41d8c63c7f85077d4a2d906119683f17" category="inline-link">Astra Control Center をセットアップします</block>
-  <block id="55c39076648efeeb2b28246823b491a3" category="paragraph">方法の詳細については、こちらをご覧ください<block ref="b22537ad7ca1637b212d8b0013023d5b" category="inline-link-rx"></block>。</block>
-  <block id="656961e00441efa04ed529308b30c882" category="paragraph">Astra Control Center は、次のことを行います。</block>
-  <block id="2d5c8076b3d85d3578def0c82397a6ae" category="list-text">管理対象の Kubernetes クラスタに関する詳細を検出します。</block>
-  <block id="85164cd7847493bf2fd072ffce98dcb6" category="list-text">管理対象として選択したクラスタで Trident 構成を検出し、ストレージバックエンドを監視できます。</block>
-  <block id="ddea1bc3a5a7c042e2e20073bf2da7ef" category="list-text">それらのクラスタ上のアプリケーションを検出し、アプリケーションを管理および保護できます。</block>
-  <block id="9a55692aae5c5e67eb30bd651d29bc66" category="paragraph">クラスタにアプリケーションを追加できます。また、管理対象のクラスタにすでにアプリケーションがある場合は、 Astra Control Center を使用して検出と管理を行うことができます。次に、 Astra Control Center を使用して、スナップショット、バックアップ、クローンを作成します。</block>
   <block id="620e99caf2b3d803b4dd22b70d895fde" category="summary">このドキュメントサイトの多くのページには、 Astra Control サービスを使用してタスクを完了する方法を説明するビデオが含まれています。ビデオに関心がある場合は、この 1 ページにあるすべてのビデオを収集することで簡単になりました（プレイリストのように）。</block>
   <block id="cec4f0bbb3f7119930f9ff4d721ad21a" category="doc">Astra Control サービスのビデオ</block>
   <block id="54c5307863ad46506a3935148faf8976" category="paragraph">このドキュメントサイトの多くのページには、 Astra Control サービスのタスクを完了する方法を説明するビデオが含まれています。ビデオに関心がある場合は、この 1 ページのすべてのビデオを収集することで、簡単に操作できます（プレイリストのように）。</block>
@@ -1231,27 +1129,6 @@
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">2 つのカスタムアプリケーションを作成した後、管理者はこれらのリソースを他の Astra Control アプリケーションとして扱うことができます。管理者は、 Kubernetes のラベルに基づいて、リソースグループごとにデータをクローニングし、バックアップと Snapshot を作成し、カスタムの保護ポリシーを作成できます。</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">アーキテクチャとコンポーネント</block>
-  <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control のアーキテクチャ図とコンポーネント</block>
-  <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control コンポーネント</block>
-  <block id="d8d99f445b448bac281380f1e36416a2" category="list-text">* Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra Control は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。</block>
-  <block id="be453b7bcaebebc76ccf72e6f5ef64c6" category="list-text">* Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールとして、 Docker と Kubernetes で管理されるコンテナ化されたアプリケーション用のストレージボリュームを作成できます。Trident を Astra Control とともに導入すると、設定済みの ONTAP ストレージバックエンドが含まれます。</block>
-  <block id="0c758b2fe414aac2d4d0c46296e6dd0e" category="paragraph">Astra Control Center は、 ONTAP AFF と FAS のストレージバックエンドを使用します。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。</block>
-  <block id="0d665a366eaf52c1c3fa1714cceb919b" category="list-text">* Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。</block>
-  <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control インターフェイス</block>
-  <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">さまざまなインターフェイスを使用してタスクを完了できます。</block>
-  <block id="00aa04dc89975c51656bb6d6838c2477" category="list-text">* ウェブユーザーインタフェース（ UI ） * ： Astra Control Service と Astra Control Center の両方が、同じ Web ベースの UI を使用して、アプリケーションの管理、移行、保護を行うことができます。UI を使用してユーザアカウントと設定を管理します。</block>
-  <block id="b54bf9cff477b330bbe4df9a4e028dd0" category="list-text">* API* ： Astra Control Service と Astra Control Center は、どちらも同じ Astra API を使用します。API を使用するタスクは、 UI を使用するタスクと同じです。</block>
-  <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="section-title">を参照してください。</block>
-  <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra Control Center のドキュメント</block>
-  <block id="ea643bf7aaf130341a17f697a7009368" category="list-text"><block ref="ea643bf7aaf130341a17f697a7009368" category="inline-link-rx"></block></block>
-  <block id="30f4d9ba43475ff8056fa1d73ffc972c" category="inline-link">Astra API を使用</block>
-  <block id="3d8f201e2aea311db7d1d35c86d726da" category="list-text"><block ref="3d8f201e2aea311db7d1d35c86d726da" category="inline-link-rx"></block></block>
-  <block id="40ef3fb23e015d9b4b46a16fa50f10d3" category="inline-link">Trident のドキュメント</block>
-  <block id="acb0eedb4568a08ecb52aa0c1bad5823" category="list-text"><block ref="acb0eedb4568a08ecb52aa0c1bad5823" category="inline-link-rx"></block></block>
-  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights のドキュメント</block>
-  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
-  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP のドキュメント</block>
-  <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="46c8ce0480dfb453a068efd5c148d585" category="summary">Astra Control Service は、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で Kubernetes クラスタのアプリケーション対応データ管理を提供する、ネットアップが管理するサービスです。オンプレミス環境で実行されている Kubernetes アプリケーションを管理する必要がある場合は、 Astra Control Center のドキュメントを参照してください。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service のマニュアル</block>
   <block id="ce8c3cae4f2c01197a36e6ffb040472a" category="summary">Astra Control には REST API が搭載されており、 Curl などのプログラミング言語やユーティリティを使用して Astra Control 機能に直接アクセスできます。また、 Ansible などの自動化テクノロジを使用して Astra Control 環境を管理することもできます。</block>
@@ -1310,11 +1187,6 @@
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">カスタムアプリケーションを定義する</block>
   <block id="f2d1d98a3481f0962642b8cbefa4b5c8" category="summary">Helm チャートから PostgreSQL を展開する方法を説明します。クラスタに PostgreSQL を導入した後、アプリケーションを Astra Control に登録できます。</block>
   <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">Helm チャートから PostgreSQL を導入します</block>
-  <block id="fd021c901c4984e4a4879c0cbe8e67d7" category="paragraph">Bitnami Helm チャートから PostgreSQL を導入する方法を説明します。クラスタに PostgreSQL を導入した後、アプリケーションを Astra Control に登録できます。</block>
-  <block id="60ac1e4f29cf6dea1fa68fb2c7b85119" category="paragraph">PostgreSQL は Astra 向けの検証済みアプリケーションです。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="e8565549b24f45f7b7a999f9a71bd282" category="section-title">PostgreSQL をインストール</block>
-  <block id="6331969d8c82d3693df5ee6e46258442" category="list-text">次のコマンドを使用して PostgreSQL を導入します。</block>
-  <block id="0a8c342a3be14e17eed2350af165e13a" category="list-text">ネームスペースに PostgreSQL を導入します。</block>
   <block id="e80a2d3ab10c12a099b79d17f9452092" category="paragraph">Astra Control は、クラスタで実行されているアプリケーションを検出すると、管理方法を選択するまで管理対象外になります。Astra Control のマネージドアプリケーションには、次のいずれかを使用できます。</block>
   <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">ネームスペース。ネームスペース内のすべてのリソースを含みます</block>
   <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">この概念図は、 Astra がネームスペース内のすべてのリソースを管理する仕組みを示しています。</block>
@@ -1365,17 +1237,18 @@
   <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">Configure Protection Policy ダイアログボックスのスクリーンショット。 Hourly 、 Daily 、 Weekly 、および Monthly スケジュールを有効にできます。</block>
   <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="757d7423da5a7de838fffd06a0944448" category="list-text">* ストレージバックエンド * ： Astra Control Service で使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> GKE クラスタおよびのバックエンドストレージとして<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> AKS クラスタのバックエンドストレージとして。</block>
   <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
-  <block id="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="paragraph"><block ref="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">Astra の通知</block>
   <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">Bitnami Helm チャートから MySQL を導入する方法を説明します。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
-  <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm チャート</block>
-  <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">から MySQL を導入する方法について説明します<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。</block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API ライセンス</block>
   <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="e8e0a6f955276be561895d1f7b9500be" category="paragraph"><block ref="e8e0a6f955276be561895d1f7b9500be" category="inline-link-macro-rx"></block></block>
   <block id="2c0f8c5a84761b79b6e1174632297f5c" category="paragraph"><block ref="2c0f8c5a84761b79b6e1174632297f5c" category="inline-link-macro-rx"></block></block>
+  <block id="a15f81bc6fc43123ae2b2fd94d3160ad" category="paragraph"><block ref="a15f81bc6fc43123ae2b2fd94d3160ad" category="inline-link-macro-rx"></block></block>
+  <block id="5526bb94851e769663b72deb3d57ba3c" category="paragraph"><block ref="5526bb94851e769663b72deb3d57ba3c" category="inline-link-macro-rx"></block></block>
+  <block id="71cdf80f0a6842021d0f5b6e4246a743" category="paragraph"><block ref="71cdf80f0a6842021d0f5b6e4246a743" category="inline-link-macro-rx"></block></block>
+  <block id="763c4b3703292a7be770180e0471a713" category="paragraph"><block ref="763c4b3703292a7be770180e0471a713" category="inline-link-macro-rx"></block></block>
+  <block id="8b018fbf1e19d6ad546cbbccef829ba8" category="paragraph"><block ref="8b018fbf1e19d6ad546cbbccef829ba8" category="inline-link-macro-rx"></block></block>
 </blocks>
