@@ -1251,4 +1251,5 @@
   <block id="82adec1884becbf1b5df647fed914628" category="section-title">Astra Trident はクラスタからアンインストールされません</block>
   <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">Astra Trident のドキュメントで次の手順を実行します</block>
   <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">Astra Control Service からクラスタの管理を解除しても、 Astra Trident はクラスタから自動的にアンインストールされません。Astra Trident をアンインストールするには、が必要です<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
+  <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control ブログ</block>
 </blocks>

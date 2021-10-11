@@ -75,6 +75,8 @@ homepage:
     links:
     - title: スラックチャンネル
       url: https://netapppub.slack.com/#astra
+    - title: Astra Control ブログ
+      url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control –ハイブリッドクラウド向けのアプリケーションデータ管理を簡易化
       url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
     - title: Cloud Central の Kubernetes Hub
