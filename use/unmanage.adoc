@@ -38,7 +38,7 @@ Astra Control がアプリケーションの管理を停止。
 管理する必要がなくなったコンピューティングリソースを Astra Control から管理しないようにします。ベストプラクティスとして、 GCP から削除する前に、 Astra Control からコンピューティングを削除することを推奨します。
 
 * この操作を実行すると、コンピューティングが Astra Control で管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。
-* Trident はクラスタからアンインストールされません。 https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident["Trident のアンインストール方法をご確認ください"^]。
+* Astra Trident はクラスタからアンインストールされません。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のアンインストール方法をご確認ください"^]。
 
 
 .手順

@@ -110,9 +110,9 @@ Astra Control からクラスタを削除しても、クラスタの構成（ア
 
 WARNING: GCP から削除する場合は、必ず事前に Astra Control からクラスタを削除してください。GCP からクラスターを削除しても、 Astra Control で管理されている間は、原因の問題が Astra Control アカウントで発生する可能性があります。
 
-* NetApp Trident は、 Astra Control からクラスタを削除したときにアンインストールされますか。 *
+* Astra Trident は、 Astra Control からクラスタを削除したときにアンインストールされますか。 *
 
-Trident は、 Astra Control から削除してもクラスタからアンインストールされません。
+Astra Trident は、 Astra Control から削除してもクラスタからアンインストールされません。
 
 
 
@@ -132,7 +132,7 @@ Astra Control はアプリケーションを導入しない。アプリケーシ
 
 * アプリケーションの PVC が GCP CVS にバインドされていません。何が間違っていますか？ *
 
-NetApp Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-meum 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
+Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-meum 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
 
 * kubectl get sc を実行し ' デフォルトのストレージ・クラスをチェックします
 * アプリケーションの導入に使用した YAML ファイルまたは Helm チャートをチェックし、別のストレージクラスが定義されているかどうかを確認します。
