@@ -23,7 +23,6 @@
   <block id="2433628c53fed80ea9d352a1bcd9ce45" category="paragraph">これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。</block>
   <block id="04696f5c6f9ab48b84d14152c7d2d9e0" category="section-title">Google Kubernetes Engine の Astra Control Service の要件を確認</block>
   <block id="276169ccd2a2393a29e9402ab483c9e7" category="inline-xref">このステップの詳細をご覧ください</block>
-  <block id="0c79d09bceb10e9b2943ba1111116f82" category="paragraph">クラスタが正常に動作していて、 1.17 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
   <block id="e1f8cf5619eaead1686587245bccae8d" category="section-title">Cloud Volumes Service for Google Cloud を購入</block>
   <block id="6bc831ad70814156fd6e24cc7c40c869" category="paragraph">Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動して、「購入」をクリックします。 <block ref="f209690edb14942c7909d656f7852191" category="inline-xref-macro-rx"></block>。</block>
   <block id="877504ffbacff5a936df5d8b9380d0d7" category="section-title">Google Cloud プロジェクトで API を有効にします</block>
@@ -58,9 +57,7 @@
   <block id="ff7c3dae8ad736b0186cac18877f5e34" category="section-title">GKE クラスタの要件</block>
   <block id="d771a3cd33e9fe1259f139de74469638" category="paragraph">Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。</block>
   <block id="80afba45eb055fc9bdc48c90d1debd06" category="list-text">Kubernetes のバージョン</block>
-  <block id="93532a2da808c477693ac39a99fa06f8" category="list-text">クラスタが 1.17 ~ 1.20 の Kubernetes バージョンを実行している必要があります。</block>
   <block id="2dd1148046499f9c2422ce1045a4accf" category="list-text">イメージタイプ</block>
-  <block id="26ae1a19394981413717b5ff64bd6b0b" category="list-text">各ワーカーノードのイメージタイプは、コンテナで最適化された OS または Ubuntu である必要があります。</block>
   <block id="cbdbd5c432bdb656f6cc6d947afee596" category="list-text">クラスタの状態</block>
   <block id="5546f6eb1d3ba8ca20733cab8923a4df" category="list-text">クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。</block>
   <block id="1e74109ffea9efee081364cbc0ee2939" category="list-text">Google Cloud リージョン</block>
@@ -1252,4 +1249,10 @@
   <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">Astra Trident のドキュメントで次の手順を実行します</block>
   <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">Astra Control Service からクラスタの管理を解除しても、 Astra Trident はクラスタから自動的にアンインストールされません。Astra Trident をアンインストールするには、が必要です<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
   <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control ブログ</block>
+  <block id="8e6a6a6c3648fa9123db975bf7474704" category="paragraph">クラスタが正常に動作していて、 1.18 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cbcf2fd02363fc4e7f9dfa1eff178d1e" category="list-text">クラスタが 1.18 ~ 1.20 の Kubernetes バージョンを実行している必要があります。</block>
+  <block id="32c25baf5ee1ef8c18e42fb93a5e8c1a" category="list-text">各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。</block>
+  <block id="19c1ea45cf0c0ac981fe5a335806b866" category="list-text">containderd を使用したコンテナ最適化 OS</block>
+  <block id="6cf81447b5980903240b63a4f939c8d2" category="list-text">Docker を使用したコンテナ最適化 OS</block>
+  <block id="a0af4cce8ef460df0e0ad48776e27496" category="list-text">Ubuntu と Docker の併用</block>
 </blocks>

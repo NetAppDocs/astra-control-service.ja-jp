@@ -23,7 +23,7 @@ Astra Control Service を使用して Google Kubernetes Engine クラスタを�
 ==== Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に動作していて、 1.17 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に動作していて、 1.18 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
@@ -94,8 +94,16 @@ image:diagram-google-cloud.png["この概念図は、 Google Cloud プロジェ�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタが 1.17 ~ 1.20 の Kubernetes バージョンを実行している必要があります。
-イメージタイプ:: 各ワーカーノードのイメージタイプは、コンテナで最適化された OS または Ubuntu である必要があります。
+Kubernetes のバージョン:: クラスタが 1.18 ~ 1.20 の Kubernetes バージョンを実行している必要があります。
+イメージタイプ::
++
+--
+* containderd を使用したコンテナ最適化 OS
+* Docker を使用したコンテナ最適化 OS
+* Ubuntu と Docker の併用
+
+
+--
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Google Cloud リージョン:: クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。
 ネットワーキング:: クラスタは、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内に存在する必要があります。 <<Set up network peering for your VPC,この手順については、以下で説明します>>。
