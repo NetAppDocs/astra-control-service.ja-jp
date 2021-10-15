@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: solutions/mysql-deploy-from-helm-chart.html 
+keywords: helm, mysql, helm chart, deploy mysql, astra, astra control, kubernetes 
+summary: Bitnami Helm チャートから MySQL を導入する方法を説明します。Kubernetes クラスタに MySQL を導入したら、 Astra Control を使用してアプリケーションを管理できます。 
+---
+= Helm チャートから MySQL を導入します
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-mysql-deploy-from-helm-chart.adoc[""]

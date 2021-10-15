@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: solutions/jenkins-deploy-from-helm-chart.html 
+keywords: helm, jenkins, deploy apps, deploy jenkins, bitnami, helm chart, astra, astra control, kubernetes 
+summary: Bitnami Helm チャートから Jenkins をデプロイする方法について説明します。クラスタに Jenkins を導入したら、アプリケーションを Astra Control に登録できます。 
+---
+= Helm チャートから Jenkins をデプロイします
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/solutions/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-jenkins-deploy-from-helm-chart.adoc[""]

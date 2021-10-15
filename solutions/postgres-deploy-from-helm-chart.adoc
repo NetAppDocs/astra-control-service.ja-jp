@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: solutions/postgres-deploy-from-helm-chart.html 
+keywords: deploy apps, deploy postgresql, helm chart, astra, astra control, kubernetes 
+summary: Helm チャートから PostgreSQL を展開する方法を説明します。クラスタに PostgreSQL を導入した後、アプリケーションを Astra Control に登録できます。 
+---
+= Helm チャートから PostgreSQL を導入します
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-postgres-deploy-from-helm-chart.adoc[""]

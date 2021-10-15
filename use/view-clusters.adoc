@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: use/view-clusters.html 
+keywords: view cluster, cluster storage, cluster overview 
+summary: Kubernetes コンピューティングを Astra Control に追加すると、コンピューティングの場所、ワーカーノード、永続ボリューム、ストレージクラスなどの詳細を表示できます。 
+---
+= コンピューティングの健常性と詳細を表示します
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Kubernetes コンピューティングを Astra Control に追加すると、コンピューティングの場所、ワーカーノード、永続ボリューム、ストレージクラスなどの詳細を表示できます。
+
+.手順
+. [ * 計算（ Compute ） ] をクリックする。
+. 計算名をクリックします。
+. [Overview （概要） ] タブと [Storage （ストレージ） ] タブで情報を確認し、必要な情報を見つけます。
++
+** * 概要 * ：状態を含むワーカーノードの詳細。
+** * ストレージ * ：ストレージクラスと状態を含む、コンピューティングに関連付けられた永続的ボリューム。
+** * アクティビティ * ：コンピューティングに関連する Astra のアクティビティ。
++
+image:screenshot-cluster-overview.gif["コンピューティングの Overview （概要）タブのスクリーンショット。"]
+
+
+
+

@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: learn/choose-class-and-size.html 
+keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
+summary: Astra Control Service は、永続的ボリューム用のバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
+---
+= GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+Astra Control Service は、永続的ボリューム用のバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+
+
+
+== 概要
+
+Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。
+
+Kubernetes クラスタを特定のリージョンに配置する必要がある場合は、そのリージョンでサポートされているサービスタイプを使用します。
+
+ただし、 Google Cloud リージョンを柔軟に選択できる場合は、パフォーマンス要件に基づいて次のことをお勧めします。
+
+* 中 ~ 高パフォーマンスのストレージニーズを持つ Kubernetes アプリケーションについては、 CVS パフォーマンスをサポートする Google Cloud リージョンを選択し、 Premium または Extreme ストレージクラスを使用してください。こうしたワークロードには、 AI / ML パイプライン、 CI / CD パイプライン、メディア処理、リレーショナル、 NoSQL 、タイムシリーズなどのデータベースなどがあります
+* 中程度のストレージパフォーマンスのニーズ（ Web アプリケーション、汎用ファイルストレージなど）がある Kubernetes アプリケーションの場合は、 CVS または CVS パフォーマンスをサポートする Google Cloud リージョンを Standard ストレージクラスで選択します。
+
+
+次の表に、このページに記載されている情報を簡単に比較します。
+
+[cols="5*"]
+|===
+| サービスタイプ | ユースケース | サポートされている地域 | ストレージクラス | 最小ボリュームサイズ 
+
+
+| CVS - パフォーマンス | ストレージパフォーマンスのニーズが中程度から高レベルのアプリケーション | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["サポートされている Google Cloud リージョンを表示します。"^]  a| 
+* NetApp-cvs-standard
+* NetApp-cvs-premium が提供します
+* 最高のパフォーマンスを発揮するネットアップの cvs-extreme
+
+| 100GiB 
+
+
+| CVS | ストレージパフォーマンスの要件が中程度よりも低いアプリケーション | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["サポートされている Google Cloud リージョンを表示します。"^] | NetApp-cvs-standard | 300 GiB 
+|===
+
+
+== CVS - パフォーマンスサービスのタイプ
+
+ストレージクラスを選択して永続ボリュームを作成する前に、 CVS - パフォーマンスサービスのタイプに関する詳細を確認してください。
+
+
+
+=== ストレージクラス
+
+CVS - パフォーマンスサービスタイプでは、 Standard 、 Premium 、 Extreme の 3 つのサービスレベルがサポートされます。コンピューティングを Astra Control Service に追加する際、永続的ボリュームのデフォルトのストレージクラスとして Standard 、 Premium 、または Extreme のいずれかを選択するように求められます。これらの各サービスレベルは、容量や帯域幅のさまざまなニーズに対応するように設計されています。
+
+ストレージクラスの名前は、 _NetApp-cvs-standard_ 、 _NetApp-cvs-premiume_、 および _NetApp-cvs-mextreme _ です。
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["これらのサービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
+
+
+
+=== 永続的なボリュームのサイズとパフォーマンス
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["Google Cloud のドキュメントで説明されているようになります"^]では、各サービスレベルで許可される帯域幅は、プロビジョニングされた容量の GiB 単位です。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。
+
+上記のリンク先の Google Cloud ページを必ずお読みください。また、コストの比較や、パフォーマンス目標を達成するためにサービスレベルとボリュームサイズをどのように組み合わせたらよいかを理解するのに役立つ例も記載されています。
+
+
+
+=== 最小ボリュームサイズ
+
+Astra Control Service では、 PVC でボリュームサイズの縮小が要求されても、 CVS - パフォーマンスサービスタイプで 100GiB 以上のボリュームサイズを使用して永続的ボリュームをプロビジョニングします。たとえば、 Helm チャートの PVC で 6GiB が要求された場合、 Astra Control Service は 100GiB のボリュームを自動的にプロビジョニングします。
+
+
+
+== CVS サービスタイプ
+
+ストレージクラスを選択して永続ボリュームを作成する前に、 CVS サービスのタイプに関する詳細を確認してください。
+
+
+
+=== ストレージクラス
+
+CVS サービスタイプでは、 1 つのサービスレベルがサポートされます。 Standard です。CVS サービスタイプがサポートされているリージョンでクラスタを管理する場合、 Astra Control Service は永続ボリュームのデフォルトのストレージクラスとして Standard サービスレベルを使用します。ストレージクラスの名前は _NetApp-cvs-standard_ です。
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels["Standard サービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
+
+
+
+=== 永続的なボリュームのサイズとパフォーマンス
+
+CVS サービスタイプで許可される帯域幅は、プロビジョニングされた容量の GiB あたりの帯域幅です。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。
+
+
+
+=== 最小ボリュームサイズ
+
+Astra Control Service では、 CVS サービスタイプで 300GiB 以上のボリュームサイズを使用して永続的ボリュームがプロビジョニングされます。これは、 PVC でボリュームサイズが縮小されている場合でも同様です。たとえば、 20GiB が要求されると、 Astra Control Service によって自動的に 300GiB のボリュームがプロビジョニングされます。
+
+このような制限のため、 PVC が 700~999 GiB のボリュームを要求すると、 Astra Control Service によってボリュームサイズが 1000 GiB に自動的にプロビジョニングされます。
