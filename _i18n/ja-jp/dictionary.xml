@@ -179,7 +179,6 @@
   <block id="790648d3b85d3e92fa5b4e577275ef70" category="paragraph">Astra Control を使用すると、アカウント内からアプリケーションを管理できます。アカウントには、アカウント内のアプリを表示および管理できるユーザーと、課金情報が含まれます。</block>
   <block id="c3d2edad004e97ae3aa8859394dc7966" category="inline-link">Cloud Central の Astra Control ページにアクセスします</block>
   <block id="3889784207ede468b81664012c11b61c" category="list-text"><block ref="1b7eb0b86e80375179438e28519fc192" category="inline-link-rx"></block>。</block>
-  <block id="89462d00f4070b6cc36c341f6e8cee3d" category="list-text">[ 無料プランへのサインアップ ] をクリックします。 *</block>
   <block id="5f2575e876c38f49aa892ec0aabae362" category="list-text">必要な情報をフォームに入力します。</block>
   <block id="9af90bb703b753ebc52e31ad01e6d842" category="paragraph">フォームに入力する際に注意すべき重要事項は次のとおりです。</block>
   <block id="b7324677f7d831f32c546a0047ebbc04" category="list-text">グローバル貿易コンプライアンスの要件を満たすことが確認されるため、お客様の事業名と住所は正確である必要があります。</block>
@@ -1255,4 +1254,5 @@
   <block id="515ddaf1bc34159a3a7827d17c7aa5db" category="sidebar">検証済みのアプリケーションと標準のアプリケーションの比較</block>
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">カスタムアプリケーションを定義する</block>
   <block id="decffb9e7c279510849a3e5513787dad" category="list-text">Containerd を使用したコンテナ最適化 OS です</block>
+  <block id="367dcd19960f9ba12d3b3fe1c84d0e33" category="list-text">[Get Started with Astra Control] をクリックします。</block>
 </blocks>

@@ -49,7 +49,7 @@ Astra Control を使用すると、アカウント内からアプリケーショ
 
 .手順
 . https://cloud.netapp.com/astra["Cloud Central の Astra Control ページにアクセスします"^]。
-. [ 無料プランへのサインアップ ] をクリックします。 *
+. [Get Started with Astra Control] をクリックします。
 . 必要な情報をフォームに入力します。
 +
 フォームに入力する際に注意すべき重要事項は次のとおりです。
