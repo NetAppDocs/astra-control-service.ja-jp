@@ -1,4 +1,12 @@
 ---
+settings:
+  name: Astra Control Service
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: true
+    langs: ja-jp,us-en,zh-cn
 sidebar:
   entries:
   - title: Astra Control Service のドキュメント
