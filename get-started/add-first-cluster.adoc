@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: get-started/add-first-cluster.html 
-keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add compute 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
 summary: 環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。 
 ---
-= Astra Control Service から Kubernetes コンピューティングの管理を開始
+= Astra Control Service から Kubernetes クラスタの管理を開始します
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
@@ -21,9 +21,9 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 
 
-== Kubernetes コンピューティングの管理を開始します
+== Kubernetes クラスタの管理を開始します
 
-Astra Control Service にログインしたら、まずコンピューティングの管理を開始します。
+Astra Control Service にログインしたら、最初にクラスタの管理を開始します。
 
 .必要なもの
 * GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
@@ -34,9 +34,9 @@ JSON ファイルに追加していない場合は、 Azure サブスクリプ�
 
 
 .手順
-. ダッシュボードで、 * Kubernetes コンピューティングの管理 * をクリックします。
+. ダッシュボードで、 * Kubernetes クラスタの管理 * をクリックします。
 +
-プロンプトに従ってコンピューティングを追加します。
+プロンプトに従ってクラスタを追加します。
 
 . * プロバイダ * ：クラウドプロバイダを選択し、必要なクレデンシャルを入力します。
 +
@@ -46,15 +46,15 @@ JSON ファイルに、サービスプリンシパルの作成時に Azure CLI �
 
 .. * Google Cloud Platform * ：ファイルをアップロードするか、クリップボードからコンテンツを貼り付けて、サービスアカウントのキーファイルを提供します。
 +
-Astra Control Service は、サービスアカウントを使用して、 Google Kubernetes Engine で実行されているコンピューティングを検出します。
+Astra Control Service は、サービスアカウントを使用して、 Google Kubernetes Engine で実行されているクラスタを検出します。
 
 
 
-. * コンピューティング * ：追加するコンピューティングを選択します。
+. * クラスタ * ：追加するクラスタを選択します。
 +
-[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、コンピューティングを搭載した問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
-. * ストレージ * ：このコンピューティングに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
+. * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
 各ストレージクラスが使用します https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^] または。
 
@@ -63,7 +63,7 @@ Astra Control Service は、サービスアカウントを使用して、 Google
 ** link:../learn/azure-storage.html["AKS クラスタのストレージクラスについて学習します"]。
 
 
-. * レビューと承認 * ：構成の詳細を確認し、 * 計算の追加 * をクリックします。
+. * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * をクリックします。
 +
 image:screenshot-compute-approve.gif["[ レビューと承認 ] ページを示すスクリーンショット。管理対象アプリケーションで選択した構成の概要が表示されます。"]
 

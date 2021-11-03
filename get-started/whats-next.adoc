@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/whats-next.html 
 keywords: get started, manage apps, manage account 
-summary: ログインして Astra Control にコンピューティングを追加したら、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。 
+summary: ここまでは、 Astra Control にログインしてクラスタを追加したので、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。 
 ---
 = 次の内容
 :hardbreaks:
@@ -11,7 +11,7 @@ summary: ログインして Astra Control にコンピューティングを追�
 
 
 [role="lead"]
-ログインして Astra Control にコンピューティングを追加したら、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。
+ログインして Astra Control にクラスタを追加したので、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。
 
 * link:../use/manage-apps.html["アプリの管理を開始します"]
 * link:../use/protect-apps.html["アプリを保護します"]

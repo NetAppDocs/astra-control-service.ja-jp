@@ -26,7 +26,7 @@ Premium Storage の場合:: 1TiB あたり最大 64 MiB/ 秒のスループッ�
 
 これらのサービスレベルは容量プールの属性です。Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。 link:../get-started/set-up-microsoft-azure.html["容量プールの設定方法について説明します"]。
 
-Astra Control Service は、永続ボリュームのストレージクラスとしてこれらのサービスレベルを使用します。Kubernetes コンピューティングを Astra Control Service に追加する際、デフォルトのストレージクラスとして Ultra 、 Premium 、または Standard のいずれかを選択するように求められます。ストレージクラスの名前は、 _NetApp-anf-perf-ultra 、 _NetApp-anf-pPremium_ 、および _NetApp-anf-pperf-standard_ です。
+Astra Control Service は、永続ボリュームのストレージクラスとしてこれらのサービスレベルを使用します。Kubernetes クラスタを Astra Control Service に追加する場合、デフォルトのストレージクラスとして Ultra 、 Premium 、または Standard のいずれかを選択するように求められます。ストレージクラスの名前は、 _NetApp-anf-perf-ultra 、 _NetApp-anf-pPremium_ 、および _NetApp-anf-pperf-standard_ です。
 
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["これらのサービスレベルの詳細については、 Azure NetApp Files のドキュメントを参照してください"^]。
 

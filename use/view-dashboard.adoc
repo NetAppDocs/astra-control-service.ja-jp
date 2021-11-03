@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: use/view-dashboard.html 
 keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps 
-summary: ダッシュボードをクリックすると、アプリケーション、コンピューティング、健全性の概要が表示されます。 
+summary: ダッシュボードをクリックすると、アプリケーション、クラスタ、およびそれらの健全性の概要が表示されます。 
 ---
-= アプリとコンピューティングの健全性の概要を表示します
+= アプリケーションとクラスタの健常性の概要を表示します
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
 
 [role="lead"]
-ダッシュボード * をクリックすると、アプリ、コンピューティング、健全性の概要が表示されます。
+ダッシュボード * をクリックすると、アプリ、クラスター、ヘルスの概要が表示されます。
 
 image:screenshot-dashboard.gif["Astra ダッシュボードのスクリーンショット。リソースの概要と、利用を開始するためのリンクが表示されます。"]
 
@@ -30,4 +30,4 @@ image:screenshot-dashboard.gif["Astra ダッシュボードのスクリーンシ
 
 image:screenshot-dashboard-unprotected.gif["完全に保護されていないアプリケーションの数にカーソルを合わせると表示されるツールチップを示すスクリーンショット。ツールチップには、アプリの名前と、アプリが完全に保護されていない理由が表示されます。"]
 
-コンピューティングタイルには、コンピューティングの健常性に関する同様の詳細が表示され、アプリと同様に詳細を確認できます。
+クラスタタイルには、クラスタの健常性に関する同様の詳細が表示され、アプリケーションと同様に詳細を確認できます。

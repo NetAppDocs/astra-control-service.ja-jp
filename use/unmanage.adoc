@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: use/unmanage.html 
 keywords: unmanage app, remove app, stop managing app, stop managing clusters, unmanage cluster, remove cluster 
-summary: 管理する必要がなくなったアプリケーションやコンピューティングを Astra Control から削除 
+summary: 管理する必要がなくなったアプリケーションやクラスタを Astra Control から削除 
 ---
-= アプリケーションとコンピューティングの管理を解除
+= アプリケーションとクラスタの管理を解除します
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
 
 
-管理する必要がなくなったアプリケーションやコンピューティングを Astra Control から削除
+管理する必要がなくなったアプリケーションやクラスタを Astra Control から削除
 
 
 
@@ -33,22 +33,22 @@ Astra Control がアプリケーションの管理を停止。
 
 
 
-== コンピューティングの管理を停止します
+== クラスタの管理を停止します
 
-管理する必要がなくなったコンピューティングリソースを Astra Control から管理しないようにします。ベストプラクティスとして、 GCP から削除する前に、 Astra Control からコンピューティングを削除することを推奨します。
+管理する必要がなくなったクラスタを Astra Control から管理しないようにします。ベストプラクティスとして、 GCP からクラスタを削除する前に、 Astra Control からクラスタを削除することを推奨します。
 
-* この操作を実行すると、コンピューティングが Astra Control で管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。
+* この操作を実行すると、 Astra Control でクラスタが管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。
 * Astra Trident はクラスタからアンインストールされません。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のアンインストール方法をご確認ください"^]。
 
 
 .手順
-. [ * 計算（ Compute ） ] をクリックする。
-. 管理する必要がなくなったコンピューティングのチェックボックスをオンにします。
-. [ アクション * （ Actions * ） ] ドロップダウンをクリックし、 [ 計算の管理解除（ Unmanage compute/s ） ] を選択します。 *
-. コンピューティングの管理を解除することを確認し、 [ はい、コンピューティングの管理を解除 * ] をクリックします。
+. [ * クラスタ * ] をクリックします。
+. 管理する必要がなくなったクラスタのチェックボックスをクリックします。
+. [* アクション * （ Actions * ） ] ドロップダウンをクリックし、 [ * 管理解除 * （ Unmanage * ） ] を選択する。
+. クラスタの管理を解除することを確認し、 * はい、クラスタの管理を解除 * をクリックします。
 
 
-Astra Control がコンピューティングの管理を停止。
+Astra Control がクラスタの管理を停止。
 
 
 

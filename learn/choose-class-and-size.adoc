@@ -54,7 +54,7 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 
 === ストレージクラス
 
-CVS - パフォーマンスサービスタイプでは、 Standard 、 Premium 、 Extreme の 3 つのサービスレベルがサポートされます。コンピューティングを Astra Control Service に追加する際、永続的ボリュームのデフォルトのストレージクラスとして Standard 、 Premium 、または Extreme のいずれかを選択するように求められます。これらの各サービスレベルは、容量や帯域幅のさまざまなニーズに対応するように設計されています。
+CVS - パフォーマンスサービスタイプでは、 Standard 、 Premium 、 Extreme の 3 つのサービスレベルがサポートされます。Astra Control Service にクラスタを追加する場合、永続ボリュームのデフォルトのストレージクラスとして Standard 、 Premium 、または Extreme のいずれかを選択するように求められます。これらの各サービスレベルは、容量や帯域幅のさまざまなニーズに対応するように設計されています。
 
 ストレージクラスの名前は、 _NetApp-cvs-standard_ 、 _NetApp-cvs-premiume_、 および _NetApp-cvs-mextreme _ です。
 

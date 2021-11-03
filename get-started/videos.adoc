@@ -47,9 +47,9 @@ video::get-started/video-create-gcp-service-account-key.mp4[width=848,height=480
 
 
 
-=== Astra Control からコンピューティングを管理
+=== Astra Control からクラスタを管理
 
-Astra Control サービスにログインしたら、まず Kubernetes コンピューティングを追加します。 link:add-first-cluster.html["コンピューティングの管理に関する詳細は、こちらをご覧ください"]。
+Astra Control サービスにログインしたら、まず Kubernetes コンピューティングを追加します。 link:add-first-cluster.html["クラスタの管理に関する詳細情報"]。
 
 video::get-started/video-manage-cluster.mp4[width=848,height=480]
 

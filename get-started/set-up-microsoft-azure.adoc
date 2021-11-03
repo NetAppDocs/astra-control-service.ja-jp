@@ -30,7 +30,7 @@ Microsoft Azure サブスクリプションを準備してから、 Astra Contro
 ==== Azure NetApp Files に登録します
 
 [role="quick-margin-para"]
-Azure NetApp Files サービスへのアクセスを申請し、ネットアップリソースプロバイダを登録 <<Register for Azure NetApp Files,このステップの詳細をご覧ください>>。
+ネットアップリソースプロバイダを登録 <<Register for Azure NetApp Files,このステップの詳細をご覧ください>>。
 
 
 
@@ -144,19 +144,21 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Azure NetApp Files に登録します
 
-waitlist リクエストを送信して、 Azure NetApp Files へのアクセス権を取得します。承認が終わったら、ネットアップリソースプロバイダを登録する必要があります。
+Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft Azure にサインアップします。次に、ネットアップリソースプロバイダを登録して Azure NetApp Files にアクセスします。
 
 .手順
-. https://aka.ms/azurenetappfiles["Azure NetApp Files にアクセスするために waitlist リクエストを提出します"^]。
-. Azure NetApp Files チームから確認の E メールが届きます。
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider["Azure NetApp Files のドキュメントに従って、ネットアップリソースプロバイダを登録してください"^]。
+. Microsoft Azure アカウントをすでにお持ちの場合は、手順 4 に進みます。
+. にアクセスします https://azure.microsoft.com/en-us/free/["Azure サブスクリプションページ"^] をクリックして Azure サービスに登録してください。
+. プランを選択し、指示に従ってサブスクリプションを完了します。
+. Azure ポータルにログインします。
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register["Azure NetApp Files のドキュメントに従って、ネットアップリソースプロバイダを登録してください"^]。
 
 
 
 
 == ネットアップアカウントを作成します
 
-アクセスを許可したら、 Azure NetApp Files でネットアップアカウントを作成します。
+登録が完了したら、 Azure NetApp Files でネットアップアカウントを作成します。
 
 .ステップ
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["Azure NetApp Files のドキュメントに従って、 Azure ポータルからネットアップアカウントを作成します"^]。
@@ -200,7 +202,7 @@ link:../learn/azure-storage.html["Azure NetApp Files のサービスレベルの
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Azure NetApp Files のドキュメントに従って、サブネットを Azure NetApp Files に委譲します"^]。
 
 
-10 分ほど待ってから、委任されたサブネットで実行されているコンピューティングを検出します。
+10 分ほど待ってから、委任されたサブネットで実行されているクラスタを検出します。
 
 
 

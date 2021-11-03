@@ -56,10 +56,10 @@ link:register.html["登録プロセスの詳細については、こちらをご
 
 
 
-==== Astra Control にコンピューティングを追加
+==== Astra Control にクラスタを追加
 
 [role="quick-margin-para"]
-ログインしたら、 * コンピューティングの追加 * をクリックして、 Astra Control を使用したコンピューティングの管理を開始します。
+ログインしたら、 * Add cluster * をクリックして、 Astra Control を使用したクラスタの管理を開始します。
 
 [role="quick-margin-para"]
-link:add-first-cluster.html["コンピューティングノードの追加に関する詳細はこちらをご覧ください"]。
+link:add-first-cluster.html["クラスタの追加に関する詳細情報"]。

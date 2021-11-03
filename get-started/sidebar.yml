@@ -16,7 +16,7 @@ entries:
     url: "/get-started/set-up-microsoft-azure.html"
 - title: アカウントに登録します
   url: "/get-started/register.html"
-- title: コンピューティングの管理
+- title: クラスタを管理します
   url: "/get-started/add-first-cluster.html"
 - title: 次の手順
   url: "/get-started/whats-next.html"

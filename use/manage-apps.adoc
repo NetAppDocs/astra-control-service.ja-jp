@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-apps.html 
 keywords: manage app, discover app, ignore app 
-summary: 'Kubernetes コンピューティングを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。' 
+summary: 'Kubernetes クラスタを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。' 
 ---
 = アプリの管理を開始します
 :hardbreaks:
@@ -10,13 +10,13 @@ summary: 'Kubernetes コンピューティングを Astra Control に追加し�
 :imagesdir: ../media/use/
 
 
-お先にどうぞ link:../get-started/add-first-cluster.html["Kubernetes コンピューティングを Astra Control に追加"]では、クラスターにアプリケーションをインストールし（ Astra Control の外部）、 Astra Control の [ アプリ ] ページに移動して、アプリの管理を開始できます。
+お先にどうぞ link:../get-started/add-first-cluster.html["Kubernetes クラスタを Astra Control に追加"]では、クラスターにアプリケーションをインストールし（ Astra Control の外部）、 Astra Control の [ アプリ ] ページに移動して、アプリの管理を開始できます。
 
 
 
 == クラスタにアプリをインストールします
 
-コンピューティングを Astra Control に追加したら、クラスタにアプリケーションをインストールできます。新しいストレージクラスでは、永続ボリュームはデフォルトでプロビジョニングされます。ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。
+Astra Control にクラスタを追加したので、クラスタにアプリケーションをインストールできます。新しいストレージクラスでは、永続ボリュームはデフォルトでプロビジョニングされます。ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。
 
 Astra Control は、 Astra Control によってインストールされたストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。
 
@@ -106,7 +106,7 @@ Astra Control の [ アプリ ] ページの上部には、「 * カスタムア
 . [ カスタムアプリケーションの定義 * （ Define Custom Application * ） ] ダイアログボックスで、アプリケーションを管理するために必要な情報を入力します。
 +
 .. * 新しいアプリ * ：アプリの表示名を入力します。
-.. * コンピューティング * ：アプリケーションが配置されているコンピューティングを選択します。
+.. * クラスタ * ：アプリケーションが存在するクラスタを選択します。
 .. * 名前空間： * アプリケーションの名前空間を選択します。
 .. * ラベル： * ラベルを入力するか、以下のリソースからラベルを選択してください。
 .. * 選択したリソース * ：保護する Kubernetes リソース（ポッド、シークレット、永続ボリュームなど）を表示および管理します。
@@ -147,6 +147,6 @@ Astra Control を使用すると、アプリケーションを管理できます
 
 Astra Control は、 Kubernetes クラスタで実行されているシステムアプリケーションも検出します。[ アプリケーション（ Apps ） ] リストをフィルタリングすることで、これらを表示できます。
 
-image:screenshot-system-apps.gif["アプリ画面ですべてのコンピューティングをクリックしたときに使用できるシステムアプリを表示オプションを示すスクリーンショット。"]
+image:screenshot-system-apps.gif["アプリ画面ですべてのクラスタをクリックしたときに使用できるシステムアプリを表示オプションを示すスクリーンショット。"]
 
 これらのシステムアプリは、バックアップが必要になることが稀であるため、デフォルトでは表示されません。
