@@ -17,7 +17,7 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 == Kubernetes クラスタを作成
 
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"] または 。
+まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]、 または  。
 
 
 
@@ -27,7 +27,7 @@ Astra Control Service にログインしたら、最初にクラスタの管理�
 
 .必要なもの
 * GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
-* AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2["サービスプリンシパルの設定方法について説明します"]。
+* AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["サービスプリンシパルの設定方法について説明します"]。
 +
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
 
@@ -54,22 +54,27 @@ Astra Control Service は、サービスアカウントを使用して、 Google
 +
 [Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
++
+Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
-各ストレージクラスが使用します https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^] または。
+価格、パフォーマンス、耐障害性に関する情報は、 Cloud Volumes Service for Google Cloud サービスごとにリストに表示されます。パフォーマンスと耐障害性の情報は、 Azure NetApp Files サービスごとに表示されます。Google Persistent Disk や Azure Managed Disk など、ネットアップ以外のストレージクラスについては、コスト、パフォーマンス、耐障害性に関する情報は提供されません。
 
 +
-** link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラスについて説明します"]。
-** link:../learn/azure-storage.html["AKS クラスタのストレージクラスについて学習します"]。
+ストレージクラスごとに、次のいずれかのサービスを利用できます。
+
++
+** https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^]
+** https://cloud.google.com/persistent-disk/["Google Persistent Disk のことです"^]
+** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
+** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
++
+の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"] および 。
+
 
 
 . * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * をクリックします。
-+
-image:screenshot-compute-approve.gif["[ レビューと承認 ] ページを示すスクリーンショット。管理対象アプリケーションで選択した構成の概要が表示されます。"]
 
 
-
-次のビデオでは、 GKE クラスタでの各手順を示しています。
-
-video::video-manage-cluster.mp4[width=848,height=480]
-Astra Control Service を使用すると、アプリケーションのバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。
+Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。

@@ -12,8 +12,10 @@ entries:
   entries:
   - title: Google Cloud をセットアップします
     url: "/get-started/set-up-google-cloud.html"
-  - title: Microsoft Azure をセットアップする
-    url: "/get-started/set-up-microsoft-azure.html"
+  - title: Azure NetApp Files を使用して Microsoft Azure をセットアップする
+    url: "/get-started/set-up-microsoft-azure-with-anf.html"
+  - title: Azure で管理されているディスクを使用して Microsoft Azure をセットアップする
+    url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: アカウントに登録します
   url: "/get-started/register.html"
 - title: クラスタを管理します

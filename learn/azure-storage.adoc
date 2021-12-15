@@ -11,11 +11,17 @@ summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラ
 
 
 [role="lead"]
-Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして Azure NetApp Files を使用します。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして、 Azure NetApp Files または Azure で管理されるディスクをサポートしています。
 
 
 
-== サービスレベルとストレージクラス
+== Azure NetApp Files の特長
+
+Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+
+
+
+=== サービスレベルとストレージクラス
 
 Azure NetApp Files は、 Ultra ストレージ、 Premium ストレージ、 Standard ストレージの 3 つのサービスレベルをサポートします。これらのサービスレベルは、それぞれパフォーマンスのニーズに応じて次のように設計されています。
 
@@ -24,7 +30,7 @@ Premium Storage の場合:: 1TiB あたり最大 64 MiB/ 秒のスループッ�
 標準的なストレージ:: 1TiB あたり最大 16 MiB/ 秒のスループットを提供します。
 
 
-これらのサービスレベルは容量プールの属性です。Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。 link:../get-started/set-up-microsoft-azure.html["容量プールの設定方法について説明します"]。
+これらのサービスレベルは容量プールの属性です。Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。 link:../get-started/set-up-microsoft-azure-with-anf.html["容量プールの設定方法について説明します"]。
 
 Astra Control Service は、永続ボリュームのストレージクラスとしてこれらのサービスレベルを使用します。Kubernetes クラスタを Astra Control Service に追加する場合、デフォルトのストレージクラスとして Ultra 、 Premium 、または Standard のいずれかを選択するように求められます。ストレージクラスの名前は、 _NetApp-anf-perf-ultra 、 _NetApp-anf-pPremium_ 、および _NetApp-anf-pperf-standard_ です。
 
@@ -32,12 +38,20 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
-== 永続的なボリュームのサイズとパフォーマンス
+=== 永続的なボリュームのサイズとパフォーマンス
 
 前述したように、各サービスレベルのスループットは、プロビジョニング済み容量の 1TiB あたりのスループットです。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。したがって、ボリュームのプロビジョニング時には、容量とパフォーマンスの両方のニーズを考慮する必要があります。
 
 
 
-== 最小ボリュームサイズ
+=== 最小ボリュームサイズ
 
 Astra Control Service は、 PVC でボリュームサイズの縮小が要求されても、 100GiB 以上の最小ボリュームサイズを使用して永続的ボリュームをプロビジョニングします。たとえば、 Helm チャートの PVC で 6GiB が要求された場合、 Astra Control Service は 100GiB のボリュームを自動的にプロビジョニングします。
+
+
+
+== Azure で管理されるディスク
+
+Astra Control Service は、 Azure で管理されるディスクをバックエンドストレージオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスクに関する詳細はこちらをご覧ください"^]。

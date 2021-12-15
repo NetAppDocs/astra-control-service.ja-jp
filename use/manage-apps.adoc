@@ -14,6 +14,69 @@ summary: 'Kubernetes クラスタを Astra Control に追加したら、その�
 
 
 
+== アプリケーション管理の要件
+
+Astra Control アプリケーションの管理に関する次の要件を考慮してください。
+
+* * ライセンス * ： Astra Control Center を使用してアプリケーションを管理するには、 Astra Control Center ライセンスが必要です。
+* * 名前空間 * ： Astra Control では、アプリケーションが複数の名前空間にまたがることはありませんが、名前空間には複数のアプリケーションを含めることができます。
+* * StorageClass* ： StorageClass が明示的に設定されたアプリケーションをインストールし、そのアプリケーションをクローニングする必要がある場合、クローン処理のターゲットクラスタに最初に指定された StorageClass が必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。
+* * Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。
++
+** クラスタロール
+** ClusterRoleBinding
+** ConfigMap
+** CustomResourceDefinition の場合
+** CustomResource の場合
+** デモンセット（ DemonSet ）
+** 導入
+** DeploymentConfig
+** 入力
+** MutingWebhook
+** PersistentVolumeClaim のように表示され
+** ポッド
+** ReplicaSet
+** RoleBinding です
+** ロール
+** ルート
+** 秘密
+** サービス
+** サービスアカウント
+** Stateful役立つ セット
+** 検証 Webhook
+
+
+
+
+
+
+=== サポートされているアプリインストール方法
+
+次の方法を使用して、 Astra Control で管理するアプリケーションをインストールできます。
+
+* * マニフェストファイル * ： Astra Control は、 kubectl を使用してマニフェストファイルからインストールされたアプリケーションをサポートします。例：
++
+[listing]
+----
+kubectl apply -f myapp.yaml
+----
+* * Helm 3 * ： Helm を使用してアプリケーションをインストールする場合、 Astra Control には Helm バージョン 3 が必要です。Helm 3 （または Helm 2 から Helm 3 にアップグレード）を使用してインストールされたアプリケーションの管理とクローニングが完全にサポートされています。Helm 2 でインストールされたアプリケーションの管理はサポートされていません。
+* * オペレータが導入したアプリケーション * ： Astra Control は、名前空間を対象とした演算子を使用してインストールされたアプリケーションをサポートします。これらの演算子は、一般に「パスバイリファレンス」アーキテクチャではなく「パスバイ値」で設計されています。これらのパターンに続くいくつかのオペレータアプリを次に示します。
++
+** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+** https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB クラスタ"^]
+
+
+
+
+Astra Control では、「パスバイリファレンス」アーキテクチャ（ CockroachDB オペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。
+
+
+NOTE: インストールする演算子とアプリケーションは、同じ名前空間を使用する必要があります。このような名前空間を使用するには、演算子の deployment.yaml ファイルを変更する必要があります。
+
+
+
 == クラスタにアプリをインストールします
 
 Astra Control にクラスタを追加したので、クラスタにアプリケーションをインストールできます。新しいストレージクラスでは、永続ボリュームはデフォルトでプロビジョニングされます。ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。
@@ -65,7 +128,7 @@ image:diagram-managed-app3.png["Kubernetes ラベルを基にカスタムアプ�
 Astra Control を使用すると、階層の両方のレベル（名前空間とその名前空間内のアプリケーション）を個別に管理できますが、いずれか一方を選択することをお勧めします。Astra Control で実行したアクションは、ネームスペースレベルとアプリケーションレベルの両方で同時に実行される場合、失敗する可能性があります。
 
 .手順
-. [* Apps * （アプリ） ] をクリックし、 [* Discovered * （検出されました
+. [* アプリケーション ] をクリックし、 [* 検出されました * ] をクリックします。
 +
 image:screenshot-app-discovery.gif["[ アプリケーション（ Apps ） ] ページのスクリーンショット。 [ 検出（ Discovered ） ] タブが表示されます。"]
 
@@ -102,7 +165,7 @@ image:screenshot-app-manage-and-ignore.gif["[ アプリ ] ページの展開さ�
 Astra Control の [ アプリ ] ページの上部には、「 * カスタムアプリの定義 * 」という名前のアクションが含まれています。このアクションを使用して、 Kubernetes ラベルで識別されるアプリケーションを管理できます。 link:../learn/define-custom-app.html["Kubernetes ラベルでアプリケーションを定義する方法については、こちらをご覧ください"]。
 
 .手順
-. [ * アプリ ] > [ カスタムアプリの定義 * ] をクリックします。
+. [ * アプリケーション（ * Applications ） ] > [ カスタムアプリケーションの定義（ Define custom app ）
 . [ カスタムアプリケーションの定義 * （ Define Custom Application * ） ] ダイアログボックスで、アプリケーションを管理するために必要な情報を入力します。
 +
 .. * 新しいアプリ * ：アプリの表示名を入力します。

@@ -4,5 +4,7 @@ title: 知識とサポート
 entries:
 - title: サポートに登録します
   url: "/support/register-support.html"
+- title: トラブルシューティング
+  url: "/support/troubleshooting.html"
 - title: ヘルプを表示します
   url: "/support/get-help.html"

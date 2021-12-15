@@ -14,7 +14,7 @@ sidebar:
   - section: release-notes
   - section: get-started
   - section: use
-  - title: REST API で自動化
+  - title: Astra Control REST API で自動化
     url: "/automation.html"
   - section: learn
   - section: solutions
@@ -41,7 +41,7 @@ homepage:
       url: "/use/clone-apps.html"
     - title: 請求を設定します
       url: "/use/set-up-billing.html"
-  - title: Astra REST API を使用
+  - title: Astra Control REST API を使用
     links:
     - title: はじめに
       url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
@@ -81,8 +81,8 @@ homepage:
       url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
   - title: ブログコミュニティ
     links:
-    - title: スラックチャンネル
-      url: https://netapppub.slack.com/#astra
+    - title: "「コンテナ」チャネルを緩みます"
+      url: https://netapp.io/slack
     - title: Astra Control ブログ
       url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control –ハイブリッドクラウド向けのアプリケーションデータ管理を簡易化

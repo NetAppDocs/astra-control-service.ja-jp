@@ -25,17 +25,12 @@
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">サポートされる Kubernetes 環境</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">Astra Control Service 向け Google Cloud のセットアップ方法をご確認ください</block>
   <block id="b5e7bcb71963764cb139d9e8c6cb7f39" category="list-text"><block ref="6c77616d0b34601c48f50b97c8cb436f" category="inline-link-macro-rx"></block>。</block>
-  <block id="9cb00a64aa4b64cb1ad91d9d45d46d0a" category="inline-link-macro">Microsoft Azure for Astra Control Service のセットアップ方法について説明します</block>
-  <block id="4eb3c02e85a4229dd59fd20c096a85d7" category="list-text"><block ref="1a9ed16abb5fedde4778c9c712d0af95" category="inline-link-macro-rx"></block>。</block>
   <block id="dd8bffb9f01b6b0228b1dd2776302148" category="summary">Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。</block>
   <block id="40b96cc305f26bed96812c2920065f5d" category="doc">Google Cloud をセットアップします</block>
   <block id="34d2a25ad50e70e09e72aeff2a894d06" category="section-title">Google Cloud のセットアップをすぐに開始できます</block>
   <block id="2433628c53fed80ea9d352a1bcd9ce45" category="paragraph">これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。</block>
   <block id="04696f5c6f9ab48b84d14152c7d2d9e0" category="section-title">Google Kubernetes Engine の Astra Control Service の要件を確認</block>
   <block id="276169ccd2a2393a29e9402ab483c9e7" category="inline-xref">このステップの詳細をご覧ください</block>
-  <block id="8e6a6a6c3648fa9123db975bf7474704" category="paragraph">クラスタが正常に動作していて、 1.18 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e1f8cf5619eaead1686587245bccae8d" category="section-title">Cloud Volumes Service for Google Cloud を購入</block>
-  <block id="6bc831ad70814156fd6e24cc7c40c869" category="paragraph">Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動して、「購入」をクリックします。 <block ref="f209690edb14942c7909d656f7852191" category="inline-xref-macro-rx"></block>。</block>
   <block id="877504ffbacff5a936df5d8b9380d0d7" category="section-title">Google Cloud プロジェクトで API を有効にします</block>
   <block id="0b6062af6539588bd15a413087b36a5d" category="paragraph">次の Google Cloud API を有効にします。</block>
   <block id="f366dda7f9a232a211cc6ca9117b457e" category="list-text">Google Kubernetes Engine の略</block>
@@ -60,15 +55,9 @@
   <block id="524fbd145cf3cdca1d220812627f3c91" category="paragraph"><block ref="78300681b17866ce24ea7fd24331d746" category="inline-xref-macro-rx"></block>。</block>
   <block id="ec0fec1613e760b6689b9fb4990bdb46" category="section-title">サービスアカウントキーを作成します</block>
   <block id="a5eb14e5f96b7cf86fe3afd8fc1eea47" category="paragraph">サービスアカウントのキーを作成し、そのキーファイルを安全な場所に保存します。 <block ref="b6688736f50b847cb10f631c83eb3d23" category="inline-xref-macro-rx"></block>。</block>
-  <block id="7a7b572ca8642d4ea26971dd8bb0de03" category="section-title">VPC のネットワークピアリングをセットアップします</block>
-  <block id="fea4aa08ba1a5e53c9b0ff9a8efe1dc3" category="paragraph">VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <block ref="d1bb1313be16e741c940ca04c23aacea" category="inline-xref-macro-rx"></block>。</block>
-  <block id="d6165eb1e6618d299c259ab7b27d19bd" category="paragraph">次の図は、実行する必要がある各手順を示しています。</block>
-  <block id="9fc80a5fa7486cec9902d49ce9ec8fa2" category="inline-image-macro">この概念図は、 Google Cloud プロジェクト、 IAM ロールとキーを持つサービスアカウント、有効にした API 、および Cloud Volumes Service for Google Cloud へのプライベートサービスアクセスを示しています。</block>
-  <block id="9f35510a7c6f3e19128e27ce6a48d3cc" category="paragraph"><block ref="9f35510a7c6f3e19128e27ce6a48d3cc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ff7c3dae8ad736b0186cac18877f5e34" category="section-title">GKE クラスタの要件</block>
   <block id="d771a3cd33e9fe1259f139de74469638" category="paragraph">Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。</block>
   <block id="80afba45eb055fc9bdc48c90d1debd06" category="list-text">Kubernetes のバージョン</block>
-  <block id="cbcf2fd02363fc4e7f9dfa1eff178d1e" category="list-text">クラスタが 1.18 ~ 1.20 の Kubernetes バージョンを実行している必要があります。</block>
   <block id="2dd1148046499f9c2422ce1045a4accf" category="list-text">イメージタイプ</block>
   <block id="32c25baf5ee1ef8c18e42fb93a5e8c1a" category="list-text">各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。</block>
   <block id="6cf81447b5980903240b63a4f939c8d2" category="list-text">Docker を使用したコンテナ最適化 OS</block>
@@ -77,10 +66,8 @@
   <block id="5546f6eb1d3ba8ca20733cab8923a4df" category="list-text">クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。</block>
   <block id="1e74109ffea9efee081364cbc0ee2939" category="list-text">Google Cloud リージョン</block>
   <block id="bb14e4e4e19ece32a994e7fff942513b" category="inline-link">Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。</block>
-  <block id="8d96f748ac058072de4af20ed0ac2578" category="list-text">クラスタがで実行されている必要があります<block ref="971594277e407eb62311208ac22b5d26" category="inline-link-rx"></block> Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。</block>
   <block id="a5fa5746370b608090b994a97b49e98b" category="list-text">ネットワーキング</block>
   <block id="e331f2158e8a2c43fd57da1664a0b981" category="inline-xref">この手順については、以下で説明します</block>
-  <block id="03748a4050f7dc5d1a9fe7b5fa8c4d8c" category="list-text">クラスタは、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内に存在する必要があります。 <block ref="0ad607852da897e410e97f9809885c68" category="inline-xref-macro-rx"></block>。</block>
   <block id="3ac3ca38058e110d3ec68b15254acc3d" category="list-text">プライベートクラスタ</block>
   <block id="14404c0506ad155270835b42ac26b048" category="inline-link">許可されたネットワーク</block>
   <block id="2759281c69a073d0b21e0c4c3fa41f45" category="list-text">クラスタがプライベートの場合は、を参照してください<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control Service の IP アドレスを許可する必要があります。</block>
@@ -90,7 +77,6 @@
   <block id="dfe8825579611c3ae8bc76ce43418ff7" category="list-text">GKE クラスタの動作モード</block>
   <block id="b3ed7c2761e0232b50826c6e775de3c3" category="inline-link-macro">操作モードの詳細を確認してください</block>
   <block id="2a0e9ff9904e5e354b8e6cd4dcecc515" category="list-text">標準モードのオペレーションを使用する必要があります。自動操舵モードは、現時点ではテストされていません。 <block ref="e2d664915f7de952ab4692151347e3dd" category="inline-link-macro-rx"></block>。</block>
-  <block id="bf9d6edddaeb68e59cc86e0732e30b9c" category="paragraph">Astra Control Service は、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用永続的ボリュームに対する請求を有効にするには、 Google Cloud Marketplace から Cloud Volumes Service for Google Cloud を購入する必要があります。</block>
   <block id="48c7c41b72e1d678923ce3571aa65b2d" category="list-title">ステップ</block>
   <block id="9d35c4434feea492d0b6d696d707c03f" category="inline-link">NetApp Cloud Volumes Service のページ</block>
   <block id="85f241a241f616216beaa6c22c21a7bc" category="list-text">にアクセスします<block ref="cb4c47bc1f87cdf648979426fd12844d" category="inline-link-rx"></block> Google Cloud Marketplace で、 * 購入 * をクリックし、画面の指示に従います。</block>
@@ -132,7 +118,6 @@
   <block id="0efe53e54c579a847ed822f7825e60a0" category="list-text">Google Cloud およびにアクセスします<block ref="f367015fc005f738aa1dd0e94a45af43" category="inline-link-rx"></block>。</block>
   <block id="bf9d38e9cd2c6334f8e49a2d63eeb016" category="list-text">プロンプトが表示されたら、サービスアカウントキーファイルを安全な場所に保存します。</block>
   <block id="faed92960e59bb817b1acbdbd8b0b826" category="paragraph">次のビデオは、 Google Cloud コンソールからサービスアカウントキーを作成する方法を示しています。</block>
-  <block id="219402b03b480947a86bf844b41bc2d9" category="paragraph">最後の手順として、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。</block>
   <block id="88893994553bfb7a40c2878fd0c49602" category="paragraph">ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。</block>
   <block id="d0c77e6bcdf6b3675b78f5039ab722db" category="inline-link">NetApp Cloud Central のグローバルリージョンマップにアクセスします</block>
   <block id="8bd08d1235473b6f15ecaf6caf36b751" category="list-text"><block ref="d0b43c8067b7c810324d7a4486e6286e" category="inline-link-rx"></block> をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。</block>
@@ -157,45 +142,30 @@
   <block id="402cab170e3766f467767722351fa718" category="paragraph"><block ref="29b78dac148fc40ac3020c1f08b5e553" category="inline-link-rx"></block>。</block>
   <block id="9e399780a12e5c794d70e723bc7bc009" category="list-text">完了したら、 * ファイルシステムの作成 * ページでキャンセルをクリックできます。</block>
   <block id="c7386c78db4f5b185f74fe7c3db7962e" category="paragraph">このボリュームの作成は、ネットワークピアリング用のコマンドを取得するためだけに開始しました。</block>
-  <block id="36e0cd3985c1901bbaeecc53fe472f46" category="summary">Astra Control は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central にサインアップして、 Astra Control とネットアップの他のクラウドサービスにアクセスできます。</block>
   <block id="9f0a6d5d19d9a0882b080bd73f930916" category="doc">Astra Control アカウントに登録します</block>
-  <block id="7a6f226f8381e05de62fdf08cf20b76b" category="paragraph">NetApp Cloud Central に登録し、登録プロセスを完了して Astra Control アカウントを取得します。</block>
   <block id="186f9f6bf0b85589f8602edb2a2e5c8b" category="section-title">Cloud Central に登録します</block>
   <block id="c3330d4a796db6418458e6d4faacfbef" category="paragraph">Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central にサインアップして、 Astra Control Service とネットアップの他のクラウドサービスにアクセスできます。</block>
   <block id="6294a96fba20202cd9ffb33f93601bb2" category="inline-link">Cloud Central ヘルプセンター</block>
   <block id="24e7f915a9c0613deb18eb8d9b5119b9" category="admonition">シングルサインオンを使用して、社内ディレクトリのクレデンシャル（フェデレーテッドアイデンティティ）を使用して Cloud Central にログインできます。詳細については、を参照してください<block ref="2c92c928be02227d051a5057c2e57fc6" category="inline-link-rx"></block> 次に、 * Cloud Central サインインオプション * をクリックします。</block>
   <block id="49fc376ed35249f3841846ede4dab884" category="inline-link">NetApp Cloud Central</block>
-  <block id="c78b19f4ba006175d3228f231c56bda2" category="list-text">Web ブラウザを開き、に進みます<block ref="acbb6886c35e57125998fe7d6c5eea1f" category="inline-link-rx"></block>。</block>
   <block id="f3de960ba739ff8fcccaf9a89fccc3f6" category="list-text">右上で、 * サインアップ * をクリックします。</block>
-  <block id="c6704fb4cb08d246c60a0e84b8c599e9" category="list-text">フォームに入力して、「 * サインアップ * 」をクリックします。</block>
-  <block id="03ca1e52b4bbd2e246c4e1eb1239bac6" category="admonition">このフォームに入力する E メールアドレスは、 NetApp Cloud Central のユーザ ID です。この Cloud Central ユーザ ID は、新しい Astra Control アカウントにサインアップするときや、 Astra Control 管理者から既存の Astra Control アカウントに招待されたときに使用します。</block>
   <block id="20a69192feaea8c49abf375503565d2c" category="inline-image-macro">Cloud Central の登録ページのスクリーンショット。 E メールアドレス、パスワード、名前、会社名、および電話番号を入力する必要があります。このページはオプションです。</block>
   <block id="59d30c1b368c2a97b0c373c9aadf516f" category="paragraph"><block ref="59d30c1b368c2a97b0c373c9aadf516f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5009d2196c166295505299d3ccfa44a4" category="list-text">NetApp Cloud Central からの E メールを待ちます。</block>
-  <block id="47e1be43e59b17b4231ddf8bb9c249db" category="list-text">E メールのリンクをクリックして、 E メールアドレスを確認します。</block>
   <block id="079c633ad298feda51d946a3bb2ffee8" category="paragraph">アクティブな Cloud Central ユーザログインが可能になりました。</block>
   <block id="d45294caa04dc2a59a6a9779ecb261e1" category="section-title">アカウントに登録します</block>
-  <block id="1fd5d16b4c5d01714d7201a1e2e1577e" category="paragraph">Astra Control にログインする前に、登録プロセスを完了して Astra Control アカウントを取得する必要があります。</block>
-  <block id="790648d3b85d3e92fa5b4e577275ef70" category="paragraph">Astra Control を使用すると、アカウント内からアプリケーションを管理できます。アカウントには、アカウント内のアプリを表示および管理できるユーザーと、課金情報が含まれます。</block>
   <block id="c3d2edad004e97ae3aa8859394dc7966" category="inline-link">Cloud Central の Astra Control ページにアクセスします</block>
   <block id="3889784207ede468b81664012c11b61c" category="list-text"><block ref="1b7eb0b86e80375179438e28519fc192" category="inline-link-rx"></block>。</block>
   <block id="5f2575e876c38f49aa892ec0aabae362" category="list-text">必要な情報をフォームに入力します。</block>
   <block id="9af90bb703b753ebc52e31ad01e6d842" category="paragraph">フォームに入力する際に注意すべき重要事項は次のとおりです。</block>
   <block id="b7324677f7d831f32c546a0047ebbc04" category="list-text">グローバル貿易コンプライアンスの要件を満たすことが確認されるため、お客様の事業名と住所は正確である必要があります。</block>
-  <block id="faef3b7e9e2f5fb7a398811468f5d143" category="list-text">「 * Astra Account Name * 」は、御社の Astra Control アカウントの名前です。この名前は、 Astra Control のユーザーインタフェースに表示されます。必要に応じて、追加のアカウントを作成できます（最大 5 つ）。</block>
   <block id="4b5d2dd70af718ebe67bfea5b43d8667" category="list-text">[Submit （送信） ] をクリックします。</block>
-  <block id="faad0c48075d54a6d23cfde1031df94e" category="paragraph">すでに Cloud Central にログインしている場合は、登録ステータスが表示され、 Astra Control Dashboard にリダイレクトされます。それ以外の場合は、最初にログインするように求められます。</block>
-  <block id="e4dda6e31c02a8c9c10c2adb20f664b3" category="paragraph">登録が完了したら、から直接 Astra Control にアクセスできます<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>。</block>
   <block id="74b741fc3d54baf9d97610b2ee78aaef" category="summary">環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。</block>
   <block id="500d3c8defab0707486026a482b78c38" category="section-title">Kubernetes クラスタを作成</block>
   <block id="b25e6cbe92376851fb2fc7b4e024274e" category="inline-link-macro">Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件</block>
-  <block id="7ec62f1fcc63aa055150f41a8b57d7ef" category="inline-link-macro">Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件</block>
-  <block id="25b774164d06000c8ad44501ac10ab10" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成します <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block> または <block ref="e84503f3b2eeb988725ef0ca528d805e" category="inline-link-macro-rx"></block>。</block>
   <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">必要なもの</block>
   <block id="46b491767cd12d81f9bf9593f5a96cf7" category="inline-link-macro">サービスアカウントの設定方法について説明します</block>
   <block id="686cb20b1345505bc3b4d980227e595c" category="list-text">GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
   <block id="2c620a037dcfb55d88e388bd87452f5c" category="inline-link-macro">サービスプリンシパルの設定方法について説明します</block>
-  <block id="d58782d9ffae011af57b2d00eca5681c" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="5c26c2c9f58f27535bc48f1971ddec6d" category="inline-link-macro-rx"></block>。</block>
   <block id="76bfd2350e4f4c3da0b233404caa674c" category="paragraph">JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。</block>
   <block id="85dd90fee281dc51fb16e2fda68973ba" category="list-text">* プロバイダ * ：クラウドプロバイダを選択し、必要なクレデンシャルを入力します。</block>
   <block id="c455f809c2ef97e08167a8b008383167" category="list-text">* Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードからその JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を指定します。</block>
@@ -203,15 +173,8 @@
   <block id="f7f3a8af2d67b9c332d14c7846f01b8a" category="list-text">* Google Cloud Platform * ：ファイルをアップロードするか、クリップボードからコンテンツを貼り付けて、サービスアカウントのキーファイルを提供します。</block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link">Cloud Volumes Service for Google Cloud</block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link">Azure NetApp Files の特長</block>
-  <block id="c2369e1667f77d14041c57f9b2ffa952" category="paragraph">各ストレージクラスが使用します<block ref="50b9c349ffc0f290290b7f669280db42" category="inline-link-rx"></block> または<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block>。</block>
   <block id="7100f9112ef8dd78f5c15873f53dbe55" category="inline-link-macro">GKE クラスタのストレージクラスについて説明します</block>
-  <block id="20553cfdca75ae3f783cddf339f02160" category="list-text"><block ref="f10cb0ea0034e1f4379ccb2c8a481c0b" category="inline-link-macro-rx"></block>。</block>
   <block id="3946d8b08dbcd33b3e5d7fc0e1384dec" category="inline-link-macro">AKS クラスタのストレージクラスについて学習します</block>
-  <block id="a19a34a2b21fc32f9c330467fd8f7073" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block>。</block>
-  <block id="342d96bb8b26fc21bd0ef71a5d047979" category="inline-image-macro">[ レビューと承認 ] ページを示すスクリーンショット。管理対象アプリケーションで選択した構成の概要が表示されます。</block>
-  <block id="ee769e73c12032ec317f9cc74037448a" category="paragraph"><block ref="aa0ffcb0ea40ad11a9a38aa9c7e39509" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e525048f7d08b462ebab4dacc8fc366b" category="paragraph">次のビデオでは、 GKE クラスタでの各手順を示しています。</block>
-  <block id="4f4227e8eaa2c24c78198dd3270e2bf9" category="paragraph">Astra Control Service を使用すると、アプリケーションのバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">この FAQ は、質問に対する簡単な回答を探している場合に役立ちます。</block>
   <block id="8de7ff5f7f2186929bf88ea5dcfc0fb3" category="doc">Astra Control Service に関するよくある質問</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="section-title">概要</block>
@@ -325,21 +288,15 @@
   <block id="1b799238211a6924f3bc70f0d21bb243" category="inline-link-macro">通知を管理します</block>
   <block id="dd8cd9eba2ecc51750e65a67f022145a" category="list-text"><block ref="dd8cd9eba2ecc51750e65a67f022145a" category="inline-link-macro-rx"></block></block>
   <block id="739ea6bf2562737f66933a182c8d0c06" category="summary">Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。</block>
-  <block id="e2f35c1e894206ae4b3c1fbfd0542f64" category="doc">Microsoft Azure をセットアップする</block>
   <block id="dc76c51bff59af0886e7f54ab9ef049d" category="section-title">Azure のセットアップのクイックスタート</block>
   <block id="6114e8a8f2850be98581400acbf88b6f" category="section-title">Azure Kubernetes Service の Astra Control Service の要件を確認</block>
-  <block id="31b87fdf6c21e3f7ee6940d55ab3e44d" category="paragraph">クラスタが正常に機能していて Kubernetes バージョン 1.17 以降を実行していること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <block ref="b5bf5f6b96deccca53804b3360957342" category="inline-xref-macro-rx"></block>。</block>
   <block id="64f071aa545dfea3fd68ea0ca25cad17" category="section-title">Azure NetApp Files に登録します</block>
   <block id="1a58284cd0ffb72aa1652378f4ae9b61" category="section-title">ネットアップアカウントを作成します</block>
-  <block id="ce0c7018ccdc0653c0246a3a73ff9e01" category="paragraph">Azure ポータルで、 Azure NetApp Files に移動して、ネットアップアカウントを作成します。 <block ref="d2becf07b74daf6c832034271db73d53" category="inline-xref-macro-rx"></block>。</block>
   <block id="e82e5070cbce17a76f8a1282c7e2df78" category="section-title">容量プールを設定</block>
   <block id="fc5cc13d4c63e16c62deed1c25a97cfa" category="paragraph">永続ボリューム用に 1 つ以上の容量プールを設定します。 <block ref="e481f2b64bd3b8137ad15772007d7292" category="inline-xref-macro-rx"></block>。</block>
   <block id="42e9b5ee697da49886fd18e89e6ab1af" category="section-title">サブネットを Azure NetApp Files に委譲します</block>
   <block id="a5c5eef72d8371c545403ac8f92f1188" category="paragraph">サブネットを Azure NetApp Files に委譲し、 Astra Control サービスがそのサブネット内に永続的ボリュームを作成できるようにします。 <block ref="246c727b900a21096813106e7733a9c4" category="inline-xref-macro-rx"></block>。</block>
   <block id="0f3f1a1eeb0e902fae62b05e28417935" category="section-title">Azure サービスプリンシパルを作成します</block>
-  <block id="fcc35215e7727827b38e9b526a1e75aa" category="paragraph">Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <block ref="7e340d164e5801cc42f63ae960b97271" category="inline-xref-macro-rx"></block>。</block>
-  <block id="9f816b4a592d099cd1fcfe5e222e07b3" category="section-title">AK クラスタの要件</block>
-  <block id="b7ae507835f3ba71a54b3e9fc979e4ee" category="list-text">クラスタで Kubernetes バージョン 1.17 以降が実行されている必要があります。</block>
   <block id="982795a769045ffadc2197a54581dbe9" category="list-text">すべてのノードプールのイメージタイプは Linux である必要があります。</block>
   <block id="0b21fb3864d43aad91ca35b2b5d2354d" category="list-text">Azure リージョン</block>
   <block id="5fdc7d711b9ee1a40d68a09729fb4e9f" category="inline-link">Azure 製品を地域別に表示します</block>
@@ -356,15 +313,12 @@
   <block id="55173b12ad5e4823a240086f6f847275" category="paragraph">限界に近づくと、次の 2 つのオプションがあります。</block>
   <block id="46a463f45d760c104b72522e58a98d80" category="inline-link">制限の増加を要求します</block>
   <block id="6db1177280cdf1c407b10901a43f2d5d" category="list-text">可能です<block ref="80367e2e66953979f4f73611214577d4" category="inline-link-rx"></block>。サポートが必要な場合は、ネットアップの担当者にお問い合わせください。</block>
-  <block id="3b82736dcd2829578fca619478485d1b" category="list-text">新しい AKS クラスタを作成するときに、クラスタの新しいネットワークを指定します。新しいネットワークを作成したら、新しいサブネットをプロビジョニングし、そのサブネットを Azure NetApp Files に委譲します。</block>
   <block id="609775d4b1f048a0f6500161bd460e47" category="list-text">プライベートネットワーク</block>
   <block id="bc287e95f5c3144752a8a8d09fbe96b1" category="list-text">クラスタでプライベートネットワークを有効にしないでください。</block>
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部のボリューム Snapshot コントローラ</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください</block>
-  <block id="82fa24bddc8c8dba3c5821bc22294f6e" category="list-text">クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは K8s バージョン 1.21 以降ではデフォルトでインストールされますが、バージョン 1.17 、 1.18 、 1.19 、または 1.20 を実行しているクラスタでチェックする必要があります。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">CSI ボリュームスナップショットコントローラをインストールします</block>
   <block id="db152b65ba4b10857eb411555072a9e1" category="paragraph">要件のリストに記載されているように、 Kubernetes クラスタには CSI ボリュームスナップショットコントローラがインストールされている必要があります。次の手順に従って、クラスタにコントローラをインストールします。</block>
-  <block id="762e5330ca1d8613044960a7a2ed2f76" category="list-title">Kubernetes クラスタバージョン 1.17 、 1.18 、および 1.19 の手順</block>
   <block id="a618db5a33159c81598fe6712cd56a73" category="list-text">ボリュームスナップショット SSD をインストールする。</block>
   <block id="a571dbb3887a364b4b4dcb82a5fa6ec9" category="list-text">スナップショットコントローラを作成します。</block>
   <block id="111a34eabb6102652811ded59098f913" category="paragraph">特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。</block>
@@ -396,7 +350,6 @@
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="list-title">要件</block>
   <block id="2bda5c688bc00e0af1200c75535ceb26" category="list-text">サービスプリンシパルは、通常の認証を使用する必要があります。証明書はサポートされていません。</block>
   <block id="1a809c1c9460756a4f0e9e4abe381341" category="list-text">サービスプリンシパルに、 Azure サブスクリプションへの寄稿者または所有者のアクセス権が付与されている必要があります。</block>
-  <block id="6c9e8ad6f46b0fcd6eece8c42b75e0e2" category="list-text">Azure サブスクリプションには、 AKS クラスタと Azure NetApp Files アカウントが含まれている必要があります。</block>
   <block id="0efcabd57d3633281ae7bdafdcd724c8" category="list-text">AKS クラスタが存在するサブスクリプションとテナント ID を特定します（これは Astra Control Service で管理するクラスタです）。</block>
   <block id="2f95aceaba25d188664ca796ad794117" category="list-text">サービスプリンシパルを作成し、 Contributor ロールを割り当て、クラスタが存在するサブスクリプション全体にスコープを指定します。</block>
   <block id="f642e4d20ff522be0a4de109b0765f2a" category="list-text">作成された Azure CLI 出力は JSON ファイルとして保存します。</block>
@@ -405,13 +358,11 @@
   <block id="18cb2db33964b3c6dc9efe781d2802b2" category="list-text">オプション： JSON ファイルにサブスクリプション ID を追加し、ファイルを選択すると Astra Control Service によって自動的に ID が入力されるようにします。</block>
   <block id="e3a5870b24dca760a5f0ca324e5636a4" category="paragraph">それ以外の場合は、表示されたときに Astra Control Service でサブスクリプション ID を入力する必要があります。</block>
   <block id="938f1047c15f00fdd0cbfc8e4cfa15e1" category="paragraph">* 例 *</block>
-  <block id="46dc5d7d20559563a2e72b27419450a6" category="list-text">オプション：サービスプリンシパルをテストします。</block>
   <block id="1f25b37903a0ecad2e400368a6d34ac9" category="summary">Astra Control Service の利用を開始するには、いくつかの手順を実行します。</block>
   <block id="4b73996cc1da59c5ea313bcccd18304b" category="doc">Astra Control Service のクイックスタート</block>
   <block id="9ae538a88b714eef65a62a5463195a6c" category="paragraph">このページでは、 Astra Control Service を開始するために完了する必要がある手順の概要を説明します。各ステップ内のリンクから、詳細が記載されたページに移動できます。</block>
   <block id="f1a416ab969f9d9651bab4f82bf15601" category="section-title">クラウドプロバイダをセットアップします</block>
   <block id="26ee644c2b0c0d7a061dc960838350a3" category="list-text">Google Cloud</block>
-  <block id="55fa4b5fbd90d8758775e13845cfeada" category="list-text">GKE クラスタの要件を確認します。</block>
   <block id="9a0d47a66daa287e801db31bad752c0f" category="list-text">Google Cloud Marketplace から Cloud Volumes Service for Google Cloud を購入</block>
   <block id="baf5a650838f964f99c3ce55f3b41d14" category="list-text">必要な API を有効にします。</block>
   <block id="86ccb8f872c0ef4415003fa1a7dd1b0a" category="list-text">サービスアカウントとサービスアカウントキーを作成します。</block>
@@ -419,14 +370,6 @@
   <block id="685dc5e480cdeda5182e7aab430776b5" category="inline-link-macro">Google Cloud の要件の詳細をご覧ください</block>
   <block id="0e83f156b469d1d40bbeec0d0d789b4c" category="paragraph"><block ref="09d2265f114d20963d659b923bd35923" category="inline-link-macro-rx"></block>。</block>
   <block id="4bce0cadbd95655804d72e0df4ac6d7b" category="list-text">Microsoft Azure</block>
-  <block id="f3f0420a29cb7c31b7a87f4896a25868" category="list-text">AKS クラスタの要件を確認します。</block>
-  <block id="112a7cb87b45133454d8416787de182b" category="list-text">Azure NetApp Files に登録します</block>
-  <block id="05fa63b2ca586f787a00eb898c28c59f" category="list-text">ネットアップアカウントを作成します</block>
-  <block id="b1eb3eecc9064b93dc41c15b9f2c4237" category="list-text">容量プールをセットアップする</block>
-  <block id="745ded392e46675b4d519cfad90e4fb1" category="list-text">サブネットを Azure NetApp Files に委譲します</block>
-  <block id="a63f9ef040f940ff797d5a7b94040517" category="list-text">Contributor ロールを持つ Azure サービスプリンシパルを作成します。</block>
-  <block id="e458da5694af107c84459150508e0b1f" category="inline-link-macro">Microsoft Azure の要件に関する詳細は、こちらをご覧ください</block>
-  <block id="9c16577fffe6d4ee3f52a6577a86497c" category="paragraph"><block ref="3a2048dcc550600b6e3055f1d79f4e84" category="inline-link-macro-rx"></block>。</block>
   <block id="5cc7c722edeff02a4b01646c0e3fa3ad" category="section-title">Astra Control の登録を完了します</block>
   <block id="d4e2866a87cb36aa53ac9d94e7402e45" category="list-text">を作成します<block ref="acbb6886c35e57125998fe7d6c5eea1f" category="inline-link-rx"></block> アカウント：</block>
   <block id="ecefaf3209c4e5c804b1d3c466a9d510" category="inline-link">Astra の製品ページから</block>
@@ -437,7 +380,6 @@
   <block id="8ae7d728c4c184ea4251e1e2887cb0b6" category="paragraph">バックアップ、スナップショット、またはクローンを作成する必要がなくなったアプリケーションの管理を Astra Control から停止します。</block>
   <block id="1eb15cc34f73a18c5010c7e078c2820b" category="list-text">既存のバックアップと Snapshot がすべて削除されます。</block>
   <block id="206d3d5116152cdbe009ea752713551d" category="list-text">アプリケーションとデータは引き続き使用できます。</block>
-  <block id="d31a6a7eeee67647538d3fbda40ebb8e" category="list-text">[ * アプリ * ] をクリックします。</block>
   <block id="4eb7a11e4e4dc07421cc5ad5ac197515" category="list-text">管理する必要がなくなったアプリのチェックボックスをクリックします。</block>
   <block id="5de4e322c0719319e5eca4303640ef9d" category="list-text">[* アクション * （ * Action * ） ] ドロップダウンをクリックし、 [ * アプリケーションの管理を解除 * （ Unmanage application/s * ） ] を選択します</block>
   <block id="66e7d50a7b53b5cb457efb26fc9202d1" category="list-text">アプリの管理を解除することを確認し、 [ はい ] 、 [ アプリケーションの管理を解除 ] をクリックします。</block>
@@ -529,7 +471,6 @@
   <block id="da7c0d21607588079696a48048b93c4f" category="list-text">フィルタを使用してアクティビティのリストを絞り込むか、検索ボックスを使用して探しているものを正確に検索します。</block>
   <block id="2b99cbe6e402c3cd789d8752745bfbd0" category="list-text">[* Export to CSV* （ CSV にエクスポート） ] をクリックして、アカウントアクティビティを CSV ファイルにダウンロードします。</block>
   <block id="fea3fe6a4c68375faa8ac65f03e247b0" category="list-title">特定のアプリケーションのアカウントアクティビティを表示する手順</block>
-  <block id="3e0ad76bf67b8bed8d5279f8f4a91705" category="list-text">[ * アプリ * ] をクリックし、アプリの名前をクリックします。</block>
   <block id="d95c69c43af6837af2e7b735550c3894" category="summary">ユーザーを Astra Control アカウントに招待し、アカウントにアクセスできなくなったユーザーを削除します。</block>
   <block id="42fea43246af353c517277bafa8f94d3" category="doc">ユーザーを招待および削除します</block>
   <block id="9a0112e9326bfb2ebbe8296f89fd4be9" category="paragraph">ユーザーを Astra Control アカウントに招待し、アカウントにアクセスできなくなったユーザーを削除します。</block>
@@ -568,7 +509,6 @@
   <block id="2747db310010aa1d5a7b961fb241fcb0" category="paragraph">a_backup_ は、クラウドのオブジェクトストレージに格納されます。ローカル Snapshot に比べてバックアップに時間がかかる場合があります。ただし、クラウドのリージョン間でアクセスできるため、アプリケーションの移行が可能です。バックアップの保持期間を延長することもできます。</block>
   <block id="25504345a275167f21fbd2cb1114c22b" category="admonition">_ 最新のバックアップがあるまで、完全に保護することはできません _ 。これは、永続ボリュームから離れたオブジェクトストアにバックアップが格納されるために重要です。障害や事故によってクラスタと永続的ストレージが消去された場合は、バックアップをリカバリする必要があります。スナップショットを使用してリカバリすることはできません。</block>
   <block id="45ad0235a77627fe6b23b64997cecf69" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。</block>
-  <block id="05fa3db4928e4a485d200d9961027ce9" category="list-text">[ * アプリ * ] をクリックし、管理アプリの名前をクリックします。</block>
   <block id="0a29b0b412abdc2e4808f53d53901cf5" category="list-text">[ * データ保護 * ] をクリックします。</block>
   <block id="7c6256154d6163ae03f510785949d85e" category="list-text">［ 保護ポリシーの設定 ］ をクリックします。</block>
   <block id="c8584099e125666dd26e7f29bcfcac50" category="inline-image-macro">アプリの [ データ保護 ] タブのスクリーンショット。保護ポリシーを設定できます。</block>
@@ -631,7 +571,6 @@
   <block id="7b758bf36ef17d1879863c969ac42d38" category="paragraph">Astra Control のすべてのユーザが同じクレデンシャルセットを共有していることに注意してください。</block>
   <block id="0f391d5482822722d86585c248878517" category="section-title">クレデンシャルを追加する</block>
   <block id="d1d2df683ec3a42a861cfb62b75272b0" category="list-text">GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 <block ref="253b0a52b10e4210af2fe90c716fc07d" category="inline-link-macro-rx"></block>。</block>
-  <block id="3c78e0f3097138b21f46299d66575bdb" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="3a7a4b138690ea6892076b27b1d6faeb" category="inline-link-macro-rx"></block>。</block>
   <block id="d08c957004d0c2777d0bc41ead873aff" category="list-text">[*Account] &gt; [Credentials] をクリックします。</block>
   <block id="f66ae868fdb273ca95786e96b74d0a8c" category="list-text">[Add Credentials] をクリックします。</block>
   <block id="08a6527af98e29d0d830ea9505c7f7c6" category="list-text">Microsoft Azure * または * Google Cloud Platform * のいずれかを選択します。</block>
@@ -658,13 +597,6 @@
   <block id="47a002d34e0c3c24317cae2045543a9c" category="list-text">［ * アプリケーションの復元 * ］ をクリックします。</block>
   <block id="3e8aeae3123ad6cebe45b8c6a33ad734" category="inline-image-macro">アプリケーションページのスクリーンショット。アクション列のドロップダウンリストをクリックし、アプリケーションの復元を選択します。</block>
   <block id="bd06fb80fea241d2f1257e510ccacecf" category="paragraph"><block ref="bd06fb80fea241d2f1257e510ccacecf" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="417cb34bb9c40d133797106d3824b402" category="list-text">* リストアの詳細 * ：クローンの詳細を指定します。</block>
-  <block id="2682de2e7f62c237cf6b4329a0199da7" category="list-text">アプリケーションの名前と名前空間を入力します。</block>
-  <block id="9aa1ea781ae5747b01a517a1ed4bd6d3" category="list-text">[* レビュー情報 * ] をクリックします。</block>
-  <block id="6dbb469b36d9e432e7223dadffd8a7c8" category="list-text">* リストアの概要 * ：リストア操作の詳細を確認し、 * アプリの復元 * をクリックします。</block>
-  <block id="10d41ef8faeb35e6bce6bc1d8f14db60" category="inline-image-macro">リストア操作に関する情報を確認できるアプリケーションのリストアページのスクリーンショット。</block>
-  <block id="8c022a794c661eac28aa18d18386e4af" category="paragraph"><block ref="8c022a794c661eac28aa18d18386e4af" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="67446286ca857d701032db886f475805" category="paragraph">Astra Control は、指定した情報に基づいてアプリケーションを復元します。</block>
   <block id="73e5c8ce985735a0c92b24da1a48a7fb" category="summary">既存のアプリケーションをクローニングして、同じ Kubernetes クラスタまたは別のクラスタに重複するアプリケーションを作成する。Kubernetes クラスタ間でアプリケーションとストレージを移動する必要がある場合は、クローニングが役立ちます。たとえば、 CI CD パイプラインや Kubernetes ネームスペース間でワークロードを移動できます。</block>
   <block id="0adcbb2b9c783786f0ac0b7cfb133292" category="doc">アプリケーションのクローン作成と移行</block>
   <block id="2d455df9a034a057669b15f9213b5eb7" category="paragraph">既存のアプリケーションをクローニングして、同じ Kubernetes クラスタまたは別のクラスタに重複するアプリケーションを作成する。Kubernetes クラスタ間でアプリケーションとストレージを移動する必要がある場合は、クローニングが役立ちます。たとえば、 CI / CD パイプラインや Kubernetes ネームスペース間でワークロードを移動できます。</block>
@@ -706,7 +638,6 @@
   <block id="fbcac7ea3c81bb3194babac595a5ade0" category="paragraph">アプリページの * 検出された * セクションには、名前空間と Helm によってインストールされたアプリ、またはそれらの名前空間内のカスタムラベル付きアプリが表示されます。各アプリケーションを個別に管理することも、ネームスペースレベルで管理することもできます。データ保護処理に必要な精度のレベルが重要になります。</block>
   <block id="8bfc4cb4fff96597635f56f65ebcede0" category="paragraph">たとえば、毎週同じ頻度で「 Maria 」のバックアップポリシーを設定したいのに、同じネームスペースにある「 MariaDB 」をバックアップする頻度を高く設定するとします。これらのニーズに基づいて、アプリケーションを個別に管理する必要があり、単一のネームスペースで管理する必要はありません。</block>
   <block id="475ed97241ce60dd40c138c07077aa08" category="paragraph">Astra Control を使用すると、階層の両方のレベル（名前空間とその名前空間内のアプリケーション）を個別に管理できますが、いずれか一方を選択することをお勧めします。Astra Control で実行したアクションは、ネームスペースレベルとアプリケーションレベルの両方で同時に実行される場合、失敗する可能性があります。</block>
-  <block id="7456b57fbd6363e799b9140ba1f4f701" category="list-text">[* Apps * （アプリ） ] をクリックし、 [* Discovered * （検出されました</block>
   <block id="7c7feb7f0739093141fa30c858b44903" category="inline-image-macro">[ アプリケーション（ Apps ） ] ページのスクリーンショット。 [ 検出（ Discovered ） ] タブが表示されます。</block>
   <block id="f25e75ff35065f942eda2b53888c00ee" category="paragraph"><block ref="f25e75ff35065f942eda2b53888c00ee" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8becd0c5cc4d018d843024933b6f5998" category="list-text">検出されたネームスペースのリストを表示し、ネームスペースを展開してアプリケーションと関連リソースを表示します。</block>
@@ -725,7 +656,6 @@
   <block id="6af5a492909049f5a3f3a317f33387c5" category="section-title">Kubernetes ラベルでアプリケーションを管理</block>
   <block id="fafe7a62e8b3ae532bb18b06ccee820b" category="inline-link-macro">Kubernetes ラベルでアプリケーションを定義する方法については、こちらをご覧ください</block>
   <block id="c70e4706f2d47639fd54f78fb0c50201" category="paragraph">Astra Control の [ アプリ ] ページの上部には、「 * カスタムアプリの定義 * 」という名前のアクションが含まれています。このアクションを使用して、 Kubernetes ラベルで識別されるアプリケーションを管理できます。 <block ref="fde93888ae62d7b85e16fd461c153a76" category="inline-link-macro-rx"></block>。</block>
-  <block id="1dab58ae48ea7d3a7412dc2d15bbca88" category="list-text">[ * アプリ ] &gt; [ カスタムアプリの定義 * ] をクリックします。</block>
   <block id="221ab6bdb8b195fa84e284c4d1e0bbcd" category="list-text">[ カスタムアプリケーションの定義 * （ Define Custom Application * ） ] ダイアログボックスで、アプリケーションを管理するために必要な情報を入力します。</block>
   <block id="b0e41529770f4e2b9a698031a68dc524" category="list-text">* 新しいアプリ * ：アプリの表示名を入力します。</block>
   <block id="a5c5c227f5aa127dcfb5c741eafa8154" category="list-text">* 名前空間： * アプリケーションの名前空間を選択します。</block>
@@ -976,7 +906,6 @@
   <block id="d4e399a1961669ef4191b171a0a4eb03" category="section-title">AKS クラスタをサポートします</block>
   <block id="8e10df2546204872b3da1dc12a263e27" category="paragraph">Astra Control Service を使用して、 Azure Kubernetes Service （ AKS ）の管理対象の Kubernetes クラスタで実行されているアプリケーションを管理できるようになりました。</block>
   <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link-macro">開始方法をご確認ください</block>
-  <block id="47a6e4bbd0a1f4738255c4c14a199e67" category="paragraph"><block ref="bbfbc95121121c86e7bde060c4ebb02d" category="inline-link-macro-rx"></block>。</block>
   <block id="aba3d4b49c454e1974970e7b5514b001" category="section-title">REST API</block>
   <block id="2060fc67fc5c061f438a3545c894960f" category="paragraph">Astra Control REST API が使用できるようになりました。API は、最新のテクノロジと最新のベストプラクティスに基づいています。</block>
   <block id="d0c288db47307237677ead5ae8dbf32b" category="inline-link">REST API を使用してアプリケーションデータのライフサイクル管理を自動化する方法について説明します</block>
@@ -1031,7 +960,6 @@
   <block id="620c8f12ab4f146ac5712875e24a69bc" category="list-text">請求用のセクションを追加しました。このセクションは、 Astra Control Service が General Availability （ GA ）用にリリースされたときに有効になります。</block>
   <block id="12b9b659d869dd236ba1bd7b8c22763c" category="summary">Astra Control Service は、永続的ボリューム用のバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="afd5c3412d8aaa89e4ade2ddff8cac9b" category="doc">GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ</block>
-  <block id="be06e02f211888b09234a7d2ff15f2f1" category="paragraph">Astra Control Service は、永続的ボリューム用のバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="244763a8bcf1786e84650aa8b0aeeb25" category="paragraph">Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。<block ref="6fccf359b538aaaeb2b6ee13ea815763" category="inline-link-rx"></block> クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。</block>
   <block id="d3f5696e3e2a02aef97b3ec088f9f1bb" category="paragraph">Kubernetes クラスタを特定のリージョンに配置する必要がある場合は、そのリージョンでサポートされているサービスタイプを使用します。</block>
   <block id="1db71e1c4d4dbda81703682edf3a6df1" category="paragraph">ただし、 Google Cloud リージョンを柔軟に選択できる場合は、パフォーマンス要件に基づいて次のことをお勧めします。</block>
@@ -1085,7 +1013,6 @@
   <block id="d8568369060fcb13cca6cbacdb0a7c69" category="list-text">標準的なストレージ</block>
   <block id="9c2af9c43f2be40978cce06350aeea0e" category="list-text">1TiB あたり最大 16 MiB/ 秒のスループットを提供します。</block>
   <block id="28e6e6c898b365d6eba133035d9d869e" category="inline-link-macro">容量プールの設定方法について説明します</block>
-  <block id="7c3fd1201ecca4bd828067cc05c7404a" category="paragraph">これらのサービスレベルは容量プールの属性です。Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。 <block ref="9c64cfc629a7238f66dacc21bcfc31e7" category="inline-link-macro-rx"></block>。</block>
   <block id="8421a35703a0079cbbb74ac63b5042ac" category="inline-link">これらのサービスレベルの詳細については、 Azure NetApp Files のドキュメントを参照してください</block>
   <block id="4081238ea81a74b395a9a94d19e16e7e" category="paragraph"><block ref="edfb291319373c6206f36cf737cf3f20" category="inline-link-rx"></block>。</block>
   <block id="1c4c03fddfe9018e07fad3e8219a1aae" category="paragraph">前述したように、各サービスレベルのスループットは、プロビジョニング済み容量の 1TiB あたりのスループットです。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。したがって、ボリュームのプロビジョニング時には、容量とパフォーマンスの両方のニーズを考慮する必要があります。</block>
@@ -1131,7 +1058,6 @@
   <block id="ab3e2d6ef736bd8d26778b2e7113b6f7" category="inline-link">Astra 自動ドキュメントにアクセスします</block>
   <block id="0175163d6395e694e3b8efa4f3884e4d" category="paragraph">をクリックしてください。<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>。</block>
   <block id="8486df515c0b656873dd95e4d3416d37" category="sidebar">Astra Control Service のドキュメント</block>
-  <block id="68b1e52936c426875b2780e91e195546" category="sidebar">REST API で自動化</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
   <block id="13c01a54604c3f7049eaa9f3390e1622" category="sidebar">Astra Control Service の詳細をご確認ください</block>
   <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">クイックスタート</block>
@@ -1140,7 +1066,6 @@
   <block id="a022d74e2b8b62dd9f1caa37a51aa3f3" category="sidebar">アプリケーションを管理します</block>
   <block id="f9a3b6d7d4f722781b7ac31c64e204a1" category="sidebar">アプリケーションを保護</block>
   <block id="6bed64eb351ecf707b45586e054b5960" category="sidebar">アプリケーションを移行する</block>
-  <block id="09ae48d2dd2cf1ae059cabe60cd21aaf" category="sidebar">Astra REST API を使用</block>
   <block id="19ec08da81a826d919d64ab860845c04" category="sidebar">API リファレンス</block>
   <block id="a8cdd583ea359a6ef025304a7be14aeb" category="sidebar">API ワークフロー</block>
   <block id="81a123ccab93cd947289b672b0e50348" category="sidebar">デモチュートリアル</block>
@@ -1156,7 +1081,6 @@
   <block id="b1cb177a36a717434db632021b6d91bc" category="sidebar">Astra Control を使用した MySQL DBaaS</block>
   <block id="332153f6f1b31602ac3418cdf4d18170" category="sidebar">Jenkins のライフサイクル管理を簡易化</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">ブログコミュニティ</block>
-  <block id="0c2a2a6a4c35696b309713d6db0f8404" category="sidebar">スラックチャンネル</block>
   <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control ブログ</block>
   <block id="dbfc769b7e821664736a653f70155476" category="sidebar">Astra Control –ハイブリッドクラウド向けのアプリケーションデータ管理を簡易化</block>
   <block id="a984dc296b5a86b8097f515731aee987" category="sidebar">Cloud Central の Kubernetes Hub</block>
@@ -1179,7 +1103,6 @@
   <block id="515ddaf1bc34159a3a7827d17c7aa5db" category="sidebar">検証済みのアプリケーションと標準のアプリケーションの比較</block>
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">カスタムアプリケーションを定義する</block>
   <block id="decffb9e7c279510849a3e5513787dad" category="list-text">Containerd を使用したコンテナ最適化 OS です</block>
-  <block id="367dcd19960f9ba12d3b3fe1c84d0e33" category="list-text">[Get Started with Astra Control] をクリックします。</block>
   <block id="3f1d9fb87fc33f3d4ce9b5dd75395968" category="doc">Astra Control Service から Kubernetes クラスタの管理を開始します</block>
   <block id="7867ff317e101e02ab5ea31a9b4ff20b" category="section-title">Kubernetes クラスタの管理を開始します</block>
   <block id="ea1985c42cc53ff4c48ab7df18f4954d" category="paragraph">Astra Control Service にログインしたら、最初にクラスタの管理を開始します。</block>
@@ -1196,14 +1119,11 @@
   <block id="b3786fc8dfd9ef27e069bb2a2e954251" category="summary">ここまでは、 Astra Control にログインしてクラスタを追加したので、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。</block>
   <block id="cd26568520740fb15191df367ae016f6" category="paragraph">ログインして Astra Control にクラスタを追加したので、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。</block>
   <block id="d8222de1aa927c141b3a208e534e2164" category="paragraph">ネットアップリソースプロバイダを登録 <block ref="1a6283ac5652ee1365a6604fb78e9fc4" category="inline-xref-macro-rx"></block>。</block>
-  <block id="b6b0a5a2ff9a13b07078c6953318cc0a" category="paragraph">Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft Azure にサインアップします。次に、ネットアップリソースプロバイダを登録して Azure NetApp Files にアクセスします。</block>
-  <block id="cd575bca67e7ce42ef851b5892844f6b" category="list-text">Microsoft Azure アカウントをすでにお持ちの場合は、手順 4 に進みます。</block>
   <block id="396a6678444badce28754fa646d863f5" category="inline-link">Azure サブスクリプションページ</block>
   <block id="9e8197f491970cd76939ecc798d4f782" category="list-text">にアクセスします<block ref="6a3cf2aa4c76e983705d2b4d0c0cfeec" category="inline-link-rx"></block> をクリックして Azure サービスに登録してください。</block>
   <block id="200fbb68e8906141c429083e9bcb6fe3" category="list-text">プランを選択し、指示に従ってサブスクリプションを完了します。</block>
   <block id="f4753a613899e6c5fa411aae13fc0512" category="list-text">Azure ポータルにログインします。</block>
   <block id="8ea322965c1b00e5dc2b32f6b44cbbd2" category="list-text"><block ref="f31b4593573f8f3173b74083d2b4942a" category="inline-link-rx"></block>。</block>
-  <block id="848d6e0b4947d64e4eb9ae3543cf1cce" category="paragraph">登録が完了したら、 Azure NetApp Files でネットアップアカウントを作成します。</block>
   <block id="9350d2c562eac87f39f2b4d0643884b6" category="paragraph">10 分ほど待ってから、委任されたサブネットで実行されているクラスタを検出します。</block>
   <block id="94eecee45e93b07731a5b0419e759fd0" category="section-title">Astra Control にクラスタを追加</block>
   <block id="369cb71e96306a90c968f5187321b61b" category="paragraph">ログインしたら、 * Add cluster * をクリックして、 Astra Control を使用したクラスタの管理を開始します。</block>
@@ -1257,6 +1177,318 @@
   <block id="d018979646e76280ddd6e2787bcce765" category="paragraph">Astra Control Service は、永続ボリュームのストレージクラスとしてこれらのサービスレベルを使用します。Kubernetes クラスタを Astra Control Service に追加する場合、デフォルトのストレージクラスとして Ultra 、 Premium 、または Standard のいずれかを選択するように求められます。ストレージクラスの名前は、 _NetApp-anf-perf-ultra 、 _NetApp-anf-pPremium_ 、および _NetApp-anf-pperf-standard_ です。</block>
   <block id="10c73592e6dac790c75f1d7cefb013df" category="paragraph">表示されるポップアップウィンドウで、管理者が「 devops-canary-deployment 」をアプリケーション名として設定します。次に、 [**Cluster**] ドロップダウンでクラスタを選択し、 [**Namespace **] ドロップダウンからアプリケーションのネームスペースを選択します。</block>
   <block id="0d9029e785d6af991e53b31b279e9aa4" category="sidebar">クラスタを管理します</block>
-  <block id="4a1ec7599c06da640a611db2ba7d41c3" category="sidebar">アプリケーションとクラスタの健常性を表示します</block>
   <block id="2e901cb275fe5eac0fdd78371462a2dc" category="sidebar">クラスタの健常性と詳細</block>
+  <block id="7a6e75527e8cceba4c18c8c92f04e84c" category="summary">一般的な問題のトラブルシューティングのヒントを紹介します。</block>
+  <block id="231cf4c70d866b616c21baddaeed0696" category="doc">トラブルシューティング</block>
+  <block id="36e2bd9e7950f46d3ea6d2bca4c50ba1" category="paragraph">発生する可能性のある一般的な問題を回避する方法について説明します。</block>
+  <block id="79c5785e2761673e59d8eea6f1277fe2" category="paragraph"><block ref="79c5785e2761673e59d8eea6f1277fe2" category="inline-link-rx"></block></block>
+  <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="section-title">を参照してください。</block>
+  <block id="b35bb2f67f8827a8ec9e7d20a3435980" category="list-text"><block ref="b35bb2f67f8827a8ec9e7d20a3435980" category="inline-link-rx"></block></block>
+  <block id="825cc355a6b503245e0d84d26f0e16d1" category="paragraph">現在のリリースに影響する既知の問題は次のとおりです。</block>
+  <block id="b9cce366a2d9d759915518e851cf0665" category="list-text"><block ref="16c16afb381b877e03025eb37da25b48" category="inline-xref-macro-rx"></block></block>
+  <block id="d3e9aa65af62841e4f76b512ae2f0bc6" category="list-text"><block ref="b3245371f9a4420028b8568536aa8ffb" category="inline-xref-macro-rx"></block></block>
+  <block id="4320e7c52676351916973ab2e7117d79" category="list-text"><block ref="7735c4d0d59ea45baf445abe08a5d464" category="inline-xref-macro-rx"></block></block>
+  <block id="912be0c0f28d3149659e1c69ab046da2" category="list-text"><block ref="c7612c316be10fbd4e77f7281bf6e841" category="inline-xref-macro-rx"></block></block>
+  <block id="7226b79c874924cba1c47ffd9eb36304" category="list-text"><block ref="f6caba7cca284ecfec562cc842c83aee" category="inline-xref-macro-rx"></block></block>
+  <block id="22523fe6d37fbd919200f409f6e0992e" category="list-text"><block ref="a896da4003375fbcc9c25e321bafff33" category="inline-xref-macro-rx"></block></block>
+  <block id="70349fbabd47d30bbfa25bf8e3755abd" category="list-text"><block ref="cc32903e451bee2b84a8f72fefa8ee63" category="inline-xref-macro-rx"></block></block>
+  <block id="5de088201c37321210684bf47b4bce8a" category="list-text"><block ref="39e9ecf4ae70e80aeb633987e29f78a6" category="inline-xref-macro-rx"></block></block>
+  <block id="1af0576f77189b1c71e1d3a9eade995a" category="section-title">ストレージクラスを設定してアプリケーションを導入すると、アプリケーションのクローンが失敗する</block>
+  <block id="99dd9758763fdd9d63c8172bb77a83e6" category="paragraph">ストレージクラスを明示的に設定してアプリケーションをデプロイした後 ( たとえば、「 helm install...-set global.storageClass=NetApp-cvs-perf-extreme 」 ) 、アプリケーションのクローンを作成しようとすると、ターゲットクラスタに最初に指定されたストレージクラスが必要になります。ストレージクラスを明示的に設定したアプリケーションを、同じストレージクラスを含まないクラスタにクローニングすると、失敗します。このシナリオではリカバリ手順はありません。</block>
+  <block id="cbe80683ce886af66ccaaa3c0870a530" category="section-title">特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します</block>
+  <block id="70fc1bae36d48b09899dc323f7fbc3b4" category="paragraph">Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。</block>
+  <block id="885a0d954fa2993f5dd836d15e760d49" category="section-title">カスタムアプリケーション実行フックスクリプトがタイムアウトし、原因のスナップショット後のスクリプトが実行されない</block>
+  <block id="1f8c5caea7c9ae9483dd91dca0cbea0e" category="paragraph">実行フックの実行に 25 分以上かかる場合 ' フックは失敗し ' 戻りコードが N/A のイベント・ログ・エントリが作成されます影響を受けた Snapshot はタイムアウトして失敗とマークされ、タイムアウトを通知するイベントログエントリが生成されます。</block>
+  <block id="17d3f28d49d56e0703e3a6f4d50f0a36" category="paragraph">実行フックは、実行中のアプリケーションの機能を低下させたり、完全に無効にしたりすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。</block>
+  <block id="b40c1720b5310892d96ee661df005b4f" category="section-title">同じネームスペースで同時にアプリケーションのリストア処理を実行しようとすると失敗することがあります</block>
+  <block id="f9700182463519eb244a3e6fbae86db6" category="paragraph">ネームスペース内の個別に管理されたアプリケーションを同時にリストアしようとすると、長時間後にリストア処理が失敗することがあります。回避策として、各アプリケーションを一度に 1 つずつリストアします。</block>
+  <block id="277d303328081a08d224ba1791474f8c" category="section-title">外部スナップショットバージョン 4.2.0 を使用している場合、スナップショットは最終的に失敗します</block>
+  <block id="989f15ab4fafcbe33b5c793f7c17921f" category="inline-link">サポートされているバージョン</block>
+  <block id="b07ba4d88165e7d28588bdffecc7b23e" category="paragraph">Kubernetes 1.20 または 1.21 で Kubernetes snapshot-controller （別名 external-snapshotter ）バージョン 4.2.0 を使用すると、 Snapshot が失敗することがあります。これを防ぐには、別のを使用してください<block ref="4a7fe4e7f109667d1c8972a591d16348" category="inline-link-rx"></block> バージョン 4.2.1 などの外部 Snapshot データ。 Kubernetes バージョン 1.20 または 1.21 で使用。</block>
+  <block id="e77720bd91d980409ea57235b611dd6e" category="section-title">アプリケーションバックアップの実行を停止できません</block>
+  <block id="2e622d4e702129954e1bcffaa396cd0c" category="inline-link-macro">Astra API</block>
+  <block id="a6b95e95c29b6b778a2bb5c83d202b51" category="paragraph">実行中のバックアップを停止する方法はありません。バックアップを削除する必要がある場合は、完了するまで待ってから、の手順を実行してください <block ref="777724861a1b2b54feb45c8bdf61227c" category="inline-link-macro-rx"></block>。失敗したバックアップを削除するには、を使用します <block ref="a647889db3e3dfce2d3ecc8688cb9b7c" category="inline-link-macro-rx"></block>。</block>
+  <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021 年 12 月 14 日</block>
+  <block id="f116cbb19d305fc5f45303cff165aa39" category="section-title">バックエンドストレージ</block>
+  <block id="014c40e02dc111da4b5931cf5687b21a" category="paragraph">Astra Control Service が、バックエンドストレージオプションとして Google Persistent Disk および Azure マネージドディスクをサポートするようになりました。</block>
+  <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">Azure で管理されているディスクを使用して Microsoft Azure をセットアップする</block>
+  <block id="727aad970dc4f9da832a886a6c56b88b" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。<block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
+  <block id="7b3573ea6db30898defcb7febd2bdcfa" category="section-title">In Place アプリケーションのリストア</block>
+  <block id="e86cc6374d62a2872beb0208da0813b0" category="paragraph">同じクラスタおよびネームスペースにリストアすることで、アプリケーションの Snapshot 、クローン、またはバックアップを元の場所にリストアできるようになりました。</block>
+  <block id="8e5ee9c2a1b184da5a35efa5d7871c5a" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block>。</block>
+  <block id="fd992c0b09e92e279eda8917fa43c758" category="section-title">実行フック付きのスクリプトイベント</block>
+  <block id="a478a8a85e8d5b4261344d3f3155e9f7" category="paragraph">Astra Control は、アプリケーションのスナップショットを作成する前または後に実行できるカスタムスクリプトをサポートしています。これにより、データベーストランザクションの中断などのタスクを実行して、データベースアプリケーションのスナップショットの整合性を保つことができます。</block>
+  <block id="372ba25517e6092baf2e0abc0ae2ef65" category="inline-link-macro">アプリケーション実行フックを管理します</block>
+  <block id="fd97dbf49f60060858d27ec2f39f9852" category="paragraph"><block ref="708d69a9cfe8326e5c6ce3c8ad6ac757" category="inline-link-macro-rx"></block>。</block>
+  <block id="0aea14b5509034ec7bfda96240032b87" category="section-title">運用者が展開するアプリケーション</block>
+  <block id="001cfeadec5d2655b94c41c2f8e9ffb9" category="paragraph">Astra Control は、一部のアプリケーションをオペレータとともに展開する場合にサポートします。</block>
+  <block id="4d3589c66697aed7276e133624ab14c4" category="paragraph"><block ref="2ea11a36f6164d1bd0f8d6a42682dfb9" category="inline-link-macro-rx"></block>。</block>
+  <block id="f6b11c5982f8d301941ff34e63d86306" category="section-title">リソースグループのスコープを持つサービスプリンシパル</block>
+  <block id="44505870450dee16371965f84479e2ae" category="paragraph">Astra Control Service が、リソースグループスコープを使用するサービスプリンシパルをサポートするようになりました。</block>
+  <block id="0e2b1c17ba5bdc75276878ba355660f8" category="paragraph"><block ref="e654c32bea1b21fec8de7bcafdd49dec" category="inline-link-macro-rx"></block>。</block>
+  <block id="a916818021b3f228baef189d6dcd5538" category="paragraph"><block ref="bc25b49e1030874d11222c9fe6a36711" category="inline-link-macro-rx"></block>。</block>
+  <block id="ec566a7ae96d8d40feeed984810bbeaa" category="section-title">アプリケーション管理の制限</block>
+  <block id="b9637d46b079194a13bb9ba833e4a23b" category="paragraph">Astra Control Service によるアプリケーションの管理には、次の制限があります。</block>
+  <block id="a445040139f09298f7fa8e3a22ea47fa" category="section-title">参照渡し演算子を使用してインストールされたアプリケーションのクローンが失敗することがあります</block>
+  <block id="cee3f7f1743165823d88b27d5998cf00" category="paragraph">Astra Control は、名前空間を対象とした演算子でインストールされたアプリケーションをサポートします。これらの演算子は、一般に「パスバイリファレンス」アーキテクチャではなく「パスバイ値」で設計されています。これらのパターンに続くいくつかのオペレータアプリを次に示します。</block>
+  <block id="489435e765db57e2156b5a11839b6533" category="inline-link">Apache K8ssandra</block>
+  <block id="3440b7c2bc625432a7948e390eab90ab" category="list-text"><block ref="3440b7c2bc625432a7948e390eab90ab" category="inline-link-rx"></block></block>
+  <block id="6bf4ab292e1934fbd766550b2286a71d" category="inline-link">Jenkins CI</block>
+  <block id="24337449ed86c9d906bb8f815e170f3c" category="list-text"><block ref="24337449ed86c9d906bb8f815e170f3c" category="inline-link-rx"></block></block>
+  <block id="31131d7e3685b20b85f5636870f62782" category="inline-link">Percona XtraDB クラスタ</block>
+  <block id="c1575cacf426b45878d5adfc037a028f" category="list-text"><block ref="c1575cacf426b45878d5adfc037a028f" category="inline-link-rx"></block></block>
+  <block id="17cc01540b66b5969e8b039af78f39bd" category="paragraph">Astra Control では、「パスバイリファレンス」アーキテクチャ（ CockroachDB オペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。</block>
+  <block id="4ca7dc421a8ddd4aa75d4b6260361e44" category="list-text">「 * アプリケーション」をクリックし、アプリケーションの名前をクリックします。</block>
+  <block id="661873c9c7c84b792ca8599fbe466424" category="list-text">「 * アプリケーション」をクリックし、管理アプリの名前をクリックします。</block>
+  <block id="60f16fbab8f5af75e357292732d79f61" category="list-text">* リストアの詳細 * ：リストアされたアプリの詳細を指定します。アプリをインプレースで復元する（アプリを以前のバージョンのアプリに戻す）には、現在実行している名前空間クラスタとデスティネーションクラスタを選択します。</block>
+  <block id="a7bc2231dc9db4f0c0279b7078d873df" category="list-text">アプリケーションのネームスペースを入力します。</block>
+  <block id="38a9af535913b72cb6d2465d43c14c23" category="list-text">* リストアの概要 * ：リストア操作の詳細を確認し、「 restore 」と入力して、 * Restore * をクリックします。</block>
+  <block id="e0a009f71c45ec1153e84265035d5614" category="paragraph">Astra Control は、指定した情報に基づいてアプリケーションを復元します。アプリケーションをインプレースでリストアした場合、関連付けられている永続ボリュームは削除され、再作成されます。</block>
+  <block id="7e46eec05d939a3916f692179a409a98" category="list-text">[* アプリケーション ] をクリックします。</block>
+  <block id="3fe7d67b8f0628b05891d62d99baa50d" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="729195046546458059238eb51a9a1385" category="inline-link-macro-rx"></block>。</block>
+  <block id="7b7f260c982647b3aee51c681be792ef" category="section-title">アプリケーション管理の要件</block>
+  <block id="cf73deade33bc07fe6dbe1484e320a85" category="paragraph">Astra Control アプリケーションの管理に関する次の要件を考慮してください。</block>
+  <block id="040814594415b3be75eca728578ba39d" category="list-text">* ライセンス * ： Astra Control Center を使用してアプリケーションを管理するには、 Astra Control Center ライセンスが必要です。</block>
+  <block id="9ddfdbe42c83c42ff3e215c90be2d274" category="list-text">* 名前空間 * ： Astra Control では、アプリケーションが複数の名前空間にまたがることはありませんが、名前空間には複数のアプリケーションを含めることができます。</block>
+  <block id="a23e8e619b2ffd1ec1e37fd1f16eee74" category="list-text">* StorageClass* ： StorageClass が明示的に設定されたアプリケーションをインストールし、そのアプリケーションをクローニングする必要がある場合、クローン処理のターゲットクラスタに最初に指定された StorageClass が必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。</block>
+  <block id="7a9f49c6cd6dca3bc35b755523c76570" category="list-text">* Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。</block>
+  <block id="d7d354d0f9d0780e168c895c92a32c24" category="list-text">クラスタロール</block>
+  <block id="e866afd8290d5c73cda6260e04e6eef0" category="list-text">ClusterRoleBinding</block>
+  <block id="a941f8adb5ae079ebc739cb59407fd30" category="list-text">ConfigMap</block>
+  <block id="99bc4b850e05bafd67cf5f5f49344c1e" category="list-text">CustomResourceDefinition の場合</block>
+  <block id="2597d86efa761b80f198c7208e859dd7" category="list-text">CustomResource の場合</block>
+  <block id="0d4eb61dc57afc7f3f8d51439c96eedd" category="list-text">デモンセット（ DemonSet ）</block>
+  <block id="ea355214fd4bc7c57f471bd92918879b" category="list-text">導入</block>
+  <block id="788c34b60baf42eb1cac433ba1f0b64a" category="list-text">DeploymentConfig</block>
+  <block id="7d05c708b92b4809bfe9bf66edf8f765" category="list-text">入力</block>
+  <block id="1fcd027e4be180b1536eba3afa93e6be" category="list-text">MutingWebhook</block>
+  <block id="2b3f8e4d49589c4452db0a07d619d824" category="list-text">PersistentVolumeClaim のように表示され</block>
+  <block id="8a0813c70cf4bf1529f25c411a039130" category="list-text">ポッド</block>
+  <block id="3f402161942e4154684cf3f56c76cead" category="list-text">ReplicaSet</block>
+  <block id="ec7eab019566cfca91934ab1e0073511" category="list-text">RoleBinding です</block>
+  <block id="bbbabdbe1b262f75d99d62880b953be1" category="list-text">ロール</block>
+  <block id="9405c3aff9112c3c60d03b94792877dc" category="list-text">ルート</block>
+  <block id="1e6947ac7fb3a9529a9726eb692c8cc5" category="list-text">秘密</block>
+  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="list-text">サービス</block>
+  <block id="5c24ffd6438853b537bd99b3fccd3340" category="list-text">サービスアカウント</block>
+  <block id="f202d1133673fa6cfe280880cbc3ee66" category="list-text">Stateful役立つ セット</block>
+  <block id="91e292ade0a336af19f1ac0977215b91" category="list-text">検証 Webhook</block>
+  <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">サポートされているアプリインストール方法</block>
+  <block id="573397b0111be96f3a33176d467b428b" category="paragraph">次の方法を使用して、 Astra Control で管理するアプリケーションをインストールできます。</block>
+  <block id="1633320139361ee32414ab0910725238" category="list-text">* マニフェストファイル * ： Astra Control は、 kubectl を使用してマニフェストファイルからインストールされたアプリケーションをサポートします。例：</block>
+  <block id="a117e5ae155bb69285242a4c89875dd6" category="list-text">* Helm 3 * ： Helm を使用してアプリケーションをインストールする場合、 Astra Control には Helm バージョン 3 が必要です。Helm 3 （または Helm 2 から Helm 3 にアップグレード）を使用してインストールされたアプリケーションの管理とクローニングが完全にサポートされています。Helm 2 でインストールされたアプリケーションの管理はサポートされていません。</block>
+  <block id="1e98c3baca1e6d04cbb2c6a3e5f7a646" category="list-text">* オペレータが導入したアプリケーション * ： Astra Control は、名前空間を対象とした演算子を使用してインストールされたアプリケーションをサポートします。これらの演算子は、一般に「パスバイリファレンス」アーキテクチャではなく「パスバイ値」で設計されています。これらのパターンに続くいくつかのオペレータアプリを次に示します。</block>
+  <block id="c3e1751d9e2c9a30dbe63e23450f97d0" category="admonition">インストールする演算子とアプリケーションは、同じ名前空間を使用する必要があります。このような名前空間を使用するには、演算子の deployment.yaml ファイルを変更する必要があります。</block>
+  <block id="bf341fecbc1974636478f3d6843275d3" category="list-text">[* アプリケーション ] をクリックし、 [* 検出されました * ] をクリックします。</block>
+  <block id="a3074d11436c106bb2f5789c56f95256" category="list-text">[ * アプリケーション（ * Applications ） ] &gt; [ カスタムアプリケーションの定義（ Define custom app ）</block>
+  <block id="9d8f2c43275b418d0a8bb43287edc93a" category="summary">実行フックは、管理対象アプリケーションのスナップショットの前または後に実行できるカスタムスクリプトです。</block>
+  <block id="2288e8ec67a1f50c1db25afbedc9a88b" category="paragraph">実行フックは、管理対象アプリケーションのスナップショットの前または後に実行できるカスタムスクリプトです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。</block>
+  <block id="2cc0bfbd2bd6f51ffd3393d01318e0d7" category="section-title">デフォルトの実行フックと正規表現</block>
+  <block id="42dbc497172314b7a625c9199daef9d1" category="paragraph">一部のアプリケーションでは、ネットアップが提供するデフォルトの実行フックが Astra Control に付属しており、スナップショットの前後にフリーズや再開の操作を処理します。Astra Control では、正規表現を使用して、アプリケーションのコンテナイメージを次のアプリケーションに照合します。</block>
+  <block id="7f9733e208088b1ce6df3d4be1765396" category="list-text">MariaDB</block>
+  <block id="67b0a3a27042ed2830ff017e3a5ec217" category="list-text">正規表現 \bmariadb\b に一致しています</block>
+  <block id="62a004b95946bb97541afa471dcca73a" category="list-text">MySQL</block>
+  <block id="23551ee4cada219399731098aea4ae0d" category="list-text">正規表現 \bmysqql\b に一致しています</block>
+  <block id="399bd1ee587245ecac6f39beaa99886f" category="list-text">PostgreSQL</block>
+  <block id="5a242a74c2253b64354668ec927a984d" category="list-text">正規表現 \bpostgresql\b と一致します</block>
+  <block id="630c2c7cfb035105c02c801262667863" category="paragraph">一致した場合は、そのアプリケーションのデフォルトの実行フックがアプリケーションのアクティブな実行フックのリストに表示され、そのアプリケーションのスナップショットが作成されると、それらのフックが自動的に実行されます。カスタムアプリケーションの 1 つに、正規表現の 1 つと一致するように表示されるイメージ名が似ている場合（デフォルトの実行フックを使用しない場合）、イメージ名を変更することができます。 または、そのアプリケーションのデフォルト実行フックを無効にして、代わりにカスタムフックを使用します。</block>
+  <block id="ba267b772a4885333887281012f64999" category="paragraph">デフォルトの実行フックを削除または変更することはできません。</block>
+  <block id="f99748fb4b1cf592516b60937743c52d" category="section-title">カスタム実行フックに関する重要な注意事項</block>
+  <block id="6b8e88c5f4231fbc6994f3a29dd893af" category="paragraph">アプリケーションの実行フックを計画するときは、次の点を考慮してください。</block>
+  <block id="fb450e5d9e019c5500d4434f5494aa87" category="list-text">Astra Control では、実行フックを実行可能なシェルスクリプトの形式で記述する必要があります。</block>
+  <block id="05900ed9180783aa10b7cac2d040287a" category="list-text">スクリプトサイズは 128KB に制限されています。</block>
+  <block id="9f18e5f245d81d4ba975fb0ed354f44a" category="list-text">Astra Control は、実行フックの設定と一致条件を使用して、スナップショットに適用できるフックを決定します。</block>
+  <block id="9e39142a3b85e9b5aef933f3d3b50505" category="list-text">実行フックの障害はすべてソフトな障害です他のフックとスナップショットは ' フックが失敗しても試行されますただし、フックが失敗すると、 * アクティビティ * ページイベントログに警告イベントが記録されます。</block>
+  <block id="7ca576bd037d81bea6107c8128e012fa" category="list-text">実行フックを作成、編集、または削除するには、 Owner 、 Admin 、または Member 権限を持つユーザーである必要があります。</block>
+  <block id="47d4976e0ab766da5e5bc33c2e81992f" category="list-text">実行フックの実行に 25 分以上かかる場合 ' フックは失敗し ' 戻りコードが N/A のイベント・ログ・エントリが作成されます該当する Snapshot はタイムアウトして失敗とマークされ、タイムアウトを通知するイベントログエントリが生成されます。</block>
+  <block id="6f0d5941d5a6edfad3a1597fae5c8340" category="admonition">実行フックは、実行中のアプリケーションの機能を低下させるか、完全に無効にすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。</block>
+  <block id="85884cdb28c540f0c4303b856baccb21" category="paragraph">スナップショットが実行されると、実行フックイベントが次の順序で実行されます。</block>
+  <block id="5936ace30c9682209bac26a6cf17f0a5" category="list-text">ネットアップが提供するデフォルトの Snapshot 前実行フックは、該当するコンテナで実行されます。</block>
+  <block id="3cc90ac696cc15f3a1f4b652cd6c8e2d" category="list-text">適用可能なカスタムスナップショット前実行フックは、適切なコンテナで実行されます。必要な数のカスタムスナップショット前フックを作成して実行できますが ' スナップショットの実行順序は保証も構成もされていません</block>
+  <block id="e1c07fff519141a632663357439e8e5e" category="list-text">スナップショットが実行されます。</block>
+  <block id="a855feb0aa797d3860882f2518173409" category="list-text">適用可能なカスタムスナップショット後実行フックは、適切なコンテナで実行されます。必要な数のカスタムスナップショット後フックを作成して実行できますが ' スナップショット後のこれらのフックの実行順序は保証されておらず ' 構成もできません</block>
+  <block id="b644b911438d878cde48c51a9d5ae2f0" category="list-text">ネットアップが提供するデフォルトのポスト Snapshot 実行フックは、該当するコンテナで実行されます。</block>
+  <block id="1e36fbbe2ce5e3e617a5e68ea7888fd0" category="admonition">本番環境で実行スクリプトを有効にする前に、必ず実行フックスクリプトをテストしてください。'kubectl exec' コマンドを使用すると、スクリプトを簡単にテストできます。本番環境で実行フックを有効にしたら、作成されたスナップショットの整合性をテストします。これを行うには、アプリケーションを一時ネームスペースにクローニングし、スナップショットをリストアしてから、アプリケーションをテストします。</block>
+  <block id="287ac6f1e9835e8be6ef9f06d2facb3f" category="section-title">既存の実行フックを表示します</block>
+  <block id="d3172414d15d12b537010619170ef70f" category="paragraph">既存のカスタム実行フックまたはネットアップが提供するアプリケーションのデフォルト実行フックを表示できます。</block>
+  <block id="c91b53b026773d149cd03ed154f3e929" category="list-text">「 * アプリケーション」に移動し、管理アプリの名前を選択します。</block>
+  <block id="4a921c3efaab8bbadecfb6a807d12e69" category="list-text">[ 実行フック * ] タブを選択します。</block>
+  <block id="598f95e7e2a8cd7848dd4b29c4c4130c" category="paragraph">有効または無効になっているすべての実行フックを結果リストに表示できます。フックのステータス ' ソース ' および実行時（スナップショット前またはスナップショット後）を表示できます実行フックに関連するイベントログを表示するには、左側のナビゲーション領域の * アクティビティ * ページに移動します。</block>
+  <block id="c45dea86b5befe190795d48755984936" category="section-title">カスタム実行フックを作成します</block>
+  <block id="f1ec6389b6d19d3be02f29f4a7d29051" category="inline-link-macro">実行フックの例</block>
+  <block id="accd1f6705376b7c94fe544977e50545" category="paragraph">アプリケーションのカスタム実行フックを作成できます。を参照してください <block ref="6d8239255f3b956e54f6aae8a56a0ae9" category="inline-link-macro-rx"></block> フックの例を参照してください。実行フックを作成するには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</block>
+  <block id="97d4eaa7e08199eec78b3f2b45ff990e" category="admonition">実行フックとして使用するカスタムシェルスクリプトを作成する場合は、 Linux コマンドを実行しているか、実行可能ファイルへの完全パスを提供している場合を除き、ファイルの先頭に適切なシェルを指定するようにしてください。</block>
+  <block id="8418a36d2778041af8e3f737ec1644a7" category="list-text">「 * アプリケーション」を選択し、管理アプリの名前を選択します。</block>
+  <block id="cf808b97e5d7f2cfaa109e4b5101b807" category="list-text">[ * 新しいフックを追加 * ] を選択します。</block>
+  <block id="796d0ce8546c52743d2626618a4ca7fa" category="list-text">フックの詳細 * 領域で、フックを実行するタイミングに応じて、「 * Pre-Snapshot * 」または「 * Post-Snapshot * 」を選択します。</block>
+  <block id="4069b8bd7c11bc17efc85c9bb6d794c1" category="list-text">フックの一意の名前を入力します。</block>
+  <block id="cc56ac336e2ae46c348055eabdb31910" category="list-text">（オプション）実行中にフックに渡す引数を入力し、各引数を入力した後で Enter キーを押して、それぞれを記録します。</block>
+  <block id="bdc506e89ee9aec709d8e40132db20f3" category="list-text">[* Container Images * （コンテナイメージ * ） ] 領域で、アプリケーションに含まれるすべてのコンテナイメージに対してフックを実行する必要がある場合は、 [ * Apply to all container images * （すべてのコンテナイメージに適用 * ） ] チェックボックスを有効にします。代わりに、フックが 1 つ以上の指定されたコンテナイメージに対してのみ機能する場合は、 * Container image names to match * フィールドにコンテナイメージ名を入力します。</block>
+  <block id="1144b2f2ea8eccb66bf20cdea686b3d2" category="list-text">[* スクリプト * （ * Script * ） ] 領域で、次のいずれかを実行します。</block>
+  <block id="489a27c3b545dfadcd33d3ce67932718" category="list-text">カスタムスクリプトをアップロードする。</block>
+  <block id="e3f243bc33219b29c2a12b59c90be96c" category="list-text">[ ファイルのアップロード（ Upload file ） ] オプションを選択します。</block>
+  <block id="9ccaf1be3925cbb7f180d624546f5ff5" category="list-text">ファイルを参照してアップロードします。</block>
+  <block id="8f77388bee22d909f48ca83e1d19ff01" category="list-text">スクリプトに一意の名前を付けます。</block>
+  <block id="7ecdb873e1239bfeaf5c617b779dd434" category="list-text">（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</block>
+  <block id="c1b97a456b241d38af9df8418fe93955" category="list-text">クリップボードからカスタムスクリプトを貼り付けます。</block>
+  <block id="4db2825538cb98b2354abbc17590027e" category="list-text">クリップボードから貼り付け * オプションを選択します。</block>
+  <block id="1a71cd2313095cebe3a5bf76adff4cae" category="list-text">テキストフィールドを選択し、スクリプトテキストをフィールドに貼り付けます。</block>
+  <block id="6d4a5ef582e95d5022946acc47ce0f2e" category="list-text">[ * フックを追加 * ] を選択します。</block>
+  <block id="12bf76ea0a88e9814b22daef0831337b" category="section-title">実行フックを無効にします</block>
+  <block id="df61c20b7e6ebb23392c4395835c3e51" category="paragraph">アプリケーションのスナップショットの前または後に実行を一時的に禁止する場合は、実行フックを無効にできます。実行フックを無効にするには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</block>
+  <block id="3db19f7cf910c7ffa84134b063a1fe01" category="list-text">無効にするフックの * Actions * ドロップダウンを選択します。</block>
+  <block id="dbf8ea65a71d9e2042b03a97a0da4095" category="list-text">[*Disable*] を選択します。</block>
+  <block id="2ac3de7754eb6e2a50dccc9a566f5b2c" category="section-title">実行フックを削除します</block>
+  <block id="da5e9c066635008b4b3ce13bb28ca328" category="paragraph">不要になった実行フックは完全に削除できます。実行フックを削除するには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</block>
+  <block id="c36567ab36724bd818f6572adf810828" category="list-text">削除するフックの * Actions * ドロップダウンを選択します。</block>
+  <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">「 * 削除」を選択します。</block>
+  <block id="a77683ae8edcb3cd1537700411834ab9" category="summary">次の例を使用して、実行フックの構造を確認してください。</block>
+  <block id="3a93b0a9cf88ddc06d563489a2895c27" category="paragraph">次の例を使用して、実行フックの構造を確認してください。これらのフックは、テンプレートまたはテストスクリプトとして使用できます。</block>
+  <block id="4080d94759fa38e6a6b1dba142b2c090" category="section-title">シンプルな成功例</block>
+  <block id="0633de588be1b9b7ef2ce544cc43b805" category="paragraph">次に、成功し、標準出力および標準エラーにメッセージを書き込む単純フックの例を示します。</block>
+  <block id="2140ca0b50b65cc33e13b1693e8f7d29" category="section-title">シンプルな成功の例（ bash バージョン）</block>
+  <block id="ef53d64aad9e1800233c6ff7ad7659a6" category="paragraph">次に、 bash 用に書かれた標準出力と標準エラーにメッセージを書き込む単純なフックの例を示します。</block>
+  <block id="d803bd21292822cc57f6cea1b26277a6" category="section-title">単純な成功例（ zsh バージョン）</block>
+  <block id="66b0025d5aab9045e3b45a4d66a48753" category="paragraph">これは、成功した単純なフックの例であり、標準出力と標準エラーに Z シェル用に記述されたメッセージを書き込みます。</block>
+  <block id="404a19c311e695f744083ec2c8a6a1aa" category="section-title">引数を指定した成功の例</block>
+  <block id="824760aa066fdf7d7264404530eab6de" category="paragraph">次の例は、フックで args を使用する方法を示しています。</block>
+  <block id="82319328d67378fb8ea8de76b217a7b1" category="section-title">スナップショット前 / スナップショット後のフックの例</block>
+  <block id="98fa2db3a9b66ee5684a718840275afc" category="paragraph">次の例は、 Snapshot 前フックと Snapshot 後フックの両方に同じスクリプトを使用する方法を示しています。</block>
+  <block id="07feeb75b51e9098527fcce368e18ba4" category="section-title">失敗の例</block>
+  <block id="76214508e53f6a5210da5d087deabd64" category="paragraph">次の例は、フックで障害を処理する方法を示しています。</block>
+  <block id="3619ce0a3177781c10d45dcef727f469" category="section-title">詳細なエラーの例</block>
+  <block id="e29a5c052b79db2027518d6f91a1bf51" category="paragraph">次の例では ' フックの失敗をより詳細なロギングで処理する方法を示します</block>
+  <block id="b1eef973caa0256ee30c734876bbea52" category="section-title">終了コード例を使用した失敗</block>
+  <block id="72a1fa5b5d8898a40469febc542a9fb1" category="paragraph">次の例は、終了コードを使用したフックの失敗を示しています。</block>
+  <block id="19913f9a3a2b84a8e9235b0b3b542efb" category="section-title">失敗後の成功の例</block>
+  <block id="bb2f4bbf1bdeef5e734446fc84fd577d" category="paragraph">次の例では、最初の実行時にフックが失敗していますが、 2 回目の実行後に成功しています。</block>
+  <block id="b236785facde2b09aab0f1358b3003c7" category="admonition">オペレータが配置した Jenkins CI のインスタンスをクローニングする場合は、永続データを手動でリストアする必要があります。これは、アプリケーションの展開モデルの制限事項です。</block>
+  <block id="de630a4ac4f8e7e0a9e20d3f541a85b7" category="admonition">StorageClass が明示的に設定されたアプリケーションを展開し、そのアプリケーションをクローニングする必要がある場合、ターゲットクラスタには元の StorageClass が指定されている必要があります。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。</block>
+  <block id="64fabb80bf7e41a0ea8ece77188574e9" category="paragraph">Astra Control Service は、永続的ボリュームのバックエンドストレージオプションとして、 Google Cloud または Google Persistent Disk に対する Cloud Volumes Service をサポートします。</block>
+  <block id="1f6fda2ae9580323f5c79562837d0e39" category="paragraph">Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用可能サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
+  <block id="4ea21227490cfda88113ac9e09c3d896" category="section-title">Google Persistent Disk のことです</block>
+  <block id="d3b64a20e78d25caa83daac1f7416ce6" category="paragraph">Astra Control Service は、バックエンドストレージオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。</block>
+  <block id="c533b58a8522da4b56509ffdf8f54226" category="inline-link">Google Persistent Disk の詳細については、こちらをご覧ください</block>
+  <block id="39c44ccf09904735b47f23a89ee2e724" category="paragraph"><block ref="055a60e2d0748ea0284ea572aa51a82d" category="inline-link-rx"></block>。</block>
+  <block id="a314ef41007da089aa4ae498f35e3a10" category="inline-link">Google Persistent Disk のさまざまなパフォーマンスレベルについて、詳しくはこちらをご覧ください</block>
+  <block id="c08852984e8c25f32d46962fb339726f" category="paragraph"><block ref="b74a328bba8a5da0f4307f58e738dc15" category="inline-link-rx"></block>。</block>
+  <block id="cfcb65d73063c257702a78a9ad3eed16" category="paragraph">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして、 Azure NetApp Files または Azure で管理されるディスクをサポートしています。</block>
+  <block id="167cfe9546198af64f9a61cd90c1ef96" category="paragraph">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
+  <block id="24d40c12811ba8511a6a75287f25a332" category="paragraph">これらのサービスレベルは容量プールの属性です。Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。 <block ref="c237f1c9714614fbf56e9e60532a8aa9" category="inline-link-macro-rx"></block>。</block>
+  <block id="7a4db5e977cc2bc82255e20ed9b93c4d" category="section-title">Azure で管理されるディスク</block>
+  <block id="019b6b2f137404751305d4ec51d170e6" category="paragraph">Astra Control Service は、 Azure で管理されるディスクをバックエンドストレージオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。</block>
+  <block id="9c92b8240042e913292ad9bea8c7698f" category="inline-link">Azure で管理されるディスクに関する詳細はこちらをご覧ください</block>
+  <block id="ff42fb74ba93da15d304e42948c0b518" category="paragraph"><block ref="250fe5b998dd6cb4de09bf9afa3806e9" category="inline-link-rx"></block>。</block>
+  <block id="044c3fd83fc36378aaf291c493c120cd" category="paragraph">Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。Azure で管理されているディスクをストレージバックエンドとして使用する場合は、次の手順に従います。</block>
+  <block id="2c2ded73ed7719aa3f82dedb9fcccda6" category="paragraph">クラスタが正常に機能していて Kubernetes バージョン 1.19 以降を実行していること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <block ref="9395dc33116d67c7ef7cce28cc804b43" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8aa1542b70e952ef5856c8311f2c94f8" category="section-title">Microsoft Azure に登録</block>
+  <block id="2b79be68afb828e7eb71cb1b196b7111" category="paragraph">Microsoft Azure アカウントを作成します。 <block ref="581a71540631d8d2bdd05d7929716426" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ff995866d25bc69c6a4d1dd3ab5c9c3d" category="paragraph">Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <block ref="a379c52bbe48fbf08d1c2a7e32e5d3a9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="5681ad899d1f22587d8d342af5438aa3" category="section-title">CSI ドライバの詳細を設定します</block>
+  <block id="739d0375408beba597cfd0a12ccae908" category="paragraph">CSI ドライバと連携するように Azure サブスクリプションとクラスタを設定する必要があります。 <block ref="a971cfcc29ff09bfcb84183e7004bd4b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="d8b41394afbf9355465b26daa3b4af72" category="section-title">Azure Kubernetes Service クラスタの要件</block>
+  <block id="eff252d1819f3f2a4c09f10dd2d087ff" category="list-text">クラスタで Kubernetes バージョン 1.19 以降が実行されている必要があります。</block>
+  <block id="35878b9641dbe3802b4757bd1077fbb8" category="list-text">ベストプラクティスとして、 Azure NetApp Files をストレージバックエンドとして使用しない場合でも、そのリージョンを選択することを推奨します。これにより、パフォーマンス要件が変わった場合でも、 Azure NetApp Files をストレージバックエンドとして簡単に使用できるようになります。<block ref="044693425a398e22f4ef06b4ccda4a31" category="inline-link-rx"></block>。</block>
+  <block id="7d653ff1ba76f45cb793405b89658cd9" category="list-text">クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは、 K8s バージョン 1.21 以降ではデフォルトでインストールされますが、バージョン 1.19 および 1.20 を実行しているクラスタでチェックする必要があります。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
+  <block id="f275a504c54ea3a90abc00bfebfe7a7a" category="list-text">CSI ドライバ</block>
+  <block id="3c627ee10d62c47f40f9476291a7df65" category="list-text">クラスタには適切な CSI ドライバがインストールされている必要があります。</block>
+  <block id="d60463534e01a8a35e1f9aa98d22ec6b" category="paragraph">Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft Azure にサインアップします。</block>
+  <block id="7710ac6ad884323c2d66aa76c5e54cee" category="list-text">スコープ用に選択するサブスクリプションまたはリソースグループには、 AKS クラスタと Azure NetApp Files アカウントが含まれている必要があります。</block>
+  <block id="dbaef35e880eda2e396bf968da7f046c" category="list-text">サブスクリプション全体を使用するかリソースグループを使用するかに応じて、次のいずれかの操作を行います。</block>
+  <block id="e5630d7a7098d6649fddc5368c9f22f0" category="list-text">サービスプリンシパルを作成し、 Contributor ロールを割り当て、クラスタが存在するリソースグループを指定します。</block>
+  <block id="48605c8a2ca65f7f1fa90fb8721f576c" category="list-text">オプション：サービスプリンシパルをテストします。サービスプリンシパルで使用するスコープに応じて、次のコマンド例を選択します。</block>
+  <block id="f48cc56569578a8d66e3e1bc6df633f2" category="listing-title">サブスクリプションの範囲</block>
+  <block id="5df2c0ed0c2769207fec15c735a9cc90" category="listing-title">リソースグループのスコープ</block>
+  <block id="a6d196c3f1270c8f9d7f0aa0ca66226d" category="paragraph">Azure で管理されているディスクを Astra Control Service とともに使用するには、まず最初に、 1.21 より前の Kubernetes バージョンの CSI ボリュームスナップショット機能を設定し、必要な CSI ドライバをインストールする必要があります。</block>
+  <block id="8663e184c93c556a02c9dc4b93999fe9" category="section-title">Kubernetes 1.19 の CSI ボリュームスナップショットコントローラをインストールします</block>
+  <block id="3217e067628e8f9b2df6611a59510512" category="paragraph">Kubernetes バージョン 1.19 を使用している場合は、次の手順に従ってボリューム Snapshot コントローラをインストールします。</block>
+  <block id="e2abdc426e0dd06db5e036ef6049166b" category="section-title">Kubernetes 1.20 の CSI ボリュームスナップショットコントローラをインストールします</block>
+  <block id="adad67e9ad8eb3058396d2c57591f078" category="paragraph">Kubernetes バージョン 1.20 を使用している場合は、次の手順に従ってボリューム Snapshot コントローラをインストールします。</block>
+  <block id="3df542e2922f063155bcf47995ab8d3d" category="section-title">Azure サブスクリプションで CSI ドライバ機能を有効にします</block>
+  <block id="c83ec598afcfd8eb8180685a01d0e884" category="paragraph">CSI ドライバをインストールする前に、 Azure サブスクリプションで CSI ドライバ機能を有効にする必要があります。</block>
+  <block id="88bcc5f12a365174fce5ed9581217c0f" category="list-text">Azure コマンドラインインターフェイスを開きます。</block>
+  <block id="d7b43ba09446a633f575c51655477a58" category="list-text">次のコマンドを実行してドライバを登録します。</block>
+  <block id="e0b4ff61d0820f6567af9482613f2a5d" category="list-text">次のコマンドを実行して、変更がプロゲートされていることを確認します。</block>
+  <block id="75955edcb1fe9db008dd5cd30e9dea12" category="paragraph">+ 次のような出力が表示されます。</block>
+  <block id="daae3454c5ca21f3cde2542bf9240548" category="section-title">Azure 管理ディスク CSI ドライバを Azure Kubernetes Service クラスタにインストールします</block>
+  <block id="0b1f7cc28b0b37ff72c091633f22b694" category="paragraph">Azure CSI ドライバをインストールして準備を完了できます。</block>
+  <block id="5c45917f00ad20e0e5789b736021ac07" category="inline-link">Microsoft CSI ドライバのマニュアル</block>
+  <block id="c2d2d99c015d6ed4a45ce75b2b9ca953" category="list-text">に進みます<block ref="adf79d747183776e7c06d1410cb6d788" category="inline-link-rx"></block>。</block>
+  <block id="cd94d68200454755b08c171645aa635d" category="list-text">指示に従って、必要な CSI ドライバをインストールします。</block>
+  <block id="f02a4f1a1e048f3a6cf64743ff32a880" category="doc">Astra Control Service アカウントに登録します</block>
+  <block id="ae0c96e1388d462dd723e6dd4f0bd3c4" category="paragraph">Astra Control Service を使用するには、 NetApp Cloud Central アカウントに関連付けられた Astra Control Service アカウントが必要です。Astra Control サービスの登録プロセスを完了し、 Cloud Central アカウントをまだお持ちでない場合は、 Cloud Central に登録して Astra Control Service にアクセスします。</block>
+  <block id="929a2c8db601f1a0c12d13ab5201ca53" category="paragraph">Astra Control Service にログインする前に、 Astra Control Service アカウントを取得する登録プロセスを完了する必要があります。</block>
+  <block id="8c6baa4592bc515f96faa8a5ebf64958" category="paragraph">Astra Control Service を使用すると、アカウント内からアプリケーションを管理できます。アカウントには、アカウント内のアプリを表示および管理できるユーザーと、課金情報が含まれます。</block>
+  <block id="6e30a86487abe3fe93905a3bf507e108" category="list-text">[* Get started with Astra Control] をクリックします。</block>
+  <block id="2a48a2be584253c1443571c773960f3a" category="list-text">[ フリープラン *] タブを選択します。</block>
+  <block id="411a964e218cfa49e4a8fcf4b29211ce" category="inline-image-macro">フリープランオプションを選択する必要がある登録フォームのプラン選択タブのスクリーンショット。</block>
+  <block id="11dd0e481cc32b1d9468666f07a64381" category="paragraph"><block ref="11dd0e481cc32b1d9468666f07a64381" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="397ba6461bc81007c47830ab967a55c3" category="list-text">「 * Astra Account Name * 」は、御社の Astra Control Service アカウントの名前です。この名前は、 Astra Control Service のユーザーインタフェースに表示されます。必要に応じて、追加のアカウントを作成できます（最大 5 つ）。</block>
+  <block id="2bfc156f7e05d36235d990fe7a177fe6" category="list-text">「 * Business Email Address * 」フィールドに、 NetApp Cloud Central アカウントをお持ちの場合は、このアカウントに使用する E メールアドレスを入力します。NetApp Cloud Central アカウントをまだお持ちでない場合は、 Cloud Central に登録するときに入力した E メールアドレスを使用してください。</block>
+  <block id="35b46e301702b6fcb16192f9f4cf4533" category="inline-link">Astra 制御サービス</block>
+  <block id="a8904a49187fe8beb4dfe8ca2e38e914" category="paragraph">NetApp Cloud Central アカウントをお持ちでない場合は、 Cloud Central にサインアップして Astra Control Service とネットアップの他のクラウドサービスにアクセスできます。Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central アカウントをすでにお持ちで、登録が完了している場合は、にアクセスできます<block ref="98c5a70a1a2162b1fc3e4c3e10ba9906" category="inline-link-rx"></block> Cloud Central のクレデンシャルを直接使用します。</block>
+  <block id="f9e7912a258783aeea63e6b8ad7d46ac" category="list-text">に進みます<block ref="acbb6886c35e57125998fe7d6c5eea1f" category="inline-link-rx"></block>。</block>
+  <block id="ad09bfc9a1feee2f0a3559c8766f8ec2" category="list-text">フォームに入力します。</block>
+  <block id="15fe50b23999649dcf139788bfea4ca2" category="paragraph">ここに入力する電話番号と電子メールアドレスが、前のフリープラン登録フォームで使用したものと同じであることを確認してください。</block>
+  <block id="70f1c1aa96af03406b5a381af4facea3" category="list-text">[ サインアップ ] をクリックします。</block>
+  <block id="7690d2214676bad5c3634c1fde683484" category="admonition">これらのフォームに入力する E メールアドレスは、 NetApp Cloud Central のユーザ ID です。この Cloud Central ユーザ ID は、新しい Astra Control Service アカウントにサインアップするとき、または Astra Control Service 管理者が既存の Astra Control Service アカウントに招待したときに使用します。</block>
+  <block id="01196ab9b910cb225df67b416b3d977b" category="list-text">NetApp Cloud Central からの E メールを待ちます。電子メールは saas.support@netapp.com の住所から来、着くまで数分かかるかもしれない。スパムフォルダを確認してください。</block>
+  <block id="f1b70488bee617ec79563698a5f58cfb" category="list-text">E メールが届いたら、 E メール内のリンクをクリックして E メールアドレスを確認します。</block>
+  <block id="22f598e03124be388e74fc380a10d131" category="paragraph">登録が完了すると、から Cloud Central のクレデンシャルを使用して、 Astra Control Service に直接アクセスできるようになります<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>。</block>
+  <block id="17bdc960e77c5de3d2f3da5e6e1affeb" category="admonition">Google Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用せず、あとで使用する予定の場合は、 Google Cloud Volumes Service for Google Cloud を今すぐ設定するために必要な手順を実行する必要があります。サービスアカウントをあとで作成すると、既存のストレージバケットへのアクセスが失われる可能性があります。</block>
+  <block id="faa2b74f6d94dd3d68f7eacb6a15810c" category="paragraph">クラスタが正常に動作していて、 1.19 ~ 1.21x の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ向けに最適化された OS または Ubuntu などを実行していることを確認します。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="fbbc27547284c3072e2071336248818b" category="section-title">（オプション）： Cloud Volumes Service for Google Cloud を購入します</block>
+  <block id="f64f72b18d9d3f42a934d7c395419bc9" category="paragraph">ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、購入をクリックします。 <block ref="90ae61b0273dab230585972eef2c11c3" category="inline-xref-macro-rx"></block>。</block>
+  <block id="5aab0b483e616de978f7efe5b7fd9904" category="list-text">Cloud Volumes Service for Google Cloud で必要です</block>
+  <block id="8e0a04bff2763ed7bba0f6b73b241e6e" category="list-text">Google Persistent Disk の場合はオプション（ただし推奨</block>
+  <block id="6598aaca4a8279b1c9ab7c8c82b638d8" category="section-title">（オプション）： VPC のネットワークピアリングを設定します</block>
+  <block id="88d403aa886236ef57680b11f50f531f" category="paragraph">Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <block ref="097b287203328b3efb3fc5f9d12189fc" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7f89d8636a0619ff67eeed64dfc8e783" category="paragraph">Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。</block>
+  <block id="a9c1db5f7ebed5ec4ad62c3c39433c12" category="list-text">クラスタで、 1.19 ~ 1.21.x の Kubernetes バージョンが実行されている必要があります</block>
+  <block id="48c8939d34f428e6bd9fc34603223f50" category="list-text">Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります<block ref="971594277e407eb62311208ac22b5d26" category="inline-link-rx"></block> Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。</block>
+  <block id="81bcc2f329ba39daa3b9368663a820ab" category="list-text">Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <block ref="0ad607852da897e410e97f9809885c68" category="inline-xref-macro-rx"></block>。</block>
+  <block id="95f7204aa86701c28a4a0409417c5f4b" category="list-text">クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは、 K8s バージョン 1.212.x 以降ではデフォルトでインストールされますが、バージョン 1.19 および 1.20 を実行しているクラスタで確認する必要があります。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
+  <block id="a2d65aaa254e549a7eb41705ba526cef" category="list-title">Kubernetes クラスタバージョン 1.19 の手順</block>
+  <block id="6cd15e1f98ce1005310afa5d55df2b0e" category="section-title">Cloud Volumes Service for Google Cloud の購入（オプション）</block>
+  <block id="46f21c0ec3b839de5273182beb6e061d" category="paragraph">Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。</block>
+  <block id="4e40453871bcb6e051f205dcbae576db" category="list-text">NetApp Cloud Volumes Service （ Cloud Volumes Service for Google Cloud に必要）</block>
+  <block id="bb6899268aabe3370c4b126920af4041" category="section-title">VPC のネットワークピアリングをセットアップする（オプション）</block>
+  <block id="51f8c6a7012b65e99111c9e3ddadba0e" category="paragraph">バックエンドストレージサービスとして Cloud Volumes Service for Google Cloud を使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。</block>
+  <block id="03870ec5ba5aa059c5837d414e30b753" category="doc">Azure NetApp Files を使用して Microsoft Azure をセットアップする</block>
+  <block id="aebb9cdcb362fa09289e4128c30bb35b" category="paragraph">Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。Azure NetApp Files をストレージバックエンドとして使用する場合は、次の手順に従います。</block>
+  <block id="007f76469d94ff452fb5a960473f4697" category="paragraph">Azure ポータルで Azure NetApp Files にアクセスし、ネットアップアカウントを作成します。 <block ref="d2becf07b74daf6c832034271db73d53" category="inline-xref-macro-rx"></block>。</block>
+  <block id="e20c92aad2d0c74e14fb503cd0274bef" category="list-text">以下の VNet の要件を考慮してください。</block>
+  <block id="2fa0752935820693d1c3ea1d746f69c8" category="list-text">新しい Amazon Kubernetes Service （ AKS ）クラスタを作成するときに、クラスタの新しいネットワークを指定します。新しいネットワークを作成したら、新しいサブネットをプロビジョニングし、そのサブネットを Azure NetApp Files に委譲します。</block>
+  <block id="cdb822854e35486ec942f9b7345738bd" category="paragraph">に記載されているとおり <block ref="9dab8ef42c21ab923812dd6f4aa0586e" category="inline-xref-macro-rx"></block>では、 Kubernetes クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。次の手順に従って、クラスタにコントローラをインストールします。</block>
+  <block id="f72cf4796daf84a79786a4dc7c845e31" category="paragraph">ネットアップリソースプロバイダを登録すると、 Azure NetApp Files にアクセスできます。</block>
+  <block id="18c7569dac0b7f1fac9304e68463a401" category="paragraph">Azure NetApp Files でネットアップアカウントを作成します。</block>
+  <block id="aaa2c694621e86ac6132b31a4beeafee" category="list-text">Google Kubernetes Engine クラスタの要件を確認します。</block>
+  <block id="533c4f8bbfe3145e908910678841985f" category="list-text">使用するストレージバックエンドの Azure Kubernetes Service クラスタ要件を確認します。</block>
+  <block id="a2a4c6f931cbb8803af4da4e8c55427d" category="inline-link-macro">Microsoft Azure と Azure NetApp Files の要件に関する詳細情報をご覧ください</block>
+  <block id="163a9a2de2c53fd4caa470a2d7b49ba6" category="paragraph"><block ref="ae585ba9e035dc3bebfa255ad19291f2" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2314bb09d0efb96ec542b1e8f42798f" category="inline-link-macro">Microsoft Azure と Azure で管理されるディスク要件については、こちらをご覧ください</block>
+  <block id="f3ada5ea7cbb146f87a40c9504f78e3b" category="paragraph"><block ref="a30c1b7efa0b121d09606b1ba764054c" category="inline-link-macro-rx"></block>。</block>
+  <block id="81407268363825411eb0a541277e605d" category="inline-link-macro">Azure NetApp Files for Astra Control サービスを使用した Microsoft Azure のセットアップ方法について説明します</block>
+  <block id="d20d2e56c5c59f7076aa364964bff639" category="list-text"><block ref="df8784d4e28bbea92bb8ade948c24614" category="inline-link-macro-rx"></block>。</block>
+  <block id="7490717743ec2dd2c224295efbbb781b" category="inline-link-macro">Azure で管理される Azure ディスクで Astra Control サービスを利用するための Microsoft Azure のセットアップ方法について説明します</block>
+  <block id="ae361e798f83cc34514b5bc74d5ec5d6" category="list-text"><block ref="2152ce675eb0b9d88dfc2e125645113a" category="inline-link-macro-rx"></block>。</block>
+  <block id="61ff50e91bc9118602e803e489f0e42f" category="inline-link-macro">Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件</block>
+  <block id="e2517379d9a14736369ae8b5b851ca0a" category="inline-link-macro">Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件</block>
+  <block id="68324e985558c5c0e27eed8eb0d54d55" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成します <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>、 <block ref="26225e7fb486798018db81609e04ff4b" category="inline-link-macro-rx"></block>または <block ref="4367f6239877b226051b2a69dcda335c" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3bda726609d17e2981e60b23a6e4c978" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
+  <block id="66f66890d5eab7f564eab22e8111acd0" category="paragraph">Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。</block>
+  <block id="4c2a16135db2c134a89a5111fec6af30" category="paragraph">価格、パフォーマンス、耐障害性に関する情報は、 Cloud Volumes Service for Google Cloud サービスごとにリストに表示されます。パフォーマンスと耐障害性の情報は、 Azure NetApp Files サービスごとに表示されます。Google Persistent Disk や Azure Managed Disk など、ネットアップ以外のストレージクラスについては、コスト、パフォーマンス、耐障害性に関する情報は提供されません。</block>
+  <block id="0397bb04b1ca291a49cf76be15c2f6e4" category="paragraph">ストレージクラスごとに、次のいずれかのサービスを利用できます。</block>
+  <block id="31e7239cc507a58a4794b36df4448093" category="list-text"><block ref="31e7239cc507a58a4794b36df4448093" category="inline-link-rx"></block></block>
+  <block id="f3c86dfec3bf21996638520b54f5d64e" category="list-text"><block ref="f3c86dfec3bf21996638520b54f5d64e" category="inline-link-rx"></block></block>
+  <block id="fe47a7bae21deac481466753a76b1e01" category="list-text"><block ref="fe47a7bae21deac481466753a76b1e01" category="inline-link-rx"></block></block>
+  <block id="c6a7824e4b3ef243db20452d107827b3" category="list-text"><block ref="c6a7824e4b3ef243db20452d107827b3" category="inline-link-rx"></block></block>
+  <block id="b03ad30a5cf7205451cf9d1c28fb3b46" category="inline-link-macro">GKE クラスタのストレージクラス</block>
+  <block id="388b49ca6772164d2fe62455b28ba25e" category="inline-link-macro">AKS クラスタのストレージクラス</block>
+  <block id="a3ee580d6f94fdbf5cb0aa45e2439e28" category="paragraph">の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block> および <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。</block>
+  <block id="e58ad76e34d50bf44f9e038d674c2fb9" category="paragraph">Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。</block>
+  <block id="30334fc03d9c154571a9c7384dc2fdef" category="sidebar">Astra Control REST API で自動化</block>
+  <block id="3a003da24f6641529c763cb023871157" category="sidebar">Astra Control REST API を使用</block>
+  <block id="b97c82950a650a87db9198b9545b1715" category="sidebar">「コンテナ」チャネルを緩みます</block>
+  <block id="d041642ada570d9bb242a59ad36899fd" category="sidebar">アプリとコンピューティングの健全性を表示します</block>
 </blocks>

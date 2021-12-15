@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: support/troubleshooting.html 
+keywords: support, register for support, support registration 
+summary: 一般的な問題のトラブルシューティングのヒントを紹介します。 
+---
+= トラブルシューティング
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/support/
+
+
+発生する可能性のある一般的な問題を回避する方法について説明します。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra[]
+
+
+
+== を参照してください。
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["トラブルシューティング"^]
+

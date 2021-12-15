@@ -61,3 +61,22 @@ Astra Control Service で使用するアプリケーションの種類に関係�
 === 永続的ボリュームの制限
 
 Google Cloud のリージョンごとに最大 100 個のボリュームを使用できます。この制限に達すると、新しいクローンまたはボリュームの作成が失敗します。 link:../support/get-help.html["ボリューム数の上限を引き上げるには、サポートにお問い合わせください"]。
+
+
+
+== アプリケーション管理の制限
+
+Astra Control Service によるアプリケーションの管理には、次の制限があります。
+
+
+
+=== 参照渡し演算子を使用してインストールされたアプリケーションのクローンが失敗することがあります
+
+Astra Control は、名前空間を対象とした演算子でインストールされたアプリケーションをサポートします。これらの演算子は、一般に「パスバイリファレンス」アーキテクチャではなく「パスバイ値」で設計されています。これらのパターンに続くいくつかのオペレータアプリを次に示します。
+
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+* https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB クラスタ"^]
+
+
+Astra Control では、「パスバイリファレンス」アーキテクチャ（ CockroachDB オペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。

@@ -13,5 +13,6 @@ summary: Astra Control Service を使用すると、 Google Kubernetes Engine �
 Astra Control Service を使用すると、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）の管理対象 Kubernetes クラスタで実行されているアプリケーションを管理できます。
 
 * link:set-up-google-cloud.html["Astra Control Service 向け Google Cloud のセットアップ方法をご確認ください"]。
-* link:set-up-microsoft-azure.html["Microsoft Azure for Astra Control Service のセットアップ方法について説明します"]。
+* link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files for Astra Control サービスを使用した Microsoft Azure のセットアップ方法について説明します"]。
+* link:set-up-microsoft-azure-with-amd.html["Azure で管理される Azure ディスクで Astra Control サービスを利用するための Microsoft Azure のセットアップ方法について説明します"]。
 

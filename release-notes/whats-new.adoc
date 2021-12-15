@@ -14,6 +14,50 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2021 年 12 月 14 日
+
+
+
+=== バックエンドストレージ
+
+Astra Control Service が、バックエンドストレージオプションとして Google Persistent Disk および Azure マネージドディスクをサポートするようになりました。
+
+link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。。
+
+
+
+=== In Place アプリケーションのリストア
+
+同じクラスタおよびネームスペースにリストアすることで、アプリケーションの Snapshot 、クローン、またはバックアップを元の場所にリストアできるようになりました。
+
+link:../use/restore-apps.html["アプリケーションのリストア"]。
+
+
+
+=== 実行フック付きのスクリプトイベント
+
+Astra Control は、アプリケーションのスナップショットを作成する前または後に実行できるカスタムスクリプトをサポートしています。これにより、データベーストランザクションの中断などのタスクを実行して、データベースアプリケーションのスナップショットの整合性を保つことができます。
+
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]。
+
+
+
+=== 運用者が展開するアプリケーション
+
+Astra Control は、一部のアプリケーションをオペレータとともに展開する場合にサポートします。
+
+link:../use/manage-apps.html#app-management-requirements["アプリの管理を開始します"]。
+
+
+
+=== リソースグループのスコープを持つサービスプリンシパル
+
+Astra Control Service が、リソースグループスコープを使用するサービスプリンシパルをサポートするようになりました。
+
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["Azure サービスプリンシパルを作成します"]。
+
+
+
 == 2021 年 8 月 5 日
 
 このリリースには、次の新機能と機能拡張が含まれています。
@@ -74,7 +118,7 @@ link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE ク�
 
 Astra Control Service を使用して、 Azure Kubernetes Service （ AKS ）の管理対象の Kubernetes クラスタで実行されているアプリケーションを管理できるようになりました。
 
-link:../get-started/set-up-microsoft-azure.html["開始方法をご確認ください"]。
+link:../get-started/set-up-microsoft-azure-with-anf.html["開始方法をご確認ください"]。
 
 
 

@@ -18,7 +18,7 @@ summary: Astra Control Service の利用を開始するには、いくつかの�
 
 . Google Cloud
 +
-** GKE クラスタの要件を確認します。
+** Google Kubernetes Engine クラスタの要件を確認します。
 ** Google Cloud Marketplace から Cloud Volumes Service for Google Cloud を購入
 ** 必要な API を有効にします。
 ** サービスアカウントとサービスアカウントキーを作成します。
@@ -30,14 +30,12 @@ link:set-up-google-cloud.html["Google Cloud の要件の詳細をご覧くださ
 
 . Microsoft Azure
 +
-** AKS クラスタの要件を確認します。
-** Azure NetApp Files に登録します
-** ネットアップアカウントを作成します
-** 容量プールをセットアップする
-** サブネットを Azure NetApp Files に委譲します
-** Contributor ロールを持つ Azure サービスプリンシパルを作成します。
+** 使用するストレージバックエンドの Azure Kubernetes Service クラスタ要件を確認します。
 +
-link:set-up-microsoft-azure.html["Microsoft Azure の要件に関する詳細は、こちらをご覧ください"]。
+link:set-up-microsoft-azure-with-anf.html["Microsoft Azure と Azure NetApp Files の要件に関する詳細情報をご覧ください"]。
+
++
+link:set-up-microsoft-azure-with-amd.html["Microsoft Azure と Azure で管理されるディスク要件については、こちらをご覧ください"]。
 
 
 

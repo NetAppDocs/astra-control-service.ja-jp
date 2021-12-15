@@ -13,6 +13,9 @@ summary: Astra Control Service を使用して Google Kubernetes Engine クラ�
 Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。
 
 
+NOTE: Google Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用せず、あとで使用する予定の場合は、 Google Cloud Volumes Service for Google Cloud を今すぐ設定するために必要な手順を実行する必要があります。サービスアカウントをあとで作成すると、既存のストレージバケットへのアクセスが失われる可能性があります。
+
+
 
 == Google Cloud のセットアップをすぐに開始できます
 
@@ -23,14 +26,14 @@ Astra Control Service を使用して Google Kubernetes Engine クラスタを�
 ==== Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に動作していて、 1.18 ～ 1.20 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ最適化 OS または Ubuntu を実行していることなどを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に動作していて、 1.19 ~ 1.21x の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ向けに最適化された OS または Ubuntu などを実行していることを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
-==== Cloud Volumes Service for Google Cloud を購入
+==== （オプション）： Cloud Volumes Service for Google Cloud を購入します
 
 [role="quick-margin-para"]
-Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動して、「購入」をクリックします。 <<Purchase Cloud Volumes Service for Google Cloud,このステップの詳細をご覧ください>>。
+ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、購入をクリックします。 <<Purchase Cloud Volumes Service for Google Cloud (optional),このステップの詳細をご覧ください>>。
 
 
 
@@ -45,6 +48,11 @@ Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動�
 * サービス利用
 * Cloud Resource Manager API の略
 * NetApp Cloud Volumes Service の略
++
+** Cloud Volumes Service for Google Cloud で必要です
+** Google Persistent Disk の場合はオプション（ただし推奨
+
+
 * Service Consumer Management API の略
 * サービスネットワーク API
 * Service Management API の略
@@ -62,6 +70,11 @@ Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動�
 
 * Kubernetes Engine Admin の略
 * NetApp Cloud Volumes Admin の権限が必要です
++
+** Cloud Volumes Service for Google Cloud で必要です
+** Google Persistent Disk の場合はオプション（ただし推奨
+
+
 * ストレージ管理者
 * Service Usage Viewer （サービス使用状況ビューア
 * ネットワークビューアを計算します
@@ -79,22 +92,18 @@ Google Cloud Marketplace の NetApp Cloud Volumes Service のページに移動�
 
 
 
-==== VPC のネットワークピアリングをセットアップします
+==== （オプション）： VPC のネットワークピアリングを設定します
 
 [role="quick-margin-para"]
-VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <<Set up network peering for your VPC,ステップバイステップの手順に従います>>。
-
-次の図は、実行する必要がある各手順を示しています。
-
-image:diagram-google-cloud.png["この概念図は、 Google Cloud プロジェクト、 IAM ロールとキーを持つサービスアカウント、有効にした API 、および Cloud Volumes Service for Google Cloud へのプライベートサービスアクセスを示しています。"]
+Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <<Set up network peering for your VPC (optional),ステップバイステップの手順に従います>>。
 
 
 
 == GKE クラスタの要件
 
-Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
+Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。
 
-Kubernetes のバージョン:: クラスタが 1.18 ~ 1.20 の Kubernetes バージョンを実行している必要があります。
+Kubernetes のバージョン:: クラスタで、 1.19 ~ 1.21.x の Kubernetes バージョンが実行されている必要があります
 イメージタイプ::
 +
 --
@@ -105,8 +114,8 @@ Kubernetes のバージョン:: クラスタが 1.18 ~ 1.20 の Kubernetes バ�
 
 --
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
-Google Cloud リージョン:: クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。
-ネットワーキング:: クラスタは、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内に存在する必要があります。 <<Set up network peering for your VPC,この手順については、以下で説明します>>。
+Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
+ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<Set up network peering for your VPC,この手順については、以下で説明します>>。
 プライベートクラスタ::
 +
 --
@@ -117,13 +126,62 @@ Google Cloud リージョン:: クラスタがで実行されている必要が�
 
 --
 GKE クラスタの動作モード:: 標準モードのオペレーションを使用する必要があります。自動操舵モードは、現時点ではテストされていません。 link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["操作モードの詳細を確認してください"^]。
+外部のボリューム Snapshot コントローラ:: クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは、 K8s バージョン 1.212.x 以降ではデフォルトでインストールされますが、バージョン 1.19 および 1.20 を実行しているクラスタで確認する必要があります。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください"^]。
 
 
 
 
-== Cloud Volumes Service for Google Cloud を購入
+=== CSI ボリュームスナップショットコントローラをインストールします
 
-Astra Control Service は、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用永続的ボリュームに対する請求を有効にするには、 Google Cloud Marketplace から Cloud Volumes Service for Google Cloud を購入する必要があります。
+要件のリストに記載されているように、 Kubernetes クラスタには CSI ボリュームスナップショットコントローラがインストールされている必要があります。次の手順に従って、クラスタにコントローラをインストールします。
+
+.Kubernetes クラスタバージョン 1.19 の手順
+. ボリュームスナップショット SSD をインストールする。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. スナップショットコントローラを作成します。
++
+特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+.K8s バージョン 1.20 の手順
+. ボリュームスナップショット SSD をインストールする。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. スナップショットコントローラを作成します。
++
+特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+
+
+== Cloud Volumes Service for Google Cloud の購入（オプション）
+
+Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。
 
 .ステップ
 . にアクセスします https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service のページ"^] Google Cloud Marketplace で、 * 購入 * をクリックし、画面の指示に従います。
@@ -146,7 +204,7 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purc
 ** Cloud Storage JSON API
 ** サービス利用
 ** Cloud Resource Manager API の略
-** NetApp Cloud Volumes Service の略
+** NetApp Cloud Volumes Service （ Cloud Volumes Service for Google Cloud に必要）
 ** Service Consumer Management API の略
 ** サービスネットワーク API
 ** Service Management API の略
@@ -222,9 +280,9 @@ JSON ファイルは、キーの作成時にのみ表示またはダウンロー
 video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 
-== VPC のネットワークピアリングをセットアップします
+== VPC のネットワークピアリングをセットアップする（オプション）
 
-最後の手順として、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。
+バックエンドストレージサービスとして Cloud Volumes Service for Google Cloud を使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。
 
 ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。
 

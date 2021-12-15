@@ -14,7 +14,12 @@ entries:
     url: "/use/restore-apps.html"
   - title: アプリケーションのクローン作成と移行
     url: "/use/clone-apps.html"
-- title: アプリケーションとクラスタの健常性を表示します
+  - title: アプリケーション実行フックを管理します
+    url: "/use/manage-app-execution-hooks.html"
+    entries:
+    - title: 実行フックの例
+      url: "/use/execution-hook-examples.html"
+- title: アプリとコンピューティングの健全性を表示します
   entries:
   - title: ダッシュボードの概要
     url: "/use/view-dashboard.html"

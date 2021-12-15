@@ -12,6 +12,30 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 
 既知の問題は、このリリースの製品を正常に使用できない可能性のある問題を特定します。
 
+現在のリリースに影響する既知の問題は次のとおりです。
+
+* <<App clones fail after an application is deployed with a set storage class>>
+* <<App clones fail using a specific version of PostgreSQL>>
+* <<Backup taken from new snapshot instead of existing snapshot>>
+* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
+* <<Clone performance impacted by large persistent volumes>>
+* <<Simultaneous app restore operations in the same namespace can fail>>
+* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
+* <<Unable to stop running app backup>>
+
+
+
+
+== ストレージクラスを設定してアプリケーションを導入すると、アプリケーションのクローンが失敗する
+
+ストレージクラスを明示的に設定してアプリケーションをデプロイした後 ( たとえば、「 helm install...-set global.storageClass=NetApp-cvs-perf-extreme 」 ) 、アプリケーションのクローンを作成しようとすると、ターゲットクラスタに最初に指定されたストレージクラスが必要になります。ストレージクラスを明示的に設定したアプリケーションを、同じストレージクラスを含まないクラスタにクローニングすると、失敗します。このシナリオではリカバリ手順はありません。
+
+
+
+== 特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します
+
+Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。
+
 
 
 == 既存の Snapshot ではなく新しい Snapshot から作成されたバックアップ
@@ -20,6 +44,32 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 
 
 
+== カスタムアプリケーション実行フックスクリプトがタイムアウトし、原因のスナップショット後のスクリプトが実行されない
+
+実行フックの実行に 25 分以上かかる場合 ' フックは失敗し ' 戻りコードが N/A のイベント・ログ・エントリが作成されます影響を受けた Snapshot はタイムアウトして失敗とマークされ、タイムアウトを通知するイベントログエントリが生成されます。
+
+実行フックは、実行中のアプリケーションの機能を低下させたり、完全に無効にしたりすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。
+
+
+
 == クローンのパフォーマンスが大規模な永続ボリュームによる影響を受ける
 
 非常に大容量で消費されている永続ボリュームのクローンが、オブジェクトストアへのクラスタアクセスによって断続的に低速になる可能性があります。クローンが停止し、データが 30 分以上コピーされていない場合、 Astra Control はクローン処理を終了します。
+
+
+
+== 同じネームスペースで同時にアプリケーションのリストア処理を実行しようとすると失敗することがあります
+
+ネームスペース内の個別に管理されたアプリケーションを同時にリストアしようとすると、長時間後にリストア処理が失敗することがあります。回避策として、各アプリケーションを一度に 1 つずつリストアします。
+
+
+
+== 外部スナップショットバージョン 4.2.0 を使用している場合、スナップショットは最終的に失敗します
+
+Kubernetes 1.20 または 1.21 で Kubernetes snapshot-controller （別名 external-snapshotter ）バージョン 4.2.0 を使用すると、 Snapshot が失敗することがあります。これを防ぐには、別のを使用してください https://kubernetes-csi.github.io/docs/snapshot-controller.html["サポートされているバージョン"^] バージョン 4.2.1 などの外部 Snapshot データ。 Kubernetes バージョン 1.20 または 1.21 で使用。
+
+
+
+== アプリケーションバックアップの実行を停止できません
+
+実行中のバックアップを停止する方法はありません。バックアップを削除する必要がある場合は、完了するまで待ってから、の手順を実行してください link:../use/protect-apps.html#delete-backups["バックアップを削除します"]。失敗したバックアップを削除するには、を使用します link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra API"^]。
