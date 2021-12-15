@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn/choose-class-and-size.html 
 keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
-summary: Astra Control Service は、永続的ボリューム用のバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
+summary: Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
 ---
 = GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ
 :hardbreaks:
@@ -11,13 +11,13 @@ summary: Astra Control Service は、永続的ボリューム用のバックエ�
 
 
 [role="lead"]
-Astra Control Service は、永続的ボリュームのバックエンドストレージオプションとして、 Google Cloud または Google Persistent Disk に対する Cloud Volumes Service をサポートします。
+Astra Control Service は、永続的ボリュームのストレージバックエンドオプションとして、 Google Cloud または Google Persistent Disk に対する Cloud Volumes Service をサポートします。
 
 
 
 == Cloud Volumes Service for Google Cloud
 
-Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用可能サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用可能サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
 
 
 
@@ -112,7 +112,7 @@ Astra Control Service では、 CVS サービスタイプで 300GiB 以上のボ
 
 == Google Persistent Disk のことです
 
-Astra Control Service は、バックエンドストレージオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。
+Astra Control Service は、ストレージバックエンドオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。
 
 https://cloud.google.com/persistent-disk/["Google Persistent Disk の詳細については、こちらをご覧ください"^]。
 

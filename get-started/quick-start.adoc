@@ -57,7 +57,7 @@ link:register.html["登録プロセスの詳細については、こちらをご
 ==== Astra Control にクラスタを追加
 
 [role="quick-margin-para"]
-ログインしたら、 * Add cluster * をクリックして、 Astra Control を使用したクラスタの管理を開始します。
+ログインしたら、「 * クラスタの追加」を選択して、 Astra Control を使用したクラスタの管理を開始します。
 
 [role="quick-margin-para"]
 link:add-first-cluster.html["クラスタの追加に関する詳細情報"]。

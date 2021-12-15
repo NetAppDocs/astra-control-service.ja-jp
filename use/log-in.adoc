@@ -16,7 +16,7 @@ summary: Astra Control Service には、 SaaS ベースのユーザインター�
 Astra Control Service には、にアクセスして、 SaaS ベースのユーザインターフェイスからアクセスできます https://astra.netapp.io[]。
 
 
-TIP: シングルサインオンを使用して、社内ディレクトリ（フェデレーション ID ）からのクレデンシャルを使用してログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * をクリックします。
+TIP: シングルサインオンを使用して、社内ディレクトリ（フェデレーション ID ）からのクレデンシャルを使用してログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
 
 .必要なもの
 * link:../get-started/register.html["Cloud Central のユーザ ID"]。

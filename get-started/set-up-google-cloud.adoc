@@ -33,7 +33,7 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 ==== （オプション）： Cloud Volumes Service for Google Cloud を購入します
 
 [role="quick-margin-para"]
-ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、購入をクリックします。 <<Purchase Cloud Volumes Service for Google Cloud (optional),このステップの詳細をご覧ください>>。
+ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。 <<Purchase Cloud Volumes Service for Google Cloud (optional),このステップの詳細をご覧ください>>。
 
 
 
@@ -181,10 +181,10 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Cloud Volumes Service for Google Cloud の購入（オプション）
 
-Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。
+Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。
 
 .ステップ
-. にアクセスします https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service のページ"^] Google Cloud Marketplace で、 * 購入 * をクリックし、画面の指示に従います。
+. にアクセスします https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service のページ"^] Google Cloud Marketplace で「 * Purchase * 」を選択し、画面の指示に従います。
 +
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service["Google Cloud のドキュメントに記載されているステップバイステップの手順に従って、サービスを購入して有効にします"^]。
 
@@ -234,7 +234,7 @@ Astra Control Service は、 Google Cloud サービスアカウントを使用�
 
 
 
-gcloud を使用したい場合は、 Astra Control インターフェイス内から手順を実行できます。[*Account] > [Credentials] > [Add Credentials] をクリックし、 [*Instructions*] をクリックします。
+gcloud を使用したい場合は、 Astra Control インターフェイス内から手順を実行できます。[*Account] > [Credentials] > [Add Credentials] を選択し、 [*Instructions*] を選択します。
 
 Google Cloud コンソールを使用する場合は、次のビデオで、コンソールからサービスアカウントを作成する方法を紹介します。
 
@@ -249,11 +249,11 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 . Google Cloud コンソールから、 * iam & Admin* に移動し、 * サービスアカウント * を選択します。
 . Astra のサービスアカウントを見つけます link:set-up-google-cloud.html#create-a-service-account["必要な権限"] E メールアドレスをコピーします。
 . ホストプロジェクトに移動し、 * iam & Admin* > * iam * を選択します。
-. [ 追加 ] をクリックし、サービスアカウントのエントリを追加します。
+. 「 * 追加」を選択し、サービスアカウントのエントリを追加します。
 +
 .. * 新規メンバー * ：サービスアカウントのメールアドレスを入力します。
 .. * 役割 * ： [* コンピュート・ネットワーク・ビューア * ] を選択します。
-.. [ 保存（ Save ） ] をクリックします。
+.. [ 保存（ Save ） ] を選択します。
 
 
 
@@ -282,7 +282,7 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 == VPC のネットワークピアリングをセットアップする（オプション）
 
-バックエンドストレージサービスとして Cloud Volumes Service for Google Cloud を使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。
+Cloud Volumes Service for Google Cloud をストレージバックエンドサービスとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。
 
 ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。
 
@@ -292,7 +292,7 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 Cloud Volumes Service には、 CVS と CVS パフォーマンスの 2 つのサービスタイプがあります。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["これらのサービスタイプの詳細については、こちらをご覧ください"^]。
 
 . https://console.cloud.google.com/netapp/cloud-volumes/volumes["Google Cloud Platform の Cloud Volume にアクセスします"^]。
-. [* Volumes （ボリューム） ] ページで、 [* Create （作成） ] をクリックします。
+. [* Volumes （ボリューム） ] ページで、 [* Create （作成） ] を選択します。
 . サービスタイプ * で、 * CVS * または * CVS - パフォーマンス * のいずれかを選択します。
 +
 Google Cloud リージョンに適したサービスタイプを選択する必要があります。これは、手順 1 で特定したサービスタイプです。サービスタイプを選択すると、ページ上のリージョンのリストが、そのサービスタイプがサポートされているリージョンで更新されます。
@@ -308,7 +308,7 @@ Google Cloud リージョンに適したサービスタイプを選択する必�
 +
 image:gcp-peering.gif["Google Cloud コンソールのスクリーンショット。 View Commands How to Set Up Network Peering というボタンが表示されます。"]
 
-. ボタンをクリックして、ネットワークピアリングのセットアップコマンドを表示します。
+. ボタンを選択して、ネットワークピアリングのセットアップコマンドを表示します。
 . コマンドをコピーし、 Cloud Shell で実行します。
 +
 これらのコマンドの使用方法の詳細については、を参照してください https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering["Cloud Volumes Service for GCP のクイックスタート"^]。
@@ -316,7 +316,7 @@ image:gcp-peering.gif["Google Cloud コンソールのスクリーンショッ�
 +
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access["プライベートサービスアクセスの設定とネットワークピアリングの設定について詳しくは、こちらをご覧ください"^]。
 
-. 完了したら、 * ファイルシステムの作成 * ページでキャンセルをクリックできます。
+. 完了したら、 * ファイルシステムの作成 * ページでキャンセルを選択できます。
 +
 このボリュームの作成は、ネットワークピアリング用のコマンドを取得するためだけに開始しました。
 

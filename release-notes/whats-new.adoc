@@ -18,9 +18,9 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
-=== バックエンドストレージ
+=== 新しいストレージバックエンドオプション
 
-Astra Control Service が、バックエンドストレージオプションとして Google Persistent Disk および Azure マネージドディスクをサポートするようになりました。
+Astra Control Service が、 Google Persistent Disk と Azure Managed Disk をストレージバックエンドオプションとしてサポートするようになりました。
 
 link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。。
 
@@ -96,7 +96,7 @@ GCP プロジェクト内の GKE クラスタを、共有 VPC ネットワーク
 
 Astra Control Service では、 CVS サービスのタイプを使用している場合、最小サイズ 300GiB の永続ボリュームが作成されるようになりました。
 
-link:../learn/choose-class-and-size.html["Astra Control Service では、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用する方法を説明します"]。
+link:../learn/choose-class-and-size.html["Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する方法を説明します"]。
 
 
 
@@ -175,7 +175,7 @@ link:../use/view-account-activity.html["アカウントアクティビティの�
 
 == 2021 年 3 月 1 日
 
-Astra Control Service がをサポートするようになりました https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのバックエンドストレージとして Cloud Volumes Service for Google Cloud を使用します。
+Astra Control Service がをサポートするようになりました https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用します。
 
 この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
 
@@ -210,7 +210,7 @@ image:screenshot-compute-pvs.gif["Kubernetes クラスタにプロビジョニ�
 
 * 既存の Snapshot またはバックアップからアプリケーションをリストアするオプションを追加しました。
 +
-image:screenshot-app-restore.gif["アプリケーションの [ データ保護 ] タブのスクリーンショット。アクションドロップダウンをクリックして、 [ アプリケーションの復元 ] を選択できます。"]
+image:screenshot-app-restore.gif["アプリケーションの [ データ保護 ] タブのスクリーンショット。このタブでは、 [ アプリケーションの復元 ] を選択するためのアクションを選択できます。"]
 
 * Astra Control Service が管理している Kubernetes クラスタを削除すると、クラスタが「 Removed 」状態になります。その後、 Astra Control Service からクラスタを削除できます。
 * アカウント所有者は、他のユーザに割り当てられたロールを変更できるようになりました。

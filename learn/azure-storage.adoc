@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn/azure-storage.html 
 keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
-summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして Azure NetApp Files を使用します。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
+summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files を使用します。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
 ---
 = AKS クラスタのストレージクラスと PV サイズ
 :hardbreaks:
@@ -11,13 +11,13 @@ summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラ
 
 
 [role="lead"]
-Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして、 Azure NetApp Files または Azure で管理されるディスクをサポートしています。
+Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして、 Azure NetApp Files または Azure で管理されるディスクをサポートします。
 
 
 
 == Azure NetApp Files の特長
 
-Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのバックエンドストレージとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
+Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。
 
 
 
@@ -52,6 +52,6 @@ Astra Control Service は、 PVC でボリュームサイズの縮小が要求�
 
 == Azure で管理されるディスク
 
-Astra Control Service は、 Azure で管理されるディスクをバックエンドストレージオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
+Astra Control Service は、 Azure で管理されるディスクをストレージバックエンドオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスクに関する詳細はこちらをご覧ください"^]。
