@@ -41,9 +41,9 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 
 
 | CVS - パフォーマンス | ストレージパフォーマンスのニーズが中程度から高レベルのアプリケーション | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["サポートされている Google Cloud リージョンを表示します。"^]  a| 
-* NetApp-cvs-standard
-* NetApp-cvs-premium が提供します
-* 最高のパフォーマンスを発揮するネットアップの cvs-extreme
+* netapp - cvs-perf-standard
+* perf-premium
+* perf-extreme
 
 | 100GiB 
 
@@ -62,7 +62,7 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 
 CVS - パフォーマンスサービスタイプでは、 Standard 、 Premium 、 Extreme の 3 つのサービスレベルがサポートされます。Astra Control Service にクラスタを追加する場合、永続ボリュームのデフォルトのストレージクラスとして Standard 、 Premium 、または Extreme のいずれかを選択するように求められます。これらの各サービスレベルは、容量や帯域幅のさまざまなニーズに対応するように設計されています。
 
-ストレージクラスの名前は、 _NetApp-cvs-standard_ 、 _NetApp-cvs-premiume_、 および _NetApp-cvs-mextreme _ です。
+ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["これらのサービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
 

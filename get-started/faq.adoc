@@ -132,7 +132,7 @@ Astra Control はアプリケーションを導入しない。アプリケーシ
 
 * アプリケーションの PVC が GCP CVS にバインドされていません。何が間違っていますか？ *
 
-Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-meum 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
+Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
 
 * kubectl get sc を実行し ' デフォルトのストレージ・クラスをチェックします
 * アプリケーションの導入に使用した YAML ファイルまたは Helm チャートをチェックし、別のストレージクラスが定義されているかどうかを確認します。

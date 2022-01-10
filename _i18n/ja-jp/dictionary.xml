@@ -225,7 +225,6 @@
   <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* ネットアップ以外のストレージにあるアプリケーションは Astra Control で管理できますか。 *</block>
   <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">いいえネットアップ以外のストレージを使用しているアプリケーションは Astra Control で検出できますが、ネットアップ以外のストレージを使用しているアプリケーションは管理できません。</block>
   <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* アプリケーションの PVC が GCP CVS にバインドされていません。何が間違っていますか？ *</block>
-  <block id="346b702c8a7dcf4fe312e988bde33c2d" category="paragraph">Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-meum 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">kubectl get sc を実行し ' デフォルトのストレージ・クラスをチェックします</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">アプリケーションの導入に使用した YAML ファイルまたは Helm チャートをチェックし、別のストレージクラスが定義されているかどうかを確認します。</block>
   <block id="e6a9a6e67a5ea296cdeb689bc08e952f" category="list-text">ワーカーノードのイメージタイプが Ubuntu であり、 NFS マウントが成功していることを確認します。</block>
@@ -876,15 +875,12 @@
   <block id="b781da83c6614728483efd98a6c45ff6" category="inline-link">サポートされている Google Cloud リージョンを表示します。</block>
   <block id="f2d5bc01766a2719ec00fce67740c5a0" category="cell"><block ref="f2d5bc01766a2719ec00fce67740c5a0" category="inline-link-rx"></block></block>
   <block id="571805c6be3d99c43ef1ffd83215e4e0" category="list-text">NetApp-cvs-standard</block>
-  <block id="53f9d12f8764bffed2ad543cfb1443dd" category="list-text">NetApp-cvs-premium が提供します</block>
-  <block id="478ab286708b08763e2b1dbecb3bf4bc" category="list-text">最高のパフォーマンスを発揮するネットアップの cvs-extreme</block>
   <block id="d47eab2f6c8443515b4726d2c0efbcec" category="cell">100GiB</block>
   <block id="51332b8fec73c1f1aeb5259d61fabb3a" category="cell">CVS</block>
   <block id="9c137190903b410a467e6b983bb71447" category="cell">ストレージパフォーマンスの要件が中程度よりも低いアプリケーション</block>
   <block id="0edbcf83e4e2aea2841ddd3b140c6d4b" category="cell">300 GiB</block>
   <block id="d0e151d8d46361050902da2abba3afe7" category="section-title">CVS - パフォーマンスサービスのタイプ</block>
   <block id="ded2e62d320c1b78718faf094d248b64" category="paragraph">ストレージクラスを選択して永続ボリュームを作成する前に、 CVS - パフォーマンスサービスのタイプに関する詳細を確認してください。</block>
-  <block id="697c64e48a6eafc1ca8347f5e7656773" category="paragraph">ストレージクラスの名前は、 _NetApp-cvs-standard_ 、 _NetApp-cvs-premiume_、 および _NetApp-cvs-mextreme _ です。</block>
   <block id="2a2fde22b2c381da69b13db7d0b36249" category="inline-link">これらのサービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください</block>
   <block id="7b46717e315f810cad794637906fa86c" category="paragraph"><block ref="70b2940f4d2aaf808bc46854c2bb4fd5" category="inline-link-rx"></block>。</block>
   <block id="13f98646de377b9b6685fdb302eeba4f" category="section-title">永続的なボリュームのサイズとパフォーマンス</block>
@@ -1491,4 +1487,9 @@
   <block id="a4a0f2c30880c790b9dbbfa923350694" category="paragraph">ログインしたら、「 * クラスタの追加」を選択して、 Astra Control を使用したクラスタの管理を開始します。</block>
   <block id="7bf41fe8e15f6028770c3b7c955f21e9" category="list-text">ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。</block>
   <block id="dfcef21edccf773f1b20e5811f0fb5ba" category="list-text">* 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。</block>
+  <block id="4473ba991fd8b7156539cce0f9872d7f" category="list-text">netapp - cvs-perf-standard</block>
+  <block id="cb56125f258291d2d25e0797165c0e2c" category="list-text">perf-premium</block>
+  <block id="db14445bac1925559a170b4efeb32b37" category="list-text">perf-extreme</block>
+  <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。</block>
+  <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。</block>
 </blocks>
