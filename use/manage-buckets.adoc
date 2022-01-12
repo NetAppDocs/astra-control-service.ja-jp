@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/manage-buckets.html 
-keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket 
+keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket, S3, s3, storage, object storage, object store, store, object 
 summary: Astra がバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドプロバイダ内のクラスタのデフォルトバケットを変更します。 
 ---
 = バケットを管理する
@@ -22,7 +22,7 @@ Astra がバックアップとクローンに使用するバケットを管理�
 
 Astra Control Service は、作成したバックアップとクローンにこのデフォルトバケットを使用します。その後、バックアップを使用して、クラスタ間でアプリケーションのリストアやクローニングを行うことができます。
 
-Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。
+Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。クラウドプロバイダ間でバケットをクローニングすることはできません。クラウドプロバイダ間でデータを移行するには、関連するアプリケーションのクローンを作成します。
 
 
 TIP: Astra Control Service は、バックアップまたはクローンを開始する前に、デスティネーションバケットがアクセス可能かどうかをチェックします。

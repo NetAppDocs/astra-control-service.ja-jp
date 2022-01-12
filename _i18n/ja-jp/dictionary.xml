@@ -626,7 +626,6 @@
   <block id="281b980af7a696eab76fe5424a68e4d7" category="section-title">Astra Control でのバケットの使用方法</block>
   <block id="7235bf4965aea4d7801668a2ba85f9bd" category="paragraph">最初の Kubernetes クラスタの管理を開始すると、 Astra Control Service が、管理対象クラスタと同じ場所にクラウドプロバイダのデフォルトバケットを作成します。</block>
   <block id="2a84d8a5024fb227d8832c858544bc54" category="paragraph">Astra Control Service は、作成したバックアップとクローンにこのデフォルトバケットを使用します。その後、バックアップを使用して、クラスタ間でアプリケーションのリストアやクローニングを行うことができます。</block>
-  <block id="bcdbdae99487e1ff70f52c41f5739947" category="paragraph">Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。</block>
   <block id="1c5f75566062a39b61ef6696a869091d" category="admonition">Astra Control Service は、バックアップまたはクローンを開始する前に、デスティネーションバケットがアクセス可能かどうかをチェックします。</block>
   <block id="29e296e0892cf7d05ecaa6f006dc0cfe" category="section-title">既存のバケットを表示します</block>
   <block id="6565a5299bf8c25c8e365589000e2011" category="paragraph">Astra Control Service で使用可能なバケットのリストを表示して、クラウドプロバイダのステータスを確認したり、デフォルトのバケットを特定したりできます。</block>
@@ -1492,4 +1491,5 @@
   <block id="db14445bac1925559a170b4efeb32b37" category="list-text">perf-extreme</block>
   <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。</block>
+  <block id="29de4658324b1b89cfc8d2758855b3af" category="paragraph">Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。クラウドプロバイダ間でバケットをクローニングすることはできません。クラウドプロバイダ間でデータを移行するには、関連するアプリケーションのクローンを作成します。</block>
 </blocks>
