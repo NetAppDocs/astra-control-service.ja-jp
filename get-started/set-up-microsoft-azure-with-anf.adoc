@@ -187,6 +187,7 @@ Astra Control Service が容量プールに永続的ボリュームをプロビ�
 
 Kubernetes アプリケーション用の容量プールを設定する際には、次の点を考慮してください。
 
+* 容量プールは、 AKS クラスタが Astra Control Service で管理される同じ Azure リージョンに作成する必要があります。
 * 容量プールには、 Ultra 、 Premium 、または Standard のいずれかのサービスレベルを指定できます。これらのサービスレベルはそれぞれ、パフォーマンスのニーズに合わせて設計されています。Astra Control Service は、 3 つすべてをサポートします。
 +
 Kubernetes クラスタで使用するサービスレベルごとに容量プールを設定する必要があります。

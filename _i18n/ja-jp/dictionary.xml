@@ -474,7 +474,6 @@
   <block id="703cd4ad217eb545975bc04b7fc26153" category="paragraph">a_snapshot_は 、アプリケーションと同じプロビジョニングボリュームに格納されるアプリケーションのポイントインタイムコピーです。通常は高速です。ローカル Snapshot を使用して、アプリケーションを以前の時点にリストアします。</block>
   <block id="2747db310010aa1d5a7b961fb241fcb0" category="paragraph">a_backup_ は、クラウドのオブジェクトストレージに格納されます。ローカル Snapshot に比べてバックアップに時間がかかる場合があります。ただし、クラウドのリージョン間でアクセスできるため、アプリケーションの移行が可能です。バックアップの保持期間を延長することもできます。</block>
   <block id="25504345a275167f21fbd2cb1114c22b" category="admonition">_ 最新のバックアップがあるまで、完全に保護することはできません _ 。これは、永続ボリュームから離れたオブジェクトストアにバックアップが格納されるために重要です。障害や事故によってクラスタと永続的ストレージが消去された場合は、バックアップをリカバリする必要があります。スナップショットを使用してリカバリすることはできません。</block>
-  <block id="45ad0235a77627fe6b23b64997cecf69" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。</block>
   <block id="c8584099e125666dd26e7f29bcfcac50" category="inline-image-macro">アプリの [ データ保護 ] タブのスクリーンショット。保護ポリシーを設定できます。</block>
   <block id="86790bcd9ced4001fa56ee08bef9d1dc" category="paragraph"><block ref="86790bcd9ced4001fa56ee08bef9d1dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a080c1d6ad4654d9b12e290cb531df28" category="list-text">毎時、毎日、毎週、および毎月のスケジュールで保持する Snapshot とバックアップの数を選択して、保護スケジュールを定義します。</block>
@@ -1492,4 +1491,8 @@
   <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。</block>
   <block id="29de4658324b1b89cfc8d2758855b3af" category="paragraph">Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。クラウドプロバイダ間でバケットをクローニングすることはできません。クラウドプロバイダ間でデータを移行するには、関連するアプリケーションのクローンを作成します。</block>
+  <block id="408410e994005339450ed31eabd8f6af" category="admonition">_ 最新のバックアップがあるまで、完全に保護することはできません _ 。これは、永続ボリュームから離れたオブジェクトストアにバックアップが格納されるために重要です。障害や事故によってクラスタとその永続的ストレージが損傷した場合は、バックアップをリカバリする必要があります。スナップショットを使用してリカバリすることはできません。</block>
+  <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">Astra Control REST API を使用して、スナップショットとバックアップを作成</block>
+  <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
+  <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">容量プールは、 AKS クラスタが Astra Control Service で管理される同じ Azure リージョンに作成する必要があります。</block>
 </blocks>
