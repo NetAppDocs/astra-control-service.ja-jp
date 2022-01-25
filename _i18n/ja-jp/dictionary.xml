@@ -306,7 +306,6 @@
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部のボリューム Snapshot コントローラ</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">CSI ボリュームスナップショットコントローラをインストールします</block>
-  <block id="db152b65ba4b10857eb411555072a9e1" category="paragraph">要件のリストに記載されているように、 Kubernetes クラスタには CSI ボリュームスナップショットコントローラがインストールされている必要があります。次の手順に従って、クラスタにコントローラをインストールします。</block>
   <block id="a618db5a33159c81598fe6712cd56a73" category="list-text">ボリュームスナップショット SSD をインストールする。</block>
   <block id="a571dbb3887a364b4b4dcb82a5fa6ec9" category="list-text">スナップショットコントローラを作成します。</block>
   <block id="111a34eabb6102652811ded59098f913" category="paragraph">特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。</block>
@@ -1308,7 +1307,6 @@
   <block id="a9c1db5f7ebed5ec4ad62c3c39433c12" category="list-text">クラスタで、 1.19 ~ 1.21.x の Kubernetes バージョンが実行されている必要があります</block>
   <block id="48c8939d34f428e6bd9fc34603223f50" category="list-text">Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります<block ref="971594277e407eb62311208ac22b5d26" category="inline-link-rx"></block> Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。</block>
   <block id="81bcc2f329ba39daa3b9368663a820ab" category="list-text">Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <block ref="0ad607852da897e410e97f9809885c68" category="inline-xref-macro-rx"></block>。</block>
-  <block id="95f7204aa86701c28a4a0409417c5f4b" category="list-text">クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは、 K8s バージョン 1.212.x 以降ではデフォルトでインストールされますが、バージョン 1.19 および 1.20 を実行しているクラスタで確認する必要があります。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
   <block id="a2d65aaa254e549a7eb41705ba526cef" category="list-title">Kubernetes クラスタバージョン 1.19 の手順</block>
   <block id="6cd15e1f98ce1005310afa5d55df2b0e" category="section-title">Cloud Volumes Service for Google Cloud の購入（オプション）</block>
   <block id="4e40453871bcb6e051f205dcbae576db" category="list-text">NetApp Cloud Volumes Service （ Cloud Volumes Service for Google Cloud に必要）</block>
@@ -1495,4 +1493,6 @@
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">Astra Control REST API を使用して、スナップショットとバックアップを作成</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
   <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">容量プールは、 AKS クラスタが Astra Control Service で管理される同じ Azure リージョンに作成する必要があります。</block>
+  <block id="a4f53e5340ac3c6ab0e1234f9f27981c" category="inline-link">Astra Control API</block>
+  <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control を使用すると、スナップショットまたはバックアップからアプリケーションをリストアできます。同じクラスタにアプリケーションをリストアする場合、既存の Snapshot からのリストアは高速です。Astra Control UI またはを使用できます<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> アプリを復元するには、</block>
 </blocks>
