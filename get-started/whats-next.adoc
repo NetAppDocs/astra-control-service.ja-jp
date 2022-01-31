@@ -4,7 +4,7 @@ permalink: get-started/whats-next.html
 keywords: get started, manage apps, manage account 
 summary: ここまでは、 Astra Control にログインしてクラスタを追加したので、 Astra Control のアプリケーションデータ管理機能を使い始めることができます。 
 ---
-= 次の内容
+= 次の手順
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/

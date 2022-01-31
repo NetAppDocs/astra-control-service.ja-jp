@@ -260,7 +260,6 @@
   <block id="2b44ed9b51c4c625419cf0a113f71811" category="section-title">保護ポリシーを設定します</block>
   <block id="1744dc29ef0e09675e5ac7f173bde507" category="inline-link-macro">保護ポリシーの設定の詳細については、こちらをご覧ください</block>
   <block id="46d92e94002e35426d69c1a70310fe19" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。 <block ref="bdaae0813dcbbfe4400763742e737a36" category="inline-link-macro-rx"></block>。</block>
-  <block id="7c3983f18df54b898b386f7cf4a7d05c" category="doc">次の内容</block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="inline-link-macro">アプリの管理を開始します</block>
   <block id="a4338c4608081cbe5421e9459f9dc53a" category="list-text"><block ref="a4338c4608081cbe5421e9459f9dc53a" category="inline-link-macro-rx"></block></block>
   <block id="3a2448fbaa994c176580cbee02393309" category="inline-link-macro">アプリを保護します</block>
@@ -781,7 +780,6 @@
   <block id="d6e5a2fc47910c94d4b24f75464e0e3a" category="inline-link-macro">ボリューム数の上限を引き上げるには、サポートにお問い合わせください</block>
   <block id="02b37f08a53518073cbd56329db7a0f1" category="paragraph">Google Cloud のリージョンごとに最大 100 個のボリュームを使用できます。この制限に達すると、新しいクローンまたはボリュームの作成が失敗します。 <block ref="32d9abae3f69ec2d093720ed5c65f7f7" category="inline-link-macro-rx"></block>。</block>
   <block id="598d6fe4e43f08217f8edf064d9a7fa3" category="summary">ネットアップは Astra Control Service を定期的に更新して、新機能、拡張機能、およびバグ修正を提供します。</block>
-  <block id="0059021fbd1c7648ec4ec55bd0f5aad2" category="doc">Astra Control Service の新機能</block>
   <block id="1ccff085c8843e6df85f630c0b00453e" category="section-title">2021 年 8 月 5 日</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">このリリースには、次の新機能と機能拡張が含まれています。</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="section-title">Astra Control Center の略</block>
@@ -1495,4 +1493,6 @@
   <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">容量プールは、 AKS クラスタが Astra Control Service で管理される同じ Azure リージョンに作成する必要があります。</block>
   <block id="a4f53e5340ac3c6ab0e1234f9f27981c" category="inline-link">Astra Control API</block>
   <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control を使用すると、スナップショットまたはバックアップからアプリケーションをリストアできます。同じクラスタにアプリケーションをリストアする場合、既存の Snapshot からのリストアは高速です。Astra Control UI またはを使用できます<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> アプリを復元するには、</block>
+  <block id="124d123607fcd1192a3750d68c2110f7" category="doc">Astra Control Service の新機能</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="doc">次の手順</block>
 </blocks>
