@@ -23,7 +23,7 @@ Microsoft Azure サブスクリプションを準備してから、 Astra Contro
 ==== Azure Kubernetes Service の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に機能していて Kubernetes バージョン 1.19 以降を実行していること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <<Azure Kubernetes Service cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に機能しており、 Kubernetes バージョン 1.19 ~ 1.21x が実行されていること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <<Azure Kubernetes Service cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
@@ -73,7 +73,7 @@ Contributor ロールを持つ Azure サービスプリンシパルを作成し�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタで Kubernetes バージョン 1.19 以降が実行されている必要があります。
+Kubernetes のバージョン:: クラスタで Kubernetes バージョン 1.19 ~ 1.21.x が実行されている必要があります
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
