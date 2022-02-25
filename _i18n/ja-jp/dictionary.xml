@@ -437,10 +437,7 @@
   <block id="1e7a041da379048b21a55b1ea2d128df" category="list-text"><block ref="879194b01b570dff0dfd634e5021bfcd" category="inline-link-macro-rx"></block>。</block>
   <block id="5149827aee9a1b3679a5a603cac08040" category="list-text">アカウント名を入力して確定し、アカウントを閉じます。</block>
   <block id="84de49bc066902d3d70c7241951d032d" category="summary">Astra Control アカウントのアクティビティの詳細を表示できます。たとえば、新しいユーザが招待されたとき、コンピューティングが追加されたとき、 Snapshot が作成されたときなどです。アカウントアクティビティを CSV ファイルにエクスポートすることもできます。</block>
-  <block id="c15b88e97cd76ab0758a6b1564baf469" category="doc">アカウントアクティビティを表示します</block>
-  <block id="211c3b7674a50de37dfbfef385156740" category="list-title">Astra Control のすべてのアカウントアクティビティを表示する手順</block>
   <block id="da7c0d21607588079696a48048b93c4f" category="list-text">フィルタを使用してアクティビティのリストを絞り込むか、検索ボックスを使用して探しているものを正確に検索します。</block>
-  <block id="fea3fe6a4c68375faa8ac65f03e247b0" category="list-title">特定のアプリケーションのアカウントアクティビティを表示する手順</block>
   <block id="d95c69c43af6837af2e7b735550c3894" category="summary">ユーザーを Astra Control アカウントに招待し、アカウントにアクセスできなくなったユーザーを削除します。</block>
   <block id="42fea43246af353c517277bafa8f94d3" category="doc">ユーザーを招待および削除します</block>
   <block id="9a0112e9326bfb2ebbe8296f89fd4be9" category="paragraph">ユーザーを Astra Control アカウントに招待し、アカウントにアクセスできなくなったユーザーを削除します。</block>
@@ -1023,7 +1020,6 @@
   <block id="27d8eb96b8855de99b3d83a8dddb866d" category="inline-link-macro">すべてのアプリケーションとクラスタの管理を解除します</block>
   <block id="2b356495c12c2da0eb155e11f761b771" category="list-text"><block ref="7dcb035fef79797af91668373cd2575c" category="inline-link-macro-rx"></block>。</block>
   <block id="c24664a07eb6e40162f3e96c142b0bdc" category="paragraph">Astra Control アカウントのアクティビティの詳細を表示できます。たとえば、新しいユーザを招待したとき、クラスタが追加されたとき、 Snapshot が作成されたときなどです。アカウントアクティビティを CSV ファイルにエクスポートすることもできます。</block>
-  <block id="8880ee0a5839add89e472ce8439b06c6" category="list-title">クラスタのアカウントアクティビティを表示する手順</block>
   <block id="6f3fbb9cfba40c61792c736fe0dbe824" category="list-text">メンバー * は、アプリとクラスターを完全に管理できます。</block>
   <block id="d26452462c91effb2d4d1c161e5bc211" category="summary">Kubernetes クラスタを Astra Control に追加すると、クラスタの場所、ワーカーノード、永続ボリューム、ストレージクラスなどの詳細を表示できます。</block>
   <block id="f9824e06c16a04674594e1386954134a" category="doc">クラスタの健常性と詳細を表示します</block>
@@ -1495,4 +1491,12 @@
   <block id="3f297ef15cde0668e93b35f2752fd4fd" category="doc">次の手順</block>
   <block id="335ec88aa40e31324e3514bfa4d50447" category="paragraph">クラスタが正常に機能しており、 Kubernetes バージョン 1.19 ~ 1.21x が実行されていること、ノードプールがオンラインで * Linux * などを実行していることを確認します。 <block ref="9395dc33116d67c7ef7cce28cc804b43" category="inline-xref-macro-rx"></block>。</block>
   <block id="921d48280175d3cba9bde766993561d2" category="list-text">クラスタで Kubernetes バージョン 1.19 ~ 1.21.x が実行されている必要があります</block>
+  <block id="d112e0a58a044eb2c083fe74be3c2923" category="doc">アカウントのアクティビティを監視</block>
+  <block id="ab8e74263d81fdf9aa776a7d093168b7" category="list-title">Astra Control のアカウントアクティビティをすべて表示</block>
+  <block id="1fe93cae1894af91bbbf239212b98d90" category="list-title">特定のアプリケーションのアカウントアクティビティを表示します</block>
+  <block id="870305fca27f62b3e2f62ab8aadb0791" category="list-title">クラスタのアカウントアクティビティを表示します</block>
+  <block id="b71311741b86078332a7057a0982cd42" category="list-title">イベントに対して実行可能なアクションを表示します</block>
+  <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">注意が必要なイベントを選択してください。</block>
+  <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">[*Take action*] ドロップダウンオプションを選択します。</block>
+  <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">このリストから、実行できる対処方法のほか、問題 に関するドキュメントを参照したり、問題 の解決に役立つサポートを受けたりできます。</block>
 </blocks>
