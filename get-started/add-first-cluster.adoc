@@ -25,6 +25,15 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 Astra Control Service にログインしたら、最初にクラスタの管理を開始します。
 
+[NOTE]
+====
+Astra Control は、クラスタを管理するときに、クラスタのデフォルトのストレージクラスを追跡します。'kubectl' コマンドを使用して StorageClass を変更すると 'Astra Control は変更を元に戻しますAstra Control によって管理されるクラスタのデフォルトの StorageClass を変更するには、次のいずれかの方法を使用します。
+
+* Astra Control API'put/managedClusters' エンドポイントを使用して 'DefaultStorageClass' パラメータを指定して ' 別のデフォルト StorageClass を割り当てます
+* Astra Control 管理からクラスタを削除し、別のデフォルトの StorageClass を選択して追加し直します
+
+
+====
 .必要なもの
 * GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
 * AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["サービスプリンシパルの設定方法について説明します"]。
