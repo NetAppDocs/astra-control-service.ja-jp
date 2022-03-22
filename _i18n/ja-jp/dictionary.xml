@@ -550,7 +550,6 @@
   <block id="e050bda24d0aab071d42300cbd046e22" category="list-text">ネームスペース内に helm3 を使用して導入された個々のアプリケーション</block>
   <block id="bc02e113923823bd80cf4509ac5dd0ea" category="inline-image-macro">この概念図は、他のアプリケーションを含むネームスペースに配置された個々のアプリケーションを Astra が管理する様子を示しています。</block>
   <block id="aaa30264edbceaac1a9c4ae46e684508" category="paragraph"><block ref="aaa30264edbceaac1a9c4ae46e684508" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ae686937d504e3cd859c9520838b6c99" category="list-text">Kubernetes ラベルで識別されるリソースのグループ（ Astra Control では _custom APP_in ）</block>
   <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">Kubernetes ラベルを基にカスタムアプリケーションを管理する Astra の概念図。</block>
   <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下のセクションでは、これらのオプションを使用してアプリケーションを管理する方法について説明します。</block>
@@ -1502,4 +1501,5 @@
   <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">Astra Control は、クラスタを管理するときに、クラスタのデフォルトのストレージクラスを追跡します。'kubectl' コマンドを使用して StorageClass を変更すると 'Astra Control は変更を元に戻しますAstra Control によって管理されるクラスタのデフォルトの StorageClass を変更するには、次のいずれかの方法を使用します。</block>
   <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">Astra Control API'put/managedClusters' エンドポイントを使用して 'DefaultStorageClass' パラメータを指定して ' 別のデフォルト StorageClass を割り当てます</block>
   <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">Astra Control 管理からクラスタを削除し、別のデフォルトの StorageClass を選択して追加し直します</block>
+  <block id="88555feb409cba41792254e4f06581c9" category="list-text">ネームスペース内の Kubernetes ラベル（ Astra Control 内の _custom APP_in Astra Control と呼ばれます）で識別されるリソースのグループ</block>
 </blocks>
