@@ -6,6 +6,7 @@ summary: この FAQ は、質問に対する簡単な回答を探している場
 ---
 = Astra Control Service に関するよくある質問
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

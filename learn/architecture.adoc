@@ -6,8 +6,55 @@ summary: ここでは、 Astra Control 環境のさまざまなコンポーネ�
 ---
 = アーキテクチャとコンポーネント
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 
 
-link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-architecture.adoc[""]
+ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。
+
+image:astra-ads-architecture-diagram-v3.png["Astra Control のアーキテクチャ図とコンポーネント"]
+
+
+
+== Astra Control コンポーネント
+
+* * Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。
+* * Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールである Trident を使用すると、 Docker と Kubernetes で管理するコンテナ化されたアプリケーション用のストレージボリュームを作成できます。Trident を Astra Control Center とともに導入すると、構成済みの ONTAP ストレージバックエンドが含まれ、ストレージバックエンドとして Astra データストアもサポートされます。
+* * ストレージバックエンド * ：
++
+** Astra Control Service で使用される https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^] GKE クラスタおよびのストレージバックエンドとして https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files の特長"^] AKS クラスタのストレージバックエンドとして。
+** Astra Control Center は、次のストレージバックエンドを使用します。
++
+*** Astra データストアストレージバックエンド
+*** ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
+
+
+
+
+* * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
+
+
+
+
+== Astra Control インターフェイス
+
+さまざまなインターフェイスを使用してタスクを完了できます。
+
+* * ウェブユーザーインタフェース（ UI ） * ： Astra Control Service と Astra Control Center の両方が、同じ Web ベースの UI を使用して、アプリケーションの管理、移行、保護を行うことができます。また、 UI を使用してユーザアカウントと設定を管理することもできます。
+* * API* ： Astra Control Service と Astra Control Center は、どちらも同じ Astra Control API を使用します。API を使用するタスクは、 UI を使用するタスクと同じです。
+
+
+Astra Control Center を使用すると、 VM 環境内で実行される Kubernetes クラスタを管理、移行、保護することもできます。
+
+
+
+== を参照してください。
+
+* https://docs.netapp.com/us-en/astra/index.html["Astra Control Service のマニュアル"^]
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center のドキュメント"^]
+* https://docs.netapp.com/us-en/trident/index.html["Astra Trident のドキュメント"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API を使用"^]
+* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights のドキュメント"^]
+* https://docs.netapp.com/us-en/ontap/index.html["ONTAP のドキュメント"^]
+

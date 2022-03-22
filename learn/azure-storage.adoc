@@ -6,6 +6,7 @@ summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラ
 ---
 = AKS クラスタのストレージクラスと PV サイズ
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

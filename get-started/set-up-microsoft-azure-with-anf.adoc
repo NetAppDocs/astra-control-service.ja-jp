@@ -6,6 +6,7 @@ summary: Microsoft Azure サブスクリプションを準備してから、 Ast
 ---
 = Azure NetApp Files を使用して Microsoft Azure をセットアップする
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -78,7 +79,7 @@ Kubernetes のバージョン:: クラスタで Kubernetes バージョン 1.19 
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
 サブスクリプション。:: クラスタは、 Azure NetApp Files が有効になっているサブスクリプションに含まれている必要があります。サブスクリプションはいつでも選択できます <<Register for Azure NetApp Files,Azure NetApp Files に登録します>>。
-VNet::
+VNet:: 以下の VNet の要件を考慮してください。
 +
 --
 * クラスタは、 Azure NetApp Files 委任サブネットに直接アクセスできる VNet 内に存在する必要があります。 <<Delegate a subnet to Azure NetApp Files,委任されたサブネットを設定する方法について説明します>>。

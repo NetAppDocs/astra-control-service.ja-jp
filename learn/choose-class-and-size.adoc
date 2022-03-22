@@ -6,6 +6,7 @@ summary: Astra Control Service は、永続的ボリュームのストレージ�
 ---
 = GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

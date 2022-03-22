@@ -6,6 +6,7 @@ summary: 既存のアプリケーションをクローニングして、同じ K
 ---
 = アプリケーションのクローン作成と移行
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

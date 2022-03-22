@@ -6,6 +6,7 @@ summary: 次の例を使用して、実行フックの構造を確認してく�
 ---
 = 実行フックの例
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

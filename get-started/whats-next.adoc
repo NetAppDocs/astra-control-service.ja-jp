@@ -6,6 +6,7 @@ summary: ここまでは、 Astra Control にログインしてクラスタを�
 ---
 = 次の手順
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

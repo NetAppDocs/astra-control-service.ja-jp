@@ -6,6 +6,7 @@ summary: Kubernetes クラスタを Astra Control に追加すると、クラス
 ---
 = クラスタの健常性と詳細を表示します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

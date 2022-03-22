@@ -6,6 +6,7 @@ summary: 一般的な問題のトラブルシューティングのヒントを�
 ---
 = トラブルシューティング
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

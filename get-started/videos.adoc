@@ -6,6 +6,7 @@ summary: このドキュメントサイトの多くのページには、 Astra C
 ---
 = Astra Control サービスのビデオ
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

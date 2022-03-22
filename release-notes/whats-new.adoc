@@ -6,6 +6,7 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 ---
 = Astra Control Service の新機能
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/release-notes/
 
@@ -22,7 +23,7 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 Astra Control Service が、 Google Persistent Disk と Azure Managed Disk をストレージバックエンドオプションとしてサポートするようになりました。
 
-link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。。
+link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]。
 
 
 

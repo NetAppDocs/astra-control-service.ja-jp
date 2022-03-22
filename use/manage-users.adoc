@@ -6,6 +6,7 @@ summary: ユーザーを Astra Control アカウントに招待し、アカウ�
 ---
 = ユーザーを招待および削除します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

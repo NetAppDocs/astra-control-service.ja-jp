@@ -6,6 +6,7 @@ summary: Astra Control Service を使用して Google Kubernetes Engine クラ�
 ---
 = Google Cloud をセットアップします
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -104,7 +105,7 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドと�
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。
 
 Kubernetes のバージョン:: クラスタで、 1.19 ~ 1.21.x の Kubernetes バージョンが実行されている必要があります
-イメージタイプ::
+イメージタイプ:: 各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。
 +
 --
 * Containerd を使用したコンテナ最適化 OS です
@@ -116,7 +117,7 @@ Kubernetes のバージョン:: クラスタで、 1.19 ~ 1.21.x の Kubernetes 
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
 ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<Set up network peering for your VPC,この手順については、以下で説明します>>。
-プライベートクラスタ::
+プライベートクラスタ:: クラスタがプライベートの場合は、を参照してください https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control Service の IP アドレスを許可する必要があります。
 +
 --
 * 54.164.233.140/32

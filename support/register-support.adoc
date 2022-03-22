@@ -6,6 +6,7 @@ summary: アカウントを設定すると、 Astra Control は自動的にア�
 ---
 = サポートに登録します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

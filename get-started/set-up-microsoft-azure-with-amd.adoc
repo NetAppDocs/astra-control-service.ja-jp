@@ -6,6 +6,7 @@ summary: Microsoft Azure サブスクリプションを準備してから、 Ast
 ---
 = Azure で管理されているディスクを使用して Microsoft Azure をセットアップする
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

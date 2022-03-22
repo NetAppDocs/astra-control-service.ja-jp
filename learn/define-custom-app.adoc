@@ -6,6 +6,7 @@ summary: カスタムアプリケーションを作成すると、 Kubernetes �
 ---
 = カスタムアプリケーションを定義します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

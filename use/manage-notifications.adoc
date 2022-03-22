@@ -6,6 +6,7 @@ summary: アクションが完了または失敗すると、 Astra Control か�
 ---
 = 通知を表示および管理します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

@@ -6,6 +6,7 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 ---
 = Astra Control Service から Kubernetes クラスタの管理を開始します
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -17,7 +18,7 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 == Kubernetes クラスタを作成
 
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]、 または  。
+まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]、 link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] 。
 
 
 
@@ -79,7 +80,7 @@ Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定
 ** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
 ** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
 +
-の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"] および 。
+の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"] および link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。
 
 
 

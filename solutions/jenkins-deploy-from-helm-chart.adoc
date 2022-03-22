@@ -6,8 +6,79 @@ summary: Bitnami Helm チャートから Jenkins をデプロイする方法に�
 ---
 = Helm チャートから Jenkins をデプロイします
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/solutions/
 
 
-link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-jenkins-deploy-from-helm-chart.adoc[""]
+で Jenkins を導入する方法について説明します https://bitnami.com/stack/jenkins/helm["Bitnami Helm チャート"^]。クラスタに Jenkins を導入したら、アプリケーションを Astra Control に登録できます。
+
+Jenkins は Astra Control 用の検証済みアプリケーションです。
+
+* https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html["Astra Control Service の検証済みアプリケーションと標準アプリケーションの違いをご確認ください"^]。
+* https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html["Astra Control Center の検証済みアプリケーションと標準アプリケーションの違いをご確認ください"^]。
+
+
+以下の手順は、 Astra Control Service と Astra Control Center の両方に適用されます。
+
+
+NOTE: Google Marketplace から導入されたアプリケーションは検証されていません。一部のユーザから、 Postgres 、 MariaDB 、 MySQL を導入した Google Marketplace での検出やバックアップで問題が報告されることがあります。
+
+
+
+== 要件
+
+* Astra Control に追加されたクラスタ。
++
+
+NOTE: Astra Control Center では、最初にクラスタを Astra Control Center に追加するか、最初にアプリケーションを追加できます。
+
+* クラスタの適切な kubeconfig を使用してローカルマシンにインストールされている Helm （バージョン 3.2+ ）および Kubectl のバージョンを更新しました
+
+
+Astra Control は、現在のところをサポートしていません https://plugins.jenkins.io/kubernetes/["Jenkins 用の Kubernetes プラグイン"^]。プラグインを使用せずに Kubernetes クラスタで Jenkins を実行できます。プラグインは Jenkins クラスタに拡張性を提供します。
+
+
+
+== Jenkins をインストールします
+
+このプロセスに関する 2 つの重要な注意事項：
+
+* アプリケーションは、クラスタを Astra Control Service に追加したあとに、以前には導入しないでください。Astra Control Center は、 Astra Control Center にクラスタを追加する前後のアプリケーションを受け入れます。
+* Helm チャートは、デフォルト以外の名前空間に展開する必要があります。
+
+
+.手順
+. Bitnami チャート repo を追加します。
++
+[listing]
+----
+helm repo add bitnami https://charts.bitnami.com/bitnami
+----
+. 「 Jenkins 」ネームスペースを作成し、次のコマンドを使用して Jenkins を展開します。
++
+[listing]
+----
+Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+----
++
+
+NOTE: ボリュームサイズを変更する場合は、 Kibibyte （ KI ）、 Meibyte （ MI ）、または Gibyte （ Gi ）単位を使用します。
+
++
+ストレージクラスを定義する必要があるのは、次の場合のみです。
+
++
+** Astra Control サービスを使用していて、デフォルトのストレージクラスを使用しない場合。
+** Astra Control Center を使用していて、まだ Astra Control Center にクラスタをインポートしていない。あるいは、クラスタをインポートしたあとに、デフォルトのストレージクラスを使用する必要がなくなった場合。
+
+
+
+
+これにより、次の処理が行われます。
+
+* ネームスペースを作成します。
+* 正しいストレージクラスを設定します。
+
+
+ポッドがオンラインになったら、 Astra Control を使用してアプリケーションを管理できます。Astra Control を使用すると、アプリケーションをネームスペースレベルで管理したり、 Helm ラベルを使用して管理したりできます。
