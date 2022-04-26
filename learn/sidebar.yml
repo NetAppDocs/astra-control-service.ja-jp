@@ -12,3 +12,5 @@ entries:
   url: "/learn/validated-vs-standard.html"
 - title: カスタムアプリケーションを定義する
   url: "/learn/define-custom-app.html"
+- title: ユーザロールとネームスペース
+  url: "/learn/user-roles-namespaces.html"

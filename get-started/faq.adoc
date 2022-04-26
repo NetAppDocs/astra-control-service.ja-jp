@@ -67,18 +67,23 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 
 
+== AKS クラスタを登録しています
+
+* AKS のプライベートクラスタを Astra Control Service に追加できますか。 *
+
+はい、 AKS のプライベートクラスタを Astra 制御サービスに追加できます。プライベート AKS クラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+
+
+
 == GKE クラスタを登録しています
 
 * Astra Control Service にプライベート GKE クラスタを追加できますか。 *
 
-はい、 Astra Control Service にプライベートクラスタを追加できます。Google Kubernetes Engine （ GKE ）プライベートクラスタを作成するには、次の手順を実行します。 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["この技術情報アーティクルの手順に従ってください"^]。
+はい。 Astra Control Service にプライベート GKE クラスタを追加できます。Google Kubernetes Engine （ GKE ）プライベートクラスタを作成するには、次の手順を実行します。 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["この技術情報アーティクルの手順に従ってください"^]。
 
-プライベートクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定
+プライベートクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
 
-* 54.164.233.140/32
-* 3.218.120.204/32
-* 34.193.99.138/32
-
+52.188.218.166-32
 
 * GKE クラスタは共有 VPC 上に存在できますか。 *
 

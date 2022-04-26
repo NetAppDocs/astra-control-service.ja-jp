@@ -35,6 +35,8 @@ entries:
     url: "/use/set-up-billing.html"
   - title: ユーザーを招待および管理します
     url: "/use/manage-users.html"
+  - title: ロールの管理
+    url: "/use/manage-roles.html"
   - title: クラウドプロバイダのクレデンシャルを管理する
     url: "/use/manage-credentials.html"
   - title: アカウントのアクティビティを監視

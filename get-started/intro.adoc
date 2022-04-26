@@ -68,6 +68,7 @@ Astra Control には、次の 2 つの導入モデルがあります。
 | ストレージバックエンドでサポートされるもの | ネットアップのクラウドサービス  a| 
 * NetApp ONTAP AFF および FAS システム
 * ストレージバックエンドとしての Astra データストア
+* Cloud Volumes ONTAP ストレージバックエンド
 
 
 |===
@@ -131,7 +132,7 @@ Astra Control Center は、 OpenShift Kubernetes クラスタを次の機能で�
 
 クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、 Astra Control Center では、限定的な（ 7 日間の指標）監視と計測データを使用できます。また、オープン指標エンドポイントを介して Kubernetes の標準の監視ツール（ Prometheus や Grafana など）にエクスポートすることもできます。
 
-Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップのサポートにトラブルシューティングと使用に関する情報を提供します。
+Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップサポートにトラブルシューティングと使用に関する情報を提供します。
 
 Astra Control Center を試用するには、 90 日間の評価版ライセンスを使用します。評価版は、 E メールとコミュニティ（ Slack チャンネル）のオプションでサポートされています。また、製品内サポートダッシュボードから技術情報アーティクルやドキュメントにアクセスすることもできます。
 

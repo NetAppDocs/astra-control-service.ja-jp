@@ -41,6 +41,12 @@ Astra Control は、クラスタを管理するときに、クラスタのデフ
 +
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
 
+* プライベート AKS クラスタの場合：
++
+** クラスタがに記載された要件を満たしている必要があります https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure のドキュメント"^]。
+** AKS サービスクラスタに Astra コネクタをインストールして、 Astra Control Service でクラスタを管理できるようにする必要があります。Astra コネクタを取り付けるには、 <<Manage a private cluster,以下の手順に従ってください>>。
+
+
 
 
 .手順
@@ -67,6 +73,9 @@ Astra Control Service は、サービスアカウントを使用して、 Google
 +
 Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
 
++
+「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
+
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
 価格、パフォーマンス、耐障害性に関する情報は、 Cloud Volumes Service for Google Cloud サービスごとにリストに表示されます。パフォーマンスと耐障害性の情報は、 Azure NetApp Files サービスごとに表示されます。Google Persistent Disk や Azure Managed Disk など、ネットアップ以外のストレージクラスについては、コスト、パフォーマンス、耐障害性に関する情報は提供されません。
@@ -88,3 +97,51 @@ Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定
 
 
 Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。
+
+
+
+== プライベートクラスタを管理する
+
+Astra Control Service を使用すると、プライベート AKS クラスタを管理できます。そのためには、 AKS のプライベートサービスクラスタに Astra コネクタオペレータをインストールする必要があります。この手順は、管理用のクラスタを追加する前、または追加プロセス中にプロンプトが表示されたら実行できます。
+
+.手順
+. Astra Connector オペレータのネームスペースを作成します。
++
+[listing]
+----
+kubectl create ns astra-connector-operator
+----
+. 「 astraaconnector _operator.yaml 」ファイルを演算子名前空間に適用します。
++
+[listing]
+----
+kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+----
+. プライベートクラスタコンポーネントのネームスペースを作成します。
++
+[listing]
+----
+kubectl create ns astra-connector
+----
+. Astra コネクタのカスタムリソース定義（ CRD ）を適用します。
++
+[listing]
+----
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+. アストラコネクタのステータスを確認します。
++
+[listing]
+----
+kubectl get astraconnector astra-connector -n astra-connector
+----
++
+次のような出力が表示されます。
+
++
+[listing]
+----
+NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
+----
+

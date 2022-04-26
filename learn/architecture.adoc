@@ -24,10 +24,12 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control のアーキテクチ
 * * ストレージバックエンド * ：
 +
 ** Astra Control Service で使用される https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^] GKE クラスタおよびのストレージバックエンドとして https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files の特長"^] AKS クラスタのストレージバックエンドとして。
+** Astra Control Service は、 Azure Managed Disks と Google Persistent Disk をバックエンドストレージオプションとしてサポートします。
 ** Astra Control Center は、次のストレージバックエンドを使用します。
 +
 *** Astra データストアストレージバックエンド
 *** ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
+*** Cloud Volumes ONTAP ストレージバックエンド
 
 
 

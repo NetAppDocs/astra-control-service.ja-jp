@@ -15,16 +15,20 @@ summary: Kubernetes クラスタを Astra Control に追加すると、クラス
 Kubernetes クラスタを Astra Control に追加すると、クラスタの場所、ワーカーノード、永続ボリューム、ストレージクラスなどの詳細を表示できます。
 
 .手順
-. 「 * クラスタ * 」を選択します。
-. クラスタ名を選択します。
-. [Overview （概要） ] タブと [Storage （ストレージ） ] タブで情報を確認し、必要な情報を見つけます。
+. Astra Control Service UI で、 [* Clusters] を選択します。
+. [* Clusters] ページで、詳細を表示するクラスタを選択します。
++
+
+NOTE: クラスタが「 re moved 」状態であり、ネットワーク接続が正常であると表示される場合（ Kubernetes API を使用してクラスタに外部からアクセスしようとすると成功します）、 Astra Control に指定した beckufig は無効になる可能性があります。クラスタでの証明書のローテーションまたは有効期限が原因の可能性があります。この問題を修正するには、を使用して、 Astra Control のクラスタに関連付けられたクレデンシャルを更新します link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API の略"]。
+
+. [Overview （概要） ] 、 [* Storage （ * ストレージ） ] 、 [* Activity * （アクティビティ * ） ] タブの情報を表示して、必要な情報を検索します。
 +
 ** * 概要 * ：状態を含むワーカーノードの詳細。
-** * Storage * ：ストレージクラスと状態を含む、クラスタに関連付けられた永続的ボリューム。
-** * アクティビティ * ：クラスタに関連する Astra のアクティビティ。
-+
-image:screenshot-cluster-overview.gif["クラスタの Overview （概要）タブのスクリーンショット。"]
+** * ストレージ * ：ストレージクラスと状態を含む、コンピューティングに関連付けられた永続的ボリューム。
+** * アクティビティ * ：クラスタに関連するアクティビティ。
 
 
 
 
+
+NOTE: Astra Control Service * Dashboard * から始まるクラスタ情報を表示することもできます。[ * クラスタ * ] タブの [ * リソースサマリ * ] で、管理対象クラスタを選択して [ * クラスタ * ] ページに移動できます。[* Clusters] ページが表示されたら、上記の手順を実行します。

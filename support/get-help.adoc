@@ -17,8 +17,6 @@ summary: ネットアップでは、 Astra Control をさまざまな方法で�
 
 メインメニューから * Support * タブを選択すると、 Astra Control UI からサポートオプションにアクセスできます。
 
-image:screenshot-support.gif["Astra Control のサポートページのスクリーンショット。リソースを表示して、ネットアップに問い合わせることができます。"]
-
 
 
 == セルフサポート

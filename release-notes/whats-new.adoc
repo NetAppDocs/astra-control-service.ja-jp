@@ -15,7 +15,39 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2022 年 4 月 26 日
+
+このリリースには、次の新機能と機能拡張が含まれています。
+
+
+
+=== ネームスペースのロールベースアクセス制御（ RBAC ）
+
+Astra Control Service では、メンバユーザーまたはビューアユーザーへの名前空間制約の割り当てがサポートされるようになりました。
+
+link:../use/manage-roles.html["ロールの管理"]。
+
+
+
+=== プライベート AKS クラスタのサポート
+
+プライベート IP アドレスを使用する AKS クラスタを管理できるようになりました。
+
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+
+
+
+=== Astra Control からバケットを取り外す
+
+Astra Control Service からバケットを削除できるようになりました。
+
+link:../use/manage-buckets.html["バケットを削除する"]。
+
+
+
 == 2021 年 12 月 14 日
+
+このリリースには、次の新機能と機能拡張が含まれています。
 
 
 

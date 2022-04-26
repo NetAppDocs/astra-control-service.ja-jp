@@ -27,7 +27,7 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 ==== Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に動作していて、 1.19 ~ 1.21x の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナ向けに最適化された OS または Ubuntu などを実行していることを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に動作していて、 1.19 ～ 1.23 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナで最適化された OS または Ubuntu が実行されていることなどを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
@@ -104,7 +104,7 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドと�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。
 
-Kubernetes のバージョン:: クラスタで、 1.19 ~ 1.21.x の Kubernetes バージョンが実行されている必要があります
+Kubernetes のバージョン:: クラスタで 1.19 ~ 1.23 の Kubernetes バージョンが実行されている必要があります。
 イメージタイプ:: 各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。
 +
 --

@@ -40,8 +40,6 @@ Astra Control には、サポート登録を確認できる Support Status フ�
 
 シリアル番号は、 Astra Control インターフェイスの * Support * ページから確認できます。
 
-image:screenshot-support.gif["Astra Control のサポートページのスクリーンショット。リソースを表示して、ネットアップに問い合わせることができます。"]
-
 
 
 == サポート利用資格をアクティブ化します
