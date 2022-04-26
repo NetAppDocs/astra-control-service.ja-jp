@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         請求を設定します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-users.html">
         ユーザーを招待および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-roles.html">
+        ロールの管理
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-credentials.html">
         クラウドプロバイダのクレデンシャルを管理する
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         検証済みのアプリケーションと標準のアプリケーションの比較
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/define-custom-app.html">
         カスタムアプリケーションを定義する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アプリケーションの導入</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:57:02 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:27:03 +0000">04/26/2022</time>
     
   
 
@@ -980,12 +988,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>以下の制限事項は、サポートされている Kubernetes 環境での Astra Control Service による Kubernetes クラスタの管理に影響します。</p>
-</div>
-<div class="sect2">
-<h3 id="正常でないポッドはアプリケーション管理に影響を与えます">正常でないポッドは、アプリケーション管理に影響を与えます</h3>
-<div class="paragraph">
-<p>管理対象アプリケーションにポッドが正常な状態でない場合、 Astra Control Service は新しいバックアップとクローンを作成できません。</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="astra-trident-はクラスタからアンインストールされません">Astra Trident はクラスタからアンインストールされません</h3>
@@ -1022,12 +1024,6 @@
 <p>Astra Control Service で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすことを確認してください。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="永続的ボリュームの制限">永続的ボリュームの制限</h3>
-<div class="paragraph">
-<p>Google Cloud のリージョンごとに最大 100 個のボリュームを使用できます。この制限に達すると、新しいクローンまたはボリュームの作成が失敗します。 <a href="../support/get-help.html">"ボリューム数の上限を引き上げるには、サポートにお問い合わせください"</a>。</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1045,6 +1041,18 @@
 <ul>
 <li>
 <p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+K8ssandra では、 In Place リストア処理がサポートされます。新しいネームスペースまたはクラスタにリストアするには、アプリケーションの元のインスタンスを停止する必要があります。これは、ピアグループ情報がインスタンス間通信を行わないようにするためです。アプリケーションのクローニングはサポートされていません。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
@@ -1056,6 +1064,34 @@
 </div>
 <div class="paragraph">
 <p>Astra Control では、「パスバイリファレンス」アーキテクチャ（ CockroachDB オペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行中のアプリケーションのバックアップを停止することはできません">実行中のアプリケーションのバックアップを停止することはできません</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>実行中のバックアップをキャンセルする方法はありません。バックアップを削除する必要がある場合は、完了するまで待ってから、の手順を実行してください <a href="../use/protect-apps.html#delete-backups">"バックアップを削除します"</a>。失敗したバックアップを削除するには、を使用します <a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Astra API"</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="role-based-access-control-rbac-ロールベースアクセス制御の制限事項があります">Role-Based Access Control （ RBAC ；ロールベースアクセス制御）の制限事項があります</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control がリソースまたは機能へのアクセスを制限する方法には、次の制限があります。</p>
+</div>
+<div class="sect2">
+<h3 id="ネームスペースの-rbac-に制約があるユーザはクラスタの追加と管理解除を行うことができます">ネームスペースの RBAC に制約があるユーザは、クラスタの追加と管理解除を行うことができます</h3>
+<div class="paragraph">
+<p>ネームスペースの RBAC に制限があるユーザは、クラスタの追加または管理解除を行うことができません。現在の制限により、 Astra は、このようなユーザによるクラスタの管理解除を妨げません。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="名前空間の制約を持つメンバーユーザーは管理者ユーザーが名前空間を制約に追加するまでクローンまたは復元されたアプリケーションにアクセスできません">名前空間の制約を持つメンバーユーザーは、管理者ユーザーが名前空間を制約に追加するまで、クローンまたは復元されたアプリケーションにアクセスできません</h3>
+<div class="paragraph">
+<p>名前空間の名前 /ID または名前空間ラベルによって RBAC の制約を受けているメンバーユーザーは ' 同じクラスタ上の新しい名前空間 ' または組織のアカウント内の他のクラスタにアプリケーションを複製またはリストアできますただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローンまたはリストア操作によって新しい名前空間が作成されると ' アカウントの管理者 / 所有者は ' メンバーのユーザー・アカウントを編集し ' 影響を受けるユーザーの役割制約を更新して ' 新しい名前空間へのアクセスを許可できます</p>
 </div>
 </div>
 </div>

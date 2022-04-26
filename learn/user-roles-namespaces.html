@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head class="at-element-marker">
-  <title>バケットを管理する | NetApp Documentation</title>
+  <title>ユーザロールとネームスペース | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="バケットを管理する | NetApp Documentation" />
+  <meta property="og:title" content="ユーザロールとネームスペース | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-buckets.html" />
-	<meta property="og:description" content="Astra がバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドプロバイダ内のクラスタのデフォルトバケットを変更します。" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/astra-control-service/learn/user-roles-namespaces.html" />
+	<meta property="og:description" content="Astra Control Center で使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。" />
   <meta property="og:image" content="https://docs.netapp.com/ja-jp/astra-control-service/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra がバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドプロバイダ内のクラスタのデフォルトバケットを変更します。">
-  <meta name="keywords" content=" bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket, S3, s3, storage, object storage, object store, store, object"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra Control Center で使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。">
+  <meta name="keywords" content=" users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint"><!-- Icons -->
   <link rel="icon" href="/ja-jp/astra-control-service/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ja-jp/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[バケットを管理する](https://docs.netapp.com/ja-jp/astra-control-service/use/manage-buckets.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/use/manage-buckets.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[ユーザロールとネームスペース](https://docs.netapp.com/ja-jp/astra-control-service/learn/user-roles-namespaces.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/learn/user-roles-namespaces.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">このページ</div>
@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -572,15 +572,6 @@
   
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/ja-jp/astra-control-service/pdfs/pages/use/manage-buckets.pdf" >
-    <img src="/ja-jp/astra-control-service/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -661,6 +652,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ja-jp/astra-control-service/pdfs/pages/learn/user-roles-namespaces.pdf" >
+    <img src="/ja-jp/astra-control-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -844,7 +844,7 @@
         クラスタの健常性と詳細
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/view-apps.html">
         アプリケーションの健全性と詳細
-      </a></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-buckets.html">
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-buckets.html">
         バケットを管理する
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アカウントを管理します</div>
@@ -880,7 +880,7 @@
         検証済みのアプリケーションと標準のアプリケーションの比較
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/define-custom-app.html">
         カスタムアプリケーションを定義する
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
         ユーザロールとネームスペース
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アプリケーションの導入</div>
@@ -962,7 +962,7 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">バケットを管理する</h1>
+  <h1 class="n-doc__component-detail-heading">ユーザロールとネームスペース</h1>
 </div>
 
 
@@ -979,236 +979,50 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Astra がバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドプロバイダ内の Kubernetes クラスタのデフォルトバケットを変更します。</p>
-</div>
-<div class="paragraph">
-<p>バケットを追加および変更できるのは Admin のみです。</p>
+<p>Astra Control のユーザロールとネームスペースについて説明し、それらを使用して組織内のリソースへのアクセスを制御する方法を説明します。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="astra-control-でのバケットの使用方法">Astra Control でのバケットの使用方法</h2>
+<h2 id="ユーザロール">ユーザロール</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>最初の Kubernetes クラスタの管理を開始すると、 Astra Control Service が、管理対象クラスタと同じ場所にクラウドプロバイダのデフォルトバケットを作成します。</p>
+<p>ロールを使用して、ユーザが Astra Control のリソースまたは機能にアクセスできるように制御できます。Astra Control のユーザロールは次のとおりです。</p>
 </div>
-<div class="paragraph">
-<p>Astra Control Service は、作成したバックアップとクローンにこのデフォルトバケットを使用します。その後、バックアップを使用して、クラスタ間でアプリケーションのリストアやクローニングを行うことができます。</p>
-</div>
-<div class="paragraph">
-<p>Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。クラウドプロバイダ間でバケットをクローニングすることはできません。クラウドプロバイダ間でデータを移行するには、関連するアプリケーションのクローンを作成します。</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-service/images/tip.svg" alt="ヒント">
-</td>
-<td class="content">
-Astra Control Service は、バックアップまたはクローンを開始する前に、デスティネーションバケットがアクセス可能かどうかをチェックします。
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="既存のバケットを表示します">既存のバケットを表示します</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Astra Control Service で使用可能なバケットのリストを表示して、クラウドプロバイダのステータスを確認したり、デフォルトのバケットを特定したりできます。</p>
-</div>
-<div class="paragraph">
-<p>バケットの状態は次のいずれかになります。</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">保留中です</dt>
-<dd>
-<p>バケットを追加すると、最初に Pending 状態から Astra Control が初めてバケットを参照します。</p>
-</dd>
-<dt class="hdlist1">利用可能</dt>
-<dd>
-<p>バケットは Astra Control で使用できます。</p>
-</dd>
-<dt class="hdlist1">削除されました</dt>
-<dd>
-<p>このバケットは現在動作していません。ステータスアイコンの上にマウスポインタを合わせると、問題の内容がわかります。</p>
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p>バケットが Removed 状態の場合でも、バケットをデフォルトのバケットとして設定し、保護スケジュールに割り当てることができます。ただし、データ保護処理の開始時点でバケットが「 available 」状態でない場合は、処理が失敗します。</p>
-</div>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-<div class="olist arabic">
-<div class="title">ステップ</div>
-<ol class="arabic">
-<li>
-<p>[ * ストレージの管理 * ] で、 [ * バケット * ] を選択します。</p>
-<div class="paragraph">
-<p>Astra Control Service で使用できるバケットのリストが表示されます。</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="追加のバケットを追加します">追加のバケットを追加します</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>クラウドプロバイダでクラスタの管理を開始したら、いつでもバケットを追加できます。これにより、保護ポリシーの作成時にバケットを選択したり、アドホックバックアップやクローンのデフォルトバケットを変更したりできます。</p>
-</div>
-<div class="paragraph">
-<p>Astra Control Service では、バケットを追加したあとに削除できないことに注意してください。</p>
-</div>
-<div class="ulist">
-<div class="title">必要なもの</div>
-<ul>
-<li>
-<p>クラウドプロバイダ内の既存のバケットの名前。</p>
-</li>
-<li>
-<p>バケットが Azure 内にある場合は、 <em>Astra -backup -rg</em> という名前のリソースグループに属している必要があります。</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">手順</div>
-<ol class="arabic">
-<li>
-<p>[ * ストレージの管理 * ] で、 [ * バケット * ] を選択します。</p>
-</li>
-<li>
-<p>「 * Add * 」を選択し、プロンプトに従ってバケットを追加します。</p>
 <div class="ulist">
 <ul>
 <li>
-<p>* タイプ * ：クラウドプロバイダを選択します。</p>
-<div class="paragraph">
-<p>クラウドプロバイダを利用できるのは、 Astra Control Service がクラウドプロバイダで実行されているクラスタの管理を開始したあとのみです。</p>
-</div>
+<p>* 所有者 * には管理者権限があり、アカウントを削除できます。</p>
 </li>
 <li>
-<p>* 既存のバケット名 * ：バケットの名前を入力します。</p>
+<p>* Admin * にはメンバー権限があり、他のユーザーを招待できます。</p>
 </li>
 <li>
-<p>* 概要 * ：必要に応じて、バケットの概要を入力します。</p>
+<p>メンバー * は、アプリとクラスターを完全に管理できます。</p>
 </li>
 <li>
-<p>* このバケットをこのクラウドのデフォルトバケットにする * ：このバケットをアドホックバックアップやクローンのデフォルトバケットとして使用するかどうかを選択します。</p>
-</li>
-<li>
-<p>* クレデンシャルを選択 * ：バケットを管理するために必要な権限を Astra Control Service に付与するクレデンシャルを選択します。</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>「 * Add * 」を選択してバケットを追加します。</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Astra Control Service は、追加のバケットを追加します。保護ポリシーの作成時にバケットを選択できるようになりました。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="デフォルトバケットを変更する">デフォルトバケットを変更する</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>バックアップとクローンに Astra Control Service で使用するデフォルトバケットを変更する。各クラウドプロバイダには、独自のデフォルトバケットがあります。</p>
-</div>
-<div class="paragraph">
-<p>Astra Control Service では、クラウドプロバイダ用のデフォルトバケットを使用して、既存のバックアップからクローニングすることを選択しなかった場合に、アドホックバックアップやアドホッククローンを作成します。</p>
-</div>
-<div class="olist arabic">
-<div class="title">手順</div>
-<ol class="arabic">
-<li>
-<p>[ * ストレージの管理 * ] で、 [ * バケット * ] を選択します。</p>
-</li>
-<li>
-<p>編集するバケットの「 * Actions * 」列でドロップダウンリストを選択します。</p>
-</li>
-<li>
-<p>このバケットをこのクラウドのデフォルトバケットにする * を選択します。</p>
-</li>
-<li>
-<p>「 * Update * 」を選択します。</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="バケットを削除する">バケットを削除する</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>使用されなくなったバケットや正常でないバケットを削除することができます。これは、オブジェクトストアの設定をシンプルかつ最新の状態に保つために役立ちます。</p>
-</div>
-<div class="paragraph">
-<p>デフォルトバケットを削除することはできません。そのバケットを削除する場合は、最初に別のバケットをデフォルトとして選択します。</p>
-</div>
-<div class="ulist">
-<div class="title">必要なもの</div>
-<ul>
-<li>
-<p>開始する前に、このバケットの実行中または完了済みのバックアップがないことを確認してください。</p>
-</li>
-<li>
-<p>スケジュールされたバックアップにバケットが使用されていないことを確認する必要があります。</p>
+<p>* Viewer * はリソースを表示できます。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>ある場合は、続行できません。</p>
+<p>メンバーまたはビューアユーザーに制約を追加して、ユーザーを 1 つ以上に制限できます <a href="#Namespaces">[Namespaces]</a>。</p>
 </div>
-<div class="olist arabic">
-<div class="title">手順</div>
-<ol class="arabic">
-<li>
-<p>左ナビゲーションから、 * バケット * を選択します。</p>
-</li>
-<li>
-<p>[ アクション * （ Actions * ） ] メニューから、 [ * 削除（ Remove ） ] を選択します。</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
-</td>
-<td class="content">
-Astra Control を使用すると、最初にバケットを使用してバックアップを実行するスケジュールポリシーが存在せず、削除しようとしているバケットにアクティブなバックアップが存在しないようにすることができます。
-</td>
-</tr>
-</table>
 </div>
-</li>
-<li>
-<p>「 remove 」と入力して操作を確認します。</p>
-</li>
-<li>
-<p>「 * Yes 、 remove bucket * 」を選択します。</p>
-</li>
-</ol>
+</div>
+<div class="sect1">
+<h2 id="ネームスペース">ネームスペース</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ネームスペースは、 Astra Control によって管理されるクラスタ内の特定のリソースに割り当てることができるスコープです。Astra Control では、 Astra Control にクラスタを追加すると、クラスタのネームスペースが検出されます。検出されたネームスペースは、ユーザに制約として割り当てることができます。そのリソースを使用できるのは、そのネームスペースにアクセスできるメンバーだけです。名前空間を使用すると、組織に適したパラダイム（たとえば、会社内の物理的なリージョンや部門）を使用して、リソースへのアクセスを制御できます。ユーザに制約を追加する場合は、そのユーザにすべてのネームスペースへのアクセス権を設定するか、特定のネームスペースのセットのみを設定できます。ネームスペースラベルを使用して、ネームスペースの制約を割り当てることもできます。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="詳細についてはこちらをご覧ください">詳細については、こちらをご覧ください</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Astra Control API を使用"</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p><a href="../use/manage-roles.html">"ロールの管理"</a></p>
 </div>
 </div>
 </div>

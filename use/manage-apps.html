@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         請求を設定します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-users.html">
         ユーザーを招待および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-roles.html">
+        ロールの管理
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-credentials.html">
         クラウドプロバイダのクレデンシャルを管理する
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         検証済みのアプリケーションと標準のアプリケーションの比較
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/define-custom-app.html">
         カスタムアプリケーションを定義する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アプリケーションの導入</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:57:02 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:27:03 +0000">04/26/2022</time>
     
   
 
@@ -994,76 +1002,63 @@
 </li>
 <li>
 <p>* Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。</p>
-<div class="ulist">
-<ul>
-<li>
-<p>クラスタロール</p>
-</li>
-<li>
-<p>ClusterRoleBinding</p>
-</li>
-<li>
-<p>ConfigMap</p>
-</li>
-<li>
-<p>CustomResourceDefinition の場合</p>
-</li>
-<li>
-<p>CustomResource の場合</p>
-</li>
-<li>
-<p>デモンセット（ DemonSet ）</p>
-</li>
-<li>
-<p>導入</p>
-</li>
-<li>
-<p>DeploymentConfig</p>
-</li>
-<li>
-<p>入力</p>
-</li>
-<li>
-<p>MutingWebhook</p>
-</li>
-<li>
-<p>PersistentVolumeClaim のように表示され</p>
-</li>
-<li>
-<p>ポッド</p>
-</li>
-<li>
-<p>ReplicaSet</p>
-</li>
-<li>
-<p>RoleBinding です</p>
-</li>
-<li>
-<p>ロール</p>
-</li>
-<li>
-<p>ルート</p>
-</li>
-<li>
-<p>秘密</p>
-</li>
-<li>
-<p>サービス</p>
-</li>
-<li>
-<p>サービスアカウント</p>
-</li>
-<li>
-<p>Stateful役立つ セット</p>
-</li>
-<li>
-<p>検証 Webhook</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クラスタロール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClusterRoleBinding</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ConfigMap</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CustomResourceDefinition の場合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CustomResource の場合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cronjob</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">デモンセット（ DemonSet ）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HorizontalPodAutoscaler のように表示されます</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">入力</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeploymentConfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MutingWebhook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PersistentVolumeClaim のように表示され</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ポッド</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PodDisruptionBudget （予算の廃止）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PodTemplate</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ネットワークポリシー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ReplicaSet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ロール</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RoleBinding です</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ルート</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">秘密</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サービス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サービスアカウント</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stateful役立つ セット</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">検証 Webhook</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="サポートされているアプリインストール方法">サポートされているアプリインストール方法</h3>
 <div class="paragraph">
@@ -1088,6 +1083,18 @@
 <ul>
 <li>
 <p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+k8ssandra では、インプレースリストア処理がサポートされています。新しいネームスペースまたはクラスタにリストアするには、アプリケーションの元のインスタンスを停止する必要があります。これは、ピアグループ情報がインスタンス間通信を行わないようにするためです。アプリケーションのクローニングはサポートされていません。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
@@ -1205,20 +1212,11 @@
 <ol class="arabic">
 <li>
 <p>「 * アプリケーション」を選択し、「 * 検出済み * 」を選択します。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-discovery.gif" alt="&quot;[ アプリケーション（ Apps ）"></span> ページのスクリーンショット。 [ 検出（ Discovered ） ] タブが表示されます。"]</p>
-</div>
 </li>
 <li>
 <p>検出されたネームスペースのリストを表示し、ネームスペースを展開してアプリケーションと関連リソースを表示します。</p>
 <div class="paragraph">
 <p>Astra Control では、 Helm アプリケーションとカスタムラベルの付いたアプリケーションが名前空間に表示されます。Helm ラベルがある場合は、タグアイコンで指定されます。</p>
-</div>
-<div class="paragraph">
-<p>次に、名前空間に 2 つのアプリケーションがある例を示します。</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-group.gif" alt="名前空間が展開され、その名前空間に 2 つのアプリが表示されるアプリページのスクリーンショット。"></span></p>
 </div>
 </li>
 <li>
@@ -1226,17 +1224,11 @@
 </li>
 <li>
 <p>階層の適切なレベルで、 [* アクション * （ * Actions * ） ] 列のドロップダウンリストを選択し、 [ * 管理（ Manage ） ] を選択します。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage.gif" alt="&quot;[ アプリ"></span> ページの展開されたドロップダウンリストのスクリーンショット。名前空間またはアプリを管理または無視することを選択できます。"]</p>
-</div>
 </li>
 <li>
 <p>アプリを管理しない場合は、目的のアプリの [ * アクション * ] 列でドロップダウンリストを選択し、 [ * 無視 * ] を選択します。</p>
 <div class="paragraph">
 <p>たとえば、「 Jenkins 」ネームスペースですべてのアプリケーションを一緒に管理して、スナップショットポリシーとバックアップポリシーが同じになるようにする場合は、ネームスペースを管理し、ネームスペース内のアプリケーションは無視します。</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage-and-ignore.gif" alt="&quot;[ アプリ"></span> ページの展開されたドロップダウンリストのスクリーンショット。名前空間またはアプリを管理または無視することを選択できます。"]</p>
 </div>
 </li>
 </ol>
@@ -1267,48 +1259,29 @@
 <p>* クラスタ * ：アプリケーションが存在するクラスタを選択します。</p>
 </li>
 <li>
-<p>* 名前空間： * アプリケーションの名前空間を選択します。</p>
+<p>* 名前空間 * ：アプリケーションの名前空間を選択します。</p>
 </li>
 <li>
-<p>* ラベル： * ラベルを入力するか、以下のリソースからラベルを選択してください。</p>
+<p>* ラベル * ：ラベルを入力するか、以下のリソースからラベルを選択してください。</p>
 </li>
 <li>
 <p>* 選択したリソース * ：保護する Kubernetes リソース（ポッド、シークレット、永続ボリュームなど）を表示および管理します。</p>
-<div class="paragraph">
-<p>次に例を示します。</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-resources.gif" alt="設定マップや永続的ボリュームの要求など、保護可能なリソースのスクリーンショット。"></span></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
 <p>リソースを展開し、ラベル数を選択して、使用可能なラベルを表示します。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-view-labels.gif" alt="リソースが展開され、そのリソースのラベル数を示すスクリーンショット。"></span></p>
-</div>
 </li>
 <li>
 <p>ラベルを 1 つ選択します。</p>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-select-label.gif" alt="ラベル数を選択したあとに選択できるラベルのリストを示すスクリーンショット。"></span></p>
+<p>ラベルを選択すると、 [<strong>Label</strong>] フィールドにラベルが表示されます。Astra Control は、 [ 選択されていないリソース * ] セクションも更新して、選択したラベルと一致しないリソースを表示します。</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>ラベルを選択すると、 [<strong>Label</strong>] フィールドにラベルが表示されます。Astra Control は、 [ 選択されていないリソース * ] セクションも更新して、選択したラベルと一致しないリソースを表示します。</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>* 選択されていないリソース * ：保護する必要がないアプリケーションリソースを確認します。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-label.gif" alt="&quot;[ リソース"></span> ペインでラベルを選択した後に [ ラベル ] フィールドにラベルを表示するスクリーンショット。"]</p>
-</div>
 </li>
 </ol>
 </div>
@@ -1331,7 +1304,7 @@
 <p>Astra Control は、 Kubernetes クラスタで実行されているシステムアプリケーションも検出します。[ アプリケーション（ Apps ） ] リストをフィルタリングすることで、これらを表示できます。</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-system-apps.gif" alt="アプリ画面ですべてのクラスタを選択したときに使用できるシステムアプリを表示オプションを示すスクリーンショット。"></span></p>
+<p><span class="image"><img src="../media/use/acs_apps_system_apps3.png" alt="アプリケーション画面ですべてのクラスタを選択した場合に使用可能なシステムアプリケーションの表示オプションを示すスクリーンショット。"></span></p>
 </div>
 <div class="paragraph">
 <p>これらのシステムアプリは、バックアップが必要になることが稀であるため、デフォルトでは表示されません。</p>

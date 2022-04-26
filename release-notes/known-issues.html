@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-issues.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         請求を設定します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-users.html">
         ユーザーを招待および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-roles.html">
+        ロールの管理
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-credentials.html">
         クラウドプロバイダのクレデンシャルを管理する
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         検証済みのアプリケーションと標準のアプリケーションの比較
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/define-custom-app.html">
         カスタムアプリケーションを定義する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アプリケーションの導入</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:57:02 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:27:03 +0000">04/26/2022</time>
     
   
 
@@ -977,30 +985,32 @@
 <p>現在のリリースに影響する既知の問題は次のとおりです。</p>
 </div>
 <div class="ulist">
+<div class="title">アプリケーション</div>
 <ul>
 <li>
 <p><a href="#App clones fail after an application is deployed with a set storage class">[App clones fail after an application is deployed with a set storage class]</a></p>
 </li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">バックアップ、リストア、およびクローニング</div>
+<ul>
+<li>
+<p><a href="#Restore of an app results in PV size larger than original PV">[Restore of an app results in PV size larger than original PV]</a></p>
+</li>
 <li>
 <p><a href="#App clones fail using a specific version of PostgreSQL">[App clones fail using a specific version of PostgreSQL]</a></p>
 </li>
-<li>
-<p><a href="#Backup taken from new snapshot instead of existing snapshot">[Backup taken from new snapshot instead of existing snapshot]</a></p>
-</li>
-<li>
-<p><a href="#Custom app execution hook scripts time out and cause post-snapshot scripts not to execute">[Custom app execution hook scripts time out and cause post-snapshot scripts not to execute]</a></p>
-</li>
-<li>
-<p><a href="#Clone performance impacted by large persistent volumes">[Clone performance impacted by large persistent volumes]</a></p>
-</li>
-<li>
-<p><a href="#Simultaneous app restore operations in the same namespace can fail">[Simultaneous app restore operations in the same namespace can fail]</a></p>
-</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">その他の問題</div>
+<ul>
 <li>
 <p><a href="#Snapshots eventually begin to fail when using external-snapshotter version 4.2.0">[Snapshots eventually begin to fail when using external-snapshotter version 4.2.0]</a></p>
 </li>
 <li>
-<p><a href="#Unable to stop running app backup">[Unable to stop running app backup]</a></p>
+<p><a href="#App data management operations fail with Internal Service Error (500) when Astra Trident is offline">[App data management operations fail with Internal Service Error (500) when Astra Trident is offline]</a></p>
 </li>
 </ul>
 </div>
@@ -1015,45 +1025,18 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="アプリケーションをリストアすると-pv-のサイズが元の-pv-よりも大きくなります">アプリケーションをリストアすると、 PV のサイズが元の PV よりも大きくなります</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>バックアップの作成後に永続ボリュームのサイズを変更し、そのバックアップからリストアすると、永続ボリュームのサイズはバックアップのサイズではなく PV の新しいサイズと一致します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="特定のバージョンの-postgresql-を使用するとアプリケーションクローンが失敗します">特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="既存の-snapshot-ではなく新しい-snapshot-から作成されたバックアップ">既存の Snapshot ではなく新しい Snapshot から作成されたバックアップ</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>バックアップを作成して * 既存のスナップショットからバックアップ * を選択すると、 Astra Control はそのスナップショットを使用してバックアップを作成します。Astra Control は、既存のスナップショットを使用しません。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="カスタムアプリケーション実行フックスクリプトがタイムアウトし原因のスナップショット後のスクリプトが実行されない">カスタムアプリケーション実行フックスクリプトがタイムアウトし、原因のスナップショット後のスクリプトが実行されない</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>実行フックの実行に 25 分以上かかる場合 ' フックは失敗し ' 戻りコードが N/A のイベント・ログ・エントリが作成されます影響を受けた Snapshot はタイムアウトして失敗とマークされ、タイムアウトを通知するイベントログエントリが生成されます。</p>
-</div>
-<div class="paragraph">
-<p>実行フックは、実行中のアプリケーションの機能を低下させたり、完全に無効にしたりすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="クローンのパフォーマンスが大規模な永続ボリュームによる影響を受ける">クローンのパフォーマンスが大規模な永続ボリュームによる影響を受ける</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>非常に大容量で消費されている永続ボリュームのクローンが、オブジェクトストアへのクラスタアクセスによって断続的に低速になる可能性があります。クローンが停止し、データが 30 分以上コピーされていない場合、 Astra Control はクローン処理を終了します。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="同じネームスペースで同時にアプリケーションのリストア処理を実行しようとすると失敗することがあります">同じネームスペースで同時にアプリケーションのリストア処理を実行しようとすると失敗することがあります</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>ネームスペース内の個別に管理されたアプリケーションを同時にリストアしようとすると、長時間後にリストア処理が失敗することがあります。回避策として、各アプリケーションを一度に 1 つずつリストアします。</p>
 </div>
 </div>
 </div>
@@ -1063,13 +1046,26 @@
 <div class="paragraph">
 <p>Kubernetes 1.20 または 1.21 で Kubernetes snapshot-controller （別名 external-snapshotter ）バージョン 4.2.0 を使用すると、 Snapshot が失敗することがあります。これを防ぐには、別のを使用してください <a href="https://kubernetes-csi.github.io/docs/snapshot-controller.html" target="_blank" rel="noopener">"サポートされているバージョン"</a> バージョン 4.2.1 などの外部 Snapshot データ。 Kubernetes バージョン 1.20 または 1.21 で使用。</p>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>POST 呼び出しを実行して更新された kubeconfig ファイルを「 /credentials 」エンドポイントに追加し、応答本文から割り当てられた「 id 」を取得します。</p>
+</li>
+<li>
+<p>適切なクラスタ ID を使用して '/clusters' エンドポイントから PUT 呼び出しを実行し 'credentialId' を前の手順の id' 値に設定します</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>これらの手順を完了すると、クラスタに関連付けられたクレデンシャルが更新され、クラスタは再接続して、その状態を「 available 」に更新する必要があります。</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="アプリケーションバックアップの実行を停止できません">アプリケーションバックアップの実行を停止できません</h2>
+<h2 id="astra-trident-がオフラインの場合-internal-service-error-500-によりアプリケーションデータ管理処理が失敗する">Astra Trident がオフラインの場合、 Internal Service Error （ 500 ）によりアプリケーションデータ管理処理が失敗する</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>実行中のバックアップを停止する方法はありません。バックアップを削除する必要がある場合は、完了するまで待ってから、の手順を実行してください <a href="../use/protect-apps.html#delete-backups">"バックアップを削除します"</a>。失敗したバックアップを削除するには、を使用します <a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Astra API"</a>。</p>
+<p>アプリケーションクラスタの Astra Trident がオフラインになり（オンラインに戻った）、 500 件の内部サービスエラーが発生した場合に、アプリケーションデータ管理を試みると、アプリケーションクラスタ内のすべての Kubernetes ノードを再起動して機能を復旧します。</p>
 </div>
 </div>
 </div>

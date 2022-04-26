@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/view-clusters.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         請求を設定します
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-users.html">
         ユーザーを招待および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-roles.html">
+        ロールの管理
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/manage-credentials.html">
         クラウドプロバイダのクレデンシャルを管理する
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         検証済みのアプリケーションと標準のアプリケーションの比較
       </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/define-custom-app.html">
         カスタムアプリケーションを定義する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> アプリケーションの導入</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:57:02 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:27:03 +0000">04/26/2022</time>
     
   
 
@@ -975,31 +983,52 @@
 <div class="title">手順</div>
 <ol class="arabic">
 <li>
-<p>「 * クラスタ * 」を選択します。</p>
+<p>Astra Control Service UI で、 [* Clusters] を選択します。</p>
 </li>
 <li>
-<p>クラスタ名を選択します。</p>
+<p>[* Clusters] ページで、詳細を表示するクラスタを選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+クラスタが「 re moved 」状態であり、ネットワーク接続が正常であると表示される場合（ Kubernetes API を使用してクラスタに外部からアクセスしようとすると成功します）、 Astra Control に指定した beckufig は無効になる可能性があります。クラスタでの証明書のローテーションまたは有効期限が原因の可能性があります。この問題を修正するには、を使用して、 Astra Control のクラスタに関連付けられたクレデンシャルを更新します <a href="https://docs.netapp.com/us-en/astra-automation/index.html">"Astra Control API の略"</a>。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
-<p>[Overview （概要） ] タブと [Storage （ストレージ） ] タブで情報を確認し、必要な情報を見つけます。</p>
+<p>[Overview （概要） ] 、 [* Storage （ * ストレージ） ] 、 [* Activity * （アクティビティ * ） ] タブの情報を表示して、必要な情報を検索します。</p>
 <div class="ulist">
 <ul>
 <li>
 <p>* 概要 * ：状態を含むワーカーノードの詳細。</p>
 </li>
 <li>
-<p>* Storage * ：ストレージクラスと状態を含む、クラスタに関連付けられた永続的ボリューム。</p>
+<p>* ストレージ * ：ストレージクラスと状態を含む、コンピューティングに関連付けられた永続的ボリューム。</p>
 </li>
 <li>
-<p>* アクティビティ * ：クラスタに関連する Astra のアクティビティ。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-cluster-overview.gif" alt="クラスタの Overview （概要）タブのスクリーンショット。"></span></p>
-</div>
+<p>* アクティビティ * ：クラスタに関連するアクティビティ。</p>
 </li>
 </ul>
 </div>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+Astra Control Service * Dashboard * から始まるクラスタ情報を表示することもできます。[ * クラスタ * ] タブの [ * リソースサマリ * ] で、管理対象クラスタを選択して [ * クラスタ * ] ページに移動できます。[* Clusters] ページが表示されたら、上記の手順を実行します。
+</td>
+</tr>
+</table>
 </div>
 
     </article>
