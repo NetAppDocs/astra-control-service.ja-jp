@@ -1698,4 +1698,5 @@
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">Astra Trident がオフラインの場合、 Internal Service Error （ 500 ）によりアプリケーションデータ管理処理が失敗する</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">アプリケーションクラスタの Astra Trident がオフラインになり（オンラインに戻った）、 500 件の内部サービスエラーが発生した場合に、アプリケーションデータ管理を試みると、アプリケーションクラスタ内のすべての Kubernetes ノードを再起動して機能を復旧します。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">クラスタがプライベートの場合は、を参照してください<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control Service の IP アドレスを許可する必要があります。</block>
+  <block id="81a948049e34f0b0478cdb4d7fee5cb1" category="list-text">名前空間の名前 / ID または名前空間ラベルによる名前空間の制約を持つメンバーユーザーは、同じクラスタ上の新しい名前空間、または組織のアカウント内の他のクラスタに対して、アプリケーションのクローンまたはリストアを実行できます。ただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローンまたはリストア処理によって新しいネームスペースが作成されると、アカウントの管理者 / 所有者はメンバーユーザアカウントを編集し、該当するユーザに新しいネームスペースへのアクセスを許可するロールの制限を更新できます。</block>
 </blocks>
