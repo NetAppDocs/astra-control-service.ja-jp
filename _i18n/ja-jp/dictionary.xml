@@ -287,8 +287,6 @@
   <block id="55173b12ad5e4823a240086f6f847275" category="paragraph">限界に近づくと、次の 2 つのオプションがあります。</block>
   <block id="46a463f45d760c104b72522e58a98d80" category="inline-link">制限の増加を要求します</block>
   <block id="6db1177280cdf1c407b10901a43f2d5d" category="list-text">可能です<block ref="80367e2e66953979f4f73611214577d4" category="inline-link-rx"></block>。サポートが必要な場合は、ネットアップの担当者にお問い合わせください。</block>
-  <block id="609775d4b1f048a0f6500161bd460e47" category="list-text">プライベートネットワーク</block>
-  <block id="bc287e95f5c3144752a8a8d09fbe96b1" category="list-text">クラスタでプライベートネットワークを有効にしないでください。</block>
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部のボリューム Snapshot コントローラ</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">CSI ボリュームスナップショットコントローラをインストールします</block>
@@ -946,7 +944,6 @@
   <block id="f47da5928482ec16270b3f4a38fd29b2" category="paragraph">Astra Control にクレデンシャルを追加する最も一般的な方法は、クラスタを管理する場合ですが、アカウントページからクレデンシャルを追加することもできます。その後、 Kubernetes クラスタを追加で管理する際にクレデンシャルを選択できるようになります。</block>
   <block id="d8fcf72bfd3b99486c35821d3f2e44f4" category="paragraph">これで、 Astra Control にクラスタを追加するときに、クレデンシャルを選択できるようになりました。</block>
   <block id="82f2b96e6fd3cf7bfa88172cb51c9afc" category="inline-link-macro">すべてのクラスタの管理を解除します</block>
-  <block id="5074e7a91e497a22dc0714abe6e771dd" category="paragraph">アカウントからのクレデンシャルの削除はいつでも実行できます。クレデンシャルは、のあとに削除してください <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>。</block>
   <block id="658342e883e065c182f9a1f9b59425a0" category="list-text">アプリケーションのデスティネーションクラスタを選択します。</block>
   <block id="e78b0b14ef505bb78e615dad8a884310" category="list-text">クローンのデスティネーションクラスタを選択してください。</block>
   <block id="ba2e9840531cec7c445b2572e7ce6428" category="summary">Kubernetes クラスタを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。</block>
@@ -1699,4 +1696,14 @@
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">アプリケーションクラスタの Astra Trident がオフラインになり（オンラインに戻った）、 500 件の内部サービスエラーが発生した場合に、アプリケーションデータ管理を試みると、アプリケーションクラスタ内のすべての Kubernetes ノードを再起動して機能を復旧します。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">クラスタがプライベートの場合は、を参照してください<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control Service の IP アドレスを許可する必要があります。</block>
   <block id="81a948049e34f0b0478cdb4d7fee5cb1" category="list-text">名前空間の名前 / ID または名前空間ラベルによる名前空間の制約を持つメンバーユーザーは、同じクラスタ上の新しい名前空間、または組織のアカウント内の他のクラスタに対して、アプリケーションのクローンまたはリストアを実行できます。ただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローンまたはリストア処理によって新しいネームスペースが作成されると、アカウントの管理者 / 所有者はメンバーユーザアカウントを編集し、該当するユーザに新しいネームスペースへのアクセスを許可するロールの制限を更新できます。</block>
+  <block id="ae67f9136c5a827541839e278a3b8b0a" category="paragraph">アカウントからのクレデンシャルの削除はいつでも実行できます。クレデンシャルは、のあとに削除してください <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>（認証情報のローテーションを実行していない場合） <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
+  <block id="85149e5821bdf494d4eaf0a96d8f46a8" category="section-title">クレデンシャルのローテーション</block>
+  <block id="8e945e6a79e0bf8da80606ed9d20bc53" category="paragraph">アカウント内でクレデンシャルをローテーションすることができます。クレデンシャルのローテーションを行う場合は、バックアップが進行中でないとき（スケジュール設定またはオンデマンド）に、ローテーションを継続して実行してください。</block>
+  <block id="d05c0825b09f53538ae182820f680709" category="list-text">の手順に従って、既存のクレデンシャルを削除します <block ref="d2f3a923bca17e66f3f1dad217fa3a1a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="60ab1991a8b8c64a87882fcdf3740be4" category="list-text">の手順に従って、新しいクレデンシャルを追加します <block ref="3ba4bf3dfb819b290465624916ee777a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="dc8364087e4f87791e74e061f41f25d8" category="list-text">新しいクレデンシャルを使用するようにすべてのバケットを更新します。</block>
+  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">「 * 編集 * 」を選択します。</block>
+  <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">資格情報の選択*セクションで、Astra Controlに追加した新しい資格情報を選択します。</block>
+  <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">システムの残りのバケットに対して、手順* b *~* e *を繰り返します。</block>
+  <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Controlが新しいクラウドプロバイダのクレデンシャルの使用を開始。</block>
 </blocks>
