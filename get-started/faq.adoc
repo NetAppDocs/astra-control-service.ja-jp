@@ -73,6 +73,10 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 はい、 AKS のプライベートクラスタを Astra 制御サービスに追加できます。プライベート AKS クラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
+* Active Directoryを使用してAKSクラスタの認証を管理できますか。*
+
+はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+
 
 
 == GKE クラスタを登録しています

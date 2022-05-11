@@ -21,6 +21,9 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]、 link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] 。
 
 
+NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+
+
 
 == Kubernetes クラスタの管理を開始します
 
@@ -28,10 +31,10 @@ Astra Control Service にログインしたら、最初にクラスタの管理�
 
 [NOTE]
 ====
-Astra Control は、クラスタを管理するときに、クラスタのデフォルトのストレージクラスを追跡します。'kubectl' コマンドを使用して StorageClass を変更すると 'Astra Control は変更を元に戻しますAstra Control によって管理されるクラスタのデフォルトの StorageClass を変更するには、次のいずれかの方法を使用します。
+Astra Controlは、クラスタを管理する際に、クラスタのデフォルトストレージクラスを追跡します。'kubectl'コマンドを使用してストレージ・クラスを変更すると'Astra Controlは変更を元に戻しますAstra Controlで管理されるクラスタのデフォルトのストレージクラスを変更するには、次のいずれかの方法を使用します。
 
-* Astra Control API'put/managedClusters' エンドポイントを使用して 'DefaultStorageClass' パラメータを指定して ' 別のデフォルト StorageClass を割り当てます
-* Astra Control 管理からクラスタを削除し、別のデフォルトの StorageClass を選択して追加し直します
+* Astra Control APIのPut / managedClustersエンドポイントを使用し'DefaultStorageClass'パラメータを指定して'別のデフォルトストレージクラスを割り当てます
+* Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください <<Change the default storage class>>。
 
 
 ====
@@ -144,4 +147,19 @@ kubectl get astraconnector astra-connector -n astra-connector
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
+
+
+
+
+== デフォルトのストレージクラスを変更する
+
+クラスタのデフォルトのストレージクラスは変更できます。
+
+.手順
+. Astra Control Service UI で、 [* Clusters] を選択します。
+. [* Clusters]ページで、変更するクラスタを選択します。
+. [ * ストレージ * ] タブを選択します。
+. 「*ストレージクラス*」カテゴリを選択します。
+. デフォルトとして設定するストレージクラスの* Actions *メニューを選択します。
+. 「*デフォルトに設定*」を選択します。
 

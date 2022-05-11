@@ -1373,9 +1373,6 @@
   <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">注意が必要なイベントを選択してください。</block>
   <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">[*Take action*] ドロップダウンオプションを選択します。</block>
   <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">このリストから、実行できる対処方法のほか、問題 に関するドキュメントを参照したり、問題 の解決に役立つサポートを受けたりできます。</block>
-  <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">Astra Control は、クラスタを管理するときに、クラスタのデフォルトのストレージクラスを追跡します。'kubectl' コマンドを使用して StorageClass を変更すると 'Astra Control は変更を元に戻しますAstra Control によって管理されるクラスタのデフォルトの StorageClass を変更するには、次のいずれかの方法を使用します。</block>
-  <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">Astra Control API'put/managedClusters' エンドポイントを使用して 'DefaultStorageClass' パラメータを指定して ' 別のデフォルト StorageClass を割り当てます</block>
-  <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">Astra Control 管理からクラスタを削除し、別のデフォルトの StorageClass を選択して追加し直します</block>
   <block id="88555feb409cba41792254e4f06581c9" category="list-text">ネームスペース内の Kubernetes ラベル（ Astra Control 内の _custom APP_in Astra Control と呼ばれます）で識別されるリソースのグループ</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">Bitnami Helm チャート</block>
   <block id="63b460525cdf532239754239be0dd49b" category="paragraph">で Postgres を導入する方法について説明します<block ref="c1944f63284fe1469cc0b7628473e785" category="inline-link-rx"></block>。クラスタに Postgres を導入したら、 Astra Control にアプリケーションを登録できます。</block>
@@ -1666,7 +1663,6 @@
   <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022 年 4 月 26 日</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">ネームスペースのロールベースアクセス制御（ RBAC ）</block>
   <block id="382d0f3f80a6edc90145fa9f5e248570" category="paragraph">Astra Control Service では、メンバユーザーまたはビューアユーザーへの名前空間制約の割り当てがサポートされるようになりました。</block>
-  <block id="20f1bb3f9f567f6aa7b19e591c3a1f51" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block>。</block>
   <block id="81c45fdf5fa9c193ad7e22c5fd4785ef" category="section-title">プライベート AKS クラスタのサポート</block>
   <block id="c490fa82068b0f1b8aef0ce959352ea7" category="paragraph">プライベート IP アドレスを使用する AKS クラスタを管理できるようになりました。</block>
   <block id="2a37eca094676cc6b6a4bfa0ea9fcc57" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block>。</block>
@@ -1706,4 +1702,21 @@
   <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">資格情報の選択*セクションで、Astra Controlに追加した新しい資格情報を選択します。</block>
   <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">システムの残りのバケットに対して、手順* b *~* e *を繰り返します。</block>
   <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Controlが新しいクラウドプロバイダのクレデンシャルの使用を開始。</block>
+  <block id="600875fce016d4eddadf3675fe4ec0a6" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block>。</block>
+  <block id="c232f387cd35833fa7dbddc853981552" category="section-title">Azure Active Directoryのサポート</block>
+  <block id="19a67907b2de4999a969b7863b0d05e9" category="paragraph">Astra Control Serviceは、Azure Active Directoryを使用して認証とID管理を行うAKSクラスタをサポートします。</block>
+  <block id="54d90be7ed2f484693994a0a44b349d2" category="inline-link">公式ドキュメント</block>
+  <block id="ac4eb04549d46b875b9c5a712e733c6f" category="admonition">Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。</block>
+  <block id="846cdda4ee8e60864d52aaeeb040485c" category="paragraph">Astra Controlは、クラスタを管理する際に、クラスタのデフォルトストレージクラスを追跡します。'kubectl'コマンドを使用してストレージ・クラスを変更すると'Astra Controlは変更を元に戻しますAstra Controlで管理されるクラスタのデフォルトのストレージクラスを変更するには、次のいずれかの方法を使用します。</block>
+  <block id="d284e4138e540279377b96192064bb64" category="list-text">Astra Control APIのPut / managedClustersエンドポイントを使用し'DefaultStorageClass'パラメータを指定して'別のデフォルトストレージクラスを割り当てます</block>
+  <block id="4cb8b00c0937a1220b88468763322f15" category="list-text">Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください <block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3664703675e6ea0fab0e620eb7c74fb0" category="section-title">デフォルトのストレージクラスを変更する</block>
+  <block id="38219c9a076c4f4be6883cf24fcb296d" category="paragraph">クラスタのデフォルトのストレージクラスは変更できます。</block>
+  <block id="fe575e20478d6256f2449963730fd738" category="list-text">[* Clusters]ページで、変更するクラスタを選択します。</block>
+  <block id="b84cf83ec24af3992507d72057b607f6" category="list-text">[ * ストレージ * ] タブを選択します。</block>
+  <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">「*ストレージクラス*」カテゴリを選択します。</block>
+  <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">デフォルトとして設定するストレージクラスの* Actions *メニューを選択します。</block>
+  <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">「*デフォルトに設定*」を選択します。</block>
+  <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directoryを使用してAKSクラスタの認証を管理できますか。*</block>
+  <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。</block>
 </blocks>

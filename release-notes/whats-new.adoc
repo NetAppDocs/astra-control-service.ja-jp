@@ -25,7 +25,15 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 Astra Control Service では、メンバユーザーまたはビューアユーザーへの名前空間制約の割り当てがサポートされるようになりました。
 
-link:../use/manage-roles.html["ロールの管理"]。
+link:../learn/user-roles-namespaces.html["ネームスペースのロールベースアクセス制御（ RBAC ）"]。
+
+
+
+=== Azure Active Directoryのサポート
+
+Astra Control Serviceは、Azure Active Directoryを使用して認証とID管理を行うAKSクラスタをサポートします。
+
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 
 
