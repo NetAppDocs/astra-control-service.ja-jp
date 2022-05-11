@@ -971,7 +971,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-26 16:27:03 +0000">04/26/2022</time>
+    <time datetime="2022-05-11 14:44:01 +0000">05/11/2022</time>
     
   
 
@@ -991,6 +991,18 @@
 <div class="paragraph">
 <p>まだクラスタがない場合は、を満たすクラスタを作成します <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"</a>、 <a href="set-up-microsoft-azure-with-anf.html">"Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"</a>または <a href="set-up-microsoft-azure-with-amd.html">"Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"</a> 。</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注記">
+</td>
+<td class="content">
+Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください <a href="https://docs.microsoft.com/en-us/azure/aks/managed-aad" target="_blank" rel="noopener">"公式ドキュメント"</a> をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1007,15 +1019,15 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Astra Control は、クラスタを管理するときに、クラスタのデフォルトのストレージクラスを追跡します。'kubectl' コマンドを使用して StorageClass を変更すると 'Astra Control は変更を元に戻しますAstra Control によって管理されるクラスタのデフォルトの StorageClass を変更するには、次のいずれかの方法を使用します。</p>
+<p>Astra Controlは、クラスタを管理する際に、クラスタのデフォルトストレージクラスを追跡します。'kubectl&#8217;コマンドを使用してストレージ・クラスを変更すると&#8217;Astra Controlは変更を元に戻しますAstra Controlで管理されるクラスタのデフォルトのストレージクラスを変更するには、次のいずれかの方法を使用します。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Astra Control API&#8217;put/managedClusters' エンドポイントを使用して 'DefaultStorageClass' パラメータを指定して ' 別のデフォルト StorageClass を割り当てます</p>
+<p>Astra Control APIのPut / managedClustersエンドポイントを使用し&#8217;DefaultStorageClass&#8217;パラメータを指定して&#8217;別のデフォルトストレージクラスを割り当てます</p>
 </li>
 <li>
-<p>Astra Control 管理からクラスタを削除し、別のデフォルトの StorageClass を選択して追加し直します</p>
+<p>Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください <a href="#Change the default storage class">[Change the default storage class]</a>。</p>
 </li>
 </ul>
 </div>
@@ -1185,6 +1197,37 @@
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19</pre>
 </div>
 </div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="デフォルトのストレージクラスを変更する">デフォルトのストレージクラスを変更する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>クラスタのデフォルトのストレージクラスは変更できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Astra Control Service UI で、 [* Clusters] を選択します。</p>
+</li>
+<li>
+<p>[* Clusters]ページで、変更するクラスタを選択します。</p>
+</li>
+<li>
+<p>[ * ストレージ * ] タブを選択します。</p>
+</li>
+<li>
+<p>「<strong>ストレージクラス</strong>」カテゴリを選択します。</p>
+</li>
+<li>
+<p>デフォルトとして設定するストレージクラスの* Actions *メニューを選択します。</p>
+</li>
+<li>
+<p>「<strong>デフォルトに設定</strong>」を選択します。</p>
 </li>
 </ol>
 </div>
