@@ -229,7 +229,6 @@
   <block id="5fabf021c8fb95cd2d38139cc7c5ff89" category="paragraph">* Astra Control で取得したスナップショットをクラウドプロバイダから直接管理できますか。 *</block>
   <block id="70e9aa86ac0b41ade7ad4fce41b6d744" category="paragraph">いいえAstra Control で作成したスナップショットとバックアップは、 Astra Control でのみ管理できます。</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control は、 Kubernetes アプリケーションデータライフサイクル管理解決策で、ステートフルアプリケーションの運用を簡易化します。Kubernetes ワークロードの保護、バックアップ、移行を簡易化し、作業用アプリケーションのクローンを瞬時に作成できます。</block>
-  <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control の概要</block>
   <block id="620e99caf2b3d803b4dd22b70d895fde" category="summary">このドキュメントサイトの多くのページには、 Astra Control サービスを使用してタスクを完了する方法を説明するビデオが含まれています。ビデオに関心がある場合は、この 1 ページにあるすべてのビデオを収集することで簡単になりました（プレイリストのように）。</block>
   <block id="cec4f0bbb3f7119930f9ff4d721ad21a" category="doc">Astra Control サービスのビデオ</block>
   <block id="54c5307863ad46506a3935148faf8976" category="paragraph">このドキュメントサイトの多くのページには、 Astra Control サービスのタスクを完了する方法を説明するビデオが含まれています。ビデオに関心がある場合は、この 1 ページのすべてのビデオを収集することで、簡単に操作できます（プレイリストのように）。</block>
@@ -1719,4 +1718,5 @@
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">「*デフォルトに設定*」を選択します。</block>
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directoryを使用してAKSクラスタの認証を管理できますか。*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。</block>
+  <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">Astra Controlの詳細をご確認ください</block>
 </blocks>

@@ -21,28 +21,28 @@ Microsoft Azure サブスクリプションを準備してから、 Astra Contro
 
 
 
-==== Azure Kubernetes Service の Astra Control Service の要件を確認
+=== Azure Kubernetes Service の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
 クラスタが正常に機能しており、 Kubernetes バージョン 1.211.x ~ 1.23 が実行されていること、ノードプールがオンラインであり * Linux * が実行されていることなどを確認してください。 <<Azure Kubernetes Service cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
-==== Microsoft Azure に登録
+=== Microsoft Azure に登録
 
 [role="quick-margin-para"]
 Microsoft Azure アカウントを作成します。 <<Sign up for Microsoft Azure,このステップの詳細をご覧ください>>。
 
 
 
-==== Azure サービスプリンシパルを作成します
+=== Azure サービスプリンシパルを作成します
 
 [role="quick-margin-para"]
 Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <<Create an Azure service principal,このステップの詳細をご覧ください>>。
 
 
 
-==== CSI ドライバの詳細を設定します
+=== CSI ドライバの詳細を設定します
 
 [role="quick-margin-para"]
 CSI ドライバと連携するように Azure サブスクリプションとクラスタを設定する必要があります。 <<Configure Container Storage Interface (CSI) driver details,このステップの詳細をご覧ください>>。

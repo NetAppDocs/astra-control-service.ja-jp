@@ -2,7 +2,7 @@
 section: get-started
 title: はじめに
 entries:
-- title: Astra Control の概要
+- title: Astra Controlの詳細をご確認ください
   url: "/get-started/intro.html"
 - title: サポートされる Kubernetes 環境
   url: "/get-started/supported-deployments.html"
