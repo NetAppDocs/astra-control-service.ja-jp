@@ -1163,7 +1163,6 @@
   <block id="c83ec598afcfd8eb8180685a01d0e884" category="paragraph">CSI ドライバをインストールする前に、 Azure サブスクリプションで CSI ドライバ機能を有効にする必要があります。</block>
   <block id="88bcc5f12a365174fce5ed9581217c0f" category="list-text">Azure コマンドラインインターフェイスを開きます。</block>
   <block id="d7b43ba09446a633f575c51655477a58" category="list-text">次のコマンドを実行してドライバを登録します。</block>
-  <block id="e0b4ff61d0820f6567af9482613f2a5d" category="list-text">次のコマンドを実行して、変更がプロゲートされていることを確認します。</block>
   <block id="daae3454c5ca21f3cde2542bf9240548" category="section-title">Azure 管理ディスク CSI ドライバを Azure Kubernetes Service クラスタにインストールします</block>
   <block id="0b1f7cc28b0b37ff72c091633f22b694" category="paragraph">Azure CSI ドライバをインストールして準備を完了できます。</block>
   <block id="5c45917f00ad20e0e5789b736021ac07" category="inline-link">Microsoft CSI ドライバのマニュアル</block>
@@ -1719,4 +1718,18 @@
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">* Active Directoryを使用してAKSクラスタの認証を管理できますか。*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。</block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">Astra Controlの詳細をご確認ください</block>
+  <block id="7a224873743ae07878fa35eb8d081112" category="list-text"><block ref="3286c558b43bd6d377809c21300aee77" category="inline-xref-macro-rx"></block></block>
+  <block id="8100875d88782acfb46a30b4101b2280" category="section-title">Azureバックアップバケットでは、デフォルトでLRS冗長性が使用されます</block>
+  <block id="7b51ea6a21b6966c72987eb0afc24995" category="paragraph">デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットで永続性を高めた冗長性オプションを使用する場合は、Azureクラウドプロバイダのセットアップ手順のオプションの手順を参照してください。</block>
+  <block id="22e9bb5a03504aaee4ab910d594c8096" category="list-text"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block></block>
+  <block id="864e3787d69e889ea2ae67aeb999effd" category="list-text"><block ref="864e3787d69e889ea2ae67aeb999effd" category="inline-link-macro-rx"></block></block>
+  <block id="87e0c6ecd728fb0d791237540ebc2d13" category="section-title">オプション：Azureバックアップバケットの冗長性を設定する</block>
+  <block id="e6870002b2d5d13ce9775b063bc8ba38" category="paragraph">デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。 <block ref="01e018c18178f59acc7c2fe24b863d36" category="inline-xref-macro-rx"></block>。</block>
+  <block id="59007fdeff44241e1503f2d5988af0c3" category="list-text">次のコマンドを実行して、変更が伝播されることを確認します。</block>
+  <block id="1fbdfcbad2340990dd9a4235c70ce4d7" category="paragraph">Azureバックアップバケットには、より永続性の高い冗長性レベルを設定できます。デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットでより永続性の高い冗長性オプションを使用するには、次の作業を行う必要があります。</block>
+  <block id="9ac0dd27d420b7b48ca72e463ae95e18" category="inline-link">以下の手順を参照して</block>
+  <block id="e42b53a05e4dc8d35c19c6e591938326" category="list-text">使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します<block ref="c9a7cb9a074b3428e720b565b7629c69" category="inline-link-rx"></block>。</block>
+  <block id="71f57bd63430dbba34c12daa373f7996" category="list-text">を使用して、新しいストレージアカウントにAzureコンテナを作成します<block ref="ba03a3cb851c493aa05900ed20930895" category="inline-link-rx"></block>。</block>
+  <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
+  <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">（オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
 </blocks>

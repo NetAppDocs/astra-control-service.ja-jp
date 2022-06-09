@@ -22,6 +22,7 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 .バックアップ、リストア、およびクローニング
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<Azure backup buckets use LRS redundancy by default>>
 
 
 .その他の問題
@@ -46,6 +47,16 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 == 特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します
 
 Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。
+
+
+
+== Azureバックアップバケットでは、デフォルトでLRS冗長性が使用されます
+
+デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットで永続性を高めた冗長性オプションを使用する場合は、Azureクラウドプロバイダのセットアップ手順のオプションの手順を参照してください。
+
+* link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]
+* link:../get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
+
 
 
 

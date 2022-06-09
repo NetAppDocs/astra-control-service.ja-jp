@@ -49,6 +49,13 @@ CSI ドライバと連携するように Azure サブスクリプションとク
 
 
 
+=== オプション：Azureバックアップバケットの冗長性を設定する
+
+[role="quick-margin-para"]
+デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。 <<Optional: Configure redundancy for Azure backup buckets,このステップの詳細をご覧ください>>。
+
+
+
 == Azure Kubernetes Service クラスタの要件
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
@@ -232,7 +239,7 @@ CSI ドライバをインストールする前に、 Azure サブスクリプシ
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
-. 次のコマンドを実行して、変更がプロゲートされていることを確認します。
+. 次のコマンドを実行して、変更が伝播されることを確認します。
 +
 [listing]
 ----
@@ -263,4 +270,17 @@ Azure CSI ドライバをインストールして準備を完了できます。
 .ステップ
 . に進みます https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers["Microsoft CSI ドライバのマニュアル"^]。
 . 指示に従って、必要な CSI ドライバをインストールします。
+
+
+
+
+== オプション：Azureバックアップバケットの冗長性を設定する
+
+Azureバックアップバケットには、より永続性の高い冗長性レベルを設定できます。デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットでより永続性の高い冗長性オプションを使用するには、次の作業を行う必要があります。
+
+.手順
+. 使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["以下の手順を参照して"^]。
+. を使用して、新しいストレージアカウントにAzureコンテナを作成します https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["以下の手順を参照して"^]。
+. コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください link:../use/manage-buckets.html#add-an-additional-bucket["追加のバケットを追加します"]。
+. （オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください link:../use/manage-buckets.html#change-the-default-bucket["デフォルトバケットを変更する"]。
 
