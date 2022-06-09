@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">日本語</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">日本語</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/astra-control-service/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -776,7 +768,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ja-jp/astra-control-service/index.html">
         Astra Control Service のドキュメント
       </a></li><li class="subfolders "><a href="#">
@@ -975,7 +967,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-25 20:47:52 +0000">05/25/2022</time>
+    <time datetime="2022-06-09 17:30:27 +0000">06/09/2022</time>
     
   
 
@@ -1017,6 +1009,12 @@
 <h3 id="csi-ドライバの詳細を設定します">CSI ドライバの詳細を設定します</h3>
 <div class="paragraph quick-margin-para">
 <p>CSI ドライバと連携するように Azure サブスクリプションとクラスタを設定する必要があります。 <a href="#Configure Container Storage Interface (CSI) driver details">このステップの詳細をご覧ください</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="オプションazureバックアップバケットの冗長性を設定する">オプション：Azureバックアップバケットの冗長性を設定する</h3>
+<div class="paragraph quick-margin-para">
+<p>デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。 <a href="#Optional: Configure redundancy for Azure backup buckets">このステップの詳細をご覧ください</a>。</p>
 </div>
 </div>
 </div>
@@ -1286,7 +1284,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 </div>
 </li>
 <li>
-<p>次のコマンドを実行して、変更がプロゲートされていることを確認します。</p>
+<p>次のコマンドを実行して、変更が伝播されることを確認します。</p>
 <div class="listingblock">
 <div class="content">
 <pre>'az provider register -n Microsoft.ContainerService</pre>
@@ -1327,6 +1325,31 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="オプションazureバックアップバケットの冗長性を設定する-2">オプション：Azureバックアップバケットの冗長性を設定する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Azureバックアップバケットには、より永続性の高い冗長性レベルを設定できます。デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットでより永続性の高い冗長性オプションを使用するには、次の作業を行う必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal" target="_blank" rel="noopener">"以下の手順を参照して"</a>。</p>
+</li>
+<li>
+<p>を使用して、新しいストレージアカウントにAzureコンテナを作成します <a href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal" target="_blank" rel="noopener">"以下の手順を参照して"</a>。</p>
+</li>
+<li>
+<p>コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください <a href="../use/manage-buckets.html#add-an-additional-bucket">"追加のバケットを追加します"</a>。</p>
+</li>
+<li>
+<p>（オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください <a href="../use/manage-buckets.html#change-the-default-bucket">"デフォルトバケットを変更する"</a>。</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1476,4 +1499,5 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
     </script>
     <script src='/ja-jp/astra-control-service/js/www-ntap.js'></script>
     <script src='/ja-jp/astra-control-service/js/tabbed-blocks.js'></script>
+    <script src='/ja-jp/astra-control-service/js/sidebar.js'></script>
   </body></html>
