@@ -1732,4 +1732,5 @@
   <block id="71f57bd63430dbba34c12daa373f7996" category="list-text">を使用して、新しいストレージアカウントにAzureコンテナを作成します<block ref="ba03a3cb851c493aa05900ed20930895" category="inline-link-rx"></block>。</block>
   <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">（オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">以前に削除したネームスペースにリストアすると、同じ名前の新しいネームスペースがリストアプロセスで作成されます。以前に削除したネームスペースでアプリケーションを管理する権限を持つユーザは、新しく作成したネームスペースに手動で権限を復元する必要があります。</block>
 </blocks>
