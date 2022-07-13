@@ -11,10 +11,13 @@ entries:
 - title: クラウドプロバイダをセットアップします
   entries:
   - title: Google Cloud をセットアップします
+    flavor: gcp
     url: "/get-started/set-up-google-cloud.html"
   - title: Azure NetApp Files を使用して Microsoft Azure をセットアップする
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-anf.html"
   - title: Azure で管理されているディスクを使用して Microsoft Azure をセットアップする
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: アカウントに登録します
   url: "/get-started/register.html"

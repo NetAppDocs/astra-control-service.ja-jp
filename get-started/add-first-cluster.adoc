@@ -18,10 +18,16 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 == Kubernetes クラスタを作成
 
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]、 link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] 。
+まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。
+
+endif::azure[]
+
+まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
 
 
 NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+
+endif::gcp[]
 
 
 
@@ -38,8 +44,15 @@ Astra Controlは、クラスタを管理する際に、クラスタのデフォ�
 
 
 ====
-.必要なもの
+ifdef::gcp[]
+
 * GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["サービスプリンシパルの設定方法について説明します"]。
 +
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
@@ -52,54 +65,116 @@ JSON ファイルに追加していない場合は、 Azure サブスクリプ�
 
 
 
+endif::azure[]
+
 .手順
 . ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
 +
 プロンプトに従ってクラスタを追加します。
 
 . * プロバイダ * ：クラウドプロバイダを選択し、必要なクレデンシャルを入力します。
-+
-.. * Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードからその JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を指定します。
+
+
+ifdef::azure[]
+
+. * Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードからその JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を指定します。
 +
 JSON ファイルに、サービスプリンシパルの作成時に Azure CLI からの出力が含まれている必要があります。サブスクリプション ID を含めることで、 Astra に自動的に追加されるようにすることもできます。ID が必要な場合は、 JSON の指定後に手動で ID を入力する必要があります。
 
-.. * Google Cloud Platform * ：ファイルをアップロードするか、クリップボードからコンテンツを貼り付けて、サービスアカウントのキーファイルを提供します。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+. * Google Cloud Platform * ：ファイルをアップロードするか、クリップボードからコンテンツを貼り付けて、サービスアカウントのキーファイルを提供します。
 +
 Astra Control Service は、サービスアカウントを使用して、 Google Kubernetes Engine で実行されているクラスタを検出します。
 
 
+
+endif::gcp[]
 
 . * クラスタ * ：追加するクラスタを選択します。
 +
 [Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
 +
-Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+Cloud Volumes Service for Google Cloud用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
 
 +
 「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
 
+
+
+endif::gcp[]
+
++「償還対象」タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+
++ Azure NetApp Files 用に設定されていないクラスタを選択すると、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+
++「プライベート」アイコンが付いているクラスタを選択する場合は、プライベートIPアドレスが使用され、Astra Controlでクラスタを管理するためにAstraコネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
+
+endif::azure[]
+
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
-価格、パフォーマンス、耐障害性に関する情報は、 Cloud Volumes Service for Google Cloud サービスごとにリストに表示されます。パフォーマンスと耐障害性の情報は、 Azure NetApp Files サービスごとに表示されます。Google Persistent Disk や Azure Managed Disk など、ネットアップ以外のストレージクラスについては、コスト、パフォーマンス、耐障害性に関する情報は提供されません。
+[NOTE]
+====
+各クラウドプロバイダのストレージサービスには、コスト、パフォーマンス、耐障害性に関する次の情報が表示されます。
 
+ifdef::gcp[]
+
+** Cloud Volumes Service for Google Cloud：価格、パフォーマンス、耐障害性に関する情報
+** Google Persistent Disk：コスト、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+** Azure NetApp Files ：パフォーマンスと耐障害性に関する情報
+** Azure Managed Disks：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::azure[]
+
+====
 +
 ストレージクラスごとに、次のいずれかのサービスを利用できます。
 
-+
-** https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^]
-** https://cloud.google.com/persistent-disk/["Google Persistent Disk のことです"^]
-** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
-** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
-+
-の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"] および link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。
 
 
+ifdef::gcp[]
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^]
+* https://cloud.google.com/persistent-disk/["Google Persistent Disk のことです"^]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
+
+
+endif::azure[]
+
++詳細はこちら link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。
+
+endif::gcp[]
+
+の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
+
+endif::azure[]
 
 . * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
 
 
 Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。
+
+ifdef::azure[]
 
 
 
@@ -148,6 +223,8 @@ NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
+
+endif::azure[]
 
 
 

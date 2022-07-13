@@ -36,7 +36,13 @@ Astra Control がアプリケーションの管理を停止。
 
 == クラスタの管理を停止します
 
-管理する必要がなくなったクラスタを Astra Control から管理しないようにします。ベストプラクティスとして、 GCP からクラスタを削除する前に、 Astra Control からクラスタを削除することを推奨します。
+管理する必要がなくなったクラスタを Astra Control から管理しないようにします。
+
+ifdef::gcp[]
+
+ベストプラクティスとして、 GCP からクラスタを削除する前に、 Astra Control からクラスタを削除することを推奨します。
+
+endif::gcp[]
 
 * この操作を実行すると、 Astra Control でクラスタが管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。
 * Astra Trident はクラスタからアンインストールされません。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のアンインストール方法をご確認ください"^]。
@@ -61,8 +67,18 @@ Astra Control がクラスタの管理を停止。
 * * 方法 #2 * ： PVC とポッド、または PVS がマウントされている配置を削除します。
 
 
-Kubernetes クラスタを Astra Control から管理する場合、そのクラスタ上のアプリケーションは、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service または Azure NetApp Files を使用します。事前に PVS を削除せずにクラウドプロバイダからクラスタを削除した場合、バックエンドボリュームはクラスタと一緒に _not_deleted になります。
+KubernetesクラスタをAstra Controlから管理する場合、そのクラスタ上のアプリケーションは、永続的ボリュームのストレージバックエンドとしてクラウドプロバイダを使用します。事前に PVS を削除せずにクラウドプロバイダからクラスタを削除した場合、バックエンドボリュームはクラスタと一緒に _not_deleted になります。
 
 上記のいずれかの方法を使用すると、対応する PVS がクラスタから削除されます。クラスタを削除する前に、クラスタのネットアップストレージクラスに PVS が存在していないことを確認してください。
 
-クラスタを削除する前に永続ボリュームを削除していない場合は、 Cloud Volumes Service for Google Cloud または Azure NetApp Files からバックエンドボリュームを手動で削除する必要があります。
+ifdef::azure[]
+
+クラスタを削除する前に永続ボリュームを削除していない場合は、Azure NetApp Files からバックエンドボリュームを手動で削除する必要があります。
+
+endif::azure[]
+
+ifdef::gcp[]
+
+クラスタを削除する前に永続ボリュームを削除していない場合は、 Cloud Volumes Service for Google Cloud からバックエンドボリュームを手動で削除する必要があります。
+
+endif::gcp[]

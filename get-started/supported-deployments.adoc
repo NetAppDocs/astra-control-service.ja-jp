@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/supported-deployments.html 
 keywords: gke, aks, google kubernetes engine, azure kubernetes service 
-summary: Astra Control Service を使用すると、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）の管理対象 Kubernetes クラスタで実行されているアプリケーションを管理できます。 
+summary: Astra Control Serviceを使用すると、クラウドプロバイダ環境の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。 
 ---
 = サポートされる Kubernetes 環境
 :hardbreaks:
@@ -11,9 +11,25 @@ summary: Astra Control Service を使用すると、 Google Kubernetes Engine �
 :imagesdir: ../media/get-started/
 
 
-Astra Control Service を使用すると、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）の管理対象 Kubernetes クラスタで実行されているアプリケーションを管理できます。
+Astra Control Serviceを使用すると、Google Kubernetes Engine（GKE）の管理対象Kubernetesクラスタで実行されているアプリケーションを管理できます。
+
+endif::azure[]
+
+Astra Control Serviceを使用すると、Azure Kubernetes Service（AKS）の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。
+
+endif::gcp[]
+
+ifdef::gcp[]
 
 * link:set-up-google-cloud.html["Astra Control Service 向け Google Cloud のセットアップ方法をご確認ください"]。
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files for Astra Control サービスを使用した Microsoft Azure のセットアップ方法について説明します"]。
 * link:set-up-microsoft-azure-with-amd.html["Azure で管理される Azure ディスクで Astra Control サービスを利用するための Microsoft Azure のセットアップ方法について説明します"]。
 
+
+endif::azure[]

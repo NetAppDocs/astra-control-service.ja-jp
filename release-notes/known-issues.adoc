@@ -22,8 +22,14 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 .バックアップ、リストア、およびクローニング
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+
+
+ifdef::azure[]
+
 * <<Azure backup buckets use LRS redundancy by default>>
 
+
+endif::azure[]
 
 .その他の問題
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
@@ -48,6 +54,8 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 
 Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。
 
+ifdef::azure[]
+
 
 
 == Azureバックアップバケットでは、デフォルトでLRS冗長性が使用されます
@@ -57,6 +65,8 @@ Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内
 * link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]
 * link:../get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
 
+
+endif::azure[]
 
 
 

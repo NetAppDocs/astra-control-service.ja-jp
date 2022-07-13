@@ -15,7 +15,6 @@
   <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">Helm チャートから PostgreSQL を導入します</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">Bitnami Helm チャートから Jenkins をデプロイする方法について説明します。クラスタに Jenkins を導入したら、アプリケーションを Astra Control に登録できます。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">Helm チャートから Jenkins をデプロイします</block>
-  <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra Control Service を使用すると、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）の管理対象 Kubernetes クラスタで実行されているアプリケーションを管理できます。</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">サポートされる Kubernetes 環境</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">Astra Control Service 向け Google Cloud のセットアップ方法をご確認ください</block>
   <block id="b5e7bcb71963764cb139d9e8c6cb7f39" category="list-text"><block ref="6c77616d0b34601c48f50b97c8cb436f" category="inline-link-macro-rx"></block>。</block>
@@ -158,7 +157,6 @@
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">この FAQ は、質問に対する簡単な回答を探している場合に役立ちます。</block>
   <block id="8de7ff5f7f2186929bf88ea5dcfc0fb3" category="doc">Astra Control Service に関するよくある質問</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="section-title">概要</block>
-  <block id="4ac8b350945a48f97d34005f453d04a4" category="paragraph">Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Service は、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で実行される Kubernetes クラスタをサポートします。</block>
   <block id="7138c9866f92caa6559eeb16dedcead9" category="paragraph">次のセクションでは、 Astra Control の使用時に表示される可能性のあるその他の質問に対する回答を示します。その他の説明については、 astra.feedback@netapp.com までお問い合わせください</block>
   <block id="3783e7bdb365c30dbefc88440e625d44" category="section-title">Astra Control へのアクセス</block>
   <block id="03069a991fdd2077c62785ce41219767" category="paragraph">* Astra Control に登録する際に、詳細を入力する必要があるのはなぜですか。 *</block>
@@ -174,10 +172,8 @@
   <block id="12e5e74341c47b0e02245229810cdaff" category="paragraph">* 月中旬に Premium PayGO プランにアップグレードしました。月中は請求されますか？ *</block>
   <block id="1492d479a5b127f5adba75def1fef7ed" category="paragraph">いいえ。請求は、プレミアムプランにアップグレードした時点から開始されます。</block>
   <block id="f18b7956b816c9fe4217adec72e97c14" category="paragraph">* 無料プランを使用していますが、永続的ボリュームの請求には課金されますか？ *</block>
-  <block id="1c04fecf8d8596e8c9694831b457854d" category="paragraph">はい。 Google Cloud の Cloud Volumes Service または Azure NetApp Files の AKS クラスタで GKE クラスタが使用する永続的ボリュームには課金されます。</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">Kubernetes クラスタを登録しています</block>
   <block id="b588fb2a2e55643a23cbafdb1879e478" category="paragraph">* CSI ドライバを Astra Control Service に追加する前に、 CSI ドライバをクラスタにインストールする必要がありますか。 *</block>
-  <block id="e7cb049d9b5ec1b95d031fd6c843c4f9" category="paragraph">いいえクラスターが Astra Control に追加されると、 NetApp Trident Container Storage Interface （ CSI ）ドライバが Kubernetes クラスタに自動的にインストールされます。この CSI ドライバは、 NetApp Cloud Volumes Service for Google Cloud がサポートする GKE クラスタ、および Azure NetApp Files がサポートする AKS クラスタの永続ボリュームのプロビジョニングに使用されます。</block>
   <block id="a48e52ca315005bd57971ddff57c7bf1" category="paragraph">* Astra Control Service に追加した後、ワーカーノードをクラスタに追加する必要があります。どうすればよいですか？ *</block>
   <block id="c75b6dbbff39cab276daeced2d984b76" category="paragraph">新しいワーカーノードを既存のプールに追加することも、 Ubuntu イメージタイプであれば新しいプールを作成することもできます。これらは Astra Control によって自動的に検出されます。新しいノードが Astra Control に表示されない場合は、新しいワーカーノードでサポートされているイメージタイプが実行されているかどうかを確認します。kubectl get nodes コマンドを使用して ' 新しいワーカー・ノードの正常性を確認することもできます</block>
   <block id="286454d2267ba294af28bc43c31f1c1a" category="section-title">GKE クラスタを登録しています</block>
@@ -358,7 +354,6 @@
   <block id="ddf1663ccbe93fbad389abace27b7e96" category="list-text">* 方法 1 * ：アプリケーションワークロードのネームスペースをクラスタから削除します。Trident ネームスペースを削除しないでください。</block>
   <block id="ff4e57e53b65417841ea3ba24cb7ede1" category="list-text">* 方法 #2 * ： PVC とポッド、または PVS がマウントされている配置を削除します。</block>
   <block id="65acd6481734ae302871922c7cda00aa" category="paragraph">上記のいずれかの方法を使用すると、対応する PVS がクラスタから削除されます。クラスタを削除する前に、クラスタのネットアップストレージクラスに PVS が存在していないことを確認してください。</block>
-  <block id="eca26114d62d763790af044b8d7b68a1" category="paragraph">クラスタを削除する前に永続ボリュームを削除していない場合は、 Cloud Volumes Service for Google Cloud または Azure NetApp Files からバックエンドボリュームを手動で削除する必要があります。</block>
   <block id="c6cfc4d3d9cea002c667dea6f191ebaf" category="summary">Astra Control の無料プランを使用すると、最大 10 個のアプリをアカウントで管理できます。10 以上のアプリを管理する場合は、無料プランからプレミアムプランにアップグレードして請求を設定する必要があります。</block>
   <block id="13af76c117dbd9492fae97f4a28dfba5" category="section-title">課金の概要</block>
   <block id="5ecfb1cc769c9fff768f475e2fa5c859" category="paragraph">Astra Control Service の使用には、ネットアップの Astra Control Service の料金と、永続的ボリュームとオブジェクトストレージをクラウドプロバイダから課金する、 2 種類のコストが関連します。</block>
@@ -473,7 +468,6 @@
   <block id="7b758bf36ef17d1879863c969ac42d38" category="paragraph">Astra Control のすべてのユーザが同じクレデンシャルセットを共有していることに注意してください。</block>
   <block id="0f391d5482822722d86585c248878517" category="section-title">クレデンシャルを追加する</block>
   <block id="d1d2df683ec3a42a861cfb62b75272b0" category="list-text">GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 <block ref="253b0a52b10e4210af2fe90c716fc07d" category="inline-link-macro-rx"></block>。</block>
-  <block id="08a6527af98e29d0d830ea9505c7f7c6" category="list-text">Microsoft Azure * または * Google Cloud Platform * のいずれかを選択します。</block>
   <block id="782e3a607190389d89929f59add176e9" category="list-text">Astra Control の他のクレデンシャルと区別するクレデンシャルの名前を入力します。</block>
   <block id="eb48a4c8b56c5d829a90bedb591ab180" category="list-text">必要なクレデンシャルを入力します。</block>
   <block id="014c14c5512caaa6fd3b7a442dba0aa0" category="list-text">* Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードから JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を Astra Control に伝えます。</block>
@@ -852,7 +846,6 @@
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">2 つのカスタムアプリケーションを作成した後、管理者はこれらのリソースを他の Astra Control アプリケーションとして扱うことができます。管理者は、 Kubernetes のラベルに基づいて、リソースグループごとにデータをクローニングし、バックアップと Snapshot を作成し、カスタムの保護ポリシーを作成できます。</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">アーキテクチャとコンポーネント</block>
-  <block id="46c8ce0480dfb453a068efd5c148d585" category="summary">Astra Control Service は、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で Kubernetes クラスタのアプリケーション対応データ管理を提供する、ネットアップが管理するサービスです。オンプレミス環境で実行されている Kubernetes アプリケーションを管理する必要がある場合は、 Astra Control Center のドキュメントを参照してください。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service のマニュアル</block>
   <block id="ce8c3cae4f2c01197a36e6ffb040472a" category="summary">Astra Control には REST API が搭載されており、 Curl などのプログラミング言語やユーティリティを使用して Astra Control 機能に直接アクセスできます。また、 Ansible などの自動化テクノロジを使用して Astra Control 環境を管理することもできます。</block>
   <block id="d755391e5d933eadfa1864b13155afeb" category="doc">Astra Control REST API による自動化</block>
@@ -930,7 +923,6 @@
   <block id="ad37cec77527ba2b72ebad59937415a8" category="summary">管理する必要がなくなったアプリケーションやクラスタを Astra Control から削除</block>
   <block id="e22a0ea89c99a70578a25d6819a17c5e" category="doc">アプリケーションとクラスタの管理を解除します</block>
   <block id="206a0e294af13e6b2a4934eec5f74d10" category="section-title">クラスタの管理を停止します</block>
-  <block id="d931a44781fa712ba9e029f16cdb5f49" category="paragraph">管理する必要がなくなったクラスタを Astra Control から管理しないようにします。ベストプラクティスとして、 GCP からクラスタを削除する前に、 Astra Control からクラスタを削除することを推奨します。</block>
   <block id="2b884629e58e22d2c3893c02ed13d791" category="list-text">この操作を実行すると、 Astra Control でクラスタが管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。</block>
   <block id="f923faa470b669c2fe512be025422520" category="paragraph">Astra Control がクラスタの管理を停止。</block>
   <block id="27d8eb96b8855de99b3d83a8dddb866d" category="inline-link-macro">すべてのアプリケーションとクラスタの管理を解除します</block>
@@ -982,7 +974,6 @@
   <block id="2e622d4e702129954e1bcffaa396cd0c" category="inline-link-macro">Astra API</block>
   <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021 年 12 月 14 日</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">Azure で管理されているディスクを使用して Microsoft Azure をセットアップする</block>
-  <block id="727aad970dc4f9da832a886a6c56b88b" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。<block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
   <block id="7b3573ea6db30898defcb7febd2bdcfa" category="section-title">In Place アプリケーションのリストア</block>
   <block id="e86cc6374d62a2872beb0208da0813b0" category="paragraph">同じクラスタおよびネームスペースにリストアすることで、アプリケーションの Snapshot 、クローン、またはバックアップを元の場所にリストアできるようになりました。</block>
   <block id="8e5ee9c2a1b184da5a35efa5d7871c5a" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block>。</block>
@@ -1218,9 +1209,7 @@
   <block id="ae361e798f83cc34514b5bc74d5ec5d6" category="list-text"><block ref="2152ce675eb0b9d88dfc2e125645113a" category="inline-link-macro-rx"></block>。</block>
   <block id="61ff50e91bc9118602e803e489f0e42f" category="inline-link-macro">Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件</block>
   <block id="e2517379d9a14736369ae8b5b851ca0a" category="inline-link-macro">Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件</block>
-  <block id="68324e985558c5c0e27eed8eb0d54d55" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成します <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>、 <block ref="26225e7fb486798018db81609e04ff4b" category="inline-link-macro-rx"></block>または <block ref="4367f6239877b226051b2a69dcda335c" category="inline-link-macro-rx"></block> 。</block>
   <block id="3bda726609d17e2981e60b23a6e4c978" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
-  <block id="66f66890d5eab7f564eab22e8111acd0" category="paragraph">Azure NetApp Files for Google Cloud または Cloud Volumes Service 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。</block>
   <block id="0397bb04b1ca291a49cf76be15c2f6e4" category="paragraph">ストレージクラスごとに、次のいずれかのサービスを利用できます。</block>
   <block id="31e7239cc507a58a4794b36df4448093" category="list-text"><block ref="31e7239cc507a58a4794b36df4448093" category="inline-link-rx"></block></block>
   <block id="f3c86dfec3bf21996638520b54f5d64e" category="list-text"><block ref="f3c86dfec3bf21996638520b54f5d64e" category="inline-link-rx"></block></block>
@@ -1228,7 +1217,6 @@
   <block id="c6a7824e4b3ef243db20452d107827b3" category="list-text"><block ref="c6a7824e4b3ef243db20452d107827b3" category="inline-link-rx"></block></block>
   <block id="b03ad30a5cf7205451cf9d1c28fb3b46" category="inline-link-macro">GKE クラスタのストレージクラス</block>
   <block id="388b49ca6772164d2fe62455b28ba25e" category="inline-link-macro">AKS クラスタのストレージクラス</block>
-  <block id="a3ee580d6f94fdbf5cb0aa45e2439e28" category="paragraph">の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block> および <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。</block>
   <block id="e58ad76e34d50bf44f9e038d674c2fb9" category="paragraph">Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。</block>
   <block id="30334fc03d9c154571a9c7384dc2fdef" category="sidebar">Astra Control REST API で自動化</block>
   <block id="3a003da24f6641529c763cb023871157" category="sidebar">Astra Control REST API を使用</block>
@@ -1239,7 +1227,6 @@
   <block id="ddcfd610f74c256985ea230159f499b4" category="list-text">[ 登録の送信 *] を選択します。</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">「 I am not a registered NetApp Customer* 」を選択します。</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">新しいストレージバックエンドオプション</block>
-  <block id="6342303186505a566b90049c44a51b8e" category="paragraph">Astra Control Service が、 Google Persistent Disk と Azure Managed Disk をストレージバックエンドオプションとしてサポートするようになりました。</block>
   <block id="8527c0ab84fa8956acb7ba13d5e3ad9d" category="inline-link-macro">Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する方法を説明します</block>
   <block id="033c399986bd3d9b7ef54b989611f70b" category="paragraph"><block ref="ae94f8298ace086e6c054e879241557e" category="inline-link-macro-rx"></block>。</block>
   <block id="2c86b251dbdee05a59434e44da5fb462" category="paragraph">Astra Control Service がをサポートするようになりました<block ref="1760b78b440a877c4a7a7d217ccc8ada" category="inline-link-rx"></block> Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用します。</block>
@@ -1263,7 +1250,6 @@
   <block id="bbc9aa35732a63162cdf17006a04e715" category="list-text">管理する必要がなくなったクラスタのチェックボックスを選択します。</block>
   <block id="8c7785ee86e6ea06b15e32e693cf25fb" category="list-text">[* アクション * （ Actions * ） ] ドロップダウンを選択し、 [ * 管理解除 * （ Unmanage * ） ] を選択します</block>
   <block id="f28b587beff3cce52991931fc64ca32c" category="list-text">クラスタの管理を解除することを確認し、「 * Yes 、 Unmanage cluster * 」を選択します。</block>
-  <block id="b0353002f67af1f9b60233c6f8d929df" category="paragraph">Kubernetes クラスタを Astra Control から管理する場合、そのクラスタ上のアプリケーションは、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service または Azure NetApp Files を使用します。事前に PVS を削除せずにクラウドプロバイダからクラスタを削除した場合、バックエンドボリュームはクラスタと一緒に _not_deleted になります。</block>
   <block id="0569fe01ec1262e14c93b5ee1e86fc59" category="list-text">[*Account] &gt; [Credentials] を選択します。</block>
   <block id="f6af3538e9fd62f100b17501fa28a839" category="list-text">[Add Credentials] を選択します。</block>
   <block id="1a5f98a95779208d9234fca9491f7096" category="list-text">削除するクレデンシャルの「 * State * 」列でドロップダウンリストを選択します。</block>
@@ -1431,7 +1417,6 @@
   <block id="894b9b2b2a66efc8393eed6013d32a66" category="paragraph">Astra Control は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</block>
   <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">導入モデル</block>
   <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control には、次の 2 つの導入モデルがあります。</block>
-  <block id="5ac9f21bb5ada8cf5c614ea23fce4131" category="list-text">* Astra Control Service * ： Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で Kubernetes クラスタのアプリケーション対応データ管理を提供する、ネットアップが管理するサービス。</block>
   <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。</block>
   <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">どのような方法で提供されますか？</block>
   <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">ネットアップのフルマネージドクラウドサービス</block>
@@ -1456,15 +1441,11 @@
   <block id="29346571353a36c4c8e378195149db77" category="paragraph">Astra Control Service の概要は次のように機能します。</block>
   <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">Astra Control Service の利用を開始するには、クラウドプロバイダをセットアップし、 Astra アカウントに登録します。</block>
   <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">NetApp Cloud Volumes Service for Google Cloud</block>
-  <block id="052766753c4902f7b4dda44f55923c85" category="list-text">GKE クラスタでは、 Astra Control Service はを使用します<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</block>
-  <block id="e6b1925e4e775a70bcb5b95deee417b9" category="list-text">AKS クラスタの場合、 Astra Control Service はを使用します<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。</block>
   <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">最初の Kubernetes コンピューティングを Astra Control サービスに追加します。Astra Control Service は、次の処理を実行します。</block>
   <block id="e99f973393b40d224e0166ec9b211177" category="list-text">バックアップコピーが格納されるクラウドプロバイダアカウントにオブジェクトストアを作成します。</block>
-  <block id="2fe87449d125b0daf20d2fc8de53081e" category="paragraph">Azure では、 Astra Control Service によって、 BLOB コンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</block>
   <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">クラスタに新しい admin ロールと Kubernetes サービスアカウントを作成します。</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="inline-link">Astra Trident</block>
   <block id="51fbabc51080a419e6a5019a1c169ab4" category="list-text">新しい admin ロールを使用してインストールします<block ref="0ff0cd427dac64ddc62afadc9a52e9d0" category="inline-link-rx"></block> をクリックして、 1 つ以上のストレージクラスを作成します。</block>
-  <block id="53a30ad173bc821551d7bc21cfd2f4c8" category="list-text">Azure NetApp Files または NetApp Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用している場合、 Astra Control Service は Astra Trident を使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。</block>
   <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">この時点で、アプリケーションをクラスタに追加できます。永続ボリュームは、新しいデフォルトのストレージクラスでプロビジョニングされます。</block>
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。</block>
   <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</block>
@@ -1512,8 +1493,6 @@
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。</block>
   <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールである Trident を使用すると、 Docker と Kubernetes で管理するコンテナ化されたアプリケーション用のストレージボリュームを作成できます。Trident を Astra Control Center とともに導入すると、構成済みの ONTAP ストレージバックエンドが含まれ、ストレージバックエンドとして Astra データストアもサポートされます。</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* ストレージバックエンド * ：</block>
-  <block id="e64a7ac3db2aba4dd93ec2430e457fd3" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> GKE クラスタおよびのストレージバックエンドとして<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> AKS クラスタのストレージバックエンドとして。</block>
-  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center は、次のストレージバックエンドを使用します。</block>
   <block id="69a0ead95fc9c4c42592c123ebbf437a" category="list-text">Astra データストアストレージバックエンド</block>
   <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。</block>
@@ -1580,7 +1559,6 @@
   <block id="683680341c1485a9254d81c06fc946e1" category="admonition">クラスタが「 re moved 」状態であり、ネットワーク接続が正常であると表示される場合（ Kubernetes API を使用してクラスタに外部からアクセスしようとすると成功します）、 Astra Control に指定した beckufig は無効になる可能性があります。クラスタでの証明書のローテーションまたは有効期限が原因の可能性があります。この問題を修正するには、を使用して、 Astra Control のクラスタに関連付けられたクレデンシャルを更新します <block ref="a2191a9273bc54ae2e00dd51b40d424f" category="inline-link-macro-rx"></block>。</block>
   <block id="2d3a33198a03ea06faef99430efd1075" category="list-text">[Overview （概要） ] 、 [* Storage （ * ストレージ） ] 、 [* Activity * （アクティビティ * ） ] タブの情報を表示して、必要な情報を検索します。</block>
   <block id="1825841c7b132cb5df31c466db49d616" category="list-text">* ストレージ * ：ストレージクラスと状態を含む、コンピューティングに関連付けられた永続的ボリューム。</block>
-  <block id="8cdf38b43bbfef71f87824a668308050" category="list-text">* アクティビティ * ：クラスタに関連するアクティビティ。</block>
   <block id="ebc29e291abaa5cc608adb022dd00da3" category="admonition">Astra Control Service * Dashboard * から始まるクラスタ情報を表示することもできます。[ * クラスタ * ] タブの [ * リソースサマリ * ] で、管理対象クラスタを選択して [ * クラスタ * ] ページに移動できます。[* Clusters] ページが表示されたら、上記の手順を実行します。</block>
   <block id="7a2b0219114311a3dca473e810708a62" category="paragraph">未読通知の数は、インターフェイスの右上にあります。</block>
   <block id="9f097dac85ac3ea6adc46bf130f734ac" category="inline-link-macro">バケットのデフォルト設定を変更する</block>
@@ -1631,7 +1609,6 @@
   <block id="998487d1e577c27c456cf380d499a1ec" category="inline-xref">以下の手順に従ってください</block>
   <block id="5a737c67c0b2ac2e4c643d72c95e0526" category="list-text">AKS サービスクラスタに Astra コネクタをインストールして、 Astra Control Service でクラスタを管理できるようにする必要があります。Astra コネクタを取り付けるには、 <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block>。</block>
   <block id="40d304e5f3629b7ff733d026fd7435db" category="paragraph">「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。</block>
-  <block id="5b9e2c28bcfea155c6ec70057922953e" category="paragraph">価格、パフォーマンス、耐障害性に関する情報は、 Cloud Volumes Service for Google Cloud サービスごとにリストに表示されます。パフォーマンスと耐障害性の情報は、 Azure NetApp Files サービスごとに表示されます。Google Persistent Disk や Azure Managed Disk など、ネットアップ以外のストレージクラスについては、コスト、パフォーマンス、耐障害性に関する情報は提供されません。</block>
   <block id="e2422705f78eff49e43f16a31a8f0847" category="section-title">プライベートクラスタを管理する</block>
   <block id="e3b8879cdcd728379544300db10524e6" category="paragraph">Astra Control Service を使用すると、プライベート AKS クラスタを管理できます。そのためには、 AKS のプライベートサービスクラスタに Astra コネクタオペレータをインストールする必要があります。この手順は、管理用のクラスタを追加する前、または追加プロセス中にプロンプトが表示されたら実行できます。</block>
   <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">Astra Connector オペレータのネームスペースを作成します。</block>
@@ -1649,7 +1626,6 @@
   <block id="280c70bfab5c7c30f1836f8337f04744" category="paragraph">はい。 Astra Control Service にプライベート GKE クラスタを追加できます。Google Kubernetes Engine （ GKE ）プライベートクラスタを作成するには、次の手順を実行します。<block ref="5476475ab72cd9cb8fccc685eb30acef" category="inline-link-rx"></block>。</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">プライベートクラスタにはが必要です<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control の IP アドレスを許可するように設定します。</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166-32</block>
-  <block id="3501ebb9ad570ed4f4987af3dd48dc47" category="list-text">Astra Control Service は、 Azure Managed Disks と Google Persistent Disk をバックエンドストレージオプションとしてサポートします。</block>
   <block id="242b16009698fe8de90e3b0966885de7" category="summary">Astra Control Center で使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">Astra Control のユーザロールとネームスペースについて説明し、それらを使用して組織内のリソースへのアクセスを制御する方法を説明します。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">ユーザロール</block>
@@ -1683,9 +1659,6 @@
   <block id="440441988db4dd1a631f18e5ce228880" category="list-text"><block ref="4791c8debe5295c527a6dd0dc7f0957f" category="inline-xref-macro-rx"></block></block>
   <block id="ca318d6b4eed133149be28dcaf9203ab" category="section-title">アプリケーションをリストアすると、 PV のサイズが元の PV よりも大きくなります</block>
   <block id="c1ab420107ece0814547044cc11d2689" category="paragraph">バックアップの作成後に永続ボリュームのサイズを変更し、そのバックアップからリストアすると、永続ボリュームのサイズはバックアップのサイズではなく PV の新しいサイズと一致します。</block>
-  <block id="66edf4995b8868e964c7fcd7d02a19e0" category="list-text">POST 呼び出しを実行して更新された kubeconfig ファイルを「 /credentials 」エンドポイントに追加し、応答本文から割り当てられた「 id 」を取得します。</block>
-  <block id="d0becff2191f0fa6114340d29cd03f72" category="list-text">適切なクラスタ ID を使用して '/clusters' エンドポイントから PUT 呼び出しを実行し 'credentialId' を前の手順の id' 値に設定します</block>
-  <block id="e5c2d65f2a0a3504c7fb94d2f3f8e408" category="paragraph">これらの手順を完了すると、クラスタに関連付けられたクレデンシャルが更新され、クラスタは再接続して、その状態を「 available 」に更新する必要があります。</block>
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">Astra Trident がオフラインの場合、 Internal Service Error （ 500 ）によりアプリケーションデータ管理処理が失敗する</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">アプリケーションクラスタの Astra Trident がオフラインになり（オンラインに戻った）、 500 件の内部サービスエラーが発生した場合に、アプリケーションデータ管理を試みると、アプリケーションクラスタ内のすべての Kubernetes ノードを再起動して機能を復旧します。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">クラスタがプライベートの場合は、を参照してください<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control Service の IP アドレスを許可する必要があります。</block>
@@ -1733,4 +1706,55 @@
   <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">（オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">以前に削除したネームスペースにリストアすると、同じ名前の新しいネームスペースがリストアプロセスで作成されます。以前に削除したネームスペースでアプリケーションを管理する権限を持つユーザは、新しく作成したネームスペースに手動で権限を復元する必要があります。</block>
+  <block id="121863f3c706ebd2d945f908b000591c" category="paragraph">Astra Control Serviceが、Azureで管理されるディスクをストレージバックエンドオプションとしてサポートするようになりました。</block>
+  <block id="e1f2675073a94e88072d9a8109916ab6" category="paragraph"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
+  <block id="0c1c4111adfcf68fad6f4e6775c5c793" category="paragraph">Astra Control Serviceが、ストレージバックエンドオプションとしてGoogle Persistent Diskをサポートするようになりました。</block>
+  <block id="31a7227dfd927db6eb4e951126c58fd7" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。</block>
+  <block id="5a86157a3052fc9bb31e17ca06630acf" category="summary">Astra Control Serviceは、ネットアップが管理するサービスで、複数のクラウド環境のKubernetesクラスタに対して、アプリケーション対応のデータ管理機能を提供します。オンプレミス環境で実行されている Kubernetes アプリケーションを管理する必要がある場合は、 Astra Control Center のドキュメントを参照してください。</block>
+  <block id="202728ed0a31fb39489893fef0fc7f1d" category="paragraph">管理する必要がなくなったクラスタを Astra Control から管理しないようにします。</block>
+  <block id="de0e795d4df19783d74744629602d74a" category="paragraph">ベストプラクティスとして、 GCP からクラスタを削除する前に、 Astra Control からクラスタを削除することを推奨します。</block>
+  <block id="9aafd9166133200ad3561aea554f609f" category="paragraph">KubernetesクラスタをAstra Controlから管理する場合、そのクラスタ上のアプリケーションは、永続的ボリュームのストレージバックエンドとしてクラウドプロバイダを使用します。事前に PVS を削除せずにクラウドプロバイダからクラスタを削除した場合、バックエンドボリュームはクラスタと一緒に _not_deleted になります。</block>
+  <block id="6344e8b71894baae80a8a9ce205fa292" category="paragraph">クラスタを削除する前に永続ボリュームを削除していない場合は、Azure NetApp Files からバックエンドボリュームを手動で削除する必要があります。</block>
+  <block id="a453fc138bb9c338a81262f4d0deb403" category="paragraph">クラスタを削除する前に永続ボリュームを削除していない場合は、 Cloud Volumes Service for Google Cloud からバックエンドボリュームを手動で削除する必要があります。</block>
+  <block id="c3aa52286a024f12766276c915da0768" category="list-text">*アクティビティ*：クラスタに関連するアクティビティ。</block>
+  <block id="2083c7d3800af1239db96fe1162f3655" category="list-text">Microsoft Azure *を選択します。</block>
+  <block id="9581f4ad188e6563d0593b866d14de7d" category="list-text">[* Google Cloud Platform*]を選択します。</block>
+  <block id="414385607184a4404a07220748471e4a" category="summary">Astra Control Serviceを使用すると、クラウドプロバイダ環境の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。</block>
+  <block id="40b2cee8858441c9c1f5967bceea641c" category="paragraph">Astra Control Serviceを使用すると、Google Kubernetes Engine（GKE）の管理対象Kubernetesクラスタで実行されているアプリケーションを管理できます。</block>
+  <block id="5b30810a5290fa4bfedb84bac0ef0cd6" category="paragraph">Astra Control Serviceを使用すると、Azure Kubernetes Service（AKS）の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。</block>
+  <block id="56f4faf7900c9ffcdd4c855bd5f7eb4e" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成します <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>。</block>
+  <block id="4551de7617da7fdeac551cb463c35252" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成します <block ref="26225e7fb486798018db81609e04ff4b" category="inline-link-macro-rx"></block> または <block ref="4367f6239877b226051b2a69dcda335c" category="inline-link-macro-rx"></block>。</block>
+  <block id="cfd1dc29a3da3b678b65b5a95d2159a4" category="paragraph">Cloud Volumes Service for Google Cloud用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。</block>
+  <block id="3dcc1fc73381830a10c6857d278473ef" category="paragraph">+「償還対象」タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。</block>
+  <block id="e647067dd1838cc272b30e0cf6f49dea" category="paragraph">+ Azure NetApp Files 用に設定されていないクラスタを選択すると、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。</block>
+  <block id="c0b29f50e4b0ff8bb4f9497e384feadb" category="paragraph">+「プライベート」アイコンが付いているクラスタを選択する場合は、プライベートIPアドレスが使用され、Astra Controlでクラスタを管理するためにAstraコネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。</block>
+  <block id="1cfc244ccf0243a2cefc9845f9e18538" category="paragraph">各クラウドプロバイダのストレージサービスには、コスト、パフォーマンス、耐障害性に関する次の情報が表示されます。</block>
+  <block id="364203d12e96171427426216e32a6c65" category="list-text">Cloud Volumes Service for Google Cloud：価格、パフォーマンス、耐障害性に関する情報</block>
+  <block id="ec8c93c2223996f4782ebf5dd6b871a1" category="list-text">Google Persistent Disk：コスト、パフォーマンス、耐障害性に関する情報は提供されません</block>
+  <block id="3e480f1bbd52d8ad4613f2bbb89ca847" category="list-text">Azure NetApp Files ：パフォーマンスと耐障害性に関する情報</block>
+  <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure Managed Disks：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
+  <block id="f74455a20acd3fc0d185337236828d6b" category="paragraph">+詳細はこちら <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。</block>
+  <block id="0f349256e24e084ccf865274903e64d3" category="paragraph">の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service *：複数のクラウドプロバイダ環境でKubernetesクラスタのデータをアプリケーション対応で管理するネットアップマネージドサービス。</block>
+  <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+** GKEクラスタの場合はAstra Control Serviceを使用します<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</block>
+  <block id="020ac10d47f71d04e485e8c8328f7cdf" category="paragraph">+** AKSクラスタの場合、Astra Control Serviceはを使用します<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。</block>
+  <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+ Azureでは、Astra Control Serviceによって、BLOBコンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</block>
+  <block id="a3927a5a13e226c44dac47ff649fa5fa" category="list-text">クラウドプロバイダのストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。</block>
+  <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。</block>
+  <block id="121738f88be5081da60af30c2d97627d" category="paragraph">はい、クラウドプロバイダからクラスタで使用される永続的ボリュームの料金が発生します。</block>
+  <block id="e38d8867cf0f53988fd0376aa2e1f81d" category="paragraph">いいえクラスターが Astra Control に追加されると、 NetApp Trident Container Storage Interface （ CSI ）ドライバが Kubernetes クラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。</block>
+  <block id="d9fb8fc5098e2510fea5d41e9b622800" category="list-text">Astra Control Service で使用される<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> AKS クラスタのストレージバックエンドとして。</block>
+  <block id="1f48567c4d8264b0d2ce3dfd0bc13535" category="list-text">Astra Control Serviceは、バックエンドストレージオプションとしてAzure Managed Disksもサポートします。</block>
+  <block id="90afda4a017638813f2738caa85bf7fd" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> GKEクラスタのストレージバックエンドとして。</block>
+  <block id="ed58ed973747b5e4d1bbb7ec337ddb9f" category="list-text">Astra Control Serviceは、バックエンドストレージオプションとしてGoogle Persistent Diskもサポートします。</block>
+  <block id="06d6db61224b1a7337b5c34e094f9e10" category="paragraph">+** Astra Control Centerは、次のストレージバックエンドを使用します。</block>
+  <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">クラウドプロバイダ</block>
+  <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">すべてのクラウドプロバイダ</block>
+  <block id="56ef2682280ac110060b881925a87b80" category="sidebar">Google Cloud</block>
+  <block id="1668ca1bd914c1d847f23b491319ac91" category="sidebar">Microsoft Azure</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="sidebar">Azure</block>
+  <block id="b010c7530103ef9947582474d65ff9a3" category="paragraph">ifdef::azure[]</block>
+  <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
+  <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
+  <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
 </blocks>

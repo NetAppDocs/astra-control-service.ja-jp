@@ -94,9 +94,19 @@ Astra Control にクラスタを追加したので、クラスタにアプリケ
 
 Astra Control は、 Astra Control によってインストールされたストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。
 
+ifdef::gcp[]
+
 * link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラスについて説明します"]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * link:../learn/azure-storage.html["AKS クラスタのストレージクラスについて学習します"]
 
+
+endif::azure[]
 
 Helm チャートから一般的なアプリケーションを展開する方法については、以下を参照してください。
 

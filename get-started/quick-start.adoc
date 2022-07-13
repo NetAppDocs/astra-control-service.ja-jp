@@ -17,6 +17,8 @@ summary: Astra Control Service の利用を開始するには、いくつかの�
 
 == クラウドプロバイダをセットアップします
 
+ifdef::gcp[]
+
 . Google Cloud
 +
 ** Google Kubernetes Engine クラスタの要件を確認します。
@@ -28,6 +30,12 @@ summary: Astra Control Service の利用を開始するには、いくつかの�
 link:set-up-google-cloud.html["Google Cloud の要件の詳細をご覧ください"]。
 
 
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
 
 . Microsoft Azure
 +
@@ -41,6 +49,8 @@ link:set-up-microsoft-azure-with-amd.html["Microsoft Azure と Azure で管理�
 
 
 
+
+endif::azure[]
 
 
 

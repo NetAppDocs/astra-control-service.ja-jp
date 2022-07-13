@@ -27,6 +27,8 @@ Astra Control Service では、メンバユーザーまたはビューアユー�
 
 link:../learn/user-roles-namespaces.html["ネームスペースのロールベースアクセス制御（ RBAC ）"]。
 
+ifdef::azure[]
+
 
 
 === Azure Active Directoryのサポート
@@ -42,6 +44,8 @@ link:../get-started/add-first-cluster.html["Astra Control Service から Kuberne
 プライベート IP アドレスを使用する AKS クラスタを管理できるようになりました。
 
 link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+
+endif::azure[]
 
 
 
@@ -61,9 +65,17 @@ link:../use/manage-buckets.html["バケットを削除する"]。
 
 === 新しいストレージバックエンドオプション
 
-Astra Control Service が、 Google Persistent Disk と Azure Managed Disk をストレージバックエンドオプションとしてサポートするようになりました。
+Astra Control Serviceが、Azureで管理されるディスクをストレージバックエンドオプションとしてサポートするようになりました。
 
-link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]。
+link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]。
+
+endif::gcp[]
+
+Astra Control Serviceが、ストレージバックエンドオプションとしてGoogle Persistent Diskをサポートするようになりました。
+
+link:../get-started/set-up-google-cloud.html["Google Cloud をセットアップします"]。
+
+endif::azure[]
 
 
 
@@ -89,6 +101,8 @@ Astra Control は、一部のアプリケーションをオペレータととも
 
 link:../use/manage-apps.html#app-management-requirements["アプリの管理を開始します"]。
 
+ifdef::azure[]
+
 
 
 === リソースグループのスコープを持つサービスプリンシパル
@@ -96,6 +110,8 @@ link:../use/manage-apps.html#app-management-requirements["アプリの管理を�
 Astra Control Service が、リソースグループスコープを使用するサービスプリンシパルをサポートするようになりました。
 
 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["Azure サービスプリンシパルを作成します"]。
+
+endif::azure[]
 
 
 
@@ -123,6 +139,8 @@ link:../use/manage-buckets.html["バケットの管理に関する詳細情報"]
 
 == 2021 年 6 月 2 日
 
+ifdef::gcp[]
+
 このリリースには、バグの修正と Google Cloud のサポートに対する次の機能拡張が含まれています。
 
 
@@ -147,11 +165,15 @@ link:../learn/choose-class-and-size.html["Astra Control Service では、永続�
 
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE クラスタの要件の詳細については、こちらをご覧ください"]。
 
+endif::gcp[]
+
 
 
 == 2021 年 4 月 15 日
 
 このリリースには、次の新機能と機能拡張が含まれています。
+
+ifdef::azure[]
 
 
 
@@ -160,6 +182,8 @@ link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE ク�
 Astra Control Service を使用して、 Azure Kubernetes Service （ AKS ）の管理対象の Kubernetes クラスタで実行されているアプリケーションを管理できるようになりました。
 
 link:../get-started/set-up-microsoft-azure-with-anf.html["開始方法をご確認ください"]。
+
+endif::azure[]
 
 
 
@@ -216,11 +240,15 @@ link:../use/view-account-activity.html["アカウントアクティビティの�
 
 == 2021 年 3 月 1 日
 
+ifdef::gcp[]
+
 Astra Control Service がをサポートするようになりました https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用します。
 
 この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
 
 Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 link:../learn/choose-class-and-size.html["サービスタイプの選択の詳細については、こちらをご覧ください"]。
+
+endif::gcp[]
 
 
 

@@ -41,6 +41,8 @@ Astra Control アカウントを作成すると、無料プランに自動的に
 
 Premium プランにはいつでもアップグレードできます。アップグレード後、アカウントの _all_managed アプリの料金が Astra Control によって請求されます。最初の 10 個のアプリは、無料プランには含まれていません。
 
+ifdef::gcp[]
+
 
 
 === Google Cloud の請求
@@ -54,6 +56,10 @@ Astra Control Service は、すべてのサービスタイプとサービスレ�
 * https://cloud.google.com/storage/pricing["Google Cloud ストレージバケットの価格設定の詳細を表示します"^]。
 
 
+endif::gcp[]
+
+ifdef::azure[]
+
 
 
 === Microsoft Azure 請求
@@ -63,6 +69,8 @@ AKS クラスタを Astra Control Service で管理する場合、永続ボリ�
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files の価格設定の詳細を表示"^]。
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure BLOB ストレージの価格設定の詳細を表示する"^]。
 
+
+endif::azure[]
 
 
 
