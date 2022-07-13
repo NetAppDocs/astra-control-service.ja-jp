@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service に関するよくある質問](https://docs.netapp.com/ja-jp/astra-control-service/get-started/faq.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/faq.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />寄稿者向けガイド</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ja-jp/astra-control-service/get-started/faq.html">
+  
+  <div class="custom-dropdown-select unselected" title="すべてのクラウドプロバイダ">
+    <label>クラウドプロバイダ</label>
+    <span>すべてのクラウドプロバイダ</span>
+    <img src="/ja-jp/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ja-jp/astra-control-service/gcp/get-started/faq.html">
+      <img alt="" src="/ja-jp/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ja-jp/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ja-jp/astra-control-service/azure/get-started/faq.html">
+      <img alt="" src="/ja-jp/astra-control-service/images/azure-ico.svg" onerror="this.src='/ja-jp/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control Service に関するよくある質問](https://docs.netapp.com/ja-jp/astra-control-service/get-started/faq.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/faq.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />寄稿者向けガイド</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">このページ</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ja-jp/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="ドキュメントを検索" 
-          data-no-results-found="{query}に該当する結果はありません" 
-          data-did-you-mean="{suggestion} を検索" 
-          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
-          data-results-found="{hitCount} 件見つかりました"  
+          data-placeholder="ドキュメントを検索"
+          data-no-results-found="{query}に該当する結果はありません"
+          data-did-you-mean="{suggestion} を検索"
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?"
+          data-results-found="{hitCount} 件見つかりました"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-11 14:44:01 +0000">05/11/2022</time>
+    <time datetime="2022-07-13 16:57:41 +0000">07/13/2022</time>
     
   
 
@@ -955,7 +983,7 @@
 <h2 id="概要">概要</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Service は、 Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で実行される Kubernetes クラスタをサポートします。</p>
+<p>Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。</p>
 </div>
 <div class="paragraph">
 <p>次のセクションでは、 Astra Control の使用時に表示される可能性のあるその他の質問に対する回答を示します。その他の説明については、 <a href="mailto:astra.feedback@netapp.com">astra.feedback@netapp.com</a> までお問い合わせください</p>
@@ -1033,7 +1061,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>はい。 Google Cloud の Cloud Volumes Service または Azure NetApp Files の AKS クラスタで GKE クラスタが使用する永続的ボリュームには課金されます。</p>
+<p>はい、クラウドプロバイダからクラスタで使用される永続的ボリュームの料金が発生します。</p>
 </div>
 </div>
 </div>
@@ -1048,7 +1076,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>いいえクラスターが Astra Control に追加されると、 NetApp Trident Container Storage Interface （ CSI ）ドライバが Kubernetes クラスタに自動的にインストールされます。この CSI ドライバは、 NetApp Cloud Volumes Service for Google Cloud がサポートする GKE クラスタ、および Azure NetApp Files がサポートする AKS クラスタの永続ボリュームのプロビジョニングに使用されます。</p>
+<p>いいえクラスターが Astra Control に追加されると、 NetApp Trident Container Storage Interface （ CSI ）ドライバが Kubernetes クラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。</p>
 </div>
 <div class="ulist">
 <ul>

@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Controlの詳細をご確認ください](https://docs.netapp.com/ja-jp/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />寄稿者向けガイド</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ja-jp/astra-control-service/get-started/intro.html">
+  
+  <div class="custom-dropdown-select unselected" title="すべてのクラウドプロバイダ">
+    <label>クラウドプロバイダ</label>
+    <span>すべてのクラウドプロバイダ</span>
+    <img src="/ja-jp/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/ja-jp/astra-control-service/gcp/get-started/intro.html">
+      <img alt="" src="/ja-jp/astra-control-service/images/gcp-ico.svg" onerror="this.src='/ja-jp/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ja-jp/astra-control-service/azure/get-started/intro.html">
+      <img alt="" src="/ja-jp/astra-control-service/images/azure-ico.svg" onerror="this.src='/ja-jp/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Controlの詳細をご確認ください](https://docs.netapp.com/ja-jp/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />ドキュメントの変更をリクエスト</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />GitHub で編集</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />寄稿者向けガイド</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">このページ</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/ja-jp/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="ドキュメントを検索" 
-          data-no-results-found="{query}に該当する結果はありません" 
-          data-did-you-mean="{suggestion} を検索" 
-          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
-          data-results-found="{hitCount} 件見つかりました"  
+          data-placeholder="ドキュメントを検索"
+          data-no-results-found="{query}に該当する結果はありません"
+          data-did-you-mean="{suggestion} を検索"
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?"
+          data-results-found="{hitCount} 件見つかりました"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-25 20:47:52 +0000">05/25/2022</time>
+    <time datetime="2022-07-13 16:57:41 +0000">07/13/2022</time>
     
   
 
@@ -996,7 +1024,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>* Astra Control Service * ： Google Kubernetes Engine （ GKE ）および Azure Kubernetes Service （ AKS ）で Kubernetes クラスタのアプリケーション対応データ管理を提供する、ネットアップが管理するサービス。</p>
+<p>* Astra Control Service *：複数のクラウドプロバイダ環境でKubernetesクラスタのデータをアプリケーション対応で管理するネットアップマネージドサービス。</p>
 </li>
 <li>
 <p>* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。</p>
@@ -1100,27 +1128,34 @@
 <ul>
 <li>
 <p>Astra Control Service の利用を開始するには、クラウドプロバイダをセットアップし、 Astra アカウントに登録します。</p>
-<div class="ulist">
-<ul>
-<li>
-<p>GKE クラスタでは、 Astra Control Service はを使用します <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"NetApp Cloud Volumes Service for Google Cloud"</a> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</p>
-</li>
-<li>
-<p>AKS クラスタの場合、 Astra Control Service はを使用します <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files の特長"</a> または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。</p>
 </li>
 </ul>
 </div>
-</li>
+<div class="paragraph">
+<p>+** GKEクラスタの場合はAstra Control Serviceを使用します <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"NetApp Cloud Volumes Service for Google Cloud"</a> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</p>
+</div>
+<div class="paragraph">
+<p>+** AKSクラスタの場合、Astra Control Serviceはを使用します <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files の特長"</a> または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>最初の Kubernetes コンピューティングを Astra Control サービスに追加します。Astra Control Service は、次の処理を実行します。</p>
 <div class="ulist">
 <ul>
 <li>
 <p>バックアップコピーが格納されるクラウドプロバイダアカウントにオブジェクトストアを作成します。</p>
-<div class="paragraph">
-<p>Azure では、 Astra Control Service によって、 BLOB コンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</p>
+</li>
+</ul>
 </div>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>+ Azureでは、Astra Control Serviceによって、BLOBコンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>クラスタに新しい admin ロールと Kubernetes サービスアカウントを作成します。</p>
 </li>
@@ -1128,11 +1163,9 @@
 <p>新しい admin ロールを使用してインストールします <a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Astra Trident"</a> をクリックして、 1 つ以上のストレージクラスを作成します。</p>
 </li>
 <li>
-<p>Azure NetApp Files または NetApp Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用している場合、 Astra Control Service は Astra Trident を使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。</p>
-</li>
-</ul>
-</div>
-</li>
+<p>クラウドプロバイダのストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。</p>
+<div class="ulist">
+<ul>
 <li>
 <p>この時点で、アプリケーションをクラスタに追加できます。永続ボリュームは、新しいデフォルトのストレージクラスでプロビジョニングされます。</p>
 </li>
@@ -1140,6 +1173,9 @@
 <p>次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。</p>
 <div class="paragraph">
 <p>Astra Control Service は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ul>
