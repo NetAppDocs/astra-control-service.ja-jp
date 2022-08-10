@@ -11,13 +11,18 @@ summary: Astra Control Serviceを使用すると、クラウドプロバイダ�
 :imagesdir: ../media/get-started/
 
 
-Astra Control Serviceを使用すると、Google Kubernetes Engine（GKE）の管理対象Kubernetesクラスタで実行されているアプリケーションを管理できます。
+Astra Control Serviceを使用すると、Amazon Elastic Kubernetes Service（EKS）の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。
 
-endif::azure[]
+Astra Control Serviceを使用すると、Google Kubernetes Engine（GKE）の管理対象Kubernetesクラスタで実行されているアプリケーションを管理できます。
 
 Astra Control Serviceを使用すると、Azure Kubernetes Service（AKS）の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できます。
 
-endif::gcp[]
+ifdef::aws[]
+
+* link:set-up-amazon-web-services.html["Amazon Web Services for Astra Control Serviceのセットアップ方法について説明します"]。
+
+
+endif::aws[]
 
 ifdef::gcp[]
 

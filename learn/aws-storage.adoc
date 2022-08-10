@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: learn/aws-storage.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
+summary: Astra Control Serviceは、Elastic Kubernetes Service（EKS）クラスタのストレージバックエンドとして、Amazon Elastic Block Store（EBS）またはAmazon FSX for NetApp ONTAP を使用できます。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。 
+---
+= AWSクラスタのストレージクラスとパフォーマンス
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+Astra Control Serviceは、Amazon Elastic Kubernetes Service（EKS）クラスタのストレージバックエンドとして、Amazon Elastic Block Store（EBS）またはAmazon FSX for NetApp ONTAP を使用できます。
+
+
+
+== Amazon Elastic Block Store（EBS）
+
+EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味と設定方法の詳細については、を参照してください https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetesのドキュメント"^]。
+
+EBSで使用できるボリュームのタイプは次のとおりです。
+
+* ソリッドステートドライブ（SSD）
+* ハードディスクドライブ（HDD）
+* 旧世代
+
+
+各タイプのボリュームとそのパフォーマンスの詳細については、を参照してください https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html["Amazon EBSのドキュメント"^]。価格については、を参照してください https://aws.amazon.com/ebs/pricing/["Amazon EBSの価格"^]。
+
+
+
+== NetApp ONTAP 対応の Amazon FSX
+
+NetApp ONTAP のFSXをAWSクラスタのストレージバックエンドとして使用する場合、I/Oパフォーマンスはファイルシステムの構成とワークロードの特性によって異なります。NetApp ONTAP のパフォーマンスに関するFSXの具体的な情報については、を参照してください https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html["Amazon FSX for NetApp ONTAP のパフォーマンス"^]。価格については、を参照してください https://aws.amazon.com/fsx/netapp-ontap/pricing/["Amazon FSX for NetApp ONTAP の価格設定"^]。

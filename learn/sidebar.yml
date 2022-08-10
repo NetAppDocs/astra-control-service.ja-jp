@@ -4,15 +4,16 @@ title: 概念
 entries:
 - title: アーキテクチャとコンポーネント
   url: "/learn/architecture.html"
+- title: AWSクラスタ用のストレージ
+  flavor: aws
+  url: "/learn/aws-storage.html"
 - title: AKS クラスタのストレージ
   flavor: azure
   url: "/learn/azure-storage.html"
 - title: GKE クラスタ用のストレージ
   flavor: gcp
   url: "/learn/choose-class-and-size.html"
-- title: 検証済みのアプリケーションと標準のアプリケーションの比較
-  url: "/learn/validated-vs-standard.html"
-- title: カスタムアプリケーションを定義する
-  url: "/learn/define-custom-app.html"
+- title: アプリケーション管理について理解する
+  url: "/learn/app-management.html"
 - title: ユーザロールとネームスペース
   url: "/learn/user-roles-namespaces.html"

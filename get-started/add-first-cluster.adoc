@@ -14,26 +14,43 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 [role="lead"]
 環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。
 
+* <<Create a Kubernetes cluster>>
+* <<Start managing Kubernetes clusters>>
+
+
+ifdef::azure[]
+
+* <<Manage a private cluster>>
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* <<Provide cluster access to other users>>
+
+
+endif::aws[]
+
+* <<Change the default storage class>>
+
+
 
 
 == Kubernetes クラスタを作成
 
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。
-
-endif::azure[]
-
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
+まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service（EKS）用のAstra制御サービスの要件"]。まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
 
 
 NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
-
-endif::gcp[]
 
 
 
 == Kubernetes クラスタの管理を開始します
 
 Astra Control Service にログインしたら、最初にクラスタの管理を開始します。
+
+クラスタにボリュームスナップショットクラスを追加するときに構成していない場合、Astra Control Serviceは、デフォルトの構成でインストールを試みます。
 
 [NOTE]
 ====
@@ -44,6 +61,14 @@ Astra Controlは、クラスタを管理する際に、クラスタのデフォ�
 
 
 ====
+ifdef::aws[]
+
+* Amazon Web Servicesの場合、クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
+* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、完了していることを確認します link:set-up-amazon-web-services.html#optional-configure-astra-trident-for-amazon-fsx-for-netapp-ontap["ステップ7"] をクリックします。
+
+
+endif::aws[]
+
 ifdef::gcp[]
 
 * GKE の場合は、必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
@@ -75,6 +100,16 @@ endif::azure[]
 . * プロバイダ * ：クラウドプロバイダを選択し、必要なクレデンシャルを入力します。
 
 
+ifdef::aws[]
+
+. * Amazon Web Services *：JSONファイルをアップロードするか、クリップボードからそのJSONファイルの内容を貼り付けて、Amazon Web Services IAMユーザアカウントの詳細を指定します。
++
+JSONファイルに、クラスタを作成したIAMユーザのクレデンシャルを含める必要があります。
+
+
+
+endif::aws[]
+
 ifdef::azure[]
 
 . * Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードからその JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を指定します。
@@ -103,19 +138,19 @@ endif::gcp[]
 Cloud Volumes Service for Google Cloud用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
 
 +
+[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+
++
+Amazon Web Services用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+
++
+[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+
++
+Azure NetApp Files 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+
++
 「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
-
-
-
-endif::gcp[]
-
-+「償還対象」タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
-
-+ Azure NetApp Files 用に設定されていないクラスタを選択すると、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
-
-+「プライベート」アイコンが付いているクラスタを選択する場合は、プライベートIPアドレスが使用され、Astra Controlでクラスタを管理するためにAstraコネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
-
-endif::azure[]
 
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
@@ -139,6 +174,14 @@ ifdef::azure[]
 
 endif::azure[]
 
+ifdef::aws[]
+
+** Amazon Elastic Block Store：価格、パフォーマンス、耐障害性に関する情報がない
+** Amazon FSX for NetApp ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::aws[]
+
 ====
 +
 ストレージクラスごとに、次のいずれかのサービスを利用できます。
@@ -161,13 +204,15 @@ ifdef::azure[]
 
 endif::azure[]
 
-+詳細はこちら link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。
+ifdef::aws[]
 
-endif::gcp[]
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP 対応の Amazon FSX"^]
 
-の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
 
-endif::azure[]
+endif::aws[]
+
++詳細はこちら link:../learn/aws-storage.html["Amazon Web Servicesクラスタのストレージクラス"]。の詳細を確認してください link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
 
 . * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
 
@@ -225,6 +270,18 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 
 endif::azure[]
+
+ifdef::aws[]
+
+
+
+== 他のユーザにクラスタへのアクセスを許可する
+
+オプションで、クラスタの作成者ではない他のIAMユーザに「kubectl」コマンドを使用してクラスタにアクセスすることもできます。
+
+手順については、を参照してください https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？"^]。
+
+endif::aws[]
 
 
 

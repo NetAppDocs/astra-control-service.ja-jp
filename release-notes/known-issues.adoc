@@ -17,11 +17,14 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 
 .アプリケーション
 * <<App clones fail after an application is deployed with a set storage class>>
+* <<Applications page loads forever when trying to restore a deleted application>>
+* <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 
 .バックアップ、リストア、およびクローニング
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 
 
 ifdef::azure[]
@@ -44,6 +47,18 @@ endif::azure[]
 
 
 
+== 削除されたアプリケーションをリストアしようとすると、アプリケーションページが永久にロードされます
+
+[アプリケーション]ページを使用して、削除されたクラスタからアプリケーションを復元しようとしても、[アプリケーション]ページの読み込みは完了しません。回避策 として、アプリケーションのリストにあるアプリケーションのアクションメニューからアプリケーションを復元します。
+
+
+
+== 削除および再作成されたネームスペースにアプリケーションを定義できません
+
+ネームスペースを使用してアプリケーションを定義し、ネームスペースを削除してから、同じネームスペースにアプリケーションを再インストールすると、409エラーコードで処理が失敗します。再作成した名前空間を使用してアプリケーションを定義するには、最初に古いアプリケーションインスタンスを削除します。
+
+
+
 == アプリケーションをリストアすると、 PV のサイズが元の PV よりも大きくなります
 
 バックアップの作成後に永続ボリュームのサイズを変更し、そのバックアップからリストアすると、永続ボリュームのサイズはバックアップのサイズではなく PV の新しいサイズと一致します。
@@ -53,6 +68,12 @@ endif::azure[]
 == 特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します
 
 Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内のアプリケーションクローンは一貫して失敗します。正常にクローニングするには、以前のバージョンのグラフを使用してください。
+
+
+
+== クラスタの管理後にボリュームnapshotclassを追加すると、アプリケーションのバックアップとSnapshotが失敗します
+
+このシナリオでは、UI 500エラーでバックアップとSnapshotが失敗します。回避策 として、アプリリストを更新します。
 
 ifdef::azure[]
 

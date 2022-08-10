@@ -11,12 +11,16 @@ settings:
     label: クラウドプロバイダ
     default: すべてのクラウドプロバイダ
     options:
+    - name: Amazon Web Services の
+      alias: Amazon Web Services の
+      id: aws
     - name: Google Cloud
       alias: Google Cloud
       id: gcp
     - name: Microsoft Azure
       alias: Azure
       id: azure
+  rss_page: release-notes/whats-new.html
   langs: ja-jp,us-en,zh-cn,zh-tw,ko-kr
 sidebar:
   entries:
@@ -28,7 +32,6 @@ sidebar:
   - title: Astra Control REST API で自動化
     url: "/automation.html"
   - section: learn
-  - section: solutions
   - section: support
   - title: 法的通知
     url: "/legal-notices.html"
@@ -64,14 +67,6 @@ homepage:
     links:
     - title: Astra Control サービスのビデオ
       url: "/get-started/videos.html"
-    - title: Jenkins をデプロイします
-      url: "/solutions/jenkins-deploy-from-helm-chart.html"
-    - title: MariaDB を導入します
-      url: "/solutions/mariadb-deploy-from-helm-chart.html"
-    - title: MySQL を導入
-      url: "/solutions/mysql-deploy-from-helm-chart.html"
-    - title: Postgres を導入する
-      url: "/solutions/postgres-deploy-from-helm-chart.html"
   - title: Astra Control Center の略
     links:
     - title: Astra Control Center の概要

@@ -65,11 +65,23 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 新しいワーカーノードを既存のプールに追加することも、 Ubuntu イメージタイプであれば新しいプールを作成することもできます。これらは Astra Control によって自動的に検出されます。新しいノードが Astra Control に表示されない場合は、新しいワーカーノードでサポートされているイメージタイプが実行されているかどうかを確認します。kubectl get nodes コマンドを使用して ' 新しいワーカー・ノードの正常性を確認することもできます
 
+ifdef::aws[]
+
+
+
+== Elastic Kubernetes Service（EKS）クラスタを登録しています
+
+* Astra Control ServiceにプライベートEKSクラスタを追加できますか。*
+
+現時点では、Astra Control ServiceでプライベートEKSクラスタはサポートされていません。
+
+endif::aws[]
+
 ifdef::azure[]
 
 
 
-== AKS クラスタを登録しています
+== Azure Kubernetes Service（AKS）クラスタの登録
 
 * AKS のプライベートクラスタを Astra Control Service に追加できますか。 *
 
@@ -85,11 +97,11 @@ ifdef::gcp[]
 
 
 
-== GKE クラスタを登録しています
+== Google Kubernetes Engine（GKE）クラスタの登録
 
 * Astra Control Service にプライベート GKE クラスタを追加できますか。 *
 
-はい。 Astra Control Service にプライベート GKE クラスタを追加できます。Google Kubernetes Engine （ GKE ）プライベートクラスタを作成するには、次の手順を実行します。 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["この技術情報アーティクルの手順に従ってください"^]。
+はい。 Astra Control Service にプライベート GKE クラスタを追加できます。プライベートGKEクラスタを作成するには https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["この技術情報アーティクルの手順に従ってください"^]。
 
 プライベートクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
 
@@ -134,7 +146,7 @@ endif::gcp[]
 
 * Astra Trident は、 Astra Control からクラスタを削除したときにアンインストールされますか。 *
 
-Astra Trident は、 Astra Control から削除してもクラスタからアンインストールされません。
+Astra Tridentは、Astra Controlからクラスタを削除してもクラスタからアンインストールされません。
 
 
 
@@ -143,10 +155,6 @@ Astra Trident は、 Astra Control から削除してもクラスタからアン
 * Astra Control はアプリケーションを導入できますか。 *
 
 Astra Control はアプリケーションを導入しない。アプリケーションは Astra Control の外部に導入する必要があります。
-
-* アプリケーションが [ 検出されたアプリ ] リストに表示されません。問題を特定するにはどうすればよいですか *
-
-アプリケーションが * Discovered Apps* にリストされていない場合は、「 kubectl get pod - a | grep [pod name]] 」を実行して、 Kubernetes ポッドのステータスと正常性を確認します。ポッドが正常で実行されている場合は、アプリケーションが「 * 無視されるアプリ * 」の下に表示されているかどうかを確認します。
 
 * ネットアップ以外のストレージにあるアプリケーションは Astra Control で管理できますか。 *
 

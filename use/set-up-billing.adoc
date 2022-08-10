@@ -72,6 +72,19 @@ AKS クラスタを Astra Control Service で管理する場合、永続ボリ�
 
 endif::azure[]
 
+ifdef::aws[]
+
+
+
+=== Amazon Web Servicesの請求
+
+Astra Control Serviceを使用してAWSクラスタを管理する場合、永続ボリュームはEBSまたはFSX for NetApp ONTAP でバックアップされ、アプリケーションのバックアップはAWSバケットに格納されます。
+
+* https://aws.amazon.com/eks/pricing/["Amazon Web Servicesの価格設定の詳細を表示します"^]。
+
+
+endif::aws[]
+
 
 
 == 重要事項

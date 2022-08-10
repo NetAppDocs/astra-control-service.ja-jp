@@ -35,6 +35,25 @@ link:set-up-google-cloud.html["Google Cloud の要件の詳細をご覧くださ
 
 endif::gcp[]
 
+ifdef::aws[]
+
+. Amazon Web Servicesの特長
++
+** Amazon Web Servicesクラスタの要件を確認します。
+** Amazonアカウントを作成します。
+** Amazon Web Services CLIをインストールします。
+** IAMユーザを作成します。
+** 権限ポリシーを作成して適用します。
+** IAMユーザのクレデンシャルを保存します。
++
+link:set-up-amazon-web-services.html["Amazon Web Servicesの要件の詳細については、こちらをご覧ください"]。
+
+
+
+
+
+endif::aws[]
+
 ifdef::azure[]
 
 . Microsoft Azure

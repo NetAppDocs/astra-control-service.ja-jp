@@ -27,14 +27,14 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 === Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に動作していて、 1.19 ～ 1.23 の範囲の Kubernetes バージョンが実行されていること、ワーカーノードがオンラインでコンテナで最適化された OS または Ubuntu が実行されていることなどを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に動作しており、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでコンテナ向けに最適化されたOSやUbuntuなどを実行していることを確認します。 <<GKE cluster requirements,このステップの詳細をご覧ください>>。
 
 
 
 === （オプション）： Cloud Volumes Service for Google Cloud を購入します
 
 [role="quick-margin-para"]
-ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。 <<Purchase Cloud Volumes Service for Google Cloud (optional),このステップの詳細をご覧ください>>。
+ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。 <<Optional: Purchase Cloud Volumes Service for Google Cloud,このステップの詳細をご覧ください>>。
 
 
 
@@ -96,7 +96,7 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 === （オプション）： VPC のネットワークピアリングを設定します
 
 [role="quick-margin-para"]
-Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <<Set up network peering for your VPC (optional),ステップバイステップの手順に従います>>。
+Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <<Optional: Set up network peering for your VPC,ステップバイステップの手順に従います>>。
 
 
 
@@ -104,7 +104,7 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドと�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。
 
-Kubernetes のバージョン:: クラスタで 1.19 ~ 1.23 の Kubernetes バージョンが実行されている必要があります。
+Kubernetes のバージョン:: 1.20 ~ 1.23のKubernetesバージョンがクラスタで実行されている必要があります。
 イメージタイプ:: 各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。
 +
 --
@@ -116,7 +116,7 @@ Kubernetes のバージョン:: クラスタで 1.19 ~ 1.23 の Kubernetes バ�
 --
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
-ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<Set up network peering for your VPC,この手順については、以下で説明します>>。
+ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<Optional: Set up network peering for your VPC,この手順については、以下で説明します>>。
 プライベートクラスタ:: クラスタがプライベートの場合は、を参照してください https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control Service の IP アドレスを許可する必要があります。
 +
 --
@@ -128,7 +128,7 @@ GKE クラスタの動作モード:: 標準モードのオペレーションを�
 
 
 
-== Cloud Volumes Service for Google Cloud の購入（オプション）
+== オプション：Cloud Volumes Service for Google Cloudを購入
 
 Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。
 
@@ -229,7 +229,7 @@ JSON ファイルは、キーの作成時にのみ表示またはダウンロー
 video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 
-== VPC のネットワークピアリングをセットアップする（オプション）
+== オプション：VPCのネットワークピアリングを設定します
 
 Cloud Volumes Service for Google Cloud をストレージバックエンドサービスとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。
 

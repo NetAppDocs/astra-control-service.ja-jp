@@ -15,6 +15,66 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2022年8月10日
+
+このリリースには、次の新機能と機能拡張が含まれています。
+
+
+
+=== アプリケーション管理ワークフローの改善
+
+アプリケーション管理ワークフローが改善され、Astra Controlで管理するアプリケーションを定義する際の柔軟性が向上しました。
+
+link:../use/manage-apps.html#manage-apps["アプリの管理"]。
+
+ifdef::aws[]
+
+
+
+=== Amazon Web Servicesクラスタのサポート
+
+Amazon Elastic Kubernetes Serviceでホストされているクラスタで実行されているアプリケーションをAstra Control Serviceで管理できるようになりました。NetApp ONTAP 用のAmazon Elastic Block StoreまたはAmazon FSXをストレージバックエンドとして使用するようにクラスタを設定できます。
+
+link:../get-started/set-up-amazon-web-services.html["Amazon Web Servicesをセットアップする"]。
+
+endif::aws[]
+
+
+
+=== 強化された実行フック
+
+スナップショット前およびスナップショット後の実行フックに加えて、次の種類の実行フックを構成できるようになりました。
+
+* バックアップ前
+* バックアップ後
+* リストア後のPOSTコマンドです
+
+
+その他の改良点として、複数の実行フックに同じスクリプトを使用できるようになりました。
+
+
+NOTE: ネットアップが提供する、特定のアプリケーションのデフォルトのSnapshot実行時フックとSnapshot実行後フックは、このリリースでは削除されています。スナップショットの実行フックを独自に指定しない場合、Astra Control Serviceは、2022年8月4日以降にのみクラッシュコンシステントスナップショットを作成します。にアクセスします https://github.com/NetApp/Verda["NetApp Verda GitHubリポジトリ"^] では、環境に合わせて変更できるサンプルの実行フックスクリプトを使用できます。
+
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]。
+
+ifdef::azure[]
+
+
+
+=== Azure Marketplaceのサポート
+
+Azure MarketplaceからAstra Control Serviceに登録できるようになりました。
+
+endif::azure[]
+
+
+
+=== クラウドプロバイダの選択
+
+Astra Control Serviceのドキュメントを読みながら、ページの右上にあるクラウドプロバイダを選択できるようになりました。選択したクラウドプロバイダのみに関連するドキュメントが表示されます。
+
+
+
 == 2022 年 4 月 26 日
 
 このリリースには、次の新機能と機能拡張が含まれています。
