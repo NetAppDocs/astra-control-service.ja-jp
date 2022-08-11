@@ -17,7 +17,7 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 
 .アプリケーション
 * <<App clones fail after an application is deployed with a set storage class>>
-* <<Applications page loads forever when trying to restore a deleted application>>
+* <<Applications page loads forever when trying to restore an application belonging to a deleted cluster>>
 * <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 
@@ -47,9 +47,9 @@ endif::azure[]
 
 
 
-== 削除されたアプリケーションをリストアしようとすると、アプリケーションページが永久にロードされます
+== 削除されたクラスタに属するアプリケーションをリストアしようとすると、アプリケーションページが無期限にロードされます
 
-[アプリケーション]ページを使用して、削除されたクラスタからアプリケーションを復元しようとしても、[アプリケーション]ページの読み込みは完了しません。回避策 として、アプリケーションのリストにあるアプリケーションのアクションメニューからアプリケーションを復元します。
+アプリケーションページから削除されたクラスタからアプリケーションを復元しようとしても、アプリケーションページの読み込みは完了しません。回避策 として、アプリケーションリストページのアプリケーションのアクションメニューからアプリケーションを復元します。
 
 
 
