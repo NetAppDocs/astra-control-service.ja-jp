@@ -1878,4 +1878,6 @@
   <block id="a13f2262ff8b5ec001ba8f41398e1a6c" category="list-text">ユーザインターフェイスの機能拡張データ保護ウィザードが強化され、操作が簡単になりました。たとえば、保護ポリシーウィザードを改良して、定義した保護スケジュールを簡単に確認できるようにしました。</block>
   <block id="aad7f3d472e654aef7d2a492a3d54210" category="list-text">アクティビティの強化Astra Controlアカウントでのアクティビティの詳細を簡単に確認できるようになりました。</block>
   <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>。</block>
+  <block id="3fc3ba3c5f20ea640e5be46d8c9ca467" category="inline-link">ネットアップアストラ製品ファミリーのドキュメント</block>
+  <block id="c5bc786725b0b61976497d5d0c73be96" category="list-text"><block ref="c5bc786725b0b61976497d5d0c73be96" category="inline-link-rx"></block></block>
 </blocks>
