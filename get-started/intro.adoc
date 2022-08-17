@@ -111,6 +111,8 @@ ifdef::aws[]
 
 +** Amazon EKSクラスタの場合、Astra Control Serviceはを使用します https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] または https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP 対応の Amazon FSX"^] 永続ボリュームのストレージバックエンドとして。
 
+endif::aws[]
+
 * 最初の Kubernetes コンピューティングを Astra Control サービスに追加します。Astra Control Service は、次の処理を実行します。
 +
 ** バックアップコピーが格納されるクラウドプロバイダアカウントにオブジェクトストアを作成します。
