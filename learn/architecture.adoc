@@ -13,8 +13,6 @@ summary: ここでは、 Astra Control 環境のさまざまなコンポーネ�
 
 ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。
 
-image:astra-ads-architecture-diagram-v3.png["Astra Control のアーキテクチャ図とコンポーネント"]
-
 
 
 == Astra Control コンポーネント
@@ -27,15 +25,16 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control のアーキテクチ
 ** Astra Control Service で使用される https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^] または、GKEクラスタのストレージバックエンドとしてGoogle Persistent Diskを使用します。
 ** Astra Control Service で使用される https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] および https://docs.aws.amazon.com/fsx/["NetApp ONTAP 対応の Amazon FSX"^] EKSクラスタのストレージバックエンドとして。
 ** Astra Control Center は、次のストレージバックエンドを使用します。
+
+
+
+
+* ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
+* Cloud Volumes ONTAP ストレージバックエンド
 +
-*** Astra データストアストレージバックエンド
-*** ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
-*** Cloud Volumes ONTAP ストレージバックエンド
+** * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
 
 
-
-
-* * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
 
 
 
