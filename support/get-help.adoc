@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: support/get-help.html 
-keywords: get help, get support, knowledgebase, slack, phone, web, ticket, contact support, support ticket 
-summary: ネットアップでは、 Astra Control をさまざまな方法でサポートしています。ナレッジベース（ KB ）記事や Slack チャンネルなど、幅広いセルフサポートオプションを 24 時間 365 日ご利用いただけます。Astra Control アカウントには、 Web チケット発行によるリモートテクニカルサポートが含まれています。 
+keywords: get help, get support, knowledgebase, Discord, phone, web, ticket, contact support, support ticket 
+summary: ネットアップでは、 Astra Control をさまざまな方法でサポートしています。ナレッジベース（KB）記事やDiscordチャネルなど、24時間365日利用可能な無料のセルフサポートオプションをご用意しています。Astra Control アカウントには、 Web チケット発行によるリモートテクニカルサポートが含まれています。 
 ---
 = ヘルプを表示します
 :hardbreaks:
@@ -11,7 +11,7 @@ summary: ネットアップでは、 Astra Control をさまざまな方法で�
 :imagesdir: ../media/support/
 
 
-ネットアップでは、 Astra Control をさまざまな方法でサポートしています。ナレッジベース（ KB ）記事や Slack チャンネルなど、幅広いセルフサポートオプションを 24 時間 365 日ご利用いただけます。Astra Control アカウントには、 Web チケット発行によるリモートテクニカルサポートが含まれています。
+ネットアップでは、 Astra Control をさまざまな方法でサポートしています。ナレッジベース（KB）記事やDiscordチャネルなど、24時間365日利用可能な無料のセルフサポートオプションをご用意しています。Astra Control アカウントには、 Web チケット発行によるリモートテクニカルサポートが含まれています。
 
 最初に実行する必要があります link:register-support.html["ネットアップのシリアル番号のサポートを有効にします"] これらの非セルフサービスサポートオプションを使用するには、次の手順に従います。チャットや Web でのチケット発行、ケース管理には、ネットアップサポートサイト（ NSS ）の SSO アカウントが必要です。
 
@@ -31,9 +31,9 @@ Astra Control に関する記事、 FAQ 、またはトラブルシューティ�
 +
 現在表示しているドキュメントサイトです。
 
-* https://netapppub.slack.com/#astra["たるみ"^]
+* https://discord.gg/NetApp["Discordの助けを得なさい"^]
 +
-thePub ワークスペースのコンテナチャネルに移動して、ピアやエキスパートと交流しましょう。
+thePubカテゴリのAstraに移動して、他のユーザやエキスパートと交流しましょう。
 
 * フィードバック用 E メール
 +
