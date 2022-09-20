@@ -1459,7 +1459,6 @@
   <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure Managed Disks：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service *：複数のクラウドプロバイダ環境でKubernetesクラスタのデータをアプリケーション対応で管理するネットアップマネージドサービス。</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+** GKEクラスタの場合はAstra Control Serviceを使用します<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</block>
-  <block id="020ac10d47f71d04e485e8c8328f7cdf" category="paragraph">+** AKSクラスタの場合、Astra Control Serviceはを使用します<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+ Azureでは、Astra Control Serviceによって、BLOBコンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</block>
   <block id="a3927a5a13e226c44dac47ff649fa5fa" category="list-text">クラウドプロバイダのストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。</block>
   <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。</block>
@@ -1882,4 +1881,5 @@
   <block id="0e7f3e02eec3115e69bf39331337aa40" category="list-text">*ストレージアカウント*（Azureのみ）：Azureストレージアカウントの名前を入力します。このバケットは、_Astra -backup-rg_というリソースグループに属している必要があります。</block>
   <block id="46c53b029194c1de2930d506c617135a" category="inline-link">Amazonのドキュメント</block>
   <block id="67923dd978919e4cfb6eefb99c5e9b2b" category="list-text">* S3サーバ名またはIPアドレス*（AWSのみ）：「https：//」を使用せずに、リージョンに対応するS3エンドポイントの完全修飾ドメイン名を入力します。を参照してください<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="00aad21491943f355fbfdfc6d4402aab" category="paragraph">+** AKSクラスタの場合、Astra Control Serviceはを使用します<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとしてAzureで管理されているディスクがあります。</block>
 </blocks>

@@ -14,25 +14,25 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 [role="lead"]
 環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。
 
-* <<Create a Kubernetes cluster>>
-* <<Start managing Kubernetes clusters>>
+*  a Kubernetes cluster
+*  managing Kubernetes clusters
 
 
 ifdef::azure[]
 
-* <<Manage a private cluster>>
+*  a private cluster
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* <<Provide cluster access to other users>>
+*  cluster access to other users
 
 
 endif::aws[]
 
-* <<Change the default storage class>>
+*  the default storage class
 
 
 
@@ -57,7 +57,7 @@ Astra Control Service にログインしたら、最初にクラスタの管理�
 Astra Controlは、クラスタを管理する際に、クラスタのデフォルトストレージクラスを追跡します。'kubectl'コマンドを使用してストレージ・クラスを変更すると'Astra Controlは変更を元に戻しますAstra Controlで管理されるクラスタのデフォルトのストレージクラスを変更するには、次のいずれかの方法を使用します。
 
 * Astra Control APIのPut / managedClustersエンドポイントを使用し'DefaultStorageClass'パラメータを指定して'別のデフォルトストレージクラスを割り当てます
-* Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください <<Change the default storage class>>。
+* Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください  the default storage class。
 
 
 ====
@@ -85,7 +85,7 @@ JSON ファイルに追加していない場合は、 Azure サブスクリプ�
 * プライベート AKS クラスタの場合：
 +
 ** クラスタがに記載された要件を満たしている必要があります https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure のドキュメント"^]。
-** AKS サービスクラスタに Astra コネクタをインストールして、 Astra Control Service でクラスタを管理できるようにする必要があります。Astra コネクタを取り付けるには、 <<Manage a private cluster,以下の手順に従ってください>>。
+** AKS サービスクラスタに Astra コネクタをインストールして、 Astra Control Service でクラスタを管理できるようにする必要があります。Astra コネクタを取り付けるには、  a private cluster,以下の手順に従ってください。
 
 
 
@@ -150,7 +150,7 @@ Amazon Web Services用に設定されていないクラスタを選択した場�
 Azure NetApp Files 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
 
 +
-「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 <<Manage a private cluster,以下の手順に従ってください>> をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
+「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、  a private cluster,以下の手順に従ってください をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
 
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +

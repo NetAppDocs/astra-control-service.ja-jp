@@ -24,21 +24,21 @@ Amazon Elastic Kubernetes Service（EKS）クラスタをAstra Control Service�
 === Amazon Web ServicesのAstra Control Serviceの要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に機能しており、サポートされているバージョンのKubernetesを実行していること、ワーカーノードがオンラインでLinuxやWindowsなどを実行していることを確認します。 <<EKS cluster requirements,このステップの詳細をご覧ください>>。
+クラスタが正常に機能しており、サポートされているバージョンのKubernetesを実行していること、ワーカーノードがオンラインでLinuxやWindowsなどを実行していることを確認します。  cluster requirements,このステップの詳細をご覧ください。
 
 
 
 === Amazonアカウントを作成します
 
 [role="quick-margin-para"]
-Amazonアカウントをまだ作成していない場合は、EKSを使用できるように作成する必要があります。 <<Create an Amazon account,このステップの詳細をご覧ください>>。
+Amazonアカウントをまだ作成していない場合は、EKSを使用できるように作成する必要があります。  an Amazon account,このステップの詳細をご覧ください。
 
 
 
 === Amazon Web Services CLIをインストールします
 
 [role="quick-margin-para"]
-コマンドラインからAWSを管理できるように、AWS CLIをインストールします。 <<Install the Amazon Web Services CLI,ステップバイステップの手順に従います>>。
+コマンドラインからAWSを管理できるように、AWS CLIをインストールします。  the Amazon Web Services CLI,ステップバイステップの手順に従います。
 
 
 
@@ -48,7 +48,7 @@ Amazonアカウントをまだ作成していない場合は、EKSを使用で�
 Amazon Identity and Access Management（IAM）ユーザを作成します。また、この手順をスキップし、既存のIAMユーザをAstra Control Serviceで使用することもできます。
 
 [role="quick-margin-para"]
-<<Optional: Create an IAM user,詳細な手順を参照してください>>。
+ Create an IAM user,詳細な手順を参照してください。
 
 
 
@@ -58,7 +58,7 @@ Amazon Identity and Access Management（IAM）ユーザを作成します。ま�
 Astra Control ServiceがAWSアカウントとやり取りするために必要な権限を持つポリシーを作成します。
 
 [role="quick-margin-para"]
-<<Create and attach a permissions policy,詳細な手順を参照してください>>。
+ and attach a permissions policy,詳細な手順を参照してください。
 
 
 
@@ -68,7 +68,7 @@ Astra Control ServiceがAWSアカウントとやり取りするために必要�
 からAstra Control Serviceにクレデンシャルをインポートできるように、IAMユーザのクレデンシャルを保存します。
 
 [role="quick-margin-para"]
-<<Save the credentials for the IAM user,詳細な手順を参照してください>>。
+ the credentials for the IAM user,詳細な手順を参照してください。
 
 
 

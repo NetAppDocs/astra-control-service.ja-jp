@@ -29,13 +29,13 @@ NOTE: スナップショットまたはバックアップを実行しても、�
 
 アプリケーションデータの保護に関連する次のタスクを実行できます。
 
-* <<Configure a protection policy>>
-* <<Create a snapshot>>
-* <<Create a backup>>
-* <<View snapshots and backups>>
-* <<Delete snapshots>>
-* <<Cancel backups>>
-* <<Delete backups>>
+*  a protection policy
+*  a snapshot
+*  a backup
+*  snapshots and backups
+*  snapshots
+*  backups
+*  backups
 
 
 

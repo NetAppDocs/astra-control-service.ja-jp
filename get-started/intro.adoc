@@ -103,7 +103,7 @@ endif::gcp[]
 
 ifdef::azure[]
 
-+** AKSクラスタの場合、Astra Control Serviceはを使用します https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^] または、永続ボリューム用のストレージバックエンドとして Azure Disk Storage を選択します。
++** AKSクラスタの場合、Astra Control Serviceはを使用します https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^] または、永続ボリューム用のストレージバックエンドとしてAzureで管理されているディスクがあります。
 
 endif::azure[]
 

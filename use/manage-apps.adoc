@@ -128,7 +128,7 @@ TIP: たとえば、「Maria」に対して、毎週同じ頻度でバックア�
 
 .必要なもの
 * KubernetesクラスタをAstra Controlに追加。
-* クラスタにインストールされているアプリケーションが1つ以上あります。 <<Supported app installation methods,サポートされているアプリケーションのインストール方法については、こちらをご覧ください>>。
+* クラスタにインストールされているアプリケーションが1つ以上あります。  app installation methods,サポートされているアプリケーションのインストール方法については、こちらをご覧ください。
 * アクティブなポッドが1つ以上あります。
 * Astra Controlに追加したKubernetesクラスタで指定された名前空間。
 * （オプション）すべてのにKubernetesラベル link:../use/manage-apps.html#app-management-requirements["サポートされるKubernetesリソース"]。
@@ -141,8 +141,8 @@ TIP: ラベルは、 Kubernetes オブジェクトに割り当てて識別でき
 開始する前に、を理解しておく必要があります link:../use/manage-apps.html#what-about-system-namespaces["標準ネームスペースとシステムネームスペースの管理"]。Astra Control API を使用してアプリケーションを管理する方法については、を参照してください link:https://docs.netapp.com/us-en/astra-automation/["Astra の自動化と API に関する情報"^]。
 
 .アプリケーション管理オプション
-* <<Define resources to manage as an app>>
-* <<Define a namespace to manage as an app>>
+*  resources to manage as an app
+*  a namespace to manage as an app
 
 
 
