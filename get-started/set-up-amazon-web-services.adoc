@@ -131,7 +131,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . サービスアカウント用のAmazon EBS CSIドライバIAMロールを作成します。指示に従います https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["Amazonのドキュメントを参照してください"^]の手順に記載されたAWS CLIコマンドを使用します。
 . 次のAWS CLIコマンドを使用してAmazon EBS CSIアドオンを追加します。括弧<>内の情報は、環境に固有の値に置き換えてください。<driver_role>を、前の手順で作成したEBS CSIドライバロールの名前に置き換えます。
 +
-[listing]
+[source, sh]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -143,26 +143,26 @@ aws eks create-addon \
 .EBSストレージクラスを設定します
 . Amazon EBS CSIドライバGitHubリポジトリをシステムにクローニングします。
 +
-[listing]
+[source, sh]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . dynamicprovisioning exampleディレクトリに移動します。
 +
-[listing]
+[source, sh]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . マニフェストディレクトリからEBS SCストレージクラスとEBS要求の永続的ボリューム要求を導入します。
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . EBS SCストレージクラスの説明
 +
-[listing]
+[source, sh]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -216,7 +216,7 @@ Astra Control ServiceがAWSアカウントとやり取りするために必要�
 . 「policy.json」という名前の新しいファイルを作成します。
 . 次のJSONコンテンツをファイルにコピーします。
 +
-[listing]
+[source, JSON]
 ----
 {
     "Version": "2012-10-17",
@@ -250,13 +250,13 @@ Astra Control ServiceがAWSアカウントとやり取りするために必要�
 ----
 . ポリシーを作成します。
 +
-[listing]
+[source, sh]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . IAM ユーザにポリシーを付加します。「<iam-user-name>」を、作成したIAMユーザのユーザ名または既存のIAMユーザの名前に置き換えます。
 +
-[listing]
+[source, sh]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -271,7 +271,7 @@ aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 .手順
 . クレデンシャルをダウンロードします。「<iam-user-name>」を、使用するIAMユーザのユーザ名に置き換えます。
 +
-[listing]
+[source, sh]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

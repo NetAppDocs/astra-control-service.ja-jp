@@ -63,7 +63,7 @@ Astra Control には、次のアプリケーション管理要件があります
 
 * * マニフェストファイル * ： Astra Control は、 kubectl を使用してマニフェストファイルからインストールされたアプリケーションをサポートします。例：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f myapp.yaml
 ----

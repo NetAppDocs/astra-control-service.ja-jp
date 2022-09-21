@@ -235,15 +235,15 @@ CSI ドライバをインストールする前に、 Azure サブスクリプシ
 . Azure コマンドラインインターフェイスを開きます。
 . 次のコマンドを実行してドライバを登録します。
 +
-[listing]
+[source, sh]
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
 . 次のコマンドを実行して、変更が伝播されることを確認します。
 +
-[listing]
+[source, sh]
 ----
-'az provider register -n Microsoft.ContainerService
+az provider register -n Microsoft.ContainerService
 ----
 +
 次のような出力が表示されます。
