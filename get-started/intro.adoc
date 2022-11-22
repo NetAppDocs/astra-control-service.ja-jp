@@ -68,7 +68,6 @@ Astra Control には、次の 2 つの導入モデルがあります。
 
 | ストレージバックエンドでサポートされるもの | ネットアップのクラウドサービス  a| 
 * NetApp ONTAP AFF および FAS システム
-* ストレージバックエンドとしての Astra データストア
 * Cloud Volumes ONTAP ストレージバックエンド
 
 
@@ -170,7 +169,6 @@ Astra Control Center の概要は次のように機能します。
 * https://docs.netapp.com/us-en/astra-family/["ネットアップアストラ製品ファミリーのドキュメント"^]
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service のマニュアル"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center のドキュメント"^]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra データストアのドキュメント"]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident のドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API を使用"^]
 * https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights のドキュメント"^]
