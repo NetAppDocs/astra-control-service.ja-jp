@@ -32,32 +32,25 @@ endif::aws[]
 
 == Kubernetes クラスタを作成
 
-まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service（EKS）用のAstra制御サービスの要件"]。まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。まだクラスタがない場合は、を満たすクラスタを作成します link:set-up-microsoft-azure-with-anf.html["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
+まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service（EKS）用のAstra制御サービスの要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
 
 
 NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+
+また、自社で管理する予定のオンプレミスクラスタやクラウドホストクラスタを作成することもできます。をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます `kubeconfig.yaml` ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります  managing Kubernetes clusters。
 
 
 
 == Kubernetes クラスタの管理を開始します
 
-Astra Control Service にログインしたら、最初にクラスタの管理を開始します。
+Astra Control Service にログインしたら、最初にクラスタの管理を開始します。クラウドプロバイダまたは自己管理クラスタによって管理されているクラスタを追加できます。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。
 
-クラスタにボリュームスナップショットクラスを追加するときに構成していない場合、Astra Control Serviceは、デフォルトの構成でインストールを試みます。
-
-[NOTE]
-====
-Astra Controlは、クラスタを管理する際に、クラスタのデフォルトストレージクラスを追跡します。'kubectl'コマンドを使用してストレージ・クラスを変更すると'Astra Controlは変更を元に戻しますAstra Controlで管理されるクラスタのデフォルトのストレージクラスを変更するには、次のいずれかの方法を使用します。
-
-* Astra Control APIのPut / managedClustersエンドポイントを使用し'DefaultStorageClass'パラメータを指定して'別のデフォルトストレージクラスを割り当てます
-* Astra Control Web UIを使用して、別のデフォルトストレージクラスを割り当てます。を参照してください  the default storage class。
-
-
+.クラウドプロバイダが管理するクラスタに必要なもの
 ====
 ifdef::aws[]
 
 * Amazon Web Servicesの場合、クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
-* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、完了していることを確認します link:set-up-amazon-web-services.html#optional-configure-astra-trident-for-amazon-fsx-for-netapp-ontap["ステップ7"] をクリックします。
+* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Trident情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
 
 
 endif::aws[]
@@ -75,22 +68,280 @@ ifdef::azure[]
 +
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
 
-* プライベート AKS クラスタの場合：
-+
-** クラスタがに記載された要件を満たしている必要があります https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure のドキュメント"^]。
-** AKS サービスクラスタに Astra コネクタをインストールして、 Astra Control Service でクラスタを管理できるようにする必要があります。Astra コネクタを取り付けるには、  a private cluster,以下の手順に従ってください。
-
-
+* プライベートAKSクラスタについては、を参照してください link:manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"^]。
 
 
 endif::azure[]
 
+====
+.自己管理型クラスタに必要なもの
+====
+クラスタは、次の要件を満たしている必要があります。
+
+* クラスタにインターネット経由でアクセスできる必要があります
+* Astra Tridentの一バージョン link:../get-started/requirements.html#operational-environment-requirements["Astra Control Serviceによってサポートされます"^] がインストールされている：
++
+
+NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Tridentを導入"^] Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します `tridentctl`。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["サポートされるフロントエンド、バックエンド、およびホスト構成"^]。
+
++
+** * Tridentストレージバックエンドが設定されています*：少なくとも1つのAstra Tridentストレージバックエンドが必要です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["を設定します"^] クラスタのポリシーを確認してください。
+** * Tridentストレージクラスを設定*：少なくとも1つのAstra Tridentストレージクラスが必要です https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["を設定します"^] クラスタのポリシーを確認してください。デフォルトのストレージクラスが設定されている場合は、1つのストレージクラスだけにそのアノテーションを設定します。
+** * Astra Tridentボリュームスナップショットコントローラとボリュームスナップショットクラスがインストールおよび設定されている*：ボリュームスナップショットコントローラがである必要があります https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["インストール済み"^] Astra Controlでスナップショットを作成できるようにします。Astra Tridentが少なくとも1つ `VolumeSnapshotClass` はい https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["セットアップ"^] 管理者による。
+
+
+* *Kubeconfigにアクセス可能*:にアクセスできます https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["クラスタkubeconfig"^] コンテキスト要素が1つだけ含まれます。
+* * ONTAP クレデンシャル*：Astra Control Centerを使用してアプリケーションをバックアップおよびリストアするには、バックアップONTAP システムでONTAP クレデンシャルとスーパーユーザーIDを設定する必要があります。
++
+ONTAP コマンドラインで次のコマンドを実行します。
+
++
+[listing]
+----
+export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -superuser sys
+export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -anon 65534
+----
+* *rancherのみ*: Rancher環境でアプリケーションクラスタを管理する場合、rancherから提供されたkubeconfigファイルでアプリケーションクラスタのデフォルトコンテキストを変更して、rancher APIサーバコンテキストではなくコントロールプレーンコンテキストを使用します。これにより、 Rancher API サーバの負荷が軽減され、パフォーマンスが向上します。
+
+
+クラスタがストレージサービスにAstra Tridentを使用している場合は、インストールされているAstra Tridentのバージョンが最新であることを確認します。
+
+.手順
+. Astra Tridentのバージョンを確認
++
+[source, console]
+----
+kubectl get tridentversions -n trident
+----
++
+Astra Tridentがインストールされている場合は、次のような出力が表示されます。
+
++
+[listing]
+----
+NAME      VERSION
+trident   22.10.0
+----
++
+Astra Tridentがインストールされていない場合は、次のような出力が表示されます。
+
++
+[listing]
+----
+error: the server doesn't have a resource type "tridentversions"
+----
++
+
+NOTE: Astra Tridentがインストールされていないか、最新でない場合に、クラスタがストレージサービス用のAstra Tridentを使用するには、作業を進める前に最新バージョンのAstra Tridentをインストールする必要があります。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] 手順については、を参照し
+
+. ポッドが実行されていることを確認します。
++
+[source, console]
+----
+kubectl get pods -n trident
+----
+. サポートされているAstra Tridentドライバをストレージクラスで使用しているかどうかを確認します。プロビジョニング担当者の名前はとします `csi.trident.netapp.io`。次の例を参照してください。
++
+[source, console]
+----
+kubectl get sc
+----
++
+回答例：
+
++
+[listing]
+----
+NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
+----
+
+
+手順を実行する前に、マシンに次のものがあることを確認してください。
+
+* Kubectl V1.19以降がインストールされています
+* アクティブなコンテキストのクラスタ管理者権限があるアクティブな kubeconfig です
+
+
+.手順
+. 次の手順でサービスアカウントを作成します。
++
+.. という名前のサービスアカウントファイルを作成します `astracontrol-service-account.yaml`。
++
+名前と名前空間を必要に応じて調整します。ここで変更を行った場合は、以降の手順でも同じ変更を適用する必要があります。
+
++
+[source, subs="specialcharacters,quotes"]
+----
+*astracontrol-service-account.yaml*
+----
++
+[source, yaml]
+----
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: astracontrol-service-account
+  namespace: default
+----
+.. サービスアカウントを適用します。
++
+[source, console]
+----
+kubectl apply -f astracontrol-service-account.yaml
+----
+
+
+. 次のようにクラスタ管理者権限を付与します。
++
+.. を作成します `ClusterRoleBinding` という名前のファイルです `astracontrol-clusterrolebinding.yaml`。
++
+必要に応じて、サービスアカウントの作成時に変更した名前と名前空間を調整します。
+
++
+[source, subs="specialcharacters,quotes"]
+----
+*astracontrol-clusterrolebinding.yaml*
+----
++
+[source, yaml]
+----
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: astracontrol-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: astracontrol-service-account
+  namespace: default
+----
+.. クラスタロールバインドを適用します。
++
+[source, console]
+----
+kubectl apply -f astracontrol-clusterrolebinding.yaml
+----
+
+
+. サービスアカウントのシークレットを一覧表示します（置き換えます） `<context>` インストールに適したコンテキストを使用して、次の操作を行います。
++
+[source, console]
+----
+kubectl get serviceaccount astracontrol-service-account --context <context> --namespace default -o json
+----
++
+出力の末尾は次のようになります。
+
++
+[listing]
+----
+"secrets": [
+{ "name": "astracontrol-service-account-dockercfg-vhz87"},
+{ "name": "astracontrol-service-account-token-r59kr"}
+]
+----
++
+内の各要素のインデックス `secrets` アレイは0から始まります。上記の例では、のインデックスです `astracontrol-service-account-dockercfg-vhz87` は0、のインデックスです `astracontrol-service-account-token-r59kr` は1です。出力で、 "token" という単語が含まれるサービスアカウント名のインデックスをメモしてください。
+
+. 次のように kubeconfig を生成します。
++
+.. を作成します `create-kubeconfig.sh` ファイル。交換してください `TOKEN_INDEX` 次のスクリプトの先頭に正しい値を入力します。
++
+[source, subs="specialcharacters,quotes"]
+----
+*create-kubeconfig.sh*
+----
++
+[source, console]
+----
+# Update these to match your environment.
+# Replace TOKEN_INDEX with the correct value
+# from the output in the previous step. If you
+# didn't change anything else above, don't change
+# anything else here.
+
+SERVICE_ACCOUNT_NAME=astracontrol-service-account
+NAMESPACE=default
+NEW_CONTEXT=astracontrol
+KUBECONFIG_FILE='kubeconfig-sa'
+
+CONTEXT=$(kubectl config current-context)
+
+SECRET_NAME=$(kubectl get serviceaccount ${SERVICE_ACCOUNT_NAME} \
+  --context ${CONTEXT} \
+  --namespace ${NAMESPACE} \
+  -o jsonpath='{.secrets[TOKEN_INDEX].name}')
+TOKEN_DATA=$(kubectl get secret ${SECRET_NAME} \
+  --context ${CONTEXT} \
+  --namespace ${NAMESPACE} \
+  -o jsonpath='{.data.token}')
+
+TOKEN=$(echo ${TOKEN_DATA} | base64 -d)
+
+# Create dedicated kubeconfig
+# Create a full copy
+kubectl config view --raw > ${KUBECONFIG_FILE}.full.tmp
+
+# Switch working context to correct context
+kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp config use-context ${CONTEXT}
+
+# Minify
+kubectl --kubeconfig ${KUBECONFIG_FILE}.full.tmp \
+  config view --flatten --minify > ${KUBECONFIG_FILE}.tmp
+
+# Rename context
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  rename-context ${CONTEXT} ${NEW_CONTEXT}
+
+# Create token user
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-credentials ${CONTEXT}-${NAMESPACE}-token-user \
+  --token ${TOKEN}
+
+# Set context to use token user
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-context ${NEW_CONTEXT} --user ${CONTEXT}-${NAMESPACE}-token-user
+
+# Set context to correct namespace
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  set-context ${NEW_CONTEXT} --namespace ${NAMESPACE}
+
+# Flatten/minify kubeconfig
+kubectl config --kubeconfig ${KUBECONFIG_FILE}.tmp \
+  view --flatten --minify > ${KUBECONFIG_FILE}
+
+# Remove tmp
+rm ${KUBECONFIG_FILE}.full.tmp
+rm ${KUBECONFIG_FILE}.tmp
+----
+.. コマンドをソースにし、 Kubernetes クラスタに適用します。
++
+[source, console]
+----
+source create-kubeconfig.sh
+----
+
+
+. （オプション）クラスタにわかりやすい名前にコバーベキューの名前を変更します。クラスタのクレデンシャルを保護します。
++
+[listing]
+----
+chmod 700 create-kubeconfig.sh
+mv kubeconfig-sa.txt YOUR_CLUSTER_NAME_kubeconfig
+----
+
+
+====
 .手順
 . ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
 +
 プロンプトに従ってクラスタを追加します。
 
-. * プロバイダ * ：クラウドプロバイダを選択し、必要なクレデンシャルを入力します。
+. *プロバイダ*：クラウドプロバイダを選択し、新しいクラウドインスタンスを作成するために必要なクレデンシャルを入力するか、使用する既存のクラウドインスタンスを選択します。
 
 
 ifdef::aws[]
@@ -123,28 +374,31 @@ Astra Control Service は、サービスアカウントを使用して、 Google
 
 endif::gcp[]
 
-. * クラスタ * ：追加するクラスタを選択します。
+. *その他*：をアップロードして、自己管理クラスタに関する詳細を指定します `kubeconfig.yaml` ファイルまたはの内容を貼り付けます `kubeconfig.yaml` クリップボードからファイル。
 +
-[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+
+NOTE: 自分で作成する場合は `kubeconfig` ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes のドキュメント"^] を参照してください `kubeconfig` ファイル。
 
 +
-Cloud Volumes Service for Google Cloud用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
-
+.. *クラウド名*（プロバイダ管理クラスタの場合）：このクラスタを追加するときに作成する新しいクラウドインスタンスの名前を指定します。の詳細を確認してください link:../use/manage-cloud-instances.html["クラウドインスタンス"]。
 +
-[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
-+
-Amazon Web Services用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
+NOTE: クラスタのリストから選択するときは、「Eligible」タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
-+
-[Eligible] タブに注意してください。警告が表示された場合は、警告にカーソルを合わせて、クラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
 
-+
-Azure NetApp Files 用に設定されていないクラスタを選択した場合は、警告が表示されます。このクラスタには NetApp Trident がインストールおよび設定されていません。別のストレージサービスを使用する場合は、クラスタの追加に進んでください。
 
-+
-「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、  a private cluster,以下の手順に従ってください をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
 
+
+ifdef::azure[]
+
+[+]
+
+
+NOTE: 「プライベート」アイコンが付いているクラスタを選択する場合は、プライベート IP アドレスが使用され、 Astra Control でクラスタを管理するために Astra コネクタが必要です。Astra Connector のインストールが必要であることを示すメッセージが表示された場合は、 link:manage-private-cluster.html["これらの手順を参照してください"] をクリックして Astra コネクタをインストールし、クラスタの管理を有効にします。Astra コネクタをインストールしたら、クラスタが対応している必要があります。クラスタの追加に進みます。
+
+endif::azure[]
+
+. *クレデンシャル名*（自己管理クラスタの場合）：Astra Controlにアップロードする自己管理クラスタクレデンシャルの名前を指定します。デフォルトでは、クレデンシャル名がクラスタの名前として自動的に入力されます。
 . * ストレージ * ：このクラスタに Kubernetes アプリケーションを導入してデフォルトで使用するストレージクラスを選択します。
 +
 [NOTE]
@@ -210,7 +464,7 @@ endif::aws[]
 . * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
 
 
-Astra Control Service を使用すると、対象となるクラスタにアプリケーションバックアップ用のオブジェクトストアを作成し、クラスタに管理者アカウントを作成して、指定したデフォルトのストレージクラスを設定できます。この処理には最大 5 分かかることがあります。
+*プロバイダ管理クラスタの場合*：このクラウドプロバイダ用に最初に追加したクラスタの場合、Astra Control Serviceは、クラウドプロバイダ用のオブジェクトストアを作成して、対象となるクラスタ上のアプリケーションバックアップを実行します。（このクラウドプロバイダに対して後続のクラスタを追加した場合、オブジェクトストアは作成されません）。また、指定したデフォルトのストレージクラスがAstra Control Serviceによって設定されます。Amazon Web ServicesまたはGoogle Cloud Platformで管理されるクラスタの場合、Astra Control Serviceはクラスタにも管理者アカウントを作成します。この処理には数分かかることがあります。
 
 ifdef::aws[]
 
@@ -230,6 +484,12 @@ endif::aws[]
 
 クラスタのデフォルトのストレージクラスは変更できます。
 
+
+
+=== Astra Controlを使用してデフォルトのストレージクラスを変更する
+
+クラスタのデフォルトのストレージクラスは、Astra Control内から変更できます。以前にインストールしたストレージバックエンドサービスをクラスタで使用している場合は、このメソッドを使用してデフォルトのストレージクラスを変更できない可能性があります（*デフォルトに設定*アクションは選択できません）。この場合は、を実行できます  the default storage class using the command line。
+
 .手順
 . Astra Control Service UI で、 [* Clusters] を選択します。
 . [* Clusters]ページで、変更するクラスタを選択します。
@@ -237,6 +497,40 @@ endif::aws[]
 . 「*ストレージクラス*」カテゴリを選択します。
 . デフォルトとして設定するストレージクラスの* Actions *メニューを選択します。
 . 「*デフォルトに設定*」を選択します。
+
+
+
+
+=== コマンドラインを使用してデフォルトのストレージクラスを変更します
+
+Kubernetesコマンドを使用してクラスタのデフォルトのストレージクラスを変更することができます。この方法は、クラスタの構成に関係なく機能します。
+
+.手順
+. Kubernetesクラスタにログインします。
+. クラスタ内のストレージクラスを表示します。
++
+[source, console]
+----
+kubectl get storageclass
+----
+. デフォルトのストレージクラスからデフォルトの指定を削除する。<SC_NAME> をストレージクラスの名前に置き換えます。
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. 別のストレージクラスをデフォルトとしてマークします。<SC_NAME> をストレージクラスの名前に置き換えます。
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. 新しいデフォルトストレージクラスを確認します。
++
+[source, console]
+----
+kubectl get storageclass
+----
 
 
 ifdef::azure[]

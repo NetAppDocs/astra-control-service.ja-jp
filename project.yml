@@ -28,10 +28,10 @@ sidebar:
     url: "/index.html"
   - section: release-notes
   - section: get-started
+  - section: learn
   - section: use
   - title: Astra Control REST API で自動化
     url: "/automation.html"
-  - section: learn
   - section: support
   - title: 法的通知
     url: "/legal-notices.html"

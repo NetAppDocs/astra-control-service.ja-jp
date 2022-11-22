@@ -11,6 +11,7 @@ summary: Astra Control は、 Kubernetes アプリケーションデータライ
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control は、 Kubernetes アプリケーションデータライフサイクル管理解決策で、ステートフルアプリケーションの運用を簡易化します。Kubernetes ワークロードの保護、バックアップ、移行を簡易化し、作業用アプリケーションのクローンを瞬時に作成できます。
 
 
@@ -74,18 +75,6 @@ Astra Control には、次の 2 つの導入モデルがあります。
 |===
 
 
-== サポートされているアプリケーション
-
-ネットアップでは、 Snapshot とバックアップの安全性と一貫性を確保するために、いくつかのアプリケーションの検証を行っています。
-
-* https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html["Astra Control Service の検証済みアプリケーションと標準アプリケーションの違いをご確認ください"^]。
-* https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html["Astra Control Center の検証済みアプリケーションと標準アプリケーションの違いをご確認ください"^]。
-
-
-Astra Control で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすことを確認してください。
-
-
-
 == Astra Control Service の仕組み
 
 Astra Control Service は、常時稼働し、最新の機能で更新される、ネットアップが管理するクラウドサービスです。複数のコンポーネントを利用して、アプリケーションデータのライフサイクル管理を実現します。
@@ -139,7 +128,7 @@ Astra Control Service は、状態の変化を常に監視しているので、�
 
 
 
-Astra Control の無料プランを使用すると、最大 10 個のアプリをアカウントで管理できます。10 以上のアプリを管理する場合は、無料プランからプレミアムプランにアップグレードして請求を設定する必要があります。
+Astra Controlの無料プランを使用すると、最大10個のネームスペースをアカウントで管理できます。10を超える名前空間を管理する場合は、無料プランからプレミアムプランにアップグレードして請求を設定する必要があります。
 
 
 
@@ -147,17 +136,13 @@ Astra Control の無料プランを使用すると、最大 10 個のアプリ�
 
 Astra Control Center は、お客様のプライベートクラウドでローカルに実行されます。
 
-Astra Control Center は、 OpenShift Kubernetes クラスタを次の機能でサポートします。
-
-* Trident ストレージバックエンドは ONTAP 9.5 以降で構成されています
-* Astra データストアストレージバックエンド
-
+Astra Control Centerは、Tridentベースのストレージクラスを使用し、ONTAP 9.5以上のストレージバックエンドでKubernetesクラスタをサポートします。
 
 クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、 Astra Control Center では、限定的な（ 7 日間の指標）監視と計測データを使用できます。また、オープン指標エンドポイントを介して Kubernetes の標準の監視ツール（ Prometheus や Grafana など）にエクスポートすることもできます。
 
 Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップサポートにトラブルシューティングと使用に関する情報を提供します。
 
-Astra Control Center を試用するには、 90 日間の評価版ライセンスを使用します。評価版は、 E メールとコミュニティ（ Slack チャンネル）のオプションでサポートされています。また、製品内サポートダッシュボードから技術情報アーティクルやドキュメントにアクセスすることもできます。
+Astra Control Center を試用するには、 90 日間の評価版ライセンスを使用します。評価版は、Eメールとコミュニティオプションでサポートされています。また、製品内サポートダッシュボードから技術情報アーティクルやドキュメントにアクセスすることもできます。
 
 Astra Control Center をインストールして使用するには、一定の要件を満たす必要があります https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["要件"]。
 
@@ -176,14 +161,7 @@ Astra Control Center の概要は次のように機能します。
 
 方法の詳細については、こちらをご覧ください https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Astra Control Center をセットアップします"]。
 
-Astra Control Center は、次のことを行います。
-
-* 管理対象の Kubernetes クラスタに関する詳細を検出します。
-* では、管理対象として選択したクラスタに Astra Trident または Astra データストア構成が検出され、ストレージバックエンドを監視できます。
-* それらのクラスタ上のアプリケーションを検出し、アプリケーションを管理および保護できます。
-
-
-クラスタにアプリケーションを追加できます。また、管理対象のクラスタにすでにアプリケーションがある場合は、 Astra Control Center を使用して検出と管理を行うことができます。次に、 Astra Control Center を使用して、スナップショット、バックアップ、クローンを作成します。
+クラスタにアプリケーションを追加できます。また、管理対象のクラスタにすでにアプリケーションがある場合は、Astra Control Centerを使用してそれらを管理できます。次に、Astra Control Centerを使用して、スナップショット、バックアップ、クローン、およびレプリケーション関係を作成します。
 
 
 

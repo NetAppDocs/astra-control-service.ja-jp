@@ -11,7 +11,52 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 ネットアップは Astra Control Service を定期的に更新して、新機能、拡張機能、およびバグ修正を提供します。
+
+
+
+== 2022年11月22日
+
+.新機能とサポート
+* 複数のネームスペースにまたがるアプリケーションのサポート。
++
+link:../use/manage-apps.html["アプリケーションを定義します"]
+
+* アプリケーション定義にクラスタリソースを含めることができます。
++
+link:../use/manage-apps.html["アプリケーションを定義します"]
+
+* バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました。
++
+link:../use/monitor-running-tasks.html["実行中のタスクを監視します"]
+
+* 互換性のあるバージョンのAstra Tridentがインストール済みのクラスタの管理をサポート
++
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+
+* 単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます。
++
+link:../use/manage-cloud-instances.html["クラウドインスタンスを管理します"]
+
+* Astra Control Serviceへの自己管理型Kubernetesクラスタの追加をサポート
++
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+
+* Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました。
++
+link:../use/set-up-billing.html["請求を設定します"]
+
+* AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート。
++
+link:../use/set-up-billing.html["請求を設定します"]
+
+
+
+.既知の問題および制限事項
+* link:../release-notes/known-issues.html["このリリースの既知の問題"]
+* link:../release-notes/known-limitations.html["このリリースの既知の制限事項は以下のとおりです"]
+
 
 
 
@@ -27,7 +72,7 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 * アプリケーション管理ワークフローの改善アプリケーション管理ワークフローの改善により、Astra Controlで管理するアプリケーションを定義する際の柔軟性が向上しました。
 +
-link:../use/manage-apps.html#manage-apps["アプリの管理"]
+link:../use/manage-apps.html#define-apps["アプリの管理"]
 
 
 

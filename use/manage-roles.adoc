@@ -11,6 +11,7 @@ summary: ロールに制約を追加してユーザロールを管理する方�
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 ロールを管理するには、ネームスペースの制約を追加し、ユーザロールをその制約に制限します。これにより、組織内のリソースへのアクセスを制御できます。Astra Control UI またはを使用できます https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] をクリックしてください。
 
 

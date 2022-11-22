@@ -29,6 +29,8 @@ entries:
     url: "/use/view-apps.html"
 - title: バケットを管理する
   url: "/use/manage-buckets.html"
+- title: 実行中のタスクを監視します
+  url: "/use/monitor-running-tasks.html"
 - title: アカウントを管理します
   entries:
   - title: 請求を設定します
@@ -45,5 +47,7 @@ entries:
     url: "/use/manage-notifications.html"
   - title: アカウントを閉じます
     url: "/use/close-account.html"
+- title: クラウドインスタンスを管理します
+  url: "/use/manage-cloud-instances.html"
 - title: アプリケーションとクラスタの管理を解除します
   url: "/use/unmanage.html"

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/manage-apps.html 
-keywords: manage app, discover app, ignore app 
-summary: 'Kubernetes クラスタを Astra Control に追加したら、そのクラスタ（ Astra Control の外部）にアプリをインストールし、 Astra Control の [ アプリ ] ページに移動してアプリの管理を開始できます。' 
+keywords: manage app, discover app, how to manage kubernetes apps, astra control, astra 
+summary: KubernetesクラスタをAstra Controlに追加したら、そのクラスタ（Astra Controlの外部）にアプリケーションをインストールし、Astra ControlのApplicationsページにアクセスしてアプリケーションの管理を開始できます。 
 ---
 = アプリの管理を開始します
 :hardbreaks:
@@ -11,7 +11,8 @@ summary: 'Kubernetes クラスタを Astra Control に追加したら、その�
 :imagesdir: ../media/use/
 
 
-お先にどうぞ link:../get-started/add-first-cluster.html["Kubernetes クラスタを Astra Control に追加"]では、クラスターにアプリケーションをインストールし（ Astra Control の外部）、 Astra Control の [ アプリ ] ページに移動して、アプリの管理を開始できます。
+[role="lead"]
+お先にどうぞ link:../get-started/add-first-cluster.html["Kubernetes クラスタを Astra Control に追加"]をクリックして、クラスターにアプリケーションをインストールし（Astra Controlの外部）、Astra Controlの[アプリケーション]ページに移動してアプリケーションを定義します。
 
 
 
@@ -19,12 +20,11 @@ summary: 'Kubernetes クラスタを Astra Control に追加したら、その�
 
 Astra Control には、次のアプリケーション管理要件があります。
 
-* * ライセンス * ： Astra Control Center を使用してアプリケーションを管理するには、 Astra Control Center ライセンスが必要です。
-* * 名前空間 * ： Astra Control では、アプリケーションが複数の名前空間にまたがることはありませんが、名前空間には複数のアプリケーションを含めることができます。
+* *ライセンス*：10を超えるネームスペースを管理するには、Astra Control Centerサブスクリプションが必要です。
+* *名前空間*：アプリケーションは、Astra Controlを使用して、単一クラスタ上の1つ以上の指定された名前空間内で定義できます。アプリケーションには、同じクラスタ内の複数のネームスペースにまたがるリソースを含めることができます。Astra Controlでは、複数のクラスタ間でアプリケーションを定義する機能はサポートされていません。
 * * StorageClass* ： StorageClass が明示的に設定されたアプリケーションをインストールし、そのアプリケーションをクローニングする必要がある場合、クローン処理のターゲットクラスタに最初に指定された StorageClass が必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。
 * * Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。
-
-
++
 [cols="1,1,1"]
 |===
 
@@ -32,19 +32,19 @@ Astra Control には、次のアプリケーション管理要件があります
 | クラスタロール | ClusterRoleBinding | ConfigMap 
 
 
-| CustomResourceDefinition の場合 | CustomResource の場合 | cronjob 
+| cronjob | CustomResourceDefinition の場合 | CustomResource の場合 
 
 
-| デモンセット（ DemonSet ） | HorizontalPodAutoscaler のように表示されます | 入力 
+| デモンセット（ DemonSet ） | DeploymentConfig | HorizontalPodAutoscaler のように表示されます 
 
 
-| DeploymentConfig | MutingWebhook | PersistentVolumeClaim のように表示され 
+| 入力 | MutingWebhook | ネットワークポリシー 
 
 
-| ポッド | PodDisruptionBudget （予算の廃止） | PodTemplate 
+| PersistentVolumeClaim のように表示され | ポッド | PodDisruptionBudget （予算の廃止） 
 
 
-| ネットワークポリシー | ReplicaSet | ロール 
+| PodTemplate | ReplicaSet | ロール 
 
 
 | RoleBinding です | ルート | 秘密 
@@ -57,13 +57,15 @@ Astra Control には、次のアプリケーション管理要件があります
 |===
 
 
-=== サポートされているアプリインストール方法
 
-次の方法を使用して、 Astra Control で管理するアプリケーションをインストールできます。
+
+== サポートされているアプリインストール方法
+
+Astra Control は、次のアプリケーションインストール方法をサポートしています。
 
 * * マニフェストファイル * ： Astra Control は、 kubectl を使用してマニフェストファイルからインストールされたアプリケーションをサポートします。例：
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f myapp.yaml
 ----
@@ -82,17 +84,18 @@ NOTE: K8ssandra では、 In Place リストア処理がサポートされます
 ** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB クラスタ"^]
 
 
-
-
++
 Astra Controlでは、「パスバイリファレンス」アーキテクチャ（CockroachDBオペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。
+
+
 
 
 
 == クラスタにアプリをインストールします
 
-お先にどうぞ link:../get-started/add-first-cluster.html["クラスタが追加されました"] Astra Controlを使用すると、アプリケーションをインストールしたり、クラスタ上の既存のアプリケーションを管理したりできます。1つのネームスペースに限定されるアプリケーションはすべて管理できます。
+お先にどうぞ link:../get-started/add-first-cluster.html["クラスタが追加されました"] Astra Controlを使用すると、アプリケーションをインストールしたり、クラスタ上の既存のアプリケーションを管理したりできます。1つ以上の名前空間にスコープされているすべてのアプリケーションを管理できます。
 
-Astra Control は、 Astra Control によってインストールされたストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。
+Astra Controlは、Astra Controlでサポートされているストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。Astra Control Serviceは、Astra Tridentまたは汎用CSIドライバでサポートされているすべてのストレージクラスをサポートします。
 
 ifdef::gcp[]
 
@@ -117,11 +120,11 @@ endif::aws[]
 
 
 
-== アプリの管理
+== アプリケーションを定義します
 
-Astra Controlがクラスタ上のネームスペースを検出したら、管理するアプリケーションを定義できます。を選択できます link:../learn/app-management.html["ネームスペース全体を単一のアプリケーションとして管理することも、ネームスペース内の1つ以上のアプリケーションを個別に管理することもできます"]。データ保護処理に必要な精度のレベルが重要になります。
+Astra Controlがクラスタ上のネームスペースを検出したら、管理するアプリケーションを定義できます。を選択できます  resources to manage as an app,1つ以上のネームスペースにまたがるアプリケーションを管理します または  a namespace to manage as an app,ネームスペース全体を単一のアプリケーションとして管理。データ保護処理に必要な精度のレベルが重要になります。
 
-Astra Controlを使用すると、階層の両方のレベル（ネームスペースとそのネームスペース内のアプリケーション）を別々に管理できますが、いずれか一方を選択することを推奨します。Astra Control で実行したアクションは、ネームスペースレベルとアプリケーションレベルの両方で同時に実行される場合、失敗する可能性があります。
+Astra Controlを使用すると、階層の両方のレベル（ネームスペースとそのネームスペースまたはスパニングネームスペース内のアプリケーション）を別 々 に管理できますが、いずれか一方を選択することを推奨します。Astra Control で実行したアクションは、ネームスペースレベルとアプリケーションレベルの両方で同時に実行される場合、失敗する可能性があります。
 
 
 TIP: たとえば、「Maria」に対して、毎週同じ頻度でバックアップを作成するように設定することもできますが、同じネームスペースにある「MariaDB」をバックアップする頻度を高く設定する必要があるとします。これらのニーズに基づいて、アプリケーションを個別に管理する必要があります。また、シングルネームスペースアプリケーションとして管理する必要はありません。
@@ -130,15 +133,19 @@ TIP: たとえば、「Maria」に対して、毎週同じ頻度でバックア�
 * KubernetesクラスタをAstra Controlに追加。
 * クラスタにインストールされているアプリケーションが1つ以上あります。  app installation methods,サポートされているアプリケーションのインストール方法については、こちらをご覧ください。
 * アクティブなポッドが1つ以上あります。
-* Astra Controlに追加したKubernetesクラスタで指定された名前空間。
-* （オプション）すべてのにKubernetesラベル link:../use/manage-apps.html#app-management-requirements["サポートされるKubernetesリソース"]。
+* Astra Controlに追加したKubernetesクラスタ上の既存のネームスペース。
+* （オプション）すべてのにKubernetesラベルを付けます link:../use/manage-apps.html#app-management-requirements["サポートされるKubernetesリソース"]。
 +
 
 TIP: ラベルは、 Kubernetes オブジェクトに割り当てて識別できるキーと値のペアです。ラベルを使用すると、 Kubernetes オブジェクトのソート、整理、検索が簡単になります。Kubernetes のラベルの詳細については、 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["Kubernetes の公式ドキュメントを参照してください"^]。
 
 
 
-開始する前に、を理解しておく必要があります link:../use/manage-apps.html#what-about-system-namespaces["標準ネームスペースとシステムネームスペースの管理"]。Astra Control API を使用してアプリケーションを管理する方法については、を参照してください link:https://docs.netapp.com/us-en/astra-automation/["Astra の自動化と API に関する情報"^]。
+.このタスクについて
+* 開始する前に、を理解しておく必要があります link:../use/manage-apps.html#what-about-system-namespaces["標準ネームスペースとシステムネームスペースの管理"]。
+* Astra Controlのアプリケーションで複数の名前空間を使用する場合は、を検討してください link:../use/manage-roles.html["ネームスペースの制約を持つユーザロールの変更"] アプリケーションを定義する前に。
+* Astra Control API を使用してアプリケーションを管理する方法については、を参照してください link:https://docs.netapp.com/us-en/astra-automation/["Astra の自動化と API に関する情報"^]。
+
 
 .アプリケーション管理オプション
 *  resources to manage as an app
@@ -156,6 +163,40 @@ TIP: ラベルは、 Kubernetes オブジェクトに割り当てて識別でき
 
 WARNING: アプリケーションを定義するときは、保護ポリシーを使用して複数のアプリケーションにKubernetesリソースを含めないようにしてください。Kubernetesリソース上の保護ポリシーが重複していると、原因 のデータが競合する可能性があります。
 
+
+CAUTION: リソースを共有するアプリケーションでIn Placeリストア処理を実行すると、予期しない結果が生じる可能性があります。
+
+.<strong> アプリケーションネームスペースにクラスタ対象リソースを追加する方法については、</strong> を参照してください。
+====
+名前空間リソースに関連付けられているクラスタリソースを、自動的に含まれているアストラコントロールに加えてインポートできます。特定のグループ、種類、バージョンのリソースを含むルールを追加し、必要に応じてラベルを付けることができます。この処理は、Astra Controlに自動的に含まれないリソースがある場合などに実行します。
+
+Astra Controlに自動的に含まれる、クラスタを対象としたリソースを除外することはできません。
+
+以下を追加できます `apiVersions` （APIバージョンと組み合わせたグループ）。
+
+[cols="1h,2d"]
+|===
+| リソースの種類 | 1回あたりのバージョン（グループ+バージョン） 
+
+
+| `ClusterRole` | rbac.authorization.k8s.io/v1 
+
+
+| `ClusterRoleBinding` | rbac.authorization.k8s.io/v1 
+
+
+| `CustomResource` | apiextensions.k8s.io/v1、apiextensions.k8s.io/v1beta1 
+
+
+| `CustomResourceDefinition` | apiextensions.k8s.io/v1、apiextensions.k8s.io/v1beta1 
+
+
+| `MutatingWebhookConfiguration` | admissionregistration.k8s.io/v1 
+
+
+| `ValidatingWebhookConfiguration` | admissionregistration.k8s.io/v1 
+|===
+====
 .手順
 . [アプリケーション（Applications）]ページで、[*定義（* Define）]を選択します
 . [アプリケーションの定義（* Define application）]ウィンドウで、アプリケーション名を入力します。
@@ -163,17 +204,35 @@ WARNING: アプリケーションを定義するときは、保護ポリシー�
 . 「*名前空間*」ドロップダウンリストからアプリケーションの名前空間を選択します。
 +
 
-NOTE: アプリケーションは、単一クラスタ上の指定されたネームスペース内でのみ定義できます。Astra Controlでは、複数のネームスペースまたはクラスタにまたがるアプリケーションの機能はサポートされていません。
+NOTE: アプリケーションは、Astra Controlを使用して、単一クラスタ上の1つ以上の指定された名前空間内で定義できます。アプリケーションには、同じクラスタ内の複数のネームスペースにまたがるリソースを含めることができます。Astra Controlでは、複数のクラスタ間でアプリケーションを定義する機能はサポートされていません。
 
-. アプリケーションと名前空間のラベルを入力します。ラベルまたはラベルの選択基準（クエリー）を1つ指定できます。
+. （オプション）各ネームスペースにKubernetesリソースのラベルを入力します。ラベルまたはラベルの選択基準（クエリー）を1つ指定できます。
 +
 
 TIP: Kubernetes のラベルの詳細については、 https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["Kubernetes の公式ドキュメントを参照してください"^]。
 
+. （オプション）「*名前空間の追加*」を選択し、ドロップダウンリストから名前空間を選択して、アプリケーションの名前空間を追加します。
+. （オプション）追加するネームスペースのラベルまたはラベルの選択基準を1つ入力します。
+. （オプション）Astra Controlに自動的に含まれるリソースに加えて、クラスタを対象としたリソースを含めるには、*クラスタを対象とした追加のリソースを含める*をチェックし、次の手順を実行します。
++
+.. 「*含めるルールを追加*」を選択します。
+.. *グループ*：ドロップダウンリストから、リソースのAPIグループを選択します。
+.. *kind *:ドロップダウンリストから'オブジェクトスキーマの名前を選択します
+.. *バージョン*：APIのバージョンを入力します。
+.. *ラベルセレクタ*：必要に応じて、ルールに追加するラベルを指定します。このラベルは、このラベルに一致するリソースのみを取得するために使用します。ラベルを指定しないと、Astra Controlは、そのクラスタに指定されている種類のリソースのすべてのインスタンスを収集します。
+.. エントリに基づいて作成されたルールを確認します。
+.. 「 * 追加」を選択します。
++
+
+TIP: クラスタを対象としたリソースルールは必要な数だけ作成できます。[アプリケーションの定義の概要]にルールが表示されます。
+
+
+
+. [ * 定義（ Define ） ] を選択します
 . [*定義*（Define *）]を選択した後、必要に応じて他のアプリケーションについても同じ手順を繰り返します。
 
 
-アプリケーションの定義が完了すると、アプリケーション（Applications）ページのアプリケーションのリストにアプリケーションが表示されます。クローンを作成し、バックアップとスナップショットを作成できるようになりました。
+アプリケーションの定義が完了すると、アプリケーションがに表示されます `Healthy` 「アプリケーション」ページのアプリケーションのリストに表示されます。クローンを作成し、バックアップとスナップショットを作成できるようになりました。
 
 
 NOTE: 追加したアプリケーションの保護列に警告アイコンが表示されている場合は、バックアップされておらず、まだバックアップのスケジュールが設定されていないことを示しています。
@@ -181,11 +240,13 @@ NOTE: 追加したアプリケーションの保護列に警告アイコンが�
 
 TIP: 特定のアプリケーションの詳細を表示するには、アプリケーション名を選択します。
 
+このアプリに追加されたリソースを表示するには、*リソース*タブを選択します。Resource列でリソース名のあとの番号を選択するか、Searchでリソース名を入力して、追加のクラスタを対象としたリソースを確認します。
+
 
 
 === アプリケーションとして管理するネームスペースを定義します
 
-ネームスペースのリソースをアプリケーションとして定義することで、ネームスペース内のすべてのKubernetesリソースをAstra Control管理に追加できます。特定の名前空間内のすべてのリソースを同じような方法で、共通の間隔で管理および保護する場合は、アプリケーションを個別に定義することをお勧めします。
+ネームスペースのリソースをアプリケーションとして定義することで、ネームスペース内のすべてのKubernetesリソースをAstra Control管理に追加できます。この方法は、アプリケーションを個別に定義するよりも望ましい方法です link:../learn/app-management.html["特定のネームスペース内のすべてのリソースを管理および保護することを意図しています"] 同様の方法で、共通の間隔で実行します。
 
 .手順
 . クラスタページで、クラスタを選択します。
@@ -193,7 +254,7 @@ TIP: 特定のアプリケーションの詳細を表示するには、アプリ
 . 管理するアプリケーションリソースを含む名前空間のアクションメニューを選択し、*アプリケーションとして定義*を選択します。
 +
 
-TIP: 複数のネームスペースを管理する場合は、ネームスペースを選択し、左上隅の*アクション*ボタンを選択して*管理*を選択します。
+TIP: 複数のアプリケーションを定義する場合は、名前空間リストから選択し、左上隅の*アクション*ボタンを選択して、*アプリケーションとして定義*を選択します。これにより、個 々 のネームスペースに複数のアプリケーションが定義されます。マルチネームスペースアプリケーションについては、を参照してください  resources to manage as an app。
 
 +
 

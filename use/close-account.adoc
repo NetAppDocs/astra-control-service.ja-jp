@@ -11,6 +11,7 @@ summary: Astra Control アカウントが不要になった場合は、いつで
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 Astra Control アカウントが不要になった場合は、いつでもアカウントを閉じることができます。
 
 

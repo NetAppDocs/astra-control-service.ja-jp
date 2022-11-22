@@ -11,6 +11,7 @@ summary: Astra Control Center で使用可能なデータ保護の種類と、�
 :imagesdir: ../media/learn/
 
 
+[role="lead"]
 Astra Control のユーザロールとネームスペースについて説明し、それらを使用して組織内のリソースへのアクセスを制御する方法を説明します。
 
 
@@ -37,4 +38,5 @@ Astra Control のユーザロールとネームスペースについて説明し
 
 == 詳細については、こちらをご覧ください
 
-link:../use/manage-roles.html["ロールの管理"]
+* link:../use/manage-roles.html["ロールの管理"]
+

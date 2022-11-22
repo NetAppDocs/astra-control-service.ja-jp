@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/set-up-google-cloud.html 
-keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, ubuntu, image type, networking, container os 
+keywords: google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, image type, networking, container os 
 summary: Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。 
 ---
 = Google Cloud をセットアップします
@@ -11,6 +11,7 @@ summary: Astra Control Service を使用して Google Kubernetes Engine クラ�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。
 
 
@@ -27,7 +28,7 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 === Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に動作しており、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでコンテナ向けに最適化されたOSやUbuntuなどを実行していることを確認します。  cluster requirements,このステップの詳細をご覧ください。
+クラスタが正常で、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでサポートされているイメージタイプが実行されていることなどを確認します。  cluster requirements,このステップの詳細をご覧ください。
 
 
 
@@ -104,16 +105,8 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドと�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。
 
-Kubernetes のバージョン:: 1.20 ~ 1.23のKubernetesバージョンがクラスタで実行されている必要があります。
-イメージタイプ:: 各ワーカーノードのイメージタイプは、次のいずれかにする必要があります。
-+
---
-* Containerd を使用したコンテナ最適化 OS です
-* Docker を使用したコンテナ最適化 OS
-* Ubuntu と Docker の併用
-
-
---
+Kubernetes のバージョン:: クラスタで1.22 ~ 1.24のKubernetesバージョンが実行されている必要があります。
+イメージタイプ:: 各ワーカーノードのイメージタイプはである必要があります `COS_CONTAINERD`。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
 ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。  Set up network peering for your VPC,この手順については、以下で説明します。

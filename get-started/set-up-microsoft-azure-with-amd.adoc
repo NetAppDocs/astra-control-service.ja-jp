@@ -11,6 +11,7 @@ summary: Microsoft Azure サブスクリプションを準備してから、 Ast
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Microsoft Azure サブスクリプションを準備してから、 Astra Control Service で Azure Kubernetes Service クラスタを管理するには、いくつかの手順を実行する必要があります。Azure で管理されているディスクをストレージバックエンドとして使用する場合は、次の手順に従います。
 
 
@@ -60,13 +61,12 @@ CSI ドライバと連携するように Azure サブスクリプションとク
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタでKubernetesバージョン1.21～1.24が実行されている必要があります。
+Kubernetes のバージョン:: クラスタでKubernetesバージョン1.23 ~ 1.25が実行されている必要があります。
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: ベストプラクティスとして、 Azure NetApp Files をストレージバックエンドとして使用しない場合でも、そのリージョンを選択することを推奨します。これにより、パフォーマンス要件が変わった場合でも、 Azure NetApp Files をストレージバックエンドとして簡単に使用できるようになります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
 
 
-外部のボリューム Snapshot コントローラ:: クラスタに CSI ボリュームスナップショットコントローラがインストールされている必要があります。このコントローラは、 K8s バージョン 1.21 以降ではデフォルトでインストールされますが、バージョン 1.19 および 1.20 を実行しているクラスタでチェックする必要があります。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["オンデマンドボリューム Snapshot 用の外部 Snapshot コントローラの詳細については、こちらをご覧ください"^]。
 CSI ドライバ:: クラスタには適切な CSI ドライバがインストールされている必要があります。
 
 
@@ -169,61 +169,7 @@ az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
 
 == CSI ドライバの詳細を設定します
 
-Azure で管理されているディスクを Astra Control Service とともに使用するには、まず最初に、 1.21 より前の Kubernetes バージョンの CSI ボリュームスナップショット機能を設定し、必要な CSI ドライバをインストールする必要があります。
-
-
-
-=== Kubernetes 1.19 の CSI ボリュームスナップショットコントローラをインストールします
-
-Kubernetes バージョン 1.19 を使用している場合は、次の手順に従ってボリューム Snapshot コントローラをインストールします。
-
-.手順
-. ボリュームスナップショット SSD をインストールする。
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. スナップショットコントローラを作成します。
-+
-特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
-
-
-
-
-=== Kubernetes 1.20 の CSI ボリュームスナップショットコントローラをインストールします
-
-Kubernetes バージョン 1.20 を使用している場合は、次の手順に従ってボリューム Snapshot コントローラをインストールします。
-
-.手順
-. ボリュームスナップショット SSD をインストールする。
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. スナップショットコントローラを作成します。
-+
-特定のネームスペースに Snapshot コントローラを配置する場合は、以下のファイルをダウンロードして編集してから適用します。
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
-
+Azure管理ディスクをAstra Control Serviceとともに使用するには、必要なCSIドライバをインストールする必要があります。
 
 
 
@@ -235,13 +181,13 @@ CSI ドライバをインストールする前に、 Azure サブスクリプシ
 . Azure コマンドラインインターフェイスを開きます。
 . 次のコマンドを実行してドライバを登録します。
 +
-[source, sh]
+[source, console]
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
 . 次のコマンドを実行して、変更が伝播されることを確認します。
 +
-[source, sh]
+[source, console]
 ----
 az provider register -n Microsoft.ContainerService
 ----

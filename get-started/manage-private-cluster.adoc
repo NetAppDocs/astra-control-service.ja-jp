@@ -28,26 +28,26 @@ AKSのプライベートクラスタにAstraコネクタオペレータをイン
 .手順
 . Astra ConnectorオペレータGitHubリポジトリのクローンを作成します。
 +
-[source, sh]
+[source, console]
 ----
 git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . 展開された演算子パッケージの最上位レベルにディレクトリを変更して'straconnector _operator.yaml'ファイルを'ls'コマンドで表示できるようにします
 . Astra Connector オペレータのネームスペースを作成します。
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector-operator
 ----
 . 「 astraaconnector _operator.yaml 」ファイルを演算子名前空間に適用します。
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 . プライベートクラスタコンポーネントのネームスペースを作成します。
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector
 ----
@@ -55,13 +55,13 @@ kubectl create ns astra-connector
 . 必要に応じて、Astra Connectorオペレータリポジトリのconfig/samplesディレクトリにある設定ファイルを変更します。
 . Astra コネクタのカスタムリソース定義（ CRD ）を適用します。
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 . アストラコネクタのステータスを確認します。
 +
-[source, sh]
+[source, console]
 ----
 kubectl get astraconnector astra-connector -n astra-connector
 ----
@@ -69,7 +69,7 @@ kubectl get astraconnector astra-connector -n astra-connector
 次のような出力が表示されます。
 
 +
-[source, sh]
+[source, console]
 ----
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19

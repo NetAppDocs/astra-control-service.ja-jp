@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: use/manage-cloud-instances.html 
+keywords: cloud, instance, manage, delete, remove, edit 
+summary: 新しいクラスタを追加したときに追加したクラウドインスタンスを管理します。 
+---
+= クラウドインスタンスを管理します
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+クラウドインスタンスは、クラウドプロバイダ内で一意のドメインです。クラウドプロバイダごとに複数のクラウドインスタンスを作成でき、各クラウドインスタンスに独自の名前、クレデンシャル、および関連するクラスタを指定できます。
+
+クラウドインスタンスは、新しいクラスタをAstra Controlに追加するときに作成します。クラウドインスタンスを編集して、Astra Control UIを使用して名前またはデフォルトバケットを変更し、Astra Control APIを使用してクラウドインスタンスでその他の操作を実行できます。
+
+
+
+== クラウドインスタンスを追加します
+
+新しいクラスタをAstra Controlに追加するときに、新しいクラウドインスタンスを追加できます。を参照してください link:../add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"] を参照してください。
+
+
+
+== クラウドインスタンスを編集します
+
+クラウドプロバイダの既存のクラウドインスタンスを変更できます。
+
+.手順
+. 「* Cloud Instances *」に移動します。
+. クラウドインスタンスのリストで、編集するクラウドインスタンスの*アクション*メニューを選択します。
+. 「 * 編集 * 」を選択します。
++
+このページで、クラウドインスタンスの名前とデフォルトのバケットを更新できます。
+
++
+
+NOTE: Astra Controlの各クラウドインスタンスには、一意の名前を付ける必要があります。
+
+
+
+
+
+== クラウドインスタンスのクレデンシャルのローテーションを行います
+
+Astra Control APIを使用して、クラウドインスタンスのクレデンシャルをローテーションすることができます。をクリックしてください。 https://docs.netapp.com/us-en/astra-automation["Astra 自動ドキュメントにアクセスします"^]。
+
+
+
+== クラウドインスタンスを削除します
+
+Astra Control APIを使用して、クラウドプロバイダからクラウドインスタンスを削除できます。をクリックしてください。 https://docs.netapp.com/us-en/astra-automation["Astra 自動ドキュメントにアクセスします"^]。
