@@ -42,12 +42,6 @@ Google Kubernetes Engine （ GKE ）での Kubernetes クラスタの管理に�
 
 
 
-=== 1 つの GCP プロジェクトと 1 つのサービスアカウントがサポートされます
-
-Astra Control Service は、 1 つの Google Cloud Platform プロジェクトと 1 つのサービスアカウントをサポートします。Astra Control Serviceには複数のサービスアカウントを追加しないでください。また、サービスアカウントのクレデンシャルをローテーションすることはできません。
-
-
-
 === Google Marketplace アプリは検証されていません
 
 Google Marketplace から導入されたアプリは、ネットアップでは検証していません。一部のユーザから、 Google Marketplace から導入された Postgres 、 MariaDB 、 MySQL アプリケーションの検出やバックアップで問題が報告されることがあります。

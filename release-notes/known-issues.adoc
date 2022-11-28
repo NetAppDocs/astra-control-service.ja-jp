@@ -28,13 +28,6 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 *  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
 
 
-ifdef::azure[]
-
-*  backup buckets use LRS redundancy by default
-
-
-endif::azure[]
-
 .その他の問題
 *  eventually begin to fail when using external-snapshotter version 4.2.0
 *  data management operations fail with Internal Service Error (500) when Astra Trident is offline
@@ -75,20 +68,6 @@ Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内
 == クラスタの管理後にボリュームnapshotclassを追加すると、アプリケーションのバックアップとSnapshotが失敗します
 
 このシナリオでは、UI 500エラーでバックアップとSnapshotが失敗します。回避策 として、アプリリストを更新します。
-
-ifdef::azure[]
-
-
-
-== Azureバックアップバケットでは、デフォルトでLRS冗長性が使用されます
-
-デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットで永続性を高めた冗長性オプションを使用する場合は、Azureクラウドプロバイダのセットアップ手順のオプションの手順を参照してください。
-
-* link:../get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]
-* link:../get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
-
-
-endif::azure[]
 
 
 
