@@ -4,7 +4,7 @@ permalink: learn/app-management.html
 keywords: custom app, labels, kubernetes labels, kubernetes resources, pods, define custom app 
 summary: Astra Controlのマネージアプリケーションの種類について説明します。 
 ---
-= アプリケーション管理について理解する
+= アプリケーション管理
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

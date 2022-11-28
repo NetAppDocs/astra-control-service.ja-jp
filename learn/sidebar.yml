@@ -13,7 +13,7 @@ entries:
 - title: GKE クラスタ用のストレージ
   flavor: gcp
   url: "/learn/choose-class-and-size.html"
-- title: アプリケーション管理について理解する
+- title: アプリケーション管理
   url: "/learn/app-management.html"
 - title: ユーザロールとネームスペース
   url: "/learn/user-roles-namespaces.html"
