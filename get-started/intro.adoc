@@ -29,7 +29,7 @@ Astra Control は、 Kubernetes アプリケーションデータのライフサ
 * バックアップと移行のワークフローを実装するには、ユーザインターフェイスまたは API を使用してください
 
 
-Astra Control は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。
+Astra Controlは、状態の変化を絶えず監視しているので、新しいアプリケーションを追加することにも注意が必要です。
 
 
 
@@ -66,7 +66,27 @@ Astra Control には、次の 2 つの導入モデルがあります。
 
 
 
-| ストレージバックエンドでサポートされるもの | ネットアップのクラウドサービス  a| 
+| ストレージバックエンドでサポートされるもの  a| 
+* Amazon Web Servicesの特長
++
+** Amazon EBSのことです
+** NetApp ONTAP 対応の Amazon FSX
+
+
+* Google Cloud
++
+** Google Persistent Disk のことです
+** NetApp Cloud Volumes Service の略
+
+
+* Microsoft Azure
++
+** Azure Managed Disksの略
+** Azure NetApp Files の特長
+
+
+
+ a| 
 * NetApp ONTAP AFF および FAS システム
 * Cloud Volumes ONTAP ストレージバックエンド
 
@@ -116,7 +136,7 @@ endif::azure[]
 
 * クラスタに新しい admin ロールと Kubernetes サービスアカウントを作成します。
 * 新しい admin ロールを使用してインストールします https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] をクリックして、 1 つ以上のストレージクラスを作成します。
-* クラウドプロバイダのストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。
+* ネットアップのクラウドサービスストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。Amazon EBSまたはAzureで管理されているディスクをストレージバックエンドとして使用している場合は、プロバイダ固有のCSIドライバをインストールする必要があります。インストール手順については、を参照してください link:set-up-amazon-web-services.html["Amazon Web Servicesをセットアップする"^] および link:set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"^]。
 +
 ** この時点で、アプリケーションをクラスタに追加できます。永続ボリュームは、新しいデフォルトのストレージクラスでプロビジョニングされます。
 ** 次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。
@@ -137,7 +157,7 @@ Astra Control Center は、お客様のプライベートクラウドでロー�
 
 Astra Control Centerは、Tridentベースのストレージクラスを使用し、ONTAP 9.5以上のストレージバックエンドでKubernetesクラスタをサポートします。
 
-クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、 Astra Control Center では、限定的な（ 7 日間の指標）監視と計測データを使用できます。また、オープン指標エンドポイントを介して Kubernetes の標準の監視ツール（ Prometheus や Grafana など）にエクスポートすることもできます。
+クラウド接続環境では、 Cloud Insights を使用して高度なモニタリングとテレメトリを提供します。Cloud Insights 接続がない場合、Astra Control Centerでは、限定的な（7日間の指標）監視と計測機能を利用できます。また、オープン指標エンドポイントを介してKubernetesの標準の監視ツール（PrometheusやGrafanaなど）にエクスポートすることもできます。
 
 Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップサポートにトラブルシューティングと使用に関する情報を提供します。
 
@@ -160,7 +180,7 @@ Astra Control Center の概要は次のように機能します。
 
 方法の詳細については、こちらをご覧ください https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["Astra Control Center をセットアップします"]。
 
-クラスタにアプリケーションを追加できます。また、管理対象のクラスタにすでにアプリケーションがある場合は、Astra Control Centerを使用してそれらを管理できます。次に、Astra Control Centerを使用して、スナップショット、バックアップ、クローン、およびレプリケーション関係を作成します。
+クラスタにアプリケーションを追加できます。また、管理対象のクラスタにすでにアプリケーションがある場合は、Astra Control Centerを使用して管理できます。次に、Astra Control Centerを使用して、スナップショット、バックアップ、クローン、およびレプリケーション関係を作成します。
 
 
 

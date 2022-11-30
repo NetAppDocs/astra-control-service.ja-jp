@@ -88,6 +88,7 @@ Amazon Elastic Block Store（EBS）向けCSIドライバ:: Amazon EBSストレ�
 --
 CSIドライバのインストール手順については、詳細を参照してください。
 
+[%collapsible%open]
 ====
 .外部Snapshotデータをインストールします
 . ボリュームのSnapshot作成

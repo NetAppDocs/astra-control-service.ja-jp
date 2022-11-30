@@ -46,6 +46,7 @@ NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用�
 Astra Control Service にログインしたら、最初にクラスタの管理を開始します。クラウドプロバイダまたは自己管理クラスタによって管理されているクラスタを追加できます。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。
 
 .クラウドプロバイダが管理するクラスタに必要なもの
+[%collapsible]
 ====
 ifdef::aws[]
 
@@ -75,6 +76,7 @@ endif::azure[]
 
 ====
 .自己管理型クラスタに必要なもの
+[%collapsible]
 ====
 クラスタは、次の要件を満たしている必要があります。
 
