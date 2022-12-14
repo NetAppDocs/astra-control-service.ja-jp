@@ -22,54 +22,54 @@ Amazon Elastic Kubernetes Service（EKS）クラスタをAstra Control Service�
 
 
 
-=== Amazon Web ServicesのAstra Control Serviceの要件を確認
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] Amazon Web ServicesのAstra Control Serviceの要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常に機能しており、サポートされているバージョンのKubernetesを実行していること、ワーカーノードがオンラインでLinuxやWindowsなどを実行していることを確認します。  cluster requirements,このステップの詳細をご覧ください。
+クラスタが正常に機能しており、サポートされているバージョンのKubernetesを実行していること、ワーカーノードがオンラインでLinuxやWindowsなどを実行していることを確認します。 <<EKSクラスタ要件,このステップの詳細をご覧ください>>。
 
 
 
-=== Amazonアカウントを作成します
-
-[role="quick-margin-para"]
-Amazonアカウントをまだ作成していない場合は、EKSを使用できるように作成する必要があります。  an Amazon account,このステップの詳細をご覧ください。
-
-
-
-=== Amazon Web Services CLIをインストールします
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] Amazonアカウントを作成します
 
 [role="quick-margin-para"]
-コマンドラインからAWSを管理できるように、AWS CLIをインストールします。  the Amazon Web Services CLI,ステップバイステップの手順に従います。
+Amazonアカウントをまだ作成していない場合は、EKSを使用できるように作成する必要があります。 <<Amazonアカウントを作成します,このステップの詳細をご覧ください>>。
 
 
 
-=== オプション：IAMユーザを作成します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] Amazon Web Services CLIをインストールします
+
+[role="quick-margin-para"]
+コマンドラインからAWSを管理できるように、AWS CLIをインストールします。 <<Amazon Web Services CLIをインストールします,ステップバイステップの手順に従います>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] オプション：IAMユーザを作成します
 
 [role="quick-margin-para"]
 Amazon Identity and Access Management（IAM）ユーザを作成します。また、この手順をスキップし、既存のIAMユーザをAstra Control Serviceで使用することもできます。
 
 [role="quick-margin-para"]
- Create an IAM user,詳細な手順を参照してください。
+<<オプション：IAMユーザを作成します,詳細な手順を参照してください>>。
 
 
 
-=== 権限ポリシーを作成して適用します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] 権限ポリシーを作成して適用します
 
 [role="quick-margin-para"]
 Astra Control ServiceがAWSアカウントとやり取りするために必要な権限を持つポリシーを作成します。
 
 [role="quick-margin-para"]
- and attach a permissions policy,詳細な手順を参照してください。
+<<権限ポリシーを作成して適用します,詳細な手順を参照してください>>。
 
 
 
-=== IAMユーザのクレデンシャルを保存します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] IAMユーザのクレデンシャルを保存します
 
 [role="quick-margin-para"]
 からAstra Control Serviceにクレデンシャルをインポートできるように、IAMユーザのクレデンシャルを保存します。
 
 [role="quick-margin-para"]
- the credentials for the IAM user,詳細な手順を参照してください。
+<<IAMユーザのクレデンシャルを保存します,詳細な手順を参照してください>>。
 
 
 
@@ -86,7 +86,7 @@ Amazon FSX for NetApp ONTAP 対応Astra Trident:: NetApp ONTAP ストレージ�
 Amazon Elastic Block Store（EBS）向けCSIドライバ:: Amazon EBSストレージバックエンドを使用する場合は、EBS用のContainer Storage Interface（CSI）ドライバをインストールする必要があります（自動ではインストールされません）。
 +
 --
-CSIドライバのインストール手順については、詳細を参照してください。
+CSIドライバのインストール手順については、を参照してください。
 
 [%collapsible%open]
 ====
@@ -279,4 +279,5 @@ aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential
 ----
 
 
+.結果
 「credential.json」ファイルが作成され、Astra Control Serviceにそのクレデンシャルをインポートできます。

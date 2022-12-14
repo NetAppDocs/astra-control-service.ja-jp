@@ -22,59 +22,59 @@ Microsoft Azure サブスクリプションを準備してから、 Astra Contro
 
 
 
-=== Azure Kubernetes Service の Astra Control Service の要件を確認
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] Azure Kubernetes Service の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常で、サポートされているバージョンのKubernetesを実行していること、ノードプールがオンラインでLinuxを実行していることなどを確認します。  Kubernetes Service cluster requirements,このステップの詳細をご覧ください。
+クラスタが正常で、サポートされているバージョンのKubernetesを実行していること、ノードプールがオンラインでLinuxを実行していることなどを確認します。 <<Azure Kubernetes Service クラスタの要件,このステップの詳細をご覧ください>>。
 
 
 
-=== Microsoft Azure に登録
-
-[role="quick-margin-para"]
-Microsoft Azure アカウントを作成します。  up for Microsoft Azure,このステップの詳細をご覧ください。
-
-
-
-=== Azure NetApp Files に登録します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] Microsoft Azure に登録
 
 [role="quick-margin-para"]
-ネットアップリソースプロバイダを登録  for Azure NetApp Files,このステップの詳細をご覧ください。
+Microsoft Azure アカウントを作成します。 <<Microsoft Azure に登録,このステップの詳細をご覧ください>>。
 
 
 
-=== ネットアップアカウントを作成します
-
-[role="quick-margin-para"]
-Azure ポータルで Azure NetApp Files にアクセスし、ネットアップアカウントを作成します。  a NetApp account,このステップの詳細をご覧ください。
-
-
-
-=== 容量プールを設定
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] Azure NetApp Files に登録します
 
 [role="quick-margin-para"]
-永続ボリューム用に 1 つ以上の容量プールを設定します。  up a capacity pool,このステップの詳細をご覧ください。
+ネットアップリソースプロバイダを登録 <<Azure NetApp Files に登録します,このステップの詳細をご覧ください>>。
 
 
 
-=== サブネットを Azure NetApp Files に委譲します
-
-[role="quick-margin-para"]
-サブネットを Azure NetApp Files に委譲し、 Astra Control サービスがそのサブネット内に永続的ボリュームを作成できるようにします。  a subnet to Azure NetApp Files,このステップの詳細をご覧ください。
-
-
-
-=== Azure サービスプリンシパルを作成します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] ネットアップアカウントを作成します
 
 [role="quick-margin-para"]
-Contributor ロールを持つ Azure サービスプリンシパルを作成します。  an Azure service principal,このステップの詳細をご覧ください。
+Azure ポータルで Azure NetApp Files にアクセスし、ネットアップアカウントを作成します。 <<ネットアップアカウントを作成します,このステップの詳細をご覧ください>>。
 
 
 
-=== オプション：Azureバックアップバケットの冗長性を設定する
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] 容量プールを設定
 
 [role="quick-margin-para"]
-デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。  Configure redundancy for Azure backup buckets,このステップの詳細をご覧ください。
+永続ボリューム用に 1 つ以上の容量プールを設定します。 <<容量プールをセットアップする,このステップの詳細をご覧ください>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] サブネットを Azure NetApp Files に委譲します
+
+[role="quick-margin-para"]
+サブネットを Azure NetApp Files に委譲し、 Astra Control サービスがそのサブネット内に永続的ボリュームを作成できるようにします。 <<サブネットを Azure NetApp Files に委譲します,このステップの詳細をご覧ください>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7"] Azure サービスプリンシパルを作成します
+
+[role="quick-margin-para"]
+Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <<Azure サービスプリンシパルを作成します,このステップの詳細をご覧ください>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["8"] オプション：Azureバックアップバケットの冗長性を設定する
+
+[role="quick-margin-para"]
+デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。 <<オプション：Azureバックアップバケットの冗長性を設定する,このステップの詳細をご覧ください>>。
 
 
 
@@ -86,11 +86,11 @@ Kubernetes のバージョン:: クラスタでKubernetesバージョン1.23 ~ 1
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
-サブスクリプション。:: クラスタは、 Azure NetApp Files が有効になっているサブスクリプションに含まれている必要があります。サブスクリプションはいつでも選択できます  for Azure NetApp Files,Azure NetApp Files に登録します。
+サブスクリプション。:: クラスタは、 Azure NetApp Files が有効になっているサブスクリプションに含まれている必要があります。サブスクリプションはいつでも選択できます <<Azure NetApp Files に登録します,Azure NetApp Files に登録します>>。
 VNet:: 以下の VNet の要件を考慮してください。
 +
 --
-* クラスタは、 Azure NetApp Files 委任サブネットに直接アクセスできる VNet 内に存在する必要があります。  a subnet to Azure NetApp Files,委任されたサブネットを設定する方法について説明します。
+* クラスタは、 Azure NetApp Files 委任サブネットに直接アクセスできる VNet 内に存在する必要があります。 <<サブネットを Azure NetApp Files に委譲します,委任されたサブネットを設定する方法について説明します>>。
 * Kubernetes クラスタが別の VNet 内の Azure NetApp Files 委任サブネットにピアリングされている VNet 内にある場合は、ピアリング接続の両側をオンラインにする必要があります。
 * Azure NetApp Files を使用した VNet （すぐにピア関係にある VNet を含む）で使用される IP 数のデフォルトの上限は 1 、 000 です。 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["Azure NetApp Files のリソース制限を確認します"^]。
 +
@@ -177,6 +177,7 @@ link:../learn/azure-storage.html["Azure NetApp Files のサービスレベルの
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Azure NetApp Files のドキュメントに従って、サブネットを Azure NetApp Files に委譲します"^]。
 
 
+.完了したら
 10 分ほど待ってから、委任されたサブネットで実行されているクラスタを検出します。
 
 

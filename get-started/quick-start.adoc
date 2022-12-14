@@ -16,10 +16,11 @@ summary: Astra Control Service の利用を開始するには、いくつかの�
 
 
 
-== クラウドプロバイダをセットアップします
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] クラウドプロバイダをセットアップします
 
 ifdef::gcp[]
 
+[role="quick-margin-list"]
 . Google Cloud
 +
 ** Google Kubernetes Engine クラスタの要件を確認します。
@@ -76,8 +77,9 @@ endif::azure[]
 
 
 
-== Astra Control の登録を完了します
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] Astra Control の登録を完了します
 
+[role="quick-margin-list"]
 . を作成します https://cloud.netapp.com["NetApp Cloud Central"^] アカウント：
 . Astra Control アカウントの作成時に、 NetApp Cloud Central の E メール ID を指定します https://cloud.netapp.com/astra["Astra の製品ページから"^]。
 
@@ -87,7 +89,7 @@ link:register.html["登録プロセスの詳細については、こちらをご
 
 
 
-== Astra Control にクラスタを追加
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] Astra Control にクラスタを追加
 
 [role="quick-margin-para"]
 ログインしたら、「 * クラスタの追加」を選択して、 Astra Control を使用したクラスタの管理を開始します。

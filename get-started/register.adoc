@@ -70,6 +70,7 @@ image:screenshot-cloud-central-signup.gif["Cloud Central の登録ページの�
 . E メールが届いたら、 E メール内のリンクを選択して E メールアドレスを確認します。
 
 
+.結果
 アクティブな Cloud Central ユーザログインが可能になりました。
 
 登録が完了すると、から Cloud Central のクレデンシャルを使用して、 Astra Control Service に直接アクセスできるようになります https://astra.netapp.io[]。

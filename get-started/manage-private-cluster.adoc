@@ -14,9 +14,9 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 [role="lead"]
 Astra Control Service を使用すると、プライベート AKS クラスタを管理できます。以下の手順では、プライベートAKSクラスタをすでに作成し、リモートアクセスするためのセキュアな方法を準備していることを前提としています。プライベートAKSクラスタの作成とアクセスの詳細については、を参照してください https://docs.microsoft.com/azure/aks/private-clusters["Azure に関するドキュメント"^]。
 
-*  the Astra Connector operator
-*  up persistent storage
-*  the private cluster to Astra Control Service
+* <<Astra Connectorオペレータを設置します>>
+* <<永続的ストレージをセットアップする>>
+* <<プライベートクラスタをAstra Control Serviceに追加します>>
 
 
 
@@ -80,7 +80,7 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 == 永続的ストレージをセットアップする
 
-クラスタに永続的ストレージを設定してください。Azure NetApp Files またはAzureで管理されるディスクを使用できます。以下のオプションを使用したAzureの設定の詳細については、「はじめに」のドキュメントを参照してください。
+クラスタに永続的ストレージを設定してください。Azure NetApp Files またはAzureで管理されるディスクを使用できます。Azureで次のオプションを設定する方法の詳細については、「はじめに」のドキュメントを参照してください。
 
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
 * https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]

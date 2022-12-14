@@ -22,7 +22,7 @@ summary: 既知の制限事項は、このリリースの製品でサポート�
 
 
 
-=== Astra Trident はクラスタからアンインストールされません
+=== Astra Tridentはクラスタからアンインストールされません
 
 Astra Control Service からクラスタの管理を解除しても、 Astra Trident はクラスタから自動的にアンインストールされません。Astra Trident をアンインストールするには、が必要です https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のドキュメントで次の手順を実行します"^]。
 
@@ -42,7 +42,7 @@ Google Kubernetes Engine （ GKE ）での Kubernetes クラスタの管理に�
 
 
 
-=== Google Marketplace アプリは検証されていません
+=== Google Marketplaceアプリは検証されていません
 
 Google Marketplace から導入されたアプリは、ネットアップでは検証していません。一部のユーザから、 Google Marketplace から導入された Postgres 、 MariaDB 、 MySQL アプリケーションの検出やバックアップで問題が報告されることがあります。
 

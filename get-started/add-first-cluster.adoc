@@ -14,18 +14,18 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 [role="lead"]
 環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。
 
-*  a Kubernetes cluster
-*  managing Kubernetes clusters
+* <<Kubernetes クラスタを作成>>
+* <<Kubernetes クラスタの管理を開始します>>
 
 
 ifdef::aws[]
 
-*  cluster access to other users
+* <<他のユーザにクラスタへのアクセスを許可する>>
 
 
 endif::aws[]
 
-*  the default storage class
+* <<デフォルトのストレージクラスを変更する>>
 
 
 
@@ -37,7 +37,7 @@ endif::aws[]
 
 NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
 
-また、自社で管理する予定のオンプレミスクラスタやクラウドホストクラスタを作成することもできます。をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます `kubeconfig.yaml` ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります  managing Kubernetes clusters。
+また、自社で管理する予定のオンプレミスクラスタやクラウドホストクラスタを作成することもできます。をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます `kubeconfig.yaml` ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります <<Kubernetes クラスタの管理を開始します>>。
 
 
 
@@ -51,7 +51,7 @@ Astra Control Service にログインしたら、最初にクラスタの管理�
 ifdef::aws[]
 
 * Amazon Web Servicesの場合、クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
-* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Trident情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
+* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Tridentの情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
 
 
 endif::aws[]
@@ -106,6 +106,7 @@ export-policy rule modify -vserver <storage virtual machine name> -policyname <p
 * *rancherのみ*: Rancher環境でアプリケーションクラスタを管理する場合、rancherから提供されたkubeconfigファイルでアプリケーションクラスタのデフォルトコンテキストを変更して、rancher APIサーバコンテキストではなくコントロールプレーンコンテキストを使用します。これにより、 Rancher API サーバの負荷が軽減され、パフォーマンスが向上します。
 
 
+.（オプション）Astra Tridentのバージョンを確認
 クラスタがストレージサービスにAstra Tridentを使用している場合は、インストールされているAstra Tridentのバージョンが最新であることを確認します。
 
 .手順
@@ -159,6 +160,7 @@ ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate 
 ----
 
 
+.admin ロールの kubeconfig を作成します
 手順を実行する前に、マシンに次のものがあることを確認してください。
 
 * Kubectl V1.19以降がインストールされています
@@ -466,6 +468,7 @@ endif::aws[]
 . * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
 
 
+.結果
 *プロバイダ管理クラスタの場合*：このクラウドプロバイダ用に最初に追加したクラスタの場合、Astra Control Serviceは、クラウドプロバイダ用のオブジェクトストアを作成して、対象となるクラスタ上のアプリケーションバックアップを実行します。（このクラウドプロバイダに対して後続のクラスタを追加した場合、オブジェクトストアは作成されません）。また、指定したデフォルトのストレージクラスがAstra Control Serviceによって設定されます。Amazon Web ServicesまたはGoogle Cloud Platformで管理されるクラスタの場合、Astra Control Serviceはクラスタにも管理者アカウントを作成します。この処理には数分かかることがあります。
 
 ifdef::aws[]
@@ -490,7 +493,7 @@ endif::aws[]
 
 === Astra Controlを使用してデフォルトのストレージクラスを変更する
 
-クラスタのデフォルトのストレージクラスは、Astra Control内から変更できます。以前にインストールしたストレージバックエンドサービスをクラスタで使用している場合は、このメソッドを使用してデフォルトのストレージクラスを変更できない可能性があります（*デフォルトに設定*アクションは選択できません）。この場合は、を実行できます  the default storage class using the command line。
+クラスタのデフォルトのストレージクラスは、Astra Control内から変更できます。以前にインストールしたストレージバックエンドサービスをクラスタで使用している場合は、このメソッドを使用してデフォルトのストレージクラスを変更できない可能性があります（*デフォルトに設定*アクションは選択できません）。この場合は、を実行できます <<コマンドラインを使用してデフォルトのストレージクラスを変更します>>。
 
 .手順
 . Astra Control Service UI で、 [* Clusters] を選択します。

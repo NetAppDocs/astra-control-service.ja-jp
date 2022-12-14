@@ -17,20 +17,20 @@ summary: 既知の問題は、このリリースの製品を正常に使用で�
 現在のリリースに影響する既知の問題は次のとおりです。
 
 .アプリケーション
-*  clones fail after an application is deployed with a set storage class
-*  page loads forever when trying to restore an application belonging to a deleted cluster
-*  to define an app on a namespace that has been deleted and recreated
+* <<ストレージクラスを設定してアプリケーションを導入すると、アプリケーションのクローンが失敗する>>
+* <<削除されたクラスタに属するアプリケーションをリストアしようとすると、アプリケーションページが無期限にロードされます>>
+* <<削除および再作成されたネームスペースにアプリケーションを定義できません>>
 
 
 .バックアップ、リストア、およびクローニング
-*  of an app results in PV size larger than original PV
-*  clones fail using a specific version of PostgreSQL
-*  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+* <<アプリケーションをリストアすると、 PV のサイズが元の PV よりも大きくなります>>
+* <<特定のバージョンの PostgreSQL を使用すると、アプリケーションクローンが失敗します>>
+* <<クラスタの管理後にボリュームnapshotclassを追加すると、アプリケーションのバックアップとSnapshotが失敗します>>
 
 
 .その他の問題
-*  eventually begin to fail when using external-snapshotter version 4.2.0
-*  data management operations fail with Internal Service Error (500) when Astra Trident is offline
+* <<外部スナップショットバージョン 4.2.0 を使用している場合、スナップショットは最終的に失敗します>>
+* <<Astra Trident がオフラインの場合、 Internal Service Error （ 500 ）によりアプリケーションデータ管理処理が失敗する>>
 
 
 

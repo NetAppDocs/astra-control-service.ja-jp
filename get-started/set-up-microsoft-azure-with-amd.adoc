@@ -22,38 +22,38 @@ Microsoft Azure サブスクリプションを準備してから、 Astra Contro
 
 
 
-=== Azure Kubernetes Service の Astra Control Service の要件を確認
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] Azure Kubernetes Service の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常で、サポートされているバージョンのKubernetesを実行していること、ノードプールがオンラインでLinuxを実行していることなどを確認します。  Kubernetes Service cluster requirements,このステップの詳細をご覧ください。
+クラスタが正常で、サポートされているバージョンのKubernetesを実行していること、ノードプールがオンラインでLinuxを実行していることなどを確認します。 <<Azure Kubernetes Service クラスタの要件,このステップの詳細をご覧ください>>。
 
 
 
-=== Microsoft Azure に登録
-
-[role="quick-margin-para"]
-Microsoft Azure アカウントを作成します。  up for Microsoft Azure,このステップの詳細をご覧ください。
-
-
-
-=== Azure サービスプリンシパルを作成します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] Microsoft Azure に登録
 
 [role="quick-margin-para"]
-Contributor ロールを持つ Azure サービスプリンシパルを作成します。  an Azure service principal,このステップの詳細をご覧ください。
+Microsoft Azure アカウントを作成します。 <<Microsoft Azure に登録,このステップの詳細をご覧ください>>。
 
 
 
-=== CSI ドライバの詳細を設定します
-
-[role="quick-margin-para"]
-CSI ドライバと連携するように Azure サブスクリプションとクラスタを設定する必要があります。  Container Storage Interface (CSI) driver details,このステップの詳細をご覧ください。
-
-
-
-=== オプション：Azureバックアップバケットの冗長性を設定する
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] Azure サービスプリンシパルを作成します
 
 [role="quick-margin-para"]
-デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。  Configure redundancy for Azure backup buckets,このステップの詳細をご覧ください。
+Contributor ロールを持つ Azure サービスプリンシパルを作成します。 <<Azure サービスプリンシパルを作成します,このステップの詳細をご覧ください>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] CSI ドライバの詳細を設定します
+
+[role="quick-margin-para"]
+CSI ドライバと連携するように Azure サブスクリプションとクラスタを設定する必要があります。 <<CSI ドライバの詳細を設定します,このステップの詳細をご覧ください>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] オプション：Azureバックアップバケットの冗長性を設定する
+
+[role="quick-margin-para"]
+デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。オプションとして、Azureバケットに永続性レベルの冗長性を設定することができます。 <<オプション：Azureバックアップバケットの冗長性を設定する,このステップの詳細をご覧ください>>。
 
 
 

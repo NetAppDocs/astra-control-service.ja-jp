@@ -96,7 +96,7 @@ endif::azure[]
 
 ifdef::aws[]
 
-* * S3サーバ名またはIPアドレス*（AWSのみ）：「https：//」を使用せずに、リージョンに対応するS3エンドポイントの完全修飾ドメイン名を入力します。を参照してください https://docs.aws.amazon.com/general/latest/gr/s3.html["Amazonのドキュメント"^] を参照してください。
+* * S3サーバ名またはIPアドレス*（AWSのみ）：を使用せずに、リージョンに対応するS3エンドポイントの完全修飾ドメイン名を入力します `https://`。を参照してください https://docs.aws.amazon.com/general/latest/gr/s3.html["Amazonのドキュメント"^] を参照してください。
 
 
 endif::aws[]
@@ -108,6 +108,7 @@ endif::aws[]
 
 
 
+.結果
 Astra Control Service は、追加のバケットを追加します。保護ポリシーの作成時にバケットを選択できるようになりました。
 
 

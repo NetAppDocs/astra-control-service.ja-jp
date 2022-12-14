@@ -25,25 +25,26 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 
 
 
-=== Google Kubernetes Engine の Astra Control Service の要件を確認
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1つ"] Google Kubernetes Engine の Astra Control Service の要件を確認
 
 [role="quick-margin-para"]
-クラスタが正常で、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでサポートされているイメージタイプが実行されていることなどを確認します。  cluster requirements,このステップの詳細をご覧ください。
+クラスタが正常で、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでサポートされているイメージタイプが実行されていることなどを確認します。 <<GKE クラスタの要件,このステップの詳細をご覧ください>>。
 
 
 
-=== （オプション）： Cloud Volumes Service for Google Cloud を購入します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] （オプション）： Cloud Volumes Service for Google Cloud を購入します
 
 [role="quick-margin-para"]
-ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。  Purchase Cloud Volumes Service for Google Cloud,このステップの詳細をご覧ください。
+ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。 <<オプション：Cloud Volumes Service for Google Cloudを購入,このステップの詳細をご覧ください>>。
 
 
 
-=== Google Cloud プロジェクトで API を有効にします
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3つ"] Google Cloud プロジェクトで API を有効にします
 
 [role="quick-margin-para"]
 次の Google Cloud API を有効にします。
 
+[role="quick-margin-list"]
 * Google Kubernetes Engine の略
 * クラウドストレージ
 * Cloud Storage JSON API
@@ -61,15 +62,16 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 
 
 [role="quick-margin-para"]
- APIs in your project,ステップバイステップの手順に従います。
+<<プロジェクトで API を有効にします,ステップバイステップの手順に従います>>。
 
 
 
-=== 必要な権限を持つサービスアカウントを作成します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["4."] 必要な権限を持つサービスアカウントを作成します
 
 [role="quick-margin-para"]
 次の権限を持つ Google Cloud サービスアカウントを作成します。
 
+[role="quick-margin-list"]
 * Kubernetes Engine Admin の略
 * NetApp Cloud Volumes Admin の権限が必要です
 +
@@ -83,21 +85,21 @@ NOTE: Google Cloud Volumes Service for Google Cloud をストレージバック�
 
 
 [role="quick-margin-para"]
- a service account,詳細な手順を参照してください。
+<<サービスアカウントを作成します,詳細な手順を参照してください>>。
 
 
 
-=== サービスアカウントキーを作成します
-
-[role="quick-margin-para"]
-サービスアカウントのキーを作成し、そのキーファイルを安全な場所に保存します。  a service account key,ステップバイステップの手順に従います。
-
-
-
-=== （オプション）： VPC のネットワークピアリングを設定します
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["5 つ"] サービスアカウントキーを作成します
 
 [role="quick-margin-para"]
-Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。  Set up network peering for your VPC,ステップバイステップの手順に従います。
+サービスアカウントのキーを作成し、そのキーファイルを安全な場所に保存します。 <<サービスアカウントキーを作成します,ステップバイステップの手順に従います>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] （オプション）： VPC のネットワークピアリングを設定します
+
+[role="quick-margin-para"]
+Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <<オプション：VPCのネットワークピアリングを設定します,ステップバイステップの手順に従います>>。
 
 
 
@@ -109,7 +111,7 @@ Kubernetes のバージョン:: クラスタで1.22 ~ 1.24のKubernetesバージ
 イメージタイプ:: 各ワーカーノードのイメージタイプはである必要があります `COS_CONTAINERD`。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
-ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。  Set up network peering for your VPC,この手順については、以下で説明します。
+ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<オプション：VPCのネットワークピアリングを設定します,この手順については、以下で説明します>>。
 プライベートクラスタ:: クラスタがプライベートの場合は、を参照してください https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control Service の IP アドレスを許可する必要があります。
 +
 --
@@ -200,6 +202,7 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 
 
 
+.結果
 共有 VPC を使用して GKE クラスタを追加すると、 Astra で完全に機能します。
 
 

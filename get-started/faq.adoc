@@ -86,7 +86,7 @@ ifdef::azure[]
 
 * AKS のプライベートクラスタを Astra Control Service に追加できますか。 *
 
-はい、 AKS のプライベートクラスタを Astra 制御サービスに追加できます。プライベート AKS クラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+はい、 AKS のプライベートクラスタを Astra 制御サービスに追加できます。プライベートAKSクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 * Active Directoryを使用してAKSクラスタの認証を管理できますか。*
 
@@ -159,7 +159,7 @@ Astra Control はアプリケーションを導入しない。アプリケーシ
 
 ifdef::gcp[]
 
-* アプリケーションの PVC が GCP CVS にバインドされていません。何が間違っていますか？ *
+*アプリケーションのPVCがGCP CVSにバインドされていません。何が間違っていますか？ *
 
 Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
 
