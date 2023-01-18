@@ -16,18 +16,33 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2023年1月17日
+
+.新機能とサポート
+* 強化された実行フック機能と追加のフィルタオプション
++
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
+
+* ストレージバックエンドとしてのNetApp Cloud Volumes ONTAP のサポート（Microsoft AzureおよびGoogle Cloudプラットフォームで正式にサポート）
++
+link:../learn/architecture.html#astra-control-components["アーキテクチャとコンポーネント"]
+
+
+
+
+
 == 2022年11月22日
 
 .新機能とサポート
-* 複数のネームスペースにまたがるアプリケーションのサポート。
+* 複数のネームスペースにまたがるアプリケーションのサポート
 +
 link:../use/manage-apps.html["アプリケーションを定義します"]
 
-* アプリケーション定義にクラスタリソースを含めることができます。
+* アプリケーション定義にクラスタリソースを含めることができます
 +
 link:../use/manage-apps.html["アプリケーションを定義します"]
 
-* バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました。
+* バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました
 +
 link:../use/monitor-running-tasks.html["実行中のタスクを監視します"]
 
@@ -35,7 +50,7 @@ link:../use/monitor-running-tasks.html["実行中のタスクを監視します"
 +
 link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
 
-* 単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます。
+* 単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます
 +
 link:../use/manage-cloud-instances.html["クラウドインスタンスを管理します"]
 
@@ -43,11 +58,11 @@ link:../use/manage-cloud-instances.html["クラウドインスタンスを管理
 +
 link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
 
-* Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました。
+* Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました
 +
 link:../use/set-up-billing.html["請求を設定します"]
 
-* AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート。
+* AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート
 +
 link:../use/set-up-billing.html["請求を設定します"]
 

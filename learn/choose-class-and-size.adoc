@@ -12,7 +12,7 @@ summary: Astra Control Service は、永続的ボリュームのストレージ�
 
 
 [role="lead"]
-Astra Control Service は、永続的ボリュームのストレージバックエンドオプションとして、 Google Cloud または Google Persistent Disk に対する Cloud Volumes Service をサポートします。
+Astra Control Serviceは、永続的ボリュームのストレージバックエンドオプションとして、Google Cloud、Google Persistent Disk、またはNetApp Cloud Volumes ONTAP 用のCloud Volumes Service をサポートします。
 
 
 
@@ -118,3 +118,9 @@ Astra Control Service は、ストレージバックエンドオプションと�
 https://cloud.google.com/persistent-disk/["Google Persistent Disk の詳細については、こちらをご覧ください"^]。
 
 https://cloud.google.com/compute/docs/disks/performance["Google Persistent Disk のさまざまなパフォーマンスレベルについて、詳しくはこちらをご覧ください"^]。
+
+
+
+== NetApp Cloud Volumes ONTAP の略
+
+パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP のドキュメント"^]。

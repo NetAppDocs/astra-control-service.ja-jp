@@ -433,6 +433,9 @@ ifdef::aws[]
 
 endif::aws[]
 
+** NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
 ====
 +
 ストレージクラスごとに、次のいずれかのサービスを利用できます。
@@ -463,9 +466,14 @@ ifdef::aws[]
 
 endif::aws[]
 
-+詳細はこちら link:../learn/aws-storage.html["Amazon Web Servicesクラスタのストレージクラス"]。の詳細を確認してください link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP の略"^]
++
+の詳細を確認してください link:../learn/aws-storage.html["Amazon Web Servicesクラスタのストレージクラス"]。の詳細を確認してください link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
 
-. * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
++
+.. * 確認と承認 * ：構成の詳細を確認し、 * クラスタの追加 * を選択します。
+
+
 
 
 .結果

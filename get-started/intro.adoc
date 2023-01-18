@@ -88,7 +88,7 @@ Astra Control には、次の 2 つの導入モデルがあります。
 
  a| 
 * NetApp ONTAP AFF および FAS システム
-* Cloud Volumes ONTAP ストレージバックエンド
+* Cloud Volumes ONTAP ストレージバックエンド（正式にAzureとGoogle Cloudプラットフォームでサポート）
 
 
 |===

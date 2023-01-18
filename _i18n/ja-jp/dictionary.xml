@@ -841,7 +841,6 @@
   <block id="8418a36d2778041af8e3f737ec1644a7" category="list-text">「 * アプリケーション」を選択し、管理アプリの名前を選択します。</block>
   <block id="4069b8bd7c11bc17efc85c9bb6d794c1" category="list-text">フックの一意の名前を入力します。</block>
   <block id="cc56ac336e2ae46c348055eabdb31910" category="list-text">（オプション）実行中にフックに渡す引数を入力し、各引数を入力した後で Enter キーを押して、それぞれを記録します。</block>
-  <block id="bdc506e89ee9aec709d8e40132db20f3" category="list-text">[* Container Images * （コンテナイメージ * ） ] 領域で、アプリケーションに含まれるすべてのコンテナイメージに対してフックを実行する必要がある場合は、 [ * Apply to all container images * （すべてのコンテナイメージに適用 * ） ] チェックボックスを有効にします。代わりに、フックが 1 つ以上の指定されたコンテナイメージに対してのみ機能する場合は、 * Container image names to match * フィールドにコンテナイメージ名を入力します。</block>
   <block id="1144b2f2ea8eccb66bf20cdea686b3d2" category="list-text">[* スクリプト * （ * Script * ） ] 領域で、次のいずれかを実行します。</block>
   <block id="489a27c3b545dfadcd33d3ce67932718" category="list-text">カスタムスクリプトをアップロードする。</block>
   <block id="e3f243bc33219b29c2a12b59c90be96c" category="list-text">[ ファイルのアップロード（ Upload file ） ] オプションを選択します。</block>
@@ -850,7 +849,6 @@
   <block id="7ecdb873e1239bfeaf5c617b779dd434" category="list-text">（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</block>
   <block id="c1b97a456b241d38af9df8418fe93955" category="list-text">クリップボードからカスタムスクリプトを貼り付けます。</block>
   <block id="1a71cd2313095cebe3a5bf76adff4cae" category="list-text">テキストフィールドを選択し、スクリプトテキストをフィールドに貼り付けます。</block>
-  <block id="6d4a5ef582e95d5022946acc47ce0f2e" category="list-text">[ * フックを追加 * ] を選択します。</block>
   <block id="12bf76ea0a88e9814b22daef0831337b" category="section-title">実行フックを無効にします</block>
   <block id="df61c20b7e6ebb23392c4395835c3e51" category="paragraph">アプリケーションのスナップショットの前または後に実行を一時的に禁止する場合は、実行フックを無効にできます。実行フックを無効にするには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</block>
   <block id="dbf8ea65a71d9e2042b03a97a0da4095" category="list-text">[*Disable*] を選択します。</block>
@@ -993,11 +991,9 @@
   <block id="a322f45d2fd04fbfd61da44bba143d00" category="list-text">編集するバケットの「 * Actions * 」列でドロップダウンリストを選択します。</block>
   <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">「 * Update * 」を選択します。</block>
   <block id="bd5cde8fc544622a3633d73962bcd705" category="summary">Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
-  <block id="9a2e6b3f1f716d445d67874207aea6af" category="paragraph">Astra Control Service は、永続的ボリュームのストレージバックエンドオプションとして、 Google Cloud または Google Persistent Disk に対する Cloud Volumes Service をサポートします。</block>
   <block id="2cafdb551953c7afd397b12eee1ce505" category="paragraph">Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用可能サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="5165c93eed8a6988e2abc470bf4d0bbe" category="paragraph">Astra Control Service は、ストレージバックエンドオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。</block>
   <block id="2938a5725f8de8bc6cfbe9bdd59f796f" category="summary">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files を使用します。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
-  <block id="b2cd1a47d11cab60dfbd0e59e1c5cdaa" category="paragraph">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして、 Azure NetApp Files または Azure で管理されるディスクをサポートします。</block>
   <block id="45f2ca5e315e585458c55fea41d5b448" category="paragraph">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="a78513acd713c2d45f9956aec22c3e19" category="paragraph">Astra Control Service は、 Azure で管理されるディスクをストレージバックエンドオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。</block>
   <block id="d0848afd8553c34945705222a97a4553" category="paragraph">次のような出力が表示されます。</block>
@@ -1314,7 +1310,6 @@
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">NetApp ONTAP 対応の Amazon FSX</block>
   <block id="6a2736fcbb5755dd03d114a5153506eb" category="list-text"><block ref="6a2736fcbb5755dd03d114a5153506eb" category="inline-link-rx"></block></block>
   <block id="37cb798eeadd3da7723607246ebf2339" category="inline-link-macro">Amazon Web Servicesクラスタのストレージクラス</block>
-  <block id="516e3f0030567c9bbad612df88d2db95" category="paragraph">+詳細はこちら <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
   <block id="457022d51f2e6150dfa70037b30d57b5" category="section-title">他のユーザにクラスタへのアクセスを許可する</block>
   <block id="436e78c3dd196f680aab83eb69543658" category="paragraph">オプションで、クラスタの作成者ではない他のIAMユーザに「kubectl」コマンドを使用してクラスタにアクセスすることもできます。</block>
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？</block>
@@ -1414,9 +1409,6 @@
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBSの価格</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">Amazon FSX for NetApp ONTAP のパフォーマンス</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">Amazon FSX for NetApp ONTAP の価格設定</block>
-  <block id="64871be4acf54750c11b07ff3203cf03" category="list-text">Astra Control Service で使用される<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> またはAzure Managed DisksをAKSクラスタのストレージバックエンドとして使用します。</block>
-  <block id="bc808c2dc319f0278e897f16cfe24a95" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> または、GKEクラスタのストレージバックエンドとしてGoogle Persistent Diskを使用します。</block>
-  <block id="1574db16d74f7537711f20b07293065e" category="list-text">Astra Control Service で使用される<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> および<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> EKSクラスタのストレージバックエンドとして。</block>
   <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center は、次のストレージバックエンドを使用します。</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Astra Controlのマネージアプリケーションの種類について説明します。</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Astra Controlがクラスタを検出すると、それらのクラスタ上のアプリケーションは、管理方法を選択するまで管理されません。Astra Control のマネージドアプリケーションには、次のいずれかを使用できます。</block>
@@ -1481,7 +1473,6 @@
   <block id="ea63117998199b7febd9cbf694fff31a" category="section-title">バックアップをキャンセルします</block>
   <block id="11ea61a300036053e79076bf8d2a27d0" category="paragraph">実行中のバックアップをキャンセルすることができます。</block>
   <block id="5a74785c1f7b64991b4e6c1995f2e049" category="list-text">目的のバックアップの[*アクション*（* Actions *）]列の[オプション（Options）]メニューから、[*キャンセル*（* Cancel *）]を選択します。</block>
-  <block id="d77a72056cdc02124a845066bec0d946" category="paragraph">実行フックは、管理対象アプリケーションのデータ保護操作と組み合わせて実行するように構成できるカスタムアクションです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。</block>
   <block id="83fbf1604bedff410ea11872b40ab9f0" category="section-title">実行フックのタイプ</block>
   <block id="2e0239d0ab48ff8e287445ee24093e64" category="paragraph">Astra Controlは、実行可能なタイミングに基づいて、次の種類の実行フックをサポートします。</block>
   <block id="9c6a9cc04a4d5840a5d237b232190a35" category="list-text">Snapshot前</block>
@@ -1492,7 +1483,6 @@
   <block id="7fdb6925e171ac617262d69ebf119664" category="list-text">Astra Controlは、実行フックの設定と一致条件を使用して、スナップショット、バックアップ、または復元操作に適用できるフックを決定します。</block>
   <block id="71bd0199539278d83c2eb3eaf817b710" category="list-text">実行フックの障害はすべて'ソフトな障害ですフックが失敗しても'他のフックとデータ保護操作は試行されますただし、フックが失敗すると、 * アクティビティ * ページイベントログに警告イベントが記録されます。</block>
   <block id="7b1a9d930edd4676e6aca05c81245d86" category="list-text">アドホックデータ保護操作の場合、すべてのフックイベントが生成され、[*Activity*]ページのイベントログに保存されます。ただし、スケジュールされたデータ保護処理については、フック障害イベントだけがイベントログに記録されます（スケジュールされたデータ保護処理自体によって生成されたイベントは記録されたままです）。</block>
-  <block id="e44e874b44364a30ee06654e352ede59" category="paragraph">実行フックは、実行中のアプリケーションの機能を低下させるか、完全に無効にすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。実行フックが関連付けられている状態でバックアップまたはスナップショット操作を開始した後'キャンセルした場合でも'バックアップまたはスナップショット操作がすでに開始されていればフックは実行できますつまり、バックアップ後の実行フックでは、バックアップが完了したとは判断できません。</block>
   <block id="a9f57378169166a88acf61a71442e5fb" category="section-title">実行順序</block>
   <block id="e8132483e0cae3565c87c193b3fd8f57" category="paragraph">データ保護操作を実行すると、実行フックイベントが次の順序で実行されます。</block>
   <block id="4a6ccf1757fd10978b3fb28d81187dcc" category="list-text">適用可能なカスタムプリオペレーション実行フックは、適切なコンテナで実行されます。カスタムのプリオペレーションフックは必要なだけ作成して実行できますが、操作前のこれらのフックの実行順序は保証も構成もされていません。</block>
@@ -1544,14 +1534,12 @@
   <block id="d3d9446802a44259755d38e6d163e820" category="cell">10.</block>
   <block id="6512bd43d9caa6e02c990b0a82652dca" category="cell">11.</block>
   <block id="d77b4a468fb488142be1db1cb4f3b30a" category="paragraph">アプリケーションの既存のカスタム実行フックを表示できます。</block>
-  <block id="f8394306e8105b9804b880be5da4e874" category="paragraph">有効または無効になっているすべての実行フックを結果リストに表示できます。フックのステータス、ソース、および実行時刻（プリ/ポストオペレーション）を表示できます。実行フックに関連するイベントログを表示するには、左側のナビゲーション領域の * アクティビティ * ページに移動します。</block>
   <block id="348d9142b6e812d430105231b6b22f7b" category="section-title">既存のスクリプトを表示します</block>
   <block id="9a25c0423497a3b78185a1dcbd83ee56" category="paragraph">アップロードされた既存のスクリプトを表示できます。このページでは、使用中のスクリプトと、使用中のフックを確認することもできます。</block>
   <block id="9847e9d0ad4bd0b4ebd33ef807c5de85" category="list-text">「*アカウント*」に移動します。</block>
   <block id="38f83cc7b29ed2a740a9c8456659a293" category="list-text">[*スクリプト*]タブを選択します。</block>
   <block id="8c9fd3633020b4d6c051241f7be9c138" category="paragraph">このページには、アップロードされた既存のスクリプトのリストが表示されます。[使用者*]列には、各スクリプトを使用している実行フックが表示されます。</block>
   <block id="6efeb013da42bda9a0b005c8fb3d9e7b" category="section-title">スクリプトを追加します</block>
-  <block id="52bf2b6b8ab697098c999c634d60de41" category="paragraph">実行フックが参照できるスクリプトを1つ以上追加できます。多くの実行フックは、同じスクリプトを参照できます。これにより、1つのスクリプトのみを変更することで、多数の実行フックを更新できます。</block>
   <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">「 * 追加」を選択します。</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">次のいずれかを実行します。</block>
   <block id="99df3a53037c83c9f94b22e58d038498" category="list-text">「*スクリプトを保存*」を選択します。</block>
@@ -1562,7 +1550,6 @@
   <block id="85dd64e22968350ca681ba621d4bc560" category="list-text">削除するスクリプトを選択し、「*アクション*」列のメニューを選択します。</block>
   <block id="9dd5d4388456b71f9b71c1021d390f06" category="admonition">スクリプトが1つまたは複数の実行フックに関連付けられている場合、*Delete*アクションは使用できません。スクリプトを削除するには、まず関連する実行フックを編集し、別のスクリプトに関連付けます。</block>
   <block id="88cf147ac90a429c61c32e7ab09e79bd" category="admonition">実行フックとして使用するカスタムシェルスクリプトを作成する場合は、特定のコマンドを実行するか、実行可能ファイルへの完全パスを指定する場合を除き、ファイルの先頭に適切なシェルを指定するようにしてください。</block>
-  <block id="646a0acc29f56871519ed10b81ce1989" category="list-text">フックの詳細*（* Hook Details *）領域で、*操作*（* Operation *）ドロップダウンメニューから操作タイプを選択して、フックを実行するタイミングを決定します。</block>
   <block id="be22134446ec0047c1f901e0ef639bba" category="list-text">新しいスクリプトを追加します。</block>
   <block id="8b7f83d064fa53247eb45928442a6628" category="list-text">リストから既存のスクリプトを選択します。</block>
   <block id="35517af1363cb45c60a97af004151365" category="paragraph">このスクリプトを使用するように実行フックに指示します。</block>
@@ -1763,20 +1750,12 @@
   <block id="a54ffcf601d3cad8846bb3488b0fc812" category="admonition">クローン処理中に、IngressClassリソースまたはwebhookを必要とするアプリケーションが正常に機能するためには、これらのリソースがデスティネーションクラスタですでに定義されていない必要があります。</block>
   <block id="d187001d501dee0ac96f1c4520418b01" category="section-title">2022年11月22日</block>
   <block id="9ed67fb9a4ad2ebd97ca13fe2eb81541" category="list-title">新機能とサポート</block>
-  <block id="8a839dbb28e85696069bbc2c4085cb75" category="list-text">複数のネームスペースにまたがるアプリケーションのサポート。</block>
   <block id="4eba5ba43cc624385f276658a22c51a8" category="inline-link-macro">アプリケーションを定義します</block>
   <block id="615bfdde03d6ca17ceb25db1da7a8950" category="paragraph"><block ref="615bfdde03d6ca17ceb25db1da7a8950" category="inline-link-macro-rx"></block></block>
-  <block id="fbed0a0742c59aa2f0516e302eb19172" category="list-text">アプリケーション定義にクラスタリソースを含めることができます。</block>
-  <block id="a75cc842b54759877cde075e6d7b123b" category="list-text">バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました。</block>
   <block id="92131ec58f7cefa34d38f2fee2e98c42" category="inline-link-macro">実行中のタスクを監視します</block>
   <block id="7ae618b5d6c1a9768cb0ddc2627b32d0" category="paragraph"><block ref="7ae618b5d6c1a9768cb0ddc2627b32d0" category="inline-link-macro-rx"></block></block>
-  <block id="ffcef21176963cb229c78971c4867b5e" category="list-text">互換性のあるバージョンのAstra Tridentがインストール済みのクラスタの管理をサポート</block>
-  <block id="0c26609d927c6fd9f0a23dd079134b80" category="list-text">単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます。</block>
   <block id="e0b7652da21db7cd16f8155afc64e87b" category="inline-link-macro">クラウドインスタンスを管理します</block>
   <block id="9df52d082eaf22280b9667a382b64298" category="paragraph"><block ref="9df52d082eaf22280b9667a382b64298" category="inline-link-macro-rx"></block></block>
-  <block id="8800f5d275e5928d65cbcb5f023cb6a8" category="list-text">Astra Control Serviceへの自己管理型Kubernetesクラスタの追加をサポート</block>
-  <block id="c34eb65732649a4231a17e2623c9a979" category="list-text">Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました。</block>
-  <block id="ebd7baa8bca4e519b3b1dcc85e15069b" category="list-text">AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート。</block>
   <block id="3a3b7ac2e39541ea05707ccd6eb054d4" category="list-title">既知の問題および制限事項</block>
   <block id="740eb4189d3efee5546cc5fba4fded77" category="inline-link-macro">このリリースの既知の問題</block>
   <block id="d1dd5fb317ad23b395c8c846c80e0e5f" category="list-text"><block ref="d1dd5fb317ad23b395c8c846c80e0e5f" category="inline-link-macro-rx"></block></block>
@@ -2052,4 +2031,58 @@
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azureストレージアカウントインスタンスのパフォーマンス設定が「Premium」に設定されている場合は、「Premium account type」設定を「Block blobs」に設定する必要があります。</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">ネットアップTV</block>
   <block id="b504b02d5498a8b09080b1e621f4d1aa" category="admonition">Azure Marketplaceのサブスクリプションプロセスのデモビデオを見るには、を参照してください<block ref="bfd2f59ca3f14f5fb5037b1bda5b7515" category="inline-link-rx"></block>。</block>
+  <block id="ccd62d676165e34c2e9c6d088c06e70f" category="paragraph">実行フックは、管理対象アプリケーションのデータ保護操作と組み合わせて実行するように構成できるカスタムアクションです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。</block>
+  <block id="99dc882fc0f61d1db87631ed9f156913" category="section-title">実行フックフィルタ</block>
+  <block id="d335f82eb07728e66330e5d345123e4e" category="paragraph">アプリケーションに実行フックを追加または編集するとき、実行フックにフィルタを追加して、フックが一致するコンテナを管理できます。フィルタは、すべてのコンテナで同じコンテナイメージを使用し、各イメージを別の目的（Elasticsearchなど）に使用するアプリケーションに便利です。フィルタを使用すると、同じコンテナの一部で実行フックが実行されるシナリオを作成できますが、すべてのコンテナで実行フックが実行されるわけではありません。1つの実行フックに対して複数のフィルタを作成すると、それらは論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを使用できます。</block>
+  <block id="1f7268b251b886be0fbed048e85fcbae" category="paragraph">実行フックに追加する各フィルタは、正規表現を使用してクラスタ内のコンテナを照合します。フックがコンテナと一致すると、そのコンテナに関連付けられたスクリプトがフックによって実行されます。</block>
+  <block id="8f00b1ba5cf1b5159598a4201b24c485" category="admonition">フィルタの正規表現では、正規表現2（RE2）構文を使用します。この構文では、一致リストからコンテナを除外するフィルタの作成はサポートされていません。</block>
+  <block id="7caae75448dbc59fcadd621099e170b3" category="inline-link">正規表現2（RE2）構文のサポート</block>
+  <block id="348be7b5ea322b3d9f3cc7f3638347e8" category="paragraph">実行フックフィルタの正規表現でAstra Controlがサポートする構文については、を参照してください<block ref="d4d0dd655d04b2dc5b031206e1febd50" category="inline-link-rx"></block>。</block>
+  <block id="a00c0d5dc029d521b5d82eba2c9f84ec" category="paragraph">実行フックは、実行中のアプリケーションの機能を低下させるか、完全に無効にすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。実行フックが関連付けられている状態でバックアップまたはスナップショット操作を開始した後'キャンセルした場合でも'バックアップまたはスナップショット操作がすでに開始されていればフックは実行できますつまり、バックアップ後の実行フックで使用されるロジックは、バックアップが完了したとは見なされません。</block>
+  <block id="ad06e01fed5c441edb22a5ad730a28c4" category="paragraph">有効または無効になっているすべての実行フックを結果リストに表示できます。フックのステータス、一致するコンテナの数、作成時間、および実行時間（プリ/ポストオペレーション）を確認できます。を選択できます<block ref="26b17225b626fb9238849fd60eabdf60" prefix=" " category="inline-code"></block> アイコンをクリックして、実行するコンテナのリストを展開します。このアプリケーションの実行フックに関連するイベントログを表示するには、*アクティビティ*タブに移動します。</block>
+  <block id="fdccfeac6686fcf9ef3545d27c98ebd9" category="paragraph">各実行フックは、スクリプトを使用してアクションを実行する必要があります。実行フックが参照できるスクリプトを1つ以上追加できます。多くの実行フックは、同じスクリプトを参照できます。これにより、1つのスクリプトのみを変更することで、多数の実行フックを更新できます。</block>
+  <block id="730e56f4151d257d4be9b69d500491b1" category="list-text">[フックの詳細*（Hook Details *）]領域で、次の</block>
+  <block id="754306132541c264b899699072715a8d" category="list-text">*操作*ドロップダウンメニューから操作タイプを選択して、フックをいつ実行するかを決定します。</block>
+  <block id="b3bf4b7c4fe4ab9fd4c927146b958c29" category="list-text">（オプション）*フックフィルタの詳細*（* Hook Filter Details *）領域で、実行フックが実行されるコンテナを制御するフィルタを追加できます。</block>
+  <block id="26e5ad6aeb15088310dc7f5f94ac6b1c" category="list-text">[*フィルタの追加*]を選択します。</block>
+  <block id="046bbeb096523a6c2a52a82b7a1a144a" category="list-text">[フックフィルタータイプ*]列で、フィルターを適用する属性をドロップダウンメニューから選択します。</block>
+  <block id="7f5c33cf7bc03894aef7093b46c50ba3" category="inline-link">正規表現2（RE2）正規表現の正規表現構文</block>
+  <block id="40bf80a4152341fe23b78ee81bdae830" category="list-text">[*Regex*]列に、フィルタとして使用する正規表現を入力します。Astra Controlでは、を使用します<block ref="5a0c17cee4b408e519a995b1f313a559" category="inline-link-rx"></block>。</block>
+  <block id="f3ed8a73ba34dec99a6dc46c809c190b" category="admonition">正規表現フィールドに他のテキストが含まれていない属性（ポッド名など）の正確な名前でフィルタリングすると、サブストリングの一致が実行されます。正確な名前とその名前だけを照合するには、完全に一致する文字列の一致構文を使用します（例：<block ref="008d171d630f0108aa5ebd55b36c9d01" prefix=" " category="inline-code"></block>）。</block>
+  <block id="f587a978a9522295d00811bafac25b74" category="list-text">フィルタをさらに追加するには、*フィルタを追加*を選択します。</block>
+  <block id="e45aa7d1b7841e860b561b3f17ed3626" category="admonition">実行フックの複数のフィルタは、論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを使用できます。</block>
+  <block id="d3b15dd314c60647e826dddaf876252c" category="list-text">完了したら、「*次へ*」を選択します。</block>
+  <block id="245ac12acb7bc3829b2f5656f25ce8f9" category="list-text">実行フックの設定を確認します。</block>
+  <block id="e7e278b27ed2ba8a9f0a89cea227a0aa" category="section-title">実行フックを編集します</block>
+  <block id="48077e8945995c9af9cf3beb5a95e222" category="paragraph">実行フックを編集して、その属性、フィルタ、または使用するスクリプトを変更できます。実行フックを編集するには、Owner、Admin、またはMemberのいずれかの権限が必要です。</block>
+  <block id="1dbaed14db949844ab67cca7fa804ec9" category="list-text">編集するフックの*アクション*列のオプションメニューを選択します。</block>
+  <block id="d6b31513755644b14ff0352ed78ee5d0" category="list-text">各セクションを完了したら、「*次へ*」を選択して、必要な変更を行います。</block>
+  <block id="4c5848fdf558a402deead01b3a7267ca" category="list-text">表示されたダイアログで、「delete」と入力して確定します。</block>
+  <block id="4bc73956dcf3b9d92b687a0e41330027" category="list-text">[はい]を選択し、実行フックを削除します。*</block>
+  <block id="cd9365bcc5200e0100ab1291e25e536a" category="section-title">2023年1月17日</block>
+  <block id="dc76043b82b478d28285ae514fece7b7" category="list-text">強化された実行フック機能と追加のフィルタオプション</block>
+  <block id="a02fef9177dafc1ed65c31506043a788" category="list-text">ストレージバックエンドとしてのNetApp Cloud Volumes ONTAP のサポート（Microsoft AzureおよびGoogle Cloudプラットフォームで正式にサポート）</block>
+  <block id="9873d3282f5b305c09e3384bd4cc642f" category="paragraph"><block ref="9873d3282f5b305c09e3384bd4cc642f" category="inline-link-macro-rx"></block></block>
+  <block id="3aed836d77f6857f6adf310ab3a489e9" category="list-text">複数のネームスペースにまたがるアプリケーションのサポート</block>
+  <block id="71e6b5ca832527695b724cd4030ff69f" category="list-text">アプリケーション定義にクラスタリソースを含めることができます</block>
+  <block id="d57729d6a002792bd1640f00b3c60a6d" category="list-text">バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました</block>
+  <block id="ee22ee616d03d0b788bbae8035a8d53d" category="list-text">互換性のあるバージョンのAstra Tridentがインストール済みのクラスタの管理をサポート</block>
+  <block id="22289318dae293d59005c72969da78c0" category="list-text">単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます</block>
+  <block id="16522d4241295dd4aacfffd076bdab35" category="list-text">Astra Control Serviceへの自己管理型Kubernetesクラスタの追加をサポート</block>
+  <block id="340fb7807661130b471c746bcb32778d" category="list-text">Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました</block>
+  <block id="7c560ce667e00f7fb7277e3e40274958" category="list-text">AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート</block>
+  <block id="1825b9e766e0b0cdba1d02a62126146f" category="section-title">NetApp Cloud Volumes ONTAP は、Amazon Web Servicesに対して正式にサポートされていません</block>
+  <block id="06a37277cf290af4d70f99c3def289f6" category="paragraph">ネットアップCloud Volumes ONTAP は、2019年1月17日よりAstra Control Serviceのリリースとして正式にサポートされていません。</block>
+  <block id="0bf305437e764438b0cefa4feeab361a" category="paragraph">Astra Control Serviceは、永続的ボリュームのストレージバックエンドオプションとして、Google Cloud、Google Persistent Disk、またはNetApp Cloud Volumes ONTAP 用のCloud Volumes Service をサポートします。</block>
+  <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP の略</block>
+  <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP のドキュメント</block>
+  <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>。</block>
+  <block id="1da547253b2bff6a97f16457ba6c7659" category="list-text">Astra Control Service で使用される<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block>、Azure Managed Disksの略<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> AKSクラスタのストレージバックエンドとして。</block>
+  <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>、Google Persistent Disk、および<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> GKEクラスターのストレージバックエンドとして。</block>
+  <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service で使用される<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> および<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> をAWSクラスタのストレージバックエンドとして使用</block>
+  <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureで管理されるディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
+  <block id="2281a4480d392ba38bb5a7a535c3d0a6" category="list-text">Cloud Volumes ONTAP ストレージバックエンド（正式にAzureとGoogle Cloudプラットフォームでサポート）</block>
+  <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
+  <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
+  <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">の詳細を確認してください <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
 </blocks>

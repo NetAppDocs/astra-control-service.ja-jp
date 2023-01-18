@@ -24,20 +24,18 @@ image:astra-architecture-diagram-v5.png["Astra Control のアーキテクチャ�
 * * Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールである Astra Trident を使用すると、 Docker と Kubernetes で管理されるコンテナ化アプリケーション用のストレージボリュームを作成できます。Astra Control Centerとともに導入した場合、Astra TridentにはONTAP ストレージバックエンドが設定されています。
 * * ストレージバックエンド * ：
 +
-** Astra Control Service で使用される https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files の特長"^] またはAzure Managed DisksをAKSクラスタのストレージバックエンドとして使用します。
-** Astra Control Service で使用される https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^] または、GKEクラスタのストレージバックエンドとしてGoogle Persistent Diskを使用します。
-** Astra Control Service で使用される https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] および https://docs.aws.amazon.com/fsx/["NetApp ONTAP 対応の Amazon FSX"^] EKSクラスタのストレージバックエンドとして。
+** Astra Control Service で使用される https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files の特長"^]、Azure Managed Disksの略 https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP の略"] AKSクラスタのストレージバックエンドとして。
+** Astra Control Service で使用される https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["NetApp Cloud Volumes Service for Google Cloud"^]、Google Persistent Disk、および https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP の略"] GKEクラスターのストレージバックエンドとして。
+** Astra Control Service で使用される https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] および https://docs.aws.amazon.com/fsx/["NetApp ONTAP 対応の Amazon FSX"^] をAWSクラスタのストレージバックエンドとして使用
 ** Astra Control Center は、次のストレージバックエンドを使用します。
-
-
-
-
-* ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
-* Cloud Volumes ONTAP ストレージバックエンド
 +
-** * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
+*** ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。
+*** Cloud Volumes ONTAP ストレージバックエンド
 
 
+
+
+* * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
 
 
 
