@@ -1037,24 +1037,17 @@
   <block id="0a5245490d6d6f511bbdb3db35acfe54" category="list-text">アプリケーション対応のオンデマンドの Snapshot とバックアップを作成</block>
   <block id="f107a6e34d3d0df36d460bc5b3a5fe8b" category="list-text">ポリシーベースのスナップショットおよびバックアップ操作を自動化します</block>
   <block id="ae3099cc177fc161f80c6965fe89a71a" category="list-text">Kubernetes クラスタ間でアプリケーションとデータを移行</block>
-  <block id="053d6e036cc8c9d7a8c57234d6bfc574" category="list-text">本番環境からステージング環境にアプリケーションを簡単にクローニングできます</block>
   <block id="1c26e7db082840fcbfcd87527c92e1aa" category="list-text">アプリケーションの稼働状態と保護状態を視覚化します</block>
-  <block id="3e09a55ad40337db37927865855151a9" category="list-text">バックアップと移行のワークフローを実装するには、ユーザインターフェイスまたは API を使用してください</block>
   <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">導入モデル</block>
   <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control には、次の 2 つの導入モデルがあります。</block>
-  <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。</block>
   <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">どのような方法で提供されますか？</block>
   <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">ネットアップのフルマネージドクラウドサービス</block>
-  <block id="aff53210beade5ba79414ae13eb6b73d" category="paragraph">ソフトウェアとしてダウンロード、インストール、および管理します</block>
   <block id="7cae1429bdc4131db46365e8fc893a77" category="cell">ホストされているのはどこですか？</block>
   <block id="7ab48d8d90e46b91aa73c1832b7681f9" category="cell">ネットアップが選択したパブリッククラウドで実現</block>
-  <block id="6cc0042ffe94d2cdea2bf7b80705f4ef" category="paragraph">指定した Kubernetes クラスタで実行します</block>
   <block id="a564f860d9dd9df279c4ea80b08d026a" category="cell">更新方法</block>
   <block id="b2929741e98ca2c366d8d7dfda36e2b9" category="cell">管理はネットアップが行います</block>
   <block id="091f846d60c1037c90ba7580f37ef9fa" category="paragraph">更新を管理します</block>
   <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">アプリケーションデータ管理機能とは何ですか？</block>
-  <block id="1598aaab2cb9865732925d064c6978c2" category="cell">ストレージバックエンドと外部サービスを除く両方のプラットフォームで同じ機能を利用できます</block>
-  <block id="c1d5f7fc5daa2ea9189ee2df5ca15da2" category="cell">ストレージバックエンドでサポートされるもの</block>
   <block id="d6fc0eb1930e7e56affc953c237c5514" category="list-text">NetApp ONTAP AFF および FAS システム</block>
   <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra Control Service の仕組み</block>
   <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service は、常時稼働し、最新の機能で更新される、ネットアップが管理するクラウドサービスです。複数のコンポーネントを利用して、アプリケーションデータのライフサイクル管理を実現します。</block>
@@ -1066,7 +1059,6 @@
   <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">クラスタに新しい admin ロールと Kubernetes サービスアカウントを作成します。</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="inline-link">Astra Trident</block>
   <block id="51fbabc51080a419e6a5019a1c169ab4" category="list-text">新しい admin ロールを使用してインストールします<block ref="0ff0cd427dac64ddc62afadc9a52e9d0" category="inline-link-rx"></block> をクリックして、 1 つ以上のストレージクラスを作成します。</block>
-  <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">この時点で、アプリケーションをクラスタに追加できます。永続ボリュームは、新しいデフォルトのストレージクラスでプロビジョニングされます。</block>
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。</block>
   <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra Control Center の仕組み</block>
@@ -1259,7 +1251,6 @@
   <block id="ec8c93c2223996f4782ebf5dd6b871a1" category="list-text">Google Persistent Disk：コスト、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="3e480f1bbd52d8ad4613f2bbb89ca847" category="list-text">Azure NetApp Files ：パフォーマンスと耐障害性に関する情報</block>
   <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure Managed Disks：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
-  <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service *：複数のクラウドプロバイダ環境でKubernetesクラスタのデータをアプリケーション対応で管理するネットアップマネージドサービス。</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+** GKEクラスタの場合はAstra Control Serviceを使用します<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> または、永続ボリューム用のストレージバックエンドとして Google Persistent Disk を使用します。</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+ Azureでは、Astra Control Serviceによって、BLOBコンテナ用のリソースグループ、ストレージアカウント、およびキーも作成されます。</block>
   <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。</block>
@@ -1926,7 +1917,6 @@
   <block id="f4e39691a17b55519cdcd9b3fe953c77" category="paragraph">Astra Control APIを使用して、クラウドプロバイダからクラウドインスタンスを削除できます。をクリックしてください。<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>。</block>
   <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Trident * ：ネットアップが管理する、完全にサポートされているオープンソースのストレージプロビジョニングおよびオーケストレーションツールである Astra Trident を使用すると、 Docker と Kubernetes で管理されるコンテナ化アプリケーション用のストレージボリュームを作成できます。Astra Control Centerとともに導入した場合、Astra TridentにはONTAP ストレージバックエンドが設定されています。</block>
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">アプリケーション管理</block>
-  <block id="eb7e7a3aeccca526c3baa843ca15c287" category="paragraph">Astra Controlは、状態の変化を絶えず監視しているので、新しいアプリケーションを追加することにも注意が必要です。</block>
   <block id="516729a7c0562425406a22cfe6a2c163" category="list-text">Amazon EBSのことです</block>
   <block id="79c9c43a409053927cc323915dbf1c06" category="list-text">Azure Managed Disksの略</block>
   <block id="55a5776613a7a49b0fb7fc4800c3065f" category="list-text">ネットアップのクラウドサービスストレージサービスをストレージバックエンドとして使用している場合、Astra Control ServiceはAstra Tridentを使用して、アプリケーション用の永続的ボリュームをプロビジョニングします。Amazon EBSまたはAzureで管理されているディスクをストレージバックエンドとして使用している場合は、プロバイダ固有のCSIドライバをインストールする必要があります。インストール手順については、を参照してください <block ref="ebf2a7f1b6295b0b8e4d97b888cb809e" category="inline-link-macro-rx"></block> および <block ref="1938f6af50a8259a0bb98bac4f34eeeb" category="inline-link-macro-rx"></block>。</block>
@@ -2063,7 +2053,6 @@
   <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>、Google Persistent Disk、および<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> GKEクラスターのストレージバックエンドとして。</block>
   <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service で使用される<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> および<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> をAWSクラスタのストレージバックエンドとして使用</block>
   <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureで管理されるディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
-  <block id="2281a4480d392ba38bb5a7a535c3d0a6" category="list-text">Cloud Volumes ONTAP ストレージバックエンド（正式にAzureとGoogle Cloudプラットフォームでサポート）</block>
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
   <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">の詳細を確認してください <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
@@ -2086,4 +2075,15 @@
   <block id="17fc42c08affacba5657de8d171ed30e" category="list-text">*クラウドインスタンス名*（プロバイダ管理クラスタの場合）：このクラスタの追加時に作成される新しいクラウドインスタンスの名前を指定します。の詳細を確認してください <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>。</block>
   <block id="1fe883570039bf797197aff2f9905e79" category="list-text">（オプション）* Storage *：このクラスタに導入されたKubernetesアプリケーションをデフォルトで使用するストレージクラスを選択します。</block>
   <block id="a0652b7f26bfa45b4a805218ab132fd2" category="paragraph">*プロバイダ管理クラスタの場合*：このクラウドプロバイダ用に初めて追加したクラスタの場合、Astra Control Serviceは、対象となるクラスタで実行されているアプリケーションのバックアップ用にクラウドプロバイダ用のオブジェクトストアを作成します。（このクラウドプロバイダに対して後続のクラスタを追加した場合、オブジェクトストアは作成されません）。デフォルトのストレージクラスを指定した場合は、指定したデフォルトのストレージクラスがAstra Control Serviceによって設定されます。Amazon Web ServicesまたはGoogle Cloud Platformで管理されるクラスタの場合、Astra Control Serviceはクラスタにも管理者アカウントを作成します。この処理には数分かかることがあります。</block>
+  <block id="f22cb7c9b8713326a930c00edca70cee" category="list-text">ステージングから本番環境へのアプリケーションのクローニング</block>
+  <block id="5ec023826f488423d711ac0df1d9f4c5" category="list-text">NetApp SnapMirrorテクノロジを使用して、アプリケーションをリモートシステムにレプリケートします</block>
+  <block id="6c4ff7542dcef16bc12bbbab0c160e9a" category="list-text">Web UIまたはAPIを使用して、バックアップと移行のワークフローを実装します</block>
+  <block id="662f909cd182f2c19a1b5da86174d75f" category="list-text">* Astra Control Service *：ネットアップが管理するサービス。複数のクラウドプロバイダ環境や自己管理型のKubernetesクラスタで、アプリケーションに対応したデータ管理を提供します。</block>
+  <block id="a301d7b978ad27dd47b48aac714d81ef" category="list-text">* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。NetApp Cloud Volumes ONTAP ストレージバックエンドを使用して、複数のクラウドプロバイダ環境にAstra Control Centerをインストールすることもできます。</block>
+  <block id="8b9e0c5eab1aafdd0008e7d94a979a00" category="paragraph">ソフトウェアとしてダウンロード、インストール、および管理できます</block>
+  <block id="384c577b472799aa8cd781ce64f2bb34" category="paragraph">自社所有のKubernetesクラスタ</block>
+  <block id="a9cfaa106aeba8d791f3fcc6358b3523" category="cell">ストレージバックエンドや外部サービスを除き、両方のプラットフォームで同じ機能を利用できます（を参照） <block ref="b220d1e640409729fcaa15aadea51a52" category="inline-xref-macro-rx"></block>)</block>
+  <block id="a3060d8563d84f399ad045a8f074e953" category="cell">サポートされているストレージバックエンドは何ですか。</block>
+  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
+  <block id="e76d01158a51318d708ef8185fb06b2d" category="list-text">この時点で、クラスタからアプリケーションを定義できます。ストレージバックエンドで新しいデフォルトストレージクラスを使用して永続ボリュームがプロビジョニングされます。</block>
 </blocks>
