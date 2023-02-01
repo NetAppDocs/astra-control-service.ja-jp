@@ -57,6 +57,7 @@ ifdef::azure[]
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
 
 * プライベートAKSクラスタについては、を参照してください link:manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"^]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["セットアップのドキュメント"^]。
 
 
 endif::azure[]
@@ -65,6 +66,7 @@ ifdef::gcp[]
 
 .Google Cloud
 * 必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["セットアップのドキュメント"^]。
 
 
 endif::gcp[]

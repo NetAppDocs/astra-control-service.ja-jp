@@ -1089,8 +1089,6 @@
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。</block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control コンポーネント</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes クラスタ * ： Kubernetes は、コンテナ化されたワークロードとサービスを管理するための、ポータブルで拡張性に優れたオープンソースプラットフォームであり、宣言型の設定と自動化の両方を促進します。Astra は、 Kubernetes クラスタでホストされているアプリケーションに管理サービスを提供します。</block>
-  <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* ストレージバックエンド * ：</block>
-  <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF と FAS のストレージバックエンド。ONTAP は、ストレージソフトウェアおよびハードウェアプラットフォームとして、コアストレージサービス、複数のストレージアクセスプロトコルのサポート、 Snapshot やミラーリングなどのストレージ管理機能を提供します。</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control インターフェイス</block>
   <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">さまざまなインターフェイスを使用してタスクを完了できます。</block>
@@ -1179,7 +1177,6 @@
   <block id="48812784c9e7b02bc76402c5a0c3ca10" category="list-text">プライベートクラスタコンポーネントのネームスペースを作成します。</block>
   <block id="f831baeb7ae8c560addc2916d8b1096e" category="list-text">Astra コネクタのカスタムリソース定義（ CRD ）を適用します。</block>
   <block id="138db2318815f6b9fc7cc55dd6a6ad32" category="list-text">アストラコネクタのステータスを確認します。</block>
-  <block id="570fa99ce4fbf8deb198b97a6931d63a" category="list-text">Cloud Volumes ONTAP ストレージバックエンド</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップサポートにトラブルシューティングと使用に関する情報を提供します。</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">* AKS のプライベートクラスタを Astra Control Service に追加できますか。 *</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">プライベートクラスタにはが必要です<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> Astra Control の IP アドレスを許可するように設定します。</block>
@@ -1393,7 +1390,6 @@
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBSの価格</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">Amazon FSX for NetApp ONTAP のパフォーマンス</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">Amazon FSX for NetApp ONTAP の価格設定</block>
-  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra Control Center は、次のストレージバックエンドを使用します。</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">Astra Controlのマネージアプリケーションの種類について説明します。</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">Astra Controlがクラスタを検出すると、それらのクラスタ上のアプリケーションは、管理方法を選択するまで管理されません。Astra Control のマネージドアプリケーションには、次のいずれかを使用できます。</block>
   <block id="594284cddefbf771912acc53c31ca2b3" category="list-text">Kubernetes でのアプリケーションの状態を反映するステータスを提供します。</block>
@@ -2049,9 +2045,6 @@
   <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP の略</block>
   <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP のドキュメント</block>
   <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>。</block>
-  <block id="1da547253b2bff6a97f16457ba6c7659" category="list-text">Astra Control Service で使用される<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block>、Azure Managed Disksの略<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> AKSクラスタのストレージバックエンドとして。</block>
-  <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service で使用される<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>、Google Persistent Disk、および<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> GKEクラスターのストレージバックエンドとして。</block>
-  <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service で使用される<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> および<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> をAWSクラスタのストレージバックエンドとして使用</block>
   <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureで管理されるディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
@@ -2086,4 +2079,11 @@
   <block id="a3060d8563d84f399ad045a8f074e953" category="cell">サポートされているストレージバックエンドは何ですか。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="e76d01158a51318d708ef8185fb06b2d" category="list-text">この時点で、クラスタからアプリケーションを定義できます。ストレージバックエンドで新しいデフォルトストレージクラスを使用して永続ボリュームがプロビジョニングされます。</block>
+  <block id="38e3b2d02a57ef89462103f8dcf36ab0" category="list-text"><block ref="38e3b2d02a57ef89462103f8dcf36ab0" category="inline-link-rx"></block></block>
+  <block id="ab819072ff4cb02cb39723b20e2ec373" category="list-text"><block ref="ab819072ff4cb02cb39723b20e2ec373" category="inline-link-rx"></block></block>
+  <block id="55b6146ebe43b01a290a7aad48a66943" category="list-text">自己管理クラスタ：</block>
+  <block id="ec2e9418f579c84a41733c6bb0adb789" category="list-text"><block ref="ec2e9418f579c84a41733c6bb0adb789" category="inline-link-rx"></block></block>
+  <block id="1bdec68ba7ba69d1cfefb7e18a857ef4" category="inline-link">セットアップのドキュメント</block>
+  <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>。</block>
+  <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>。</block>
 </blocks>
