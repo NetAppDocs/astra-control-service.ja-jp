@@ -88,7 +88,7 @@ Astra Control Serviceは、次のKubernetesディストリビューションを�
 
 * クラスタにインターネット経由でアクセスできる必要があります。
 * CSIドライバで有効にしたストレージを使用または使用する予定の場合は、適切なCSIドライバをクラスタにインストールする必要があります。CSIドライバを使用してストレージを統合する方法の詳細については、ご使用のストレージサービスのマニュアルを参照してください。
-* ネットアップストレージを使用している場合や使用を計画している場合は、Astra Tridentのバージョンがインストールされていることを確認してください link:../get-started/requirements.html#operational-environment-requirements["Astra Control Serviceによってサポートされます"^]：
+* ネットアップストレージを使用している場合や使用を計画している場合は、最新バージョンのAstra Tridentをインストール済みであることを確認します。
 +
 
 NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Tridentを導入"^] Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します `tridentctl`。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["サポートされるフロントエンド、バックエンド、およびホスト構成"^]。

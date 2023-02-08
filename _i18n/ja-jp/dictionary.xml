@@ -1047,7 +1047,6 @@
   <block id="a564f860d9dd9df279c4ea80b08d026a" category="cell">更新方法</block>
   <block id="b2929741e98ca2c366d8d7dfda36e2b9" category="cell">管理はネットアップが行います</block>
   <block id="091f846d60c1037c90ba7580f37ef9fa" category="paragraph">更新を管理します</block>
-  <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">アプリケーションデータ管理機能とは何ですか？</block>
   <block id="d6fc0eb1930e7e56affc953c237c5514" category="list-text">NetApp ONTAP AFF および FAS システム</block>
   <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra Control Service の仕組み</block>
   <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service は、常時稼働し、最新の機能で更新される、ネットアップが管理するクラウドサービスです。複数のコンポーネントを利用して、アプリケーションデータのライフサイクル管理を実現します。</block>
@@ -1060,7 +1059,6 @@
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="inline-link">Astra Trident</block>
   <block id="51fbabc51080a419e6a5019a1c169ab4" category="list-text">新しい admin ロールを使用してインストールします<block ref="0ff0cd427dac64ddc62afadc9a52e9d0" category="inline-link-rx"></block> をクリックして、 1 つ以上のストレージクラスを作成します。</block>
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">次に、 Astra Control Service を使用してこれらのアプリケーションを管理し、スナップショット、バックアップ、クローンの作成を開始します。</block>
-  <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service は、状態の変化を常に監視しているので、新しいアプリケーションを追加していくことを認識しています。</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra Control Center の仕組み</block>
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra Control Center は、お客様のプライベートクラウドでローカルに実行されます。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">要件</block>
@@ -1648,7 +1646,6 @@
   <block id="a30241413c2751b1ad5c5a00e914e0a1" category="paragraph">Astra Control Service にログインしたら、最初にクラスタの管理を開始します。クラウドプロバイダまたは自己管理クラスタによって管理されているクラスタを追加できます。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。</block>
   <block id="75cea9c777f72349fb550387eafc09c1" category="example-title">クラウドプロバイダが管理するクラスタに必要なもの</block>
   <block id="9eecb04f40bc3e3811b2fcfff6ea5b4f" category="example-title">自己管理型クラスタに必要なもの</block>
-  <block id="46805ef7b4802d7324462bf8ddc43dd9" category="inline-link-macro">Astra Control Serviceによってサポートされます</block>
   <block id="f658d356d0697be75622e7d5d6d94798" category="inline-link">Astra Tridentを導入</block>
   <block id="e9f0d7eb2b9e30339763cb7819bdf45e" category="inline-link">サポートされるフロントエンド、バックエンド、およびホスト構成</block>
   <block id="3c172a48713bf18882de70235bb9b4ee" category="admonition">可能です<block ref="ec89e21f8106b8624273185ce464dfb2" category="inline-link-rx"></block> Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください<block ref="c11537a174ec95a098cfff995b6e8b14" category="inline-link-rx"></block>。</block>
@@ -2062,20 +2059,17 @@
   <block id="c965062d34f97b8a807d6043b0889aa4" category="paragraph">自己管理型クラスタは、次の要件を満たしている必要があります。</block>
   <block id="58585810a4337be95bcfebedb828d056" category="list-text">クラスタにインターネット経由でアクセスできる必要があります。</block>
   <block id="834a9cd206312978cd28b32979a72bf7" category="list-text">CSIドライバで有効にしたストレージを使用または使用する予定の場合は、適切なCSIドライバをクラスタにインストールする必要があります。CSIドライバを使用してストレージを統合する方法の詳細については、ご使用のストレージサービスのマニュアルを参照してください。</block>
-  <block id="b8c13df983b97ca354ad7d646939f14d" category="list-text">ネットアップストレージを使用している場合や使用を計画している場合は、Astra Tridentのバージョンがインストールされていることを確認してください <block ref="3298582a629556efb23ae4ef06c101a7" category="inline-link-macro-rx"></block>：</block>
   <block id="1aec847a00d9758f901c82fc829ba738" category="list-text">*Kubeconfigにアクセス可能*:にアクセスできます <block ref="5c481c89be9c4fdcaa80bfd3c3829692" category="inline-xref-macro-rx"></block> コンテキスト要素が1つだけ含まれます。</block>
   <block id="1a6b6e95b95a8e0de09a6566562ea376" category="paragraph-title">adminロールのkubeconfigを作成します（Rancher、OpenShift、およびアップストリームのKubernetesを実行する環境 クラスタ）</block>
   <block id="17fc42c08affacba5657de8d171ed30e" category="list-text">*クラウドインスタンス名*（プロバイダ管理クラスタの場合）：このクラスタの追加時に作成される新しいクラウドインスタンスの名前を指定します。の詳細を確認してください <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>。</block>
   <block id="1fe883570039bf797197aff2f9905e79" category="list-text">（オプション）* Storage *：このクラスタに導入されたKubernetesアプリケーションをデフォルトで使用するストレージクラスを選択します。</block>
   <block id="a0652b7f26bfa45b4a805218ab132fd2" category="paragraph">*プロバイダ管理クラスタの場合*：このクラウドプロバイダ用に初めて追加したクラスタの場合、Astra Control Serviceは、対象となるクラスタで実行されているアプリケーションのバックアップ用にクラウドプロバイダ用のオブジェクトストアを作成します。（このクラウドプロバイダに対して後続のクラスタを追加した場合、オブジェクトストアは作成されません）。デフォルトのストレージクラスを指定した場合は、指定したデフォルトのストレージクラスがAstra Control Serviceによって設定されます。Amazon Web ServicesまたはGoogle Cloud Platformで管理されるクラスタの場合、Astra Control Serviceはクラスタにも管理者アカウントを作成します。この処理には数分かかることがあります。</block>
   <block id="f22cb7c9b8713326a930c00edca70cee" category="list-text">ステージングから本番環境へのアプリケーションのクローニング</block>
-  <block id="5ec023826f488423d711ac0df1d9f4c5" category="list-text">NetApp SnapMirrorテクノロジを使用して、アプリケーションをリモートシステムにレプリケートします</block>
   <block id="6c4ff7542dcef16bc12bbbab0c160e9a" category="list-text">Web UIまたはAPIを使用して、バックアップと移行のワークフローを実装します</block>
   <block id="662f909cd182f2c19a1b5da86174d75f" category="list-text">* Astra Control Service *：ネットアップが管理するサービス。複数のクラウドプロバイダ環境や自己管理型のKubernetesクラスタで、アプリケーションに対応したデータ管理を提供します。</block>
   <block id="a301d7b978ad27dd47b48aac714d81ef" category="list-text">* Astra Control Center * ：オンプレミス環境で実行される Kubernetes クラスタのアプリケーション対応データ管理を提供する、自己管理ソフトウェアです。NetApp Cloud Volumes ONTAP ストレージバックエンドを使用して、複数のクラウドプロバイダ環境にAstra Control Centerをインストールすることもできます。</block>
   <block id="8b9e0c5eab1aafdd0008e7d94a979a00" category="paragraph">ソフトウェアとしてダウンロード、インストール、および管理できます</block>
   <block id="384c577b472799aa8cd781ce64f2bb34" category="paragraph">自社所有のKubernetesクラスタ</block>
-  <block id="a9cfaa106aeba8d791f3fcc6358b3523" category="cell">ストレージバックエンドや外部サービスを除き、両方のプラットフォームで同じ機能を利用できます（を参照） <block ref="b220d1e640409729fcaa15aadea51a52" category="inline-xref-macro-rx"></block>)</block>
   <block id="a3060d8563d84f399ad045a8f074e953" category="cell">サポートされているストレージバックエンドは何ですか。</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="e76d01158a51318d708ef8185fb06b2d" category="list-text">この時点で、クラスタからアプリケーションを定義できます。ストレージバックエンドで新しいデフォルトストレージクラスを使用して永続ボリュームがプロビジョニングされます。</block>
@@ -2086,4 +2080,5 @@
   <block id="1bdec68ba7ba69d1cfefb7e18a857ef4" category="inline-link">セットアップのドキュメント</block>
   <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>。</block>
   <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>。</block>
+  <block id="cac25a8107e0ae4e458a81d1cd3dc8d2" category="list-text">ネットアップストレージを使用している場合や使用を計画している場合は、最新バージョンのAstra Tridentをインストール済みであることを確認します。</block>
 </blocks>
