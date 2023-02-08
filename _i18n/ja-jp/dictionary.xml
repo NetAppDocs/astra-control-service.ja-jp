@@ -801,28 +801,7 @@
   <block id="c1575cacf426b45878d5adfc037a028f" category="list-text"><block ref="c1575cacf426b45878d5adfc037a028f" category="inline-link-rx"></block></block>
   <block id="3fe7d67b8f0628b05891d62d99baa50d" category="list-text">AKS の場合、サービスプリンシパルの作成時に Azure CLI からの出力を含む JSON ファイルが必要です。 <block ref="729195046546458059238eb51a9a1385" category="inline-link-macro-rx"></block>。</block>
   <block id="7b7f260c982647b3aee51c681be792ef" category="section-title">アプリケーション管理の要件</block>
-  <block id="a23e8e619b2ffd1ec1e37fd1f16eee74" category="list-text">* StorageClass* ： StorageClass が明示的に設定されたアプリケーションをインストールし、そのアプリケーションをクローニングする必要がある場合、クローン処理のターゲットクラスタに最初に指定された StorageClass が必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。</block>
   <block id="7a9f49c6cd6dca3bc35b755523c76570" category="list-text">* Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。</block>
-  <block id="d7d354d0f9d0780e168c895c92a32c24" category="list-text">クラスタロール</block>
-  <block id="e866afd8290d5c73cda6260e04e6eef0" category="list-text">ClusterRoleBinding</block>
-  <block id="a941f8adb5ae079ebc739cb59407fd30" category="list-text">ConfigMap</block>
-  <block id="99bc4b850e05bafd67cf5f5f49344c1e" category="list-text">CustomResourceDefinition の場合</block>
-  <block id="2597d86efa761b80f198c7208e859dd7" category="list-text">CustomResource の場合</block>
-  <block id="0d4eb61dc57afc7f3f8d51439c96eedd" category="list-text">デモンセット（ DemonSet ）</block>
-  <block id="788c34b60baf42eb1cac433ba1f0b64a" category="list-text">DeploymentConfig</block>
-  <block id="7d05c708b92b4809bfe9bf66edf8f765" category="list-text">入力</block>
-  <block id="1fcd027e4be180b1536eba3afa93e6be" category="list-text">MutingWebhook</block>
-  <block id="2b3f8e4d49589c4452db0a07d619d824" category="list-text">PersistentVolumeClaim のように表示され</block>
-  <block id="8a0813c70cf4bf1529f25c411a039130" category="list-text">ポッド</block>
-  <block id="3f402161942e4154684cf3f56c76cead" category="list-text">ReplicaSet</block>
-  <block id="ec7eab019566cfca91934ab1e0073511" category="list-text">RoleBinding です</block>
-  <block id="bbbabdbe1b262f75d99d62880b953be1" category="list-text">ロール</block>
-  <block id="9405c3aff9112c3c60d03b94792877dc" category="list-text">ルート</block>
-  <block id="1e6947ac7fb3a9529a9726eb692c8cc5" category="list-text">秘密</block>
-  <block id="c2ba7e785c49050f48da9aacc45c2b85" category="list-text">サービス</block>
-  <block id="5c24ffd6438853b537bd99b3fccd3340" category="list-text">サービスアカウント</block>
-  <block id="f202d1133673fa6cfe280880cbc3ee66" category="list-text">Stateful役立つ セット</block>
-  <block id="91e292ade0a336af19f1ac0977215b91" category="list-text">検証 Webhook</block>
   <block id="b8f3bc1c4097cf013ff9bb82ec30af2e" category="section-title">サポートされているアプリインストール方法</block>
   <block id="1633320139361ee32414ab0910725238" category="list-text">* マニフェストファイル * ： Astra Control は、 kubectl を使用してマニフェストファイルからインストールされたアプリケーションをサポートします。例：</block>
   <block id="a117e5ae155bb69285242a4c89875dd6" category="list-text">* Helm 3 * ： Helm を使用してアプリケーションをインストールする場合、 Astra Control には Helm バージョン 3 が必要です。Helm 3 （または Helm 2 から Helm 3 にアップグレード）を使用してインストールされたアプリケーションの管理とクローニングが完全にサポートされています。Helm 2 でインストールされたアプリケーションの管理はサポートされていません。</block>
@@ -1164,11 +1143,6 @@
   <block id="a11a0e1d242df8616f3c50d7c65bb304" category="list-text">「 remove 」と入力して操作を確認します。</block>
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">「 * Yes 、 remove bucket * 」を選択します。</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">詳細については、こちらをご覧ください</block>
-  <block id="639125955d3128c08b048bc254433dbf" category="cell">cronjob</block>
-  <block id="f82570cd8dd080fcb0fe525f9b081bdb" category="cell">HorizontalPodAutoscaler のように表示されます</block>
-  <block id="d8babd242bd93046572e7f50a3fbb394" category="cell">PodDisruptionBudget （予算の廃止）</block>
-  <block id="3f4dbf8b7a689375f651090e7a111098" category="cell">PodTemplate</block>
-  <block id="c794a682153b998c6dca3efddf650512" category="cell">ネットワークポリシー</block>
   <block id="e2422705f78eff49e43f16a31a8f0847" category="section-title">プライベートクラスタを管理する</block>
   <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">Astra Connector オペレータのネームスペースを作成します。</block>
   <block id="38da14ec20cf0841c7dc45fab0adbf07" category="list-text">「 astraaconnector _operator.yaml 」ファイルを演算子名前空間に適用します。</block>
@@ -1785,8 +1759,6 @@
   <block id="5c227ef4d58eed958f28dbf199bfbaad" category="list-text">開始する前に、を理解しておく必要があります <block ref="8168216ca124f830e0a917cd26a29d8e" category="inline-link-macro-rx"></block>。</block>
   <block id="9c2493f3c86c9672c359e50cc2e1f743" category="inline-link-macro">ネームスペースの制約を持つユーザロールの変更</block>
   <block id="64443e478ec258a769dbd46a51e212af" category="list-text">Astra Controlのアプリケーションで複数の名前空間を使用する場合は、を検討してください <block ref="f6ecb96773fcc25458fe25947dd92e28" category="inline-link-macro-rx"></block> アプリケーションを定義する前に。</block>
-  <block id="23933fe5cfee8cef6dcf2e9c76674773" category="example-title">&lt;strong&gt; アプリケーションネームスペースにクラスタ対象リソースを追加する方法については、&lt;/strong&gt; を参照してください。</block>
-  <block id="42eb29ab06c150f146256489fbb31f3d" category="paragraph">名前空間リソースに関連付けられているクラスタリソースを、自動的に含まれているアストラコントロールに加えてインポートできます。特定のグループ、種類、バージョンのリソースを含むルールを追加し、必要に応じてラベルを付けることができます。この処理は、Astra Controlに自動的に含まれないリソースがある場合などに実行します。</block>
   <block id="86584cfcf6ac47eda80aaeeb3808d02b" category="paragraph">Astra Controlに自動的に含まれる、クラスタを対象としたリソースを除外することはできません。</block>
   <block id="8b3aa3648af6fe384bf33e5384fcc7b4" category="paragraph">以下を追加できます<block ref="aec49c7ac598bde0d65853ea9807c58f" prefix=" " category="inline-code"></block> （APIバージョンと組み合わせたグループ）。</block>
   <block id="3ba5d3eff61255f7c7727fb4ed8cdbc6" category="cell">リソースの種類</block>
@@ -1822,7 +1794,6 @@
   <block id="43448f8497139ffbc9a461d85db8c731" category="paragraph">Kubernetes クラスタ間でアプリケーションとストレージを移動する必要がある場合は、クローニングが役立ちます。たとえば、 CI / CD パイプラインや Kubernetes ネームスペース間でワークロードを移動できます。</block>
   <block id="7d754e7d4f4a324710302cf0fc4d80c2" category="list-text">アプリケーションを別のクラスタにクローニングするには、ソースクラスタとデスティネーションクラスタを含むクラウドインスタンス（同じでない場合）にデフォルトのバケットを用意する必要があります。クラウドインスタンスごとにデフォルトのバケットを割り当てる必要があります。</block>
   <block id="81eb21a03d5ee9fbe847337ca76b57dc" category="list-title">クローンの制限事項</block>
-  <block id="676ff7d1c1d92284765be9dd54f79974" category="list-text">*明示的なストレージクラス*：ストレージクラスを明示的に設定したアプリケーションを展開し、そのアプリケーションのクローンを作成する必要がある場合、ターゲットクラスタに最初に指定されたストレージクラスが必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。</block>
   <block id="d32d7bd30d168502b9d4ee99b9925378" category="list-text">*クローンとユーザーの制約*：名前空間の名前/ IDまたは名前空間のラベルによって名前空間の制約を持つメンバーユーザーは、同じクラスタ上の新しい名前空間、または組織のアカウント内の他の任意のクラスタに対して、アプリケーションのクローンまたはリストアを実行できます。ただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローンまたはリストア処理によって新しいネームスペースが作成されると、アカウントの管理者 / 所有者はメンバーユーザアカウントを編集し、該当するユーザに新しいネームスペースへのアクセスを許可するロールの制限を更新できます。</block>
   <block id="c65bdc145f9acf12c31ad3d52e08fe52" category="list-text">*クローンはデフォルトバケットを使用*：</block>
   <block id="1ade1b88410965a836b19fcf7588f87f" category="list-text">アプリケーションのバックアップやアプリケーションのリストア中に、使用するバケットを指定できます。クラスタ間でクローニングする場合、デフォルトバケットを指定する必要がありますが、同じクラスタ内でクローニングする場合、バケットの指定は任意です。</block>
@@ -2081,4 +2052,29 @@
   <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>。</block>
   <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>。</block>
   <block id="cac25a8107e0ae4e458a81d1cd3dc8d2" category="list-text">ネットアップストレージを使用している場合や使用を計画している場合は、最新バージョンのAstra Tridentをインストール済みであることを確認します。</block>
+  <block id="972bcf4ffaa6d6b2c50833f0c86517d2" category="list-text">*ストレージクラス*：ストレージクラスを明示的に設定したアプリケーションをインストールし、アプリケーションのクローンを作成する必要がある場合、クローン処理のターゲットクラスタには、元 々 指定されたストレージクラスが必要です。ストレージクラスを明示的に設定したアプリケーションを、同じストレージクラスを含まないクラスタにクローニングすると、失敗します。</block>
+  <block id="e5de374e1d369bfc7e8ec51b5b744933" category="cell"><block ref="a941f8adb5ae079ebc739cb59407fd30" prefix="" category="inline-code"></block></block>
+  <block id="be5e0e20ce0e311437852c90af7c8276" category="cell"><block ref="639125955d3128c08b048bc254433dbf" prefix="" category="inline-code"></block></block>
+  <block id="0302c657e0585c41f2f6278beec1daa8" category="cell"><block ref="0d4eb61dc57afc7f3f8d51439c96eedd" prefix="" category="inline-code"></block></block>
+  <block id="3ef1c1f8bb4a9f17e4c3be129db67366" category="cell"><block ref="788c34b60baf42eb1cac433ba1f0b64a" prefix="" category="inline-code"></block></block>
+  <block id="fd8848399c1c55827bc0b79969e1e4a0" category="cell"><block ref="f82570cd8dd080fcb0fe525f9b081bdb" prefix="" category="inline-code"></block></block>
+  <block id="965155af507b897bd6e77dffd6aa0722" category="cell"><block ref="7d05c708b92b4809bfe9bf66edf8f765" prefix="" category="inline-code"></block></block>
+  <block id="77a106c2fd00e72732b9ca603f027479" category="cell"><block ref="1fcd027e4be180b1536eba3afa93e6be" prefix="" category="inline-code"></block></block>
+  <block id="e4fee35090e28014a028d2aacbc2dfd5" category="cell"><block ref="c794a682153b998c6dca3efddf650512" prefix="" category="inline-code"></block></block>
+  <block id="663d2d3603ff41da6cc6ee0a9ff5b975" category="cell"><block ref="2b3f8e4d49589c4452db0a07d619d824" prefix="" category="inline-code"></block></block>
+  <block id="82873de0f5b2ce17a8ae3c45fcdec32d" category="cell"><block ref="8a0813c70cf4bf1529f25c411a039130" prefix="" category="inline-code"></block></block>
+  <block id="11a7948f05eed04b034eed441c4f1d17" category="cell"><block ref="d8babd242bd93046572e7f50a3fbb394" prefix="" category="inline-code"></block></block>
+  <block id="93bca2ba13d4fcb7387baa5778fc009d" category="cell"><block ref="3f4dbf8b7a689375f651090e7a111098" prefix="" category="inline-code"></block></block>
+  <block id="2670a6aa236e5c7b5bd441bb5649af10" category="cell"><block ref="3f402161942e4154684cf3f56c76cead" prefix="" category="inline-code"></block></block>
+  <block id="b4686556afaf1bba0c5270574ca15c54" category="cell"><block ref="bbbabdbe1b262f75d99d62880b953be1" prefix="" category="inline-code"></block></block>
+  <block id="048d158959fcf004be385e1567033fe6" category="cell"><block ref="ec7eab019566cfca91934ab1e0073511" prefix="" category="inline-code"></block></block>
+  <block id="256f986a2a64bf0d93697e4176b13a4a" category="cell"><block ref="9405c3aff9112c3c60d03b94792877dc" prefix="" category="inline-code"></block></block>
+  <block id="793e5af2d1d35f01083c2714054795ba" category="cell"><block ref="1e6947ac7fb3a9529a9726eb692c8cc5" prefix="" category="inline-code"></block></block>
+  <block id="4074550b4bbee6a4267a989b94eb3c28" category="cell"><block ref="c2ba7e785c49050f48da9aacc45c2b85" prefix="" category="inline-code"></block></block>
+  <block id="650c66e0a27f30ae0cf2d7b83b772b35" category="cell"><block ref="5c24ffd6438853b537bd99b3fccd3340" prefix="" category="inline-code"></block></block>
+  <block id="9c396e0c60d319972f63a0023186f42a" category="cell"><block ref="f202d1133673fa6cfe280880cbc3ee66" prefix="" category="inline-code"></block></block>
+  <block id="e69175cacbe45336f1df22a8b3b32254" category="cell"><block ref="91e292ade0a336af19f1ac0977215b91" prefix="" category="inline-code"></block></block>
+  <block id="dcb9a5ddd39d8514ddcd5a64c129a6b0" category="example-title">アプリケーションネームスペースへのクラスタを対象としたリソースの追加の詳細については、こちらをご覧ください。</block>
+  <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">ネームスペースリソースに関連付けられているクラスタリソースを、自動的に含まれるアストラコントロールに加えてインポートできます。特定のグループ、種類、バージョンのリソースを含むルールを追加し、必要に応じてラベルを付けることができます。この処理は、Astra Controlに自動的に含まれないリソースがある場合などに実行します。</block>
+  <block id="b9e5ceb3ee51c79795e57043d65ace4f" category="list-text">*明示的ストレージクラス*：ストレージクラスを明示的に設定したアプリケーションを導入し、そのアプリケーションのクローンを作成する必要がある場合、ターゲットクラスタには元 々 指定されたストレージクラスが必要です。ストレージクラスを明示的に設定したアプリケーションを、同じストレージクラスを含まないクラスタにクローニングすると、失敗します。</block>
 </blocks>

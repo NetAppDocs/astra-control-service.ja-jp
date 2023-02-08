@@ -22,38 +22,38 @@ Astra Control には、次のアプリケーション管理要件があります
 
 * *ライセンス*：10を超えるネームスペースを管理するには、Astra Control Centerサブスクリプションが必要です。
 * *名前空間*：アプリケーションは、Astra Controlを使用して、単一クラスタ上の1つ以上の指定された名前空間内で定義できます。アプリケーションには、同じクラスタ内の複数のネームスペースにまたがるリソースを含めることができます。Astra Controlでは、複数のクラスタ間でアプリケーションを定義する機能はサポートされていません。
-* * StorageClass* ： StorageClass が明示的に設定されたアプリケーションをインストールし、そのアプリケーションをクローニングする必要がある場合、クローン処理のターゲットクラスタに最初に指定された StorageClass が必要です。明示的に StorageClass を設定したアプリケーションを、同じストレージクラスを使用しないクラスタにクローニングすると、失敗します。
+* *ストレージクラス*：ストレージクラスを明示的に設定したアプリケーションをインストールし、アプリケーションのクローンを作成する必要がある場合、クローン処理のターゲットクラスタには、元 々 指定されたストレージクラスが必要です。ストレージクラスを明示的に設定したアプリケーションを、同じストレージクラスを含まないクラスタにクローニングすると、失敗します。
 * * Kubernetes リソース * ： Astra Control で収集されない Kubernetes リソースを使用するアプリケーションには、アプリケーションデータの完全な管理機能がない可能性があります。Astra Control では、次の Kubernetes リソースが収集されます。
 +
 [cols="1,1,1"]
 |===
 
 
-| クラスタロール | ClusterRoleBinding | ConfigMap 
+| `ClusterRole` | `ClusterRoleBinding` | `ConfigMap` 
 
 
-| cronjob | CustomResourceDefinition の場合 | CustomResource の場合 
+| `CronJob` | `CustomResourceDefinition` | `CustomResource` 
 
 
-| デモンセット（ DemonSet ） | DeploymentConfig | HorizontalPodAutoscaler のように表示されます 
+| `DaemonSet` | `DeploymentConfig` | `HorizontalPodAutoscaler` 
 
 
-| 入力 | MutingWebhook | ネットワークポリシー 
+| `Ingress` | `MutatingWebhook` | `NetworkPolicy` 
 
 
-| PersistentVolumeClaim のように表示され | ポッド | PodDisruptionBudget （予算の廃止） 
+| `PersistentVolumeClaim` | `Pod` | `PodDisruptionBudget` 
 
 
-| PodTemplate | ReplicaSet | ロール 
+| `PodTemplate` | `ReplicaSet` | `Role` 
 
 
-| RoleBinding です | ルート | 秘密 
+| `RoleBinding` | `Route` | `Secret` 
 
 
-| サービス | サービスアカウント | Stateful役立つ セット 
+| `Service` | `ServiceAccount` | `StatefulSet` 
 
 
-| 検証 Webhook |  |  
+| `ValidatingWebhook` |  |  
 |===
 
 
@@ -168,10 +168,10 @@ WARNING: アプリケーションを定義するときは、保護ポリシー�
 リソースを共有するアプリケーションでIn Placeリストア処理を実行すると、予期しない結果が生じる可能性があります。アプリケーション間で共有されているリソースは、いずれかのアプリケーションでインプレースリストアが実行されると置き換えられます。
 
 ====
-.<strong> アプリケーションネームスペースにクラスタ対象リソースを追加する方法については、</strong> を参照してください。
+.アプリケーションネームスペースへのクラスタを対象としたリソースの追加の詳細については、こちらをご覧ください。
 [%collapsible]
 ====
-名前空間リソースに関連付けられているクラスタリソースを、自動的に含まれているアストラコントロールに加えてインポートできます。特定のグループ、種類、バージョンのリソースを含むルールを追加し、必要に応じてラベルを付けることができます。この処理は、Astra Controlに自動的に含まれないリソースがある場合などに実行します。
+ネームスペースリソースに関連付けられているクラスタリソースを、自動的に含まれるアストラコントロールに加えてインポートできます。特定のグループ、種類、バージョンのリソースを含むルールを追加し、必要に応じてラベルを付けることができます。この処理は、Astra Controlに自動的に含まれないリソースがある場合などに実行します。
 
 Astra Controlに自動的に含まれる、クラスタを対象としたリソースを除外することはできません。
 
