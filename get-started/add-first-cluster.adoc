@@ -76,7 +76,7 @@ endif::gcp[]
 .自己管理型クラスタに必要なもの
 [%collapsible]
 ====
-自社で管理するクラスタでは、Astra Tridentを使用してネットアップのストレージサービスを操作することも、CSI（Container Storage Interface）ドライバを使用して他のストレージサービスを操作することもできます。
+自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。
 
 Astra Control Serviceは、次のKubernetesディストリビューションを使用して、自己管理型クラスタをサポートします。
 

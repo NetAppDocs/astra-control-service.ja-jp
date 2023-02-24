@@ -18,7 +18,7 @@ Astra Control Serviceは、Amazon Elastic Kubernetes Service（EKS）クラス�
 
 == Amazon Elastic Block Store（EBS）
 
-EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味とその設定方法の詳細については、を参照してください https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetesのドキュメント"^]。
+クラスタでは、Container Storage Interface（CSI）ドライバを使用してEBSとインターフェイスできます。EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味とその設定方法の詳細については、を参照してください https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetesのドキュメント"^]。
 
 EBSで使用できるボリュームのタイプは次のとおりです。
 

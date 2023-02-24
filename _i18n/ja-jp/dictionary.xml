@@ -968,10 +968,8 @@
   <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">「 * Update * 」を選択します。</block>
   <block id="bd5cde8fc544622a3633d73962bcd705" category="summary">Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用サービスレベル、ストレージクラス、永続的ボリュームのサイズを選択することでパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="2cafdb551953c7afd397b12eee1ce505" category="paragraph">Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用可能サービスタイプ、ストレージクラス、永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
-  <block id="5165c93eed8a6988e2abc470bf4d0bbe" category="paragraph">Astra Control Service は、ストレージバックエンドオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。</block>
   <block id="2938a5725f8de8bc6cfbe9bdd59f796f" category="summary">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files を使用します。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="45f2ca5e315e585458c55fea41d5b448" category="paragraph">Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラスタのストレージバックエンドとして Azure NetApp Files をサポートします。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
-  <block id="a78513acd713c2d45f9956aec22c3e19" category="paragraph">Astra Control Service は、 Azure で管理されるディスクをストレージバックエンドオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。</block>
   <block id="d0848afd8553c34945705222a97a4553" category="paragraph">次のような出力が表示されます。</block>
   <block id="26031f2b054a2a1f996995dc1b39cc4e" category="list-text">「 Get started with Astra Control 」を選択します。</block>
   <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">[ 送信 ] を選択します。</block>
@@ -1939,7 +1937,6 @@
   <block id="adb43c383a88e1f2946ab2e72ac03918" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Azure サービスプリンシパルを作成します</block>
   <block id="115d465e8b862905dee97dfc00687f80" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> CSI ドライバの詳細を設定します</block>
   <block id="4ba43802facfe67533d744cbe8965137" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> オプション：Azureバックアップバケットの冗長性を設定する</block>
-  <block id="c969f450a50c240b276b1959fc3eb534" category="paragraph">EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味とその設定方法の詳細については、を参照してください<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
   <block id="37a9edbcd89980d7a6ec52943de6e692" category="paragraph">各タイプのボリュームとそのパフォーマンスの詳細については、を参照してください<block ref="7ac340f30d3ddae2dcb4baa266ef78ba" category="inline-link-rx"></block>。価格については、を参照してください<block ref="7729091ef10325fb607ffe76c346cfed" category="inline-link-rx"></block>。</block>
   <block id="573eae71a4ffbba9a137bcf0add56e46" category="paragraph">NetApp ONTAP のFSXをAWSクラスタのストレージバックエンドとして使用する場合、I/Oパフォーマンスはファイルシステムの構成とワークロードの特性によって異なります。NetApp ONTAP のパフォーマンスに関するFSXの具体的な情報については、を参照してください<block ref="45a884cbefaf34ae6fd7defa1c6be8c3" category="inline-link-rx"></block>。価格については、を参照してください<block ref="1fe52440a36dc241abcf36facca2f97a" category="inline-link-rx"></block>。</block>
   <block id="676a48d63ffa9fc8110c816cc1f05f58" category="section-title">Astra Tridentはクラスタからアンインストールされません</block>
@@ -2018,7 +2015,6 @@
   <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">（オプション）を指定する必要がある場合<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">サービスプリンシパルの作成時に、Azure CLIからの出力を含むJSONファイルが必要です。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
   <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
-  <block id="ac3bb3e8177657e75082233c58971d93" category="paragraph">自社で管理するクラスタでは、Astra Tridentを使用してネットアップのストレージサービスを操作することも、CSI（Container Storage Interface）ドライバを使用して他のストレージサービスを操作することもできます。</block>
   <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Serviceは、次のKubernetesディストリビューションを使用して、自己管理型クラスタをサポートします。</block>
   <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift Container Platform</block>
   <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes Engineの略</block>
@@ -2078,4 +2074,8 @@
   <block id="afe823403603f8e45a82a192de4f1f39" category="paragraph"><block ref="afe823403603f8e45a82a192de4f1f39" category="inline-link-macro-rx"></block></block>
   <block id="43f10e14cfc78f2dccf4af9115390a26" category="list-text"><block ref="43f10e14cfc78f2dccf4af9115390a26" category="inline-link-rx"></block></block>
   <block id="aa2317f5569d30b7aac1b41dd02ffe97" category="list-text">NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Amazon Web Servicesと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください<block ref="c40ff22452592aa319388d1d94a0a32e" category="inline-link-rx"></block>。</block>
+  <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、Azure Managed Disksをストレージバックエンドとしてインターフェイスできます。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。</block>
+  <block id="46625131314080c123c1a23c969aa3a8" category="paragraph">Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、ストレージバックエンドとしてGoogle Persistent Diskと連携できます。このサービスは、 Google が管理するブロックレベルのストレージを提供します。</block>
+  <block id="4d2a3e63d994334eaa09e7217ed0d01d" category="paragraph">クラスタでは、Container Storage Interface（CSI）ドライバを使用してEBSとインターフェイスできます。EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味とその設定方法の詳細については、を参照してください<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
+  <block id="4c59c334ed6b80e6cd8237e6f14cf9cb" category="paragraph">自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。</block>
 </blocks>

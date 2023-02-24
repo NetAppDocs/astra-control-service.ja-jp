@@ -113,7 +113,7 @@ Astra Control Service では、 CVS サービスタイプで 300GiB 以上のボ
 
 == Google Persistent Disk のことです
 
-Astra Control Service は、ストレージバックエンドオプションとして Google Persistent Disk をサポートします。このサービスは、 Google が管理するブロックレベルのストレージを提供します。
+Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、ストレージバックエンドとしてGoogle Persistent Diskと連携できます。このサービスは、 Google が管理するブロックレベルのストレージを提供します。
 
 https://cloud.google.com/persistent-disk/["Google Persistent Disk の詳細については、こちらをご覧ください"^]。
 

@@ -51,9 +51,9 @@ Astra Control Service は、 PVC でボリュームサイズの縮小が要求�
 
 
 
-== Azure で管理されるディスク
+== Azure Managed Disksの略
 
-Astra Control Service は、 Azure で管理されるディスクをストレージバックエンドオプションとしてサポートします。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
+Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、Azure Managed Disksをストレージバックエンドとしてインターフェイスできます。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスクに関する詳細はこちらをご覧ください"^]。
 
