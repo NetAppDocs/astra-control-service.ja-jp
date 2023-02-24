@@ -23,9 +23,9 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 +
 link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
 
-* ストレージバックエンドとしてのNetApp Cloud Volumes ONTAP のサポート（Microsoft AzureおよびGoogle Cloudプラットフォームで正式にサポート）
+* ストレージバックエンドとしてのNetApp Cloud Volumes ONTAP のサポート
 +
-link:../learn/architecture.html#astra-control-components["アーキテクチャとコンポーネント"]
+link:../get-started/intro.html["Astra Controlの詳細をご確認ください"]
 
 
 

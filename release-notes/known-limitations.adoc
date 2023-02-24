@@ -32,16 +32,6 @@ Astra Control Service からクラスタの管理を解除しても、 Astra Tri
 
 Postgres ポッドで操作を実行する場合は、 psql コマンドを使用するためにポッド内で直接接続しないでください。Astra Control Service では、 psql にアクセスしてデータベースをフリーズしたり、解凍したりする必要があります。既存の接続がある場合、スナップショット、バックアップ、またはクローンは失敗します。
 
-ifdef::aws[]
-
-
-
-=== NetApp Cloud Volumes ONTAP は、Amazon Web Servicesに対して正式にサポートされていません
-
-ネットアップCloud Volumes ONTAP は、2019年1月17日よりAstra Control Serviceのリリースとして正式にサポートされていません。
-
-endif::aws[]
-
 ifdef::gcp[]
 
 

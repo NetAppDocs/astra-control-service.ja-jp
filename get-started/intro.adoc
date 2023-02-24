@@ -64,6 +64,7 @@ Astra Control には、次の 2 つの導入モデルがあります。
 +
 ** Amazon EBSのことです
 ** NetApp ONTAP 対応の Amazon FSX
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["Cloud Volumes ONTAP"^]
 
 
 
