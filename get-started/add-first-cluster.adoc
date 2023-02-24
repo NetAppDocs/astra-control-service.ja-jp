@@ -28,7 +28,11 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
 
-をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます `kubeconfig.yaml` ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります <<Kubernetes クラスタの管理を開始します>>。
+
+
+=== 自己管理型クラスタ
+
+自己管理型クラスタは、ユーザが直接プロビジョニングおよび管理するクラスタです。Astra Control Serviceは、パブリッククラウド環境で実行される自己管理型クラスタをサポートします。をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます `kubeconfig.yaml` ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります <<Kubernetes クラスタの管理を開始します>>。
 
 
 
@@ -76,9 +80,9 @@ endif::gcp[]
 .自己管理型クラスタに必要なもの
 [%collapsible]
 ====
-自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。
+自己管理型クラスタは、ユーザが直接プロビジョニングおよび管理するクラスタです。Astra Control Serviceは、パブリッククラウド環境で実行される自己管理型クラスタをサポートします。自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。
 
-Astra Control Serviceは、次のKubernetesディストリビューションを使用して、自己管理型クラスタをサポートします。
+Astra Control Serviceは、次のKubernetesディストリビューションを使用する自己管理クラスタをサポートします。
 
 * Red Hat OpenShift Container Platform
 * Rancher Kubernetes Engineの略
@@ -88,6 +92,7 @@ Astra Control Serviceは、次のKubernetesディストリビューションを�
 自己管理型クラスタは、次の要件を満たしている必要があります。
 
 * クラスタにインターネット経由でアクセスできる必要があります。
+* クラスタをオンプレミスネットワーク内でホストすることはできません。パブリッククラウド環境でホストする必要があります。
 * CSIドライバで有効にしたストレージを使用または使用する予定の場合は、適切なCSIドライバをクラスタにインストールする必要があります。CSIドライバを使用してストレージを統合する方法の詳細については、ご使用のストレージサービスのマニュアルを参照してください。
 * ネットアップストレージを使用している場合や使用を計画している場合は、最新バージョンのAstra Tridentをインストール済みであることを確認します。
 +

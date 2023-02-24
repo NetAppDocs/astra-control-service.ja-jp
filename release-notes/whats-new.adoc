@@ -54,7 +54,7 @@ link:../get-started/add-first-cluster.html["Astra Control Service から Kuberne
 +
 link:../use/manage-cloud-instances.html["クラウドインスタンスを管理します"]
 
-* Astra Control Serviceへの自己管理型Kubernetesクラスタの追加をサポート
+* パブリッククラウド環境でホストされている自己管理型KubernetesクラスタをAstra Control Serviceに追加できます
 +
 link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
 

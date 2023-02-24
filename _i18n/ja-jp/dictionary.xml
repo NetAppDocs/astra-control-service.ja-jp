@@ -1615,7 +1615,6 @@
   <block id="3c7ad3a476ad730cdda13eafe57f371e" category="list-text">GKEバージョン1.24以降では、Dockerベースのノードイメージはサポートされていません。GKEのワーカーノードのイメージタイプがであることを確認します<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> NFSのマウントに成功しました。</block>
   <block id="da2c085b9d8d021307417125c20d3a83" category="paragraph">Azure管理ディスクをAstra Control Serviceとともに使用するには、必要なCSIドライバをインストールする必要があります。</block>
   <block id="c9be99ba5f72a27dc67b1b94e7b90efd" category="paragraph">まだクラスタがない場合は、を満たすクラスタを作成できます <block ref="e7658a1af56c46ed5b9cdfa6f95bb6cb" category="inline-link-macro-rx"></block>。まだクラスタがない場合は、を満たすクラスタを作成できます <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>。まだクラスタがない場合は、を満たすクラスタを作成できます <block ref="6bb2c6a064e406c3dfdba3642f8a72c0" category="inline-link-macro-rx"></block> または <block ref="26e75175e6e267eb6426de7596baf82e" category="inline-link-macro-rx"></block>。</block>
-  <block id="a30241413c2751b1ad5c5a00e914e0a1" category="paragraph">Astra Control Service にログインしたら、最初にクラスタの管理を開始します。クラウドプロバイダまたは自己管理クラスタによって管理されているクラスタを追加できます。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。</block>
   <block id="75cea9c777f72349fb550387eafc09c1" category="example-title">クラウドプロバイダが管理するクラスタに必要なもの</block>
   <block id="9eecb04f40bc3e3811b2fcfff6ea5b4f" category="example-title">自己管理型クラスタに必要なもの</block>
   <block id="f658d356d0697be75622e7d5d6d94798" category="inline-link">Astra Tridentを導入</block>
@@ -1999,7 +1998,6 @@
   <block id="d57729d6a002792bd1640f00b3c60a6d" category="list-text">バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました</block>
   <block id="ee22ee616d03d0b788bbae8035a8d53d" category="list-text">互換性のあるバージョンのAstra Tridentがインストール済みのクラスタの管理をサポート</block>
   <block id="22289318dae293d59005c72969da78c0" category="list-text">単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます</block>
-  <block id="16522d4241295dd4aacfffd076bdab35" category="list-text">Astra Control Serviceへの自己管理型Kubernetesクラスタの追加をサポート</block>
   <block id="340fb7807661130b471c746bcb32778d" category="list-text">Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました</block>
   <block id="7c560ce667e00f7fb7277e3e40274958" category="list-text">AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート</block>
   <block id="0bf305437e764438b0cefa4feeab361a" category="paragraph">Astra Control Serviceは、永続的ボリュームのストレージバックエンドオプションとして、Google Cloud、Google Persistent Disk、またはNetApp Cloud Volumes ONTAP 用のCloud Volumes Service をサポートします。</block>
@@ -2010,12 +2008,10 @@
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
   <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">の詳細を確認してください <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
-  <block id="9f202fa58fc941e247e2f7786da19213" category="paragraph">をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
   <block id="aba973c684037589b32c06256909a7d8" category="list-text">クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 <block ref="5592dd611bfce65633cff7badbd7195f" category="inline-link-macro-rx"></block>。</block>
   <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">（オプション）を指定する必要がある場合<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">サービスプリンシパルの作成時に、Azure CLIからの出力を含むJSONファイルが必要です。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
   <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
-  <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Serviceは、次のKubernetesディストリビューションを使用して、自己管理型クラスタをサポートします。</block>
   <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift Container Platform</block>
   <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes Engineの略</block>
   <block id="1de3a8db0dcc39abe68ae2b506a8f0ac" category="list-text">アップストリームKubernetes</block>
@@ -2077,5 +2073,11 @@
   <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、Azure Managed Disksをストレージバックエンドとしてインターフェイスできます。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。</block>
   <block id="46625131314080c123c1a23c969aa3a8" category="paragraph">Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、ストレージバックエンドとしてGoogle Persistent Diskと連携できます。このサービスは、 Google が管理するブロックレベルのストレージを提供します。</block>
   <block id="4d2a3e63d994334eaa09e7217ed0d01d" category="paragraph">クラスタでは、Container Storage Interface（CSI）ドライバを使用してEBSとインターフェイスできます。EKSクラスタのストレージバックエンドとしてEBSを使用する場合、一部のストレージクラスパラメータを設定できます。パラメータの意味とその設定方法の詳細については、を参照してください<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
-  <block id="4c59c334ed6b80e6cd8237e6f14cf9cb" category="paragraph">自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。</block>
+  <block id="e250f15b25c098b957582ffccfb8ad32" category="list-text">パブリッククラウド環境でホストされている自己管理型KubernetesクラスタをAstra Control Serviceに追加できます</block>
+  <block id="d9e6278e0d2ca01f55d0a29da9caa34f" category="section-title">自己管理型クラスタ</block>
+  <block id="0e2b07a4ed9acdd8d61a9b4d0ed9ade5" category="paragraph">自己管理型クラスタは、ユーザが直接プロビジョニングおよび管理するクラスタです。Astra Control Serviceは、パブリッククラウド環境で実行される自己管理型クラスタをサポートします。をアップロードすることで、Astra Control Serviceに自己管理型クラスタを追加できます<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> ファイル。クラスタがに記載された要件を満たしていることを確認する必要があります <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
+  <block id="68e3130ad56cb70abd861c843fa28587" category="paragraph">Astra Control Service にログインしたら、最初にクラスタの管理を開始します。クラウドプロバイダまたは自己管理クラスタによって管理されているクラスタを追加できます。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。</block>
+  <block id="8a69b368bc97dc428e1c6ae2e1c9127a" category="paragraph">自己管理型クラスタは、ユーザが直接プロビジョニングおよび管理するクラスタです。Astra Control Serviceは、パブリッククラウド環境で実行される自己管理型クラスタをサポートします。自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。</block>
+  <block id="84f2be4894042bb275e318dfd8a0a200" category="paragraph">Astra Control Serviceは、次のKubernetesディストリビューションを使用する自己管理クラスタをサポートします。</block>
+  <block id="285cc7142d57c8f6e6a93562de77e160" category="list-text">クラスタをオンプレミスネットワーク内でホストすることはできません。パブリッククラウド環境でホストする必要があります。</block>
 </blocks>
