@@ -456,31 +456,20 @@
   <block id="26063f616424ab272dd4cd2f9441985c" category="paragraph">これらの通知を表示して、既読としてマークすることができます（未読の通知を消去する場合などに便利です）。</block>
   <block id="5dfe25ebe8ed6ed27f2613aa48ba8e44" category="summary">Astra がバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドプロバイダ内のクラスタのデフォルトバケットを変更します。</block>
   <block id="79aa9197dc185dded5eb383a683a5219" category="doc">バケットを管理する</block>
-  <block id="701fefec60508e3dfbab28e42cc34eec" category="paragraph">バケットを追加および変更できるのは Admin のみです。</block>
   <block id="281b980af7a696eab76fe5424a68e4d7" category="section-title">Astra Control でのバケットの使用方法</block>
-  <block id="7235bf4965aea4d7801668a2ba85f9bd" category="paragraph">最初の Kubernetes クラスタの管理を開始すると、 Astra Control Service が、管理対象クラスタと同じ場所にクラウドプロバイダのデフォルトバケットを作成します。</block>
-  <block id="2a84d8a5024fb227d8832c858544bc54" category="paragraph">Astra Control Service は、作成したバックアップとクローンにこのデフォルトバケットを使用します。その後、バックアップを使用して、クラスタ間でアプリケーションのリストアやクローニングを行うことができます。</block>
   <block id="1c5f75566062a39b61ef6696a869091d" category="admonition">Astra Control Service は、バックアップまたはクローンを開始する前に、デスティネーションバケットがアクセス可能かどうかをチェックします。</block>
   <block id="29e296e0892cf7d05ecaa6f006dc0cfe" category="section-title">既存のバケットを表示します</block>
-  <block id="6565a5299bf8c25c8e365589000e2011" category="paragraph">Astra Control Service で使用可能なバケットのリストを表示して、クラウドプロバイダのステータスを確認したり、デフォルトのバケットを特定したりできます。</block>
   <block id="43d755e706daf2d2de44fad5f4d40c32" category="paragraph">バケットの状態は次のいずれかになります。</block>
   <block id="2d13df6f8b5e4c5af9f87e0dc39df69d" category="list-text">保留中です</block>
-  <block id="7cd977582dd42dece1bfe950a66ada8d" category="list-text">バケットを追加すると、最初に Pending 状態から Astra Control が初めてバケットを参照します。</block>
   <block id="78945de8de090e90045d299651a68a9b" category="list-text">利用可能</block>
   <block id="b929c2e306e0e2ca8ce456f7f94f1faa" category="list-text">バケットは Astra Control で使用できます。</block>
   <block id="93f07b720ebf7d1246512569761a5804" category="list-text">削除されました</block>
   <block id="b41363ff8976fae49b049f0329b8f1ba" category="list-text">このバケットは現在動作していません。ステータスアイコンの上にマウスポインタを合わせると、問題の内容がわかります。</block>
   <block id="3ad229e98a040883d52a865d289709ef" category="paragraph">バケットが Removed 状態の場合でも、バケットをデフォルトのバケットとして設定し、保護スケジュールに割り当てることができます。ただし、データ保護処理の開始時点でバケットが「 available 」状態でない場合は、処理が失敗します。</block>
-  <block id="5d2bbbb5e8eadfe7beda56382db3b48e" category="paragraph">Astra Control Service で使用できるバケットのリストが表示されます。</block>
   <block id="97051796d8399cbd22e680d3212aa1c0" category="section-title">追加のバケットを追加します</block>
-  <block id="9c6ebb12d9cd173ee88e3b73cabe77b4" category="paragraph">クラウドプロバイダでクラスタの管理を開始したら、いつでもバケットを追加できます。これにより、保護ポリシーの作成時にバケットを選択したり、アドホックバックアップやクローンのデフォルトバケットを変更したりできます。</block>
-  <block id="dd6354a9b0182f27b3ea1d07811a3bdd" category="list-text">クラウドプロバイダ内の既存のバケットの名前。</block>
   <block id="833eb3b04501929e168dbcfe3328a358" category="list-text">* タイプ * ：クラウドプロバイダを選択します。</block>
-  <block id="3cb658c17327b8e0fdf35e63798291f2" category="paragraph">クラウドプロバイダを利用できるのは、 Astra Control Service がクラウドプロバイダで実行されているクラスタの管理を開始したあとのみです。</block>
   <block id="48dbd6506b2a3bf46642f68dced2c90f" category="list-text">* 既存のバケット名 * ：バケットの名前を入力します。</block>
   <block id="2748cc7be12db184f15633496762281f" category="list-text">* 概要 * ：必要に応じて、バケットの概要を入力します。</block>
-  <block id="833ccc7f60627a26323104a362bc1335" category="list-text">* クレデンシャルを選択 * ：バケットを管理するために必要な権限を Astra Control Service に付与するクレデンシャルを選択します。</block>
-  <block id="eca980095ee0892315ee71b705935c75" category="paragraph">Astra Control Service は、追加のバケットを追加します。保護ポリシーの作成時にバケットを選択できるようになりました。</block>
   <block id="05cec507b249987c2956da6a81ee5bfc" category="section-title">デフォルトバケットを変更する</block>
   <block id="4616f07e207a7f28d8d1077be554905d" category="paragraph">[ アプリケーション（ Apps ） ] タイルでは、次の項目を識別できます。</block>
   <block id="d72d4dcf59d18b1ee9c1df6e69c608ed" category="list-text">現在管理しているアプリケーションの数。</block>
@@ -995,7 +984,6 @@
   <block id="db14445bac1925559a170b4efeb32b37" category="list-text">perf-extreme</block>
   <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。</block>
-  <block id="29de4658324b1b89cfc8d2758855b3af" category="paragraph">Astra Control Service にバケットを追加する場合は、保護ポリシーの作成時にこれらのバケットから選択できます。また、 Astra Control Service がアドホックバックアップやクローンに使用するデフォルトバケットを変更することもできます。クラウドプロバイダ間でバケットをクローニングすることはできません。クラウドプロバイダ間でデータを移行するには、関連するアプリケーションのクローンを作成します。</block>
   <block id="408410e994005339450ed31eabd8f6af" category="admonition">_ 最新のバックアップがあるまで、完全に保護することはできません _ 。これは、永続ボリュームから離れたオブジェクトストアにバックアップが格納されるために重要です。障害や事故によってクラスタとその永続的ストレージが損傷した場合は、バックアップをリカバリする必要があります。スナップショットを使用してリカバリすることはできません。</block>
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">Astra Control REST API を使用して、スナップショットとバックアップを作成</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
@@ -1732,10 +1720,7 @@
   <block id="bc044e78d97d319b1d70c1a7d2370e89" category="list-text">クラスタの管理を解除することを確認し、「 * Yes 、 unmanage cluster * 」を選択します。</block>
   <block id="f4d5e36ed4f7235403e25ad1183d2684" category="paragraph">クラスタのステータスが「Removing *」に変わります。その後、クラスタが「*クラスタ」ページから削除され、Astra Control Centerによって管理されなくなります。</block>
   <block id="4271789f0046cfd66563e8d252266146" category="list-text">お探しの情報を検索してください。</block>
-  <block id="9af184e84356995ac4c8918f51c7485b" category="paragraph">Astraがバックアップとクローンに使用するバケットを管理するには、バケットを追加し、クラウドインスタンス内のKubernetesクラスタのデフォルトバケットを変更します。</block>
   <block id="e1758c6f6621a3e5a0bfaa943496e946" category="list-text">「*バケット」に移動します。</block>
-  <block id="4a886d9c605f2bf7f4aea900d070fe5d" category="paragraph">バックアップとクローンに Astra Control Service で使用するデフォルトバケットを変更する。各クラウドインスタンスには、独自のデフォルトバケットがあります。</block>
-  <block id="75af845e4fa71c7a41c06c0a3c88b4c9" category="paragraph">Astra Control Serviceでは、クラウドインスタンスに対して、既存のバックアップからクローンを作成することを選択しなかった場合に、アドホックバックアップやアドホッククローンのデフォルトバケットを使用します。</block>
   <block id="38867862280a9a74de68db4ff64b0c99" category="admonition">Astra Controlでは、どのクラウドインスタンスに対してもデフォルトのバケットが自動的に割り当てられることはありません。2つのクラスタ間でアプリケーションのクローニング処理を実行する前に、クラウドインスタンスのデフォルトバケットを手動で設定する必要があります。</block>
   <block id="c8f4356f9cdb6220b5a26c45a1f08f5c" category="list-text">「* Cloud Instances *」に移動します。</block>
   <block id="a12bc220068e139158f916293280d5ca" category="list-text">編集するクラウドインスタンスの[*アクション*（* Actions *）]列で構成メニューを選択します。</block>
@@ -1956,9 +1941,7 @@
   <block id="3bbb62d82d2439f5a711823da7c1b762" category="paragraph">拘束の追加の詳細については、を参照してください <block ref="f9b0c5590ff6fff298698f3844cae23c" category="inline-link-macro-rx"></block>。</block>
   <block id="edb74efc05972c268b6cccf83996ac3e" category="section-title">ユーザのロールを変更します</block>
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">アカウントからのクレデンシャルの削除はいつでも実行できます。クレデンシャルは、のあとに削除してください <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>をクリックします。ただし、資格情報をローテーションする場合は、を参照してください <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
-  <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3サーバ名またはIPアドレス*（AWSのみ）：を使用せずに、リージョンに対応するS3エンドポイントの完全修飾ドメイン名を入力します<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。を参照してください<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> を参照してください。</block>
   <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">リソースを共有するアプリケーションでIn Placeリストア処理を実行すると、予期しない結果が生じる可能性があります。アプリケーション間で共有されているリソースは、いずれかのアプリケーションでインプレースリストアが実行されると置き換えられます。</block>
-  <block id="e13d6ee2f9c34bcf7366950e0434777b" category="list-text">バケットがAzure内にある場合：</block>
   <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">バケットは、_Astra -backup-rg_というリソースグループに属している必要があります。</block>
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azureストレージアカウントインスタンスのパフォーマンス設定が「Premium」に設定されている場合は、「Premium account type」設定を「Block blobs」に設定する必要があります。</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">ネットアップTV</block>
@@ -2080,4 +2063,27 @@
   <block id="8a69b368bc97dc428e1c6ae2e1c9127a" category="paragraph">自己管理型クラスタは、ユーザが直接プロビジョニングおよび管理するクラスタです。Astra Control Serviceは、パブリッククラウド環境で実行される自己管理型クラスタをサポートします。自己管理型クラスタでは、Astra Tridentを使用してネットアップストレージサービスを操作したり、Container Storage Interface（CSI）ドライバを使用してAmazon Elastic Block Store（EBS）、Azure Managed Disks、Google Persistent Diskを操作したりできます。</block>
   <block id="84f2be4894042bb275e318dfd8a0a200" category="paragraph">Astra Control Serviceは、次のKubernetesディストリビューションを使用する自己管理クラスタをサポートします。</block>
   <block id="285cc7142d57c8f6e6a93562de77e160" category="list-text">クラスタをオンプレミスネットワーク内でホストすることはできません。パブリッククラウド環境でホストする必要があります。</block>
+  <block id="640efa26f79993654952b993dc173913" category="paragraph">Astraがバックアップとクローンに使用するバケットを管理できます。バケットの追加、既存のバケットの削除、クラウドインスタンス内のKubernetesクラスタのデフォルトバケットの変更を行うことができます。</block>
+  <block id="dc84232f20d32b91962832143f003245" category="paragraph">バケットを管理できるのは、所有者と管理者だけです。</block>
+  <block id="7848032099422e8ae377c985c3705168" category="inline-link-macro">クラウドインスタンス</block>
+  <block id="bf0bf04063e1cb468dd2fb54de6873a5" category="paragraph">クラウドインスタンスの最初のKubernetesクラスタの管理を開始すると、Astra Control Serviceによってそのクラスタ用の初期バケットが作成されます <block ref="bdf25979e5bbf85e72ec962a155a6460" category="inline-link-macro-rx"></block>。</block>
+  <block id="aa0c2d75f93fb0c2505fd3e861c58f2b" category="paragraph">バケットをクラウドインスタンスのデフォルトバケットとして手動で指定できます。その場合、Astra Control Serviceでは、そのクラウドインスタンス内の管理対象クラスタに作成したバックアップとクローンに対して、デフォルトでこのバケットが使用されます（バックアップ用に別のバケットを選択できます）。クラウドインスタンス内の管理対象クラスタから別のクラスタにアプリケーションのライブクローンを実行する場合、Astra Control Serviceはソースクラウドインスタンスのデフォルトバケットを使用してクローニング処理を実行します。</block>
+  <block id="040c36c32cc16921a0d8e76864205f97" category="paragraph">複数のクラウドインスタンスのデフォルトバケットと同じバケットを設定できます。</block>
+  <block id="9cdc08c74979b53d19e32179009aee53" category="paragraph">保護ポリシーの作成時またはアドホックバックアップの開始時に、任意のバケットから選択できます。</block>
+  <block id="51cb52f23ae88bfed8fd836ebbd95b20" category="paragraph">Astra Control Serviceで使用可能なバケットのリストを表示して、そのステータスを確認し、クラウドインスタンスのデフォルトバケット（定義されている場合）を特定します。</block>
+  <block id="e0fea9249f8803684ddfc8a69358dae3" category="list-text">追加したバケットは保留状態で開始され、Astra Controlが検出します。</block>
+  <block id="ebbb38114e12d2cf2a64401d66e59ee5" category="paragraph">Astra Control Serviceで使用可能なバケットのリストが表示されます。</block>
+  <block id="b92c43f0ea0738d58f6db69143cc92c2" category="paragraph">バケットはいつでも追加できます。これにより、保護ポリシーの作成時またはアドホックバックアップの開始時にバケットを選択したり、クラウドインスタンスが使用するデフォルトのバケットを変更したりできます。</block>
+  <block id="a2bebd837e70248fe12869981cf1dc7a" category="paragraph">次のタイプのバケットを追加できます。</block>
+  <block id="b2aa71ee04e531f0b6d1f084ba45f52f" category="list-text">汎用 S3</block>
+  <block id="5c9ef0d871938dccceb29ee63fad8ddb" category="list-text">Google Cloud Platform の 1 つです</block>
+  <block id="df2c24964ca3e99761acc48b2c8a75c9" category="list-text">NetApp ONTAP S3</block>
+  <block id="ddcd79fba6592bc379dfa1df9f804760" category="list-text">NetApp StorageGRID S3 の略</block>
+  <block id="6672ccc56ea3c90a45c58fe80c9b4ffb" category="list-text">既存のバケットの名前。</block>
+  <block id="318c639fce992245cde7b30e3ffd90cc" category="list-text">Astra Control Serviceにバケットの管理に必要な権限を付与するバケットのクレデンシャル。</block>
+  <block id="4405fa3b4f1902a766c5e3c5f421f98f" category="list-text">バケットがMicrosoft Azureにある場合：</block>
+  <block id="637233086f906601c1bf3c43f9e1503a" category="list-text">* S3サーバ名またはIPアドレス*（AWSおよびS3バケットタイプのみ）：リージョンに対応するS3エンドポイントの完全修飾ドメイン名を、なしで入力します<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。を参照してください<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="8640a7c7370301ca0c61fe2e7d0e5170" category="list-text">*クレデンシャルを選択*：Astra Control Serviceにバケットの管理に必要な権限を付与するクレデンシャルを入力します。指定する必要がある情報は、バケットタイプによって異なります。</block>
+  <block id="21f6901f1009f7b8fc1d4c9d614493d7" category="paragraph">Astra Control Serviceでバケットが追加されます。このバケットは、保護ポリシーの作成時やアドホックバックアップの実行時に選択できるようになりました。このバケットをクラウドインスタンスのデフォルトバケットとして設定することもできます。</block>
+  <block id="68a2953dae168f957410960ed303cfe1" category="paragraph">クラウドインスタンスのデフォルトバケットを変更できます。Astra Control Serviceでは、デフォルトでバックアップとクローンにこのバケットが使用されます。各クラウドインスタンスには、独自のデフォルトバケットがあります。</block>
 </blocks>
