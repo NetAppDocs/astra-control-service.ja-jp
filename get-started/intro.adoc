@@ -99,7 +99,9 @@ endif::azure[]
 
 * 自己管理クラスタ：
 +
-** NetApp ONTAP AFF および FAS システム
+** Amazon EBSのことです
+** Google Persistent Disk のことです
+** Azure Managed Disksの略
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
