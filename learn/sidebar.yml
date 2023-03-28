@@ -4,6 +4,8 @@ title: 概念
 entries:
 - title: アーキテクチャとコンポーネント
   url: "/learn/architecture.html"
+- title: データ保護
+  url: "/learn/data-protection.html"
 - title: AWSクラスタ用のストレージ
   flavor: aws
   url: "/learn/aws-storage.html"
