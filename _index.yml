@@ -36,7 +36,7 @@ indexpage:
   - title: Astra Control Center の略
     links:
     - title: Astra Control Center の概要
-      url: https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html
+      url: https://docs.netapp.com/us-en/astra-control-center/get-started/intro.html
     - title: 新機能
       url: https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html
     - title: クイックスタート
