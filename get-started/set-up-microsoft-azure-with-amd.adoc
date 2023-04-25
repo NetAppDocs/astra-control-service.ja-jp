@@ -61,7 +61,7 @@ CSI ドライバと連携するように Azure サブスクリプションとク
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタでKubernetesバージョン1.23 ~ 1.25が実行されている必要があります。
+Kubernetes のバージョン:: クラスタでKubernetesバージョン1.24~1.26が実行されている必要があります。
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: ベストプラクティスとして、 Azure NetApp Files をストレージバックエンドとして使用しない場合でも、そのリージョンを選択することを推奨します。これにより、パフォーマンス要件が変わった場合でも、 Azure NetApp Files をストレージバックエンドとして簡単に使用できるようになります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。

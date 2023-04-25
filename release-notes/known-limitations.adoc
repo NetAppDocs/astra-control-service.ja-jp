@@ -32,6 +32,12 @@ Astra Control Service からクラスタの管理を解除しても、 Astra Tri
 
 Postgres ポッドで操作を実行する場合は、 psql コマンドを使用するためにポッド内で直接接続しないでください。Astra Control Service では、 psql にアクセスしてデータベースをフリーズしたり、解凍したりする必要があります。既存の接続がある場合、スナップショット、バックアップ、またはクローンは失敗します。
 
+
+
+=== [Activity]ページには、最大100,000のイベントが表示されます
+
+[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します link:../rest-api/api-intro.html["Astra Control REST API"^]。
+
 ifdef::gcp[]
 
 
@@ -44,7 +50,7 @@ Google Kubernetes Engine （ GKE ）での Kubernetes クラスタの管理に�
 
 === Google Marketplaceアプリは検証されていません
 
-Google Marketplace から導入されたアプリは、ネットアップでは検証していません。一部のユーザから、 Google Marketplace から導入された Postgres 、 MariaDB 、 MySQL アプリケーションの検出やバックアップで問題が報告されることがあります。
+Google Marketplace から導入されたアプリは、ネットアップでは検証していません。一部のユーザーから、Google MarketplaceからデプロイされたPostgres、MariaDB、MySQLアプリの検出またはバックアップに関する問題が報告されています。
 
 Astra Control Service で使用するアプリケーションの種類に関係なく、必ず自分でバックアップとリストアのワークフローをテストして、ディザスタリカバリの要件を満たすことを確認してください。
 

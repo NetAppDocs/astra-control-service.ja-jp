@@ -60,7 +60,7 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 * CSI ドライバを Astra Control Service に追加する前に、 CSI ドライバをクラスタにインストールする必要がありますか。 *
 
-いいえクラスターが Astra Control に追加されると、 NetApp Trident Container Storage Interface （ CSI ）ドライバが Kubernetes クラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。
+いいえクラスタがAstra Controlに追加されると、ネットアップのTrident Container Storage Interface（CSI）ドライバがKubernetesクラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。
 
 * Astra Control Service に追加した後、ワーカーノードをクラスタに追加する必要があります。どうすればよいですか？ *
 
@@ -188,7 +188,7 @@ endif::gcp[]
 
 * アプリケーションは複数の PVS を使用しています。Astra Control は、これらすべての PVC のスナップショットとバックアップを作成しますか。 *
 
-はい。Astra Control によるアプリケーションのスナップショット操作には、アプリケーションの PVC にバインドされているすべての PVS のスナップショットが含まれます。
+はい。Astra Controlによるアプリケーションのスナップショット操作には、アプリケーションのPVCにバインドされているすべてのPVSのスナップショットが含まれます。
 
 * Astra Control で取得したスナップショットをクラウドプロバイダから直接管理できますか。 *
 

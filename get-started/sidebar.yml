@@ -27,6 +27,7 @@ entries:
 - title: クラスタを管理します
   url: "/get-started/add-first-cluster.html"
 - title: プライベートクラスタを管理する
+  flavor: azure
   url: "/get-started/manage-private-cluster.html"
 - title: 次の手順
   url: "/get-started/whats-next.html"

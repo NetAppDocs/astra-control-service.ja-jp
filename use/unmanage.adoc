@@ -67,7 +67,7 @@ endif::gcp[]
 
 
 .結果
-クラスタのステータスが「Removing *」に変わります。その後、クラスタが「*クラスタ」ページから削除され、Astra Control Centerによって管理されなくなります。
+クラスタのステータスが「Removing *」に変わります。その後、そのクラスタは*[Clusters]*ページから削除され、Astra Controlで管理されなくなります。
 
 
 

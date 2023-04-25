@@ -16,6 +16,29 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2023年4月25日
+
+.新機能とサポート
+ifdef::azure[]
+
+endif::azure[]
+
+* プライベートRed Hat OpenShiftクラスタのサポート
++
+link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"]
+
+* リストア処理中のアプリケーションリソースの追加または除外がサポートされます
++
+link:../use/restore-apps.html#filter-resources-during-an-application-restore["アプリケーションのリストア"]
+
+* データ専用アプリケーションの管理がサポートされます
++
+link:../use/manage-apps.html["アプリの管理を開始します"]
+
+
+
+
+
 == 2023年1月17日
 
 .新機能とサポート

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn/user-roles-namespaces.html 
 keywords: users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint 
-summary: Astra Control Center で使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。 
+summary: Astra Controlで使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。 
 ---
 = ユーザロールとネームスペース
 :hardbreaks:
