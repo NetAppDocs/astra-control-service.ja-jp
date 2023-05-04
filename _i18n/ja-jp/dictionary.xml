@@ -1308,7 +1308,6 @@
   <block id="dec9c7c53517ee828cc79e21b6cf32cd" category="list-text"><block ref="6243c0310ac1403cfb5a2dbb342dc22c" category="inline-link-macro-rx"></block>。</block>
   <block id="97bb7509997a09b9f8fd51521135b2f1" category="summary">Astra Control Serviceは、Elastic Kubernetes Service（EKS）クラスタのストレージバックエンドとして、Amazon Elastic Block Store（EBS）またはAmazon FSX for NetApp ONTAP を使用できます。ストレージクラスと永続的ボリュームのサイズを選択することがパフォーマンス目標の達成にどのように役立つかを理解しておく必要があります。</block>
   <block id="730956786ac7fa46f11b7f39c5b6e864" category="doc">AWSクラスタのストレージクラスとパフォーマンス</block>
-  <block id="d819b60633fd5eee6a163e88aa81da4e" category="paragraph">Astra Control Serviceは、Amazon Elastic Kubernetes Service（EKS）クラスタのストレージバックエンドとして、Amazon Elastic Block Store（EBS）またはAmazon FSX for NetApp ONTAP を使用できます。</block>
   <block id="8e276a5c4eecb9cd5c1fbb0729744eb5" category="section-title">Amazon Elastic Block Store（EBS）</block>
   <block id="f83a0018c18787e63139822b6dc279ca" category="inline-link">Kubernetesのドキュメント</block>
   <block id="7de084a73e1235e817952e00c38561e0" category="paragraph">EBSで使用できるボリュームのタイプは次のとおりです。</block>
@@ -1933,11 +1932,8 @@
   <block id="22289318dae293d59005c72969da78c0" category="list-text">単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます</block>
   <block id="340fb7807661130b471c746bcb32778d" category="list-text">Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました</block>
   <block id="7c560ce667e00f7fb7277e3e40274958" category="list-text">AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート</block>
-  <block id="0bf305437e764438b0cefa4feeab361a" category="paragraph">Astra Control Serviceは、永続的ボリュームのストレージバックエンドオプションとして、Google Cloud、Google Persistent Disk、またはNetApp Cloud Volumes ONTAP 用のCloud Volumes Service をサポートします。</block>
   <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP の略</block>
   <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP のドキュメント</block>
-  <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>。</block>
-  <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureで管理されるディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
   <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">の詳細を確認してください <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。の詳細を確認してください <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
@@ -2129,4 +2125,8 @@
   <block id="89585d1ceafafb8cda53826bc4f4d6cd" category="summary">Astra Controlで使用可能なデータ保護の種類と、それらを使用してアプリケーションを保護する最適な方法について説明します。</block>
   <block id="677e2027e144a44547f6bccf7a9e8c7b" category="paragraph">Azure NetApp Files ストレージにあるアプリケーションをバックアップすると、容量プールが自動的に一時的に拡張されます。バックアップの完了後、Astra Control Serviceによって容量プールが以前のサイズに縮小されます。Azureサブスクリプションによっては、このような場合にストレージ料金が発生することがあります。容量プールのサイズ変更イベントの履歴は、*[アクティビティ]*ページのイベントログで確認できます。</block>
   <block id="e08aa87a09ba379f5b0f9bc3248aa6e4" category="paragraph">サイズ変更処理中に容量プールがAzureサブスクリプションで許可されている最大サイズを超えると、バックアップ処理は失敗し、Azure APIから警告がトリガーされます。</block>
+  <block id="9a8d086014c5bd3e4ccfd14a881f8fcd" category="paragraph">Astra Control Serviceでは、Amazon Elastic Block Store（EBS）、Amazon FSx for NetApp ONTAP 、またはNetApp Cloud Volumes ONTAP を、Amazon Elastic Kubernetes Service（EKS）クラスタのストレージバックエンドとして使用できます。</block>
+  <block id="68bd054170816bc3e89c4e00c3a23bfd" category="paragraph">パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください<block ref="b17f0a969868e5279849aa167864d3ad" category="inline-link-rx"></block>。</block>
+  <block id="5e45edcd9985e188c258e7b6515feeea" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureマネージドディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
+  <block id="6bab6ac71f743f37f154b7b0219c56a8" category="paragraph">Astra Controlサービスでは、永続ボリュームのストレージバックエンドオプションとして、Cloud Volumes Service for Google Cloud、Google Persistent Disk、NetApp Cloud Volumes ONTAP がサポートされます。</block>
 </blocks>

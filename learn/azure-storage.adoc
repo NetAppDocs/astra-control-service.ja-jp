@@ -12,7 +12,7 @@ summary: Astra Control Service は、 Azure Kubernetes Service （ AKS ）クラ
 
 
 [role="lead"]
-Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureで管理されるディスク、またはNetApp Cloud Volumes ONTAP をサポートします。
+Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureマネージドディスク、またはNetApp Cloud Volumes ONTAP をサポートします。
 
 
 
@@ -69,4 +69,4 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["
 
 == NetApp Cloud Volumes ONTAP の略
 
-パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP のドキュメント"^]。
+パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP のドキュメント"^]。
