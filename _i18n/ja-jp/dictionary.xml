@@ -1880,7 +1880,6 @@
   <block id="307510f97d5f134d0b9ee5ee86d6a53f" category="list-text">Astra Control APIを使用してアプリケーションを管理する方法については、を参照してください <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
   <block id="b5e44ee7e6c2c0ee0f81c8df96014092" category="admonition">Kubernetes のラベルの詳細については、<block ref="6258ba1c56e61c3e07dc318965d7f24b" category="inline-link-rx"></block>。</block>
   <block id="e4b1bae16e2dcbf3661583ef6a1d3b0f" category="admonition">複数のアプリケーションを定義する場合は、名前空間リストから選択し、左上隅の*アクション*ボタンを選択して、*アプリケーションとして定義*を選択します。これにより、個 々 のネームスペースに複数のアプリケーションが定義されます。マルチネームスペースアプリケーションについては、を参照してください <block ref="7befd9a72212c345f0396ef5748860f3" category="inline-xref-macro-rx"></block>。</block>
-  <block id="f3ed27964ccf64e77e1488f7d2a16145" category="paragraph">新しいクラスタをAstra Controlに追加するときに、新しいクラウドインスタンスを追加できます。を参照してください <block ref="957d53ce26004606b67720b5be4bf2a4" category="inline-link-macro-rx"></block> を参照してください。</block>
   <block id="f500108e4498090784d5a65b95413035" category="paragraph">失敗したタスクの詳細については、を参照してください <block ref="a18f0b9d9f08915c2171339d482533ca" category="inline-link-macro-rx"></block>。</block>
   <block id="0370124d48bfc5af2def19c48f433283" category="inline-link">NetApp Verda GitHubプロジェクト</block>
   <block id="a59e4fa5cc01a3a4bdebbff4cec60b47" category="paragraph">にアクセスします<block ref="84d9961ef5a89731849bc2055780d0b6" category="inline-link-rx"></block> Apache CassandraやElasticsearchなどの一般的なアプリケーションの実行フックをダウンロードします。また、独自のカスタム実行フックを構築するための例やアイデアを得ることもできます。</block>
@@ -2129,4 +2128,5 @@
   <block id="68bd054170816bc3e89c4e00c3a23bfd" category="paragraph">パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください<block ref="b17f0a969868e5279849aa167864d3ad" category="inline-link-rx"></block>。</block>
   <block id="5e45edcd9985e188c258e7b6515feeea" category="paragraph">Astra Control Serviceは、Azure Kubernetes Service（AKS）クラスタのストレージバックエンドとして、Azure NetApp Files 、Azureマネージドディスク、またはNetApp Cloud Volumes ONTAP をサポートします。</block>
   <block id="6bab6ac71f743f37f154b7b0219c56a8" category="paragraph">Astra Controlサービスでは、永続ボリュームのストレージバックエンドオプションとして、Cloud Volumes Service for Google Cloud、Google Persistent Disk、NetApp Cloud Volumes ONTAP がサポートされます。</block>
+  <block id="09a08aa51d9a5d34a5bc6cecdb1f03bf" category="paragraph">新しいクラスタをAstra Controlに追加するときに、新しいクラウドインスタンスを追加できます。を参照してください <block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block> を参照してください。</block>
 </blocks>
