@@ -73,7 +73,7 @@ Bitnami PostgreSQL 11.5.0 チャートを使用すると、同じクラスタ内
 
 == 外部スナップショットバージョン 4.2.0 を使用している場合、スナップショットは最終的に失敗します
 
-Kubernetes 1.20 または 1.21 で Kubernetes snapshot-controller （別名 external-snapshotter ）バージョン 4.2.0 を使用すると、 Snapshot が失敗することがあります。これを防ぐには、別のを使用してください https://kubernetes-csi.github.io/docs/snapshot-controller.html["サポートされているバージョン"^] バージョン 4.2.1 などの外部 Snapshot データ。 Kubernetes バージョン 1.20 または 1.21 で使用。
+Kubernetes 1.20 または 1.21 で Kubernetes snapshot-controller （別名 external-snapshotter ）バージョン 4.2.0 を使用すると、 Snapshot が失敗することがあります。これを防ぐには、別のを使用してください https://["サポートされているバージョン"^] バージョン 4.2.1 などの外部 Snapshot データ。 Kubernetes バージョン 1.20 または 1.21 で使用。
 
 
 

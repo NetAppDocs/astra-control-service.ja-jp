@@ -85,19 +85,19 @@ Kubernetes クラスタを Astra Control Service から検出して管理でき�
 Kubernetes のバージョン:: クラスタでKubernetesバージョン1.23 ~ 1.25が実行されている必要があります。
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
-Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
+Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://["Azure 製品を地域別に表示します"^]。
 サブスクリプション。:: クラスタは、 Azure NetApp Files が有効になっているサブスクリプションに含まれている必要があります。サブスクリプションはいつでも選択できます <<Azure NetApp Files に登録します,Azure NetApp Files に登録します>>。
 VNet:: 以下の VNet の要件を考慮してください。
 +
 --
 * クラスタは、 Azure NetApp Files 委任サブネットに直接アクセスできる VNet 内に存在する必要があります。 <<サブネットを Azure NetApp Files に委譲します,委任されたサブネットを設定する方法について説明します>>。
 * Kubernetes クラスタが別の VNet 内の Azure NetApp Files 委任サブネットにピアリングされている VNet 内にある場合は、ピアリング接続の両側をオンラインにする必要があります。
-* Azure NetApp Files を使用した VNet （すぐにピア関係にある VNet を含む）で使用される IP 数のデフォルトの上限は 1 、 000 です。 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["Azure NetApp Files のリソース制限を確認します"^]。
+* Azure NetApp Files を使用した VNet （すぐにピア関係にある VNet を含む）で使用される IP 数のデフォルトの上限は 1 、 000 です。 https://["Azure NetApp Files のリソース制限を確認します"^]。
 +
 限界に近づくと、次の 2 つのオプションがあります。
 
 +
-** 可能です https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-["制限の増加を要求します"^]。サポートが必要な場合は、ネットアップの担当者にお問い合わせください。
+** 可能です https://["制限の増加を要求します"^]。サポートが必要な場合は、ネットアップの担当者にお問い合わせください。
 ** 新しい Amazon Kubernetes Service （ AKS ）クラスタを作成するときに、クラスタの新しいネットワークを指定します。新しいネットワークを作成したら、新しいサブネットをプロビジョニングし、そのサブネットを Azure NetApp Files に委譲します。
 
 
@@ -113,7 +113,7 @@ VNet:: 以下の VNet の要件を考慮してください。
 Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft Azure にサインアップします。
 
 .手順
-. にアクセスします https://azure.microsoft.com/en-us/free/["Azure サブスクリプションページ"^] をクリックして Azure サービスに登録してください。
+. にアクセスします https://["Azure サブスクリプションページ"^] をクリックして Azure サービスに登録してください。
 . プランを選択し、指示に従ってサブスクリプションを完了します。
 
 
@@ -125,7 +125,7 @@ Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft
 
 .手順
 . Azure ポータルにログインします。
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register["Azure NetApp Files のドキュメントに従って、ネットアップリソースプロバイダを登録してください"^]。
+. https://["Azure NetApp Files のドキュメントに従って、ネットアップリソースプロバイダを登録してください"^]。
 
 
 
@@ -135,7 +135,7 @@ Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft
 Azure NetApp Files でネットアップアカウントを作成します。
 
 .ステップ
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["Azure NetApp Files のドキュメントに従って、 Azure ポータルからネットアップアカウントを作成します"^]。
+. https://["Azure NetApp Files のドキュメントに従って、 Azure ポータルからネットアップアカウントを作成します"^]。
 
 
 
@@ -162,7 +162,7 @@ link:../learn/azure-storage.html["Azure NetApp Files のサービスレベルの
 
 
 .ステップ
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Azure NetApp Files のドキュメントに従って、自動 QoS 容量プールを設定します"^]。
+. https://["Azure NetApp Files のドキュメントに従って、自動 QoS 容量プールを設定します"^]。
 
 
 
@@ -174,7 +174,7 @@ link:../learn/azure-storage.html["Azure NetApp Files のサービスレベルの
 ピア VNet を使用している場合は、ピアリング接続の両側がオンラインである必要があります。 Kubernetes クラスタが配置されている VNet と、 Azure NetApp Files 委任サブネットが設定された VNet です。
 
 .ステップ
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Azure NetApp Files のドキュメントに従って、サブネットを Azure NetApp Files に委譲します"^]。
+. https://["Azure NetApp Files のドキュメントに従って、サブネットを Azure NetApp Files に委譲します"^]。
 
 
 .完了したら
@@ -188,7 +188,7 @@ Astra Control Service には、 Contributor ロールを割り当てられた Az
 
 サービスプリンシパルは、アプリケーション、サービス、およびツールで使用するために特別に作成される ID です。サービスプリンシパルにロールを割り当てると、 Azure の特定のリソースへのアクセスが制限されます。
 
-Azure CLI を使用してサービスプリンシパルを作成するには、次の手順に従います。出力は JSON ファイルに保存し、後で Astra Control Service に提供する必要があります。 https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli["CLI の使用の詳細については、 Azure のドキュメントを参照してください"^]。
+Azure CLI を使用してサービスプリンシパルを作成するには、次の手順に従います。出力は JSON ファイルに保存し、後で Astra Control Service に提供する必要があります。 https://["CLI の使用の詳細については、 Azure のドキュメントを参照してください"^]。
 
 次の手順では、サービスプリンシパルを作成する権限があり、 Microsoft Azure SDK （ AZ コマンド）がマシンにインストールされていることを前提としています。
 
@@ -271,8 +271,8 @@ az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
 Azureバックアップバケットには、より永続性の高い冗長性レベルを設定できます。デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットでより永続性の高い冗長性オプションを使用するには、次の作業を行う必要があります。
 
 .手順
-. 使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["以下の手順を参照して"^]。
-. を使用して、新しいストレージアカウントにAzureコンテナを作成します https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["以下の手順を参照して"^]。
+. 使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します https://["以下の手順を参照して"^]。
+. を使用して、新しいストレージアカウントにAzureコンテナを作成します https://["以下の手順を参照して"^]。
 . コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください link:../use/manage-buckets.html#add-an-additional-bucket["追加のバケットを追加します"]。
 . （オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください link:../use/manage-buckets.html#change-the-default-bucket["デフォルトバケットを変更する"]。
 

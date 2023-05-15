@@ -43,10 +43,10 @@ Astra Control Center を使用すると、 VM 環境内で実行される Kubern
 
 == を参照してください。
 
-* https://docs.netapp.com/us-en/astra/index.html["Astra Control Service のマニュアル"^]
-* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center のドキュメント"^]
-* https://docs.netapp.com/us-en/trident/index.html["Astra Trident のドキュメント"^]
-* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API を使用"^]
-* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights のドキュメント"^]
-* https://docs.netapp.com/us-en/ontap/index.html["ONTAP のドキュメント"^]
+* https://["Astra Control Service のマニュアル"^]
+* https://["Astra Control Center のドキュメント"^]
+* https://["Astra Trident のドキュメント"^]
+* https://["Astra Control API を使用"^]
+* https://["Cloud Insights のドキュメント"^]
+* https://["ONTAP のドキュメント"^]
 

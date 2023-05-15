@@ -45,10 +45,10 @@ NOTE: Astra Controlの各クラウドインスタンスには、一意の名前�
 
 == クラウドインスタンスのクレデンシャルのローテーションを行います
 
-Astra Control APIを使用して、クラウドインスタンスのクレデンシャルをローテーションすることができます。をクリックしてください。 https://docs.netapp.com/us-en/astra-automation["Astra 自動ドキュメントにアクセスします"^]。
+Astra Control APIを使用して、クラウドインスタンスのクレデンシャルをローテーションすることができます。をクリックしてください。 https://["Astra 自動ドキュメントにアクセスします"^]。
 
 
 
 == クラウドインスタンスを削除します
 
-Astra Control APIを使用して、クラウドプロバイダからクラウドインスタンスを削除できます。をクリックしてください。 https://docs.netapp.com/us-en/astra-automation["Astra 自動ドキュメントにアクセスします"^]。
+Astra Control APIを使用して、クラウドプロバイダからクラウドインスタンスを削除できます。をクリックしてください。 https://["Astra 自動ドキュメントにアクセスします"^]。

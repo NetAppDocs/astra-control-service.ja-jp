@@ -26,7 +26,7 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service（EKS）用のAstra制御サービスの要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
 
 
-NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
 
 
 
@@ -48,8 +48,8 @@ ifdef::aws[]
 .Amazon Web Services の
 * クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
 * Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Tridentの情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
-* （オプション）を指定する必要がある場合 `kubectl` クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？"^]。
-* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Amazon Web Servicesと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["セットアップのドキュメント"^]。
+* （オプション）を指定する必要がある場合 `kubectl` クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください https://["Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？"^]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Amazon Web Servicesと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://["セットアップのドキュメント"^]。
 
 
 endif::aws[]
@@ -62,7 +62,7 @@ ifdef::azure[]
 JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
 
 * プライベートAKSクラスタについては、を参照してください link:manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"^]。
-* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["セットアップのドキュメント"^]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://["セットアップのドキュメント"^]。
 
 
 endif::azure[]
@@ -71,7 +71,7 @@ ifdef::gcp[]
 
 .Google Cloud
 * 必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
-* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["セットアップのドキュメント"^]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://["セットアップのドキュメント"^]。
 
 
 endif::gcp[]
@@ -97,12 +97,12 @@ Astra Control Serviceは、次のKubernetesディストリビューションを�
 * ネットアップストレージを使用している場合や使用を計画している場合は、最新バージョンのAstra Tridentをインストール済みであることを確認します。
 +
 
-NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Tridentを導入"^] Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します `tridentctl`。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["サポートされるフロントエンド、バックエンド、およびホスト構成"^]。
+NOTE: 可能です https://["Astra Tridentを導入"^] Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します `tridentctl`。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください https://["サポートされるフロントエンド、バックエンド、およびホスト構成"^]。
 
 +
-** * Tridentストレージバックエンドが設定されています*：少なくとも1つのAstra Tridentストレージバックエンドが必要です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["を設定します"^] クラスタのポリシーを確認してください。
-** * Tridentストレージクラスを設定*：少なくとも1つのAstra Tridentストレージクラスが必要です https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["を設定します"^] クラスタのポリシーを確認してください。デフォルトのストレージクラスが設定されている場合は、1つのストレージクラスだけにそのアノテーションを設定します。
-** * Astra Tridentボリュームスナップショットコントローラとボリュームスナップショットクラスがインストールおよび設定されている*：ボリュームスナップショットコントローラがである必要があります https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["インストール済み"^] Astra Controlでスナップショットを作成できるようにします。Astra Tridentが少なくとも1つ `VolumeSnapshotClass` はい https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["セットアップ"^] 管理者による。
+** * Tridentストレージバックエンドが設定されています*：少なくとも1つのAstra Tridentストレージバックエンドが必要です https://["を設定します"^] クラスタのポリシーを確認してください。
+** * Tridentストレージクラスを設定*：少なくとも1つのAstra Tridentストレージクラスが必要です https://["を設定します"^] クラスタのポリシーを確認してください。デフォルトのストレージクラスが設定されている場合は、1つのストレージクラスだけにそのアノテーションを設定します。
+** * Astra Tridentボリュームスナップショットコントローラとボリュームスナップショットクラスがインストールおよび設定されている*：ボリュームスナップショットコントローラがである必要があります https://["インストール済み"^] Astra Controlでスナップショットを作成できるようにします。Astra Tridentが少なくとも1つ `VolumeSnapshotClass` はい https://["セットアップ"^] 管理者による。
 
 
 * *Kubeconfigにアクセス可能*:にアクセスできます <<kubeconfig,クラスタkubeconfig>> コンテキスト要素が1つだけ含まれます。
@@ -138,7 +138,7 @@ error: the server doesn't have a resource type "tridentversions"
 ----
 +
 
-NOTE: Astra Tridentがインストールされていないか、最新でない場合に、クラスタがストレージサービス用のAstra Tridentを使用するには、作業を進める前に最新バージョンのAstra Tridentをインストールする必要があります。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] 手順については、を参照し
+NOTE: Astra Tridentがインストールされていないか、最新でない場合に、クラスタがストレージサービス用のAstra Tridentを使用するには、作業を進める前に最新バージョンのAstra Tridentをインストールする必要があります。を参照してください https://["Astra Trident のドキュメント"^] 手順については、を参照し
 
 . ポッドが実行されていることを確認します。
 +
@@ -384,7 +384,7 @@ endif::gcp[]
 . *その他*：をアップロードして、自己管理クラスタに関する詳細を指定します `kubeconfig.yaml` ファイルまたはの内容を貼り付けます `kubeconfig.yaml` クリップボードからファイル。
 +
 
-NOTE: 自分で作成する場合は `kubeconfig` ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes のドキュメント"^] を参照してください `kubeconfig` ファイル。
+NOTE: 自分で作成する場合は `kubeconfig` ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください https://["Kubernetes のドキュメント"^] を参照してください `kubeconfig` ファイル。
 
 +
 .. *クラウドインスタンス名*（プロバイダ管理クラスタの場合）：このクラスタの追加時に作成される新しいクラウドインスタンスの名前を指定します。の詳細を確認してください link:../use/manage-cloud-instances.html["クラウドインスタンス"]。
@@ -452,29 +452,29 @@ endif::aws[]
 
 ifdef::gcp[]
 
-* https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^]
-* https://cloud.google.com/persistent-disk/["Google Persistent Disk のことです"^]
+* https://["Cloud Volumes Service for Google Cloud"^]
+* https://["Google Persistent Disk のことです"^]
 
 
 endif::gcp[]
 
 ifdef::azure[]
 
-* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
-* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
+* https://["Azure NetApp Files の特長"^]
+* https://["Azure で管理されるディスク"^]
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
-* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP 対応の Amazon FSX"^]
+* https://["Amazon Elastic Block Store"^]
+* https://["NetApp ONTAP 対応の Amazon FSX"^]
 
 
 endif::aws[]
 
-* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP の略"^]
+* https://["NetApp Cloud Volumes ONTAP の略"^]
 +
 の詳細を確認してください link:../learn/aws-storage.html["Amazon Web Servicesクラスタのストレージクラス"]。の詳細を確認してください link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
 

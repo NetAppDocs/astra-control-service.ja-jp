@@ -14,8 +14,8 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 [role="lead"]
 Astra Control Serviceを使用して、AKSでプライベートAzure Kubernetes Service（AKS）クラスタとプライベートRed Hat OpenShiftクラスタを管理できます。ここでは、プライベートAKSまたはOpenShiftクラスタがすでに作成されており、リモートからアクセスするための安全な方法が用意されていることを前提としています。プライベートAKSまたはOpenShiftクラスタの作成とアクセスの詳細については、次のドキュメントを参照してください。
 
-* https://docs.microsoft.com/azure/aks/private-clusters["プライベートAKSクラスタに関するAzureのドキュメント"^]
-* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x["プライベートOpenShiftクラスタに関するAzureのドキュメント"^]
+* https://["プライベートAKSクラスタに関するAzureのドキュメント"^]
+* https://["プライベートOpenShiftクラスタに関するAzureのドキュメント"^]
 
 
 
@@ -50,7 +50,7 @@ kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 kubectl create ns astra-connector
 ----
-. の手順に従って、Astra Control APIトークンを生成します https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automationのドキュメント"^]。
+. の手順に従って、Astra Control APIトークンを生成します https://["Astra Automationのドキュメント"^]。
 . Astra Connectorオペレータリポジトリのconfig/samplesディレクトリにある構成ファイルの例を変更して、を含めます `spec.natssync-client.cloud-bridge-url` キーを押します。例：
 +
 [listing]
@@ -106,12 +106,12 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 クラスタに永続的ストレージを設定してください。Azure NetApp Files またはAzureで管理されるディスクを使用できます。Azureで次のオプションを設定する方法の詳細については、「はじめに」のドキュメントを参照してください。
 
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]
+* https://["Azure NetApp Files を使用して Microsoft Azure をセットアップする"]
+* https://["Azure で管理されているディスクを使用して Microsoft Azure をセットアップする"]
 
 
 
 
 == プライベートクラスタをAstra Control Serviceに追加します
 
-プライベートクラスタをAstra Control Serviceに追加できるようになりました。標準のワークフローに従って、Astra Control Serviceにクラスタを追加します。 https://docs.netapp.com/us-en/astra-control-service/get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+プライベートクラスタをAstra Control Serviceに追加できるようになりました。標準のワークフローに従って、Astra Control Serviceにクラスタを追加します。 https://["Astra Control Service から Kubernetes クラスタの管理を開始します"]。

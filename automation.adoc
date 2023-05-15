@@ -14,4 +14,4 @@ summary: Astra Control には REST API が搭載されており、 Curl など�
 [role="lead"]
 Astra Control には REST API が搭載されており、 Curl などのプログラミング言語やユーティリティを使用して Astra Control 機能に直接アクセスできます。また、 Ansible などの自動化テクノロジを使用して Astra Control 環境を管理することもできます。
 
-をクリックしてください。 https://docs.netapp.com/us-en/astra-automation["Astra 自動ドキュメントにアクセスします"^]。
+をクリックしてください。 https://["Astra 自動ドキュメントにアクセスします"^]。
