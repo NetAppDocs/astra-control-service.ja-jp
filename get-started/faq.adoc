@@ -100,14 +100,6 @@ ifdef::gcp[]
 
 == Google Kubernetes Engine（GKE）クラスタの登録
 
-* Astra Control Service にプライベート GKE クラスタを追加できますか。 *
-
-はい。 Astra Control Service にプライベート GKE クラスタを追加できます。プライベートGKEクラスタを作成するには https://["この記事に記載されている手順に従ってください"^]。
-
-プライベートクラスタにはが必要です https://["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
-
-52.188.218.166-32
-
 * GKE クラスタは共有 VPC 上に存在できますか。 *
 
 はい、 Astra Control は共有 VPC 内のクラスタを管理できます。 link:set-up-google-cloud.html["VPC の共有構成を行うための Astra サービスアカウントの設定方法について説明します"]。

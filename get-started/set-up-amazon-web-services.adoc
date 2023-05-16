@@ -82,52 +82,26 @@ Kubernetes のバージョン:: クラスタで1.23~1.25の範囲のKubernetes�
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 
 
-73faaa1b4bb064878667455dd879f4ba:: 3ea391c9e6fd8068a48c5105ab95e68f
+Astra Trident:: ストレージバックエンドでの運用には、Astra Tridentと外部のSnapshotコントローラが必要です。インストールするには、次の手順を実行します。
+
+
+[%collapsible%open]
+====
+. https://["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+. https://["最新バージョンのAstra Tridentをインストール"^]。
+. https://["VolumeSnapshotClassを作成します"^]。
+
+
+====
 Amazon Elastic Block Store（EBS）向けCSIドライバ:: Amazon EBSストレージバックエンドを使用する場合は、EBS用のContainer Storage Interface（CSI）ドライバをインストールする必要があります（自動ではインストールされません）。
 +
 --
-20fc0f0b676e68d276bd1ffa1267ac50
+CSIドライバのインストール手順については、手順を参照してください。
 
 [%collapsible%open]
 ====
 .外部Snapshotデータをインストールします
-. 469f7ca16938508b5dcb777767828b70
-+
-cb9d6d1ca0b4fda3b1206ae38a007824
-
-+
-[role="tabbed-block"]
-=====
-.351d6da9c87ca81d91cd4755e4730d82
---
-[source, yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
-=====
-. 65b146df7d5c27b212f54a7c9980960b
-+
-6b4ca223a0a2bf649306756ade54b043
-
-+
-[role="tabbed-block"]
-=====
-.5e393c0ca8392e0c84201770c8b544ca
---
-[source, yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
-=====
-
+まだ行っていない場合は、 https://["スナップショットCRDとスナップショットコントローラをインストールします"^]。
 
 .CSIドライバをAmazon EKSアドオンとしてインストールします
 . サービスアカウント用のAmazon EBS CSIドライバIAMロールを作成します。指示に従います https://["Amazonのドキュメントを参照してください"^]の手順に記載されたAWS CLIコマンドを使用します。
