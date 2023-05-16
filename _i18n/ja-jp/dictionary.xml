@@ -2126,10 +2126,10 @@
   <block id="bbc78db47a3fe23dc96746668da3d287" category="list-text"><block ref="bbc78db47a3fe23dc96746668da3d287" category="inline-link-rx"></block></block>
   <block id="abfeaf5dc3fa1bf4a2a2cba84c5e546c" category="section-title">2023年5月15日</block>
   <block id="7dfc25c1548ba836ed04c79f8fbd1825" category="paragraph">これはマイナーなバグ修正リリースです。</block>
-  <block id="5a5355eda2f1cf003d25254ee2c311a3" category="section-title">特定のバージョンのSnapshotコントローラを含むKubernetes 1.25以降のクラスタでは、Snapshotが失敗することがあります</block>
-  <block id="f9f1ea7c0040d9bdb077f9ce68de31e3" category="paragraph">バージョン1.25以降を実行しているKubernetesクラスタのSnapshotは、クラスタにSnapshotコントローラAPIのバージョンv1beta1がインストールされている場合に失敗することがあります。</block>
-  <block id="2ad74d9f76ccccd37e4f9c6cb27f1cbd" category="paragraph">既存のKubernetes 1.25以降のインストールをアップグレードする場合は、回避策 として次の手順を実行します。</block>
   <block id="d5d53109cd766da789a263c6e2051051" category="list-text">既存のSnapshot CRDと既存のSnapshotコントローラをすべて削除します。</block>
   <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link">Astra Trident をアンインストール</block>
   <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>。</block>
+  <block id="8f80a6bba41c8f2f5d1a9b2f5ff1d87b" category="section-title">Amazon EKS 1.25以降のクラスタではSnapshotが失敗することがあります</block>
+  <block id="b3794e2a706f8946cd7b6e8c2435538f" category="paragraph">Amazon EKSクラスタのバージョン1.25以降では、誤ったSnapshotコントローラが使用されているためにSnapshotが失敗することがあります。</block>
+  <block id="bfe0bca35535f01b62abdc5459c6610c" category="paragraph">既存のEKS 1.25以降のインストールをアップグレードする場合は、回避策 として次の手順を実行します。</block>
 </blocks>
