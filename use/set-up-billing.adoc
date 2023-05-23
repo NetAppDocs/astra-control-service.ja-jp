@@ -52,11 +52,11 @@ ifdef::gcp[]
 
 Astra Control Service を使用して GKE クラスタを管理する場合、永続ボリュームは NetApp Cloud Volumes Service によってバックアップされ、アプリのバックアップは Google Cloud Storage バケットに保存されます。
 
-* https://["Cloud Volumes Service の価格設定の詳細を表示"^]。
+* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["Cloud Volumes Service の価格設定の詳細を表示"^]。
 +
-Astra Control Service は、すべてのサービスタイプとサービスレベルをサポートします。使用するサービスタイプは、によって異なります https://["Google Cloud リージョン"^]。
+Astra Control Service は、すべてのサービスタイプとサービスレベルをサポートします。使用するサービスタイプは、によって異なります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Google Cloud リージョン"^]。
 
-* https://["Google Cloud ストレージバケットの価格設定の詳細を表示します"^]。
+* https://cloud.google.com/storage/pricing["Google Cloud ストレージバケットの価格設定の詳細を表示します"^]。
 
 
 endif::gcp[]
@@ -69,8 +69,8 @@ ifdef::azure[]
 
 AKS クラスタを Astra Control Service で管理する場合、永続ボリュームは Azure NetApp Files によってバックアップされ、アプリケーションのバックアップは Azure BLOB コンテナに格納されます。
 
-* https://["Azure NetApp Files の価格設定の詳細を表示"^]。
-* https://["Microsoft Azure BLOB ストレージの価格設定の詳細を表示する"^]。
+* https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files の価格設定の詳細を表示"^]。
+* https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure BLOB ストレージの価格設定の詳細を表示する"^]。
 
 
 endif::azure[]
@@ -83,7 +83,7 @@ ifdef::aws[]
 
 Astra Control Serviceを使用してAWSクラスタを管理する場合、永続ボリュームはEBSまたはFSX for NetApp ONTAP でバックアップされ、アプリケーションのバックアップはAWSバケットに格納されます。
 
-* https://["Amazon Web Servicesの価格設定の詳細を表示します"^]。
+* https://aws.amazon.com/eks/pricing/["Amazon Web Servicesの価格設定の詳細を表示します"^]。
 
 
 endif::aws[]
@@ -95,10 +95,10 @@ endif::aws[]
 Azure Marketplaceを使用してAstra Control Serviceに登録することができます。アカウントと請求先の詳細は、Marketplaceで管理されます。
 
 
-NOTE: Azure Marketplaceのサブスクリプションプロセスのデモビデオを見るには、を参照してください https://["ネットアップTV"^]。
+NOTE: Azure Marketplaceのサブスクリプションプロセスのデモビデオを見るには、を参照してください https://www.netapp.tv/details/29979["ネットアップTV"^]。
 
 .手順
-. にアクセスします https://["Azure Marketplace で入手できます"^]。
+. にアクセスします https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure Marketplace で入手できます"^]。
 . [*今すぐ取得*]を選択します。
 . 指示に従って、プランをサブスクライブします。
 
@@ -110,7 +110,7 @@ NOTE: Azure Marketplaceのサブスクリプションプロセスのデモビデ
 AWS Marketplaceを使用してAstra Control Serviceに登録することができます。アカウントと請求先の詳細は、Marketplaceで管理されます。
 
 .手順
-. にアクセスします https://["AWS Marketplace"^]。
+. にアクセスします https://aws.amazon.com/marketplace/["AWS Marketplace"^]。
 . [*購読を続行する*]を選択します。
 . 指示に従って、プランをサブスクライブします。
 

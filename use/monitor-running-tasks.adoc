@@ -31,4 +31,4 @@ NOTE: クローン処理の場合、タスクサブタスクはSnapshotとSnapsh
 
 
 
-NOTE: タスクは最大24時間、*タスク*リストに保存されます。を使用して、この制限とその他のタスクモニタの設定を行うことができます https://["Astra Control API の略"^]。
+NOTE: タスクは最大24時間、*タスク*リストに保存されます。を使用して、この制限とその他のタスクモニタの設定を行うことができます https://docs.netapp.com/us-en/astra-automation/["Astra Control API の略"^]。

@@ -109,7 +109,7 @@ endif::azure[]
 
 ifdef::aws[]
 
-* * S3サーバ名またはIPアドレス*（AWSおよびS3バケットタイプのみ）：リージョンに対応するS3エンドポイントの完全修飾ドメイン名を、なしで入力します `https://`。を参照してください https://["Amazonのドキュメント"^] を参照してください。
+* * S3サーバ名またはIPアドレス*（AWSおよびS3バケットタイプのみ）：リージョンに対応するS3エンドポイントの完全修飾ドメイン名を、なしで入力します `https://`。を参照してください https://docs.aws.amazon.com/general/latest/gr/s3.html["Amazonのドキュメント"^] を参照してください。
 
 
 endif::aws[]
@@ -171,5 +171,5 @@ NOTE: Astra Control を使用すると、最初にバケットを使用してバ
 
 == 詳細については、こちらをご覧ください
 
-* https://["Astra Control API を使用"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API を使用"^]
 

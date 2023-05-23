@@ -35,7 +35,7 @@ Premium Storage の場合:: 1TiB あたり最大 64 MiB/ 秒のスループッ�
 
 Astra Control Service は、永続ボリュームのストレージクラスとしてこれらのサービスレベルを使用します。Kubernetes クラスタを Astra Control Service に追加する場合、デフォルトのストレージクラスとして Ultra 、 Premium 、または Standard のいずれかを選択するように求められます。ストレージクラスの名前は、 _NetApp-anf-perf-ultra 、 _NetApp-anf-pPremium_ 、および _NetApp-anf-pperf-standard_ です。
 
-https://["これらのサービスレベルの詳細については、 Azure NetApp Files のドキュメントを参照してください"^]。
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["これらのサービスレベルの詳細については、 Azure NetApp Files のドキュメントを参照してください"^]。
 
 
 
@@ -63,10 +63,10 @@ Azure NetApp Files ストレージにあるアプリケーションをバック�
 
 Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、Azure Managed Disksをストレージバックエンドとしてインターフェイスできます。このサービスは、 Azure で管理されるブロックレベルのストレージを提供します。
 
-https://["Azure で管理されるディスクに関する詳細はこちらをご覧ください"^]。
+https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスクに関する詳細はこちらをご覧ください"^]。
 
 
 
 == NetApp Cloud Volumes ONTAP の略
 
-パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://["NetApp Cloud Volumes ONTAP のドキュメント"^]。
+パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP のドキュメント"^]。

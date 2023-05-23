@@ -23,7 +23,7 @@ Astra Control Service にログインする前に、 Astra Control Service ア�
 Astra Control Service を使用すると、アカウント内からアプリケーションを管理できます。アカウントには、アカウント内のアプリを表示および管理できるユーザーと、課金情報が含まれます。
 
 .手順
-. https://["Cloud Central の Astra Control ページにアクセスします"^]。
+. https://cloud.netapp.com/astra["Cloud Central の Astra Control ページにアクセスします"^]。
 . 「 Get started with Astra Control 」を選択します。
 . [ フリープラン *] タブを選択します。
 +
@@ -46,13 +46,13 @@ image:acs-registration-free-plan.png["フリープランオプションを選択
 
 == Cloud Central に登録します
 
-NetApp Cloud Central アカウントをお持ちでない場合は、 Cloud Central にサインアップして Astra Control Service とネットアップの他のクラウドサービスにアクセスできます。Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central アカウントをすでにお持ちで、登録が完了している場合は、にアクセスできます https://["Astra 制御サービス"^] Cloud Central のクレデンシャルを直接使用します。
+NetApp Cloud Central アカウントをお持ちでない場合は、 Cloud Central にサインアップして Astra Control Service とネットアップの他のクラウドサービスにアクセスできます。Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central アカウントをすでにお持ちで、登録が完了している場合は、にアクセスできます https://astra.netapp.io["Astra 制御サービス"^] Cloud Central のクレデンシャルを直接使用します。
 
 
-TIP: シングルサインオンを使用して、社内ディレクトリのクレデンシャル（フェデレーテッドアイデンティティ）を使用して Cloud Central にログインできます。詳細については、を参照してください https://["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
+TIP: シングルサインオンを使用して、社内ディレクトリのクレデンシャル（フェデレーテッドアイデンティティ）を使用して Cloud Central にログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
 
 .手順
-. に進みます https://["NetApp Cloud Central"^]。
+. に進みます https://cloud.netapp.com["NetApp Cloud Central"^]。
 . 右上で、「 * サインアップ * 」を選択します。
 . フォームに入力します。
 +
@@ -73,4 +73,4 @@ image:screenshot-cloud-central-signup.gif["Cloud Central の登録ページの�
 .結果
 アクティブな Cloud Central ユーザログインが可能になりました。
 
-登録が完了すると、から Cloud Central のクレデンシャルを使用して、 Astra Control Service に直接アクセスできるようになります https://[]。
+登録が完了すると、から Cloud Central のクレデンシャルを使用して、 Astra Control Service に直接アクセスできるようになります https://astra.netapp.io[]。

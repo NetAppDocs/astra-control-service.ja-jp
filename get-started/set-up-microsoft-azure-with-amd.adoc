@@ -64,7 +64,7 @@ Kubernetes クラスタを Astra Control Service から検出して管理でき�
 Kubernetes のバージョン:: クラスタでKubernetesバージョン1.24~1.26が実行されている必要があります。
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
-Azure リージョン:: ベストプラクティスとして、 Azure NetApp Files をストレージバックエンドとして使用しない場合でも、そのリージョンを選択することを推奨します。これにより、パフォーマンス要件が変わった場合でも、 Azure NetApp Files をストレージバックエンドとして簡単に使用できるようになります。 https://["Azure 製品を地域別に表示します"^]。
+Azure リージョン:: ベストプラクティスとして、 Azure NetApp Files をストレージバックエンドとして使用しない場合でも、そのリージョンを選択することを推奨します。これにより、パフォーマンス要件が変わった場合でも、 Azure NetApp Files をストレージバックエンドとして簡単に使用できるようになります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。
 
 
 CSI ドライバ:: クラスタには適切な CSI ドライバがインストールされている必要があります。
@@ -77,7 +77,7 @@ CSI ドライバ:: クラスタには適切な CSI ドライバがインスト�
 Microsoft Azure アカウントをお持ちでない場合は、まず Microsoft Azure にサインアップします。
 
 .手順
-. にアクセスします https://["Azure サブスクリプションページ"^] をクリックして Azure サービスに登録してください。
+. にアクセスします https://azure.microsoft.com/en-us/free/["Azure サブスクリプションページ"^] をクリックして Azure サービスに登録してください。
 . プランを選択し、指示に従ってサブスクリプションを完了します。
 
 
@@ -89,7 +89,7 @@ Astra Control Service には、 Contributor ロールを割り当てられた Az
 
 サービスプリンシパルは、アプリケーション、サービス、およびツールで使用するために特別に作成される ID です。サービスプリンシパルにロールを割り当てると、 Azure の特定のリソースへのアクセスが制限されます。
 
-Azure CLI を使用してサービスプリンシパルを作成するには、次の手順に従います。出力は JSON ファイルに保存し、後で Astra Control Service に提供する必要があります。 https://["CLI の使用の詳細については、 Azure のドキュメントを参照してください"^]。
+Azure CLI を使用してサービスプリンシパルを作成するには、次の手順に従います。出力は JSON ファイルに保存し、後で Astra Control Service に提供する必要があります。 https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli["CLI の使用の詳細については、 Azure のドキュメントを参照してください"^]。
 
 次の手順では、サービスプリンシパルを作成する権限があり、 Microsoft Azure SDK （ AZ コマンド）がマシンにインストールされていることを前提としています。
 
@@ -214,7 +214,7 @@ az provider register -n Microsoft.ContainerService
 Azure CSI ドライバをインストールして準備を完了できます。
 
 .ステップ
-. に進みます https://["Microsoft CSI ドライバのマニュアル"^]。
+. に進みます https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers["Microsoft CSI ドライバのマニュアル"^]。
 . 指示に従って、必要な CSI ドライバをインストールします。
 
 
@@ -225,8 +225,8 @@ Azure CSI ドライバをインストールして準備を完了できます。
 Azureバックアップバケットには、より永続性の高い冗長性レベルを設定できます。デフォルトでは、バケットAstra Control ServiceはAzure Kubernetes Serviceのバックアップを保存するためにを使用し、ローカルのRedundant Storage（LRS）冗長性オプションを使用します。Azureバケットでより永続性の高い冗長性オプションを使用するには、次の作業を行う必要があります。
 
 .手順
-. 使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します https://["以下の手順を参照して"^]。
-. を使用して、新しいストレージアカウントにAzureコンテナを作成します https://["以下の手順を参照して"^]。
+. 使用する必要がある冗長性レベルを使用するAzureストレージアカウントを作成します https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["以下の手順を参照して"^]。
+. を使用して、新しいストレージアカウントにAzureコンテナを作成します https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["以下の手順を参照して"^]。
 . コンテナをバケットとしてAstra Control Serviceに追加します。を参照してください link:../use/manage-buckets.html#add-an-additional-bucket["追加のバケットを追加します"]。
 . （オプション）新しく作成したバケットをAzureバックアップのデフォルトバケットとして使用するには、バケットをAzureのデフォルトバケットとして設定します。を参照してください link:../use/manage-buckets.html#change-the-default-bucket["デフォルトバケットを変更する"]。
 

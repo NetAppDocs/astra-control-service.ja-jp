@@ -14,11 +14,11 @@ summary: 一般的な問題のトラブルシューティングのヒントを�
 [role="lead"]
 発生する可能性のある一般的な問題を回避する方法について説明します。
 
-https://[]
+https://kb.netapp.com/Cloud/Astra/Control[]
 
 
 
 == を参照してください。
 
-* https://["トラブルシューティング"^]
+* https://kb.netapp.com/Cloud/Astra/Control["トラブルシューティング"^]
 

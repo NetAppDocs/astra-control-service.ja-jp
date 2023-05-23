@@ -110,9 +110,9 @@ Kubernetes クラスタを Astra Control Service から検出して管理でき�
 Kubernetes のバージョン:: クラスタで1.24~1.25の範囲のKubernetesバージョンが実行されている必要があります。
 イメージタイプ:: 各ワーカーノードのイメージタイプはである必要があります `COS_CONTAINERD`。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
-Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
+Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"] Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。
 ネットワーキング:: Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <<オプション：VPCのネットワークピアリングを設定します,この手順については、以下で説明します>>。
-プライベートクラスタ:: クラスタがプライベートの場合は、を参照してください https://["許可されたネットワーク"^] Astra Control Service の IP アドレスを許可する必要があります。
+プライベートクラスタ:: クラスタがプライベートの場合は、を参照してください https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control Service の IP アドレスを許可する必要があります。
 +
 --
 52.188.218.166-32
@@ -128,9 +128,9 @@ GKE クラスタの動作モード:: 標準モードのオペレーションを�
 Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。
 
 .ステップ
-. にアクセスします https://["NetApp Cloud Volumes Service のページ"^] Google Cloud Marketplace で「 * Purchase * 」を選択し、画面の指示に従います。
+. にアクセスします https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service のページ"^] Google Cloud Marketplace で「 * Purchase * 」を選択し、画面の指示に従います。
 +
-https://["Google Cloud のドキュメントに記載されているステップバイステップの手順に従って、サービスを購入して有効にします"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service["Google Cloud のドキュメントに記載されているステップバイステップの手順に従って、サービスを購入して有効にします"^]。
 
 
 
@@ -141,7 +141,7 @@ https://["Google Cloud のドキュメントに記載されているステップ
 特定の Google Cloud API にアクセスするには、プロジェクトに権限が必要です。API は、 Google Kubernetes Engine （ GKE ）クラスタや NetApp Cloud Volumes Service ストレージなどの Google Cloud リソースとのやり取りに使用されます。
 
 .ステップ
-. https://["Google Cloud コンソールまたは gcloud CLI を使用して、次の API を有効にする"^]：
+. https://cloud.google.com/endpoints/docs/openapi/enable-api["Google Cloud コンソールまたは gcloud CLI を使用して、次の API を有効にする"^]：
 +
 ** Google Kubernetes Engine の略
 ** クラウドストレージ
@@ -166,7 +166,7 @@ video::video-enable-gcp-apis.mp4[width=848,height=480]
 Astra Control Service は、 Google Cloud サービスアカウントを使用して、 Kubernetes アプリケーションデータ管理をお客様に代わって容易にします。
 
 .手順
-. Google Cloud およびにアクセスします https://["コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントを作成します"^]。
+. Google Cloud およびにアクセスします https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントを作成します"^]。
 . サービスアカウントに次のロールを付与します。
 +
 ** * Kubernetes Engine Admin * - クラスタの一覧表示とアプリ管理のための管理アクセスの作成に使用します。
@@ -216,7 +216,7 @@ Astra Control Service にユーザ名とパスワードを入力する代わり�
 JSON ファイルは、キーの作成時にのみ表示またはダウンロードできます。ただし、新しいキーはいつでも作成できます。
 
 .手順
-. Google Cloud およびにアクセスします https://["コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントキーを作成します"^]。
+. Google Cloud およびにアクセスします https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys["コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントキーを作成します"^]。
 . プロンプトが表示されたら、サービスアカウントキーファイルを安全な場所に保存します。
 
 
@@ -232,11 +232,11 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドサ�
 ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。
 
 .手順
-. https://["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。
 +
-Cloud Volumes Service には、 CVS と CVS パフォーマンスの 2 つのサービスタイプがあります。 https://["これらのサービスタイプの詳細については、こちらをご覧ください"^]。
+Cloud Volumes Service には、 CVS と CVS パフォーマンスの 2 つのサービスタイプがあります。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["これらのサービスタイプの詳細については、こちらをご覧ください"^]。
 
-. https://["Google Cloud Platform の Cloud Volume にアクセスします"^]。
+. https://console.cloud.google.com/netapp/cloud-volumes/volumes["Google Cloud Platform の Cloud Volume にアクセスします"^]。
 . [* Volumes （ボリューム） ] ページで、 [* Create （作成） ] を選択します。
 . サービスタイプ * で、 * CVS * または * CVS - パフォーマンス * のいずれかを選択します。
 +
@@ -256,10 +256,10 @@ image:gcp-peering.gif["Google Cloud コンソールのスクリーンショッ�
 . ボタンを選択して、ネットワークピアリングのセットアップコマンドを表示します。
 . コマンドをコピーし、 Cloud Shell で実行します。
 +
-これらのコマンドの使用方法の詳細については、を参照してください https://["Cloud Volumes Service for GCP のクイックスタート"^]。
+これらのコマンドの使用方法の詳細については、を参照してください https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering["Cloud Volumes Service for GCP のクイックスタート"^]。
 
 +
-https://["プライベートサービスアクセスの設定とネットワークピアリングの設定について詳しくは、こちらをご覧ください"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access["プライベートサービスアクセスの設定とネットワークピアリングの設定について詳しくは、こちらをご覧ください"^]。
 
 . 完了したら、 * ファイルシステムの作成 * ページでキャンセルを選択できます。
 +

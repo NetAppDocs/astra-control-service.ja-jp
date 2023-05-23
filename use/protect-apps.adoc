@@ -12,7 +12,7 @@ summary: 自動保護ポリシーまたはアドホックベースを使用し�
 
 
 [role="lead"]
-自動保護ポリシーまたはアドホックベースを使用してスナップショットやバックアップを作成することで、アプリケーションを保護します。Astra の UI またはを使用できます https://["Astra Control API"^] アプリを保護します。
+自動保護ポリシーまたはアドホックベースを使用してスナップショットやバックアップを作成することで、アプリケーションを保護します。Astra の UI またはを使用できます https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] アプリを保護します。
 
 の詳細を確認してください link:../learn/data-protection.html["Astra Controlによるデータ保護"^]。
 
@@ -33,7 +33,7 @@ summary: 自動保護ポリシーまたはアドホックベースを使用し�
 
 保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。
 
-1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります https://["Astra Control REST API を使用して、スナップショットとバックアップを作成"^]。
+1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["Astra Control REST API を使用して、スナップショットとバックアップを作成"^]。
 
 .手順
 . 「 * アプリケーション」を選択し、管理アプリの名前を選択します。

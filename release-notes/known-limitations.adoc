@@ -24,7 +24,7 @@ summary: 既知の制限事項は、このリリースの製品でサポート�
 
 === Astra Tridentはクラスタからアンインストールされません
 
-Astra Control Service からクラスタの管理を解除しても、 Astra Trident はクラスタから自動的にアンインストールされません。Astra Trident をアンインストールするには、が必要です https://["Astra Trident のドキュメントで次の手順を実行します"^]。
+Astra Control Service からクラスタの管理を解除しても、 Astra Trident はクラスタから自動的にアンインストールされません。Astra Trident をアンインストールするには、が必要です https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のドキュメントで次の手順を実行します"^]。
 
 
 
@@ -92,13 +92,13 @@ Astra Controlでは、どのクラウドインスタンスに対してもデフ�
 
 Astra Control は、名前空間を対象とした演算子でインストールされたアプリケーションをサポートします。これらの演算子は、一般に「パスバイリファレンス」アーキテクチャではなく「パスバイ値」で設計されています。これらのパターンに続くいくつかのオペレータアプリを次に示します。
 
-* https://["Apache K8ssandra"^]
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
 +
 
 NOTE: K8ssandra では、 In Place リストア処理がサポートされます。新しいネームスペースまたはクラスタにリストアするには、アプリケーションの元のインスタンスを停止する必要があります。これは、ピアグループ情報がインスタンス間通信を行わないようにするためです。アプリケーションのクローニングはサポートされていません。
 
-* https://["Jenkins CI"^]
-* https://["Percona XtraDB クラスタ"^]
+* https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB クラスタ"^]
 
 
 Astra Controlでは、「パスバイリファレンス」アーキテクチャ（CockroachDBオペレータなど）で設計されたオペレータをクローニングできない場合があります。クローニング処理では、クローニング処理の一環として独自の新しいシークレットが存在する場合でも、クローニングされたオペレータがソースオペレータから Kubernetes シークレットを参照しようとします。Astra Control がソースオペレータの Kubernetes シークレットを認識しないため、クローニング処理が失敗する場合があります。
@@ -126,15 +126,15 @@ Astra Control がリソースまたは機能へのアクセスを制限する方
 
 
 
-=== Amazon EKS 1.25以降のクラスタではSnapshotが失敗することがあります
+=== 特定のバージョンのSnapshotコントローラを含むKubernetes 1.25以降のクラスタでは、Snapshotが失敗することがあります
 
-Amazon EKSクラスタのバージョン1.25以降では、誤ったSnapshotコントローラが使用されているためにSnapshotが失敗することがあります。
+バージョン1.25以降を実行しているKubernetesクラスタのSnapshotは、クラスタにSnapshotコントローラAPIのバージョンv1beta1がインストールされている場合に失敗することがあります。
 
-既存のEKS 1.25以降のインストールをアップグレードする場合は、回避策 として次の手順を実行します。
+既存のKubernetes 1.25以降のインストールをアップグレードする場合は、回避策 として次の手順を実行します。
 
 . 既存のSnapshot CRDと既存のSnapshotコントローラをすべて削除します。
-. https://["Astra Trident をアンインストール"^]。
-. https://["スナップショットCRDとスナップショットコントローラをインストールします"^]。
-. https://["最新バージョンのAstra Tridentをインストール"^]。
-. https://["VolumeSnapshotClassを作成します"^]。
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident をアンインストール"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["最新バージョンのAstra Tridentをインストール"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClassを作成します"^]。
 

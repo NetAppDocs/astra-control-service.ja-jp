@@ -56,7 +56,7 @@ endif::gcp[]
 クラスタの管理を解除する場合：
 
 * この操作を実行すると、 Astra Control でクラスタが管理されなくなります。クラスタの構成は変更されず、クラスタも削除されません。
-* Astra Trident はクラスタからアンインストールされません。 https://["Astra Trident のアンインストール方法をご確認ください"^]。
+* Astra Trident はクラスタからアンインストールされません。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident のアンインストール方法をご確認ください"^]。
 
 
 .手順

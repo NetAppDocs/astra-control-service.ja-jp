@@ -24,7 +24,7 @@ Astra Control Service では、永続的ボリュームのストレージバッ�
 
 === 概要
 
-Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。 https://["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。
+Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。
 
 Kubernetes クラスタを特定のリージョンに配置する必要がある場合は、そのリージョンでサポートされているサービスタイプを使用します。
 
@@ -41,7 +41,7 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 | サービスタイプ | ユースケース | サポートされている地域 | ストレージクラス | 最小ボリュームサイズ 
 
 
-| CVS - パフォーマンス | ストレージパフォーマンスのニーズが中程度から高レベルのアプリケーション | https://["サポートされている Google Cloud リージョンを表示します。"^]  a| 
+| CVS - パフォーマンス | ストレージパフォーマンスのニーズが中程度から高レベルのアプリケーション | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["サポートされている Google Cloud リージョンを表示します。"^]  a| 
 * netapp - cvs-perf-standard
 * perf-premium
 * perf-extreme
@@ -49,7 +49,7 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 | 100GiB 
 
 
-| CVS | ストレージパフォーマンスの要件が中程度よりも低いアプリケーション | https://["サポートされている Google Cloud リージョンを表示します。"^] | NetApp-cvs-standard | 300 GiB 
+| CVS | ストレージパフォーマンスの要件が中程度よりも低いアプリケーション | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["サポートされている Google Cloud リージョンを表示します。"^] | NetApp-cvs-standard | 300 GiB 
 |===
 
 
@@ -65,13 +65,13 @@ CVS - パフォーマンスサービスタイプでは、 Standard 、 Premium �
 
 ストレージクラスの名前は、 _NetApp-cvs-perf-standard_ 、 _NetApp-cvs-perf-Premium_ 、および _NetApp-cvs-perf-extreme _ です。
 
-https://["これらのサービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["これらのサービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
 
 
 
 ==== 永続的なボリュームのサイズとパフォーマンス
 
-https://["Google Cloud のドキュメントで説明されているようになります"^]では、各サービスレベルで許可される帯域幅は、プロビジョニングされた容量の GiB 単位です。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["Google Cloud のドキュメントで説明されているようになります"^]では、各サービスレベルで許可される帯域幅は、プロビジョニングされた容量の GiB 単位です。つまり、ボリュームのサイズが大きいほどパフォーマンスが向上します。
 
 上記のリンク先の Google Cloud ページを必ずお読みください。また、コストの比較や、パフォーマンス目標を達成するためにサービスレベルとボリュームサイズをどのように組み合わせたらよいかを理解するのに役立つ例も記載されています。
 
@@ -93,7 +93,7 @@ Astra Control Service では、 PVC でボリュームサイズの縮小が要�
 
 CVS サービスタイプでは、 1 つのサービスレベルがサポートされます。 Standard です。CVS サービスタイプがサポートされているリージョンでクラスタを管理する場合、 Astra Control Service は永続ボリュームのデフォルトのストレージクラスとして Standard サービスレベルを使用します。ストレージクラスの名前は _NetApp-cvs-standard_ です。
 
-https://["Standard サービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels["Standard サービスレベルの詳細については、 Cloud Volumes Service for Google Cloud のドキュメントを参照してください"^]。
 
 
 
@@ -115,12 +115,12 @@ Astra Control Service では、 CVS サービスタイプで 300GiB 以上のボ
 
 Astra Control Serviceでは、Container Storage Interface（CSI）ドライバを使用して、ストレージバックエンドとしてGoogle Persistent Diskと連携できます。このサービスは、 Google が管理するブロックレベルのストレージを提供します。
 
-https://["Google Persistent Disk の詳細については、こちらをご覧ください"^]。
+https://cloud.google.com/persistent-disk/["Google Persistent Disk の詳細については、こちらをご覧ください"^]。
 
-https://["Google Persistent Disk のさまざまなパフォーマンスレベルについて、詳しくはこちらをご覧ください"^]。
+https://cloud.google.com/compute/docs/disks/performance["Google Persistent Disk のさまざまなパフォーマンスレベルについて、詳しくはこちらをご覧ください"^]。
 
 
 
 == NetApp Cloud Volumes ONTAP の略
 
-パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://["NetApp Cloud Volumes ONTAP のドキュメント"^]。
+パフォーマンスに関する推奨事項など、NetApp Cloud Volumes ONTAP の設定に関する具体的な情報については、を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP のドキュメント"^]。

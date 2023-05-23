@@ -87,9 +87,9 @@ Astra Trident:: ストレージバックエンドでの運用には、Astra Trid
 
 [%collapsible%open]
 ====
-. https://["スナップショットCRDとスナップショットコントローラをインストールします"^]。
-. https://["最新バージョンのAstra Tridentをインストール"^]。
-. https://["VolumeSnapshotClassを作成します"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["最新バージョンのAstra Tridentをインストール"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClassを作成します"^]。
 
 
 ====
@@ -101,10 +101,10 @@ CSIドライバのインストール手順については、手順を参照し�
 [%collapsible%open]
 ====
 .外部Snapshotデータをインストールします
-まだ行っていない場合は、 https://["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+まだ行っていない場合は、 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
 
 .CSIドライバをAmazon EKSアドオンとしてインストールします
-. サービスアカウント用のAmazon EBS CSIドライバIAMロールを作成します。指示に従います https://["Amazonのドキュメントを参照してください"^]の手順に記載されたAWS CLIコマンドを使用します。
+. サービスアカウント用のAmazon EBS CSIドライバIAMロールを作成します。指示に従います https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["Amazonのドキュメントを参照してください"^]の手順に記載されたAWS CLIコマンドを使用します。
 . 次のAWS CLIコマンドを使用してAmazon EBS CSIアドオンを追加します。括弧<>内の情報は、環境に固有の値に置き換えてください。<driver_role>を、前の手順で作成したEBS CSIドライバロールの名前に置き換えます。
 +
 [source, console]
@@ -158,7 +158,7 @@ kubectl describe storageclass ebs-sc
 Amazonアカウントをまだお持ちでない場合は、Amazon EKSに対する請求を有効にするためにアカウントを作成する必要があります。
 
 .手順
-. にアクセスします https://["Amazonホームページ"^] をクリックし、右上の「サインイン」を選択して、「*ここから開始*」を選択します。
+. にアクセスします https://www.amazon.com["Amazonホームページ"^] をクリックし、右上の「サインイン」を選択して、「*ここから開始*」を選択します。
 . プロンプトに従ってアカウントを作成します。
 
 
@@ -169,7 +169,7 @@ Amazonアカウントをまだお持ちでない場合は、Amazon EKSに対す�
 コマンドラインからAWSリソースを管理できるように、AWS CLIをインストールします。
 
 .ステップ
-. に進みます https://["AWS CLIの使用を開始する"^] および手順に従ってCLIをインストールします。
+. に進みます https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS CLIの使用を開始する"^] および手順に従ってCLIをインストールします。
 
 
 
@@ -179,7 +179,7 @@ Amazonアカウントをまだお持ちでない場合は、Amazon EKSに対す�
 IAMユーザを作成し、セキュリティを強化しながらAWSのサービスとリソースを使用、管理できるようにします。また、この手順をスキップし、既存のIAMユーザをAstra Control Serviceで使用することもできます。
 
 .ステップ
-. に進みます https://["IAMユーザを作成する"^] および手順に従ってIAMユーザを作成します。
+. に進みます https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["IAMユーザを作成する"^] および手順に従ってIAMユーザを作成します。
 
 
 

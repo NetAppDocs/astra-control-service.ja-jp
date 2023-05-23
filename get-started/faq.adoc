@@ -36,7 +36,7 @@ Astra Control では、お客様に正確な顧客情報を提供することが
 
 * Astra Control Service の URL は何であるか。 *
 
-Astra Control Service にはからアクセスできます https://[]。
+Astra Control Service にはからアクセスできます https://astra.netapp.io[]。
 
 * 同僚に電子メールの招待状を送信しましたが、受信していません。どうすればよいですか？ *
 
@@ -90,7 +90,7 @@ ifdef::azure[]
 
 * Active Directoryを使用してAKSクラスタの認証を管理できますか。*
 
-はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください https://["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
 
 endif::azure[]
 
@@ -106,7 +106,7 @@ ifdef::gcp[]
 
 * サービスアカウントの資格情報はどこにありますか？ *
 
-にログインしたら https://["Google Cloud Console の略"^]のサービスアカウントの詳細は、「 * IAM と管理」セクションに記載されています。詳細については、を参照してください link:set-up-google-cloud.html["Astra Control 向け Google Cloud のセットアップ方法"]。
+にログインしたら https://console.cloud.google.com/["Google Cloud Console の略"^]のサービスアカウントの詳細は、「 * IAM と管理」セクションに記載されています。詳細については、を参照してください link:set-up-google-cloud.html["Astra Control 向け Google Cloud のセットアップ方法"]。
 
 * 異なる GCP プロジェクトから異なる GKE クラスタを追加します。これは Astra Control でサポートされていますか。 *
 

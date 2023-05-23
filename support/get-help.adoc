@@ -24,7 +24,7 @@ summary: ネットアップでは、 Astra Control をさまざまな方法で�
 
 次のオプションは、 24 時間 365 日無料で利用できます。
 
-* https://["ナレッジベース"^]
+* https://kb.netapp.com/Cloud/Astra/Control["ナレッジベース"^]
 +
 Astra Control に関する記事、 FAQ 、またはトラブルシューティング情報を検索します。
 
@@ -32,7 +32,7 @@ Astra Control に関する記事、 FAQ 、またはトラブルシューティ�
 +
 現在表示しているドキュメントサイトです。
 
-* https://["Discordの助けを得なさい"^]
+* https://discord.gg/NetApp["Discordの助けを得なさい"^]
 +
 thePubカテゴリのAstraに移動して、他のユーザやエキスパートと交流しましょう。
 
@@ -48,7 +48,7 @@ astra.feedback@netapp.com に電子メールを送信して、あなたの考え
 
 上記のセルフサポートオプションに加え、ネットアップサポートエンジニアと協力して問題を解決できます link:register-support.html["ネットアップのシリアル番号のサポートを有効にします"]。
 
-Astra Control のシリアル番号を有効にすると、を作成してネットアップのテクニカルサポートリソースにアクセスできるようになります https://["サポートチケット"]。
+Astra Control のシリアル番号を有効にすると、を作成してネットアップのテクニカルサポートリソースにアクセスできるようになります https://mysupport.netapp.com/site/cases/mine/create["サポートチケット"]。
 
 クラウドデータサービス > Astra * を選択します。
 

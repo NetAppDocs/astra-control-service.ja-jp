@@ -141,7 +141,7 @@ endif::aws[]
 
 +
 
-NOTE: ネットアップが提供する、特定のアプリケーションのデフォルトのSnapshot実行時フックとSnapshot実行後フックは、このリリースでは削除されています。スナップショットの実行フックを独自に指定しない場合、Astra Control Serviceは、2022年8月4日以降にのみクラッシュコンシステントスナップショットを作成します。にアクセスします https://["NetApp Verda GitHubリポジトリ"^] では、環境に合わせて変更できるサンプルの実行フックスクリプトを使用できます。
+NOTE: ネットアップが提供する、特定のアプリケーションのデフォルトのSnapshot実行時フックとSnapshot実行後フックは、このリリースでは削除されています。スナップショットの実行フックを独自に指定しない場合、Astra Control Serviceは、2022年8月4日以降にのみクラッシュコンシステントスナップショットを作成します。にアクセスします https://github.com/NetApp/Verda["NetApp Verda GitHubリポジトリ"^] では、環境に合わせて変更できるサンプルの実行フックスクリプトを使用できます。
 
 +
 link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
@@ -240,7 +240,7 @@ endif::azure[]
 
 * Astra Control Center Astra Controlが、新しい導入モデルで利用できるようになりました。_Astra Control Center_ は、データセンターにインストールして運用する自己管理ソフトウェアで、オンプレミスの Kubernetes クラスタで Kubernetes アプリケーションのライフサイクル管理を管理できます。
 +
-をクリックしてください。 https://["Astra Control Centerのマニュアルにアクセスします"^]。
+をクリックしてください。 https://docs.netapp.com/us-en/astra-control-center["Astra Control Centerのマニュアルにアクセスします"^]。
 
 * 独自のバケットを用意バックアップとクローンに使用するバケットを管理できるようになりました。バケットを追加し、クラウドプロバイダ内のKubernetesクラスタのデフォルトバケットを変更します。
 +
@@ -287,7 +287,7 @@ endif::azure[]
 
 * REST API：Astra Control REST APIを使用できるようになりました。API は、最新のテクノロジと最新のベストプラクティスに基づいています。
 +
-https://["REST API を使用してアプリケーションデータのライフサイクル管理を自動化する方法について説明します"^]。
+https://docs.netapp.com/us-en/astra-automation["REST API を使用してアプリケーションデータのライフサイクル管理を自動化する方法について説明します"^]。
 
 * アストラコントロールサービスの年間サブスクリプションは、_プレミアムサブスクリプション_を提供します。
 +
@@ -328,9 +328,9 @@ link:../use/monitor-account-activity.html["アカウントアクティビティ�
 
 ifdef::gcp[]
 
-Astra Control Service がをサポートするようになりました https://["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用します。
+Astra Control Service がをサポートするようになりました https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ サービスタイプ"^] Cloud Volumes Service for Google Cloud で実現これは、 _CVS - Performance_service タイプをすでにサポートしていることに加えて行います。注： Astra Control Service は、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用します。
 
-この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
+この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
 
 Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 link:../learn/choose-class-and-size.html["サービスタイプの選択の詳細については、こちらをご覧ください"]。
 
