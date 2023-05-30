@@ -71,6 +71,7 @@ AKS クラスタを Astra Control Service で管理する場合、永続ボリ�
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files の価格設定の詳細を表示"^]。
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure BLOB ストレージの価格設定の詳細を表示する"^]。
+* https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice["Azure MarketplaceでAstra Controlサービスのプランと価格を確認できます"]
 
 
 endif::azure[]
@@ -110,8 +111,9 @@ NOTE: Azure Marketplaceのサブスクリプションプロセスのデモビデ
 AWS Marketplaceを使用してAstra Control Serviceに登録することができます。アカウントと請求先の詳細は、Marketplaceで管理されます。
 
 .手順
-. にアクセスします https://aws.amazon.com/marketplace/["AWS Marketplace"^]。
-. [*購読を続行する*]を選択します。
+. にアクセスします https://aws.amazon.com/marketplace/pp/prodview-auupmqjoq43ey?sr=0-1&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace"^]。
+. [購入オプションの表示]*を選択します。
+. プロンプトが表示されたら、AWSアカウントにログインするか、新しいアカウントを作成します。
 . 指示に従って、プランをサブスクライブします。
 
 

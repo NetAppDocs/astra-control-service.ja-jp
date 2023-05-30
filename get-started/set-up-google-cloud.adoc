@@ -119,6 +119,7 @@ Google Cloud リージョン:: Cloud Volumes Service for Google Cloud をスト�
 
 --
 GKE クラスタの動作モード:: 標準モードのオペレーションを使用する必要があります。自動操舵モードは、現時点ではテストされていません。 link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["操作モードの詳細を確認してください"^]。
+ストレージプール:: NetApp Cloud Volumes ServiceをCVSサービスタイプのストレージバックエンドとして使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。を参照してください link:../learn/choose-class-and-size.html#overview["GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ"^] を参照してください。
 
 
 

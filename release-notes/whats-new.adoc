@@ -16,6 +16,21 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2023年5月30日
+
+.新機能とサポート
+* プライベートAmazon EKSクラスタのサポート
++
+link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"]
+
+* リストアまたはクローン処理時のデスティネーションストレージクラスの選択がサポートされます
++
+link:../use/restore-apps.html["アプリケーションのリストア"]
+
+
+
+
+
 == 2023年5月15日
 
 .新機能とサポート

@@ -26,8 +26,12 @@ entries:
   url: "/get-started/register.html"
 - title: クラスタを管理します
   url: "/get-started/add-first-cluster.html"
+  entries:
+  - title: Astra Tridentのバージョンを確認
+    url: "/get-started/check-astra-trident-version.html"
+  - title: 管理クラスタロールのkubeconfigファイルを作成します
+    url: "/get-started/create-kubeconfig.html"
 - title: プライベートクラスタを管理する
-  flavor: azure
   url: "/get-started/manage-private-cluster.html"
 - title: 次の手順
   url: "/get-started/whats-next.html"

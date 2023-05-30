@@ -12,7 +12,7 @@ summary: Astra Control Service は、永続的ボリュームのストレージ�
 
 
 [role="lead"]
-Astra Controlサービスでは、永続ボリュームのストレージバックエンドオプションとして、Cloud Volumes Service for Google Cloud、Google Persistent Disk、NetApp Cloud Volumes ONTAP がサポートされます。
+Astra Controlサービスでは、永続ボリュームのストレージバックエンドオプションとして、NetApp Cloud Volumes Service for Google Cloud、Google Persistent Disk、NetApp Cloud Volumes ONTAPがサポートされます。
 
 
 
@@ -33,6 +33,9 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 * 中 ~ 高パフォーマンスのストレージニーズを持つ Kubernetes アプリケーションについては、 CVS パフォーマンスをサポートする Google Cloud リージョンを選択し、 Premium または Extreme ストレージクラスを使用してください。こうしたワークロードには、 AI / ML パイプライン、 CI / CD パイプライン、メディア処理、リレーショナル、 NoSQL 、タイムシリーズなどのデータベースなどがあります
 * 中程度のストレージパフォーマンスのニーズ（ Web アプリケーション、汎用ファイルストレージなど）がある Kubernetes アプリケーションの場合は、 CVS または CVS パフォーマンスをサポートする Google Cloud リージョンを Standard ストレージクラスで選択します。
 
+
+
+NOTE: Astra Trident 23.01以降でCVSサービスタイプを使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。ストレージプールが設定されていないボリュームをプロビジョニングすると、ボリュームのプロビジョニングは失敗します。を参照してください https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Serviceのドキュメント"^] ボリュームの作成の詳細については、を参照してください。
 
 次の表に、このページに記載されている情報を簡単に比較します。
 
