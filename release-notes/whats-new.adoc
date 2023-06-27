@@ -16,6 +16,17 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2023年6月26日
+
+.新機能とサポート
+* Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました
++
+link:../use/set-up-billing.html["請求を設定します"]
+
+
+
+
+
 == 2023年5月30日
 
 .新機能とサポート

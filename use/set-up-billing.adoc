@@ -29,7 +29,7 @@ Astra Control Service の使用には、ネットアップの Astra Control Serv
 Astra Control Service には、次の 3 つのプランがあります。
 
 自由な計画:: 最大10個のネームスペースを無料で管理できます。
-Premium PayGo の場合:: ネームスペースを1つのネームスペースに対して1時間あたりの特定の割合で管理します。
+Premium PayGo の場合:: ネームスペースごとに特定の速度でネームスペースを無制限に管理できます。
 プレミアムサブスクリプション:: ネームスペースパック_ごとに最大10個のネームスペースを管理できる年間サブスクリプションを使用して、割引価格で前払いします。ネットアップの営業担当に問い合わせて、必要なパックを購入してください。たとえば、30個のネームスペースを管理する3パックをAstra Control Serviceから購入します。年間サブスクリプションで許可されている数を超えるネームスペースを管理した場合は、追加のネームスペースごとのサブスクリプション依存の超過レートが課金されます。
 +
 --
@@ -50,7 +50,7 @@ ifdef::gcp[]
 
 === Google Cloud の請求
 
-Astra Control Service を使用して GKE クラスタを管理する場合、永続ボリュームは NetApp Cloud Volumes Service によってバックアップされ、アプリのバックアップは Google Cloud Storage バケットに保存されます。
+永続ボリュームはNetApp Cloud Volumes Serviceによってバックアップされ、アプリケーションのバックアップはGoogle Cloud Storageバケットに格納されます。
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["Cloud Volumes Service の価格設定の詳細を表示"^]。
 +
@@ -67,12 +67,15 @@ ifdef::azure[]
 
 === Microsoft Azure 請求
 
-AKS クラスタを Astra Control Service で管理する場合、永続ボリュームは Azure NetApp Files によってバックアップされ、アプリケーションのバックアップは Azure BLOB コンテナに格納されます。
+永続ボリュームはAzure NetApp Filesによってバックアップされ、アプリケーションのバックアップはAzure Blobコンテナに格納されます。
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp["Azure NetApp Files の価格設定の詳細を表示"^]。
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["Microsoft Azure BLOB ストレージの価格設定の詳細を表示する"^]。
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice["Azure MarketplaceでAstra Controlサービスのプランと価格を確認できます"]
 
+
+
+NOTE: Astra Control ServiceのAzure課金レートは1時間あたりであり、新しい課金時間は使用時間の29分が経過すると開始されます。
 
 endif::azure[]
 
@@ -82,7 +85,7 @@ ifdef::aws[]
 
 === Amazon Web Servicesの請求
 
-Astra Control Serviceを使用してAWSクラスタを管理する場合、永続ボリュームはEBSまたはFSX for NetApp ONTAP でバックアップされ、アプリケーションのバックアップはAWSバケットに格納されます。
+永続ボリュームはEBSまたはFSx for NetApp ONTAPによってバックアップされ、アプリケーションのバックアップはAWSバケットに格納されます。
 
 * https://aws.amazon.com/eks/pricing/["Amazon Web Servicesの価格設定の詳細を表示します"^]。
 
