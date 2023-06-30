@@ -2148,7 +2148,6 @@
   <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">次のいずれかを選択します。</block>
   <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">*元のストレージクラスを使用してリストア*：ターゲットクラスタに存在しない場合を除き、元 々 関連付けられていたストレージクラスがアプリケーションで使用されます。この場合、クラスタのデフォルトのストレージクラスが使用されます。</block>
   <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">*別のストレージクラスを使用したリストア*：ターゲットクラスタに存在するストレージクラスを選択してください。元 々 関連付けられていたストレージクラスに関係なく、すべてのアプリケーションボリュームが、リストアの一環としてこの別のストレージクラスに移動されます。</block>
-  <block id="9d9af3135a71ef374583f995f07a2539" category="list-text">*デスティネーションボリュームの確認*：別のストレージクラスにリストアする場合は、ストレージクラスで同じ永続ボリュームアクセスモード（ReadWriteManyなど）が使用されていることを確認してください。デスティネーションの永続ボリュームアクセスモードが異なると、リストア処理は失敗します。</block>
   <block id="5856d66908e22cf434dbd9afeccf641a" category="list-text">ネームスペースごとに特定の速度でネームスペースを無制限に管理できます。</block>
   <block id="bf4f678d4a57f18576a93b45fbd878bd" category="paragraph">永続ボリュームはNetApp Cloud Volumes Serviceによってバックアップされ、アプリケーションのバックアップはGoogle Cloud Storageバケットに格納されます。</block>
   <block id="a56e21e29fdc4a1e8ca3d0fe83ad8ec3" category="paragraph">永続ボリュームはAzure NetApp Filesによってバックアップされ、アプリケーションのバックアップはAzure Blobコンテナに格納されます。</block>
@@ -2170,4 +2169,7 @@
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました</block>
   <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">開始する前に、マシンに次のものがあることを確認してください。</block>
   <block id="e518ff6eca9962a9ad470732191bb026" category="list-text">kubectl v1.23以降がインストールされている</block>
+  <block id="30136395f01879792198317c11831ea4" category="inline-link">Kubernetes</block>
+  <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">*デスティネーションボリュームの確認*：別のストレージクラスにリストアする場合は、ストレージクラスで同じ永続ボリュームアクセスモード（ReadWriteManyなど）が使用されていることを確認してください。デスティネーションの永続ボリュームアクセスモードが異なると、リストア処理は失敗します。たとえば、ソースの永続ボリュームがRWXアクセスモードを使用している場合は、Azure Managed Disks、AWS EBS、Google Persistent Disk、など、RWXを提供できないデスティネーションストレージクラスを選択します<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>を指定すると、リストア処理は失敗します。原因は失敗します。永続ボリュームのアクセスモードの詳細については、を参照してください<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> ドキュメント</block>
+  <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">*デスティネーションボリュームを確認*：別のストレージクラスにクローニングする場合は、ストレージクラスで同じ永続ボリュームアクセスモード（ReadWriteManyなど）が使用されていることを確認してください。デスティネーションの永続的ボリュームのアクセスモードが異なると、クローニング処理は失敗します。たとえば、ソースの永続ボリュームがRWXアクセスモードを使用している場合は、Azure Managed Disks、AWS EBS、Google Persistent Disk、など、RWXを提供できないデスティネーションストレージクラスを選択します<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>を指定すると、クローン処理は失敗します。原因は失敗します。永続ボリュームのアクセスモードの詳細については、を参照してください<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> ドキュメント</block>
 </blocks>
