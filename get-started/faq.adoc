@@ -74,7 +74,7 @@ ifdef::aws[]
 
 * Astra Control ServiceにプライベートEKSクラスタを追加できますか。*
 
-現時点では、Astra Control ServiceでプライベートEKSクラスタはサポートされていません。
+はい、プライベートEKSクラスタはAstra Control Serviceに追加できます。プライベートEKSクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 endif::aws[]
 
@@ -99,6 +99,14 @@ ifdef::gcp[]
 
 
 == Google Kubernetes Engine（GKE）クラスタの登録
+
+* Astra Control Service にプライベート GKE クラスタを追加できますか。 *
+
+はい。 Astra Control Service にプライベート GKE クラスタを追加できます。  プライベートGKEクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+
+プライベートGKEクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
+
+52.188.218.166-32
 
 * GKE クラスタは共有 VPC 上に存在できますか。 *
 

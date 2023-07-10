@@ -24,15 +24,25 @@ entries:
     url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: アカウントに登録します
   url: "/get-started/register.html"
-- title: クラスタを管理します
+- title: クラスタを追加
   url: "/get-started/add-first-cluster.html"
   entries:
-  - title: Astra Tridentのバージョンを確認
-    url: "/get-started/check-astra-trident-version.html"
-  - title: 管理クラスタロールのkubeconfigファイルを作成します
-    url: "/get-started/create-kubeconfig.html"
-- title: プライベートクラスタを管理する
-  url: "/get-started/manage-private-cluster.html"
+  - title: プロバイダ管理クラスタを追加します
+    entries:
+    - title: パブリックプロバイダが管理するクラスタを追加します
+      url: "/get-started/add-public-provider-managed-cluster.html"
+    - title: プロバイダが管理するプライベートクラスタを追加します
+      url: "/get-started/add-private-provider-managed-cluster.html"
+  - title: 自己管理型クラスタを追加します
+    entries:
+    - title: パブリック自己管理型クラスタを追加します
+      url: "/get-started/add-public-self-managed-cluster.html"
+    - title: プライベート自己管理クラスタを追加します
+      url: "/get-started/add-private-self-managed-cluster.html"
+    - title: Astra Tridentのバージョンを確認
+      url: "/get-started/check-astra-trident-version.html"
+    - title: kubeconfigファイルを作成します
+      url: "/get-started/create-kubeconfig.html"
 - title: 次の手順
   url: "/get-started/whats-next.html"
 - title: ビデオ

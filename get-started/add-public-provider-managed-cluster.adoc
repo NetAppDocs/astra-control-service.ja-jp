@@ -1,0 +1,263 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-public-provider-managed-cluster.html 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
+summary: 環境のセットアップが完了したら、 Kubernetes クラスタを作成し、 Astra Control Service に追加することができます。 
+---
+= パブリックプロバイダが管理するクラスタをAstra Control Serviceに追加します
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+クラウド環境のセットアップが完了したら、Kubernetesクラスタを作成してAstra Control Serviceに追加できます。
+
+* <<Kubernetes クラスタを作成>>
+* <<Astra Control Serviceにクラスタを追加>>
+* <<デフォルトのストレージクラスを変更する>>
+
+
+
+
+== Kubernetes クラスタを作成
+
+まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service（EKS）用のAstra制御サービスの要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKE ）用 Astra Control Service の要件"]。まだクラスタがない場合は、を満たすクラスタを作成できます link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["Azure NetApp Files を備えた Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"] または link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["Azure 管理ディスクを使用する Azure Kubernetes Service （ AKS ）の Astra 制御サービスの要件"]。
+
+
+NOTE: Astra Control Serviceは、Azure Active Directory（Azure AD）を使用して認証とID管理を行うAKSクラスタをサポートします。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
+
+
+
+== Astra Control Serviceにクラスタを追加
+
+Astra Control Service にログインしたら、最初にクラスタの管理を開始します。Astra Control Serviceにクラスタを追加する前に、特定のタスクを実行し、クラスタが一定の要件を満たしていることを確認する必要があります。
+
+.作業を開始する前に
+[%collapsible]
+====
+ifdef::aws[]
+
+.Amazon Web Services の
+* クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
+* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Tridentの情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
+* （オプション）を指定する必要がある場合 `kubectl` クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？"^]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Amazon Web Servicesと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["セットアップのドキュメント"^]。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+.Microsoft Azure
+* サービスプリンシパルの作成時に、Azure CLIからの出力を含むJSONファイルが必要です。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["サービスプリンシパルの設定方法について説明します"]。
++
+JSON ファイルに追加していない場合は、 Azure サブスクリプション ID も必要になります。
+
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Microsoft Azureと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["セットアップのドキュメント"^]。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+.Google Cloud
+* 必要な権限を持つサービスアカウントのサービスアカウントキーファイルが必要です。 link:../get-started/set-up-google-cloud.html#create-a-service-account["サービスアカウントの設定方法について説明します"]。
+* NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Google Cloudと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["セットアップのドキュメント"^]。
+
+
+endif::gcp[]
+
+====
+.手順
+. ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
++
+プロンプトに従ってクラスタを追加します。
+
+. *プロバイダ*：クラウドプロバイダを選択し、新しいクラウドインスタンスを作成するために必要なクレデンシャルを入力するか、使用する既存のクラウドインスタンスを選択します。
+
+
+ifdef::aws[]
+
+. * Amazon Web Services *：JSONファイルをアップロードするか、クリップボードからそのJSONファイルの内容を貼り付けて、Amazon Web Services IAMユーザアカウントの詳細を指定します。
++
+JSONファイルに、クラスタを作成したIAMユーザのクレデンシャルを含める必要があります。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+. * Microsoft Azure * ： JSON ファイルをアップロードするか、クリップボードからその JSON ファイルの内容を貼り付けて、 Azure サービスプリンシパルの詳細を指定します。
++
+JSON ファイルに、サービスプリンシパルの作成時に Azure CLI からの出力が含まれている必要があります。サブスクリプション ID を含めることで、 Astra に自動的に追加されるようにすることもできます。ID が必要な場合は、 JSON の指定後に手動で ID を入力する必要があります。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+. * Google Cloud Platform * ：ファイルをアップロードするか、クリップボードからコンテンツを貼り付けて、サービスアカウントのキーファイルを提供します。
++
+Astra Control Service は、サービスアカウントを使用して、 Google Kubernetes Engine で実行されているクラスタを検出します。
+
+
+
+endif::gcp[]
+
+. *その他*：このタブは自己管理クラスタでのみ使用できます。
++
+.. *クラウドインスタンス名*：このクラスタを追加するときに作成される新しいクラウドインスタンスの名前を指定します。の詳細を確認してください link:../use/manage-cloud-instances.html["クラウドインスタンス"]。
+.. 「 * 次へ * 」を選択します。
++
+Astra Control Serviceに、クラスタのリストが表示されます。
+
+.. *クラスタ*：Astra Control Serviceに追加するクラスタをリストから選択します。
++
+
+NOTE: クラスタのリストから選択する場合は、* Eligiblity *列に注意してください。クラスタが「ineligible」または「partially eligible」の場合は、ステータスにカーソルを合わせて、そのクラスタに問題があるかどうかを確認します。たとえば、クラスタにワーカーノードがないことがわかります。
+
+.. 「 * 次へ * 」を選択します。
+.. （オプション）* Storage *：必要に応じて、このクラスタに導入されたKubernetesアプリケーションでデフォルトで使用するストレージクラスを選択します。
+
+
+. クラスタの新しいデフォルトのストレージクラスを選択するには、*[新しいデフォルトのストレージクラスを割り当てる]*チェックボックスを有効にします。
+. 新しいデフォルトのストレージクラスをリストから選択します。
++
+[NOTE]
+====
+各クラウドプロバイダのストレージサービスには、コスト、パフォーマンス、耐障害性に関する次の情報が表示されます。
+
+ifdef::gcp[]
+
+** Cloud Volumes Service for Google Cloud：価格、パフォーマンス、耐障害性に関する情報
+** Google Persistent Disk：コスト、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+** Azure NetApp Files ：パフォーマンスと耐障害性に関する情報
+** Azure Managed Disks：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+** Amazon Elastic Block Store：価格、パフォーマンス、耐障害性に関する情報がない
+** Amazon FSX for NetApp ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+endif::aws[]
+
+** NetApp Cloud Volumes ONTAP ：価格、パフォーマンス、耐障害性に関する情報は提供されません
+
+
+====
++
+ストレージクラスごとに、次のいずれかのサービスを利用できます。
+
++
+ifdef::gcp[]
+
++
+** https://cloud.netapp.com/cloud-volumes-service-for-gcp["Cloud Volumes Service for Google Cloud"^]
+** https://cloud.google.com/persistent-disk/["Google Persistent Disk のことです"^]
+
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files の特長"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure で管理されるディスク"^]
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP 対応の Amazon FSX"^]
+
+
+endif::aws[]
+
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP の略"^]
++
+の詳細を確認してください link:../learn/aws-storage.html["Amazon Web Servicesクラスタのストレージクラス"]。の詳細を確認してください link:../learn/azure-storage.html["AKS クラスタのストレージクラス"]。の詳細を確認してください link:../learn/choose-class-and-size.html["GKE クラスタのストレージクラス"]。
+
++
+.. 「 * 次へ * 」を選択します。
+.. *確認と承認*：構成の詳細を確認します。
+.. [Add]*を選択して、Astra Control Serviceにクラスタを追加します。
+
+
+
+
+.結果
+このクラウドプロバイダ用に最初に追加したクラスタである場合、Astra Control Serviceは、対象となるクラスタで実行されているアプリケーションのバックアップ用に、クラウドプロバイダ用のオブジェクトストアを作成します。（このクラウドプロバイダに対して後続のクラスタを追加した場合、オブジェクトストアは作成されません）。デフォルトのストレージクラスを指定した場合は、指定したデフォルトのストレージクラスがAstra Control Serviceによって設定されます。Amazon Web ServicesまたはGoogle Cloud Platformで管理されるクラスタの場合、Astra Control Serviceはクラスタにも管理者アカウントを作成します。この処理には数分かかることがあります。
+
+
+
+== デフォルトのストレージクラスを変更する
+
+クラスタのデフォルトのストレージクラスは変更できます。
+
+
+
+=== Astra Controlを使用してデフォルトのストレージクラスを変更する
+
+クラスタのデフォルトのストレージクラスは、Astra Control内から変更できます。以前にインストールしたストレージバックエンドサービスをクラスタで使用している場合は、このメソッドを使用してデフォルトのストレージクラスを変更できない可能性があります（*デフォルトに設定*アクションは選択できません）。この場合は、を実行できます <<コマンドラインを使用してデフォルトのストレージクラスを変更します>>。
+
+.手順
+. Astra Control Service UI で、 [* Clusters] を選択します。
+. [* Clusters]ページで、変更するクラスタを選択します。
+. [ * ストレージ * ] タブを選択します。
+. 「*ストレージクラス*」カテゴリを選択します。
+. デフォルトとして設定するストレージクラスの* Actions *メニューを選択します。
+. 「*デフォルトに設定*」を選択します。
+
+
+
+
+=== コマンドラインを使用してデフォルトのストレージクラスを変更します
+
+Kubernetesコマンドを使用してクラスタのデフォルトのストレージクラスを変更することができます。この方法は、クラスタの構成に関係なく機能します。
+
+.手順
+. Kubernetesクラスタにログインします。
+. クラスタ内のストレージクラスを表示します。
++
+[source, console]
+----
+kubectl get storageclass
+----
+. デフォルトのストレージクラスからデフォルトの指定を削除する。<SC_NAME> をストレージクラスの名前に置き換えます。
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. 別のストレージクラスをデフォルトとしてマークします。<SC_NAME> をストレージクラスの名前に置き換えます。
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. 新しいデフォルトストレージクラスを確認します。
++
+[source, console]
+----
+kubectl get storageclass
+----
+
+
+ifdef::azure[]
