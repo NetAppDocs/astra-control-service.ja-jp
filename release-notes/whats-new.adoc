@@ -16,12 +16,23 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2023年7月27日
+
+.新機能とサポート
+* クローン処理でライブクローンのみがサポートされるようになりました（管理対象アプリケーションの現在の状態）。Snapshotまたはバックアップからクローニングするには、リストアワークフローを使用します。
++
+link:../use/restore-apps.html["アプリケーションのリストア"^]
+
+
+
+
+
 == 2023年6月26日
 
 .新機能とサポート
 * Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました
 +
-link:../use/set-up-billing.html["請求を設定します"]
+link:../use/set-up-billing.html["請求を設定します"^]
 
 
 
@@ -32,11 +43,11 @@ link:../use/set-up-billing.html["請求を設定します"]
 .新機能とサポート
 * プライベートAmazon EKSクラスタのサポート
 +
-link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"]
+link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"^]
 
 * リストアまたはクローン処理時のデスティネーションストレージクラスの選択がサポートされます
 +
-link:../use/restore-apps.html["アプリケーションのリストア"]
+link:../use/restore-apps.html["アプリケーションのリストア"^]
 
 
 
@@ -45,7 +56,7 @@ link:../use/restore-apps.html["アプリケーションのリストア"]
 == 2023年5月15日
 
 .新機能とサポート
-これはマイナーなバグ修正リリースです。
+これはマイナーバグ修正リリースです。
 
 
 
@@ -58,15 +69,15 @@ endif::azure[]
 
 * プライベートRed Hat OpenShiftクラスタのサポート
 +
-link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"]
+link:../get-started/manage-private-cluster.html["Astra Control Serviceを使用してプライベートクラスタを管理"^]
 
 * リストア処理中のアプリケーションリソースの追加または除外がサポートされます
 +
-link:../use/restore-apps.html#filter-resources-during-an-application-restore["アプリケーションのリストア"]
+link:../use/restore-apps.html#filter-resources-during-an-application-restore["アプリケーションのリストア"^]
 
 * データ専用アプリケーションの管理がサポートされます
 +
-link:../use/manage-apps.html["アプリの管理を開始します"]
+link:../use/manage-apps.html["アプリの管理を開始します"^]
 
 
 
@@ -77,11 +88,11 @@ link:../use/manage-apps.html["アプリの管理を開始します"]
 .新機能とサポート
 * 強化された実行フック機能と追加のフィルタオプション
 +
-link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"^]
 
 * ストレージバックエンドとしてのNetApp Cloud Volumes ONTAP のサポート
 +
-link:../get-started/intro.html["Astra Controlの詳細をご確認ください"]
+link:../get-started/intro.html["Astra Controlの詳細をご確認ください"^]
 
 
 
@@ -92,41 +103,41 @@ link:../get-started/intro.html["Astra Controlの詳細をご確認ください"]
 .新機能とサポート
 * 複数のネームスペースにまたがるアプリケーションのサポート
 +
-link:../use/manage-apps.html["アプリケーションを定義します"]
+link:../use/manage-apps.html["アプリケーションを定義します"^]
 
 * アプリケーション定義にクラスタリソースを含めることができます
 +
-link:../use/manage-apps.html["アプリケーションを定義します"]
+link:../use/manage-apps.html["アプリケーションを定義します"^]
 
 * バックアップ、リストア、クローニングの各処理の進捗状況レポートが強化されました
 +
-link:../use/monitor-running-tasks.html["実行中のタスクを監視します"]
+link:../use/monitor-running-tasks.html["実行中のタスクを監視します"^]
 
 * 互換性のあるバージョンのAstra Tridentがインストール済みのクラスタの管理をサポート
 +
-link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"^]
 
 * 単一のアストラコントロールサービスアカウントで複数のクラウドプロバイダサブスクリプションを管理できます
 +
-link:../use/manage-cloud-instances.html["クラウドインスタンスを管理します"]
+link:../use/manage-cloud-instances.html["クラウドインスタンスを管理します"^]
 
 * パブリッククラウド環境でホストされている自己管理型KubernetesクラスタをAstra Control Serviceに追加できます
 +
-link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"^]
 
 * Astra Control Serviceの課金は、アプリケーションごとではなく、名前空間ごとに課金されるようになりました
 +
-link:../use/set-up-billing.html["請求を設定します"]
+link:../use/set-up-billing.html["請求を設定します"^]
 
 * AWS MarketplaceからのAstra Control Serviceのタームベースサービスへのサブスクライブのサポート
 +
-link:../use/set-up-billing.html["請求を設定します"]
+link:../use/set-up-billing.html["請求を設定します"^]
 
 
 
 .既知の問題および制限事項
-* link:../release-notes/known-issues.html["このリリースの既知の問題"]
-* link:../release-notes/known-limitations.html["このリリースの既知の制限事項は以下のとおりです"]
+* link:../release-notes/known-issues.html["このリリースの既知の問題"^]
+* link:../release-notes/known-limitations.html["このリリースの既知の制限事項は以下のとおりです"^]
 
 
 
@@ -143,7 +154,7 @@ link:../use/set-up-billing.html["請求を設定します"]
 
 * アプリケーション管理ワークフローの改善アプリケーション管理ワークフローの改善により、Astra Controlで管理するアプリケーションを定義する際の柔軟性が向上しました。
 +
-link:../use/manage-apps.html#define-apps["アプリの管理"]
+link:../use/manage-apps.html#define-apps["アプリの管理"^]
 
 
 
@@ -151,7 +162,7 @@ ifdef::aws[]
 
 * Amazon Web Services Cluster Astra Control Serviceのサポートにより、Amazon Elastic Kubernetes Serviceでホストされているクラスタで実行されているアプリケーションを管理できるようになりました。NetApp ONTAP 用のAmazon Elastic Block StoreまたはAmazon FSXをストレージバックエンドとして使用するようにクラスタを設定できます。
 +
-link:../get-started/set-up-amazon-web-services.html["Amazon Web Servicesをセットアップする"]
+link:../get-started/set-up-amazon-web-services.html["Amazon Web Servicesをセットアップする"^]
 
 
 
@@ -170,7 +181,7 @@ endif::aws[]
 NOTE: ネットアップが提供する、特定のアプリケーションのデフォルトのSnapshot実行時フックとSnapshot実行後フックは、このリリースでは削除されています。スナップショットの実行フックを独自に指定しない場合、Astra Control Serviceは、2022年8月4日以降にのみクラッシュコンシステントスナップショットを作成します。にアクセスします https://github.com/NetApp/Verda["NetApp Verda GitHubリポジトリ"^] では、環境に合わせて変更できるサンプルの実行フックスクリプトを使用できます。
 
 +
-link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"^]
 
 
 
@@ -197,7 +208,7 @@ image:select-cloud-provider.png["クラウドプロバイダのドロップダ�
 
 * ネームスペースの役割ベースのアクセス制御(RBAC) Astra制御サービスが、メンバユーザーまたはビューアユーザーへの名前空間の制約の割り当てをサポートするようになりました。
 +
-link:../learn/user-roles-namespaces.html["ネームスペースのロールベースアクセス制御（ RBAC ）"]
+link:../learn/user-roles-namespaces.html["ネームスペースのロールベースアクセス制御（ RBAC ）"^]
 
 
 
@@ -205,11 +216,11 @@ ifdef::azure[]
 
 * Azure Active DirectoryサポートAstra Control Serviceは、認証とID管理にAzure Active Directoryを使用するAKSクラスタをサポートします。
 +
-link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"^]
 
 * プライベートAKSクラスタのサポートプライベートIPアドレスを使用するAKSクラスタを管理できるようになりました。
 +
-link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]
+link:../get-started/add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"^]
 
 
 
@@ -217,7 +228,7 @@ endif::azure[]
 
 * Astra Controlからバケットを削除Astra Control Serviceからバケットを削除できるようになりました。
 +
-link:../use/manage-buckets.html["バケットを削除する"]
+link:../use/manage-buckets.html["バケットを削除する"^]
 
 
 
@@ -236,15 +247,15 @@ endif::azure[]
 
 * アプリのインプレースリストアでは、同じクラスタとネームスペースにリストアすることで、アプリのスナップショット、クローニング、バックアップをインプレースでリストアできるようになりました。
 +
-link:../use/restore-apps.html["アプリケーションのリストア"]
+link:../use/restore-apps.html["アプリケーションのリストア"^]
 
 * 実行フック付きのスクリプトイベントAstra Controlは、アプリケーションのスナップショットを作成する前または後に実行できるカスタムスクリプトをサポートします。これにより、データベーストランザクションの中断などのタスクを実行して、データベースアプリケーションのスナップショットの整合性を保つことができます。
 +
-link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"]
+link:../use/manage-app-execution-hooks.html["アプリケーション実行フックを管理します"^]
 
 * オペレータが配置したアプリケーションAstra Controlは、一部のアプリケーションをオペレータとともに展開するときにサポートします。
 +
-link:../use/manage-apps.html#app-management-requirements["アプリの管理を開始します"]
+link:../use/manage-apps.html#app-management-requirements["アプリの管理を開始します"^]
 
 
 
@@ -252,7 +263,7 @@ ifdef::azure[]
 
 * リソースグループスコープAstra Control Serviceのサービスプリンシパルが、リソースグループスコープを使用するサービスプリンシパルをサポートするようになりました。
 +
-link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["Azure サービスプリンシパルを作成します"]
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["Azure サービスプリンシパルを作成します"^]
 
 
 
@@ -270,7 +281,7 @@ endif::azure[]
 
 * 独自のバケットを用意バックアップとクローンに使用するバケットを管理できるようになりました。バケットを追加し、クラウドプロバイダ内のKubernetesクラスタのデフォルトバケットを変更します。
 +
-link:../use/manage-buckets.html["バケットを管理する"]
+link:../use/manage-buckets.html["バケットを管理する"^]
 
 
 
@@ -285,11 +296,11 @@ ifdef::gcp[]
 * 共有VPCのサポートGCPプロジェクト内のGKEクラスタを共有VPCネットワーク構成で管理できるようになりました。
 * CVSサービスタイプAstra Control Serviceの永続的ボリュームのサイズで、CVSサービスタイプを使用する場合、最小サイズが300GiBの永続的ボリュームが作成されるようになりました。
 +
-link:../learn/choose-class-and-size.html["Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する方法を説明します"]。
+link:../learn/choose-class-and-size.html["Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する方法を説明します"^]。
 
 * コンテナ最適化OSコンテナ最適化OSのサポートがGKEワーカーノードでサポートされるようになりました。これは、 Ubuntu のサポートに加えて追加されます。
 +
-link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE クラスタの要件の詳細については、こちらをご覧ください"]。
+link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["GKE クラスタの要件の詳細については、こちらをご覧ください"^]。
 
 
 
@@ -305,7 +316,7 @@ ifdef::azure[]
 
 * AKSクラスタAstra制御サービスのサポートにより、Azure Kubernetes Service（AKS）の管理対象のKubernetesクラスタで実行されているアプリケーションを管理できるようになりました。
 +
-link:../get-started/set-up-microsoft-azure-with-anf.html["開始方法をご確認ください"]。
+link:../get-started/set-up-microsoft-azure-with-anf.html["開始方法をご確認ください"^]。
 
 
 
@@ -323,11 +334,11 @@ https://docs.netapp.com/us-en/astra-automation["REST API を使用してアプ�
 年間サブスクリプションで許可されている数を超えるアプリを管理した場合、アプリケーションごとに 1 分あたり 0.005 ドルの超過レート（ Premium PayGo と同じ）が課金されます。
 
 +
-link:../get-started/intro.html#pricing["Astra Control サービスの価格設定の詳細をご確認ください"]。
+link:../get-started/intro.html#pricing["Astra Control サービスの価格設定の詳細をご確認ください"^]。
 
 * 名前空間とアプリケーションの視覚化：[検出されたアプリ]ページが強化され、名前空間とアプリケーションの階層がよりわかりやすく表示されるようになりました。名前空間を展開するだけで、その名前空間に含まれるアプリが表示されます。
 +
-link:../use/manage-apps.html["アプリケーションの管理についての詳細は、こちらをご覧ください"]。
+link:../use/manage-apps.html["アプリケーションの管理についての詳細は、こちらをご覧ください"^]。
 
 +
 image:screenshot-group.gif["[ アプリケーション（ Apps ） ] ページのスクリーンショットで、 [ 検出（ Discovered ） ] タブが選択されて"]
@@ -342,7 +353,7 @@ image:screenshot-protection-policy.gif["Configure Protection Policy ダイアロ
 ** Astra Control アカウントアクティビティを CSV ファイルにダウンロードします。
 ** クラスタまたはアプリケーションを選択した後、クラスタページまたはアプリページから直接アクティビティを表示します。
 +
-link:../use/monitor-account-activity.html["アカウントアクティビティの詳細については、こちらをご覧ください"]。
+link:../use/monitor-account-activity.html["アカウントアクティビティの詳細については、こちらをご覧ください"^]。
 
 
 
@@ -358,7 +369,7 @@ Astra Control Service がをサポートするようになりました https://c
 
 この拡張により、 Astra Control Service は、 _any_ で実行されている Kubernetes クラスタのアプリデータを管理できるようになりました https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Cloud Volumes Service がサポートされている Google Cloud リージョン"^]。
 
-Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 link:../learn/choose-class-and-size.html["サービスタイプの選択の詳細については、こちらをご覧ください"]。
+Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 link:../learn/choose-class-and-size.html["サービスタイプの選択の詳細については、こちらをご覧ください"^]。
 
 endif::gcp[]
 
@@ -368,7 +379,7 @@ endif::gcp[]
 
 この度、 Astra Control Service が一般提供されるようになりました。ベータリリースから寄せられた多くのフィードバックを取り入れ、他にも注目すべき機能強化を行いました。
 
-* 請求書を利用できるようになり、フリープランからプレミアムプランに移行できるようになりました。 link:../use/set-up-billing.html["課金について詳しくは、こちらをご覧ください"]。
+* 請求書を利用できるようになり、フリープランからプレミアムプランに移行できるようになりました。 link:../use/set-up-billing.html["課金について詳しくは、こちらをご覧ください"^]。
 * CVS - パフォーマンスサービスのタイプを使用している場合、 Astra Control Service では、 100GiB 以上の永続的ボリュームが作成されるようになりました。
 * Astra Control Service により、アプリケーションを迅速に検出できるようになりました。
 * これで、自分でアカウントを作成および削除できるようになりました。
