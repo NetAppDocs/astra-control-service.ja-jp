@@ -2213,4 +2213,6 @@ RKE 2（v1.24.x）とRancher 2.7</block>
   <block id="c673cd380fd204c071fbbe9ab6093305" category="paragraph"><block ref="4696e5fb4ee6218a3f53515814eb28d8" category="inline-link-macro-rx"></block>。</block>
   <block id="e9cea3220da1647df30dfb6a29eb4de1" category="paragraph">Google Cloud リージョンを自由に選択できる場合は、パフォーマンス要件に応じて CVS または CVS パフォーマンスのいずれかを選択できます。 <block ref="3e4123586ab28c1a84ca430e681220b3" category="inline-link-macro-rx"></block>。</block>
   <block id="3dde386e52ee79140b11e62252e39b49" category="list-text">請求書を利用できるようになり、フリープランからプレミアムプランに移行できるようになりました。 <block ref="b344195451ae2e57f0e32003c4f1a80b" category="inline-link-macro-rx"></block>。</block>
+  <block id="bea0a641d1ced5fe318717eadebe7ab8" category="section-title">名前空間の制約を持つメンバーユーザーは、管理者ユーザーが名前空間を制約に追加するまで、クローンまたは復元されたアプリケーションにアクセスできません</block>
+  <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">任意<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> ネームスペース名/ IDによるRBACの制約があるユーザは、同じクラスタまたは組織のアカウントにある他のクラスタの新しいネームスペースにアプリケーションをクローニングまたはリストアできます。ただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローンまたはリストア処理によって新しいネームスペースが作成されると、アカウントの管理者または所有者はを編集できるようになります<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 影響を受けるユーザーが新しい名前空間へのアクセスを許可するためのユーザーアカウントの制約を更新します。</block>
 </blocks>
