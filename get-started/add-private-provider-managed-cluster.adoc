@@ -163,6 +163,14 @@ endif::gcp[]
 
 プライベートクラスタをAstra Control Serviceに追加できるようになりました。
 
+Azure Kubernetes ServiceクラスタとGoogle Kubernetes Engineクラスタを管理する場合、Astra Tridentのインストールとライフサイクル管理には次の2つのオプションがあることに注意してください。
+
+* Astra Control Serviceを使用すると、Astra Tridentのライフサイクルを自動的に管理できます。そのためには、Astra Control Serviceで管理するクラスタにAstra Tridentがインストールされていないことを確認してください。この場合、クラスタの管理を開始するとAstra Tridentが自動的にインストールされ、Astra Tridentのアップグレードは自動的に処理されます。
+* Astra Tridentのライフサイクルはお客様自身で管理できます。これを行うには、Astra Control Serviceでクラスタを管理する前に、クラスタにAstra Tridentをインストールします。この場合、Astra Control ServiceはAstra Tridentがすでにインストールされていることを検出し、再インストールやAstra Tridentのアップグレードの管理は行いません。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+
+
+Astra Control Serviceを使用してAmazon Web Servicesクラスタを管理する場合、Astra Tridentで有効になっているストレージバックエンドが必要な場合は、Astra Control Serviceを使用して管理する前に、クラスタにAstra Tridentを手動でインストールする必要があります。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+
 .作業を開始する前に
 [%collapsible%open]
 ====
@@ -206,6 +214,8 @@ endif::gcp[]
 
 ====
 .手順
+. （オプション）Amazon EKSクラスタを追加する場合、またはAstra Tridentのインストールとアップグレードを自分で管理する場合は、クラスタにAstra Tridentをインストールします。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+. ブラウザでAstra Control Service Web UIを開きます。
 . ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
 +
 プロンプトに従ってクラスタを追加します。
