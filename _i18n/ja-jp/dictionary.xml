@@ -2224,4 +2224,5 @@ RKE 2（v1.24.x）とRancher 2.7</block>
   <block id="40fcdcafdc66ab23541a6bf36b499c0f" category="list-text">プライベートクラスタコンポーネントのネームスペースを作成します。</block>
   <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">Astra Connector Custom Resource Definition（CRD）を適用します。</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">Astra Connectorのステータスを確認します。</block>
+  <block id="dce58385777428b5d9a30460fe36730a" category="list-text">プライベート認証局（CA）を参照するkubeconfigファイルを使用してクラスタを追加する場合は、<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfigファイルのセクションを参照してください。これにより、Astra Controlでクラスタを追加できます。</block>
 </blocks>
