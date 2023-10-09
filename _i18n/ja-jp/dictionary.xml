@@ -1476,7 +1476,6 @@
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra Automationのドキュメント</block>
   <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">の手順に従って、Astra Control APIトークンを生成します<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>。</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">永続的ストレージをセットアップする</block>
-  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">すべてのAstraドキュメント</block>
   <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">1つ以上の名前空間内に配置された個 々 のアプリケーション（この例ではHelm 3が使用されます）</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">1つ以上のネームスペース内のKubernetesラベルで識別されるリソースのグループ</block>
@@ -2225,4 +2224,5 @@ RKE 2（v1.24.x）とRancher 2.7</block>
   <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">Astra Connector Custom Resource Definition（CRD）を適用します。</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">Astra Connectorのステータスを確認します。</block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">プライベート認証局（CA）を参照するkubeconfigファイルを使用してクラスタを追加する場合は、<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfigファイルのセクションを参照してください。これにより、Astra Controlでクラスタを追加できます。</block>
+  <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
 </blocks>
