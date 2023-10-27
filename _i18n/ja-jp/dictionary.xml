@@ -1499,22 +1499,18 @@
   <block id="ffcc0feca3c8cd069d4965c88a5c1ebb" category="paragraph">Astra Tridentがインストールされていない場合は、次のような出力が表示されます。</block>
   <block id="6c8bc25bbb383bdd569b3a8b67462c4a" category="list-text">ポッドが実行されていることを確認します。</block>
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">回答例：</block>
-  <block id="ee6257954c2f973cd54453583dc792ca" category="list-text">アクティブなコンテキストのクラスタ管理者権限があるアクティブな kubeconfig です</block>
   <block id="5f85438ae0f2c9122a5cf54e8e098c98" category="list-text">次の手順でサービスアカウントを作成します。</block>
   <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">という名前のサービスアカウントファイルを作成します<block ref="a22dad5601b31427598f571133fb2aed" prefix=" " category="inline-code"></block>。</block>
   <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">名前と名前空間を必要に応じて調整します。ここで変更を行った場合は、以降の手順でも同じ変更を適用する必要があります。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">サービスアカウントを適用します。</block>
-  <block id="b01a13e2cbe1b4af2c39de81232bb23b" category="list-text">次のようにクラスタ管理者権限を付与します。</block>
   <block id="b29afe741178d8d4966c07c97f9892db" category="list-text">を作成します<block ref="e866afd8290d5c73cda6260e04e6eef0" prefix=" " category="inline-code"></block> という名前のファイルです<block ref="79e1486667eff2c5e1915f58701f3a18" prefix=" " category="inline-code"></block>。</block>
   <block id="51980eaff0de60f578593fb8ae77f9b3" category="paragraph">必要に応じて、サービスアカウントの作成時に変更した名前と名前空間を調整します。</block>
   <block id="c6c2bc2133c73ae2516508de9a2b5869" category="list-text">クラスタロールバインドを適用します。</block>
   <block id="b6e00a7dda090ccd5afd1c904d80548c" category="list-text">サービスアカウントのシークレットを一覧表示します（置き換えます）<block ref="af16c4db277e0498b5fa9e30613367f1" prefix=" " category="inline-code"></block> インストールに適したコンテキストを使用して、次の操作を行います。</block>
   <block id="f087976277d273660b942918b43af841" category="paragraph">出力の末尾は次のようになります。</block>
-  <block id="65c0a05d8c47a658174fbed46d46f8e7" category="paragraph">内の各要素のインデックス<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> アレイは0から始まります。上記の例では、のインデックスです<block ref="d7cef0644ef6c1b98dc15826f46e6da0" prefix=" " category="inline-code"></block> は0、のインデックスです<block ref="38a262a6f1757c3b70ab7cea5bf29ad9" prefix=" " category="inline-code"></block> は1です。出力で、 "token" という単語が含まれるサービスアカウント名のインデックスをメモしてください。</block>
   <block id="d3727d544efa902d0381ec79cec3d488" category="list-text">次のように kubeconfig を生成します。</block>
   <block id="ed6be01d66e94b422222a328f085d0bc" category="list-text">を作成します<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> ファイル。交換してください<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 次のスクリプトの先頭に正しい値を入力します。</block>
   <block id="7d164f3971b504d6203cf274cc77dd35" category="list-text">コマンドをソースにし、 Kubernetes クラスタに適用します。</block>
-  <block id="a4d7f999745cce675903247e4db00f3f" category="list-text">（オプション）クラスタにわかりやすい名前にコバーベキューの名前を変更します。クラスタのクレデンシャルを保護します。</block>
   <block id="aae2bc70406cacace4dfa6be8d857f2c" category="list-text">*プロバイダ*：クラウドプロバイダを選択し、新しいクラウドインスタンスを作成するために必要なクレデンシャルを入力するか、使用する既存のクラウドインスタンスを選択します。</block>
   <block id="38e2b31fd3dcdd65304ac201efd17f06" category="list-text">*その他*：をアップロードして、自己管理クラスタに関する詳細を指定します<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> ファイルまたはの内容を貼り付けます<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> クリップボードからファイル。</block>
   <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Kubernetes のドキュメント</block>
@@ -2077,7 +2073,6 @@
   <block id="e6bab5933e86bee96753d8079fcceaed" category="section-title">2023年6月26日</block>
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplaceのサブスクリプションは、分単位ではなく時間単位で課金されるようになりました</block>
   <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">開始する前に、マシンに次のものがあることを確認してください。</block>
-  <block id="e518ff6eca9962a9ad470732191bb026" category="list-text">kubectl v1.23以降がインストールされている</block>
   <block id="30136395f01879792198317c11831ea4" category="inline-link">Kubernetes</block>
   <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">*デスティネーションボリュームの確認*：別のストレージクラスにリストアする場合は、ストレージクラスで同じ永続ボリュームアクセスモード（ReadWriteManyなど）が使用されていることを確認してください。デスティネーションの永続ボリュームアクセスモードが異なると、リストア処理は失敗します。たとえば、ソースの永続ボリュームがRWXアクセスモードを使用している場合は、Azure Managed Disks、AWS EBS、Google Persistent Disk、など、RWXを提供できないデスティネーションストレージクラスを選択します<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>を指定すると、リストア処理は失敗します。原因は失敗します。永続ボリュームのアクセスモードの詳細については、を参照してください<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> ドキュメント</block>
   <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">*デスティネーションボリュームを確認*：別のストレージクラスにクローニングする場合は、ストレージクラスで同じ永続ボリュームアクセスモード（ReadWriteManyなど）が使用されていることを確認してください。デスティネーションの永続的ボリュームのアクセスモードが異なると、クローニング処理は失敗します。たとえば、ソースの永続ボリュームがRWXアクセスモードを使用している場合は、Azure Managed Disks、AWS EBS、Google Persistent Disk、など、RWXを提供できないデスティネーションストレージクラスを選択します<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>を指定すると、クローン処理は失敗します。原因は失敗します。永続ボリュームのアクセスモードの詳細については、を参照してください<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> ドキュメント</block>
@@ -2225,4 +2220,23 @@ RKE 2（v1.24.x）とRancher 2.7</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">Astra Connectorのステータスを確認します。</block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">プライベート認証局（CA）を参照するkubeconfigファイルを使用してクラスタを追加する場合は、<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfigファイルのセクションを参照してください。これにより、Astra Controlでクラスタを追加できます。</block>
   <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
+  <block id="33a97eec462a14258b6a1fe63f943ec5" category="list-text">kubectl v1.25以降がインストールされている</block>
+  <block id="3b34edb55fd85d9b0636e2533b140b9f" category="list-text">Astra Control Centerを使用して追加および管理するクラスタへのアクセス</block>
+  <block id="d5b7f62a909e346c0e1cd08be571c54f" category="admonition">この手順 では、Astra Control Centerを実行しているクラスタにkubectlでアクセスする必要はありません。</block>
+  <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">アクティブなコンテキストのクラスタ管理者の権限で管理するクラスタのアクティブなkubeconfigです</block>
+  <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">サービスアカウントを作成します。</block>
+  <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">次のいずれかのクラスタロールを作成し、Astra Controlで管理するクラスタに必要な権限を割り当てます。</block>
+  <block id="0b696bdc9519b9e33f740fc665813fa2" category="list-text">*クラスタロールの制限*：このロールには、Astra Controlでクラスタを管理するために必要な最小限の権限が含まれます。</block>
+  <block id="00b512051a8fb53936e77b3e435be5d9" category="example-title">ステップのために展開</block>
+  <block id="d2c5b496305d8a36011fc2b1e55dcde3" category="list-text">を作成します<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> という名前のファイル。例：<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block>。</block>
+  <block id="929489f64fa726fbcdd3058dc505444e" category="list-text">（OpenShiftクラスタの場合のみ）OpenShiftクラスタ用のkubeconfigを作成する場合は、<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> ファイル<block ref="7da59f03b6be2daf1bf5fd19ecc78050" prefix=" " category="inline-code"></block> セクション。</block>
+  <block id="d2f7aa8c006dd5e0b027cb6e32926a4e" category="list-text">クラスタロールを適用します。</block>
+  <block id="558249c196c0445933dcab3f8c5ccf78" category="list-text">*クラスタロールの拡張*：Astra Controlで管理するクラスタの権限の拡張が含まれます。このロールは、複数のコンテキストを使用し、インストール時に設定されたデフォルトのAstra Control kubeconfigを使用できない場合や、単一のコンテキストを持つ限定されたロールが環境で機能しない場合に使用できます。</block>
+  <block id="5e2febea168e23172b29251a6258dec8" category="admonition">次のようになります<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 手順はKubernetesの一般的な例です。ご使用の環境に固有の手順については、ご使用のKubernetesディストリビューションのドキュメントを参照してください。</block>
+  <block id="a30ca90c640932dfa98b3ac560bb10ab" category="list-text">サービスアカウントへのクラスタロールバインド用に、クラスタロールを作成します。</block>
+  <block id="c1865e8db7245bcc1648e67fb250eba4" category="list-text">トークンシークレットを作成して適用します。</block>
+  <block id="11afc91177361b2eafbbec4287518195" category="list-text">という名前のトークンシークレットファイルを作成します。<block ref="7cdd7450df0359169a360b93d3cb369f" prefix=" " category="inline-code"></block>。</block>
+  <block id="9c8324622cc9e060ba0702fa13261b48" category="list-text">トークンシークレットの名前を<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> Array（次の例の最後の行）：</block>
+  <block id="4dc4c64180b058c5c9c94b6a7886e5f1" category="paragraph">内の各要素のインデックス<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> アレイは0から始まります。上記の例では、のインデックスです<block ref="b91e4862bb487ade8bbd4f9eefe0618e" prefix=" " category="inline-code"></block> は0、のインデックスです<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> は1です。出力で、サービスアカウントシークレットのインデックス番号をメモします。このインデックス番号は次の手順で必要になります。</block>
+  <block id="28f4058b3debe49781dd1cccb1354c1e" category="list-text">（オプション）クラスタにわかりやすい名前にコバーベキューの名前を変更します。</block>
 </blocks>
