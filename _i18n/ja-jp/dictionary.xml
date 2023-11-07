@@ -2162,9 +2162,6 @@ RKE 2（v1.24.x）とRancher 2.7</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">プライベート認証局（CA）を参照するkubeconfigファイルを使用してクラスタを追加する場合は、<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfigファイルのセクションを参照してください。これにより、Astra Controlでクラスタを追加できます。</block>
   <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
-  <block id="33a97eec462a14258b6a1fe63f943ec5" category="list-text">kubectl v1.25以降がインストールされている</block>
-  <block id="3b34edb55fd85d9b0636e2533b140b9f" category="list-text">Astra Control Centerを使用して追加および管理するクラスタへのアクセス</block>
-  <block id="d5b7f62a909e346c0e1cd08be571c54f" category="admonition">この手順 では、Astra Control Centerを実行しているクラスタにkubectlでアクセスする必要はありません。</block>
   <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">アクティブなコンテキストのクラスタ管理者の権限で管理するクラスタのアクティブなkubeconfigです</block>
   <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">サービスアカウントを作成します。</block>
   <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">次のいずれかのクラスタロールを作成し、Astra Controlで管理するクラスタに必要な権限を割り当てます。</block>
@@ -2555,4 +2552,5 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="b518803a746e06a4f19197ae81406970" category="paragraph">バケットの保持ポリシーの期限が切れたあとにアプリケーションの変更不可のバックアップを削除すると、バックアップはバケットではなくAstra Controlから削除されます。回避策として、アプリケーションの最新のバックアップまたはすべてのバックアップを削除する必要がある場合は、ストレージバックエンドからバックアップを手動で削除します。</block>
   <block id="f318002a693e78e0cf366be52609a528" category="admonition">1つのアプリに複数のバックアップがある場合は、そのアプリの最新のバックアップまたはすべてのバックアップを削除します。中間の増分バックアップを削除すると、最新のバックアップからアプリを回復できなくなります。</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Astra Controlプロビジョニングツールを使用</block>
+  <block id="49219ed727d5145cd828958ebce847fa" category="list-text">kubectl v1.26以降がインストールされている</block>
 </blocks>
