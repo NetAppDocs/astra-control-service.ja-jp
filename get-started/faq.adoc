@@ -8,7 +8,7 @@ summary: この FAQ は、質問に対する簡単な回答を探している場
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/use/
 
 
 [role="lead"]
@@ -48,11 +48,11 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 * 月中旬に Premium PayGO プランにアップグレードしました。月中は請求されますか？ *
 
-いいえ。請求は、プレミアムプランにアップグレードした時点から開始されます。
+いいえ課金は、Premiumプランにアップグレードした時点から開始されます。
 
 * 無料プランを使用していますが、永続的ボリュームの請求には課金されますか？ *
 
-はい、クラウドプロバイダからクラスタで使用される永続的ボリュームの料金が発生します。
+はい、クラウドプロバイダからクラスタで使用される永続的ボリュームの料金が請求されます。
 
 
 
@@ -102,7 +102,7 @@ ifdef::gcp[]
 
 * Astra Control Service にプライベート GKE クラスタを追加できますか。 *
 
-はい。 Astra Control Service にプライベート GKE クラスタを追加できます。  プライベートGKEクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
+はい。 Astra Control Service にプライベート GKE クラスタを追加できます。プライベートGKEクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 プライベートGKEクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
 
@@ -110,7 +110,7 @@ ifdef::gcp[]
 
 * GKE クラスタは共有 VPC 上に存在できますか。 *
 
-はい、 Astra Control は共有 VPC 内のクラスタを管理できます。 link:set-up-google-cloud.html["VPC の共有構成を行うための Astra サービスアカウントの設定方法について説明します"]。
+はい。Astra Controlでは、共有VPCにあるクラスタを管理できます。 link:set-up-google-cloud.html["VPC の共有構成を行うための Astra サービスアカウントの設定方法について説明します"]。
 
 * サービスアカウントの資格情報はどこにありますか？ *
 
@@ -192,4 +192,78 @@ endif::gcp[]
 
 * Astra Control で取得したスナップショットをクラウドプロバイダから直接管理できますか。 *
 
-いいえAstra Control で作成したスナップショットとバックアップは、 Astra Control でのみ管理できます。
+いいえAstra Controlで作成されたSnapshotとバックアップは、Astra Controlでのみ管理できます。
+
+
+
+== Astra Controlプロビジョニングツール
+
+* Astra Control Provisionerのストレージプロビジョニング機能は、Astra Tridentのストレージプロビジョニング機能とどのような点が異なりますか。*
+
+Astra Control Provisionerは、Astra Controlの一部として、オープンソースのAstra Tridentでは利用できないストレージプロビジョニング機能のスーパーセットをサポートします。これらの機能は、オープンソースのTridentで利用できるすべての機能に加えて提供されます。
+
+* Astra Control ProvisionerはAstra Tridentの後継ですか？*
+
+今後のAstra Controlの更新では、Astra Control ProvisionerがAstra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレータとしてAstra Tridentに代わるものとなります。そのため、Astra Controlを使用することを強く推奨します link:../use/enable-acp.html["Astra Control Provisionerを有効にする"]。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。
+
+* Astra Tridentの料金を支払う必要がありますか？*
+
+いいえAstra Tridentは引き続きオープンソースであり、無償でダウンロードできます。
+
+* Astra Controlをすべてインストールして使用しなくても、Astra Controlでストレージ管理とプロビジョニングの機能を使用できますか。*
+
+はい。Astra Controlのデータ管理機能のすべての機能セットを使用する必要がなくても、Astra Trident 23.10以降にアップグレードしてAstra Control Provisioner機能を有効にできます。
+
+*既存のTridentユーザからAstra Controlに移行して、高度なストレージ管理とプロビジョニングの機能を使用するにはどうすればよいですか？*
+
+既存のTridentユーザ（パブリッククラウドのAstra Tridentのユーザを含む）の場合は、まずAstra Controlライセンスを取得する必要があります。インストールが完了したら、Astra Control Provisionerバンドルをダウンロードし、Astra Tridentをアップグレードし、 link:../use/enable-acp.html["Astra Control Provisioner機能を有効にする"]。
+
+*クラスタのAstra TridentにAstra Control Provisionerが置き換えられたかどうかを確認するにはどうすればよいですか？*
+
+Astra Control Provisionerをインストールすると、Astra Control UIのホストクラスタに `ACP version` 代わりに `Trident version` フィールドと現在インストールされているバージョン番号。
+
+image:ac-acp-version.png["UIでのACPバージョンの場所を示すスクリーンショット"]
+
+UIにアクセスできない場合は、次の方法でインストールが正常に完了したことを確認できます。
+
+[role="tabbed-block"]
+====
+.Astra Trident運用者
+--
+を確認します `trident-acp` コンテナが実行中で、 `acpVersion` はです `23.10.0` ステータス： `Installed`：
+
+[listing]
+----
+kubectl get torc -o yaml
+----
+対応：
+
+[listing]
+----
+status:
+  acpVersion: 23.10.0
+  currentInstallationParams:
+    ...
+    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    enableACP: "true"
+    ...
+  ...
+  status: Installed
+----
+--
+.Tridentctl
+--
+Astra Control Provisionerが有効になっていることを確認します。
+
+[listing]
+----
+./tridentctl -n trident version
+----
+対応：
+
+[listing]
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+--
+====

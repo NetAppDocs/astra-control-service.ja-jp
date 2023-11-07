@@ -28,100 +28,16 @@ Astra Control Serviceを使用して、プライベートAmazon Elastic Kubernet
 
 Astra Control Serviceにプライベートクラスタを追加するには、次のタスクを実行する必要があります。
 
-* <<Astra Connectorオペレータを設置します>>
-* <<永続的ストレージをセットアップする>>
-* <<プロバイダが管理するプライベートクラスタをAstra Control Serviceに追加>>
+. <<Astra Connectorのインストール>>
+. <<永続的ストレージをセットアップする>>
+. <<プロバイダが管理するプライベートクラスタをAstra Control Serviceに追加>>
 
 
 
 
-== Astra Connectorオペレータを設置します
+== Astra Connectorのインストール
 
-Astra Connectorオペレータはプライベートクラスタにインストールする必要があります。要塞ホストを使用している場合は、要塞ホストのコマンドラインからこれらのコマンドを問題 で実行します。
-
-.手順
-. Astra ConnectorオペレータGitHubリポジトリのクローンを作成します。
-+
-[source, console]
-----
-git clone https://github.com/NetApp/astra-connector-operator.git
-----
-. 展開された演算子パッケージの最上位レベルにディレクトリを変更して'straconnector _operator.yaml'ファイルを'ls'コマンドで表示できるようにします
-. を適用します `astraconnector_operator.yaml` ファイル。このコマンドを実行すると、Astra Connectorオペレータ用の正しいネームスペースが作成され、その設定がネームスペースに適用されます。
-+
-[source, console]
-----
-kubectl apply -f astraconnector_operator.yaml
-----
-. プライベートクラスタコンポーネントのネームスペースを作成します。
-+
-[source, console]
-----
-kubectl create ns astra-connector
-----
-. の手順に従って、Astra Control APIトークンを生成します https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automationのドキュメント"^]。
-. Astra Connectorオペレータリポジトリのconfig/samplesディレクトリにある構成ファイルの例を変更して、次のキーに対応する環境固有の値を追加します。
-+
-** `spec.natssync-client.cloud-bridge-url`
-** `spec.astra.token`
-** `spec.astra.clusterName`
-+
-
-NOTE: `spec.astra.clusterName` プライベートAKSクラスタをインポートし、Astra Control Serviceにkubeconfigファイルを提供しない場合にのみ必要です。そうでない場合は、この行を削除してください。
-
-** `spec.astra.accountId`
-+
-例：
-
-+
-[listing]
-----
-apiVersion: netapp.astraconnector.com/v1
-kind: AstraConnector
-metadata:
-  name: astra-connector
-spec:
-  natssync-client:
-    image: natssync-client:2.0
-    cloud-bridge-url: https://<your.astra.control.service.url>
-  nats:
-    image: nats:2.6.1-alpine3.14
-  httpproxy-client:
-    image: httpproxylet:2.0
-  echo-client:
-    image: echo-proxylet:2.0
-  imageRegistry:
-    name: theotw
-  astra:
-    token: <Astra Control API token>
-    clusterName: <your-private-AKS-cluster-name>
-    accountId: <Astra Control account id>
-    acceptEULA: yes
-----
-
-
-. Astra Connector Custom Resource Definition（CRD）を適用します。
-+
-[source, console]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. Astra Connectorのステータスを確認します。
-+
-[source, console]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-次のような出力が表示されます。
-
-+
-[source, console]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
+プライベートクラスタを追加する前に、Astra Controlがクラスタと通信できるように、クラスタにAstra Connectorをインストールする必要があります。を参照してください link:install-astra-connector.html["プライベートクラスタ用のAstra Connectorのインストール"] 手順については、を参照し
 
 
 

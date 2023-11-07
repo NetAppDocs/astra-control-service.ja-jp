@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: use/enable-acp.html 
+keywords: Astra Control Provisioner install, acp, enable, astra trident upgrade, upgrade trident 
+summary: Astra Control Provisionerを有効にして、高度なストレージプロビジョニングおよび管理機能にアクセスします。 
+---
+= Astra Control Provisionerを有効にする
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。
+
+Astra Control Serviceのサブスクリプションには、Astra Control Provisionerの使用ライセンスが自動的に含まれます。
+
+今後のAstra Controlの更新では、Astra Control ProvisionerがAstra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレータとしてAstra Tridentに代わるものとなります。そのため、Astra ControlのユーザはAstra Control Provisionerを有効にすることを強く推奨します。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。
+
+.Astra Control Provisionerを有効にする必要があるかどうかを確認する方法を教えてください。
+Astra TridentがインストールされていないクラスタをAstra Control Serviceに追加すると、クラスタはとマークされます。 `Eligible`。お先にどうぞ link:../get-started/add-first-cluster.html["Astra Controlへのクラスタの追加"]Astra Control Provisionerは自動的に有効になります。
+
+クラスタがマークされていない場合 `Eligible`、マークされます `Partially eligible` 次のいずれかに原因があります。
+
+* 古いバージョンのAstra Tridentを使用している
+* Provisionerオプションが有効になっていないAstra Trident 23.10を使用している
+* このクラスタタイプでは自動有効化が許可されていません
+
+
+の場合 `Partially eligible` ケースについては、以下の手順に従ってクラスタのAstra Control Provisionerを手動で有効にしてください。
+
+image:ac-acp-eligibility.png["クラスタの追加ワークフローにおけるクラスタ参加資格を示すスクリーンショット"]
+
+.Astra Control Provisionerを有効にする前に
+Astra Control Provisionerが設定されていないAstra Tridentをすでに使用していて、Astra Control Provisionerを有効にする場合は、まず次の手順を実行します。
+
+* * Astra Tridentのバージョンが4リリース期間内であることを確認*：Astra Tridentのバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。
+* *クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。
+
+
+.Astra Control Provisioner 23.10へのアップグレード
+Astra Tridentをバージョン23.10にアップグレードした場合は、この手順を使用してAstra Control Provisionerを有効にしてインストールできます。
+
+.手順
+. NetApp Astra Controlイメージのレジストリにアクセスします。
++
+.ステップのために展開
+[%collapsible]
+====
+.. Astra Control Service UIにログオンし、Astra ControlアカウントIDを記録します。
++
+... ページの右上にある図のアイコンを選択します。
+... [API access*]を選択します。
+... アカウントIDを書き留めます。
+
+
+.. 同じページから* APIトークンの生成*を選択し、APIトークン文字列をクリップボードにコピーしてエディターに保存します。
+.. 任意の方法でAstra Controlレジストリにログインします。
++
+[source, docker]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
++
+[source, crane]
+----
+crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
+
+====
+. お好みの方法に従って、イメージをカスタムレジストリに移動します。レジストリを使用していない場合は、Tridentオペレータの手順に従ってシークレットを設定します。
++
+
+NOTE: 次のコマンドには、Dockerの代わりにPodmanを使用できます。Windows環境を使用している場合は、PowerShellを推奨します。
+
++
+[role="tabbed-block"]
+====
+.Docker です
+--
+.. Astra Control Provisionerのイメージをレジストリから取得します。
++
+
+NOTE: プルされたイメージは複数のプラットフォームをサポートせず、Linux AMD64など、イメージをプルしたホストと同じプラットフォームのみをサポートします。
+
++
+[source, console]
+----
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
+----
+.. 画像にタグを付けます。
++
+[source, console]
+----
+docker tag cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+----
+.. イメージをカスタムレジストリにプッシュします。
++
+[source, console]
+----
+docker push <my_custom_registry>/trident-acp:23.10.0
+----
+
+
+--
+.クレーン
+--
+.. Astra Control Provisionerのマニフェストをカスタムレジストリにコピーします。
++
+[listing]
+----
+crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+----
+
+
+--
+.Astra Trident運用者
+--
+.. Docker構成にこのブロックが存在することを確認します。
++
+[listing]
+----
+{
+    "auths": {
+        "https://cr.astra.netapp.io/": {
+            "auth": "c3R...zE2"
+        }
+    }
+}
+----
+.. [[pull-secrets]] `trident` ネームスペース：
++
+[listing]
+----
+kubectl create secret -n <trident namespace> generic <secret name> \
+    --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
+    --type=kubernetes.io/dockerconfigjson
+----
+.. Torc（Astra Trident Orchestrator）にシークレットを追加します。
++
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  tridentImage: netapp/trident:23.10.0
+  imagePullSecrets:
+  - <secret name>
+----
+
+
+--
+====
+. 元のAstra Tridentインストール方法で。
++
+
+WARNING: Astra Control Provisionerの有効化にはHelmは使用しないでください。元のインストールでHelmを使用していた環境を23.10にアップグレードする場合は、Tridentオペレータまたはtridentctlを使用してAstra Control Provisionerを有効にする必要があります。
+
++
+[role="tabbed-block"]
+====
+.Astra Trident運用者
+--
+.. TridentOrchestrator CRを編集し、次の編集を行います。
++
+*** Astra Control Provisionerを有効にする (`enableACP: true`)
+*** Astra Control Provisionerイメージのレジストリの場所を設定する (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`）。
++
+
+NOTE: もしあなたが <<pull-secrets,画像プルシークレット>> この手順の前半では、ここで使用できます。 (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`)
+
+
+
++
+[listing, subs="+quotes"]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  *enableACP: true*
+  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+----
+.. 変更を適用します。
++
+[listing]
+----
+kubectl -n trident apply -f tridentorchestrator_cr.yaml
+----
+.. Astra Tridentの設定を更新して、 `trident-acp` コンテナの導入：
++
+
+NOTE: クラスタでKubernetes 1.24以前を実行している場合は、を使用します `bundle_pre_1_25.yaml`。クラスタでKubernetes 1.25以降を実行している場合は、を使用します `bundle_post_1_25.yaml`。
+
++
+[listing]
+----
+kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+----
+.. operator、deployment、およびReplicaSetsが作成されたことを確認します。
++
+[listing]
+----
+kubectl get all -n <operator-namespace>
+----
++
+
+IMPORTANT: Kubernetes クラスタには、オペレータのインスタンスが * 1 つしか存在しないようにしてください。Trident のオペレータが複数の環境を構築することは避けてください。
+
+.. を確認します `trident-acp` コンテナが実行中で、 `acpVersion` はです `23.10.0` ステータス： `Installed`：
++
+[listing]
+----
+kubectl get torc -o yaml
+----
++
+対応：
+
++
+[listing]
+----
+status:
+  acpVersion: 23.10.0
+  currentInstallationParams:
+    ...
+    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    enableACP: "true"
+    ...
+  ...
+  status: Installed
+----
+
+
+--
+.Tridentctl
+--
+.. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["Astra Trident をアンインストール"^]。
+.. Astra Control Provisionerを有効にしてAstra Tridentを再度インストール (`--enable-acp=true`）：
++
+[listing]
+----
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
+----
+.. Astra Control Provisionerが有効になっていることを確認します。
++
+[listing]
+----
+./tridentctl -n trident version
+----
++
+対応：
+
++
+[listing]
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+
+
+--
+====
+
+
+.結果
+Astra Control Provisionerをインストールすると、Astra Control UIでプロビジョニングツールをホストしているクラスタに `ACP version` 代わりに `Trident version` フィールドと現在インストールされているバージョン番号。
+
+image:ac-acp-version.png["UIでのACPバージョンの場所を示すスクリーンショット"]
+
+.を参照してください。
+* https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-operator-overview.html["Astra Tridentのアップグレードに関するドキュメント"^]
+

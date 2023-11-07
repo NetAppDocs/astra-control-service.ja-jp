@@ -1,0 +1,8 @@
+---
+section: use-acp
+title: Astra Controlプロビジョニングツールを使用
+entries:
+- title: ストレージバックエンドの暗号化の設定
+  url: "/use-acp/configure-storage-backend-encryption.html"
+- title: Snapshotを使用したボリュームデータのリカバリ
+  url: "/use-acp/acp-snap-restore.html"

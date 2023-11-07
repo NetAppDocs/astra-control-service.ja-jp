@@ -46,5 +46,7 @@ entries:
     url: "/use/close-account.html"
 - title: クラウドインスタンスを管理します
   url: "/use/manage-cloud-instances.html"
+- title: Astra Control Provisionerを有効にする
+  url: "/use/enable-acp.html"
 - title: アプリケーションとクラスタの管理を解除します
   url: "/use/unmanage.html"

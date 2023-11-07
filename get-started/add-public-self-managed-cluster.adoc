@@ -76,7 +76,6 @@ Astra Control Serviceは、次のKubernetesディストリビューションを�
 自己管理型クラスタは、次の要件を満たしている必要があります。
 
 * クラスタにインターネット経由でアクセスできる必要があります。
-* クラスタをオンプレミスネットワーク内でホストすることはできません。パブリッククラウド環境でホストする必要があります。
 * CSIドライバで有効にしたストレージを使用または使用する予定の場合は、適切なCSIドライバをクラスタにインストールする必要があります。CSIドライバを使用してストレージを統合する方法の詳細については、ご使用のストレージサービスのマニュアルを参照してください。
 * context要素を1つだけ含むcluster kubeconfigファイルにアクセスできる必要があります。をクリックします link:create-kubeconfig.html["以下の手順を参照して"^] kubeconfigファイルを生成します。
 * プライベート認証局（CA）を参照するkubeconfigファイルを使用してクラスタを追加する場合は、 `cluster` kubeconfigファイルのセクションを参照してください。これにより、Astra Controlでクラスタを追加できます。
@@ -92,7 +91,7 @@ insecure-skip-tls-verify: true
 NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["Astra Tridentを導入"^] Tridentオペレータ（手動またはHelmチャートを使用）またはを使用します `tridentctl`。Astra Tridentのインストールまたはアップグレードを行う前に、を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["サポートされるフロントエンド、バックエンド、およびホスト構成"^]。
 
 +
-** * Astra Tridentストレージバックエンドの設定*：Astra Tridentストレージバックエンドが少なくとも1つ必要です https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["を設定します"^] クラスタのポリシーを確認してください。
+** * Astra Tridentストレージバックエンドの設定*：Astra Tridentストレージバックエンドが少なくとも1つ必要です https://docs.netapp.com/us-en/trident/trident-use/backends.html["を設定します"^] クラスタのポリシーを確認してください。
 ** * Astra Tridentストレージクラスを設定*：Astra Tridentストレージクラスを少なくとも1つ設定する必要があります https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["を設定します"^] クラスタのポリシーを確認してください。デフォルトのストレージクラスが設定されている場合は、1つのストレージクラスだけにそのアノテーションを設定します。
 ** * Astra Tridentボリュームスナップショットコントローラとボリュームスナップショットクラスがインストールおよび設定されている*：ボリュームスナップショットコントローラがである必要があります https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["インストール済み"^] Astra Controlでスナップショットを作成できるようにします。Astra Tridentが少なくとも1つ `VolumeSnapshotClass` はい https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["セットアップ"^] 管理者による。
 
@@ -100,6 +99,9 @@ NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kub
 
 
 ====
+* * Astra Control Provisioner *：Astra Control Provisionerの高度な管理機能とストレージプロビジョニング機能を使用するには、Astra Trident 23.10以降をインストールし、 link:../use/enable-acp.html["Astra Control Provisionerの機能"]。
+
+
 .手順
 . ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
 +

@@ -30,6 +30,7 @@ sidebar:
   - section: get-started
   - section: learn
   - section: use
+  - section: use-acp
   - title: Astra Control REST API で自動化
     url: "/automation.html"
   - section: support
