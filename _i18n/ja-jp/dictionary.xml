@@ -2549,8 +2549,7 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="694d3ccd3bafd59fa171259193e6c35c" category="paragraph">Kerberos転送中暗号化を使用しているストレージバックエンドにバックアップからアプリケーションをリストアすると、リストア処理が失敗することがあります。この問題は、Snapshotからのリストアや、NetApp SnapMirrorを使用したアプリケーションデータのレプリケートには影響しません。</block>
   <block id="758aed03fde11e3337f4a8ddce7d4f37" category="admonition">NFSv4ボリュームでKerberos転送中暗号化を使用する場合は、NFSv4ボリュームで正しい設定が使用されていることを確認してください。『NetApp NFSv4ドメイン設定』のセクション（13ページ）を参照してください。<block ref="fcbfe3012009d21ef9ba8407142f85b6" category="inline-link-rx"></block>。</block>
   <block id="9e586fb8e7af6f105f029bce05abcad4" category="section-title">保持ポリシーの期限が切れたバケットでは、削除後もバックアップデータがバケットに残る</block>
-  <block id="b518803a746e06a4f19197ae81406970" category="paragraph">バケットの保持ポリシーの期限が切れたあとにアプリケーションの変更不可のバックアップを削除すると、バックアップはバケットではなくAstra Controlから削除されます。回避策として、アプリケーションの最新のバックアップまたはすべてのバックアップを削除する必要がある場合は、ストレージバックエンドからバックアップを手動で削除します。</block>
-  <block id="f318002a693e78e0cf366be52609a528" category="admonition">1つのアプリに複数のバックアップがある場合は、そのアプリの最新のバックアップまたはすべてのバックアップを削除します。中間の増分バックアップを削除すると、最新のバックアップからアプリを回復できなくなります。</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">Astra Controlプロビジョニングツールを使用</block>
   <block id="49219ed727d5145cd828958ebce847fa" category="list-text">kubectl v1.26以降がインストールされている</block>
+  <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">バケットの保持ポリシーの期限が切れたあとにアプリケーションの変更不可のバックアップを削除すると、バックアップはバケットではなくAstra Controlから削除されます。この問題は今後のリリースで修正される予定です。</block>
 </blocks>
