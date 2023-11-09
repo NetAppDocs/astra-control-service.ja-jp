@@ -23,9 +23,9 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 * * ONTAP NAS経済性に優れたドライバベースのストレージバックエンドを使用したアプリケーションのバックアップとリストア機能*：バックアップとリストアの処理を `ontap-nas-economy` いくつかの link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["シンプルなステップ"^]。
 * *オンプレミスのRed Hat OpenShift Container PlatformクラスタでAstra Controlサービスをサポート*
 +
-link:../use/restore-apps.html["クラスタを追加"^]
+link:../get-started/add-first-cluster.html["クラスタを追加"^]
 
-* *変更不可のバックアップ*：Astra Controlが新たにサポート link:../concepts/data-protection.html#immutable-backups["変更不可の読み取り専用バックアップ"^] マルウェアやその他の脅威に対する追加のセキュリティレイヤとして。
+* *変更不可のバックアップ*：Astra Controlが新たにサポート link:../learn/data-protection.html#immutable-backups["変更不可の読み取り専用バックアップ"^] マルウェアやその他の脅威に対する追加のセキュリティレイヤとして。
 * * Astra Control Provisionerのご紹介*
 +
 23.10リリースでは、Astra ControlにAstra Control Provisionerという新しいソフトウェアコンポーネントが導入されています。このソフトウェアコンポーネントは、Astra Controlのライセンスを取得したすべてのユーザが使用できます。Astra Control Provisionerでは、Astra Tridentよりも高度な管理機能とストレージプロビジョニング機能を利用できます。これらの機能は、Astra Controlをご利用のすべてのお客様が追加コストなしで利用できます。
@@ -47,8 +47,10 @@ Astra Control Provisioner 23.10リリースでは、次の機能を使用でき�
 
 * * AWS（ROSA）クラスタでのRed Hat OpenShift ServiceのAstra Control Serviceのサポート*
 +
-link:../use/restore-apps.html["クラスタを追加"^]
+link:../get-started/add-first-cluster.html["クラスタを追加"^]
 
+* * NVMe/TCPストレージを使用するアプリケーションの管理のサポート*
+NVMe / TCPを使用して接続された永続ボリュームでバックアップされたアプリケーションをAstra Controlで管理できるようになりました。
 * *実行フックはデフォルトでオフになっています*:このリリース以降、実行フック機能は次のようになります。 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["有効"] または、セキュリティを強化するために無効にします（デフォルトでは無効になっています）。Astra Controlで使用する実行フックをまだ作成していない場合は、 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["実行フック機能を有効にする"^] フックの作成を開始します。このリリースより前に実行フックを作成した場合、実行フック機能は有効なままになり、通常どおりフックを使用できます。
 
 
