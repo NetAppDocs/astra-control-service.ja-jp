@@ -105,9 +105,17 @@ endif::azure[]
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
+* オンプレミスクラスタ：
++
+** NetApp ONTAP AFF および FAS システム
+** NetApp ONTAP Select の略
+** Cloud Volumes ONTAP
+
+
 
  a| 
 * NetApp ONTAP AFF および FAS システム
+* NetApp ONTAP Select の略
 * https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
