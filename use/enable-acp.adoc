@@ -12,7 +12,7 @@ summary: Astra Control Provisionerを有効にして、高度なストレージ�
 
 
 [role="lead"]
-Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。
+Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。この手順を使用して、Astra Control Provisionerを有効にしてインストールできます。
 
 Astra Control Serviceのサブスクリプションには、Astra Control Provisionerの使用ライセンスが自動的に含まれます。
 
@@ -38,9 +38,6 @@ Astra Control Provisionerが設定されていないAstra Tridentをすでに使
 * * Astra Tridentのバージョンが4リリース期間内であることを確認*：Astra Tridentのバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。
 * *クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。
 
-
-.Astra Control Provisioner 23.10へのアップグレード
-Astra Tridentをバージョン23.10にアップグレードした場合は、この手順を使用してAstra Control Provisionerを有効にしてインストールできます。
 
 .手順
 . NetApp Astra Controlイメージのレジストリにアクセスします。

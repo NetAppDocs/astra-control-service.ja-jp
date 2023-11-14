@@ -2461,7 +2461,6 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="85fb81ab815fcabe32cb17846818c3c1" category="list-text">Astra Controlにバケットの管理に必要な権限を付与するバケットのクレデンシャルがあることを確認します。</block>
   <block id="cb902cabe05f2e75ccb2bfe8f46e3e1d" category="list-text">バケットのクラウドプロバイダの保持期間が終了する前にWrite Once Read Many（WORM）バケットを削除することはできません。WORMバケットは、バケット名の横に「Locked」と表示されます。</block>
   <block id="261f0b7f37f0dd290043aab033357d32" category="summary">Astra Control Provisionerを有効にして、高度なストレージプロビジョニングおよび管理機能にアクセスします。</block>
-  <block id="bd748c545b83229576e1ff062aaacf08" category="paragraph">Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。</block>
   <block id="fe562808e3d8ddc1360f041ac9ecb065" category="paragraph">Astra Control Serviceのサブスクリプションには、Astra Control Provisionerの使用ライセンスが自動的に含まれます。</block>
   <block id="ea513a4deb2445ac25d1082dc1af99e1" category="paragraph">今後のAstra Controlの更新では、Astra Control ProvisionerがAstra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレータとしてAstra Tridentに代わるものとなります。そのため、Astra ControlのユーザはAstra Control Provisionerを有効にすることを強く推奨します。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。</block>
   <block id="ef7cd57a49dea042053eb666f78bd5b8" category="paragraph-title">Astra Control Provisionerを有効にする必要があるかどうかを確認する方法を教えてください。</block>
@@ -2478,8 +2477,6 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="0360a2e5fb08211931ade5b67746abd1" category="paragraph">Astra Control Provisionerが設定されていないAstra Tridentをすでに使用していて、Astra Control Provisionerを有効にする場合は、まず次の手順を実行します。</block>
   <block id="96970ad8b13f688668233173a243a6d7" category="list-text">* Astra Tridentのバージョンが4リリース期間内であることを確認*：Astra Tridentのバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。</block>
   <block id="513c5f0b4153f3c855edd085e129578d" category="list-text">*クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。</block>
-  <block id="5e12f4a520c19b1613dce3a0e6baee0f" category="paragraph-title">Astra Control Provisioner 23.10へのアップグレード</block>
-  <block id="e6a8e9e99c0090089c402c2a71667c5b" category="paragraph">Astra Tridentをバージョン23.10にアップグレードした場合は、この手順を使用してAstra Control Provisionerを有効にしてインストールできます。</block>
   <block id="cc74ae067ae4451424c2712fd0b0a766" category="list-text">NetApp Astra Controlイメージのレジストリにアクセスします。</block>
   <block id="f16793904b509a3f7a260653784d0c7b" category="list-text">Astra Control Service UIにログオンし、Astra ControlアカウントIDを記録します。</block>
   <block id="8cbb6fb4fc8e72b38ebb357b93aac0e6" category="list-text">ページの右上にある図のアイコンを選択します。</block>
@@ -2556,4 +2553,5 @@ RKE 2（v1.26.x）とRancher 2.7</block>
 NVMe / TCPを使用して接続された永続ボリュームでバックアップされたアプリケーションをAstra Controlで管理できるようになりました。</block>
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">オンプレミスクラスタ：</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select の略</block>
+  <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。この手順を使用して、Astra Control Provisionerを有効にしてインストールできます。</block>
 </blocks>
