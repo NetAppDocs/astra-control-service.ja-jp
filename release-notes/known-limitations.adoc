@@ -30,7 +30,7 @@ Postgres ポッドで操作を実行する場合は、 psql コマンドを使�
 
 === [Activity]ページには、最大100,000のイベントが表示されます
 
-[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します link:../rest-api/api-intro.html["Astra Control REST API"^]。
+[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します https://docs.netapp.com/us-en/astra-automation/["Astra Control REST API"^]。
 
 ifdef::gcp[]
 

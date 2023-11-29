@@ -100,16 +100,20 @@ endif::azure[]
 * 自己管理クラスタ：
 +
 ** Amazon EBSのことです
-** Google Persistent Disk のことです
 ** Azure Managed Disksの略
+** Google Persistent Disk のことです
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** NetApp MetroCluster
+** https://longhorn.io/["ロングホーン""^]
 
 
 * オンプレミスクラスタ：
 +
+** NetApp MetroCluster
 ** NetApp ONTAP AFF および FAS システム
 ** NetApp ONTAP Select の略
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** https://longhorn.io/["ロングホーン""^]
 
 
 

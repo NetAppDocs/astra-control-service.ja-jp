@@ -1901,7 +1901,6 @@
   <block id="b909803838dd775bd8b8dcfbaf82fb87" category="list-text">データ専用アプリケーションの管理がサポートされます</block>
   <block id="5b8f884e708de51fd4946164326e802c" category="section-title">[Activity]ページには、最大100,000のイベントが表示されます</block>
   <block id="676bd50e0f10e6725dc7a68e3041cfed" category="inline-link-macro">Astra Control REST API</block>
-  <block id="474be14e965990f35641a82fd1940bd1" category="paragraph">[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します <block ref="65b0251af1492433290d52a893eea83e" category="inline-link-macro-rx"></block>。</block>
   <block id="92994eff0d2e1bf73c01841823660ef5" category="list-text">*ライセンス*：10個を超えるネームスペースを管理するには、Astra Controlサブスクリプションが必要です。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">作業を開始する前に</block>
   <block id="63d526831e75bdfe2a1b18d7e1752ca3" category="list-text">アプリケーションに関連付けられている元のストレージクラスを保持するか、別のストレージクラスを選択します。</block>
@@ -2554,4 +2553,8 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">オンプレミスクラスタ：</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select の略</block>
   <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使用するオプションが用意されています。このオプションを使用すると、ライセンスを取得したAstra Controlユーザは、高度なストレージプロビジョニング機能にアクセスできます。Astra Control Provisionerは、Astra Trident CSIベースの標準機能に加えて、この拡張機能を提供します。この手順を使用して、Astra Control Provisionerを有効にしてインストールできます。</block>
+  <block id="164fe74cfbca9ef543331e42b891cf2c" category="list-text">NetApp MetroCluster</block>
+  <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">ロングホーン"</block>
+  <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
+  <block id="3296ea02e6ef8200a85b529d14dc6282" category="paragraph">[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します<block ref="3f49e9a4af0b49133601252075c9bc37" category="inline-link-rx"></block>。</block>
 </blocks>
