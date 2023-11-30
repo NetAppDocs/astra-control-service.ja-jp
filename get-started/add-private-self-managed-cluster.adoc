@@ -145,7 +145,7 @@ NOTE: 可能です https://docs.netapp.com/us-en/trident/trident-get-started/kub
 . *その他*：をアップロードして、自己管理クラスタに関する詳細を指定します `kubeconfig.yaml` ファイルまたはの内容を貼り付けます `kubeconfig.yaml` クリップボードからファイル。
 +
 
-NOTE: 自分で作成する場合は `kubeconfig` ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes のドキュメント"^] を参照してください `kubeconfig` ファイル。
+NOTE: 自分で作成する場合は `kubeconfig` ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください link:create-kubeconfig.html["以下の手順を参照して"^] を参照してください `kubeconfig` ファイル。
 
 . *クレデンシャル名*：Astra Controlにアップロードする自己管理型クラスタのクレデンシャルの名前を指定します。デフォルトでは、クレデンシャル名がクラスタの名前として自動的に入力されます。
 . *プライベートルート識別子*：Astra Connectorから取得できるプライベートルート識別子を入力します。を使用してAstra Connectorを照会した場合 `kubectl get astraconnector -n astra-connector` プライベートルート識別子はと呼ばれます `ASTRACONNECTORID`。

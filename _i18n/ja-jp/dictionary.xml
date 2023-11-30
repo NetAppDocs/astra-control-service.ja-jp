@@ -2557,4 +2557,5 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">ロングホーン"</block>
   <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
   <block id="3296ea02e6ef8200a85b529d14dc6282" category="paragraph">[Astra Control Activity]ページには、最大10、000件のイベントを表示できます。ログに記録されたすべてのイベントを表示するには、を使用してイベントを取得します<block ref="3f49e9a4af0b49133601252075c9bc37" category="inline-link-rx"></block>。</block>
+  <block id="8da5e66f477d9799e7fb14fdf498f36a" category="admonition">自分で作成する場合は<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> ファイルには、* 1つの*コンテキストエレメントのみを定義する必要があります。を参照してください <block ref="9d8ee3d0d4f5c967db921af26c4c5a7a" category="inline-link-macro-rx"></block> を参照してください<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> ファイル。</block>
 </blocks>
