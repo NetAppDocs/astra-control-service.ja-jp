@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/log-in.html 
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account 
+keywords: logging in, log in, sign in, signing in, BlueXP, netapp BlueXP, user account 
 summary: Astra Control Service には、 SaaS ベースのユーザインターフェイスから astra.netapp.io にアクセスできます。 
 ---
 = Astra Control Service にログインします
@@ -17,10 +17,10 @@ summary: Astra Control Service には、 SaaS ベースのユーザインター�
 Astra Control Service には、にアクセスして、 SaaS ベースのユーザインターフェイスからアクセスできます https://astra.netapp.io[]。
 
 
-TIP: シングルサインオンを使用して、社内ディレクトリ（フェデレーション ID ）からのクレデンシャルを使用してログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
+TIP: シングルサインオンを使用して、社内ディレクトリ（フェデレーション ID ）からのクレデンシャルを使用してログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
 
 .作業を開始する前に
-* link:../get-started/register.html["Cloud Central のユーザ ID"]。
+* link:../get-started/register.html["BlueXPのユーザID"]。
 * link:../get-started/register.html["新しい Astra Control アカウント"] または link:manage-users.html["既存のアカウントへの招待"]。
 * サポートされている Web ブラウザ。
 +
@@ -30,5 +30,5 @@ Astra Control Service は、最新バージョンの Firefox 、 Safari 、 Chro
 
 .手順
 . Web ブラウザを開き、に進みます https://astra.netapp.io[]。
-. NetApp Cloud Central のクレデンシャルを使用してログインします。
+. NetApp BlueXPのクレデンシャルを使用してログインします。
 

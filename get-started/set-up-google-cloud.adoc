@@ -233,7 +233,7 @@ Cloud Volumes Service for Google Cloud をストレージバックエンドサ�
 ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。
 
 .手順
-. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp BlueXPグローバルリージョンマップにアクセス"^] をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。
 +
 Cloud Volumes Service には、 CVS と CVS パフォーマンスの 2 つのサービスタイプがあります。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["これらのサービスタイプの詳細については、こちらをご覧ください"^]。
 

@@ -24,7 +24,7 @@ Astra Control Service では、永続的ボリュームのストレージバッ�
 
 === 概要
 
-Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp Cloud Central のグローバルリージョンマップにアクセスします"^] クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。
+Cloud Volumes Service for Google Cloud には、 _CVS と _CVS - パフォーマンス _ という 2 つのサービスタイプがあります。これらのサービスタイプは、特定の Google Cloud リージョンでサポートされています。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["NetApp BlueXPグローバルリージョンマップにアクセス"^] クラスタが配置されている Google Cloud リージョンでサポートされているサービスタイプを特定するには、次の手順を実行します。
 
 Kubernetes クラスタを特定のリージョンに配置する必要がある場合は、そのリージョンでサポートされているサービスタイプを使用します。
 

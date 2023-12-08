@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/register.html 
-keywords: cloud central, sign up, log in, login, register, register for cloud central, create account, sign up for account, get an account, account, accounts 
-summary: Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Centralに登録すると、Astra Control Serviceやネットアップのその他のクラウドサービスにアクセスできます。 
+keywords: BlueXP, sign up, log in, login, register, register for BlueXP, create account, sign up for account, get an account, account, accounts 
+summary: Astra Controlサービスは、NetApp BlueXPの認証サービスに統合されています。BlueXPに登録すると、Astra Control Serviceやネットアップのその他のクラウドサービスにアクセスできます。 
 ---
 = Astra Control Service アカウントに登録します
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Astra Control Service は、 NetApp Cloud Central の認証サービス
 
 
 [role="lead"]
-Astra Control Service を使用するには、 NetApp Cloud Central アカウントに関連付けられた Astra Control Service アカウントが必要です。Astra Control サービスの登録プロセスを完了し、 Cloud Central アカウントをまだお持ちでない場合は、 Cloud Central に登録して Astra Control Service にアクセスします。
+Astra Controlサービスを使用するには、NetApp BlueXPアカウントに関連付けられたAstra Controlサービスアカウントが必要です。Astra Control Serviceの登録プロセスを完了し、BlueXPアカウントがない場合はBlueXPに登録してAstra Control Serviceにアクセスします。
 
 
 
@@ -23,12 +23,8 @@ Astra Control Service にログインする前に、 Astra Control Service ア�
 Astra Control Service を使用すると、アカウント内からアプリケーションを管理できます。アカウントには、アカウント内のアプリを表示および管理できるユーザーと、課金情報が含まれます。
 
 .手順
-. https://cloud.netapp.com/astra["Cloud Central の Astra Control ページにアクセスします"^]。
-. 「 Get started with Astra Control 」を選択します。
-. [ フリープラン *] タブを選択します。
-+
-image:acs-registration-free-plan.png["フリープランオプションを選択する必要がある登録フォームのプラン選択タブのスクリーンショット。"]
-
+. https://cloud.netapp.com/astra["BlueXPのAstra Controlページにアクセス"^]。
+. [Get started now]*を選択します。
 . 必要な情報をフォームに入力します。
 +
 フォームに入力する際に注意すべき重要事項は次のとおりです。
@@ -36,41 +32,39 @@ image:acs-registration-free-plan.png["フリープランオプションを選択
 +
 ** グローバル貿易コンプライアンスの要件を満たすことが確認されるため、お客様の事業名と住所は正確である必要があります。
 ** 「 * Astra Account Name * 」は、御社の Astra Control Service アカウントの名前です。この名前は、 Astra Control Service のユーザーインタフェースに表示されます。必要に応じて、追加のアカウントを作成できます（最大 5 つ）。
-** 「 * Business Email Address * 」フィールドに、 NetApp Cloud Central アカウントをお持ちの場合は、このアカウントに使用する E メールアドレスを入力します。NetApp Cloud Central アカウントをまだお持ちでない場合は、 Cloud Central に登録するときに入力した E メールアドレスを使用してください。
+** NetApp BlueXPアカウントをお持ちの場合は、[お勤め先のEメールアドレス]フィールドにそのアカウントに使用するEメールアドレスを入力します。NetApp BlueXPアカウントをまだお持ちでない場合は、ここに入力したEメールアドレスを使用してBlueXPにサインアップしてください。
 
 
-. [ 送信 ] を選択します。
+. 「 * アカウントの作成 * 」を選択します。
 
 
 
 
-== Cloud Central に登録します
+== BlueXPにサインアップします
 
-NetApp Cloud Centralアカウントをまだお持ちでない場合は、Cloud Centralに登録して、Astra Control Serviceやネットアップの他のクラウドサービスにアクセスできます。Astra Control Service は、 NetApp Cloud Central の認証サービスに統合されています。Cloud Central アカウントをすでにお持ちで、登録が完了している場合は、にアクセスできます https://astra.netapp.io["Astra 制御サービス"^] Cloud Central のクレデンシャルを直接使用します。
+Astra Controlサービスは、NetApp BlueXPの認証サービスに統合されています。NetApp BlueXPには、BlueXPまたはNetApp Support Siteのクレデンシャルを使用してログインできます。NetApp BlueXPまたはNetApp Support Siteアカウントをまだお持ちでない場合は、BlueXPに登録してAstra Controlサービスやネットアップのその他のクラウドサービスにアクセスしてください。BlueXPまたはNetApp Support Siteのアカウントをすでにお持ちで、登録が完了している場合は、 https://astra.netapp.io["Astra 制御サービス"^] BlueXPまたはNetApp Support Siteのクレデンシャルを直接使用
 
 
-TIP: シングルサインオンを使用して、社内ディレクトリのクレデンシャル（フェデレーテッドアイデンティティ）を使用して Cloud Central にログインできます。詳細については、を参照してください https://cloud.netapp.com/help-center["Cloud Central ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
+TIP: シングルサインオンを使用して、社内ディレクトリのクレデンシャル（フェデレーテッドアイデンティティ）を使用してBlueXPにログインすることもできます。詳細については、を参照してください https://cloud.netapp.com/help-center["ヘルプセンター"^] 次に、 * Cloud Central サインインオプション * を選択します。
 
 .手順
-. に進みます https://cloud.netapp.com["NetApp Cloud Central"^]。
-. 右上で、「 * サインアップ * 」を選択します。
+. に進みます https://cloud.netapp.com["NetApp BlueXP"^]。
+. 右上の* Get Started *を選択します。
+. 「サインアップ」を選択します。
 . フォームに入力します。
 +
-ここに入力する電話番号と電子メールアドレスが、前のフリープラン登録フォームで使用したものと同じであることを確認してください。
+ここに入力する電話番号とEメールアドレスが、前のAstra Control登録フォームで使用したものと同じであることを確認します。
 
 . 「サインアップ」を選択します。
 +
 
-TIP: これらのフォームに入力する E メールアドレスは、 NetApp Cloud Central のユーザ ID です。この Cloud Central ユーザ ID は、新しい Astra Control Service アカウントにサインアップするとき、または Astra Control Service 管理者が既存の Astra Control Service アカウントに招待したときに使用します。
+TIP: これらのフォームに入力するEメールアドレスは、NetApp BlueXPのユーザID用です。このBlueXPユーザIDは、新しいAstra Controlアカウントにサインアップするとき、またはAstra Control管理者から既存のAstra Controlアカウントへの招待を受けたときに使用します。
 
-+
-image:screenshot-cloud-central-signup.gif["Cloud Central の登録ページのスクリーンショット。 E メールアドレス、パスワード、名前、会社名、および電話番号を入力する必要があります。このページはオプションです。"]
-
-. NetApp Cloud Central からの E メールを待ちます。電子メールは saas.support@netapp.com の住所から来、着くまで数分かかるかもしれない。スパムフォルダを確認してください。
+. NetApp BlueXPからEメールが届きます。電子メールは saas.support@netapp.com の住所から来、着くまで数分かかるかもしれない。スパムフォルダを確認してください。
 . E メールが届いたら、 E メール内のリンクを選択して E メールアドレスを確認します。
 
 
 .結果
-アクティブな Cloud Central ユーザログインが可能になりました。
+これで、BlueXPの有効なユーザログインが確立されました。
 
-登録が完了すると、から Cloud Central のクレデンシャルを使用して、 Astra Control Service に直接アクセスできるようになります https://astra.netapp.io[]。
+登録が完了したら、BlueXPクレデンシャルを使用してAstra Controlに直接アクセスできます。 https://astra.netapp.io[]。

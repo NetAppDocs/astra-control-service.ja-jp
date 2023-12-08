@@ -81,8 +81,8 @@ link:add-first-cluster.html["自己管理型クラスタの要件の詳細につ
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2 つ"] Astra Control の登録を完了します
 
 [role="quick-margin-list"]
-. を作成します https://cloud.netapp.com["NetApp Cloud Central"^] アカウント：
-. Astra Control アカウントの作成時に、 NetApp Cloud Central の E メール ID を指定します https://cloud.netapp.com/astra["Astra の製品ページから"^]。
+. を作成します https://cloud.netapp.com["NetApp BlueXP"^] アカウント：
+. Astra Controlアカウントの作成時にNetApp BlueXP EメールIDを指定 https://cloud.netapp.com/astra["Astra Controlの製品ページから"^]。
 
 
 [role="quick-margin-para"]
