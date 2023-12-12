@@ -2435,7 +2435,6 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="057afae3fe65d4f24b79bd50d34734b1" category="paragraph"><block ref="057afae3fe65d4f24b79bd50d34734b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7753d368684bfc31807afc2b7f3cd9c0" category="paragraph-title">Astra Control Provisionerを有効にする前に</block>
   <block id="0360a2e5fb08211931ade5b67746abd1" category="paragraph">Astra Control Provisionerが設定されていないAstra Tridentをすでに使用していて、Astra Control Provisionerを有効にする場合は、まず次の手順を実行します。</block>
-  <block id="96970ad8b13f688668233173a243a6d7" category="list-text">* Astra Tridentのバージョンが4リリース期間内であることを確認*：Astra Tridentのバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。</block>
   <block id="513c5f0b4153f3c855edd085e129578d" category="list-text">*クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。</block>
   <block id="cc74ae067ae4451424c2712fd0b0a766" category="list-text">NetApp Astra Controlイメージのレジストリにアクセスします。</block>
   <block id="f16793904b509a3f7a260653784d0c7b" category="list-text">Astra Control Service UIにログオンし、Astra ControlアカウントIDを記録します。</block>
@@ -2459,8 +2458,6 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">画像プルシークレット</block>
   <block id="84b3a17dd4da0cadee9516d2c742e8e1" category="admonition">クラスタでKubernetes 1.24以前を実行している場合は、を使用します<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>。クラスタでKubernetes 1.25以降を実行している場合は、を使用します<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>。</block>
   <block id="a770ca95121cc795b602f9af6af024fb" category="admonition">Kubernetes クラスタには、オペレータのインスタンスが * 1 つしか存在しないようにしてください。Trident のオペレータが複数の環境を構築することは避けてください。</block>
-  <block id="0addb2f750cfe9f186eca6774f14ac69" category="list-text"><block ref="ecb96b3444d2267901d021f818e6535e" category="inline-link-rx"></block>。</block>
-  <block id="5dcdd9d11fd62dd1ee60a5366592f2c7" category="list-text">Astra Control Provisionerを有効にしてAstra Tridentを再度インストール <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
   <block id="bfd6393303a90c7eebadedd13edf658b" category="paragraph">Astra Control Provisionerをインストールすると、Astra Control UIでプロビジョニングツールをホストしているクラスタに<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 代わりに<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> フィールドと現在インストールされているバージョン番号。</block>
   <block id="a368b742ba77bda413a93bc1a4d09ae3" category="inline-link">Astra Tridentのアップグレードに関するドキュメント</block>
   <block id="38798f90f44856e877b3d5951137f166" category="list-text"><block ref="38798f90f44856e877b3d5951137f166" category="inline-link-rx"></block></block>
@@ -2547,11 +2544,6 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="cbad356d2a2c08e20ea2766c2d78305f" category="inline-xref">次のセクション</block>
   <block id="e7202f4359a7a5bb666f3f91a540d6ea" category="list-text">カスタムレジストリを使用している場合は、イメージをカスタムレジストリに移動する方法に応じて、次の手順を実行します。レジストリを使用していない場合は、 <block ref="d433543a9de56c735bd2827329689b0d" category="inline-xref-macro-rx"></block>。</block>
   <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">例</block>
-  <block id="40c27dbe238031119a79044564707195" category="list-text">[[no-registry]]元の環境からオペレータを削除した場合は、Astra Trident Orchestrator CRDをもう一度作成します。</block>
-  <block id="c5ef2e8ef77f84391fa266f923ba567f" category="inline-link">インストーラをダウンロードして展開します。</block>
-  <block id="bfae990a3fa05e9fc309d9270c1b0bdf" category="list-text"><block ref="1762ff5119022dd6aa9e3a3693ff4c9a" category="inline-link-rx"></block>。</block>
-  <block id="6dfb05d57e00d495a2626742c5794d45" category="list-text">CRDを再度作成します。</block>
-  <block id="74e1b3ec60a1e85ea67710e2dc1cd343" category="list-text">を作成します<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 必要に応じて再度ネームスペースを指定します。</block>
   <block id="f2b891f09ee711b58bdd7005fd757210" category="list-text">Astra Tridentを23.10.0に更新：</block>
   <block id="4cf0920f58032b65295d4d0255354879" category="list-text">Astra Tridentが実行されていることを確認します。</block>
   <block id="70da7fdb746f99191502821d5d3b6d53" category="list-text">[pull-secrets]]シークレットを使用するレジストリがある場合は、Astra Control Provisionerイメージの取得に使用するシークレットを作成します。</block>
@@ -2561,4 +2553,14 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="f3a11fe989360f45110df3758e7f0641" category="list-text">もしあなたが <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> この手順では、ここで設定できます。 <block ref="bafdae7aa6abb1556ef1b0d17efe7509" prefix="(" category="inline-code"></block>）。前の手順で設定した名前と同じシークレット名を使用します。</block>
   <block id="aa3ae8b6c1e4a29f9314a8bbc401330f" category="list-text">ファイルを保存して終了します。導入プロセスが自動的に開始されます。</block>
   <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">operator、deployment、およびReplicaSetsが作成されていることを確認します。</block>
+  <block id="bae6bc3f0a28e1dbcf10ba23c43f14bc" category="list-text">* Astra Tridentがインストールされている場合は、バージョンが4リリース期間内であることを確認してください*：Astra Tridentがバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。</block>
+  <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">Astra Tridentインストーラをダウンロードして展開</block>
+  <block id="59d0cf2c91ce363cf00cd574e291796c" category="list-text">[[no-registry]<block ref="c15ad8dc2f63219c53e85038d51645b0" category="inline-link-rx"></block>。</block>
+  <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">Astra Tridentをまだインストールしていない場合、または元のAstra Trident環境からオペレータを削除した場合は、次の手順を実行します。</block>
+  <block id="1802fc07d2de18110ae52621540f337e" category="list-text">CRDを作成します。</block>
+  <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">Tridentネームスペースを作成 <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>）またはTridentネームスペースがまだ存在することを確認 <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>）。ネームスペースが削除されている場合は、もう一度作成します。</block>
+  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>。</block>
+  <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">既存のAstra Tridentがある場合は、そのTridentをホストしているクラスタからアンインストール</block>
+  <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
+  <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">Astra Control Provisionerを有効にしてAstra Tridentをインストール <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
 </blocks>

@@ -35,7 +35,7 @@ image:ac-acp-eligibility.png["クラスタの追加ワークフローにおけ�
 .Astra Control Provisionerを有効にする前に
 Astra Control Provisionerが設定されていないAstra Tridentをすでに使用していて、Astra Control Provisionerを有効にする場合は、まず次の手順を実行します。
 
-* * Astra Tridentのバージョンが4リリース期間内であることを確認*：Astra Tridentのバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。
+* * Astra Tridentがインストールされている場合は、バージョンが4リリース期間内であることを確認してください*：Astra Tridentがバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。
 * *クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。
 
 
@@ -132,21 +132,16 @@ WARNING: Astra Control Provisionerの有効化にはHelmは使用しないでく
 ====
 .Astra Trident運用者
 --
-.. [[no-registry]]元の環境からオペレータを削除した場合は、Astra Trident Orchestrator CRDをもう一度作成します。
+.. [[no-registry]]https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Astra Tridentインストーラをダウンロードして展開"^]。
+.. Astra Tridentをまだインストールしていない場合、または元のAstra Trident環境からオペレータを削除した場合は、次の手順を実行します。
 +
-... https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["インストーラをダウンロードして展開します。"^]。
-... CRDを再度作成します。
+... CRDを作成します。
 +
 [source, console]
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
-... を作成します `trident` 必要に応じて再度ネームスペースを指定します。
-+
-[source, console]
-----
-kubectl create namespace trident
-----
+... Tridentネームスペースを作成 (`kubectl create namespace trident`）またはTridentネームスペースがまだ存在することを確認 (`kubectl get all -n trident`）。ネームスペースが削除されている場合は、もう一度作成します。
 
 
 .. Astra Tridentを23.10.0に更新：
@@ -247,8 +242,9 @@ status:
 --
 .Tridentctl
 --
-.. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["Astra Trident をアンインストール"^]。
-.. Astra Control Provisionerを有効にしてAstra Tridentを再度インストール (`--enable-acp=true`）：
+.. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-tridentctl.html#step-1-download-the-trident-installer-package["Astra Tridentインストーラをダウンロードして展開"^]。
+.. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["既存のAstra Tridentがある場合は、そのTridentをホストしているクラスタからアンインストール"^]。
+.. Astra Control Provisionerを有効にしてAstra Tridentをインストール (`--enable-acp=true`）：
 +
 [source, console]
 ----
