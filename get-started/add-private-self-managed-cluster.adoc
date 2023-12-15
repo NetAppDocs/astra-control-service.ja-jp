@@ -26,12 +26,6 @@ Astra Control Serviceを使用して、次のタイプの自己管理型プラ�
 | Kubernetesディストリビューション | サポートされるバージョン 
 
 
-| Azure Stack HCIで実行されるAzure Kubernetes Service | Azure Stack HCI 21H2および22H2（AKS 1.24.xおよび1.25.xを使用） 
-
-
-| Google Anthos | 1.15~1.16 
-
-
 | Kubernetes（アップストリーム） | 1.26 ~ 1.28 
 
 
@@ -42,9 +36,6 @@ RKE 2（v1.26.x）とRancher 2.7
 
 
 | Red Hat OpenShift Container Platform | 4.11~4.13 
-
-
-| VMware Tanzu Kubernetes Grid統合エディション | 1.16.x 
 |===
 ここで説明する手順は、すでにプライベートクラスタを作成し、リモートからアクセスするためのセキュアな方法を準備していることを前提としています。
 
