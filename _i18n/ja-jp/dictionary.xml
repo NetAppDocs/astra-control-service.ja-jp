@@ -2214,13 +2214,11 @@ RKE 2（v1.26.x）とRancher 2.7</block>
   <block id="258c9b2ecd2a4147777d96a2577bb01d" category="list-text">*プライベートルート識別子*：Astra Connectorから取得できるプライベートルート識別子を入力します。を使用してAstra Connectorを照会した場合<block ref="e29c11c68aee82b23845c3b2bf3ce544" prefix=" " category="inline-code"></block> プライベートルート識別子はと呼ばれます<block ref="6205f02991df9d45acb59ccb61d7a0cb" prefix=" " category="inline-code"></block>。</block>
   <block id="1d740d5e28f5ec526ba0e21bd2c042ae" category="list-text"><block ref="d19f65bb3040b630d929eb2fd73ae249" category="inline-link-macro-rx"></block>。</block>
   <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">変更不可のバックアップ</block>
-  <block id="213c28884ce4a2a71120000c783fcf82" category="paragraph">Astra Control Serviceでは、次のプラットフォームおよびバケットタイプを使用した書き換え不可のバックアップの作成がサポートされています。</block>
   <block id="10c409f776da63661445303239e693a2" category="list-text">S3オブジェクトロックが設定されたAmazon S3バケットを使用するAmazon Web Services</block>
   <block id="beef1143f09010f8bcfdc72a883e9c08" category="list-text">Microsoft Azure：保持ポリシーが設定されたAzureバケットを使用</block>
   <block id="a497c37cc42f059834689ec0fba7374a" category="list-text">保持ポリシーが設定されたGoogle Cloud Storageバケットを使用するGoogle Kubernetes Engine（GKE）</block>
   <block id="2068f70db106b56bd996eac3699fdfcf" category="list-text">S3オブジェクトロックが設定されたS3バケットを使用するNetApp StorageGRID</block>
   <block id="81a25fa8f10fc7cec301084797002d71" category="paragraph">変更不可のバックアップを使用する場合は、次の点に注意してください。</block>
-  <block id="582c23d1f9cff824030194a7519dc569" category="list-text">サポートされていないプラットフォームまたはサポートされていないバケットタイプのWrite Once Read Many（WORM）バケットにバックアップすると、保持期間が経過してもバックアップの削除が失敗するなど、予期しない結果が生じることがあります。</block>
   <block id="046b0dc975ab97773b3ec3307b750bf6" category="list-text">Astra Controlでは、データのライフサイクル管理ポリシーや、変更不可のバックアップで使用するバケット上のオブジェクトの手動削除はサポートされていません。Astra ControlのSnapshotやバックアップデータのライフサイクルを管理するようにストレージバックエンドが設定されていないことを確認します。</block>
   <block id="67fc69d0bf35fe0124a1937122bf3aec" category="summary">Astra Controlとストレージバックエンドの間のトラフィックを保護するように暗号化を設定できます。</block>
   <block id="341784bc72164a9576c48141a8457786" category="doc">ストレージバックエンドの暗号化の設定</block>
@@ -2552,4 +2550,7 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">Astra Control Provisionerを有効にしてAstra Tridentをインストール <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
   <block id="89de75d28b7402eb7cc9790aa9e4f669" category="cell">4.11~4.14</block>
+  <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">変更不可のバックアップとは、指定した期間中に変更または削除できないバックアップです。書き換え不可のバックアップを作成すると、Astra Controlは使用しているバケットがWrite Once Read Many（WORM）バケットであるかどうかを確認し、使用している場合はAstra Control内からバックアップを変更できないかどうかを確認します。
+Astra Control Serviceでは、次のプラットフォームおよびバケットタイプを使用した書き換え不可のバックアップの作成がサポートされています。</block>
+  <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">サポートされていないプラットフォームまたはサポートされていないバケットタイプのWORMバケットにバックアップすると、保持期間が経過してもバックアップの削除が失敗するなど、予期しない結果が発生する可能性があります。</block>
 </blocks>
