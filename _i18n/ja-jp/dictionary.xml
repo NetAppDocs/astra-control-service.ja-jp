@@ -2553,4 +2553,11 @@ NVMe / TCPを使用して接続された永続ボリュームでバックアッ�
   <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">変更不可のバックアップとは、指定した期間中に変更または削除できないバックアップです。書き換え不可のバックアップを作成すると、Astra Controlは使用しているバケットがWrite Once Read Many（WORM）バケットであるかどうかを確認し、使用している場合はAstra Control内からバックアップを変更できないかどうかを確認します。
 Astra Control Serviceでは、次のプラットフォームおよびバケットタイプを使用した書き換え不可のバックアップの作成がサポートされています。</block>
   <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">サポートされていないプラットフォームまたはサポートされていないバケットタイプのWORMバケットにバックアップすると、保持期間が経過してもバックアップの削除が失敗するなど、予期しない結果が発生する可能性があります。</block>
+  <block id="2b298e0fe3f26bd15bd0a6fde1cc37ca" category="paragraph">Astra Controlでは、次のドライバでサポートされるストレージクラスを使用したSnapshotの作成がサポートされます。</block>
+  <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
+  <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
+  <block id="73b781a615cea2647a87ff2035e296b1" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block></block>
+  <block id="7699a29541e69341e6490b2f436f651b" category="paragraph">Astra Controlでは、次のドライバでサポートされるストレージクラスを使用したバックアップの作成がサポートされます。</block>
+  <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
+  <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">*サポートされるストレージクラスドライバ*：Astra Controlでは、次のドライバに基づくストレージクラスを使用したバックアップのリストアがサポートされます。</block>
 </blocks>

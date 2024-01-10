@@ -70,6 +70,14 @@ Astra Control は、定義したスケジュールと保持ポリシーを使用
 
 オンデマンド Snapshot はいつでも作成できます。
 
+.このタスクについて
+Astra Controlでは、次のドライバでサポートされるストレージクラスを使用したSnapshotの作成がサポートされます。
+
+* `ontap-nas`
+* `ontap-san`
+* `ontap-san-economy`
+
+
 
 IMPORTANT: アプリケーションがでサポートされるストレージクラスを使用している場合 `ontap-nas-economy` ドライバ、スナップショットを作成できません。スナップショットには代替のストレージクラスを使用します。
 
@@ -98,6 +106,17 @@ Azure NetApp Files ストレージでホストされているアプリケーシ�
 ====
 endif::azure[]
 
+[NOTE]
+====
+Astra Controlでは、次のドライバでサポートされるストレージクラスを使用したバックアップの作成がサポートされます。
+
+* `ontap-nas`
+* `ontap-nas-economy`
+* `ontap-san`
+* `ontap-san-economy`
+
+
+====
 .このタスクについて
 Astra Controlのバケットで使用可能な容量が報告されません。Astra Controlで管理されるアプリケーションをバックアップまたはクローニングする前に、該当するストレージ管理システムでバケット情報を確認してください。
 
