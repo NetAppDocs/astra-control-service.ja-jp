@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: Astra Control Service のマニュアル
+  summary: Astra Control Serviceは、ネットアップが管理するサービスで、複数のクラウド環境のKubernetesクラスタに対して、アプリケーション対応のデータ管理機能を提供します。オンプレミス環境で実行されている
+    Kubernetes アプリケーションを管理する必要がある場合は、 Astra Control Center のドキュメントを参照してください。
   lead: Astra Control Serviceは、ネットアップが管理するサービスで、複数のクラウド環境のKubernetesクラスタに対して、アプリケーション対応のデータ管理機能を提供します。オンプレミス環境で実行されている
     Kubernetes アプリケーションを管理する必要がある場合は、 Astra Control Center のドキュメントを参照してください。
   tiles:
