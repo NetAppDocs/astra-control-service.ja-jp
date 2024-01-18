@@ -288,7 +288,6 @@
   <block id="42e4ae99b1c75f246e10097db7c80bb8" category="list-text">自由な計画</block>
   <block id="862788c3bb11330575081aed95a87221" category="list-text">Premium PayGo の場合</block>
   <block id="5ddf59442786f24c8da307580d0ef431" category="list-text">プレミアムサブスクリプション</block>
-  <block id="b7b192852402c2ca345a411875aaae75" category="paragraph">まだ Astra Control アカウントをお持ちでない場合は、 Premium サブスクリプションを購入すると Astra Control アカウントが自動的に作成されます。既存の無料プランがある場合は、自動的に Premium サブスクリプションに変換されます。</block>
   <block id="6b77f6ea2428949be628fe51587bf096" category="section-title">Google Cloud の請求</block>
   <block id="45f0f10c20d19ddc78bfdf6e608f069a" category="inline-link">Cloud Volumes Service の価格設定の詳細を表示</block>
   <block id="e952d755f5ef5c7803cdfa78e9eadb1a" category="list-text"><block ref="89dd56840eed735019d241a1ba2301aa" category="inline-link-rx"></block>。</block>
@@ -1582,7 +1581,6 @@
   <block id="d79e72b74c5b67b0661208c31b83584a" category="paragraph">複数の方法でAstra Control Serviceアカウントの課金を管理できます。AzureまたはAmazon AWSを使用している場合は、Microsoft Azure MarketplaceまたはAWS MarketplaceからAstra Control Serviceプランに登録できます。これを行うと、Marketplaceで請求先の詳細を管理できます。または、ネットアップに直接登録することもできます。ネットアップに直接登録した場合は、Astra Control Serviceを使用して課金情報を管理できます。サブスクリプションなしでAstra Control Serviceを使用すると、自動的にFree Planに登録されます。</block>
   <block id="f5eb6d3938f47779581da936415d136a" category="paragraph">Astra Control Service Free Planでは、アカウント内のネームスペースを最大10個まで管理できます。10個を超えるネームスペースを管理する場合は、Free PlanからPremium Planにアップグレードするか、Azure MarketplaceまたはAWS Marketplaceでサブスクライブすることで請求を設定する必要があります。</block>
   <block id="89b4085fdb03b14f69ace6f96236c990" category="list-text">最大10個のネームスペースを無料で管理できます。</block>
-  <block id="2f4b44f727ad34215a2cafb46fe686b5" category="list-text">ネームスペースパック_ごとに最大10個のネームスペースを管理できる年間サブスクリプションを使用して、割引価格で前払いします。ネットアップの営業担当に問い合わせて、必要なパックを購入してください。たとえば、30個のネームスペースを管理する3パックをAstra Control Serviceから購入します。年間サブスクリプションで許可されている数を超えるネームスペースを管理した場合は、追加のネームスペースごとのサブスクリプション依存の超過レートが課金されます。</block>
   <block id="651491e55c46a7d045ef58a80fa5e427" category="paragraph">Astra Controlアカウントを作成すると、自動的にFree Planに登録されます。Astra Controlのダッシュボードには、現在許可されている10個の空きネームスペースから管理しているネームスペースの数が表示されます。名前空間を含む最初のアプリケーションが管理されると、名前空間の請求が開始され、名前空間を含む最後のアプリケーションが管理されない場合は、その名前空間の請求が停止します。</block>
   <block id="3aa4dd0198751b5007ad998ab156a84c" category="paragraph">11番目の名前空間を管理しようとすると、Astra ControlからFree Planの制限に達したことが通知されます。その後、フリープランからプレミアムプランへのアップグレードを求めるプロンプトが表示されます。追加のネームスペースごとに、サブスクリプションに応じた超過料金が発生します。</block>
   <block id="2bcc45d362c387d8f1c6cec1c1721572" category="paragraph">Premium プランにはいつでもアップグレードできます。アップグレード後、Astra Controlはアカウントの_ALL_Namespacesに課金します。最初の10個の名前空間は、フリープランに残りません。</block>
@@ -2560,4 +2558,5 @@ Astra Control Serviceでは、次のプラットフォームおよびバケッ�
   <block id="7699a29541e69341e6490b2f436f651b" category="paragraph">Astra Controlでは、次のドライバでサポートされるストレージクラスを使用したバックアップの作成がサポートされます。</block>
   <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
   <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">*サポートされるストレージクラスドライバ*：Astra Controlでは、次のドライバに基づくストレージクラスを使用したバックアップのリストアがサポートされます。</block>
+  <block id="55a8ef29f75e55b9790167d340f9b10a" category="list-text">年間サブスクリプションで割引料金で前払いし、_namespace pack_あたり最大20個のネームスペースを管理できます。ネットアップの営業担当に問い合わせて、必要なパックを購入してください。たとえば、3つのパックを購入して60個のネームスペースを管理するとします。年間サブスクリプションで許可されている数を超えるネームスペースを管理した場合は、追加のネームスペースごとのサブスクリプション依存の超過レートが課金されます。まだ Astra Control アカウントをお持ちでない場合は、 Premium サブスクリプションを購入すると Astra Control アカウントが自動的に作成されます。既存の無料プランがある場合は、自動的に Premium サブスクリプションに変換されます。</block>
 </blocks>
