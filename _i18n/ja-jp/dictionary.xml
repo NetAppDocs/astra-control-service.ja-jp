@@ -2000,13 +2000,11 @@
   <block id="c52ee6d695c3236a2b8bf5b454bac3cb" category="cell">Kubernetesディストリビューション</block>
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">サポートされるバージョン</block>
   <block id="0770a54f3635e09a4e4ff53a035b9979" category="cell">Kubernetes（アップストリーム）</block>
-  <block id="4863c0e3b29248649240a69b9df08e1e" category="cell">1.24~1.26（Kubernetes 1.25以降にはAstra Trident 22.10以降が必要）</block>
   <block id="8c95b632875261344eb6365459feffd0" category="cell">Rancher Kubernetes Engine （ RKE ）</block>
   <block id="86742721bf4e412fd236371e22eea76b" category="cell">RKE 1.3とRancher 2.6
 RKE 1.4とRancher 2.7
 RKE 2（v1.23.x）とRancher 2.6
 RKE 2（v1.24.x）とRancher 2.7</block>
-  <block id="2fc3e0590f5be49e12616e7785d1d1d8" category="cell">4.10から4.12まで</block>
   <block id="bd0c68687ae6337e2436da35c9876b3a" category="paragraph">ここで説明する手順は、自己管理型クラスタがすでに作成されていることを前提としています。</block>
   <block id="f1e065a4705616b4a33e38f8a6c9d9b0" category="list-text"><block ref="a250d079edf413d7ab6b80bd41f1a440" category="inline-xref-macro-rx"></block></block>
   <block id="16b1f7f08468f13997b2fdd4f721c9a4" category="section-title">Astra Control Serviceにクラスタを追加</block>
@@ -2559,4 +2557,5 @@ Astra Control Serviceでは、次のプラットフォームおよびバケッ�
   <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
   <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">*サポートされるストレージクラスドライバ*：Astra Controlでは、次のドライバに基づくストレージクラスを使用したバックアップのリストアがサポートされます。</block>
   <block id="55a8ef29f75e55b9790167d340f9b10a" category="list-text">年間サブスクリプションで割引料金で前払いし、_namespace pack_あたり最大20個のネームスペースを管理できます。ネットアップの営業担当に問い合わせて、必要なパックを購入してください。たとえば、3つのパックを購入して60個のネームスペースを管理するとします。年間サブスクリプションで許可されている数を超えるネームスペースを管理した場合は、追加のネームスペースごとのサブスクリプション依存の超過レートが課金されます。まだ Astra Control アカウントをお持ちでない場合は、 Premium サブスクリプションを購入すると Astra Control アカウントが自動的に作成されます。既存の無料プランがある場合は、自動的に Premium サブスクリプションに変換されます。</block>
+  <block id="b55edf29fb10e1f082aaf76e7d14a0e5" category="cell">1.26~1.28（Astra Trident 23.04以降を使用）</block>
 </blocks>

@@ -22,6 +22,7 @@ summary: 環境のセットアップが完了したら、 Kubernetes クラス�
 
 Astra Control Serviceを使用して、次のタイプの自己管理型プライベートクラスタを管理できます。
 
+[cols="2*"]
 |===
 | Kubernetesディストリビューション | サポートされるバージョン 
 
