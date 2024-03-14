@@ -2478,7 +2478,6 @@ Astra Control Serviceでは、次のプラットフォームおよびバケッ�
   <block id="fa11ed24405872fcaff3d72114365e10" category="list-text">* Astra Tridentがインストールされている場合は、バージョンが4リリース期間内であることを確認してください*：Astra Tridentがバージョン24.02の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 24.02への直接アップグレードを実行できます。たとえば、Astra Trident 23.04から24.02に直接アップグレードできます。</block>
   <block id="bc50f89e7547553ce82affde0adc4c76" category="list-text">(カスタムレジストリのみ)イメージをカスタムレジストリに移動するには、次の手順に従います。レジストリを使用していない場合は、 <block ref="d433543a9de56c735bd2827329689b0d" category="inline-xref-macro-rx"></block>。</block>
   <block id="635815058628a337f65c0953162ac32e" category="list-text">以前使用したインストール方法を使用して、Astra TridentでAstra Control Provisionerを有効にします。</block>
-  <block id="0666804607fefb21e41712e9a96717d0" category="paragraph">&lt;stdin&gt;の未解決のディレクティブ- Include :: https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/enable-acp-options-tabbed-block.adoc[]</block>
   <block id="e1e016d44c99ff12155d4c6ec97b954b" category="paragraph">Astra Control Provisionerの機能が有効になっており、実行しているバージョンで使用可能なすべての機能を使用できます。</block>
   <block id="bd43fc9501d9e9ddb964eda155be38b8" category="section-title">2024年3月14日</block>
   <block id="b13f49c3645a7a864544e5ba028ddf46" category="list-text"><block ref="fe976099507f0433932bc4deb8637ad3" category="inline-link-rx"></block>。</block>
@@ -2550,4 +2549,51 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="1ee256dec031da4c8764ac0ab9618006" category="list-text"><block ref="1ee256dec031da4c8764ac0ab9618006" category="inline-link-rx"></block></block>
   <block id="98687150a7223edc47d2aeb5f1686527" category="list-text">* Astra Control Provisioner *：Astra Trident CSIの機能と拡張されたストレージ管理機能を搭載した、NetAppが保守する、フルサポートのストレージプロビジョニングツールおよびオーケストレーションツールであるAstra Control Provisionerを使用すると、DockerおよびKubernetesで管理されるコンテナ化アプリケーション用のストレージボリュームを作成できます。Astra Controlを使用して導入した場合、Astra Control Provisionerには、設定済みのONTAPストレージバックエンドが含まれます。</block>
   <block id="2411d46a6f92e6f14127f5089d27d8fe" category="admonition">CVSサービスタイプをAstra Control Provisionerで使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。ストレージプールが設定されていないボリュームをプロビジョニングすると、ボリュームのプロビジョニングは失敗します。を参照してください<block ref="c8e96960daef0620d62e613312bed1b3" category="inline-link-rx"></block> ボリュームの作成の詳細については、を参照してください。</block>
+  <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">Astra Tridentインストーラをダウンロードして展開</block>
+  <block id="f1f44f407a364d092b4a3b446d6593b5" category="list-text"><block ref="5512264baa78f7d10bb082092407833c" category="inline-link-rx"></block>。</block>
+  <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">Astra Tridentをまだインストールしていない場合、または元のAstra Trident環境からオペレータを削除した場合は、次の手順を実行します。</block>
+  <block id="1802fc07d2de18110ae52621540f337e" category="list-text">CRDを作成します。</block>
+  <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">Tridentネームスペースを作成 <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>）またはTridentネームスペースがまだ存在することを確認 <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>）。ネームスペースが削除されている場合は、もう一度作成します。</block>
+  <block id="f8eb25c26ac0064b456c26bd4bb1642b" category="list-text">Astra Tridentを24.02.0に更新：</block>
+  <block id="84b3a17dd4da0cadee9516d2c742e8e1" category="admonition">クラスタでKubernetes 1.24以前を実行している場合は、を使用します<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>。クラスタでKubernetes 1.25以降を実行している場合は、を使用します<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>。</block>
+  <block id="4cf0920f58032b65295d4d0255354879" category="list-text">Astra Tridentが実行されていることを確認します。</block>
+  <block id="70da7fdb746f99191502821d5d3b6d53" category="list-text">[pull-secrets]]シークレットを使用するレジストリがある場合は、Astra Control Provisionerイメージの取得に使用するシークレットを作成します。</block>
+  <block id="531dc1bead45003a393e1e227a07b0fa" category="list-text">TridentOrchestrator CRを編集し、次の編集を行います。</block>
+  <block id="c88d85553b81a72e9b28005772f27281" category="list-text">Astra Tridentイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 <block ref="c063da0c4010a4b533407346a02dd83c" prefix="(" category="inline-code"></block> または<block ref="cad26ce67501baab70dd72ffd03b01e6" prefix=" " category="inline-code"></block>）。</block>
+  <block id="8b1959e0a8b41248dad790a861dbfdd9" category="list-text">Astra Control Provisionerを有効にする <block ref="b146a884950a14beaf7f7c32ccceea96" prefix="(" category="inline-code"></block>）。</block>
+  <block id="1a94316615bc7bfa28020fb176113eb9" category="list-text">Astra Control Provisionerイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> または<block ref="3a419c3a7ea2390874c7e355a5180c2e" prefix=" " category="inline-code"></block>）。</block>
+  <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">画像プルシークレット</block>
+  <block id="f3a11fe989360f45110df3758e7f0641" category="list-text">もしあなたが <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> この手順では、ここで設定できます。 <block ref="bafdae7aa6abb1556ef1b0d17efe7509" prefix="(" category="inline-code"></block>）。前の手順で設定した名前と同じシークレット名を使用します。</block>
+  <block id="aa3ae8b6c1e4a29f9314a8bbc401330f" category="list-text">ファイルを保存して終了します。導入プロセスが自動的に開始されます。</block>
+  <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">operator、deployment、およびReplicaSetsが作成されていることを確認します。</block>
+  <block id="6849b59104c35075b063cf35570fde13" category="admonition">Kubernetes クラスタには、オペレータのインスタンスが * 1 つしか存在しないようにしてください。Astra Tridentオペレータを複数の環境に導入することは避けてください。</block>
+  <block id="faba39ec34eed502aea6d805d792a9ea" category="list-text">を確認します<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> コンテナが実行中で、<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> はです<block ref="50ce33a86e6915635518e9752cf0a12f" prefix=" " category="inline-code"></block> ステータス：<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>：</block>
+  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>。</block>
+  <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">既存のAstra Tridentがある場合は、そのTridentをホストしているクラスタからアンインストール</block>
+  <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
+  <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">Astra Control Provisionerを有効にしてAstra Tridentをインストール <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
+  <block id="152090ff5e9a05ea7e1cf0c248449638" category="open-title">Helm</block>
+  <block id="fe98497efedbe156ecc4b953aea77e07" category="inline-link">をアンインストールします</block>
+  <block id="e87cd9f9f3f0bdb5a644fb2aa2415f5b" category="list-text">Astra Trident 23.07.1以前がインストールされている場合は、<block ref="956dce94688d94fac89c002857c93b5d" category="inline-link-rx"></block> オペレータおよびその他のコンポーネント。</block>
+  <block id="c35a7e0e7f42e740c64a0b6fdade1fe3" category="list-text">Kubernetesクラスタが1.24以前を実行している場合は、pspを削除します。</block>
+  <block id="113fbd468c6aaecfbef57e5d1e9b500d" category="list-text">Astra Trident Helmリポジトリを追加します。</block>
+  <block id="02cc60ae4326121ce3bc2b5fdb24de58" category="list-text">Helmチャートを更新します。</block>
+  <block id="b0f226ab4f18ed3c3dd4ee74affdea76" category="list-text">画像を一覧表示します。</block>
+  <block id="730022f38a10156cf22189c69dee095d" category="list-text">trident-operator 24.02.0が使用可能であることを確認します。</block>
+  <block id="70b739f3363e6b3cd5f0c896d90af9c6" category="list-text">使用<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> これらの設定を含む次のいずれかのオプションを実行します。</block>
+  <block id="9fe27ee3cf7416ee3af4516cf89a2b4c" category="list-text">導入場所の名前</block>
+  <block id="8d4c721df5c5b813b86a2d1eb619c735" category="list-text">Astra Tridentバージョン</block>
+  <block id="7dba4177f42e6622145f408eb88b1cba" category="list-text">Astra Control Provisionerの名前の画像</block>
+  <block id="7b0fc32fdb3c2378c2c39008d29aaa43" category="list-text">プロビジョニングツールを有効にするフラグ</block>
+  <block id="37ee7516a84d6949e4e0bde03e129758" category="inline-link">Tridentの画像</block>
+  <block id="29e638c426512b56521aa694976562ea" category="list-text">（任意）ローカルレジストリパス。ローカルレジストリを使用している場合は、<block ref="97e5914991475a979ee93ba0d709c399" category="inline-link-rx"></block> 1つのレジストリまたは別のレジストリに配置できますが、すべてのCSIイメージは同じレジストリに配置する必要があります。</block>
+  <block id="4795c928314a82e5be360b646a3a3aac" category="list-text">Tridentネームスペース</block>
+  <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">オプション（ Options ）</block>
+  <block id="804c8c9903e49e8cab0717f41b883f9a" category="list-text">レジストリなしのイメージ</block>
+  <block id="c4ffea098f78924a9b9331b8f5e9c8b4" category="list-text">1つのレジストリ内のイメージ</block>
+  <block id="4847c552b2ff9251806e41c8fa907e19" category="list-text">異なるレジストリ内の画像</block>
+  <block id="d75fdc8e85ddcd7e9dc9f367168dec11" category="paragraph">を使用できます<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 名前、ネームスペース、グラフ、ステータス、アプリケーションバージョンなどのインストールの詳細を確認するには、次の手順を実行します。とリビジョン番号。</block>
+  <block id="d09a3f23170df63b9065e78b7eb80224" category="paragraph">Helmを使用したTridentの導入で問題が発生した場合は、次のコマンドを実行してAstra Tridentを完全にアンインストールします。</block>
+  <block id="3897d04922674a762953f58e38463cb0" category="inline-link">Astra TridentのCRDを完全に削除</block>
+  <block id="98709e6abe377fa2083cb4a36ba22ddc" category="paragraph">*禁止*<block ref="d47e0c203a38c85d577cb0ed29c7fad1" category="inline-link-rx"></block> Astra Control Provisionerを再度有効にする前に、アンインストールの一環として実行します。</block>
 </blocks>
