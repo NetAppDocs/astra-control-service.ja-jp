@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: use/deploy-astra-control-center.html 
+keywords: get started, manage apps, manage account 
+summary: Astra Controlのスタンドアロンの自己管理型インスタンスを導入 
+---
+= Astra Controlの自己管理インスタンスを導入
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+ネットワーク内に自己管理型のAstra Controlインスタンスが必要な場合は、Astra Control ServiceからAstra Control Centerを直接導入できます。
+
+.手順
+. ダッシュボードの[Getting Started]領域で、*[Deploy a self-managed instance of Astra Control]*を選択します。
+. 次のいずれかを実行します。
++
+** [Generate]*を選択して、新しいAPIトークンを生成します。
+** 既存のAstra Control REST APIトークンを貼り付けます。を参照してください https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automationのドキュメント"^] APIトークンの生成方法については、を参照してください。
+
+
+. [Deploy Astra Control Center]*ウィンドウに表示される手順に従います。
+

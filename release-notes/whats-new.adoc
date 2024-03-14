@@ -16,6 +16,13 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 
 
+== 2024年3月14日
+
+.新機能とサポート
+これはマイナーバグ修正リリースです。
+
+
+
 == 2023年11月7日
 
 [[nas-eco-backup-restore]]

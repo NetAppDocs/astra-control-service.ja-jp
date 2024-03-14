@@ -24,7 +24,7 @@ Astra Control Service を使用すると、アカウント内からアプリケ�
 
 .手順
 . https://cloud.netapp.com/astra["BlueXPのAstra Controlページにアクセス"^]。
-. [Get started now]*を選択します。
+. *無料プランにサインアップ*を選択します。
 . 必要な情報をフォームに入力します。
 +
 フォームに入力する際に注意すべき重要事項は次のとおりです。

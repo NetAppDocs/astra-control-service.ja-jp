@@ -97,7 +97,7 @@ Astra Controlでは、「パスバイリファレンス」アーキテクチャ�
 
 お先にどうぞ link:../get-started/add-first-cluster.html["クラスタが追加されました"] Astra Controlを使用すると、アプリケーションをインストールしたり、クラスタ上の既存のアプリケーションを管理したりできます。1つ以上の名前空間にスコープされているすべてのアプリケーションを管理できます。
 
-Astra Controlは、Astra Controlでサポートされているストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。Astra Control Serviceは、Astra Tridentまたは汎用CSIドライバでサポートされているすべてのストレージクラスをサポートします。
+Astra Controlは、Astra Controlでサポートされているストレージクラス上にストレージがある場合にのみ、ステートフルアプリケーションを管理する。Astra Control Serviceは、Astra Control Provisionerまたは汎用CSIドライバでサポートされるすべてのストレージクラスをサポートします。
 
 ifdef::gcp[]
 

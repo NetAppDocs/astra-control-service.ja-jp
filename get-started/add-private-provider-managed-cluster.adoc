@@ -73,13 +73,13 @@ endif::gcp[]
 
 プライベートクラスタをAstra Control Serviceに追加できるようになりました。
 
-Azure Kubernetes ServiceクラスタとGoogle Kubernetes Engineクラスタを管理する場合、Astra Tridentのインストールとライフサイクル管理には次の2つのオプションがあることに注意してください。
+Azure Kubernetes ServiceクラスタとGoogle Kubernetes Engineクラスタを管理する場合、Astra Control Provisionerのインストールとライフサイクル管理には次の2つのオプションがあることに注意してください。
 
-* Astra Control Serviceを使用すると、Astra Tridentのライフサイクルを自動的に管理できます。そのためには、Astra Control Serviceで管理するクラスタにAstra Tridentがインストールされていないことを確認してください。この場合、クラスタの管理を開始するとAstra Tridentが自動的にインストールされ、Astra Tridentのアップグレードは自動的に処理されます。
-* Astra Tridentのライフサイクルはお客様自身で管理できます。これを行うには、Astra Control Serviceでクラスタを管理する前に、クラスタにAstra Tridentをインストールします。この場合、Astra Control ServiceはAstra Tridentがすでにインストールされていることを検出し、再インストールやAstra Tridentのアップグレードの管理は行いません。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+* Astra Control Serviceを使用すると、Astra Control Provisionerのライフサイクルを自動的に管理できます。そのためには、Astra Control Serviceで管理するクラスタでAstra Tridentがインストールされておらず、Astra Control Provisionerが有効になっていないことを確認してください。この場合、クラスタの管理を開始すると、Astra Control ServiceによってAstra Control Provisionerが自動的に有効になり、Astra Control Provisionerのアップグレードは自動的に処理されます。
+* Astra Control Provisionerのライフサイクルは自分で管理できます。これを行うには、Astra Control Serviceでクラスタを管理する前に、クラスタでAstra Control Provisionerを有効にします。この場合、Astra Control ServiceはAstra Control Provisionerがすでに有効になっていることを検出し、再インストールやAstra Control Provisionerのアップグレードの管理は行いません。を参照してください link:../use/enable-acp.html["Astra Control Provisionerを有効にする"^] では、Astra Control Provisionerを有効にします。
 
 
-Astra Control Serviceを使用してAmazon Web Servicesクラスタを管理する場合、Astra Tridentで有効になっているストレージバックエンドが必要な場合は、Astra Control Serviceを使用して管理する前に、クラスタにAstra Tridentを手動でインストールする必要があります。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+Astra Control ServiceでAmazon Web Servicesクラスタを管理する場合、Astra Control Provisionerでのみ使用できるストレージバックエンドが必要な場合は、Astra Control Serviceで管理する前に、クラスタでAstra Control Provisionerを手動で有効にする必要があります。を参照してください link:../use/enable-acp.html["Astra Control Provisionerを有効にする"^] をクリックし、Astra Control Provisionerを有効にします。
 
 .作業を開始する前に
 [%collapsible%open]
@@ -88,7 +88,7 @@ ifdef::aws[]
 
 .Amazon Web Services の
 * クラスタを作成したIAMユーザのクレデンシャルを含むJSONファイルが必要です。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["IAMユーザを作成する方法を説明します"]。
-* Amazon ONTAP 対応のAmazon FSXにはTridentが必要です。NetApp ONTAP 用のAmazon FSXをEKSクラスタのストレージバックエンドとして使用する場合、のAstra Tridentの情報を参照してください link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
+* Amazon FSx for NetApp ONTAPにはAstra Controlプロビジョニングツールが必要です。EKSクラスタのストレージバックエンドとしてAmazon FSx for NetApp ONTAPを使用する予定の場合は、 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKSクラスタ要件"]。
 * （オプション）を指定する必要がある場合 `kubectl` クラスタの作成者ではない他のIAMユーザにクラスタをアクセスするためのコマンドアクセスについては、の手順を参照してください https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["Amazon EKSでクラスタを作成したあと、他のIAMユーザとロールにアクセスを提供するにはどうすればよいですか？"^]。
 * NetApp Cloud Volumes ONTAP をストレージバックエンドとして使用する場合は、Amazon Web Servicesと連携するようにCloud Volumes ONTAP を設定する必要があります。Cloud Volumes ONTAP を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["セットアップのドキュメント"^]。
 
@@ -124,7 +124,7 @@ endif::gcp[]
 
 ====
 .手順
-. （オプション）Amazon EKSクラスタを追加する場合、またはAstra Tridentのインストールとアップグレードを自分で管理する場合は、クラスタにAstra Tridentをインストールします。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] を参照してください。
+. （オプション）Amazon EKSクラスタを追加する場合、またはAstra Control Provisionerのインストールとアップグレードを自分で管理する場合は、クラスタでAstra Control Provisionerを有効にします。を参照してください link:../use/enable-acp.html["Astra Control Provisionerを有効にする"^] を参照してください。
 . ブラウザでAstra Control Service Web UIを開きます。
 . ダッシュボードで、 * Kubernetes クラスタの管理 * を選択します。
 +

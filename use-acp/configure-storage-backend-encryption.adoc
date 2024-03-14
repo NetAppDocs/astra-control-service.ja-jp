@@ -32,7 +32,7 @@ Astra Control Provisionerは、次の2種類のストレージバックエンド
 NOTE: オンプレミスのONTAPストレージバックエンドを使用するNFSトラフィックに対するKerberos暗号化は、 `ontap-nas` ストレージドライバ。
 
 .作業を開始する前に
-* 管理対象クラスタでAstra Control Provisionerが有効になっていることを確認します。を参照してください link:../use/enable-acp.html["Astra Control Provisionerを有効にする"^] 手順については、を参照し
+* 次のことを確認します。 link:../use/enable-acp.html["Astra Control Provisionerを有効にしました"^] 管理対象クラスタ。
 * にアクセスできることを確認します。 `tridentctl` ユーティリティ。
 * ONTAPストレージバックエンドへの管理者アクセス権があることを確認します。
 * ONTAPストレージバックエンドから共有するボリュームの名前を確認しておきます。
@@ -196,7 +196,7 @@ kubectl get sc ontap-nas-sc
 +
 [listing]
 ----
-NAME         PROVISIONER             AGE
+NAME            PROVISIONER             AGE
 ontap-nas-sc    csi.trident.netapp.io   15h
 ----
 
@@ -205,7 +205,7 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 
 === ボリュームのプロビジョニング
 
-ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになりました。手順については、を参照してください https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームをプロビジョニングする"^]。
+ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになりました。以下の手順を参照してください。 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームのプロビジョニング"^]。
 
 
 
@@ -390,4 +390,4 @@ anf-sc-nfs    csi.trident.netapp.io   15h
 
 === ボリュームのプロビジョニング
 
-ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになりました。手順については、を参照してください https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームをプロビジョニングする"^]。
+ストレージバックエンドとストレージクラスを作成したら、ボリュームをプロビジョニングできるようになりました。以下の手順を参照してください。 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["ボリュームのプロビジョニング"^]。

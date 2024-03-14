@@ -150,7 +150,7 @@ Astra Control ：アプリケーションのバックアップを作成
 Astra Control Provisionerは、バックアップとリストアの機能を提供します。この機能は、 `ontap-nas-economy` ストレージクラス。
 
 .作業を開始する前に
-* Astra Control Provisionerを有効にしておきます。
+* Astra Control ProvisionerまたはAstra Tridentを有効にしておきます。
 * Astra Controlでアプリケーションを定義しておきます。この手順を完了するまで、このアプリケーションの保護機能は制限されます。
 * これで完了です `ontap-nas-economy` ストレージバックエンドのデフォルトのストレージクラスとして選択されています。
 
@@ -178,7 +178,7 @@ IMPORTANT: ONTAPストレージバックエンドのsnapshotディレクトリ�
 
 
 
-. Astra Tridentで次の手順を実行します。
+. Astra Control ProvisionerまたはAstra Tridentで次の手順を実行します。
 +
 .. ontap-nas-economyベースでアプリケーションに関連付けられている各PVのsnapshotディレクトリを有効にします。
 +

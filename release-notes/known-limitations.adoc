@@ -120,7 +120,7 @@ Astra Control がリソースまたは機能へのアクセスを制限する方
 
 . 既存のSnapshot CRDと既存のSnapshotコントローラをすべて削除します。
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["Astra Trident をアンインストール"^]。
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["最新バージョンのAstra Tridentをインストール"^]。
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClassを作成します"^]。
 

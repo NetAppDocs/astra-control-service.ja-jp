@@ -16,7 +16,7 @@ Astra Tridentバージョン23.10以降には、Astra Control Provisionerを使�
 
 Astra Control Serviceのサブスクリプションには、Astra Control Provisionerの使用ライセンスが自動的に含まれます。
 
-今後のAstra Controlの更新では、Astra Control ProvisionerがAstra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレータとしてAstra Tridentに代わるものとなります。そのため、Astra ControlのユーザはAstra Control Provisionerを有効にすることを強く推奨します。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。
+今後のAstra Controlの更新では、Astra Control ProvisionerがAstra Tridentの代わりにストレージプロビジョニングツールおよびオーケストレータとして使用され、Astra Controlでは必須となります。そのため、Astra ControlのユーザはAstra Control Provisionerを有効にすることを強く推奨します。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。
 
 .Astra Control Provisionerを有効にする必要があるかどうかを確認する方法を教えてください。
 Astra TridentがインストールされていないクラスタをAstra Control Serviceに追加すると、クラスタはとマークされます。 `Eligible`。お先にどうぞ link:../get-started/add-first-cluster.html["Astra Controlへのクラスタの追加"]Astra Control Provisionerは自動的に有効になります。
@@ -35,16 +35,13 @@ image:ac-acp-eligibility.png["クラスタの追加ワークフローにおけ�
 .Astra Control Provisionerを有効にする前に
 Astra Control Provisionerが設定されていないAstra Tridentをすでに使用していて、Astra Control Provisionerを有効にする場合は、まず次の手順を実行します。
 
-* * Astra Tridentがインストールされている場合は、バージョンが4リリース期間内であることを確認してください*：Astra Tridentがバージョン23.10の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 23.10への直接アップグレードを実行できます。たとえば、Astra Trident 22.10から23.10に直接アップグレードできます。
+* * Astra Tridentがインストールされている場合は、バージョンが4リリース期間内であることを確認してください*：Astra Tridentがバージョン24.02の4リリース期間内であれば、Astra Control Provisionerを使用してAstra Trident 24.02への直接アップグレードを実行できます。たとえば、Astra Trident 23.04から24.02に直接アップグレードできます。
 * *クラスタにAMD64システムアーキテクチャがあることを確認する*：Astra Control ProvisionerイメージはAMD64とARM64の両方のCPUアーキテクチャで提供されますが、Astra ControlでサポートされるのはAMD64のみです。
 
 
 .手順
 . NetApp Astra Controlイメージのレジストリにアクセスします。
 +
-.ステップのために展開
-[%collapsible]
-====
 .. Astra Control Service UIにログオンし、Astra ControlアカウントIDを記録します。
 +
 ... ページの右上にある図のアイコンを選択します。
@@ -66,8 +63,7 @@ crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 ----
 
 
-====
-. カスタムレジストリを使用している場合は、イメージをカスタムレジストリに移動する方法に応じて、次の手順を実行します。レジストリを使用していない場合は、 <<no-registry,次のセクション>>。
+. (カスタムレジストリのみ)イメージをカスタムレジストリに移動するには、次の手順に従います。レジストリを使用していない場合は、 <<no-registry,次のセクション>>。
 +
 
 NOTE: 次のコマンドには、Dockerの代わりにPodmanを使用できます。Windows環境を使用している場合は、PowerShellを推奨します。
@@ -85,7 +81,7 @@ NOTE: プルされたイメージは複数のプラットフォームをサポ�
 +
 [source, console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster platform>
+docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform <cluster platform>
 ----
 +
 例
@@ -93,19 +89,19 @@ docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster pla
 +
 [listing]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform linux/amd64
+docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform linux/amd64
 ----
 .. 画像にタグを付けます。
 +
 [source, console]
 ----
-docker tag cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+docker tag cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 .. イメージをカスタムレジストリにプッシュします。
 +
 [source, console]
 ----
-docker push <my_custom_registry>/trident-acp:23.10.0
+docker push <my_custom_registry>/trident-acp:24.02.0
 ----
 
 
@@ -116,161 +112,22 @@ docker push <my_custom_registry>/trident-acp:23.10.0
 +
 [source, crane]
 ----
-crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+crane copy cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 
 
 --
 ====
 . 元のAstra Tridentインストール方法で。
+. 以前使用したインストール方法を使用して、Astra TridentでAstra Control Provisionerを有効にします。
 +
+<stdin>の未解決のディレクティブ- Include :: https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/enable-acp-options-tabbed-block.adoc[]
 
-WARNING: Astra Control Provisionerの有効化にはHelmは使用しないでください。元のインストールでHelmを使用していた環境を23.10にアップグレードする場合は、Tridentオペレータまたはtridentctlを使用してAstra Control Provisionerを有効にする必要があります。
-
-+
-[role="tabbed-block"]
-====
-.Astra Trident運用者
---
-.. [[no-registry]]https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["Astra Tridentインストーラをダウンロードして展開"^]。
-.. Astra Tridentをまだインストールしていない場合、または元のAstra Trident環境からオペレータを削除した場合は、次の手順を実行します。
-+
-... CRDを作成します。
-+
-[source, console]
-----
-kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
-----
-... Tridentネームスペースを作成 (`kubectl create namespace trident`）またはTridentネームスペースがまだ存在することを確認 (`kubectl get all -n trident`）。ネームスペースが削除されている場合は、もう一度作成します。
-
-
-.. Astra Tridentを23.10.0に更新：
-+
-
-NOTE: クラスタでKubernetes 1.24以前を実行している場合は、を使用します `bundle_pre_1_25.yaml`。クラスタでKubernetes 1.25以降を実行している場合は、を使用します `bundle_post_1_25.yaml`。
-
-+
-[source, console]
-----
-kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
-----
-.. Astra Tridentが実行されていることを確認します。
-+
-[source, console]
-----
-kubectl get torc -n trident
-----
-+
-対応：
-
-+
-[listing]
-----
-NAME      AGE
-trident   21m
-----
-.. [pull-secrets]]シークレットを使用するレジストリがある場合は、Astra Control Provisionerイメージの取得に使用するシークレットを作成します。
-+
-[source, console]
-----
-kubectl create secret docker-registry <secret_name> -n trident --docker-server=<my_custom_registry> --docker-username=<username> --docker-password=<token>
-----
-.. TridentOrchestrator CRを編集し、次の編集を行います。
-+
-[source, console]
-----
-kubectl edit torc trident
-----
-+
-... Astra Tridentイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 (`tridentImage: <my_custom_registry>/trident:23.10.0` または `tridentImage: netapp/trident:23.10.0`）。
-... Astra Control Provisionerを有効にする (`enableACP: true`）。
-... Astra Control Provisionerイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 (`acpImage: <my_custom_registry>/trident-acp:23.10.0` または `acpImage: cr.astra.netapp.io/astra/trident-acp:23.10.0`）。
-... もしあなたが <<pull-secrets,画像プルシークレット>> この手順では、ここで設定できます。 (`imagePullSecrets: - <secret_name>`）。前の手順で設定した名前と同じシークレット名を使用します。
-
-
-+
-[listing, subs="+quotes"]
-----
-apiVersion: trident.netapp.io/v1
-kind: TridentOrchestrator
-metadata:
-  name: trident
-spec:
-  debug: true
-  namespace: trident
-  *tridentImage: <registry>/trident:23.10.0*
-  *enableACP: true*
-  *acpImage: <registry>/trident-acp:23.10.0*
-  *imagePullSecrets:
-  - <secret_name>*
-----
-.. ファイルを保存して終了します。導入プロセスが自動的に開始されます。
-.. operator、deployment、およびReplicaSetsが作成されていることを確認します。
-+
-[source, console]
-----
-kubectl get all -n trident
-----
-+
-
-IMPORTANT: Kubernetes クラスタには、オペレータのインスタンスが * 1 つしか存在しないようにしてください。Trident のオペレータが複数の環境を構築することは避けてください。
-
-.. を確認します `trident-acp` コンテナが実行中で、 `acpVersion` はです `23.10.0` ステータス： `Installed`：
-+
-[source, console]
-----
-kubectl get torc -o yaml
-----
-+
-対応：
-
-+
-[listing]
-----
-status:
-  acpVersion: 23.10.0
-  currentInstallationParams:
-    ...
-    acpImage: <registry>/trident-acp:v23.10.0
-    enableACP: "true"
-    ...
-  ...
-  status: Installed
-----
-
-
---
-.Tridentctl
---
-.. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-tridentctl.html#step-1-download-the-trident-installer-package["Astra Tridentインストーラをダウンロードして展開"^]。
-.. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["既存のAstra Tridentがある場合は、そのTridentをホストしているクラスタからアンインストール"^]。
-.. Astra Control Provisionerを有効にしてAstra Tridentをインストール (`--enable-acp=true`）：
-+
-[source, console]
-----
-./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
-----
-.. Astra Control Provisionerが有効になっていることを確認します。
-+
-[source, console]
-----
-./tridentctl -n trident version
-----
-+
-対応：
-
-+
-[listing]
-----
-+----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
-----
-
-
---
-====
 
 
 .結果
+Astra Control Provisionerの機能が有効になっており、実行しているバージョンで使用可能なすべての機能を使用できます。
+
 Astra Control Provisionerをインストールすると、Astra Control UIでプロビジョニングツールをホストしているクラスタに `ACP version` 代わりに `Trident version` フィールドと現在インストールされているバージョン番号。
 
 image:ac-acp-version.png["UIでのACPバージョンの場所を示すスクリーンショット"]

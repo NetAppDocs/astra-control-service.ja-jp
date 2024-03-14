@@ -82,7 +82,7 @@ Contributor ロールを持つ Azure サービスプリンシパルを作成し�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタでKubernetesバージョン1.23 ~ 1.25が実行されている必要があります。
+Kubernetes のバージョン:: クラスタでKubernetesバージョン1.26~1.28が実行されている必要があります。
 イメージタイプ:: すべてのノードプールのイメージタイプは Linux である必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 Azure リージョン:: クラスタは、 Azure NetApp Files が利用可能なリージョンに配置する必要があります。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["Azure 製品を地域別に表示します"^]。

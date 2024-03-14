@@ -35,7 +35,7 @@ Kubernetes クラスタを特定のリージョンに配置する必要がある
 
 
 
-NOTE: Astra Trident 23.01以降でCVSサービスタイプを使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。ストレージプールが設定されていないボリュームをプロビジョニングすると、ボリュームのプロビジョニングは失敗します。を参照してください https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Serviceのドキュメント"^] ボリュームの作成の詳細については、を参照してください。
+NOTE: CVSサービスタイプをAstra Control Provisionerで使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。ストレージプールが設定されていないボリュームをプロビジョニングすると、ボリュームのプロビジョニングは失敗します。を参照してください https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Serviceのドキュメント"^] ボリュームの作成の詳細については、を参照してください。
 
 次の表に、このページに記載されている情報を簡単に比較します。
 

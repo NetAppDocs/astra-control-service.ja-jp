@@ -60,7 +60,7 @@ Astra Control Service にはからアクセスできます https://astra.netapp.
 
 * CSI ドライバを Astra Control Service に追加する前に、 CSI ドライバをクラスタにインストールする必要がありますか。 *
 
-いいえクラスタがAstra Controlに追加されると、ネットアップのTrident Container Storage Interface（CSI）ドライバがKubernetesクラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。
+いいえクラスタがAstra Controlに追加されると、Astra Trident Container Storage Interface（CSI）ドライバがKubernetesクラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。
 
 * Astra Control Service に追加した後、ワーカーノードをクラスタに追加する必要があります。どうすればよいですか？ *
 
@@ -145,9 +145,8 @@ WARNING: GCP から削除する場合は、必ず事前に Astra Control から�
 
 endif::gcp[]
 
-* Astra Trident は、 Astra Control からクラスタを削除したときにアンインストールされますか。 *
-
-Astra Tridentは、Astra Controlからクラスタを削除してもクラスタからアンインストールされません。
+*管理を解除すると、Astra Control Provisionerはクラスタから自動的にアンインストールされますか。*
+Astra Control Centerでクラスタの管理を解除しても、Astra Control ProvisionerまたはAstra Tridentはクラスタから自動的にアンインストールされません。Astra Control ProvisionerとそのコンポーネントまたはAstra Tridentをアンインストールするには、次の手順を実行する必要があります： https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["次の手順に従って、Astra Control Provisionerサービスが含まれているAstra Tridentインスタンスをアンインストールします。"^]。
 
 
 
@@ -203,26 +202,21 @@ endif::gcp[]
 Astra Control Provisionerは、Astra Controlの一部として、オープンソースのAstra Tridentでは利用できないストレージプロビジョニング機能のスーパーセットをサポートします。これらの機能は、オープンソースのTridentで利用できるすべての機能に加えて提供されます。
 
 * Astra Control ProvisionerはAstra Tridentの後継ですか？*
-
-今後のAstra Controlの更新では、Astra Control ProvisionerがAstra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレータとしてAstra Tridentに代わるものとなります。そのため、Astra Controlを使用することを強く推奨します link:../use/enable-acp.html["Astra Control Provisionerを有効にする"]。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、メンテナンス、サポート、更新されます。
+Astra Control Provisionerは、Astra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレーションツールとしてAstra Tridentに代わるものです。Astra Controlを使用する場合は、 link:../use/enable-acp.html["Astra Control Provisionerを有効にする"] Astra Controlを使用する場合。Astra Tridentはこのリリースでも引き続きサポートされますが、今後のリリースではサポートされません。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、保守、サポート、更新されます。ただし、Astra Controlの今後のリリースで使用できるのは、Astra TridentのCSI機能と拡張されたストレージ管理機能を備えたAstra Control Provisionerだけです。
 
 * Astra Tridentの料金を支払う必要がありますか？*
 
-いいえAstra Tridentは引き続きオープンソースであり、無償でダウンロードできます。
+いいえAstra Tridentは引き続きオープンソースであり、無償でダウンロードできます。Astra Control Provisioner機能を使用するには、Astra Controlライセンスが必要です。
 
 * Astra Controlをすべてインストールして使用しなくても、Astra Controlでストレージ管理とプロビジョニングの機能を使用できますか。*
 
-はい。Astra Controlのデータ管理機能のすべての機能セットを使用する必要がなくても、Astra Trident 23.10以降にアップグレードしてAstra Control Provisioner機能を有効にできます。
+はい。Astra Control Provisionerにアップグレードして、Astra Controlのすべてのデータ管理機能を使用する必要がなくても、その機能を使用できます。
 
-*既存のTridentユーザからAstra Controlに移行して、高度なストレージ管理とプロビジョニングの機能を使用するにはどうすればよいですか？*
-
-既存のTridentユーザ（パブリッククラウドのAstra Tridentのユーザを含む）の場合は、まずAstra Controlライセンスを取得する必要があります。インストールが完了したら、Astra Control Provisionerバンドルをダウンロードし、Astra Tridentをアップグレードし、 link:../use/enable-acp.html["Astra Control Provisioner機能を有効にする"]。
-
-*クラスタのAstra TridentにAstra Control Provisionerが置き換えられたかどうかを確認するにはどうすればよいですか？*
+[[running-acp-check]]*クラスタのAstra TridentにAstra Control Provisionerが置き換えられたかどうかを確認するにはどうすればよいですか？*
 
 Astra Control Provisionerをインストールすると、Astra Control UIのホストクラスタに `ACP version` 代わりに `Trident version` フィールドと現在インストールされているバージョン番号。
 
-image:ac-acp-version.png["UIでのACPバージョンの場所を示すスクリーンショット"]
+image:ac-acp-version.png["Astra Control Provisionerのバージョンを示すUIのスクリーンショット"]
 
 UIにアクセスできない場合は、次の方法でインストールが正常に完了したことを確認できます。
 
@@ -230,7 +224,7 @@ UIにアクセスできない場合は、次の方法でインストールが正
 ====
 .Astra Trident運用者
 --
-を確認します `trident-acp` コンテナが実行中で、 `acpVersion` はです `23.10.0` ステータス： `Installed`：
+を確認します `trident-acp` コンテナが実行中で、 `acpVersion` はです `23.10.0` 以降でステータスが `Installed`：
 
 [listing]
 ----

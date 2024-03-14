@@ -21,4 +21,5 @@ summary: ログインしてAstra Controlにクラスタを追加したら、Astr
 * link:../use/manage-users.html["ユーザーを招待および管理します"]
 * link:../use/manage-credentials.html["クラウドプロバイダのクレデンシャルを管理する"]
 * link:../use/manage-notifications.html["通知を管理します"]
+* link:../use/deploy-astra-control-center.html["Astra Controlの自己管理インスタンスを導入"]
 

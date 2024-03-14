@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/check-astra-trident-version.html 
-keywords: astra trident, check, version 
+keywords: astra trident, check, version, astra control provisioner 
 summary: 自己管理型クラスタの場合は、正しいバージョンのAstra Tridentを使用していることを確認する必要があります。 
 ---
 = Astra Tridentのバージョンを確認
@@ -12,10 +12,10 @@ summary: 自己管理型クラスタの場合は、正しいバージョンのAs
 
 
 [role="lead"]
-ストレージサービスにAstra Tridentを使用する自己管理型クラスタを追加する場合は、インストールされているAstra Tridentのバージョンが最新であることを確認してください。
+ストレージサービスにAstra Control ProvisionerまたはAstra Tridentを使用する自己管理型クラスタを追加するには、Astra Tridentのバージョンが23.10以降であることを確認してください。
 
 .手順
-. Astra Tridentのバージョンを確認
+. 実行しているAstra Tridentのバージョンを確認します。
 +
 [source, console]
 ----
@@ -28,7 +28,7 @@ Astra Tridentがインストールされている場合は、次のような出�
 [listing]
 ----
 NAME      VERSION
-trident   22.10.0
+trident   24.02.0
 ----
 +
 Astra Tridentがインストールされていない場合は、次のような出力が表示されます。
@@ -38,9 +38,11 @@ Astra Tridentがインストールされていない場合は、次のような�
 ----
 error: the server doesn't have a resource type "tridentversions"
 ----
+. 次のいずれかを実行します。
 +
+** Astra Trident 23.01以前を実行している場合は、以下を使用 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["手順"^] Astra Control Provisionerにアップグレードする前に、Astra Tridentの最新バージョンにアップグレードすること。可能です link:../use/enable-acp.html["直接アップグレードを実行する"] Astra Tridentがバージョン24.02の4リリース期間内にある場合は、Astra Control Provisioner 24.02をダウンロードします。たとえば、Astra Trident 23.04からAstra Control Provisioner 24.02に直接アップグレードできます。
+** Astra Trident 23.10以降を実行している場合は、Astra Control Provisionerが link:../use/faq.html#running-acp-check["有効"]。Astra Control Provisionerは、23.10より前のリリースのAstra Control Centerでは機能しません。 link:../get-started/enable-acp.html["Astra Control Provisionerのアップグレード"] 最新の機能にアクセスするには、アップグレードするAstra Control Centerと同じバージョンを使用する必要があります。
 
-NOTE: Astra Tridentがインストールされていないか、最新でない場合に、クラスタがストレージサービス用のAstra Tridentを使用するには、作業を進める前に最新バージョンのAstra Tridentをインストールする必要があります。を参照してください https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident のドキュメント"^] 手順については、を参照し
 
 . ポッドが実行されていることを確認します。
 +

@@ -77,18 +77,18 @@ Astra Control ServiceがAWSアカウントとやり取りするために必要�
 
 Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。
 
-Kubernetes のバージョン:: クラスタで1.23~1.25の範囲のKubernetesバージョンが実行されている必要があります。
+Kubernetes のバージョン:: クラスタで1.25~1.28の範囲のKubernetesバージョンが実行されている必要があります。
 イメージタイプ:: 各ワーカーノードのイメージタイプはLinuxである必要があります。
 クラスタの状態:: クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。
 
 
-Astra Trident:: ストレージバックエンドでの運用には、Astra Tridentと外部のSnapshotコントローラが必要です。インストールするには、次の手順を実行します。
+Astra Controlプロビジョニングツール:: ストレージバックエンドを使用するには、Astra Control Provisionerと外部のSnapshotコントローラが必要です。これらの処理を有効にするには、次の手順を実行します。
 
 
 [%collapsible%open]
 ====
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["最新バージョンのAstra Tridentをインストール"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+. link:../use/enable-acp.html["Astra Control Provisionerを有効にする"]。
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["VolumeSnapshotClassを作成します"^]。
 
 
@@ -101,7 +101,7 @@ CSIドライバのインストール手順については、手順を参照し�
 [%collapsible%open]
 ====
 .外部Snapshotデータをインストールします
-まだ行っていない場合は、 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
+まだ行っていない場合は、 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["スナップショットCRDとスナップショットコントローラをインストールします"^]。
 
 .CSIドライバをAmazon EKSアドオンとしてインストールします
 . サービスアカウント用のAmazon EBS CSIドライバIAMロールを作成します。指示に従います https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["Amazonのドキュメントを参照してください"^]の手順に記載されたAWS CLIコマンドを使用します。

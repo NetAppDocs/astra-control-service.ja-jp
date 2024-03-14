@@ -50,3 +50,5 @@ entries:
   url: "/use/enable-acp.html"
 - title: アプリケーションとクラスタの管理を解除します
   url: "/use/unmanage.html"
+- title: Astra Controlの自己管理インスタンスを導入
+  url: "/use/deploy-astra-control-center.html"
