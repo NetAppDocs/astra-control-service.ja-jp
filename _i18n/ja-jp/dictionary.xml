@@ -2596,4 +2596,83 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="d09a3f23170df63b9065e78b7eb80224" category="paragraph">Helmを使用したTridentの導入で問題が発生した場合は、次のコマンドを実行してAstra Tridentを完全にアンインストールします。</block>
   <block id="3897d04922674a762953f58e38463cb0" category="inline-link">Astra TridentのCRDを完全に削除</block>
   <block id="98709e6abe377fa2083cb4a36ba22ddc" category="paragraph">*禁止*<block ref="d47e0c203a38c85d577cb0ed29c7fad1" category="inline-link-rx"></block> Astra Control Provisionerを再度有効にする前に、アンインストールの一環として実行します。</block>
+  <block id="5220375a520b7758aa31b8b43ce717fe" category="summary">Astra Control Provisionerでは、ソースボリュームとデスティネーションボリューム間のミラー関係を作成して、ディザスタリカバリ用にボリュームをレプリケートできます。</block>
+  <block id="50e2eea9ba53d70147772db1c5d25f79" category="doc">SnapMirrorによるボリュームのレプリケート</block>
+  <block id="d0182feabbbe0987e5c6aed407b4c2a7" category="paragraph">Astra Control Provisionerを使用すると、ディザスタリカバリ用にデータをレプリケートするために、一方のクラスタのソースボリュームとピアクラスタのデスティネーションボリュームの間にミラー関係を作成できます。名前空間カスタムリソース定義（CRD）を使用して、次の操作を実行できます。</block>
+  <block id="a682d8ef86abcae6c5a1db6186c5f02b" category="list-text">ボリューム（PVC）間のミラー関係を作成する</block>
+  <block id="31a8f98d3378661a5b8abf15438f0bca" category="list-text">ボリューム間のミラー関係の削除</block>
+  <block id="a6349012892be516e5729d501a9649a7" category="list-text">ミラー関係を解除する</block>
+  <block id="2597cb6d27f572bb6d7d2fd15f414795" category="list-text">災害時（フェイルオーバー）にセカンダリボリュームを昇格する</block>
+  <block id="40f7c55be912a395aed2502927d3fcfa" category="list-text">クラスタからクラスタへのアプリケーションのロスレス移行の実行（計画的なフェイルオーバーまたは移行時）</block>
+  <block id="d193cd9a2432eca22e5cf0d06dcee1e6" category="section-title">レプリケーションの前提条件</block>
+  <block id="55be807bf2be012ff44a04449cc5e8a8" category="paragraph">作業を開始する前に、次の前提条件を満たしていることを確認してください。</block>
+  <block id="3404cce75db90acf6a9d52860721a139" category="list-title">ONTAP クラスタ</block>
+  <block id="5764ffcba90184d76761806e7e8395b9" category="list-text">* Astra Control Provisioner *：ONTAPをバックエンドとして利用するソースとデスティネーションの両方のKubernetesクラスタに、Astra Control Provisionerバージョン23.10以降が必要です。</block>
+  <block id="ba84728ffba482ceb12371a53be2f636" category="inline-link">ONTAP のSnapMirrorライセンスの概要</block>
+  <block id="b677eb65f7f869d18b845725a133a8d5" category="list-text">*ライセンス*：Data Protection Bundleを使用するONTAP SnapMirror非同期ライセンスが、ソースとデスティネーションの両方のONTAPクラスタで有効になっている必要があります。を参照してください<block ref="a7b9425cefc4a3715b38951f4b2b6b35" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="5cc8ada79224d850ecd22fd22e550c47" category="list-title">ピアリング</block>
+  <block id="9fecd08b776fdfca7b33426363edf913" category="inline-link">クラスタと SVM のピアリングの概要</block>
+  <block id="02b05cdd8f0a8c426f307085cc1004f7" category="list-text">*クラスタとSVM *：ONTAPストレージバックエンドにピア関係が設定されている必要があります。を参照してください<block ref="60333a598df416e49fbceb5a88dce370" category="inline-link-rx"></block> を参照してください。</block>
+  <block id="94ac6b3955eab183cb88ab17c91000eb" category="admonition">2つのONTAPクラスタ間のレプリケーション関係で使用されるSVM名が一意であることを確認してください。</block>
+  <block id="11b4eae81775a6d26d41d2ca42309c91" category="list-text">* Astra Control ProvisionerとSVM *：ピア関係にあるリモートSVMがデスティネーションクラスタのAstra Control Provisionerで使用可能である必要があります。</block>
+  <block id="0c5e1b5bc54261ccadd2a72af1047ded" category="list-title">サポートされるドライバ</block>
+  <block id="57601c13c06c6ac6e23efaab44ced427" category="list-text">ボリュームレプリケーションは、ONTAP-NASドライバとONTAP-SANドライバでサポートされます。</block>
+  <block id="3ce5b83f8896ef0d2e356d3972ec8898" category="section-title">ミラーPVCの作成</block>
+  <block id="427a1ab7f39ee4f2dd7a0b7e35f572da" category="paragraph">以下の手順に従って、CRDの例を使用してプライマリボリュームとセカンダリボリュームの間にミラー関係を作成します。</block>
+  <block id="4dc69f665f0d76c17a577a352dd15b25" category="list-text">プライマリKubernetesクラスタで次の手順を実行します。</block>
+  <block id="cffc5263be00a76539edeeff72190d54" category="list-text">を使用してStorageClassオブジェクトを作成します。<block ref="23041ca302bab724a5a0a4ee923c745d" prefix=" " category="inline-code"></block> パラメータ</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">例</block>
+  <block id="f1fe26832c26eb686c85bd72da8a62f1" category="list-text">以前に作成したStorageClassを使用してPVCを作成します。</block>
+  <block id="a306778c7affcc4dd2329c7f1e9a6389" category="list-text">ローカル情報を含むMirrorRelationship CRを作成します。</block>
+  <block id="f55994c0c11fac6e31cbb70581f696f0" category="paragraph">Astra Control Provisionerは、ボリュームの内部情報とボリュームの現在のデータ保護（DP）の状態をフェッチし、MirrorRelationshipのstatusフィールドに値を入力します。</block>
+  <block id="7e36329a511f28054ceb0cb2aba7de3a" category="list-text">TridentMirrorRelationship CRを取得して、PVCの内部名とSVMを取得します。</block>
+  <block id="ce01c03f932076e82348fc5aaefacc7d" category="list-text">セカンダリKubernetesクラスタで次の手順を実行します。</block>
+  <block id="dbe7fac150e57be9bc0d8e046792f4c3" category="list-text">trident.netapp.io/replication: trueパラメータを使用してStorageClassを作成します。</block>
+  <block id="01d68e0f9630c032dc8a33358e46e65b" category="list-text">デスティネーションとソースの情報を含むMirrorRelationship CRを作成します。</block>
+  <block id="960441627a9e57f3614bc5e5fce9a5ff" category="paragraph">Astra Control Provisionerは、設定された関係ポリシー名（ONTAPの場合はデフォルト）を使用してSnapMirror関係を作成し、初期化します。</block>
+  <block id="4ba5d2a91c95149a7ad924ebd0d9503d" category="list-text">セカンダリ（SnapMirrorデスティネーション）として機能するStorageClassを作成してPVCを作成します。</block>
+  <block id="efe874c809f0fe07e9ccbe31c010017a" category="paragraph">Astra Control ProvisionerはTridentMirrorRelationship CRDを確認し、関係が存在しない場合はボリュームの作成に失敗します。関係が存在する場合は、Astra Control Provisionerによって、新しいFlexVolがMirrorRelationshipで定義されているリモートSVMとピア関係にあるSVMに配置されます。</block>
+  <block id="e71d1a5cbaac30e63ed507e4b62c705f" category="section-title">ボリュームレプリケーションの状態</block>
+  <block id="35a5ab9faaa73d6bfb24393f7b676624" category="paragraph">Trident Mirror Relationship（TMR）は、PVC間のレプリケーション関係の一端を表すCRDです。デスティネーションTMRの状態はで、Astra Control Provisionerに必要な状態が示されます。宛先TMRの状態は次のとおりです。</block>
+  <block id="546afd3b22376f948ae8d790e441d7da" category="list-text">*確立済み*：ローカルPVCはミラー関係のデスティネーションボリュームであり、これは新しい関係です。</block>
+  <block id="724cfb5ec8bac42a80699bb79c4eccb9" category="list-text">*昇格*：ローカルPVCはReadWriteでマウント可能であり、ミラー関係は現在有効ではありません。</block>
+  <block id="d323366aa32e60d08a0f93bda543af47" category="list-text">* reestablished *：ローカルPVCはミラー関係のデスティネーションボリュームであり、以前はそのミラー関係に含まれていました。</block>
+  <block id="4c3cd5b62a43e82e03fffa6b238ed918" category="list-text">デスティネーションボリュームはデスティネーションボリュームの内容を上書きするため、ソースボリュームとの関係が確立されたことがある場合は、reestablished状態を使用する必要があります。</block>
+  <block id="b2e7dc07859cd924ca5706b299986e57" category="list-text">ボリュームが以前にソースとの関係になかった場合、再確立状態は失敗します。</block>
+  <block id="93f9c6ccc7d85e709509db31891ae5eb" category="section-title">計画外フェールオーバー時にセカンダリPVCを昇格する</block>
+  <block id="4a76c8d930ec18b5aedc26b5d8e5246f" category="paragraph">セカンダリKubernetesクラスタで次の手順を実行します。</block>
+  <block id="78ac02218b5a9367bdcb4881538477cc" category="list-text">TridentMirrorRelationshipの_spec.state_フィールド を次のように更新します。<block ref="1fe57d6202c7cfbb0ee344b1e0a6fb37" prefix=" " category="inline-code"></block>。</block>
+  <block id="ffe4cfc202d643b50342b93a4a11a82f" category="section-title">計画的フェイルオーバー中にセカンダリPVCを昇格</block>
+  <block id="1d60b89a076d7f30b8efdef50e842f68" category="paragraph">計画的フェイルオーバー（移行）中に、次の手順を実行してセカンダリPVCをプロモートします。</block>
+  <block id="3310d9a60c164accb7c262ab6e9fbc65" category="list-text">プライマリKubernetesクラスタでPVCのSnapshotを作成し、Snapshotが作成されるまで待ちます。</block>
+  <block id="8b17b79902950942165541a8ab704363" category="list-text">プライマリKubernetesクラスタで、SnapshotInfo CRを作成して内部の詳細を取得します。</block>
+  <block id="678346d79faaa65b2da52e6d7ddce845" category="list-text">セカンダリKubernetesクラスタで、_TridentMirrorRelationship_CRの_spec.state_フィールド を_promoted_に更新し、_spec.promotedSnapshotHandle_をSnapshotのinternalNameにします。</block>
+  <block id="7b007b14980acd66e9301e02a5670f47" category="list-text">セカンダリKubernetesクラスタで、TridentMirrorRelationshipのステータス（status.stateフィールド）がPromotedになっていることを確認します。</block>
+  <block id="f69101c0107c4bbf8f0ccc9141beb68b" category="section-title">フェイルオーバー後にミラー関係をリストアする</block>
+  <block id="9a023cbe1d3be933d8edb6228f9901ce" category="paragraph">ミラー関係をリストアする前に、新しいプライマリとして作成する側を選択します。</block>
+  <block id="1c7011adbcc0afa258396aff4f10266b" category="list-text">セカンダリKubernetesクラスタで、TridentMirrorRelationshipの_spec.remoteVolumeHandle_fieldの値が更新されていることを確認します。</block>
+  <block id="ffb25f01fda2538ae98bc0c4b4d465a6" category="list-text">セカンダリKubernetesクラスタで、TridentMirrorRelationshipの_spec.mirror_fieldを<block ref="036bbe13de7250844b100bc381b59214" prefix=" " category="inline-code"></block>。</block>
+  <block id="41a593c0bede63aac2726a18e4599087" category="section-title">その他の処理</block>
+  <block id="429ffe8f0aaccc8922acaae0bea825a8" category="paragraph">Astra Control Provisionerでは、プライマリボリュームとセカンダリボリュームに対する次の処理がサポートされます。</block>
+  <block id="253093d00b66ff2357df5085c04b2758" category="section-title">新しいセカンダリPVCへのプライマリPVCの複製</block>
+  <block id="301dcece9e67241c29ebbbac8a94274e" category="paragraph">プライマリPVCとセカンダリPVCがすでに存在していることを確認します。</block>
+  <block id="7f1c32cba6b98d1db7f3dfda1df76189" category="list-text">PersistentVolumeClaim CRDとTridentMirrorRelationship CRDを、確立されたセカンダリ（デスティネーション）クラスタから削除します。</block>
+  <block id="e655fd5342cff178f54ae5f5b2a3b7b6" category="list-text">プライマリ（ソース）クラスタからTridentMirrorRelationship CRDを削除します。</block>
+  <block id="3eb69a135044d3f308d140dccb1dbe5e" category="list-text">確立する新しいセカンダリ（デスティネーション）PVC用に、プライマリ（ソース）クラスタに新しいTridentMirrorRelationship CRDを作成します。</block>
+  <block id="92c650dfb6284b5d24ed0e83a2338fa0" category="section-title">ミラー、プライマリ、またはセカンダリPVCのサイズ変更</block>
+  <block id="66990a43216d28b5b6818b021d397574" category="paragraph">PVCは通常どおりサイズ変更できます。データ量が現在のサイズを超えると、ONTAPは自動的に宛先フレフxolを拡張します。</block>
+  <block id="4e2626fed5da19a4be8255f16a331609" category="section-title">PVCからのレプリケーションの削除</block>
+  <block id="e1abf7fa65d845d34c33d593ed070453" category="paragraph">レプリケーションを削除するには、現在のセカンダリボリュームで次のいずれかの操作を実行します。</block>
+  <block id="b3dd2c563dffb09f03c72bc16a72be62" category="list-text">セカンダリPVCのMirrorRelationshipを削除します。これにより、レプリケーション関係が解除されます。</block>
+  <block id="413ab8e64d0d4ccb3f08ef2a8653a525" category="list-text">または、spec.stateフィールドを_promoted_に更新します。</block>
+  <block id="c00cff9971607d7a0409066a0ecc3bcd" category="section-title">（以前にミラーリングされていた）PVCの削除</block>
+  <block id="21c248e83f23afe590db7c4471350f23" category="paragraph">Astra Control Provisionerは、ボリュームの削除を試行する前に、レプリケートされたPVCをチェックし、レプリケーション関係を解放します。</block>
+  <block id="8ec9c60105332c1be8facc42b496e14b" category="section-title">TMRの削除</block>
+  <block id="b4d20a51885b1a7645c486448d720b7e" category="paragraph">ミラー関係の一方のTMRを削除すると、Astra Control Provisionerが削除を完了する前に、残りのTMRが_promoted_stateに移行します。削除対象として選択したTMRがすでに_promoted_stateである場合は、既存のミラー関係は存在せず、TMRが削除され、Astra Control ProvisionerがローカルPVCを_ReadWrite_に昇格します。この削除により、ONTAP内のローカルボリュームのSnapMirrorメタデータが解放されます。このボリュームを今後ミラー関係で使用する場合は、新しいミラー関係を作成するときに、レプリケーション状態が_established_volumeである新しいTMRを使用する必要があります。</block>
+  <block id="d41660149eb8930ad76a1dfe3dc5f2e3" category="section-title">ONTAPがオンラインのときにミラー関係を更新</block>
+  <block id="7079164c5ba86439b0719782591106dd" category="paragraph">ミラー関係は、確立後にいつでも更新できます。を使用できます<block ref="abb3a949c6d70e3e5d92f4ad2bf143a3" prefix=" " category="inline-code"></block> または<block ref="ff0b4e3d4dfe8f6074b6943947345d4d" prefix=" " category="inline-code"></block> 関係を更新するフィールド。
+デスティネーションボリュームを通常のReadWriteボリュームに昇格する場合は、_promotedSnapshotHandle_を使用して、現在のボリュームのリストア先となる特定のSnapshotを指定できます。</block>
+  <block id="4eecab048a7c90cfb92e0f04884686e8" category="section-title">ONTAPがオフラインの場合にミラー関係を更新</block>
+  <block id="e3b68b1c19a14af5fcb94e147290aec6" category="paragraph">CRDを使用すると、Astra ControlからONTAPクラスタに直接接続せずにSnapMirror更新を実行できます。次のTridentActionMirrorUpdateの形式例を参照してください。</block>
+  <block id="bc08468157c4a9e3a30eed7ba64cc309" category="paragraph"><block ref="1f9dfae8a369525bce4996df40963532" prefix="" category="inline-code"></block> TridentActionMirrorUpdate CRDの状態を反映します。_Succeeded_、_In Progress_、_Failed_のいずれかの値を指定できます。</block>
 </blocks>
