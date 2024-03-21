@@ -347,14 +347,7 @@ netapp-trident/trident-operator 100.2402.0      24.02.0         A
 ----
 helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=cr.astra.netapp.io/trident-acp:24.02.0 --set enableACP=true --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
 ----
-** 1つのレジストリ内のイメージ
-
-
-[listing]
-----
-helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=<your-registry>:<acp image> --set enableACP=true --set imageRegistry=<your-registry>/sig-storage --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
-----
-** 異なるレジストリ内の画像
+** 1つまたは複数のレジストリ内の画像
 
 
 [listing]
