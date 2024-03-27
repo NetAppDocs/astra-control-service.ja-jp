@@ -1,0 +1,2894 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>アプリケーション実行フックを管理します | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="アプリケーション実行フックを管理します | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html" />
+	<meta property="og:description" content="実行フックは、管理対象アプリケーションのスナップショットの前または後に実行できるカスタムスクリプトです。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/astra-control-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="実行フックは、管理対象アプリケーションのスナップショットの前または後に実行できるカスタムスクリプトです。">
+  <meta name="keywords" content=" execution hook, hook, script, snapshot, backup, freeze, thaw, database"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/astra-control-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ja-jp/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/astra-control-service/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ja-jp/astra-control-service/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/astra-control-service/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-app-execution-hooks.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-service/use/manage-app-execution-hooks.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/astra-control-service/js/na-search.js'></script><script src='/ja-jp/astra-control-service/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ja-jp/astra-control-service/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/astra-control-service/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/astra-control-service/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/astra-control-service/js/jszip.min.js'></script><script src='/ja-jp/astra-control-service/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ja-jp/astra-control-service/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/ja/">
+                <image id="ie-header-logo" src="/ja-jp/astra-control-service/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/ja/support-and-training/documentation/">ドキュメント</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ja-jp/astra-control-service/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">日本語</span>
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/astra-control-service/use/manage-app-execution-hooks.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ja-jp/astra-control-service/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">すべてのNetApp</span>
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/ja/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">サポート</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb-ja.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">ナレッジ ベース</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">トレーニング</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">すべてのドキュメント</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">クラウド ドキュメント</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/ja-jp/astra-family/">
+        Astra
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ja-jp/astra-control-service/">-->
+      Astra Control Service
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ja-jp/astra-control-service/use/manage-app-execution-hooks.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google Cloud">
+    <label>クラウドプロバイダ</label>
+    <div>Google Cloud</div>  
+    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/ja-jp/astra-control-service/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ja-jp/astra-control-service/aws/use/manage-app-execution-hooks.html">Amazon Web Services の
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ja-jp/astra-control-service/gcp/use/manage-app-execution-hooks.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ja-jp/astra-control-service/azure/use/manage-app-execution-hooks.html">Microsoft Azure
+    </li>
+    
+    
+    <li data-url="/ja-jp/astra-control-service/use/manage-app-execution-hooks.html">すべてのクラウドプロバイダ</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ja-jp/astra-control-service/gcp/search.html" 
+        data-type="widget"
+        data-placeholder="ドキュメントを検索"
+        data-no-results-found="{query}に一致する結果は見つかりませんでした"
+        data-did-you-mean="{suggestion}で検索しています。"
+        data-no-results-found-did-you-mean="{query}に一致する結果は見つかりませんでした。{suggestion}で検索しますか？"
+        data-results-found="{hitCount}件の結果が見つかりました"
+        data-error-message="エラーが発生しました。もう一度お試しください。"
+        data-error-reset="検索をリセット"
+        data-sk-es-pf-indexes="" 
+        data-flavor="gcp">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service のドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/index.html">
+        Astra Control Service のドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リリースノート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> リリースノート</div>-->
+         リリースノート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新機能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/whats-new.html">
+        新機能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の問題"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/known-issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/known-issues.html">
+        既知の問題
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の制限"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/release-notes/known-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/known-limitations.html">
+        既知の制限
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="はじめに"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> はじめに</div>-->
+         はじめに
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlの詳細をご確認ください"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/intro.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/intro.html">
+        Astra Controlの詳細をご確認ください
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートされる Kubernetes 環境"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/supported-deployments.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/supported-deployments.html">
+        サポートされる Kubernetes 環境
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/quick-start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/quick-start.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドプロバイダをセットアップします"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドプロバイダをセットアップします</div>-->
+         クラウドプロバイダをセットアップします
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud をセットアップします"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/set-up-google-cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/get-started/set-up-google-cloud.html">
+        Google Cloud をセットアップします
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントに登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/register.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/register.html">
+        アカウントに登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタを追加"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-first-cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/add-first-cluster.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラスタを追加</div>-->
+         クラスタを追加
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プライベートクラスタ用のAstra Connectorのインストール"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/install-astra-connector.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/get-started/install-astra-connector.html">
+        プライベートクラスタ用のAstra Connectorのインストール
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プロバイダ管理クラスタを追加します"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> プロバイダ管理クラスタを追加します</div>-->
+         プロバイダ管理クラスタを追加します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="パブリックプロバイダが管理するクラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-public-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-public-provider-managed-cluster.html">
+        パブリックプロバイダが管理するクラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プロバイダが管理するプライベートクラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-private-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-private-provider-managed-cluster.html">
+        プロバイダが管理するプライベートクラスタを追加します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自己管理型クラスタを追加します"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 自己管理型クラスタを追加します</div>-->
+         自己管理型クラスタを追加します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="パブリック自己管理型クラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-public-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-public-self-managed-cluster.html">
+        パブリック自己管理型クラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プライベート自己管理クラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/add-private-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-private-self-managed-cluster.html">
+        プライベート自己管理クラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Tridentのバージョンを確認"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/check-astra-trident-version.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/check-astra-trident-version.html">
+        Astra Tridentのバージョンを確認
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="kubeconfigファイルを作成します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/create-kubeconfig.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/create-kubeconfig.html">
+        kubeconfigファイルを作成します
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="次の手順"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/whats-next.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/whats-next.html">
+        次の手順
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ビデオ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/videos.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/videos.html">
+        ビデオ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="よく寄せられる質問"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/get-started/faq.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/faq.html">
+        よく寄せられる質問
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アーキテクチャとコンポーネント"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/architecture.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/architecture.html">
+        アーキテクチャとコンポーネント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データ保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/data-protection.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/data-protection.html">
+        データ保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="GKE クラスタ用のストレージ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/choose-class-and-size.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/choose-class-and-size.html">
+        GKE クラスタ用のストレージ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーション管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/app-management.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/app-management.html">
+        アプリケーション管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザロールとネームスペース"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/learn/user-roles-namespaces.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service を使用"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Control Service を使用</div>-->
+         Astra Control Service を使用
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ログインします"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/log-in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/log-in.html">
+        ログインします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリを管理、保護します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アプリを管理、保護します</div>-->
+         アプリを管理、保護します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリの管理を開始します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-apps.html">
+        アプリの管理を開始します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリを保護します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/protect-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/protect-apps.html">
+        アプリを保護します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションのリストア"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/restore-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/restore-apps.html">
+        アプリケーションのリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションのクローン作成と移行"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/clone-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/clone-apps.html">
+        アプリケーションのクローン作成と移行
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーション実行フックを管理します"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-app-execution-hooks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-app-execution-hooks.html">
+        アプリケーション実行フックを管理します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリとコンピューティングの健全性を表示します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アプリとコンピューティングの健全性を表示します</div>-->
+         アプリとコンピューティングの健全性を表示します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ダッシュボードの概要"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-dashboard.html">
+        ダッシュボードの概要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタの健常性と詳細"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-clusters.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-clusters.html">
+        クラスタの健常性と詳細
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションの健全性と詳細"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/view-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-apps.html">
+        アプリケーションの健全性と詳細
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="バケットを管理する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-buckets.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/manage-buckets.html">
+        バケットを管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="実行中のタスクを監視します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/monitor-running-tasks.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/monitor-running-tasks.html">
+        実行中のタスクを監視します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントを管理します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アカウントを管理します</div>-->
+         アカウントを管理します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="請求を設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/set-up-billing.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/set-up-billing.html">
+        請求を設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザーを招待および管理します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-users.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-users.html">
+        ユーザーを招待および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ロールの管理"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-roles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-roles.html">
+        ロールの管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドプロバイダのクレデンシャルを管理する"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-credentials.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-credentials.html">
+        クラウドプロバイダのクレデンシャルを管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントのアクティビティを監視"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/monitor-account-activity.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/monitor-account-activity.html">
+        アカウントのアクティビティを監視
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="通知を管理します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-notifications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-notifications.html">
+        通知を管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントを閉じます"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/close-account.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/close-account.html">
+        アカウントを閉じます
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドインスタンスを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/manage-cloud-instances.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/manage-cloud-instances.html">
+        クラウドインスタンスを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Provisionerを有効にする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/enable-acp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/enable-acp.html">
+        Astra Control Provisionerを有効にする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションとクラスタの管理を解除します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/unmanage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/unmanage.html">
+        アプリケーションとクラスタの管理を解除します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlの自己管理インスタンスを導入"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use/deploy-astra-control-center.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/deploy-astra-control-center.html">
+        Astra Controlの自己管理インスタンスを導入
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlプロビジョニングツールを使用"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Controlプロビジョニングツールを使用</div>-->
+         Astra Controlプロビジョニングツールを使用
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ストレージバックエンドの暗号化の設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/configure-storage-backend-encryption.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/configure-storage-backend-encryption.html">
+        ストレージバックエンドの暗号化の設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Snapshotを使用したボリュームデータのリカバリ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/acp-snap-restore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/acp-snap-restore.html">
+        Snapshotを使用したボリュームデータのリカバリ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapMirrorによるボリュームのレプリケート"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/use-acp/acp-volume-replicate.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/acp-volume-replicate.html">
+        SnapMirrorによるボリュームのレプリケート
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control REST API で自動化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/automation.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/automation.html">
+        Astra Control REST API で自動化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="知識とサポート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 知識とサポート</div>-->
+         知識とサポート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートに登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/register-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/register-support.html">
+        サポートに登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="トラブルシューティング"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/troubleshooting.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/troubleshooting.html">
+        トラブルシューティング
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ヘルプを表示します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/support/get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/get-help.html">
+        ヘルプを表示します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法的通知"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-app-execution-hooks.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ja-jp/astra-control-service"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ja-jp/astra-control-service"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ja-jp/astra-control-service/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">アプリケーション実行フックを管理します</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-11 22:31:35 +0000">03/11/2024</time>
+        
+    
+    
+        <span>共同作成者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />変更を提案</span>
+        <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service.ja-jp/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ja-jp/astra-control-service/use/manage-app-execution-hooks.html&page-title=アプリケーション実行フックを管理します" class="page-nav-contribute-link" role="button">ドキュメントの変更をリクエスト</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/use/manage-app-execution-hooks.adoc" class="page-nav-contribute-link" role="button">このページを編集</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >フィードバックを送るには</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ja-jp/astra-control-service/pdfs/gcp/fullsite-sidebar/Astra_Control_Service_のマニュアル.pdf" >
+                    <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>このドキュメント ページのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/はじめに.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            はじめに
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/クラウドプロバイダをセットアップします.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドプロバイダをセットアップします
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/クラスタを追加.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラスタを追加
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/プロバイダ管理クラスタを追加します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            プロバイダ管理クラスタを追加します
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/自己管理型クラスタを追加します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            自己管理型クラスタを追加します
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/Astra_Control_Service_を使用.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Control Service を使用
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アプリを管理_保護します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アプリを管理、保護します
+          </a>
+          
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アプリとコンピューティングの健全性を表示します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アプリとコンピューティングの健全性を表示します
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アカウントを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アカウントを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/Astra_Controlプロビジョニングツールを使用.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Controlプロビジョニングツールを使用
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/知識とサポート.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            知識とサポート
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ja-jp/astra-control-service/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>PDF版ドキュメントのセット<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>実行フックは、管理対象アプリケーションのデータ保護操作と組み合わせて実行するように構成できるカスタムアクションです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックのタイプ">実行フックのタイプ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Serviceでは、実行可能なタイミングに基づいて、次のタイプの実行フックがサポートされます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Snapshot前</p>
+</li>
+<li>
+<p>Snapshot後</p>
+</li>
+<li>
+<p>バックアップ前</p>
+</li>
+<li>
+<p>バックアップ後</p>
+</li>
+<li>
+<p>リストア後のPOSTコマンドです</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックフィルタ">実行フックフィルタ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アプリケーションに実行フックを追加または編集するときに、実行フックにフィルタを追加して、フックが一致するコンテナを管理できます。フィルタは、すべてのコンテナで同じコンテナイメージを使用し、各イメージを別の目的（Elasticsearchなど）に使用するアプリケーションに便利です。フィルタを使用すると、一部の同一コンテナで実行フックが実行されるシナリオを作成できます。1つの実行フックに対して複数のフィルタを作成すると、それらは論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを使用できます。</p>
+</div>
+<div class="paragraph">
+<p>実行フックに追加する各フィルタは、正規表現を使用してクラスタ内のコンテナを照合します。フックがコンテナと一致すると、そのコンテナに関連付けられたスクリプトがフックによって実行されます。フィルタの正規表現では、正規表現2（RE2）構文を使用します。この構文では、一致リストからコンテナを除外するフィルタの作成はサポートされていません。実行フックフィルタの正規表現でAstra Controlがサポートする構文については、を参照してください <a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="noopener">"正規表現2（RE2）構文のサポート"</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+リストアまたはクローン処理のあとに実行される実行フックにネームスペースフィルタを追加し、リストアまたはクローンのソースとデスティネーションが異なるネームスペースにある場合、ネームスペースフィルタはデスティネーションネームスペースにのみ適用されます。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="カスタム実行フックに関する重要な注意事項">カスタム実行フックに関する重要な注意事項</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アプリケーションの実行フックを計画するときは、次の点を考慮してください。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>実行フックは、実行中のアプリケーションの機能を低下させたり、完全に無効にしたりすることが多いため、カスタム実行フックの実行時間を最小限に抑えるようにしてください。<br>
+実行フックが関連付けられている状態でバックアップまたはスナップショット操作を開始した後'キャンセルした場合でも'バックアップまたはスナップショット操作がすでに開始されていればフックは実行できますつまり、バックアップ後の実行フックで使用されるロジックは、バックアップが完了したとは見なされません。</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>新しいAstra Control環境では、実行フック機能はデフォルトで無効になっています。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>実行フックを使用する前に、実行フック機能を有効にする必要があります。</p>
+</li>
+<li>
+<p>所有者ユーザまたは管理者ユーザは、現在のAstra Controlアカウントで定義されているすべてのユーザの実行フック機能を有効または無効にできます。を参照してください <a href="#実行フック機能を有効にする">実行フック機能を有効にする</a> および <a href="#実行フック機能を無効にする">実行フック機能を無効にする</a> 手順については、を参照し</p>
+</li>
+<li>
+<p>機能の有効化ステータスは、Astra Controlのアップグレード中も維持されます。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>実行フックは、スクリプトを使用してアクションを実行する必要があります。多くの実行フックは、同じスクリプトを参照できます。</p>
+</li>
+<li>
+<p>Astra Controlでは、実行フックが実行可能なシェルスクリプトの形式で記述されるようにするスクリプトが必要です。</p>
+</li>
+<li>
+<p>スクリプトのサイズは96KBに制限されています。</p>
+</li>
+<li>
+<p>Astra Controlは、実行フックの設定と一致条件を使用して、スナップショット、バックアップ、または復元操作に適用できるフックを決定します。</p>
+</li>
+<li>
+<p>実行フックの障害はすべて'ソフトな障害ですフックが失敗しても'他のフックとデータ保護操作は試行されますただし、フックが失敗すると、 * アクティビティ * ページイベントログに警告イベントが記録されます。</p>
+</li>
+<li>
+<p>実行フックを作成、編集、または削除するには、 Owner 、 Admin 、または Member 権限を持つユーザーである必要があります。</p>
+</li>
+<li>
+<p>実行フックの実行に 25 分以上かかる場合 ' フックは失敗し ' 戻りコードが N/A のイベント・ログ・エントリが作成されます該当する Snapshot はタイムアウトして失敗とマークされ、タイムアウトを通知するイベントログエントリが生成されます。</p>
+</li>
+<li>
+<p>アドホックデータ保護操作の場合、すべてのフックイベントが生成され、*アクティビティ*ページイベントログに保存されます。ただし、スケジュールされたデータ保護処理については、フック障害イベントだけがイベントログに記録されます（スケジュールされたデータ保護処理自体によって生成されたイベントは記録されたままです）。</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="実行順序">実行順序</h3>
+<div class="paragraph">
+<p>データ保護操作を実行すると、実行フックイベントが次の順序で実行されます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>適用可能なカスタムプリオペレーション実行フックは、適切なコンテナで実行されます。カスタムのプリオペレーションフックは必要なだけ作成して実行できますが、操作前のこれらのフックの実行順序は保証も構成もされていません。</p>
+</li>
+<li>
+<p>データ保護処理が実行されます。</p>
+</li>
+<li>
+<p>適用可能なカスタムポストオペレーション実行フックは、適切なコンテナで実行されます。必要な数のカスタムポストオペレーションフックを作成して実行できますが、操作後のこれらのフックの実行順序は保証されず、設定もできません。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>同じ種類の実行フック（スナップショット前など）を複数作成する場合、これらのフックの実行順序は保証されません。ただし、異なるタイプのフックの実行順序は保証されています。たとえば、すべての異なるタイプのフックを持つ構成の実行順序は次のようになります。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>予備フックが実行されます</p>
+</li>
+<li>
+<p>スナップショット前フックが実行されます</p>
+</li>
+<li>
+<p>スナップショット後フックが実行されます</p>
+</li>
+<li>
+<p>バックアップ後のフックが実行されます</p>
+</li>
+<li>
+<p>復元後のフックが実行されます</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>シナリオ番号2のこの設定の例は、の表を参照してください <a href="#フックが実行されるかどうかを確認します">フックが実行されるかどうかを確認します</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+本番環境で実行スクリプトを有効にする前に、必ず実行フックスクリプトをテストしてください。'kubectl exec' コマンドを使用すると、スクリプトを簡単にテストできます。本番環境で実行フックを有効にしたら、作成されたSnapshotとバックアップをテストして整合性があることを確認します。これを行うには、アプリケーションを一時的なネームスペースにクローニングし、スナップショットまたはバックアップをリストアしてから、アプリケーションをテストします。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="フックが実行されるかどうかを確認します">フックが実行されるかどうかを確認します</h3>
+<div class="paragraph">
+<p>次の表を使用して、アプリケーションでカスタム実行フックが実行されるかどうかを判断します。</p>
+</div>
+<div class="paragraph">
+<p>アプリケーションの高レベルの処理は、すべてスナップショット、バックアップ、またはリストアの基本的な処理のいずれかを実行することで構成されることに注意してください。シナリオによっては、クローニング処理はこれらの処理のさまざまな組み合わせで構成されるため、クローン処理を実行する実行フックはさまざまです。</p>
+</div>
+<div class="paragraph">
+<p>In Placeリストア処理では既存のSnapshotまたはバックアップが必要になるため、これらの処理ではSnapshotまたはバックアップフックは実行されません。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>開始してスナップショットを含むバックアップをキャンセルし'実行フックが関連付けられている場合は'一部のフックが実行され'ほかのフックが実行されないことがありますつまり、バックアップ後の実行フックでは、バックアップが完了したとは判断できません。キャンセルしたバックアップに関連する実行フックがある場合は、次の点に注意してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>バックアップ前およびバックアップ後のフックは常に実行されます。</p>
+</li>
+<li>
+<p>バックアップに新しいスナップショットが含まれており'スナップショットが開始されている場合は'スナップショット前フックとスナップショット後フックが実行されます</p>
+</li>
+<li>
+<p>スナップショットの開始前にバックアップがキャンセルされた場合は'スナップショット前フックとスナップショット後フックは実行されません</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">シナリオ（ Scenario ）</th>
+<th class="tableblock halign-left valign-top">操作</th>
+<th class="tableblock halign-left valign-top">既存のSnapshot</th>
+<th class="tableblock halign-left valign-top">既存のバックアップ</th>
+<th class="tableblock halign-left valign-top">ネームスペース</th>
+<th class="tableblock halign-left valign-top">クラスタ</th>
+<th class="tableblock halign-left valign-top">スナップショットフックが実行されます</th>
+<th class="tableblock halign-left valign-top">バックアップフックが実行されます</th>
+<th class="tableblock halign-left valign-top">フックを元に戻します</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">同じ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">違う</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローンまたはリストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">同じ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローンまたはリストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">同じ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローンまたはリストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">違う</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クローンまたはリストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">新規</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">違う</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">既存</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">同じ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リストア</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">既存</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">同じ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">スナップショット</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バックアップ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">該当なし</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックの例">実行フックの例</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>にアクセスします <a href="https://github.com/NetApp/Verda">"NetApp Verda GitHubプロジェクト"</a> Apache CassandraやElasticsearchなどの一般的なアプリケーションの実行フックをダウンロードします。また、独自のカスタム実行フックを構築するための例やアイデアを得ることもできます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フック機能を有効にする">実行フック機能を有効にする</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>所有者または管理者ユーザーの場合は、実行フック機能を有効にできます。この機能を有効にすると、このAstra Controlアカウントで定義されているすべてのユーザが実行フックを使用して、既存の実行フックとフックスクリプトを表示できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」に移動し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>*実行フックを有効にする*を選択します。</p>
+<div class="paragraph">
+<p><strong>アカウント</strong>&gt;*機能設定*タブが表示されます。</p>
+</div>
+</li>
+<li>
+<p>Execution Hooks*ペインで、設定メニューを選択します。</p>
+</li>
+<li>
+<p>[ 有効 ] を選択します。</p>
+</li>
+<li>
+<p>表示されるセキュリティ警告を確認します。</p>
+</li>
+<li>
+<p>[はい、実行フックを有効にする]*を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フック機能を無効にする">実行フック機能を無効にする</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>所有者または管理者ユーザは、このAstra Controlアカウントで定義されているすべてのユーザに対して実行フック機能を無効にすることができます。実行フック機能を無効にする前に、既存の実行フックをすべて削除する必要があります。を参照してください <a href="#実行フックを削除します">実行フックを削除します</a> 既存の実行フックを削除する手順については、を参照してください。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p><strong class="アカウント">に移動し、</strong>[機能設定]*タブを選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>Execution Hooks*ペインで、設定メニューを選択します。</p>
+</li>
+<li>
+<p>[<strong>Disable</strong>] を選択します。</p>
+</li>
+<li>
+<p>表示される警告を確認します。</p>
+</li>
+<li>
+<p>を入力します <code>disable</code> をクリックして、すべてのユーザに対してこの機能を無効にすることを確認します。</p>
+</li>
+<li>
+<p>[はい、無効にする]*を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="既存の実行フックを表示します">既存の実行フックを表示します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アプリケーションの既存のカスタム実行フックを表示できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」に移動し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+<div class="paragraph">
+<p>有効または無効になっているすべての実行フックを結果リストに表示できます。フックのステータス、一致するコンテナの数、作成時間、および実行時間（プリ/ポストオペレーション）を確認できます。を選択できます <code>+</code> アイコンをクリックして、実行するコンテナのリストを展開します。このアプリケーションの実行フックに関連するイベントログを表示するには、*アクティビティ*タブに移動します。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="既存のスクリプトを表示します">既存のスクリプトを表示します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アップロードされた既存のスクリプトを表示できます。このページでは、使用中のスクリプトと、使用中のフックを確認することもできます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「<strong>アカウント</strong>」に移動します。</p>
+</li>
+<li>
+<p>[<strong>スクリプト</strong>]タブを選択します。</p>
+<div class="paragraph">
+<p>このページには、アップロードされた既存のスクリプトのリストが表示されます。[使用者*]列には、各スクリプトを使用している実行フックが表示されます。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="スクリプトを追加します">スクリプトを追加します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>各実行フックは、スクリプトを使用してアクションを実行する必要があります。実行フックが参照できるスクリプトを1つ以上追加できます。多くの実行フックは同じスクリプトを参照できます。これにより、1つのスクリプトを変更するだけで多くの実行フックを更新できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>実行フック機能が <a href="#実行フック機能を有効にする">有効</a>。</p>
+</li>
+<li>
+<p>「<strong>アカウント</strong>」に移動します。</p>
+</li>
+<li>
+<p>[<strong>スクリプト</strong>]タブを選択します。</p>
+</li>
+<li>
+<p>「 * 追加」を選択します。</p>
+</li>
+<li>
+<p>次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>カスタムスクリプトをアップロードする。</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>[ ファイルのアップロード（ Upload file ） ] オプションを選択します。</p>
+</li>
+<li>
+<p>ファイルを参照してアップロードします。</p>
+</li>
+<li>
+<p>スクリプトに一意の名前を付けます。</p>
+</li>
+<li>
+<p>（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</p>
+</li>
+<li>
+<p>「<strong>スクリプトを保存</strong>」を選択します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>クリップボードからカスタムスクリプトを貼り付けます。</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>[貼り付け（Paste）]または[タイプ（* type）]オプションを選択する</p>
+</li>
+<li>
+<p>テキストフィールドを選択し、スクリプトテキストをフィールドに貼り付けます。</p>
+</li>
+<li>
+<p>スクリプトに一意の名前を付けます。</p>
+</li>
+<li>
+<p>（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「<strong>スクリプトを保存</strong>」を選択します。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">結果</div>
+<p>新しいスクリプトが、[<strong>スクリプト</strong>]タブのリストに表示されます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="スクリプトを削除します">スクリプトを削除します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>不要になって実行フックで使用されなくなったスクリプトは、システムから削除できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「<strong>アカウント</strong>」に移動します。</p>
+</li>
+<li>
+<p>[<strong>スクリプト</strong>]タブを選択します。</p>
+</li>
+<li>
+<p>削除するスクリプトを選択し、「<strong>アクション</strong>」列のメニューを選択します。</p>
+</li>
+<li>
+<p>「 * 削除」を選択します。</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+スクリプトが1つまたは複数の実行フックに関連付けられている場合、*Delete*アクションは使用できません。スクリプトを削除するには、まず関連する実行フックを編集し、別のスクリプトに関連付けます。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="カスタム実行フックを作成します">カスタム実行フックを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アプリケーションのカスタム実行フックを作成してAstra Controlに追加できます。を参照してください <a href="#実行フックの例">実行フックの例</a> フックの例を参照してください。実行フックを作成するには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+実行フックとして使用するカスタムシェルスクリプトを作成する場合は、特定のコマンドを実行するか、実行可能ファイルへの完全パスを指定する場合を除き、ファイルの先頭に適切なシェルを指定するようにしてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>実行フック機能が <a href="#実行フック機能を有効にする">有効</a>。</p>
+</li>
+<li>
+<p>「 * アプリケーション」を選択し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>「 * 追加」を選択します。</p>
+</li>
+<li>
+<p>[フックの詳細*（Hook Details *）]領域で、次の</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>*操作*ドロップダウンメニューから操作タイプを選択して、フックをいつ実行するかを決定します。</p>
+</li>
+<li>
+<p>フックの一意の名前を入力します。</p>
+</li>
+<li>
+<p>（オプション）実行中にフックに渡す引数を入力し、各引数を入力した後で Enter キーを押して、それぞれを記録します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>（オプション）<strong>フックフィルタの詳細</strong>（* Hook Filter Details *）領域で、実行フックが実行されるコンテナを制御するフィルタを追加できます。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>[<strong>フィルタの追加</strong>]を選択します。</p>
+</li>
+<li>
+<p>[フックフィルタータイプ*]列で、フィルターを適用する属性をドロップダウンメニューから選択します。</p>
+</li>
+<li>
+<p>[<strong>Regex</strong>]列に、フィルタとして使用する正規表現を入力します。Astra Controlでは、を使用します <a href="https://github.com/google/re2/wiki/Syntax" target="_blank" rel="noopener">"正規表現2（RE2）正規表現の正規表現構文"</a>。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+正規表現フィールドに他のテキストが含まれていない属性（ポッド名など）の正確な名前でフィルタリングすると、サブストリングの一致が実行されます。正確な名前とその名前だけを照合するには、完全に一致する文字列の一致構文を使用します（例： <code>^exact_podname$</code>）。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>フィルタをさらに追加するには、*フィルタを追加*を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+実行フックの複数のフィルタは、論理AND演算子と結合されます。実行フックごとに最大10個のアクティブフィルタを使用できます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>完了したら、「<strong>次へ</strong>」を選択します。</p>
+</li>
+<li>
+<p>[* スクリプト * （ * Script * ） ] 領域で、次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>新しいスクリプトを追加します。</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>「 * 追加」を選択します。</p>
+</li>
+<li>
+<p>次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>カスタムスクリプトをアップロードする。</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>[ ファイルのアップロード（ Upload file ） ] オプションを選択します。</p>
+</li>
+<li>
+<p>ファイルを参照してアップロードします。</p>
+</li>
+<li>
+<p>スクリプトに一意の名前を付けます。</p>
+</li>
+<li>
+<p>（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</p>
+</li>
+<li>
+<p>「<strong>スクリプトを保存</strong>」を選択します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>クリップボードからカスタムスクリプトを貼り付けます。</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>[貼り付け（Paste）]または[タイプ（* type）]オプションを選択する</p>
+</li>
+<li>
+<p>テキストフィールドを選択し、スクリプトテキストをフィールドに貼り付けます。</p>
+</li>
+<li>
+<p>スクリプトに一意の名前を付けます。</p>
+</li>
+<li>
+<p>（オプション）他の管理者がスクリプトについて知っておく必要があるメモを入力します。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>リストから既存のスクリプトを選択します。</p>
+<div class="paragraph">
+<p>このスクリプトを使用するように実行フックに指示します。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>実行フックの設定を確認します。</p>
+</li>
+<li>
+<p>「 * 追加」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックの状態を確認します">実行フックの状態を確認します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>スナップショット、バックアップ、または復元操作の実行が終了したら、操作の一部として実行された実行フックの状態を確認できます。このステータス情報を使用して、実行フックを保持するか、変更するか、削除するかを決定できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」を選択し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[<strong>データ保護</strong>]タブを選択します。</p>
+</li>
+<li>
+<p>実行中のSnapshotを表示するには「* Snapshots」を選択し、実行中のバックアップを表示するには「* Backups」を選択します。</p>
+<div class="paragraph">
+<p>フック状態*は、操作完了後の実行フックランのステータスを示します。状態にカーソルを合わせると、詳細を確認できます。たとえば、スナップショット中に実行フック障害が発生した場合、そのスナップショットのフック状態にカーソルを合わせると、失敗した実行フックのリストが表示されます。各失敗の理由を確認するには、左側のナビゲーション領域の*アクティビティ*ページを確認します。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="スクリプトの使用状況を表示します">スクリプトの使用状況を表示します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>どの実行フックがAstra Control Web UIの特定のスクリプトを使用しているかを確認できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アカウント * 」を選択します。</p>
+</li>
+<li>
+<p>[<strong>スクリプト</strong>]タブを選択します。</p>
+<div class="paragraph">
+<p>スクリプトのリストにある* Used by *列には、リスト内の各スクリプトを使用しているフックの詳細が表示されます。</p>
+</div>
+</li>
+<li>
+<p>目的のスクリプトの[使用者*]列の情報を選択します。</p>
+<div class="paragraph">
+<p>より詳細なリストが表示され、スクリプトを使用しているフックの名前と、それらが実行されるように構成されている操作のタイプが示されます。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックを編集します">実行フックを編集します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>実行フックを編集して、その属性、フィルタ、または使用するスクリプトを変更できます。実行フックを編集するには、Owner、Admin、またはMemberのいずれかの権限が必要です。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」を選択し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>編集するフックの*アクション*列のオプションメニューを選択します。</p>
+</li>
+<li>
+<p>「 * 編集 * 」を選択します。</p>
+</li>
+<li>
+<p>各セクションを完了したら、「<strong>次へ</strong>」を選択して、必要な変更を行います。</p>
+</li>
+<li>
+<p>[ 保存（ Save ） ] を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックを無効にします">実行フックを無効にします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アプリケーションのスナップショットの前または後に実行を一時的に禁止する場合は、実行フックを無効にできます。実行フックを無効にするには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」を選択し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>無効にするフックの * アクション * 列のオプションメニューを選択します。</p>
+</li>
+<li>
+<p>[<strong>Disable</strong>] を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="実行フックを削除します">実行フックを削除します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>不要になった実行フックは完全に削除できます。実行フックを削除するには、 Owner 、 Admin 、または Member のいずれかの権限が必要です。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>「 * アプリケーション」を選択し、管理アプリの名前を選択します。</p>
+</li>
+<li>
+<p>[ 実行フック * ] タブを選択します。</p>
+</li>
+<li>
+<p>削除するフックの * アクション * 列のオプションメニューを選択します。</p>
+</li>
+<li>
+<p>「 * 削除」を選択します。</p>
+</li>
+<li>
+<p>表示されたダイアログで、「delete」と入力して確定します。</p>
+</li>
+<li>
+<p>[はい]を選択し、実行フックを削除します。*</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="を参照してください">を参照してください。</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/NetApp/Verda">"NetApp Verda GitHubプロジェクト"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">このページ</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">ご利用規約</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">このページに関するフィードバックをお寄せください</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/astra-control-service/js/ie-tabbed-blocks.js'></script>
+    <script src='/ja-jp/astra-control-service/js/ie-sidebar.js'></script>
+  </body>
+
+</html>

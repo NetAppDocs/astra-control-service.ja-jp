@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>Google Cloud をセットアップします | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Google Cloud をセットアップします | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-google-cloud.html" />
+	<meta property="og:description" content="Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/astra-control-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。">
+  <meta name="keywords" content=" google cloud, google cloud platform, gcp, set up google cloud, set up gcp, set up service account, create service account, project, gcp project, permissions gcp permissions, service account permissions, key, service account key, json, key json, roles, service account roles, gcp roles, cvs, cvs for aws, cloud volumes service apis, apis, networking, cvs networking, cloud volumes service networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, google cloud regions, gcp regions, kubernetes version, image type, networking, container os"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/astra-control-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ja-jp/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/astra-control-service/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ja-jp/astra-control-service/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/astra-control-service/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/astra-control-service/get-started/set-up-google-cloud.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-service/get-started/set-up-google-cloud.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/astra-control-service/js/na-search.js'></script><script src='/ja-jp/astra-control-service/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ja-jp/astra-control-service/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/astra-control-service/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/astra-control-service/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/astra-control-service/js/jszip.min.js'></script><script src='/ja-jp/astra-control-service/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ja-jp/astra-control-service/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/ja/">
+                <image id="ie-header-logo" src="/ja-jp/astra-control-service/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/ja/support-and-training/documentation/">ドキュメント</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ja-jp/astra-control-service/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">日本語</span>
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/astra-control-service/get-started/set-up-google-cloud.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ja-jp/astra-control-service/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">すべてのNetApp</span>
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/ja/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">サポート</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb-ja.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">ナレッジ ベース</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">トレーニング</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">すべてのドキュメント</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">クラウド ドキュメント</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/ja-jp/astra-family/">
+        Astra
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ja-jp/astra-control-service/">-->
+      Astra Control Service
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/ja-jp/astra-control-service/get-started/set-up-google-cloud.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google Cloud">
+    <label>クラウドプロバイダ</label>
+    <div>Google Cloud</div>  
+    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/ja-jp/astra-control-service/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/ja-jp/astra-control-service/aws">Amazon Web Services の</li>
+    
+    
+    
+    <li data-value="gcp" data-url="/ja-jp/astra-control-service/gcp/get-started/set-up-google-cloud.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/ja-jp/astra-control-service/azure">Microsoft Azure</li>
+    
+    
+    <li data-url="/ja-jp/astra-control-service/get-started/set-up-google-cloud.html">すべてのクラウドプロバイダ</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ja-jp/astra-control-service/gcp/search.html" 
+        data-type="widget"
+        data-placeholder="ドキュメントを検索"
+        data-no-results-found="{query}に一致する結果は見つかりませんでした"
+        data-did-you-mean="{suggestion}で検索しています。"
+        data-no-results-found-did-you-mean="{query}に一致する結果は見つかりませんでした。{suggestion}で検索しますか？"
+        data-results-found="{hitCount}件の結果が見つかりました"
+        data-error-message="エラーが発生しました。もう一度お試しください。"
+        data-error-reset="検索をリセット"
+        data-sk-es-pf-indexes="" 
+        data-flavor="gcp">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service のドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/index.html">
+        Astra Control Service のドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リリースノート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> リリースノート</div>-->
+         リリースノート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新機能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/release-notes/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/whats-new.html">
+        新機能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の問題"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/release-notes/known-issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/known-issues.html">
+        既知の問題
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="既知の制限"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/release-notes/known-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/release-notes/known-limitations.html">
+        既知の制限
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="はじめに"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> はじめに</div>-->
+         はじめに
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlの詳細をご確認ください"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/intro.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/intro.html">
+        Astra Controlの詳細をご確認ください
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートされる Kubernetes 環境"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/supported-deployments.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/supported-deployments.html">
+        サポートされる Kubernetes 環境
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クイックスタート"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/quick-start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/quick-start.html">
+        クイックスタート
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドプロバイダをセットアップします"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラウドプロバイダをセットアップします</div>-->
+         クラウドプロバイダをセットアップします
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Google Cloud をセットアップします"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/set-up-google-cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/get-started/set-up-google-cloud.html">
+        Google Cloud をセットアップします
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントに登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/register.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/register.html">
+        アカウントに登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタを追加"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/add-first-cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/add-first-cluster.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラスタを追加</div>-->
+         クラスタを追加
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プライベートクラスタ用のAstra Connectorのインストール"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/install-astra-connector.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/get-started/install-astra-connector.html">
+        プライベートクラスタ用のAstra Connectorのインストール
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プロバイダ管理クラスタを追加します"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> プロバイダ管理クラスタを追加します</div>-->
+         プロバイダ管理クラスタを追加します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="パブリックプロバイダが管理するクラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/add-public-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-public-provider-managed-cluster.html">
+        パブリックプロバイダが管理するクラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プロバイダが管理するプライベートクラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/add-private-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-private-provider-managed-cluster.html">
+        プロバイダが管理するプライベートクラスタを追加します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="自己管理型クラスタを追加します"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 自己管理型クラスタを追加します</div>-->
+         自己管理型クラスタを追加します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="パブリック自己管理型クラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/add-public-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-public-self-managed-cluster.html">
+        パブリック自己管理型クラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プライベート自己管理クラスタを追加します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/add-private-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/add-private-self-managed-cluster.html">
+        プライベート自己管理クラスタを追加します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Tridentのバージョンを確認"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/check-astra-trident-version.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/check-astra-trident-version.html">
+        Astra Tridentのバージョンを確認
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="kubeconfigファイルを作成します"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/create-kubeconfig.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/ja-jp/astra-control-service/gcp/get-started/create-kubeconfig.html">
+        kubeconfigファイルを作成します
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="次の手順"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/whats-next.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/whats-next.html">
+        次の手順
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ビデオ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/videos.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/videos.html">
+        ビデオ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="よく寄せられる質問"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/get-started/faq.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/get-started/faq.html">
+        よく寄せられる質問
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アーキテクチャとコンポーネント"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/learn/architecture.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/architecture.html">
+        アーキテクチャとコンポーネント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データ保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/learn/data-protection.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/data-protection.html">
+        データ保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="GKE クラスタ用のストレージ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/learn/choose-class-and-size.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/choose-class-and-size.html">
+        GKE クラスタ用のストレージ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーション管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/learn/app-management.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/app-management.html">
+        アプリケーション管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザロールとネームスペース"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/learn/user-roles-namespaces.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/learn/user-roles-namespaces.html">
+        ユーザロールとネームスペース
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service を使用"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Control Service を使用</div>-->
+         Astra Control Service を使用
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ログインします"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/log-in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/log-in.html">
+        ログインします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリを管理、保護します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アプリを管理、保護します</div>-->
+         アプリを管理、保護します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリの管理を開始します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-apps.html">
+        アプリの管理を開始します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリを保護します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/protect-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/protect-apps.html">
+        アプリを保護します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションのリストア"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/restore-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/restore-apps.html">
+        アプリケーションのリストア
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションのクローン作成と移行"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/clone-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/clone-apps.html">
+        アプリケーションのクローン作成と移行
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーション実行フックを管理します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-app-execution-hooks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-app-execution-hooks.html">
+        アプリケーション実行フックを管理します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリとコンピューティングの健全性を表示します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アプリとコンピューティングの健全性を表示します</div>-->
+         アプリとコンピューティングの健全性を表示します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ダッシュボードの概要"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/view-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-dashboard.html">
+        ダッシュボードの概要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタの健常性と詳細"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/view-clusters.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-clusters.html">
+        クラスタの健常性と詳細
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションの健全性と詳細"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/view-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/view-apps.html">
+        アプリケーションの健全性と詳細
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="バケットを管理する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-buckets.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/manage-buckets.html">
+        バケットを管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="実行中のタスクを監視します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/monitor-running-tasks.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/monitor-running-tasks.html">
+        実行中のタスクを監視します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントを管理します"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> アカウントを管理します</div>-->
+         アカウントを管理します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="請求を設定します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/set-up-billing.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/set-up-billing.html">
+        請求を設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザーを招待および管理します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-users.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-users.html">
+        ユーザーを招待および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ロールの管理"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-roles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-roles.html">
+        ロールの管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドプロバイダのクレデンシャルを管理する"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-credentials.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-credentials.html">
+        クラウドプロバイダのクレデンシャルを管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントのアクティビティを監視"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/monitor-account-activity.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/monitor-account-activity.html">
+        アカウントのアクティビティを監視
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="通知を管理します"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-notifications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/manage-notifications.html">
+        通知を管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アカウントを閉じます"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/close-account.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/astra-control-service/gcp/use/close-account.html">
+        アカウントを閉じます
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラウドインスタンスを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/manage-cloud-instances.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/manage-cloud-instances.html">
+        クラウドインスタンスを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Provisionerを有効にする"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/enable-acp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/enable-acp.html">
+        Astra Control Provisionerを有効にする
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アプリケーションとクラスタの管理を解除します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/unmanage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/unmanage.html">
+        アプリケーションとクラスタの管理を解除します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlの自己管理インスタンスを導入"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use/deploy-astra-control-center.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use/deploy-astra-control-center.html">
+        Astra Controlの自己管理インスタンスを導入
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Controlプロビジョニングツールを使用"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Astra Controlプロビジョニングツールを使用</div>-->
+         Astra Controlプロビジョニングツールを使用
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ストレージバックエンドの暗号化の設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use-acp/configure-storage-backend-encryption.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/configure-storage-backend-encryption.html">
+        ストレージバックエンドの暗号化の設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Snapshotを使用したボリュームデータのリカバリ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use-acp/acp-snap-restore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/acp-snap-restore.html">
+        Snapshotを使用したボリュームデータのリカバリ
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="SnapMirrorによるボリュームのレプリケート"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/use-acp/acp-volume-replicate.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/use-acp/acp-volume-replicate.html">
+        SnapMirrorによるボリュームのレプリケート
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control REST API で自動化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/automation.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/automation.html">
+        Astra Control REST API で自動化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="知識とサポート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 知識とサポート</div>-->
+         知識とサポート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="サポートに登録します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/support/register-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/register-support.html">
+        サポートに登録します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="トラブルシューティング"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/support/troubleshooting.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/troubleshooting.html">
+        トラブルシューティング
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ヘルプを表示します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/support/get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/astra-control-service/gcp/support/get-help.html">
+        ヘルプを表示します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法的通知"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/get-started/set-up-google-cloud.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/astra-control-service/gcp/legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ja-jp/astra-control-service"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ja-jp/astra-control-service"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ja-jp/astra-control-service/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Google Cloud をセットアップします</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-14 22:21:56 +0000">03/14/2024</time>
+        
+    
+    
+        <span>共同作成者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ja-jp/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />変更を提案</span>
+        <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service.ja-jp/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-google-cloud.html&page-title=Google Cloud をセットアップします" class="page-nav-contribute-link" role="button">ドキュメントの変更をリクエスト</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/set-up-google-cloud.adoc" class="page-nav-contribute-link" role="button">このページを編集</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >フィードバックを送るには</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ja-jp/astra-control-service/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ja-jp/astra-control-service/pdfs/gcp/fullsite-sidebar/Astra_Control_Service_のマニュアル.pdf" >
+                    <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>このドキュメント ページのPDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/はじめに.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            はじめに
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/クラウドプロバイダをセットアップします.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラウドプロバイダをセットアップします
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/クラスタを追加.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラスタを追加
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/プロバイダ管理クラスタを追加します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            プロバイダ管理クラスタを追加します
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/自己管理型クラスタを追加します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            自己管理型クラスタを追加します
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/Astra_Control_Service_を使用.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Control Service を使用
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アプリを管理_保護します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アプリを管理、保護します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アプリとコンピューティングの健全性を表示します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アプリとコンピューティングの健全性を表示します
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/アカウントを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            アカウントを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/Astra_Controlプロビジョニングツールを使用.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Astra Controlプロビジョニングツールを使用
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/astra-control-service/pdfs/gcp/sidebar/知識とサポート.pdf" 
+            
+          >
+            <img src="/ja-jp/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            知識とサポート
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ja-jp/astra-control-service/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>PDF版ドキュメントのセット<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Astra Control Service を使用して Google Kubernetes Engine クラスタを管理するには、 Google Cloud プロジェクトを準備するための手順がいくつか必要です。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+Google Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用せず、あとで使用する予定の場合は、 Google Cloud Volumes Service for Google Cloud を今すぐ設定するために必要な手順を実行する必要があります。サービスアカウントをあとで作成すると、既存のストレージバケットへのアクセスが失われる可能性があります。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="google-cloud-のセットアップをすぐに開始できます">Google Cloud のセットアップをすぐに開始できます</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>これらの手順を実行してすぐに作業を開始するか、残りのセクションまでスクロールして詳細を確認してください。</p>
+</div>
+<div class="sect2">
+<h3 id="google-kubernetes-engine-の-astra-control-service-の要件を確認"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="1つ"></span> Google Kubernetes Engine の Astra Control Service の要件を確認</h3>
+<div class="paragraph quick-margin-para">
+<p>クラスタが正常で、サポートされているKubernetesバージョンが実行されていること、ワーカーノードがオンラインでサポートされているイメージタイプが実行されていることなどを確認します。 <a href="#gke-クラスタの要件">このステップの詳細をご覧ください</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="オプション-cloud-volumes-service-for-google-cloud-を購入します"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="2 つ"></span> （オプション）： Cloud Volumes Service for Google Cloud を購入します</h3>
+<div class="paragraph quick-margin-para">
+<p>ストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する場合は、 Google Cloud Marketplace の NetApp Cloud Volumes Service ページに移動して、「購入」を選択します。 <a href="#オプションcloud-volumes-service-for-google-cloudを購入">このステップの詳細をご覧ください</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="google-cloud-プロジェクトで-api-を有効にします"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="3つ"></span> Google Cloud プロジェクトで API を有効にします</h3>
+<div class="paragraph quick-margin-para">
+<p>次の Google Cloud API を有効にします。</p>
+</div>
+<div class="ulist quick-margin-list">
+<ul>
+<li>
+<p>Google Kubernetes Engine の略</p>
+</li>
+<li>
+<p>クラウドストレージ</p>
+</li>
+<li>
+<p>Cloud Storage JSON API</p>
+</li>
+<li>
+<p>サービス利用</p>
+</li>
+<li>
+<p>Cloud Resource Manager API の略</p>
+</li>
+<li>
+<p>NetApp Cloud Volumes Service の略</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes Service for Google Cloud で必要です</p>
+</li>
+<li>
+<p>Google Persistent Disk の場合はオプション（ただし推奨</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Service Consumer Management API の略</p>
+</li>
+<li>
+<p>サービスネットワーク API</p>
+</li>
+<li>
+<p>Service Management API の略</p>
+</li>
+</ul>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#プロジェクトで-api-を有効にします">ステップバイステップの手順に従います</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="必要な権限を持つサービスアカウントを作成します"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="4."></span> 必要な権限を持つサービスアカウントを作成します</h3>
+<div class="paragraph quick-margin-para">
+<p>次の権限を持つ Google Cloud サービスアカウントを作成します。</p>
+</div>
+<div class="ulist quick-margin-list">
+<ul>
+<li>
+<p>Kubernetes Engine Admin の略</p>
+</li>
+<li>
+<p>NetApp Cloud Volumes Admin の権限が必要です</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes Service for Google Cloud で必要です</p>
+</li>
+<li>
+<p>Google Persistent Disk の場合はオプション（ただし推奨</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ストレージ管理者</p>
+</li>
+<li>
+<p>Service Usage Viewer （サービス使用状況ビューア</p>
+</li>
+<li>
+<p>ネットワークビューアを計算します</p>
+</li>
+</ul>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#サービスアカウントを作成します">詳細な手順を参照してください</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="サービスアカウントキーを作成します"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="5 つ"></span> サービスアカウントキーを作成します</h3>
+<div class="paragraph quick-margin-para">
+<p>サービスアカウントのキーを作成し、そのキーファイルを安全な場所に保存します。 <a href="#サービスアカウントキーを作成します">ステップバイステップの手順に従います</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="オプション-vpc-のネットワークピアリングを設定します"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="6"></span> （オプション）： VPC のネットワークピアリングを設定します</h3>
+<div class="paragraph quick-margin-para">
+<p>Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。 <a href="#オプションvpcのネットワークピアリングを設定します">ステップバイステップの手順に従います</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gke-クラスタの要件">GKE クラスタの要件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kubernetes クラスタを Astra Control Service から検出して管理できるようにするには、 Kubernetes クラスタが次の要件を満たしている必要があります。これらの要件の一部は、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合にのみ適用されます。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Kubernetes のバージョン</dt>
+<dd>
+<p>クラスタで1.26~1.28の範囲のKubernetesバージョンが実行されている必要があります。</p>
+</dd>
+<dt class="hdlist1">イメージタイプ</dt>
+<dd>
+<p>各ワーカーノードのイメージタイプはである必要があります <code>COS_CONTAINERD</code>。</p>
+</dd>
+<dt class="hdlist1">クラスタの状態</dt>
+<dd>
+<p>クラスタが正常な状態で稼働し、少なくとも 1 つのオンラインワーカーノードがあり、ワーカーノードが障害状態でない必要があります。</p>
+</dd>
+<dt class="hdlist1">Google Cloud リージョン</dt>
+<dd>
+<p>Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、クラスタがで実行されている必要があります <a href="https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc">"Cloud Volumes Service for Google Cloud がサポートされている Google Cloud リージョン。"</a> Astra Control Service は、 CVS と CVS パフォーマンスの両方のサービスタイプをサポートします。Cloud Volumes Service for Google Cloud をサポートするリージョンは、たとえストレージバックエンドとして使用していない場合でも選択することを推奨します。これにより、パフォーマンス要件が変化した場合に、 Cloud Volumes Service for Google Cloud をストレージバックエンドとして簡単に使用できるようになります。</p>
+</dd>
+<dt class="hdlist1">ネットワーキング</dt>
+<dd>
+<p>Cloud Volumes Service for Google Cloud をストレージバックエンドとして使用する場合は、 Cloud Volumes Service for Google Cloud とピア関係にある VPC 内にクラスタを配置する必要があります。 <a href="#オプションvpcのネットワークピアリングを設定します">この手順については、以下で説明します</a>。</p>
+</dd>
+<dt class="hdlist1">プライベートクラスタ</dt>
+<dd>
+<p>クラスタがプライベートの場合は、を参照してください <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept" target="_blank" rel="noopener">"許可されたネットワーク"</a> Astra Control Service の IP アドレスを許可する必要があります。</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>52.188.218.166-32</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">GKE クラスタの動作モード</dt>
+<dd>
+<p>標準モードのオペレーションを使用する必要があります。自動操舵モードは、現時点ではテストされていません。 <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes" target="_blank" rel="noopener">"操作モードの詳細を確認してください"</a>。</p>
+</dd>
+<dt class="hdlist1">ストレージプール</dt>
+<dd>
+<p>NetApp Cloud Volumes ServiceをCVSサービスタイプのストレージバックエンドとして使用する場合は、ボリュームをプロビジョニングする前にストレージプールを設定する必要があります。を参照してください <a href="../learn/choose-class-and-size.html#overview" target="_blank" rel="noopener">"GKE クラスタのサービスタイプ、ストレージクラス、 PV サイズ"</a> を参照してください。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="オプションcloud-volumes-service-for-google-cloudを購入">オプション：Cloud Volumes Service for Google Cloudを購入</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用できます。このサービスを使用する場合は、 Google Cloud Marketplace で Cloud Volumes Service for Google Cloud を購入して、永続的ボリュームに対する請求を有効にする必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">ステップ</div>
+<ol class="arabic">
+<li>
+<p>にアクセスします <a href="https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com" target="_blank" rel="noopener">"NetApp Cloud Volumes Service のページ"</a> Google Cloud Marketplace で「 * Purchase * 」を選択し、画面の指示に従います。</p>
+<div class="paragraph">
+<p><a href="https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service" target="_blank" rel="noopener">"Google Cloud のドキュメントに記載されているステップバイステップの手順に従って、サービスを購入して有効にします"</a>。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="プロジェクトで-api-を有効にします">プロジェクトで API を有効にします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>特定の Google Cloud API にアクセスするには、プロジェクトに権限が必要です。API は、 Google Kubernetes Engine （ GKE ）クラスタや NetApp Cloud Volumes Service ストレージなどの Google Cloud リソースとのやり取りに使用されます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">ステップ</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.google.com/endpoints/docs/openapi/enable-api" target="_blank" rel="noopener">"Google Cloud コンソールまたは gcloud CLI を使用して、次の API を有効にする"</a>：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Google Kubernetes Engine の略</p>
+</li>
+<li>
+<p>クラウドストレージ</p>
+</li>
+<li>
+<p>Cloud Storage JSON API</p>
+</li>
+<li>
+<p>サービス利用</p>
+</li>
+<li>
+<p>Cloud Resource Manager API の略</p>
+</li>
+<li>
+<p>NetApp Cloud Volumes Service （ Cloud Volumes Service for Google Cloud に必要）</p>
+</li>
+<li>
+<p>Service Consumer Management API の略</p>
+</li>
+<li>
+<p>サービスネットワーク API</p>
+</li>
+<li>
+<p>Service Management API の略</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>次のビデオでは、 Google Cloud コンソールから API を有効にする方法を紹介します。</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="../media/get-started/video-enable-gcp-apis.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="サービスアカウントを作成します">サービスアカウントを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Service は、 Google Cloud サービスアカウントを使用して、 Kubernetes アプリケーションデータ管理をお客様に代わって容易にします。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Google Cloud およびにアクセスします <a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account" target="_blank" rel="noopener">"コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントを作成します"</a>。</p>
+</li>
+<li>
+<p>サービスアカウントに次のロールを付与します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* Kubernetes Engine Admin * - クラスタの一覧表示とアプリ管理のための管理アクセスの作成に使用します。</p>
+</li>
+<li>
+<p>* NetApp Cloud Volume Admin * - アプリケーション用の永続的ストレージの管理に使用します。</p>
+</li>
+<li>
+<p>* ストレージ管理者 * - アプリのバックアップ用のバケットとオブジェクトを管理するために使用します。</p>
+</li>
+<li>
+<p>* Service Usage Viewer * - 必要な Cloud Volumes Service for Google Cloud API が有効になっているかどうかを確認するために使用します。</p>
+</li>
+<li>
+<p>* Compute Network Viewer * - Kubernetes VPC で Google Cloud の Cloud Volumes Service にアクセスできるかどうかを確認するために使用します。</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>gcloud を使用したい場合は、 Astra Control インターフェイス内から手順を実行できます。[<strong>Account] &gt; [Credentials] &gt; [Add Credentials] を選択し、 [*Instructions</strong>] を選択します。</p>
+</div>
+<div class="paragraph">
+<p>Google Cloud コンソールを使用する場合は、次のビデオで、コンソールからサービスアカウントを作成する方法を紹介します。</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="../media/get-started/video-create-gcp-service-account.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="sect2">
+<h3 id="共有-vpc-のサービスアカウントを設定します">共有 VPC のサービスアカウントを設定します</h3>
+<div class="paragraph">
+<p>1 つのプロジェクトに存在する GKE クラスタを管理し、別のプロジェクト（共有 VPC ）から VPC を使用するには、「 * Compute Network Viewer * 」ロールを持つホストプロジェクトのメンバーとして Astra サービスアカウントを指定する必要があります。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Google Cloud コンソールから、 * iam &amp; Admin* に移動し、 * サービスアカウント * を選択します。</p>
+</li>
+<li>
+<p>Astra のサービスアカウントを見つけます <a href="set-up-google-cloud.html#create-a-service-account">"必要な権限"</a> E メールアドレスをコピーします。</p>
+</li>
+<li>
+<p>ホストプロジェクトに移動し、 * iam &amp; Admin* &gt; * iam * を選択します。</p>
+</li>
+<li>
+<p>「 * 追加」を選択し、サービスアカウントのエントリを追加します。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>* 新規メンバー * ：サービスアカウントのメールアドレスを入力します。</p>
+</li>
+<li>
+<p>* 役割 * ： [* コンピュート・ネットワーク・ビューア * ] を選択します。</p>
+</li>
+<li>
+<p>[ 保存（ Save ） ] を選択します。</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">結果</div>
+<p>共有 VPC を使用して GKE クラスタを追加すると、 Astra で完全に機能します。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="サービスアカウントキーを作成します-2">サービスアカウントキーを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Service にユーザ名とパスワードを入力する代わりに、最初のクラスタを追加するときにサービスアカウントキーを指定します。Astra Control Service は、サービスアカウントキーを使用して、設定したサービスアカウントの ID を確立します。</p>
+</div>
+<div class="paragraph">
+<p>サービスアカウントキーは、 JavaScript Object Notation （ JSON ）形式で格納されたプレーンテキストです。ここには、アクセス権を持つ GCP リソースに関する情報が含まれています。</p>
+</div>
+<div class="paragraph">
+<p>JSON ファイルは、キーの作成時にのみ表示またはダウンロードできます。ただし、新しいキーはいつでも作成できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>Google Cloud およびにアクセスします <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys" target="_blank" rel="noopener">"コンソール、 gcloud コマンド、またはその他の推奨される方法を使用して、サービスアカウントキーを作成します"</a>。</p>
+</li>
+<li>
+<p>プロンプトが表示されたら、サービスアカウントキーファイルを安全な場所に保存します。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>次のビデオは、 Google Cloud コンソールからサービスアカウントキーを作成する方法を示しています。</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="../media/get-started/video-create-gcp-service-account-key.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="オプションvpcのネットワークピアリングを設定します">オプション：VPCのネットワークピアリングを設定します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Volumes Service for Google Cloud をストレージバックエンドサービスとして使用する場合は、 VPC から Cloud Volumes Service for Google Cloud へのネットワークピアリングを設定します。</p>
+</div>
+<div class="paragraph">
+<p>ネットワークピアリングを設定する最も簡単な方法は、 gcloud コマンドを Cloud Volumes Service から直接取得することです。コマンドは、新しいファイルシステムを作成するときに Cloud Volumes Service から使用できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp" target="_blank" rel="noopener">"NetApp BlueXPグローバルリージョンマップにアクセス"</a> をクリックし、クラスタが存在する Google Cloud リージョンで使用するサービスタイプを特定します。</p>
+<div class="paragraph">
+<p>Cloud Volumes Service には、 CVS と CVS パフォーマンスの 2 つのサービスタイプがあります。 <a href="https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types" target="_blank" rel="noopener">"これらのサービスタイプの詳細については、こちらをご覧ください"</a>。</p>
+</div>
+</li>
+<li>
+<p><a href="https://console.cloud.google.com/netapp/cloud-volumes/volumes" target="_blank" rel="noopener">"Google Cloud Platform の Cloud Volume にアクセスします"</a>。</p>
+</li>
+<li>
+<p>[* Volumes （ボリューム） ] ページで、 [* Create （作成） ] を選択します。</p>
+</li>
+<li>
+<p>サービスタイプ * で、 * CVS * または * CVS - パフォーマンス * のいずれかを選択します。</p>
+<div class="paragraph">
+<p>Google Cloud リージョンに適したサービスタイプを選択する必要があります。これは、手順 1 で特定したサービスタイプです。サービスタイプを選択すると、ページ上のリージョンのリストが、そのサービスタイプがサポートされているリージョンで更新されます。</p>
+</div>
+<div class="paragraph">
+<p>この手順の後、コマンドを取得するためにネットワーク情報を入力するだけで済みます。</p>
+</div>
+</li>
+<li>
+<p>[* Region* （ * 地域） ] で、地域とゾーンを選択します。</p>
+</li>
+<li>
+<p>[ ネットワークの詳細 * ] で VPC を選択します。</p>
+<div class="paragraph">
+<p>ネットワークピアリングを設定していない場合は、次の通知が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../media/get-started/gcp-peering.gif" alt="Google Cloud コンソールのスクリーンショット。 View Commands How to Set Up Network Peering というボタンが表示されます。"></span></p>
+</div>
+</li>
+<li>
+<p>ボタンを選択して、ネットワークピアリングのセットアップコマンドを表示します。</p>
+</li>
+<li>
+<p>コマンドをコピーし、 Cloud Shell で実行します。</p>
+<div class="paragraph">
+<p>これらのコマンドの使用方法の詳細については、を参照してください <a href="https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering" target="_blank" rel="noopener">"Cloud Volumes Service for GCP のクイックスタート"</a>。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access" target="_blank" rel="noopener">"プライベートサービスアクセスの設定とネットワークピアリングの設定について詳しくは、こちらをご覧ください"</a>。</p>
+</div>
+</li>
+<li>
+<p>完了したら、 * ファイルシステムの作成 * ページでキャンセルを選択できます。</p>
+<div class="paragraph">
+<p>このボリュームの作成は、ネットワークピアリング用のコマンドを取得するためだけに開始しました。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ja-jp/astra-control-service/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">このページ</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">ご利用規約</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">このページに関するフィードバックをお寄せください</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/astra-control-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/astra-control-service/js/ie-tabbed-blocks.js'></script>
+    <script src='/ja-jp/astra-control-service/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
