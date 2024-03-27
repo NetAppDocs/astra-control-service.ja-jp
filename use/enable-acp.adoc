@@ -81,7 +81,7 @@ NOTE: プルされたイメージは複数のプラットフォームをサポ�
 +
 [source, console]
 ----
-docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform <cluster platform>
+docker pull cr.astra.netapp.io/astra/trident-acp:24.02.0 --platform <cluster platform>
 ----
 +
 例
@@ -89,13 +89,13 @@ docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform <cluster platform>
 +
 [listing]
 ----
-docker pull cr.astra.netapp.io/trident-acp:24.02.0 --platform linux/amd64
+docker pull cr.astra.netapp.io/astra/trident-acp:24.02.0 --platform linux/amd64
 ----
 .. 画像にタグを付けます。
 +
 [source, console]
 ----
-docker tag cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
+docker tag cr.astra.netapp.io/astra/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 .. イメージをカスタムレジストリにプッシュします。
 +
@@ -112,7 +112,7 @@ docker push <my_custom_registry>/trident-acp:24.02.0
 +
 [source, crane]
 ----
-crane copy cr.astra.netapp.io/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
+crane copy cr.astra.netapp.io/astra/trident-acp:24.02.0 <my_custom_registry>/trident-acp:24.02.0
 ----
 
 
@@ -177,7 +177,7 @@ kubectl edit torc trident -n trident
 +
 ... Astra Tridentイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 (`tridentImage: <my_custom_registry>/trident:24.02.0` または `tridentImage: netapp/trident:24.02.0`）。
 ... Astra Control Provisionerを有効にする (`enableACP: true`）。
-... Astra Control Provisionerイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 (`acpImage: <my_custom_registry>/trident-acp:24.02.0` または `acpImage: cr.astra.netapp.io/trident-acp:24.02.0`）。
+... Astra Control Provisionerイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 (`acpImage: <my_custom_registry>/trident-acp:24.02.0` または `acpImage: cr.astra.netapp.io/astra/trident-acp:24.02.0`）。
 ... もしあなたが <<pull-secrets,画像プルシークレット>> この手順では、ここで設定できます。 (`imagePullSecrets: - <secret_name>`）。前の手順で設定した名前と同じシークレット名を使用します。
 
 
@@ -345,7 +345,7 @@ netapp-trident/trident-operator 100.2402.0      24.02.0         A
 
 [listing]
 ----
-helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=cr.astra.netapp.io/trident-acp:24.02.0 --set enableACP=true --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
+helm install trident netapp-trident/trident-operator --version 100.2402.0 --set acpImage=cr.astra.netapp.io/astra/trident-acp:24.02.0 --set enableACP=true --set operatorImage=netapp/trident-operator:24.02.0 --set tridentAutosupportImage=docker.io/netapp/trident-autosupport:24.02 --set tridentImage=netapp/trident:24.02.0 --namespace trident
 ----
 ** 1つまたは複数のレジストリ内の画像
 
