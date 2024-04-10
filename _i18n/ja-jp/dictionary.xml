@@ -468,7 +468,6 @@
   <block id="36a79b43c10a800c5959d1d1206447ec" category="paragraph">Astra Control には、サポート登録を確認できる Support Status フィールドがあります。</block>
   <block id="29405bfce5da0c57cd6629b8db602a10" category="list-text">[ サポートステータス ] フィールドを確認します。</block>
   <block id="f761ff65b80a8b63b42c13cb7a7cf4f7" category="paragraph">サポートステータスは「 Not Registered 」から始まりますが、完了すると「 In-Progress 」に変わり、最後に「 Registered 」に変わります。</block>
-  <block id="8adaa56acabfa4c4f66e68cb72de4c4d" category="paragraph">このサポート登録ステータスは 15 分ごとにポーリングされます。ネットアップの新規のお客様は、オンボーディングとサポート登録の完了に、翌営業日までかかる場合があります。シリアル番号が 48 時間以内に「 Registered 」と表示されない場合は、 astra.feedback@netapp.com を使用してネットアップに連絡するか、から手動で登録してください<block ref="25901fb2084c068b072ad2e600cb7393" category="inline-link-rx"></block>。</block>
   <block id="26630f5c4526843dd047a7b98e30c87e" category="section-title">シリアル番号を取得します</block>
   <block id="9af9e89edd9437582caaae9b5cd0d87b" category="paragraph">アカウントに登録すると、 Astra Control は、会社について入力した情報を使用して、「 941 」で始まる 20 桁のネットアップシリアル番号を生成します。</block>
   <block id="63b997f8e23e75b8819decf19a2b9406" category="paragraph">ネットアップのシリアル番号は Astra Control のアカウントです。Web チケットを開くときは、このシリアル番号を使用する必要があります。</block>
@@ -479,23 +478,13 @@
   <block id="63b11526307884ce31efc524f509c090" category="list-text">ネットアップサポートサイト（ NSS ）の SSO アカウントをお持ちでない新しいネットアップのお客様</block>
   <block id="0564257c8c53a18e2ae2558b30fd1326" category="section-title">オプション 1 ：ネットアップの既存のサポートサイト（ NSS ）アカウントをお持ちのお客様</block>
   <block id="8e2e894a8f2d0c798eda10b04a6aae2c" category="inline-link">クラウドデータサービスサポート登録</block>
-  <block id="d15ddd92716258916f2997a149c0e1c9" category="list-text">に移動します<block ref="2151d866808a52a3eadb15c242a47970" category="inline-link-rx"></block> ページで NSS アカウントを作成します。</block>
   <block id="db687a348749c84241a38c70c993840c" category="list-text">ログインするには、ネットアップサポートサイトのクレデンシャルを入力してください。</block>
-  <block id="e43f3861c61e13a957b05a49f4232f75" category="paragraph">[ 既存の顧客登録 ] ページが表示されます。</block>
-  <block id="0c74bd4a97dcfedb588165e8bb276977" category="inline-image-macro">既存の顧客登録フォーム</block>
-  <block id="7a19998317d4f7657b3d9519c2dc94d0" category="paragraph"><block ref="7a19998317d4f7657b3d9519c2dc94d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee364f11fd7d245e4d69ec062eb83cb8" category="list-text">フォームに必要な情報を入力します。</block>
   <block id="e9445c82c61abbe731858b68bc6ef334" category="list-text">名前、会社名、 E メールアドレスを入力します。</block>
-  <block id="0207fbb6e6ab362c66c2b1c0726353c5" category="list-text">製品ラインとして「 * Astra * 」を選択します。</block>
   <block id="c5e190db7965b0aa2ed323bdec1c2c6d" category="list-text">シリアル番号を入力します。</block>
   <block id="1adcde846f51b1edfaf40ba5a6db3d4f" category="paragraph">「登録が正常に送信されました」ページにリダイレクトしてください。登録に関連付けられているメールアドレスには、数分以内に「お使いの製品は現在サポート対象です」という電子メールが送信されます。</block>
   <block id="c00608f756de9922b31b80e79feefbdf" category="paragraph">これは、該当するシリアル番号に対するワンタイムサポート登録です。</block>
   <block id="f3568553211b1a65f5a05f906c626719" category="section-title">オプション 2 ：ネットアップサポートサイト（ NSS ）アカウントをお持ちでない新規のお客様</block>
-  <block id="2557d6c5569c5a3a7e8432c5de6f609f" category="paragraph">[ 新規顧客登録 ] ページが表示されます。</block>
-  <block id="13057fbeba6fc2ea452df672598620da" category="inline-image-macro">新規顧客登録フォーム</block>
-  <block id="2116b097be21cf33cf250f6f4dea05ee" category="paragraph"><block ref="2116b097be21cf33cf250f6f4dea05ee" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="cddef93549327dd0dc967c3c80b4f3e9" category="list-text">名前と会社情報を入力します。</block>
-  <block id="9bfff919ad044e305f1c311a78a7ecec" category="list-text">製品ラインとして「 * Astra * 」を選択します。</block>
   <block id="d04e93a4d5398bfd6548e3e1925cb1e0" category="paragraph">送信された登録から確認の E メールが届きます。エラーが発生しない場合は、「登録が正常に送信されました」ページにリダイレクトされます。また、 1 時間以内に「お使いの製品はサポート対象になりました」という E メールも送信されます。</block>
   <block id="d96b5fa4d8229bcf45a5dfba3e784078" category="list-text">ネットアップの新規のお客様の場合は、サポートをアクティブにするためのネットアップサポートサイト（ NSS ）ユーザアカウントを作成し、テクニカルサポートのチャットや Web でのチケット発行をサポートポータルにアクセスできるようにする必要もあります。</block>
   <block id="fbf62905ff14cf2944029e8b9424e045" category="inline-link">ネットアップサポート登録サイト</block>
@@ -818,7 +807,6 @@
   <block id="d041642ada570d9bb242a59ad36899fd" category="sidebar">アプリとコンピューティングの健全性を表示します</block>
   <block id="0dac49ef5536e90243a4926670f88ef6" category="list-text">[ サポート ] を選択します。</block>
   <block id="732ba767fce4bd62cecb026f6781e1a4" category="list-text">「 I am already registered as a NetApp customer 」 * を選択します。</block>
-  <block id="ddcfd610f74c256985ea230159f499b4" category="list-text">[ 登録の送信 *] を選択します。</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">「 I am not a registered NetApp Customer* 」を選択します。</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">新しいストレージバックエンドオプション</block>
   <block id="8527c0ab84fa8956acb7ba13d5e3ad9d" category="inline-link-macro">Astra Control Service では、永続的ボリュームのストレージバックエンドとして Cloud Volumes Service for Google Cloud を使用する方法を説明します</block>
@@ -2683,4 +2671,15 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="a40c084314b74a686572312dc71c4738" category="list-text">を作成します<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> ファイル。</block>
   <block id="23ed633c6130c18f08608b6efce84dc4" category="list-text">交換してください<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 次のスクリプトの先頭に正しい値を入力します。</block>
   <block id="1e402f84b3c57afa8aaf19779147556d" category="list-text">Astra Control Provisionerイメージのカスタムレジストリの場所を設定するか、Astra Controlレジストリから取得 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> または<block ref="e419be77a3ebdbec678982ec1d2d40b2" prefix=" " category="inline-code"></block>）。</block>
+  <block id="f840f3450a2de3d2159f8e98e8d1b6ad" category="paragraph">このサポート登録ステータスは 15 分ごとにポーリングされます。NetAppの新規のお客様は、オンボーディングとサポート登録が完了するまでに最大で翌営業日までかかる場合があります。シリアル番号が 48 時間以内に「 Registered 」と表示されない場合は、 astra.feedback@netapp.com を使用してネットアップに連絡するか、から手動で登録してください<block ref="25901fb2084c068b072ad2e600cb7393" category="inline-link-rx"></block>。</block>
+  <block id="3591a1f5ccffeba19e21047100fe43b1" category="list-text">に移動します<block ref="2151d866808a52a3eadb15c242a47970" category="inline-link-rx"></block> ページ</block>
+  <block id="4501879906d5ad1040b26cbba93bd49d" category="paragraph">[Existing Customer Registration]ページが表示されます。</block>
+  <block id="69a9a798beb8ba8c71e96413ecd8f3a4" category="list-text">製品ラインとして[Astra Control Service]*を選択します。</block>
+  <block id="de1c240b231af9d9534b05367f20e396" category="list-text">課金プロバイダを選択します。</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">[ 送信 ] を選択します。</block>
+  <block id="6294635853dcb1aa39d5c03b3a071505" category="paragraph">[New Customer Registration]ページが表示されます。</block>
+  <block id="deb1f1ce269d9c97fdfb1d332a33506d" category="list-text">名前、会社情報、連絡先情報を入力します。</block>
+  <block id="a34b088697717e6985d362f6f34cb3cd" category="list-text">[Product Line]として[Astra Control Service]*を選択します。</block>
+  <block id="e41e554158031f0f3160a545e232ed02" category="list-text">キャプチャ値を入力します。</block>
+  <block id="6ea2f3e9291aa9fe05308c7ef844a5f2" category="list-text">チェックボックスをオンにして、NetAppプライバシーポリシーを読んだことを確認します。</block>
 </blocks>
