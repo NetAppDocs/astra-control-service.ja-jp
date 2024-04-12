@@ -15,5 +15,3 @@ summary: このドキュメントサイトの多くのページには、 Astra C
 Astra Control Serviceを取り上げた最新のビデオコンテンツについては、NetApp TVをご覧ください。NetApp TVには、Astra Control Serviceの特定の機能を紹介するビデオや、特定の一般的なタスクの実行方法を紹介するビデオがあります。
 
 https://www.netapp.tv/search/astra%20control%20service["Astra Control サービスのビデオ"^]
-
-endif::gcp[]
