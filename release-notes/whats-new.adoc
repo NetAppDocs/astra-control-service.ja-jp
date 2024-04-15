@@ -329,7 +329,8 @@ endif::azure[]
 
 このリリースには、次の新機能と機能拡張が含まれています。
 
-* Astra Control Center Astra Controlが、新しい導入モデルで利用できるようになりました。_Astra Control Center_ は、データセンターにインストールして運用する自己管理ソフトウェアで、オンプレミスの Kubernetes クラスタで Kubernetes アプリケーションのライフサイクル管理を管理できます。
+* Astra Control Center の略
+Astra Control が新しい導入モデルで提供されるようになりました。_Astra Control Center_は、オンプレミスのKubernetesクラスタのKubernetesアプリケーションライフサイクル管理を管理できるように、データセンターにインストールして運用する自己管理型ソフトウェアです。
 +
 をクリックしてください。 https://docs.netapp.com/us-en/astra-control-center["Astra Control Centerのマニュアルにアクセスします"^]。
 

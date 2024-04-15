@@ -1365,7 +1365,6 @@
   <block id="461f26d1f3faec3478ece1e0d794f9cc" category="list-text">実行フック付きのスクリプトイベントAstra Controlは、アプリケーションのスナップショットを作成する前または後に実行できるカスタムスクリプトをサポートします。これにより、データベーストランザクションの中断などのタスクを実行して、データベースアプリケーションのスナップショットの整合性を保つことができます。</block>
   <block id="a20299ad7f2e64a95e7cc3284a9906a5" category="list-text">オペレータが配置したアプリケーションAstra Controlは、一部のアプリケーションをオペレータとともに展開するときにサポートします。</block>
   <block id="d64b4db98e014f5440d1f843fea08e3e" category="list-text">リソースグループスコープAstra Control Serviceのサービスプリンシパルが、リソースグループスコープを使用するサービスプリンシパルをサポートするようになりました。</block>
-  <block id="d965fac9eadc89088435d79a0e46882b" category="list-text">Astra Control Center Astra Controlが、新しい導入モデルで利用できるようになりました。_Astra Control Center_ は、データセンターにインストールして運用する自己管理ソフトウェアで、オンプレミスの Kubernetes クラスタで Kubernetes アプリケーションのライフサイクル管理を管理できます。</block>
   <block id="1966afd91050d7e96fceb59f9fd13f32" category="inline-link">Astra Control Centerのマニュアルにアクセスします</block>
   <block id="80bfdf6309549a7797f10098e05bccc1" category="paragraph">をクリックしてください。<block ref="ba5556fa094f10e77f4fa7086cec4749" category="inline-link-rx"></block>。</block>
   <block id="eb98a9a286b93bcf890e03ce1c9063eb" category="list-text">独自のバケットを用意バックアップとクローンに使用するバケットを管理できるようになりました。バケットを追加し、クラウドプロバイダ内のKubernetesクラスタのデフォルトバケットを変更します。</block>
@@ -2090,7 +2089,6 @@
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine （ GKE ）</block>
   <block id="445b99028268202ea6dce47e9f8a85a0" category="list-text">Red Hat OpenShift Service on AWS（ROSA）</block>
   <block id="5272b1b73b7b8f46f79fa9cdaadca15e" category="list-text">RosaとAWS PrivateLink</block>
-  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">Red Hat OpenShift Container Platform（オンプレミス）</block>
   <block id="df19c91edd9b2d860753f42efea5673b" category="section-title">Astra Connectorのインストール</block>
   <block id="cd6d7cc4ca7e276970cfd8898e2ee94d" category="list-text">これらの手順を実行する場合は、Astra Control Serviceで管理するプライベートクラスタに対してこれらのコマンドを実行します。</block>
   <block id="1edf1f850fb1dd3ecb6ec5a68b931d8a" category="list-text">要塞ホストを使用している場合は、要塞ホストのコマンドラインからこれらのコマンドを問題 で実行します。</block>
@@ -2135,12 +2133,8 @@
   <block id="341784bc72164a9576c48141a8457786" category="doc">ストレージバックエンドの暗号化の設定</block>
   <block id="876580b79932af82226561f24b11688f" category="paragraph">Astra Control Provisionerを使用すると、管理対象クラスタとストレージバックエンドの間のトラフィックの暗号化を有効にすることで、データアクセスセキュリティを強化できます。</block>
   <block id="976a1386596f05796be42a064d0422a1" category="paragraph">Astra Control Provisionerは、次の2種類のストレージバックエンドでKerberos暗号化をサポートします。</block>
-  <block id="c0e152193948fa32b98363da93fdd8ae" category="list-text">*オンプレミスのONTAP *- Astra Control Provisionerは、Red Hat OpenShiftおよびアップストリームのKubernetesクラスタからオンプレミスのONTAPボリュームへのNFSv3およびNFSv4接続でKerberos暗号化をサポートします。</block>
   <block id="efd821ece7f5d1edb285cc1f077325d0" category="list-text">* Azure NetApp Files *- Astra Control Provisionerは、アップストリームのKubernetesクラスタからAzure NetApp FilesボリュームへのNFSv4.1接続でKerberos暗号化をサポートします。</block>
   <block id="0a710c309a5f6dc65b056833a5208521" category="paragraph">作成、削除、サイズ変更、スナップショット、クローン、 読み取り専用のクローンを作成し、NFS暗号化を使用するボリュームをインポートします。</block>
-  <block id="2aff02c8ceb99a9445937af9d4d8f286" category="section-title">オンプレミスのONTAPボリュームでの転送中Kerberos暗号化の設定</block>
-  <block id="330282591e8caa9814eb88ec524b89cf" category="paragraph">管理対象クラスタとオンプレミスのONTAPストレージバックエンドの間のストレージトラフィックに対してKerberos暗号化を有効にすることができます。</block>
-  <block id="daf34fb0fcb74d9bcf85abcebcc8e1f2" category="admonition">オンプレミスのONTAPストレージバックエンドを使用するNFSトラフィックに対するKerberos暗号化は、<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> ストレージドライバ。</block>
   <block id="bf08e3747af8cdb14b7eaf98563b8d7e" category="inline-link-macro">Astra Control Provisionerを有効にする</block>
   <block id="0ff02d27ae5cac1a12c6c403fd55443c" category="list-text">にアクセスできることを確認します。<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> ユーティリティ。</block>
   <block id="bef890ed7cc869346d4b483cd3e3ab00" category="list-text">ONTAPストレージバックエンドへの管理者アクセス権があることを確認します。</block>
@@ -2360,7 +2354,6 @@
   <block id="a28c4973c51793fba9a52bb919793c55" category="list-text">* Astra Control Provisionerの機能*</block>
   <block id="e04a039dab89abe32a55e462186f4be5" category="paragraph">Astra Control Provisioner 23.10リリースでは、次の機能を使用できます。</block>
   <block id="c935990e28d9a826be6bb8ad7cbaa9c1" category="inline-link-macro">暗号化の有効化</block>
-  <block id="c0f1ffff2a89df254e7675f2a875147f" category="list-text">* Kerberos 5暗号化によるストレージバックエンドセキュリティの強化*：ストレージセキュリティを <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 管理対象クラスタとストレージバックエンド間のトラフィック用。Astra Control Provisionerは、Red Hat OpenShiftクラスタからAzure NetApp FilesおよびオンプレミスのONTAPボリュームへのNFSv4.1接続でKerberos 5暗号化をサポートします。</block>
   <block id="ab52bbefe9879da9b800f9792291f5a4" category="list-text">* Snapshotを使用したデータのリカバリ*：Astra Control Provisionerを使用すると、Snapshotからインプレースで迅速にボリュームをリストアできます。<block ref="2aabb3b01d0d54317a9eeef910e001f6" prefix=" " category="inline-code"></block> （TASR）CR。</block>
   <block id="55a9d6aa251e3c334db4ab4055a4a004" category="inline-xref">上</block>
   <block id="ffada8bf4e89c89a39c9186528693015" category="list-text">*アプリケーションのバックアップおよびリストア機能<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> ドライバ・バックアップ・ストレージ・バックエンド*：説明どおり <block ref="abf023a9d67df445290faa3fe3686bc6" category="inline-xref-macro-rx"></block>。</block>
@@ -2515,7 +2508,6 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="5d169abc26c5e6f92958752c40a56358" category="cell">サポートされているKubernetesディストリビューションを教えてください。</block>
   <block id="41f1a6b80fe46fb30f51ab1b61f1a992" category="list-text">*クラウドプロバイダ*</block>
   <block id="57c997cc6378705850c1e534b71a042d" category="list-text">*自己管理クラスタ*</block>
-  <block id="bab5ccef18c501c42d7cf94c7aaa84b3" category="list-text">*オンプレミスクラスタ*</block>
   <block id="22ec69733e61456fac578b2f6fcc2856" category="list-text">Azure Stack HCIで実行されるAzure Kubernetes Service</block>
   <block id="1c4dff0a00340691e103ef63154df371" category="list-text">Google Anthos</block>
   <block id="408bc02fc5ae5048343ebe28f7180f1e" category="list-text">この新しい管理者ロールを使用して、link ../concepts/architecture#astra-control-components [Astra Control Provisioner]をクラスタにインストールし、1つ以上のストレージクラスを作成します。</block>
@@ -2682,4 +2674,13 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="a34b088697717e6985d362f6f34cb3cd" category="list-text">[Product Line]として[Astra Control Service]*を選択します。</block>
   <block id="e41e554158031f0f3160a545e232ed02" category="list-text">キャプチャ値を入力します。</block>
   <block id="6ea2f3e9291aa9fe05308c7ef844a5f2" category="list-text">チェックボックスをオンにして、NetAppプライバシーポリシーを読んだことを確認します。</block>
+  <block id="fae11419c337e3427841a0c9b9d592f9" category="list-text">オンプレミスのRed Hat OpenShift Container Platform</block>
+  <block id="8e9845a2b1617722638d4b2716d9e349" category="list-text">*オンプレミスクラスタ*</block>
+  <block id="08451abaef86ef74512d1771c506741a" category="list-text">*オンプレミスのONTAP *- Astra Control Provisionerは、Red Hat OpenShiftおよびアップストリームのKubernetesクラスタからオンプレミスのONTAPボリュームへのNFSv3およびNFSv4接続でKerberos暗号化をサポートします。</block>
+  <block id="0b660ae85d215a9e70834a4e745fe95b" category="section-title">オンプレミスのONTAPボリュームで転送中のKerberos暗号化を設定</block>
+  <block id="7c139dfc85d7e4497d2109fff4d0893f" category="paragraph">管理対象クラスタとオンプレミスのONTAPストレージバックエンドの間のストレージトラフィックに対してKerberos暗号化を有効にすることができます。</block>
+  <block id="4733fee3df7d4e6e25e68e5ad7d2adf0" category="admonition">オンプレミスのONTAPストレージバックエンドを使用するNFSトラフィックに対するKerberos暗号化は、<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> ストレージドライバ。</block>
+  <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">* Kerberos 5暗号化によるストレージバックエンドセキュリティの強化*：ストレージセキュリティを <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 管理対象クラスタとストレージバックエンド間のトラフィック用。Astra Control Provisionerは、Red Hat OpenShiftクラスタからAzure NetApp FilesおよびオンプレミスのONTAPボリュームへのNFSv4.1接続でKerberos 5暗号化をサポートします。</block>
+  <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra Control Center の略
+Astra Control が新しい導入モデルで提供されるようになりました。_Astra Control Center_は、オンプレミスのKubernetesクラスタのKubernetesアプリケーションライフサイクル管理を管理できるように、データセンターにインストールして運用する自己管理型ソフトウェアです。</block>
 </blocks>

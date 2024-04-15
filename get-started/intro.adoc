@@ -89,7 +89,7 @@ Astra Control には、次の 2 つの導入モデルがあります。
 
 * *オンプレミスクラスタ*
 +
-** Red Hat OpenShift Container Platform（オンプレミス）
+** オンプレミスのRed Hat OpenShift Container Platform
 
 
 

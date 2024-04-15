@@ -21,7 +21,7 @@ Astra Connectorは、次のタイプのプライベートクラスタをサポ�
 * Google Kubernetes Engine （ GKE ）
 * Red Hat OpenShift Service on AWS（ROSA）
 * RosaとAWS PrivateLink
-* Red Hat OpenShift Container Platform（オンプレミス）
+* オンプレミスのRed Hat OpenShift Container Platform
 
 
 
