@@ -14,7 +14,7 @@ summary: ここでは、 Astra Control 環境のさまざまなコンポーネ�
 [role="lead"]
 ここでは、 Astra Control 環境のさまざまなコンポーネントの概要を示します。
 
-image:astra-architecture-diagram-v5.png["Astra Control のアーキテクチャ図とコンポーネント"]
+image:astra-architecture-diagram-v7.png["Astra Control のアーキテクチャ図とコンポーネント"]
 
 
 

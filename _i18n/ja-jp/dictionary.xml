@@ -1399,7 +1399,6 @@
   <block id="2e0924d60f841b17b95f6a2808bdd804" category="doc">Astra Control Serviceを使用してプライベートクラスタを管理</block>
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra Automationのドキュメント</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">永続的ストレージをセットアップする</block>
-  <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">1つ以上の名前空間内に配置された個 々 のアプリケーション（この例ではHelm 3が使用されます）</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">1つ以上のネームスペース内のKubernetesラベルで識別されるリソースのグループ</block>
   <block id="e7ee212d9bc4dca7907f427fe053cfd0" category="paragraph">* 私は自由な計画からの Premium PayGO の計画にアップグレードした。最初の10個のネームスペースは請求されますか？*</block>
@@ -2683,4 +2682,5 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">* Kerberos 5暗号化によるストレージバックエンドセキュリティの強化*：ストレージセキュリティを <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 管理対象クラスタとストレージバックエンド間のトラフィック用。Astra Control Provisionerは、Red Hat OpenShiftクラスタからAzure NetApp FilesおよびオンプレミスのONTAPボリュームへのNFSv4.1接続でKerberos 5暗号化をサポートします。</block>
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra Control Center の略
 Astra Control が新しい導入モデルで提供されるようになりました。_Astra Control Center_は、オンプレミスのKubernetesクラスタのKubernetesアプリケーションライフサイクル管理を管理できるように、データセンターにインストールして運用する自己管理型ソフトウェアです。</block>
+  <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
