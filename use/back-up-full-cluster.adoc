@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: use/back-up-full-cluster.html 
+keywords: backup, back up, backup apps, back up apps, take a backup, schedule backups, full, full backup, cluster backup, cluster, namespace, label, labels, namespaces 
+summary: クラスタ上のすべてのネームスペースが保護されるように、フルクラスタバックアップのスケジュールを設定してアプリケーションを保護します。 
+---
+= [技術プレビュー]クラスタ全体を保護する
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+クラスタ上の管理対象外のネームスペースの一部またはすべてについて、スケジュールされた自動バックアップを作成できます。これらのワークフローは、NetAppによってKubernetesサービスアカウント、ロールバインド、およびcronジョブとして提供され、Pythonスクリプトを使用してオーケストレーションされます。
+
+
+
+== 動作の仕組み
+
+フルクラスタバックアップワークフローを設定してインストールすると、cronジョブが定期的に実行され、まだ管理されていないネームスペースが保護され、インストール時に選択したスケジュールに基づいて保護ポリシーが自動的に作成されます。
+
+フルクラスタバックアップワークフローでクラスタ上のすべての管理対象外のネームスペースを保護する必要がない場合は、ラベルベースのバックアップワークフローを使用できます。ラベルベースのバックアップのワークフローでもcronタスクを使用しますが、管理対象外のネームスペースをすべて保護する代わりに、指定したラベルでネームスペースを識別して、Bronze、Silver、またはGoldのバックアップポリシーに基づいてネームスペースを保護することもできます。
+
+選択したワークフローのスコープに含まれる新しい名前空間が作成されると、管理者の操作なしで自動的に保護されます。これらのワークフローはクラスタ単位で実装されるため、クラスタの重要度に応じて、それぞれのクラスタで独自の保護レベルを持つワークフローを使用できます。
+
+.例：完全なクラスタ保護
+たとえば、フルクラスタバックアップワークフローを構成してインストールすると、任意のネームスペース内のすべてのアプリケーションが定期的に管理され、管理者による追加の作業なしに保護されます。ワークフローのインストール時に名前空間が存在している必要はありません。将来追加された名前空間は保護されます。
+
+.例：ラベルベースの保護
+詳細については、ラベルベースのワークフローを使用できます。たとえば、このワークフローをインストールし、必要な保護レベルに応じて、保護する名前空間に複数のラベルのいずれかを適用するようにユーザに指示できます。これにより、ユーザーはこれらのラベルのいずれかを使用して名前空間を作成でき、管理者に通知する必要はありません。新しいネームスペースとその中のすべてのアプリは自動的に保護されます。
+
+
+
+== すべてのネームスペースのスケジュールされたバックアップを作成する
+
+フルクラスタバックアップワークフローを使用して、クラスタ上のすべてのネームスペースのスケジュールされたバックアップを作成できます。
+
+.手順
+. クラスタにネットワークでアクセスできるマシンに、次のファイルをダウンロードします。
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/components.yaml["コンポーネント.yaml CRDファイル"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/protectCluster.py["protectCluster.py Pythonスクリプト"]
+
+
+. ツールキットを設定してインストールするには、次の手順に従います。 https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/fullcluster-backup/README.md["付属の手順に従います。"^]。
+
+
+
+
+== 特定のネームスペースのスケジュールされたバックアップを作成する
+
+ラベルベースのバックアップワークフローを使用して、ラベル別に特定のネームスペースのスケジュールされたバックアップを作成できます。
+
+.手順
+. クラスタにネットワークでアクセスできるマシンに、次のファイルをダウンロードします。
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/components.yaml["コンポーネント.yaml CRDファイル"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/protectCluster.py["protectCluster.py Pythonスクリプト"]
+
+
+. ツールキットを設定してインストールするには、次の手順に従います。 https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/labelbased-backup/README.md["付属の手順に従います。"^]。
+

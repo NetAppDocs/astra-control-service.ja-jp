@@ -10,6 +10,8 @@ entries:
     url: "/use/manage-apps.html"
   - title: アプリを保護します
     url: "/use/protect-apps.html"
+  - title: クラスタ全体の保護
+    url: "/use/back-up-full-cluster.html"
   - title: アプリケーションのリストア
     url: "/use/restore-apps.html"
   - title: アプリケーションのクローン作成と移行

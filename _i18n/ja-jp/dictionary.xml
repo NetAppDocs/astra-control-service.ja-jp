@@ -2683,4 +2683,30 @@ Astra Control Provisionerは、Astra Controlアーキテクチャのストレー
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra Control Center の略
 Astra Control が新しい導入モデルで提供されるようになりました。_Astra Control Center_は、オンプレミスのKubernetesクラスタのKubernetesアプリケーションライフサイクル管理を管理できるように、データセンターにインストールして運用する自己管理型ソフトウェアです。</block>
   <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1932721112c7fa6e0a220f8d12316b9" category="summary">クラスタ上のすべてのネームスペースが保護されるように、フルクラスタバックアップのスケジュールを設定してアプリケーションを保護します。</block>
+  <block id="71a086a5ae784c9162639b628b47f232" category="doc">[技術プレビュー]クラスタ全体を保護する</block>
+  <block id="55663ff2954ae71700f6f717aacad2a3" category="paragraph">クラスタ上の管理対象外のネームスペースの一部またはすべてについて、スケジュールされた自動バックアップを作成できます。これらのワークフローは、NetAppによってKubernetesサービスアカウント、ロールバインド、およびcronジョブとして提供され、Pythonスクリプトを使用してオーケストレーションされます。</block>
+  <block id="9ffdb95250e26c7a6b468126ac7c75b0" category="section-title">動作の仕組み</block>
+  <block id="5802e6b0af2e6482a64feeddbae90420" category="paragraph">フルクラスタバックアップワークフローを設定してインストールすると、cronジョブが定期的に実行され、まだ管理されていないネームスペースが保護され、インストール時に選択したスケジュールに基づいて保護ポリシーが自動的に作成されます。</block>
+  <block id="b5f80c63a9b3f7187b8a71e3279b1d40" category="paragraph">フルクラスタバックアップワークフローでクラスタ上のすべての管理対象外のネームスペースを保護する必要がない場合は、ラベルベースのバックアップワークフローを使用できます。ラベルベースのバックアップのワークフローでもcronタスクを使用しますが、管理対象外のネームスペースをすべて保護する代わりに、指定したラベルでネームスペースを識別して、Bronze、Silver、またはGoldのバックアップポリシーに基づいてネームスペースを保護することもできます。</block>
+  <block id="3215156b98c07a49699d09346585d0f8" category="paragraph">選択したワークフローのスコープに含まれる新しい名前空間が作成されると、管理者の操作なしで自動的に保護されます。これらのワークフローはクラスタ単位で実装されるため、クラスタの重要度に応じて、それぞれのクラスタで独自の保護レベルを持つワークフローを使用できます。</block>
+  <block id="4f3bac614b10b9269eff9557644b9d68" category="paragraph-title">例：完全なクラスタ保護</block>
+  <block id="823f5a690316e8d8db6de2fd88676b37" category="paragraph">たとえば、フルクラスタバックアップワークフローを構成してインストールすると、任意のネームスペース内のすべてのアプリケーションが定期的に管理され、管理者による追加の作業なしに保護されます。ワークフローのインストール時に名前空間が存在している必要はありません。将来追加された名前空間は保護されます。</block>
+  <block id="20220274e3d349d98f94f4af6c1d54cf" category="paragraph-title">例：ラベルベースの保護</block>
+  <block id="ab9b4add4c2750df9ea518f6cfe58c09" category="paragraph">詳細については、ラベルベースのワークフローを使用できます。たとえば、このワークフローをインストールし、必要な保護レベルに応じて、保護する名前空間に複数のラベルのいずれかを適用するようにユーザに指示できます。これにより、ユーザーはこれらのラベルのいずれかを使用して名前空間を作成でき、管理者に通知する必要はありません。新しいネームスペースとその中のすべてのアプリは自動的に保護されます。</block>
+  <block id="07b045e6ed11320210f203c982fd829d" category="section-title">すべてのネームスペースのスケジュールされたバックアップを作成する</block>
+  <block id="8332335e5e8bddc0b81921741539149a" category="paragraph">フルクラスタバックアップワークフローを使用して、クラスタ上のすべてのネームスペースのスケジュールされたバックアップを作成できます。</block>
+  <block id="20ebd9eda05c23de72572e3c4aa298f5" category="list-text">クラスタにネットワークでアクセスできるマシンに、次のファイルをダウンロードします。</block>
+  <block id="b8d3f43c1b8b6847ecf7255053992be6" category="inline-link">コンポーネント.yaml CRDファイル</block>
+  <block id="e50ee5d787cfb185cfc2734fce798446" category="list-text"><block ref="e50ee5d787cfb185cfc2734fce798446" category="inline-link-rx"></block></block>
+  <block id="ac728b04543286ddda4fc836c6e98155" category="inline-link">protectCluster.py Pythonスクリプト</block>
+  <block id="7b1407a1eec5953c774bcc2d3d8908ab" category="list-text"><block ref="7b1407a1eec5953c774bcc2d3d8908ab" category="inline-link-rx"></block></block>
+  <block id="a9bd07d5dee89e8f8d63365bf38ed3ae" category="inline-link">付属の手順に従います。</block>
+  <block id="5c3f07c159adb2641838be3ccfa6f663" category="list-text">ツールキットを設定してインストールするには、次の手順に従います。<block ref="f14b0785043f5fca456d2804860e2da9" category="inline-link-rx"></block>。</block>
+  <block id="0e770ae52a7daab5fccefca84b2322ce" category="section-title">特定のネームスペースのスケジュールされたバックアップを作成する</block>
+  <block id="8a6d3ef96a37da0f9a9d95b72a87049a" category="paragraph">ラベルベースのバックアップワークフローを使用して、ラベル別に特定のネームスペースのスケジュールされたバックアップを作成できます。</block>
+  <block id="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="list-text"><block ref="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="inline-link-rx"></block></block>
+  <block id="b68db3e0a56f3b8c81ba53790b675138" category="list-text"><block ref="b68db3e0a56f3b8c81ba53790b675138" category="inline-link-rx"></block></block>
+  <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">ツールキットを設定してインストールするには、次の手順に従います。<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>。</block>
+  <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">クラスタ全体の保護</block>
 </blocks>
