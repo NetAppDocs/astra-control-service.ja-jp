@@ -18,7 +18,7 @@ summary: この FAQ は、質問に対する簡単な回答を探している場
 
 == 概要
 
-Astra Control は、 Kubernetes ネイティブアプリケーション向けのアプリケーションデータのライフサイクル管理処理を簡易化します。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。
+Astra Controlは、Kubernetesネイティブアプリケーションを対象としたアプリケーションデータのライフサイクル管理処理を簡易化することを目的としています。Astra Control Serviceは、複数のクラウドプロバイダ環境で実行されるKubernetesクラスタをサポートします。
 
 次のセクションでは、 Astra Control の使用時に表示される可能性のあるその他の質問に対する回答を示します。その他の説明については、 astra.feedback@netapp.com までお問い合わせください
 

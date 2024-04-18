@@ -24,9 +24,6 @@ image:astra-architecture-diagram-v7.png["Astra Control のアーキテクチャ�
 * * Astra Control Provisioner *：Astra Trident CSIの機能と拡張されたストレージ管理機能を搭載した、NetAppが保守する、フルサポートのストレージプロビジョニングツールおよびオーケストレーションツールであるAstra Control Provisionerを使用すると、DockerおよびKubernetesで管理されるコンテナ化アプリケーション用のストレージボリュームを作成できます。Astra Controlを使用して導入した場合、Astra Control Provisionerには、設定済みのONTAPストレージバックエンドが含まれます。
 
 
-* * Cloud Insights * ：ネットアップのクラウドインフラ監視ツールである Cloud Insights を使用すると、 Astra Control Center で管理された Kubernetes クラスタのパフォーマンスと利用率を監視できます。Cloud Insights ：ストレージ使用率とワークロードの相関関係を示します。Cloud Insights 接続を Astra コントロールセンターで有効にすると、テレメータの情報が Astra コントロールセンターの UI ページに表示されます。
-
-
 
 
 == Astra Control インターフェイス
@@ -46,6 +43,5 @@ Astra Control Center を使用すると、 VM 環境内で実行される Kubern
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center のドキュメント"^]
 * https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control APIのドキュメント"^]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident のドキュメント"^]
-* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights のドキュメント"^]
 * https://docs.netapp.com/us-en/ontap/index.html["ONTAP のドキュメント"^]
 
