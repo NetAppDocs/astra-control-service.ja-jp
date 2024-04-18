@@ -4,7 +4,7 @@ permalink: get-started/faq.html
 keywords: faq, frequently asked questions 
 summary: この FAQ は、質問に対する簡単な回答を探している場合に役立ちます。 
 ---
-= Astra Control Service に関するよくある質問
+= よくある質問
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -26,44 +26,35 @@ Astra Controlは、Kubernetesネイティブアプリケーションを対象と
 
 == Astra Control へのアクセス
 
-* Astra Control に登録する際に、詳細を入力する必要があるのはなぜですか。 *
-
+.Astra Controlに登録する際に詳細情報を多数指定する必要があるのはなぜですか？
 Astra Control を登録する際には、正確な顧客情報が必要です。この情報は、 Global Trade Compliance (GTC) チェックを行うために必要です。
 
-* Astra Control 登録時に「 Registration Failed 」エラーが表示されるのはなぜですか。 *
-
+.Astra Controlに登録するときに「Registration Failed」エラーが表示されるのはなぜですか？
 Astra Control では、お客様に正確な顧客情報を提供することがオンボーディングセクションで求められています。誤った情報を指定すると、「 Registration Failed 」エラーが表示されます。自分が所属している他のアカウントもロックされます。
 
-* Astra Control Service の URL は何であるか。 *
-
+.Astra ControlサービスのURLとは何ですか？
 Astra Control Service にはからアクセスできます https://astra.netapp.io[]。
 
-* 同僚に電子メールの招待状を送信しましたが、受信していません。どうすればよいですか？ *
-
+.同僚に招待メールを送信しましたが、まだ受信されていません。どうすればいいですか?
 スパムフォルダで do-not-reply@netapp.com からの電子メールを確認するか、受信トレイで「招待」を検索するように依頼します。 また、ユーザを削除して、再度追加することもできます。
 
-* 私は自由な計画からの Premium PayGO の計画にアップグレードした。最初の10個のネームスペースは請求されますか？*
-
+.無料プランからPremium PayGOプランにアップグレードしました。最初の10個のネームスペースの料金は請求されますか？
 はい。Premiumプランにアップグレードすると、アカウント内のすべての管理対象ネームスペースに対してAstra Controlが課金を開始します。
 
-* 月中旬に Premium PayGO プランにアップグレードしました。月中は請求されますか？ *
-
+.月の半ばにプレミアムPayGOプランにアップグレードしました。1か月分の料金は請求されますか？
 いいえ課金は、Premiumプランにアップグレードした時点から開始されます。
 
-* 無料プランを使用していますが、永続的ボリュームの請求には課金されますか？ *
-
+.無料プランを使用していますが、永続的ボリューム請求の料金は請求されますか？
 はい、クラウドプロバイダからクラスタで使用される永続的ボリュームの料金が請求されます。
 
 
 
 == Kubernetes クラスタを登録しています
 
-* CSI ドライバを Astra Control Service に追加する前に、 CSI ドライバをクラスタにインストールする必要がありますか。 *
-
+.Astra Control Serviceに追加する前に、クラスタにCSIドライバをインストールする必要がありますか。
 いいえクラスタがAstra Controlに追加されると、Astra Trident Container Storage Interface（CSI）ドライバがKubernetesクラスタに自動的にインストールされます。このCSIドライバは、クラウドプロバイダによってサポートされているクラスタの永続ボリュームをプロビジョニングするために使用されます。
 
-* Astra Control Service に追加した後、ワーカーノードをクラスタに追加する必要があります。どうすればよいですか？ *
-
+.Astra Control Serviceに追加したあとに、クラスタにワーカーノードを追加する必要があります。どうすればいいですか?
 新しいワーカーノードを既存のプールに追加することも、新しいプールを作成することもできます。ただし、その場合はが必要です `COS_CONTAINERD` イメージタイプ。これらは Astra Control によって自動的に検出されます。新しいノードが Astra Control に表示されない場合は、新しいワーカーノードでサポートされているイメージタイプが実行されているかどうかを確認します。を使用して、新しいワーカーノードの健全性を確認することもできます `kubectl get nodes` コマンドを実行します
 
 ifdef::aws[]
@@ -72,8 +63,7 @@ ifdef::aws[]
 
 == Elastic Kubernetes Service（EKS）クラスタを登録しています
 
-* Astra Control ServiceにプライベートEKSクラスタを追加できますか。*
-
+.プライベートEKSクラスタをAstra Control Serviceに追加できますか。
 はい、プライベートEKSクラスタはAstra Control Serviceに追加できます。プライベートEKSクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 endif::aws[]
@@ -84,12 +74,10 @@ ifdef::azure[]
 
 == Azure Kubernetes Service（AKS）クラスタの登録
 
-* AKS のプライベートクラスタを Astra Control Service に追加できますか。 *
-
+.プライベートAKSクラスタをAstra Control Serviceに追加できますか。
 はい、 AKS のプライベートクラスタを Astra 制御サービスに追加できます。プライベートAKSクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
-* Active Directoryを使用してAKSクラスタの認証を管理できますか。*
-
+.Active Directoryを使用してAKSクラスタの認証を管理できますか。
 はい。認証とID管理にAzure Active Directory（Azure AD）を使用するようにAKSクラスタを設定できます。クラスタを作成するときは、の手順に従ってください https://docs.microsoft.com/en-us/azure/aks/managed-aad["公式ドキュメント"^] をクリックして、Azure ADを使用するようにクラスタを設定してください。AKSで管理されるAzure AD統合の要件をクラスタが満たしていることを確認する必要があります。
 
 endif::azure[]
@@ -100,24 +88,20 @@ ifdef::gcp[]
 
 == Google Kubernetes Engine（GKE）クラスタの登録
 
-* Astra Control Service にプライベート GKE クラスタを追加できますか。 *
-
+.プライベートGKEクラスタをAstra Control Serviceに追加できますか。
 はい。 Astra Control Service にプライベート GKE クラスタを追加できます。プライベートGKEクラスタを追加するには、を参照してください link:add-first-cluster.html["Astra Control Service から Kubernetes クラスタの管理を開始します"]。
 
 プライベートGKEクラスタにはが必要です https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["許可されたネットワーク"^] Astra Control の IP アドレスを許可するように設定します。
 
 52.188.218.166-32
 
-* GKE クラスタは共有 VPC 上に存在できますか。 *
-
+.GKEクラスタを共有VPCに配置できますか。
 はい。Astra Controlでは、共有VPCにあるクラスタを管理できます。 link:set-up-google-cloud.html["VPC の共有構成を行うための Astra サービスアカウントの設定方法について説明します"]。
 
-* サービスアカウントの資格情報はどこにありますか？ *
-
+.GCPのサービスアカウント資格情報はどこで確認できますか？
 にログインしたら https://console.cloud.google.com/["Google Cloud Console の略"^]のサービスアカウントの詳細は、「 * IAM と管理」セクションに記載されています。詳細については、を参照してください link:set-up-google-cloud.html["Astra Control 向け Google Cloud のセットアップ方法"]。
 
-* 異なる GCP プロジェクトから異なる GKE クラスタを追加します。これは Astra Control でサポートされていますか。 *
-
+.異なるGCPプロジェクトから異なるGKEクラスタを追加したいと思います。これはAstra Controlでサポートされていますか。
 いいえ。これはサポートされている構成ではありません。1 つの GCP プロジェクトのみがサポートされます。
 
 endif::gcp[]
@@ -126,16 +110,14 @@ endif::gcp[]
 
 == クラスタの削除
 
-* 適切な登録解除、クラスタの停止、関連付けられたボリュームの削除を行うにはどうすればよいですか *
-
+.適切に登録解除、クラスタの停止、関連付けられているボリュームの削除を行うにはどうすればよいですか？
 . link:../use/unmanage.html["Astra Control からアプリケーションの管理を解除"]。
 . link:../use/unmanage.html#stop-managing-compute["Astra Control からクラスタの登録を解除します"]。
 . link:../use/unmanage.html#deleting-clusters-from-your-cloud-provider["永続ボリューム要求を削除します"]。
 . クラスタを削除
 
 
-* Astra Control からクラスタを削除した後、アプリケーションとデータはどうなりますか。 *
-
+.Astra Controlからクラスタを削除したあと、アプリケーションとデータはどうなりますか？
 Astra Control からクラスタを削除しても、クラスタの構成（アプリケーションと永続的ストレージ）は変更されません。このクラスタで作成されたアプリケーションの Snapshot やバックアップを Astra Control で復元することはできません。ストレージバックエンドに格納されているボリューム Snapshot データは削除されません。Astra Control で作成した永続的ストレージのバックアップは、クラウドプロバイダのオブジェクトストアに残りますが、リストアには使用できません。
 
 ifdef::gcp[]
@@ -145,21 +127,19 @@ WARNING: GCP から削除する場合は、必ず事前に Astra Control から�
 
 endif::gcp[]
 
-*管理を解除すると、Astra Control Provisionerはクラスタから自動的にアンインストールされますか。*
+.Astra Control Provisionerは、管理を解除するとクラスタから自動的にアンインストールされますか。
 Astra Control Centerでクラスタの管理を解除しても、Astra Control ProvisionerまたはAstra Tridentはクラスタから自動的にアンインストールされません。Astra Control ProvisionerとそのコンポーネントまたはAstra Tridentをアンインストールするには、次の手順を実行する必要があります： https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["次の手順に従って、Astra Control Provisionerサービスが含まれているAstra Tridentインスタンスをアンインストールします。"^]。
 
 
 
 == アプリケーションの管理
 
-* Astra Control はアプリケーションを導入できますか。 *
-
+.Astra Controlはアプリケーションを導入できますか。
 Astra Control はアプリケーションを導入しない。アプリケーションは Astra Control の外部に導入する必要があります。
 
 ifdef::gcp[]
 
-*アプリケーションのPVCがGCP CVSにバインドされていません。何が間違っていますか？ *
-
+.アプリケーションのPVCがGCP CVSにバインドされていない。どうしたの?
 Astra Trident オペレータは、 Astra Control に正常に追加された後、デフォルトのストレージクラスを「 NetApp-cvs-perf-premium 」に設定します。アプリケーションの PVC が Cloud Volumes Service for Google Cloud にバインドされていない場合は、次の手順を実行します。
 
 * kubectl get sc を実行し ' デフォルトのストレージ・クラスをチェックします
@@ -169,51 +149,42 @@ Astra Trident オペレータは、 Astra Control に正常に追加された後
 
 endif::gcp[]
 
-* アプリケーションを Astra Control から管理しなくなった後、どうなりますか。 *
-
+.Astra Controlからの管理を停止したアプリケーションはどうなりますか？
 既存のバックアップまたは Snapshot がすべて削除されます。アプリケーションとデータは引き続き使用できます。管理対象外のアプリケーション、またはそのアプリケーションに属するバックアップや Snapshot では、データ管理操作を実行できません。
 
 
 
 == データ管理の操作
 
-* Astra Control では、オブジェクトストアバケットはどこに作成されますか？ *
-
+.Astra Controlはオブジェクトストアバケットをどこで作成しますか？
 オブジェクトストアの場所は、最初に管理されたクラスタの格納場所で決まります。たとえば、最初に追加したクラスタがヨーロッパゾーンにある場合、バケットはその同じ地域に作成されます。必要に応じて、を実行できます link:../use/manage-buckets.html["バケットを追加します"]。
 
-* 作成していないスナップショットがアカウントにあります。彼らはどこから来たのですか。 *
-
+.アカウントに作成していないスナップショットがあります。彼らはどこから来たのですか。
 一部の状況では、 Astra Control は、別のプロセスを実行する際にスナップショットを自動的に作成します。これらの Snapshot が数分以上前のものであれば、安全に削除できます。
 
-* アプリケーションは複数の PVS を使用しています。Astra Control は、これらすべての PVC のスナップショットとバックアップを作成しますか。 *
-
+.私のアプリケーションは複数のPVSを使用しています。Astra ControlはこれらすべてのPVCのSnapshotとバックアップを作成しますか？
 はい。Astra Controlによるアプリケーションのスナップショット操作には、アプリケーションのPVCにバインドされているすべてのPVSのスナップショットが含まれます。
 
-* Astra Control で取得したスナップショットをクラウドプロバイダから直接管理できますか。 *
-
+.Astra Controlで作成されたSnapshotをクラウドプロバイダ経由で直接管理できますか。
 いいえAstra Controlで作成されたSnapshotとバックアップは、Astra Controlでのみ管理できます。
 
 
 
 == Astra Controlプロビジョニングツール
 
-* Astra Control Provisionerのストレージプロビジョニング機能は、Astra Tridentのストレージプロビジョニング機能とどのような点が異なりますか。*
-
+.Astra Control Provisionerのストレージプロビジョニング機能とAstra Tridentのストレージプロビジョニング機能の違いは何ですか。
 Astra Control Provisionerは、Astra Controlの一部として、オープンソースのAstra Tridentでは利用できないストレージプロビジョニング機能のスーパーセットをサポートします。これらの機能は、オープンソースのTridentで利用できるすべての機能に加えて提供されます。
 
-* Astra Control ProvisionerはAstra Tridentの後継ですか？*
+.Astra Control ProvisionerはAstra Tridentの後継ですか。
 Astra Control Provisionerは、Astra ControlアーキテクチャのストレージプロビジョニングおよびオーケストレーションツールとしてAstra Tridentに代わるものです。Astra Controlを使用する場合は、 link:../use/enable-acp.html["Astra Control Provisionerを有効にする"] Astra Controlを使用する場合。Astra Tridentはこのリリースでも引き続きサポートされますが、今後のリリースではサポートされません。Astra Tridentは引き続きオープンソースであり、NetAppの新しいCSIやその他の機能でリリース、保守、サポート、更新されます。ただし、Astra Controlの今後のリリースで使用できるのは、Astra TridentのCSI機能と拡張されたストレージ管理機能を備えたAstra Control Provisionerだけです。
 
-* Astra Tridentの料金を支払う必要がありますか？*
-
+.Astra Tridentの料金は発生しますか？
 いいえAstra Tridentは引き続きオープンソースであり、無償でダウンロードできます。Astra Control Provisioner機能を使用するには、Astra Controlライセンスが必要です。
 
-* Astra Controlをすべてインストールして使用しなくても、Astra Controlでストレージ管理とプロビジョニングの機能を使用できますか。*
-
+.Astra Controlをすべてインストールして使用しなくても、Astra Controlでストレージ管理機能とプロビジョニング機能を使用できますか。
 はい。Astra Control Provisionerにアップグレードして、Astra Controlのすべてのデータ管理機能を使用する必要がなくても、その機能を使用できます。
 
-[[running-acp-check]]*クラスタのAstra TridentにAstra Control Provisionerが置き換えられたかどうかを確認するにはどうすればよいですか？*
-
+.クラスタのAstra Tridentに代わってAstra Control Provisionerが使用されているかどうかを確認するにはどうすればよいですか。
 Astra Control Provisionerをインストールすると、Astra Control UIのホストクラスタに `ACP version` 代わりに `Trident version` フィールドと現在インストールされているバージョン番号。
 
 image:ac-acp-version.png["Astra Control Provisionerのバージョンを示すUIのスクリーンショット"]

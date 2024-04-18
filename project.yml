@@ -34,6 +34,8 @@ sidebar:
   - title: Astra Control REST API で自動化
     url: "/automation.html"
   - section: support
+  - title: よく寄せられる質問
+    url: "/get-started/faq.html"
   - title: 法的通知
     url: "/legal-notices.html"
 product-family:
