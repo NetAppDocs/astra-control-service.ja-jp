@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: get-started/install-astra-connector.html 
+permalink: get-started/install-astra-connector-previous.html 
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
 summary: Astra Connectorをインストールして、プライベートクラスタの管理に役立てることができます。 
 ---
-= プライベートクラスタ用のAstra Connectorのインストール
+= 以前のバージョンのAstra Connectorをインストール
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,21 +12,17 @@ summary: Astra Connectorをインストールして、プライベートクラ�
 
 
 [role="lead"]
-Astra Control Serviceは、Astra Connectorを使用して、Astra Control Serviceとプライベートクラスタの間の通信を可能にします。管理するプライベートクラスタにAstra Connectorをインストールする必要があります。
+Astra Control Serviceでは、以前のバージョンのAstra Connectorを使用して、Astra Control Serviceと非Kubernetesネイティブのワークフローで管理されるプライベートクラスタの間の通信を可能にします。Kubernetesネイティブでないワークフローで管理するプライベートクラスタにAstra Connectorをインストールする必要があります。
 
-Astra Connectorは、次のタイプのプライベートクラスタをサポートします。
+以前のバージョンのAstra Connectorでは、非Kubernetesネイティブのワークフローで管理される次のタイプのプライベートクラスタがサポートされていました。
 
 * Amazon Elastic Kubernetes Service（EKS）
 * Azure Kubernetes Service （ AKS ）
 * Google Kubernetes Engine （ GKE ）
 * Red Hat OpenShift Service on AWS（ROSA）
 * RosaとAWS PrivateLink
-* オンプレミスのRed Hat OpenShift Container Platform
+* Red Hat OpenShift Container Platform（オンプレミス）
 
-
-
-
-== Astra Connectorのインストール
 
 .このタスクについて
 * これらの手順を実行する場合は、Astra Control Serviceで管理するプライベートクラスタに対してこれらのコマンドを実行します。
@@ -39,7 +35,7 @@ Astra Connectorは、次のタイプのプライベートクラスタをサポ�
 
 
 .手順
-. Astra Control Serviceで管理するプライベートクラスタにAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース `astra-connector-operator` が作成され、設定がネームスペースに適用されます。
+. Kubernetesネイティブでないワークフローで管理するプライベートクラスタに、以前のAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース `astra-connector-operator` が作成され、設定がネームスペースに適用されます。
 +
 [source, console]
 ----

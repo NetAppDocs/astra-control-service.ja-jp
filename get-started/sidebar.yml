@@ -27,8 +27,13 @@ entries:
 - title: クラスタを追加
   url: "/get-started/add-first-cluster.html"
   entries:
-  - title: プライベートクラスタ用のAstra Connectorのインストール
-    url: "/get-started/install-astra-connector.html"
+  - title: Astra Connectorをインストールしてクラスタを管理
+    url: "/get-started/astra-connector-overview.html"
+    entries:
+    - title: プライベートクラスタ用の以前のバージョンのAstra Connectorをインストール
+      url: "/get-started/install-astra-connector-previous.html"
+    - title: 宣言型Kubernetesクラスタ用のAstra Connectorのインストール
+      url: "/get-started/install-astra-connector-declarative.html"
   - title: プロバイダ管理クラスタを追加します
     entries:
     - title: パブリックプロバイダが管理するクラスタを追加します

@@ -94,6 +94,190 @@ NOTE: includeルールとexcludeルールの設定については、を参照し
 . リストア処理の詳細をよく確認し、プロンプトが表示されたら「restore」と入力して*[リストア]*を選択します。
 
 
+
+
+== [テクニカルプレビュー]カスタムリソース（CR）を使用したバックアップからのリストア
+
+カスタムリソース（CR）ファイルを使用して、別のネームスペースまたは元のソースネームスペースにバックアップからデータをリストアできます。
+
+[role="tabbed-block"]
+====
+.CRを使用したバックアップからのリストア
+--
+.手順
+. カスタムリソース（CR）ファイルを作成して名前を付けます。 `astra-control-backup-restore-cr.yaml`。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。
++
+** <CR_NAME>：このCR操作の名前。環境に適した適切な名前を選択します。
+** <APPVAULT_NAME>：バックアップコンテンツが格納されているAppVaultの名前。
+** <BACKUP_PATH>：バックアップコンテンツが格納されているAppVault内のパス。例：
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>：リストア処理のソースネームスペース。
+** <DESTINATION_NAMESPACE>：リストア処理のデスティネーションネームスペース。
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+
+
+<stdin>の未解決ディレクティブ-include::../_include/selective-restore-cr.adoc[]
+
+. データを入力した後、 `astra-control-backup-restore-cr.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-restore-cr.yaml
+----
+
+
+--
+.CRを使用したバックアップから元のネームスペースへのリストア
+--
+.手順
+. カスタムリソース（CR）ファイルを作成して名前を付けます。 `astra-control-backup-ipr-cr.yaml`。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。
++
+** <CR_NAME>：このCR操作の名前。環境に適した適切な名前を選択します。
+** <APPVAULT_NAME>：バックアップコンテンツが格納されているAppVaultの名前。
+** <BACKUP_PATH>：バックアップコンテンツが格納されているAppVault内のパス。例：
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: BackupInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appVaultRef: <APPVAULT_NAME>
+  appArchivePath: <BACKUP_PATH>
+----
+
+
+
+
+<stdin>の未解決ディレクティブ-include::../_include/selective-restore-cr.adoc[]
+
+. データを入力した後、 `astra-control-backup-ipr-cr.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -f astra-control-backup-ipr-cr.yaml
+----
+
+
+--
+====
+
+
+== [テクニカルプレビュー]カスタムリソースを使用したSnapshotからのリストア（CR）
+
+カスタムリソース（CR）ファイルを使用して、スナップショットから別のネームスペースまたは元のソースネームスペースにデータをリストアできます。
+
+[role="tabbed-block"]
+====
+.CRを使用したSnapshotからのリストア
+--
+.手順
+. カスタムリソース（CR）ファイルを作成して名前を付けます。 `astra-control-snapshot-restore-cr.yaml`。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。
++
+** <CR_NAME>：このCR操作の名前。環境に適した適切な名前を選択します。
+** <APPVAULT_NAME>：バックアップコンテンツが格納されているAppVaultの名前。
+** <BACKUP_PATH>：バックアップコンテンツが格納されているAppVault内のパス。例：
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
+** <SOURCE_NAMESPACE>：リストア処理のソースネームスペース。
+** <DESTINATION_NAMESPACE>：リストア処理のデスティネーションネームスペース。
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+  namespaceMapping: [{"source": "<SOURCE_NAMESPACE>", "destination": "<DESTINATION_NAMESPACE>"}]
+----
+
+
+
+
+<stdin>の未解決ディレクティブ-include::../_include/selective-restore-cr.adoc[]
+
+. データを入力した後、 `astra-control-snapshot-restore-cr.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-restore-cr.yaml
+----
+
+
+--
+.CRを使用したSnapshotから元のネームスペースへのリストア
+--
+.手順
+. カスタムリソース（CR）ファイルを作成して名前を付けます。 `astra-control-snapshot-ipr-cr.yaml`。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。
++
+** <CR_NAME>：このCR操作の名前。環境に適した適切な名前を選択します。
+** <APPVAULT_NAME>：バックアップコンテンツが格納されているAppVaultの名前。
+** <BACKUP_PATH>：バックアップコンテンツが格納されているAppVault内のパス。例：
++
+[listing]
+----
+ONTAP-S3_1343ff5e-4c41-46b5-af00/backups/schedule-20231213023800_94347756-9d9b-401d-a0c3
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: SnapshotInplaceRestore
+metadata:
+  name: <CR_NAME>
+  namespace: astra-connector
+spec:
+  appArchivePath: <BACKUP_PATH>
+  appVaultRef: <APPVAULT_NAME>
+----
+
+
+
+
+<stdin>の未解決ディレクティブ-include::../_include/selective-restore-cr.adoc[]
+
+. データを入力した後、 `astra-control-snapshot-ipr-cr.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -f astra-control-snapshot-ipr-cr.yaml
+----
+
+
+--
+====
 .結果
 Astra Control は、指定した情報に基づいてアプリケーションを復元します。アプリケーションをインプレースでリストアした場合、既存の永続ボリュームのコンテンツが、リストアしたアプリケーションの永続ボリュームのコンテンツに置き換えられます。
 

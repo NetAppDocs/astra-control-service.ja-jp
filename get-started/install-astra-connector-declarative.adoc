@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: get-started/install-astra-connector-declarative.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: Astra Connectorをインストールして、プライベートクラスタの管理に役立てることができます。 
+---
+= （テクニカルプレビュー）宣言型Kubernetes Astra Connectorのインストール
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+宣言型Kubernetesワークフローで管理されるクラスタは、Astra Connectorを使用して、管理対象クラスタとAstra Controlの間の通信を有効にします。Kubernetesの宣言ワークフローで管理するすべてのクラスタにAstra Connectorをインストールする必要があります。
+
+宣言型Kubernetes Astra Connectorは、KubernetesコマンドとCustom Resource（CR）ファイルを使用してインストールします。
+
+.このタスクについて
+* これらの手順を実行する場合は、Astra Controlで管理するクラスタでこれらのコマンドを実行します。
+* 要塞ホストを使用している場合は、要塞ホストのコマンドラインからこれらのコマンドを問題 で実行します。
+
+
+.作業を開始する前に
+* Astra Controlで管理するクラスタへのアクセスが必要です。
+* クラスタにAstra Connectorオペレータをインストールするには、Kubernetes管理者の権限が必要です。
+
+
+
+NOTE: Kubernetes 1.25以降のクラスタのデフォルトであるポッドセキュリティアドミッション適用がクラスタに設定されている場合は、適切なネームスペースに対してPSA制限を有効にする必要があります。を参照してください link:prep-for-cluster-management.html["Astra Controlを使用して、クラスタ管理のための環境を準備する"] 手順については、を参照し
+
+.手順
+. Kubernetesの宣言ワークフローを使用して管理するクラスタにAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース `astra-connector-operator` が作成され、設定がネームスペースに適用されます。
++
+[source, console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403151353/astraconnector_operator.yaml
+----
+. オペレータが設置され、準備ができていることを確認します。
++
+[source, console]
+----
+kubectl get all -n astra-connector-operator
+----
+. Astra ControlからAPIトークンを取得を参照してください https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automationのドキュメント"^] 手順については、を参照し
+. トークンを使用してシークレットを作成します。<API_TOKEN>を、Astra Controlから受け取ったトークンに置き換えます。
++
+[source, console]
+----
+kubectl create secret generic astra-token \
+--from-literal=apiToken=<API_TOKEN> \
+-n astra-connector
+----
+. Astra Connectorイメージの取得に使用するDockerシークレットを作成します。括弧<>の値は、環境の情報で置き換えます。
++
+
+NOTE: <ASTRA_CONTROL_ACCOUNT_ID>はAstra Control Web UIで確認できます。Web UIで、ページの右上にある図アイコンを選択し、*[API access]*を選択します。
+
++
+[source, console]
+----
+kubectl create secret docker-registry regcred \
+--docker-username=<ASTRA_CONTROL_ACCOUNT_ID> \
+--docker-password=<API_TOKEN> \
+-n astra-connector \
+--docker-server=cr.astra.netapp.io
+----
+. Astra Connector CRファイルを作成してという名前を付ける `astra-connector-cr.yaml`。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。
++
+** <ASTRA_CONTROL_ACCOUNT_ID>：前の手順でAstra Control Web UIから取得。
+** <CLUSTER_NAME>：このクラスタをAstra Controlで割り当てる名前。
+** <ASTRA_CONTROL_URL>：Astra ControlのWeb UI URL。例：
++
+[listing]
+----
+https://astra.control.url
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  astra:
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    clusterName: <CLUSTER_NAME>
+    #Only set `skipTLSValidation` to `true` when using the default self-signed
+    #certificate in a proof-of-concept environment.
+    skipTLSValidation: false #Should be set to false in production environments
+    tokenRef: astra-token
+  natsSyncClient:
+    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
+  imageRegistry:
+    name: cr.astra.netapp.io
+    secret: regcred
+----
+
+
+. データを入力した後、 `astra-connector-cr.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -n astra-connector -f astra-connector-cr.yaml
+----
+. Astra Connectorが完全に導入されたことを確認します。
++
+[source, console]
+----
+kubectl get all -n astra-connector
+----
+. クラスタがAstra Controlに登録されたことを確認します。
++
+[source, console]
+----
+kubectl get astraconnectors.astra.netapp.io -A
+----
++
+次のような出力が表示されます。
+
++
+[listing]
+----
+NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   astra-connector   true         00ac8-2cef-41ac-8777-ed0583e   Registered with Astra
+----
+. Astra Control Web UIの*[Clusters]*ページで、管理対象クラスタのリストにクラスタが表示されることを確認します。
+

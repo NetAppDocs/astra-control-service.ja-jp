@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: get-started/astra-connector-overview.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: Astra Controlでクラスタを管理するには、Astra Connectorをインストールする必要があります。 
+---
+= Astra Connectorをインストールしてクラスタを管理
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Astra Connectorは、管理対象クラスタに実装されるソフトウェアで、管理対象クラスタとAstra Controlの間の通信を促進します。Astra Control Serviceを使用して管理されるクラスタには、次の2つのバージョンのAstra Connectorがあります。
+
+* *以前のバージョンのAstra Connector *： link:install-astra-connector-previous.html["以前のバージョンのAstra Connectorをインストール"] Kubernetesネイティブでないワークフローでクラスタを管理する場合は、クラスタ。
+* [技術プレビュー]*宣言型Kubernetes Astra Connector *： link:install-astra-connector-declarative.html["Kubernetesの宣言ワークフローで管理されるクラスタ用にAstra Connectorをインストール"] 宣言型Kubernetesワークフローを使用してクラスタを管理する場合は、クラスタ上。クラスタにAstra Connectorをインストールすると、クラスタが自動的にAstra Controlに追加されます。
+
+
+
+NOTE: 宣言型Kubernetes Astra Connectorは、Astra Control Early Adopter Program（EAP；Astra Control早期導入プログラム）の一部としてのみ利用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。

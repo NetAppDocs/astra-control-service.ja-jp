@@ -265,6 +265,106 @@ NOTE: [システムネームスペースを表示（Show system Namespaces）]�
 
 
 
+=== [テクニカルプレビュー] Kubernetesのカスタムリソースを使用したアプリケーションの定義
+
+カスタムリソース（CR）を使用してアプリケーションとして定義することで、Astra Controlで管理するKubernetesリソースを指定できます。たとえば、特定のネームスペース内のすべてのリソースを同様の方法で共通の間隔で管理および保護する場合は、それらのリソースを個別に管理するか、またはネームスペース内のすべてのKubernetesリソースを個別に管理する場合は、クラスタ対象のリソースを追加できます。
+
+.手順
+. カスタムリソース（CR）ファイルを作成し、という名前を付けます（例： `astra_mysql_app.yaml`）。
+. アプリケーションに名前を付けます。 `metadata.name`。
+. 管理するアプリケーションリソースを定義します。
++
+[role="tabbed-block"]
+====
+.spec.includedClusterScopedResources
+--
+Astra Controlに自動的に含まれるもののほかに、クラスタを対象としたリソースタイプも含めます。
+
+** * spec.includedClusterScopedResources*:_(オプション)_含めるクラスタスコープのリソースタイプのリスト。
++
+*** *groupVersionKind *:_(オプション)_unambiguouslyは種類を識別します。
++
+**** *group*:_(groupVersionKindが使用されている場合は必須)含めるリソースのAPIグループ。
+**** *version*:_(groupVersionKindが使用されている場合は必須)_含めるリソースのAPIバージョン。
+**** *kind*:_(groupVersionKindを使用する場合は必須)_kind含めるリソースの種類。
+
+
+*** *labelSelector *:_(オプション)_リソースセットのラベルクエリ。ラベルに一致するリソースのみを取得するために使用されます。ラベルを指定しないと、Astra Controlは、そのクラスタに指定されている種類のリソースのすべてのインスタンスを収集します。matchLabelsとmatchExpressionsの結果はANDで処理されます。
++
+**** *matchLabels*:_(省略可能)_{key, value}ペアのマップ。matchLabelsマップ内の1つの{key, value}は、keyフィールドが"key"、演算子が"in"、value"のみを含むvalues配列を持つmatchExpressionsの要素に相当します。要件はANDで処理されます。
+**** *matchExpressions*:_(オプション)_ラベルセレクタの要件のリスト。要件はANDで処理されます。
++
+***** *key *:_(matchExpressionsを使用する場合は必須)_ラベルセレクタに関連付けられたラベルキー。
+***** *演算子*:_(matchExpressionsが使用されている場合は必須)_値のセットに対するキーの関係を表します。有効な演算子： `In`、 `NotIn`、 `Exists` および `DoesNotExist`。
+***** * values *：_（matchExpressionsを使用する場合は必須）_文字列値の配列。演算子が `In` または `NotIn`、values配列must_not_be empty。演算子が `Exists` または `DoesNotExist`values配列は空である必要があります。
+
+
+
+
+
+
+
+
+--
+.spec.includedNamespaces
+--
+アプリケーション内のこれらのリソースに名前空間とリソースを含めます。
+
+** * spec.includedNamespaces*:_(必須)_リソース選択のための名前空間とオプションのフィルタを定義します。
++
+*** *ネームスペース*：_（必須）_ Astra Controlで管理するアプリケーションリソースを含むネームスペース。
+*** *labelSelector *:_(オプション)_リソースセットのラベルクエリ。ラベルに一致するリソースのみを取得するために使用されます。ラベルを指定しないと、Astra Controlは、そのクラスタに指定されている種類のリソースのすべてのインスタンスを収集します。matchLabelsとmatchExpressionsの結果はANDで処理されます。
++
+**** *matchLabels*:_(省略可能)_{key, value}ペアのマップ。matchLabelsマップ内の1つの{key, value}は、keyフィールドが"key"、演算子が"in"、value"のみを含むvalues配列を持つmatchExpressionsの要素に相当します。要件はANDで処理されます。
+**** *matchExpressions*:_(オプション)_ラベルセレクタの要件のリスト。 `key` および `operator` は必須です。要件はANDで処理されます。
++
+***** *key *:_(matchExpressionsを使用する場合は必須)_ラベルセレクタに関連付けられたラベルキー。
+***** *演算子*:_(matchExpressionsが使用されている場合は必須)_値のセットに対するキーの関係を表します。有効な演算子： `In`、 `NotIn`、 `Exists` および `DoesNotExist`。
+***** * values *：_（matchExpressionsを使用する場合は必須）_文字列値の配列。演算子が `In` または `NotIn`、values配列must_not_be empty。演算子が `Exists` または `DoesNotExist`values配列は空である必要があります。
+
+
+
+
+
+
+
+
+--
+====
++
+YAMLの例：
+
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: Application
+metadata:
+  name: astra_mysql_app
+spec:
+  includedNamespaces:
+    - namespace: astra_mysql_app
+      labelSelector:
+        matchLabels:
+          app: nginx
+          env: production
+        matchExpressions:
+          - key: tier
+            operator: In
+            values:
+              - frontend
+              - backend
+----
+. データを入力した後、 `astra_mysql_app.yaml` 正しい値を持つファイルを作成し、CRを適用します。
++
+[source, console]
+----
+kubectl apply -f astra_mysql_app.yaml -n astra-connector
+----
+
+
+
+
 == システムネームスペースについて教えてください。
 
 Astra Controlは、Kubernetesクラスタ上のシステムネームスペースも検出します。これらのシステムネームスペースはデフォルトでは表示されません。システムアプリケーションリソースのバックアップが必要になることがまれです。

@@ -50,7 +50,7 @@ Astra Control Serviceにプライベートクラスタを追加するには、�
 
 == Astra Connectorのインストール
 
-プライベートクラスタを追加する前に、Astra Controlがクラスタと通信できるように、クラスタにAstra Connectorをインストールする必要があります。を参照してください link:install-astra-connector.html["プライベートクラスタ用のAstra Connectorのインストール"] 手順については、を参照し
+プライベートクラスタを追加する前に、Astra Controlがクラスタと通信できるように、クラスタにAstra Connectorをインストールする必要があります。を参照してください link:install-astra-connector-previous.html["Kubernetesネイティブではないワークフローで管理されるプライベートクラスタ用に、以前のバージョンのAstra Connectorをインストール"] 手順については、を参照し
 
 
 

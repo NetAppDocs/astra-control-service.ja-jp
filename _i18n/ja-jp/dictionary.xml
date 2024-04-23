@@ -323,11 +323,9 @@
   <block id="c48341950d06dc5b2b657a869930da35" category="doc">Snapshot とバックアップでアプリケーションを保護</block>
   <block id="25504345a275167f21fbd2cb1114c22b" category="admonition">_ 最新のバックアップがあるまで、完全に保護することはできません _ 。これは、永続ボリュームから離れたオブジェクトストアにバックアップが格納されるために重要です。障害や事故によってクラスタと永続的ストレージが消去された場合は、バックアップをリカバリする必要があります。スナップショットを使用してリカバリすることはできません。</block>
   <block id="a080c1d6ad4654d9b12e290cb531df28" category="list-text">毎時、毎日、毎週、および毎月のスケジュールで保持する Snapshot とバックアップの数を選択して、保護スケジュールを定義します。</block>
-  <block id="3c87cbf934c17bb682cfb8503e06cba9" category="paragraph">スケジュールは、毎時、毎日、毎週、および毎月の各スケジュールで同時に定義できます。Snapshot とバックアップの保持レベルを設定するまで、スケジュールはアクティブになりません。</block>
   <block id="5c1427e50f55ee41de824edbb1570947" category="paragraph">バックアップの保持レベルを設定する際に、バックアップを格納するバケットを選択できます。</block>
   <block id="51ef5dbf6271c393f6d97e405ca64acb" category="paragraph">次の例では、 Snapshot とバックアップの保護スケジュールとして、毎時、毎日、毎週、毎月の 4 つを設定します。</block>
   <block id="24dbaabc8acdace35cfc98c9178faeb5" category="inline-image-macro">Snapshot とバックアップを毎時、毎日、毎週、または毎月作成する設定ポリシーの例のスクリーンショット。</block>
-  <block id="9433a2dfbb0db6b2b8a07db04f4febd4" category="paragraph"><block ref="9433a2dfbb0db6b2b8a07db04f4febd4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ea4ebf424434e7ebdf07f2247bd94dd6" category="paragraph">Astra Control は、定義したスケジュールと保持ポリシーを使用して、スナップショットとバックアップを作成し、保持することによって、データ保護ポリシーを実装します。</block>
   <block id="af9c364e0933200b7b8c1e7e13947ccf" category="section-title">Snapshot を作成します</block>
   <block id="9bbdcd6083ca1f29424ab7d4e6e6d3f5" category="paragraph">オンデマンド Snapshot はいつでも作成できます。</block>
@@ -1540,7 +1538,6 @@
   <block id="49507728a783fa319e52827452a8c306" category="list-text">名前空間ごとに請求履歴を表示するには、[請求履歴*]を選択します。</block>
   <block id="09ea52ceb771c5d3a7dbc11021104012" category="paragraph">Astra Controlを使用すると、各ネームスペースの使用量とコストを分単位で表示できます。使用分は、課金期間中にAstra Controlが名前空間を管理した分数です。</block>
   <block id="203528de7353cc2eb54ffc07e54122d7" category="list-text">Astra Controlの料金には、名前空間を管理するための料金が含まれています。ストレージバックエンドの永続ボリュームに対して、クラウドプロバイダが別途料金を請求します。</block>
-  <block id="5c6e486607b402b2c91fc889e966340e" category="list-text">［*保護ポリシーの設定*］を選択します。</block>
   <block id="8cf5def8eede43ff4c75800399b44fb7" category="list-text">目的のアプリケーションの * アクション * 列のオプションメニューから、 * スナップショット * を選択します。</block>
   <block id="e731b69194fb461b61a50d70056eadeb" category="list-text">スナップショットの名前をカスタマイズし、*次へ*を選択します。</block>
   <block id="932f89164903be81ff337dd1df9741eb" category="list-text">Snapshot の概要を確認し、「 * Snapshot * 」を選択します。</block>
@@ -1548,7 +1545,6 @@
   <block id="9916507b3209a34b61365719daccee17" category="list-text">目的のアプリケーションの*アクション*列のオプションメニューから、*バックアップ*を選択します。</block>
   <block id="154044900ec18a9168786e9732e60aea" category="list-text">バックアップ名をカスタマイズする。</block>
   <block id="693e02c2755e3bd5aa6c9cd127fef46e" category="list-text">既存のスナップショットからアプリケーションをバックアップするかどうかを選択します。このオプションを選択すると、既存の Snapshot のリストから選択できます。</block>
-  <block id="137c45611597ee2966a295d2c5bed2ba" category="list-text">ストレージバケットのリストから、バックアップのデスティネーションバケットを選択します。</block>
   <block id="0a976f3c5cd8c23ef9a0b4e7978580fa" category="list-text">バックアップの概要を確認し、「バックアップ」を選択します。</block>
   <block id="6644c65dfe41666f4430ec48ffb52324" category="admonition">実行中のバックアップをキャンセルする必要がある場合は、の手順に従ってください <block ref="d36d12c984fabf8d0626a7b2539983bf" category="inline-xref-macro-rx"></block>。バックアップを削除するには、完了するまで待ってから、の手順を実行します <block ref="da28e1f6ad1e5135aab14ac0664600c6" category="inline-xref-macro-rx"></block>。</block>
   <block id="57cec2186373e15c3082b81aa26022cc" category="list-text">目的のスナップショットの * アクション * 列のオプションメニューから、 * スナップショットの削除 * を選択します。</block>
@@ -1828,7 +1824,6 @@
   <block id="0a7a7f4a53adc5b0553b40b1e29b0ba0" category="list-text">*種類*：ドロップダウンリストから、フィルタで使用するKubernetesリソースタイプのオブジェクトスキーマを選択します。</block>
   <block id="8267e7bf8eea35734f6959fde07b17d9" category="list-text">*バージョン*：Kubernetes APIのバージョンを選択します。</block>
   <block id="e9f8a964cfe8d148cfb0e30848e5fa69" category="admonition">ルールを含むリソースと除外するリソースは必要なだけ作成できます。処理を開始する前に、リストアアプリケーションの概要にルールが表示されます。</block>
-  <block id="45ad0235a77627fe6b23b64997cecf69" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。</block>
   <block id="ea4406d0295c7a1fc18318721ed0eb77" category="paragraph">1 時間に 1 回以上の頻度でバックアップや Snapshot を実行する必要がある場合は、次の方法があります<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
   <block id="24de3392d815c86d9bc54afa43409615" category="inline-link-macro">アプリケーションのバックアップ</block>
   <block id="e68b36f1fd0d0f8bbe23162e44e442d1" category="paragraph">Azure NetApp Files ストレージでホストされているアプリケーションをバックアップするときは、ストレージスペースがどのように処理されるかに注意してください。を参照してください <block ref="7bb90b7122f027c565a9c95a353052fc" category="inline-link-macro-rx"></block> を参照してください。</block>
@@ -2046,9 +2041,6 @@
   <block id="5cf8b5937cb82a5351c4c73d39637045" category="paragraph">独自のクラスタを管理していて、クラウドプロバイダでホストされていない場合は、自己管理クラスタの要件を確認してください。
 <block ref="a9fe61a91bc6d7fb0348dcee66b62bae" category="inline-link-macro-rx"></block>。</block>
   <block id="a3c5aa86ee838da565b2cd95a4d4050f" category="summary">Astra Connectorをインストールして、プライベートクラスタの管理に役立てることができます。</block>
-  <block id="47855f6445b935349857dbfd8122b3a9" category="doc">プライベートクラスタ用のAstra Connectorのインストール</block>
-  <block id="86a177c8b0866600fff2490a0bf1203f" category="paragraph">Astra Control Serviceは、Astra Connectorを使用して、Astra Control Serviceとプライベートクラスタの間の通信を可能にします。管理するプライベートクラスタにAstra Connectorをインストールする必要があります。</block>
-  <block id="753382fed028d041553f0851f19678e7" category="paragraph">Astra Connectorは、次のタイプのプライベートクラスタをサポートします。</block>
   <block id="480c9b5f979d1ce95ea2a58b09826d1b" category="list-text">Amazon Elastic Kubernetes Service（EKS）</block>
   <block id="f28c5620810ae2a6961a1811277a7ff8" category="list-text">Azure Kubernetes Service （ AKS ）</block>
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine （ GKE ）</block>
@@ -2059,7 +2051,6 @@
   <block id="1edf1f850fb1dd3ecb6ec5a68b931d8a" category="list-text">要塞ホストを使用している場合は、要塞ホストのコマンドラインからこれらのコマンドを問題 で実行します。</block>
   <block id="46f84f76c193988a23a05e2533e85012" category="list-text">Astra Control Serviceで管理するプライベートクラスタにアクセスする必要があります。</block>
   <block id="3ba9d4444750a5b9f273108e52fab161" category="list-text">クラスタにAstra Connectorオペレータをインストールするには、Kubernetes管理者の権限が必要です。</block>
-  <block id="ddf67d6bca798cdb05a03cd3e8c353a5" category="list-text">Astra Control Serviceで管理するプライベートクラスタにAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> が作成され、設定がネームスペースに適用されます。</block>
   <block id="df6b3ae9d235c55e4852987eb13aca3a" category="list-text">オペレータが設置され、準備ができていることを確認します。</block>
   <block id="de2197712ea8457243c4dd6357e2765e" category="list-text">Astra ControlからAPIトークンを取得を参照してください<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block> 手順については、を参照し</block>
   <block id="9606554dacabd47ad1eea6bf025ec9f2" category="list-text">Astra Connectorネームスペースを作成します。</block>
@@ -2084,7 +2075,6 @@
   <block id="b2f16d028eefb97c311806a92cfd1819" category="list-text">サービスアカウントのシークレットを一覧表示します（置き換えます）<block ref="b7deaaa7156445a472f0757516cd1509" prefix=" " category="inline-code"></block> インストールに適したコンテキストを使用して、次の操作を行います。</block>
   <block id="a46411d662ebd15db7079553439dbcdc" category="paragraph">内の各要素のインデックス<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> アレイは0から始まります。上記の例では、のインデックスです<block ref="5bb15412e9504feb0711be74d8c6ed33" prefix=" " category="inline-code"></block> は0、のインデックスです<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> は1です。出力で、サービスアカウントシークレットのインデックス番号をメモします。このインデックス番号は次の手順で必要になります。</block>
   <block id="ca492be8d9c67f790505b17ed0272fa9" category="list-text"><block ref="43d42a1bad9233e3772b4daeb39d1495" category="inline-xref-macro-rx"></block></block>
-  <block id="8ab37db051796602226f25a5530aeaca" category="paragraph">プライベートクラスタを追加する前に、Astra Controlがクラスタと通信できるように、クラスタにAstra Connectorをインストールする必要があります。を参照してください <block ref="5c81995f6b8f1946f7d874c3b5f608ab" category="inline-link-macro-rx"></block> 手順については、を参照し</block>
   <block id="258c9b2ecd2a4147777d96a2577bb01d" category="list-text">*プライベートルート識別子*：Astra Connectorから取得できるプライベートルート識別子を入力します。を使用してAstra Connectorを照会した場合<block ref="e29c11c68aee82b23845c3b2bf3ce544" prefix=" " category="inline-code"></block> プライベートルート識別子はと呼ばれます<block ref="6205f02991df9d45acb59ccb61d7a0cb" prefix=" " category="inline-code"></block>。</block>
   <block id="1d740d5e28f5ec526ba0e21bd2c042ae" category="list-text"><block ref="d19f65bb3040b630d929eb2fd73ae249" category="inline-link-macro-rx"></block>。</block>
   <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">変更不可のバックアップ</block>
@@ -2705,4 +2695,161 @@ Astra Control が新しい導入モデルで提供されるようになりまし
   <block id="6080a9c8227972613444a9ebc88e3b3c" category="paragraph-title">Astra Tridentの料金は発生しますか？</block>
   <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">Astra Controlをすべてインストールして使用しなくても、Astra Controlでストレージ管理機能とプロビジョニング機能を使用できますか。</block>
   <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">クラスタのAstra Tridentに代わってAstra Control Provisionerが使用されているかどうかを確認するにはどうすればよいですか。</block>
+  <block id="899ffe13f2bb16a187ce9807836e3d5f" category="paragraph">保護ポリシーは、定義されたスケジュールでスナップショット、バックアップ、またはその両方を作成することでアプリケーションを保護します。Snapshot とバックアップを毎時、日次、週次、および月単位で作成し、保持するコピーの数を指定できます。保護ポリシーは、Astra Control Web UIまたはカスタムリソース（CR）ファイルを使用して定義できます。</block>
+  <block id="69f7fefc112d0cd0af937e058f3df889" category="admonition">バックアップとレプリケーションのスケジュールをオフセットして、スケジュールの重複を回避します。たとえば、1時間ごとに1時間の最上部にバックアップを実行し、オフセットを5分、間隔を10分に設定してレプリケーションを開始するようにスケジュールを設定します。</block>
+  <block id="d306a8d55f523487d15819734d6cfba4" category="open-title">Web UIを使用して保護ポリシーを設定する</block>
+  <block id="a2327a6ff4730e78bedb7d226cc38d2b" category="paragraph">スケジュールは、毎時、毎日、毎週、および毎月の各スケジュールで同時に定義できます。保持レベルを設定するまで、スケジュールはアクティブになりません。</block>
+  <block id="db49e5314c2b4fd9bc9299afc637aa12" category="paragraph"><block ref="db49e5314c2b4fd9bc9299afc637aa12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9f33a2042fc3e70dae9f8c5507596e07" category="list-text">[*技術プレビュー*]ストレージバケットのリストから、バックアップまたはスナップショットのデスティネーションバケットを選択します。</block>
+  <block id="7754a3e7b00b1d0b1394a3ce015c6110" category="list-text">［ * 保護ポリシーの設定 * ］ を選択します</block>
+  <block id="c45e50979034e4d37ed1ea77e95e8476" category="open-title">[テクニカルプレビュー] CRを使用した保護ポリシーの設定</block>
+  <block id="0a0f328bd1b4a1ac5f356ea87a31c3fa" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="534821cc2d5862b328eea0ae3958ad02" prefix=" " category="inline-code"></block>。Astra Control環境、クラスタ構成、データ保護のニーズに合わせて、かっこ&lt;&gt;の値を更新します。</block>
+  <block id="9461963df02697b9fc35206ce7f9895a" category="list-text">&lt;CR_NAME&gt;：このカスタムリソースの名前。環境に適した一意の適切な名前を選択します。</block>
+  <block id="ad7895edfca0c0da33bbb180a1ec8ba2" category="list-text">&lt;APPLICATION_NAME&gt;：バックアップするアプリケーションのKubernetes名。</block>
+  <block id="c05cc64c85777c45bbf22594c1f2be5b" category="list-text">&lt;APPVAULT_NAME&gt;：バックアップコンテンツを格納するAppVaultの名前。</block>
+  <block id="69c143beb182925943165b22d17ae5de" category="list-text">&lt;BACKUPS_RETAINED&gt;：保持するバックアップの数。ゼロは、バックアップを作成しないことを示します。</block>
+  <block id="085d94d71675ee9e4831b3f3c5088f97" category="list-text">&lt;SNAPSHOTS_RETAINED&gt;：保持するSnapshotの数。ゼロは、スナップショットを作成しないことを示します。</block>
+  <block id="121bace18f96f31d6350b5a13306a2d0" category="list-text">&lt;GRANULARITY&gt;：スケジュールを実行する頻度。指定可能な値と必須の関連フィールドは次のとおりです。</block>
+  <block id="682d677bcf1ee88366ae753c477ace2d" category="list-text"><block ref="745fd0ea7f576f350a0eed4b8c48a8e2" prefix="" category="inline-code"></block> （次を指定する必要があります：<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>)</block>
+  <block id="a1fbdfda9f5f05dbe5b05383881f400f" category="list-text"><block ref="bea79186fd7af2da67e59b4b15df5a26" prefix="" category="inline-code"></block> （次を指定する必要があります：<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block> および<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>)</block>
+  <block id="658b1c98606e33324a33b76f12a8227b" category="list-text"><block ref="4a11fc05ed694c195f0703605b64da90" prefix="" category="inline-code"></block> （次を指定する必要があります：<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>、<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>および<block ref="4a04848e0e6e9423892ebc93ae61842d" prefix=" " category="inline-code"></block>)</block>
+  <block id="fcac3dfd31718b4bc1aca2266ebb4cf6" category="list-text"><block ref="708638881f3bac9d9c8c742c79502811" prefix="" category="inline-code"></block> （次を指定する必要があります：<block ref="aadd5cec42dbc02d51f62a1095401f59" prefix=" " category="inline-code"></block>、<block ref="9199af27775b1a2a876e6d7b25540711" prefix=" " category="inline-code"></block>および<block ref="9a7606959f42328ceeef95d70c353158" prefix=" " category="inline-code"></block>)</block>
+  <block id="3c3e2b331ed38c2b4f91c0e6e005c232" category="list-text">&lt;DAY_OF_MONTH&gt;：_（オプション）_スケジュールを実行する日にち（1 ~ 31）。このフィールドは、粒度が次の値に設定されている場合は必須です。<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>。</block>
+  <block id="83a25bd356e4b2b1791a70e7a3d5686d" category="list-text">&lt;DAY_OF_WEEK&gt;：_（オプション）_スケジュールを実行する曜日（0 ~ 7）。0または7の値は日曜日を示します。このフィールドは、粒度が次の値に設定されている場合は必須です。<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>。</block>
+  <block id="a214309740c5fce73f555efb0f57e3b0" category="list-text">&lt;HOUR_OF_DAY&gt;：_（オプション）_スケジュールを実行する時間（0 ~ 23）。このフィールドは、粒度が次の値に設定されている場合は必須です。<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block>、<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>または<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>。</block>
+  <block id="b528ecefdd7d1b08f11f79cf2fff599a" category="list-text">&lt;MINUTE_OF_HOUR&gt;：_（オプション）_スケジュールを実行する分（0~59）。このフィールドは、粒度が次の値に設定されている場合は必須です。<block ref="745fd0ea7f576f350a0eed4b8c48a8e2" prefix=" " category="inline-code"></block>、<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block>、<block ref="4a11fc05ed694c195f0703605b64da90" prefix=" " category="inline-code"></block>または<block ref="708638881f3bac9d9c8c742c79502811" prefix=" " category="inline-code"></block>。</block>
+  <block id="62c1134a4dd5a6f3b144823808bb9be6" category="list-text">データを入力した後、<block ref="534821cc2d5862b328eea0ae3958ad02" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="d9febddf6562311d8624eeb4e58744b8" category="open-title">Web UIを使用したSnapshotの作成</block>
+  <block id="fcb86323ae9c4068f3f947debdbd82eb" category="list-text">[*技術プレビュー*]ストレージバケットのリストからスナップショットのデスティネーションバケットを選択します。</block>
+  <block id="655ce779ad9dd1131dd074820f73722a" category="open-title">[テクニカルプレビュー] CRを使用したスナップショットの作成</block>
+  <block id="721baa84468e1b3151168d2e7f280e27" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="0663444b0cf552b14d10b5610dccad23" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="83f2d981711626f79fc196e471c75cee" category="list-text">&lt;APPLICATION_NAME&gt;：Snapshotを作成するアプリケーションのKubernetes名。</block>
+  <block id="f030ba1730d76a142cf9fabffedee017" category="list-text">&lt;APPVAULT_NAME&gt;：スナップショットの内容を格納するAppVaultの名前。</block>
+  <block id="25acb3ac28bce3019c433b02088d833e" category="list-text">&lt;RECLAIM_POLICY&gt;：_（オプション）_スナップショットCRが削除されたときのスナップショットの処理を定義します。有効なオプション：</block>
+  <block id="0219cebc6ab6bc045fd44c689e3508dd" category="list-text"><block ref="afece4245269582cb2f1009d4fb52047" prefix="" category="inline-code"></block></block>
+  <block id="eced49573e92b0138aa5161875ff0f1e" category="list-text"><block ref="f2a6c498fb90ee345d997f888fce3b18" prefix="" category="inline-code"></block> （デフォルト）</block>
+  <block id="1d175f34d0a8dd047617222b41b6b00a" category="list-text">データを入力した後、<block ref="0663444b0cf552b14d10b5610dccad23" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="fc6d173005cab506ffbeb8c0d3455f3b" category="open-title">Web UIを使用したバックアップの作成</block>
+  <block id="e6bd281e2969b57f2aeb891a41b9effd" category="list-text">[*技術プレビュー*]ストレージバケットのリストからバックアップ先のバケットを選択します。</block>
+  <block id="9c5c1631394c2d4015e998dcaa9aa668" category="open-title">[テクニカルプレビュー] CRを使用したバックアップの作成</block>
+  <block id="9124beb314d23f8cdcaae61ae4998da0" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="3a82584d62d84a13b61332b383bf82f7" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="435455e544bd4209e44cee568e575a9c" category="list-text">データを入力した後、<block ref="3a82584d62d84a13b61332b383bf82f7" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="13af4e3ac91a9ef7750f92e0b37e63e4" category="section-title">[テクニカルプレビュー] Kubernetesのカスタムリソースを使用したアプリケーションの定義</block>
+  <block id="357204803719793ed0da30746b6bc5f4" category="paragraph">カスタムリソース（CR）を使用してアプリケーションとして定義することで、Astra Controlで管理するKubernetesリソースを指定できます。たとえば、特定のネームスペース内のすべてのリソースを同様の方法で共通の間隔で管理および保護する場合は、それらのリソースを個別に管理するか、またはネームスペース内のすべてのKubernetesリソースを個別に管理する場合は、クラスタ対象のリソースを追加できます。</block>
+  <block id="17b3b1a1bf7937e2bd6f64482e4bb4b9" category="list-text">カスタムリソース（CR）ファイルを作成し、という名前を付けます（例：<block ref="6a9e31a9ccfc563d5424113ed9b98e26" prefix=" " category="inline-code"></block>）。</block>
+  <block id="52787e86804c9d6c9c6c75659472cbe1" category="list-text">アプリケーションに名前を付けます。<block ref="765cecee8002899c6cc0bea7842f7fe5" prefix=" " category="inline-code"></block>。</block>
+  <block id="dc8859823f6bb6d73e0e05746c4687d0" category="list-text">管理するアプリケーションリソースを定義します。</block>
+  <block id="af167f2ec857ea34e3a4b00ea3398743" category="open-title">spec.includedClusterScopedResources</block>
+  <block id="740c8865342027f8f41789f16c7ba59f" category="paragraph">Astra Controlに自動的に含まれるもののほかに、クラスタを対象としたリソースタイプも含めます。</block>
+  <block id="126bdd98fac353e3f02ee55ddbc2c4dd" category="list-text">* spec.includedClusterScopedResources*:_(オプション)_含めるクラスタスコープのリソースタイプのリスト。</block>
+  <block id="bff11da3e4b4ee861cf8a3090ea6463a" category="list-text">*groupVersionKind *:_(オプション)_unambiguouslyは種類を識別します。</block>
+  <block id="66b2c618e769b771604d433574711e1d" category="list-text">*group*:_(groupVersionKindが使用されている場合は必須)含めるリソースのAPIグループ。</block>
+  <block id="8bde402f4657c0dc86fe3eb5bb339750" category="list-text">*version*:_(groupVersionKindが使用されている場合は必須)_含めるリソースのAPIバージョン。</block>
+  <block id="95589b0e167ff303f21f81b16c6b759b" category="list-text">*kind*:_(groupVersionKindを使用する場合は必須)_kind含めるリソースの種類。</block>
+  <block id="54727b98d5345ddc8edc0d2731cd1a2f" category="list-text">*labelSelector *:_(オプション)_リソースセットのラベルクエリ。ラベルに一致するリソースのみを取得するために使用されます。ラベルを指定しないと、Astra Controlは、そのクラスタに指定されている種類のリソースのすべてのインスタンスを収集します。matchLabelsとmatchExpressionsの結果はANDで処理されます。</block>
+  <block id="75ebaac795307ecf0b4e138b62380a19" category="list-text">*matchLabels*:_(省略可能)_{key, value}ペアのマップ。matchLabelsマップ内の1つの{key, value}は、keyフィールドが"key"、演算子が"in"、value"のみを含むvalues配列を持つmatchExpressionsの要素に相当します。要件はANDで処理されます。</block>
+  <block id="a3c831c873315dfca75a1f211c9ad655" category="list-text">*matchExpressions*:_(オプション)_ラベルセレクタの要件のリスト。要件はANDで処理されます。</block>
+  <block id="511c5b020a02430e6bb355cf4308b59d" category="list-text">*key *:_(matchExpressionsを使用する場合は必須)_ラベルセレクタに関連付けられたラベルキー。</block>
+  <block id="1c5403520c5189df3c10b68d47ab9c32" category="list-text">*演算子*:_(matchExpressionsが使用されている場合は必須)_値のセットに対するキーの関係を表します。有効な演算子：<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block>、<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>、<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> および<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>。</block>
+  <block id="3e3e7264b90d2650f1ec138144702991" category="list-text">* values *：_（matchExpressionsを使用する場合は必須）_文字列値の配列。演算子が<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block> または<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>、values配列must_not_be empty。演算子が<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> または<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>values配列は空である必要があります。</block>
+  <block id="433654d93a8bceecdfef9ae705b9a053" category="open-title">spec.includedNamespaces</block>
+  <block id="4e421b0bb17858a1de67bedae22fc10f" category="paragraph">アプリケーション内のこれらのリソースに名前空間とリソースを含めます。</block>
+  <block id="616733fb8bb6db3b287cdf462685d0fc" category="list-text">* spec.includedNamespaces*:_(必須)_リソース選択のための名前空間とオプションのフィルタを定義します。</block>
+  <block id="adaf8816823a4ba8dd2cb506ce3314ba" category="list-text">*ネームスペース*：_（必須）_ Astra Controlで管理するアプリケーションリソースを含むネームスペース。</block>
+  <block id="3dd4f818996bed4e859fa3a9a12d63fc" category="list-text">*matchExpressions*:_(オプション)_ラベルセレクタの要件のリスト。<block ref="3c6e0b8a9c15224a8228b9a98ca1531d" prefix=" " category="inline-code"></block> および<block ref="4b583376b2767b923c3e1da60d10de59" prefix=" " category="inline-code"></block> は必須です。要件はANDで処理されます。</block>
+  <block id="83a4334df2d568f08135301519e0294d" category="list-text">* values *：_（matchExpressionsを使用する場合は必須）_文字列値の配列。演算子が<block ref="efeb369cccbd560588a756610865664c" prefix=" " category="inline-code"></block> または<block ref="c949090e2cb12faab4dabb4621dd6c9e" prefix=" " category="inline-code"></block>、values配列must_not_be empty。演算子が<block ref="2a8eb028670e972535e8e246be645821" prefix=" " category="inline-code"></block> または<block ref="c47c93cf49de211bba5d62d65225f128" prefix=" " category="inline-code"></block>values配列は空である必要があります。</block>
+  <block id="139f344cca23a89c521bc7cc6c7100b8" category="paragraph">YAMLの例：</block>
+  <block id="e1580e3f854017c65e242047bf63a3cd" category="list-text">データを入力した後、<block ref="6a9e31a9ccfc563d5424113ed9b98e26" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="a23ad0e7e9c822577ac47cc696fd68bd" category="section-title">[テクニカルプレビュー]カスタムリソース（CR）を使用したバックアップからのリストア</block>
+  <block id="589c3ffbeb874692bc987f25471bdec5" category="paragraph">カスタムリソース（CR）ファイルを使用して、別のネームスペースまたは元のソースネームスペースにバックアップからデータをリストアできます。</block>
+  <block id="45ff81bf0afcefe9451aab9b611c1934" category="open-title">CRを使用したバックアップからのリストア</block>
+  <block id="0291eb75f7d9f722c1c83050970a021f" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="5cdae9ef2c57d39bfd2be879e506f5ce" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="607cb816902b97513f9f07eaf1cf9526" category="list-text">&lt;CR_NAME&gt;：このCR操作の名前。環境に適した適切な名前を選択します。</block>
+  <block id="32c38c61b072ed7be99e03554fcc5dc7" category="list-text">&lt;APPVAULT_NAME&gt;：バックアップコンテンツが格納されているAppVaultの名前。</block>
+  <block id="b6f7c06130923ff859915637bdd832de" category="list-text">&lt;BACKUP_PATH&gt;：バックアップコンテンツが格納されているAppVault内のパス。例：</block>
+  <block id="98766ce59cde6328ee287141ac6463fc" category="list-text">&lt;SOURCE_NAMESPACE&gt;：リストア処理のソースネームスペース。</block>
+  <block id="2de12cc712c3180de4a36bafe4b03d27" category="list-text">&lt;DESTINATION_NAMESPACE&gt;：リストア処理のデスティネーションネームスペース。</block>
+  <block id="68394cd490bb116e95fb9fa813fc64ac" category="paragraph">&lt;stdin&gt;の未解決ディレクティブ-include::../_include/selective-restore-cr.adoc[]</block>
+  <block id="fb72d03a8b8ac14ae1e7d9aa1f047e05" category="list-text">データを入力した後、<block ref="5cdae9ef2c57d39bfd2be879e506f5ce" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="4f6d84376015daa09c05aaa62c5169b3" category="open-title">CRを使用したバックアップから元のネームスペースへのリストア</block>
+  <block id="d21e7e879c0776ee09e7586ce29d2898" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="eb9b00b26a03b44f5f2897edcd77fbc2" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="5348fdd12f57331552ca99bd9874fb9e" category="list-text">データを入力した後、<block ref="eb9b00b26a03b44f5f2897edcd77fbc2" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="59996d3ba6c2c9c9164c73f5f9dbaaef" category="section-title">[テクニカルプレビュー]カスタムリソースを使用したSnapshotからのリストア（CR）</block>
+  <block id="7708c3b204f347f9a3f6641e7484ab47" category="paragraph">カスタムリソース（CR）ファイルを使用して、スナップショットから別のネームスペースまたは元のソースネームスペースにデータをリストアできます。</block>
+  <block id="713a47b0e743ef100957f9dbf7a7b970" category="open-title">CRを使用したSnapshotからのリストア</block>
+  <block id="c0f816a602a40acd8086ff72e41b3c9c" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="47c8c017693706f1deca4469c915fc62" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="9698c53c78d261962a4a1c26b913eee1" category="list-text">データを入力した後、<block ref="47c8c017693706f1deca4469c915fc62" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="b78248634602cda93bac3dff3aaa9393" category="open-title">CRを使用したSnapshotから元のネームスペースへのリストア</block>
+  <block id="c32ab7b52b53095f9f5158cc1e448576" category="list-text">カスタムリソース（CR）ファイルを作成して名前を付けます。<block ref="7789d21ba00a1b12ae9d85f219dabda2" prefix=" " category="inline-code"></block>。カッコ内の値を、Astra Controlの環境とクラスタの構成に合わせて更新します。</block>
+  <block id="375b1db65557163f2d0e23f660a3d7f9" category="list-text">データを入力した後、<block ref="7789d21ba00a1b12ae9d85f219dabda2" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="c9d43c9d4ce1936591207cd7ff5311cb" category="section-title">[Tech preview]カスタムリソースを使用したバケットの管理</block>
+  <block id="e2af1d5e5fa116233e71ad721f3e307b" category="paragraph">アプリケーションクラスタでAstra Controlのカスタムリソース（CR）を使用してバケットを追加できます。アプリケーションと永続的ストレージをバックアップする場合や、クラスタ間でアプリケーションのクローニングを行う場合は、オブジェクトストアバケットプロバイダの追加が不可欠です。Astra Control は、これらのバックアップまたはクローンを、定義したオブジェクトストアバケットに格納します。カスタムリソースメソッドを使用している場合、アプリケーションのスナップショット機能にはバケットが必要です。</block>
+  <block id="e397375a1991bd3b78d0436ce29592b7" category="paragraph">アプリケーション構成と永続的ストレージを同じクラスタにクローニングする場合、Astra Controlにバケットを作成する必要はありません。</block>
+  <block id="d8b0a07b7fa1af1e74af87346ff33870" category="paragraph">Astra ControlのバケットカスタムリソースはAppVaultと呼ばれます。このCRには、保護処理でバケットを使用するために必要な設定が含まれています。</block>
+  <block id="590fc6039a76d3145b15d507ca5bcb69" category="list-text">Astra Control Centerで管理されているクラスタから到達できるバケットを用意します。</block>
+  <block id="4a32b7d8f42a393453794c007946d6fe" category="list-text">バケットのクレデンシャルがあることを確認します。</block>
+  <block id="3f23a4c261d25b12e00f6171fdb38359" category="list-text">バケットが次のいずれかのタイプであることを確認します。</block>
+  <block id="cc76a05fe8cbb45b45b1139e841822bd" category="admonition">Amazon Web Services（AWS）とGoogle Cloud Platform（GCP）では、汎用のS3バケットタイプを使用します。</block>
+  <block id="3443da831f646641a051400a8359fced" category="admonition">Astra Control CenterはAmazon S3を汎用のS3バケットプロバイダとしてサポートしていますが、Astra Control Centerは、AmazonのS3をサポートしていると主張するすべてのオブジェクトストアベンダーをサポートしているわけではありません。</block>
+  <block id="45a79ca58f818fe6f7e34d3ad01781ce" category="list-text">カスタムリソース（CR）ファイルを作成し、という名前を付けます（例：<block ref="056c513f9078872b92d07c3cc704b909" prefix=" " category="inline-code"></block>）。</block>
+  <block id="18924d9e76d2dc9a88bddb772904461d" category="list-text">次の属性を設定します。</block>
+  <block id="1224dce1461236a797d84749d37c9491" category="list-text">* metadata.name*:_（必須）_ AppVaultカスタムリソースの名前。</block>
+  <block id="69b5be000688679a9ee2fef5a4c0c6e5" category="list-text">* spec.prefix *：_（オプション）_ AppVaultに保存されているすべてのエンティティの名前のプレフィックスが付いたパス。</block>
+  <block id="fcbc6a61a9db33b3fae0293b3f248d8b" category="list-text">* spec.providerConfig*:_（必須）_指定されたプロバイダを使用してAppVaultにアクセスするために必要な設定を保存します。</block>
+  <block id="2bda4ec158506a5cc3faac161d6d620d" category="list-text">* spec.providerCredentials*:_(必須)_指定されたプロバイダを使用してAppVaultにアクセスするために必要なすべての資格情報への参照を保存します。</block>
+  <block id="343fc86e1ff54e13706200b99b851d91" category="list-text">* spec.providerCredentials.valueFromSecret*:_（オプション）_は、クレデンシャル値がシークレットから取得される必要があることを示します。</block>
+  <block id="2d32c7aa536ab1e00f078fb24a7eb990" category="list-text">* key *：_（valueFromSecretを使用する場合は必須）_選択するシークレットの有効なキー。</block>
+  <block id="d1b4714eb6d54919b20d4d6f82d1acb4" category="list-text">* name *：_（valueFromSecretを使用する場合は必須）_このフィールドの値を含むシークレットの名前。同じネームスペースになければなりません。</block>
+  <block id="9c20f9a97f5024f7f0cbeebb01127512" category="list-text">* spec.providerType*:_（必須）_バックアップの提供元を決定します（例：NetApp ONTAP S3、Microsoft Azure）。</block>
+  <block id="a7f829a367be9439add4237b61a50388" category="list-text">データを入力した後、<block ref="056c513f9078872b92d07c3cc704b909" prefix=" " category="inline-code"></block> 正しい値を持つファイルを作成し、CRを適用します。</block>
+  <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">別のデフォルトバケットを設定する</block>
+  <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">バケットを追加すると、デフォルトのバケットインジケータで1つのバケットがAstra Controlによってマークされます。最初に作成したバケットがデフォルトバケットになります。バケットを追加する際、あとでを選択できます <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>。</block>
+  <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">（テクニカルプレビュー）宣言型Kubernetesワークフロー</block>
+  <block id="a70f47b04c91a98499e8d350fa135250" category="paragraph">このAstra Control Centerリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。</block>
+  <block id="0addefdac9fea093ab0631c42bf63154" category="paragraph">この機能は、Astra Control Service Early Adopter Program（EAP）インスタンスでのみ使用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。</block>
+  <block id="1d649712f351065ae3623bc575a29774" category="inline-link-macro">Astra Connector</block>
+  <block id="9edf27bb0e7572b9900e7980f47a9346" category="paragraph">のインストール後 <block ref="124c0a76592741cd24122aa865f475c8" category="inline-link-macro-rx"></block> 管理するクラスタでは、UIまたはCRから次のCRベースのクラスタ操作を実行できます。</block>
+  <block id="04bba2bce404c3f162c566f599d5a5f0" category="inline-link-macro">カスタムリソースを使用したアプリケーションの定義</block>
+  <block id="f1e93254db114ec09dfb4e798efbd486" category="list-text"><block ref="f1e93254db114ec09dfb4e798efbd486" category="inline-link-macro-rx"></block></block>
+  <block id="7552906db45dd4810da20c3ab62fd315" category="inline-link-macro">バケットを定義する</block>
+  <block id="a806d7f7605195d7e64e704b2059885c" category="list-text"><block ref="a806d7f7605195d7e64e704b2059885c" category="inline-link-macro-rx"></block></block>
+  <block id="adeac59ad1862a3e0c4f40cfe863ae90" category="list-text"><block ref="adeac59ad1862a3e0c4f40cfe863ae90" category="inline-link-macro-rx"></block></block>
+  <block id="c0ddbdd4dd215b4d8e8c8b37f50bee6e" category="inline-link-macro">アプリケーションのバックアップ</block>
+  <block id="3201e6dd0f57980edf66d0f7c4dc08ed" category="list-text"><block ref="3201e6dd0f57980edf66d0f7c4dc08ed" category="inline-link-macro-rx"></block></block>
+  <block id="a1525043f13c3444c6cf8185256e95b6" category="list-text"><block ref="a1525043f13c3444c6cf8185256e95b6" category="inline-link-macro-rx"></block></block>
+  <block id="c9bc674578c656555f1074d9bceeb427" category="inline-link-macro">スナップショットまたはバックアップのスケジュールを作成する</block>
+  <block id="430bc38f66ff95df230db47441847e3e" category="list-text"><block ref="430bc38f66ff95df230db47441847e3e" category="inline-link-macro-rx"></block></block>
+  <block id="89e886bcb189a0f892c41a8565bbf540" category="inline-link-macro">Snapshotまたはバックアップからアプリケーションをリストアする</block>
+  <block id="efbaf254e1ec98ba6d53c22597ae4b1d" category="list-text"><block ref="efbaf254e1ec98ba6d53c22597ae4b1d" category="inline-link-macro-rx"></block></block>
+  <block id="781392df556bdfd6e27dbfef443453b2" category="summary">Astra Controlでクラスタを管理するには、Astra Connectorをインストールする必要があります。</block>
+  <block id="06877d6aa63b21abc5ce55f40de7ee52" category="doc">Astra Connectorをインストールしてクラスタを管理</block>
+  <block id="d6ad3b571e0f464e77d6c9b3c1a0bba0" category="paragraph">Astra Connectorは、管理対象クラスタに実装されるソフトウェアで、管理対象クラスタとAstra Controlの間の通信を促進します。Astra Control Serviceを使用して管理されるクラスタには、次の2つのバージョンのAstra Connectorがあります。</block>
+  <block id="0cc4b3b8046b530020e26e2380506f6e" category="inline-link-macro">以前のバージョンのAstra Connectorをインストール</block>
+  <block id="e4616ecb2775b9808fd4b78fb4fe1885" category="list-text">*以前のバージョンのAstra Connector *： <block ref="d9f90a4052b642b7c706a424bd9589eb" category="inline-link-macro-rx"></block> Kubernetesネイティブでないワークフローでクラスタを管理する場合は、クラスタ。</block>
+  <block id="3787453d1199ecd94f5fa3196160ae7c" category="inline-link-macro">Kubernetesの宣言ワークフローで管理されるクラスタ用にAstra Connectorをインストール</block>
+  <block id="f87f3d1e5ddd3a702395cb1b396cc179" category="list-text">[技術プレビュー]*宣言型Kubernetes Astra Connector *： <block ref="89ba4d4f19bfeda98bc4487268f84956" category="inline-link-macro-rx"></block> 宣言型Kubernetesワークフローを使用してクラスタを管理する場合は、クラスタ上。クラスタにAstra Connectorをインストールすると、クラスタが自動的にAstra Controlに追加されます。</block>
+  <block id="2e6b95d2857110cd03ac586959cc4347" category="admonition">宣言型Kubernetes Astra Connectorは、Astra Control Early Adopter Program（EAP；Astra Control早期導入プログラム）の一部としてのみ利用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。</block>
+  <block id="0bc1501dc6ef7b7d1bfe536d5f848cb6" category="doc">（テクニカルプレビュー）宣言型Kubernetes Astra Connectorのインストール</block>
+  <block id="fa7bba9dc1b5d46fa6e83a75a0ece441" category="paragraph">宣言型Kubernetesワークフローで管理されるクラスタは、Astra Connectorを使用して、管理対象クラスタとAstra Controlの間の通信を有効にします。Kubernetesの宣言ワークフローで管理するすべてのクラスタにAstra Connectorをインストールする必要があります。</block>
+  <block id="3bdf80685767528cf0c6a3f961534f3c" category="paragraph">宣言型Kubernetes Astra Connectorは、KubernetesコマンドとCustom Resource（CR）ファイルを使用してインストールします。</block>
+  <block id="cd766c5429e11347a117de2f27183aa1" category="list-text">これらの手順を実行する場合は、Astra Controlで管理するクラスタでこれらのコマンドを実行します。</block>
+  <block id="26fe73fe65da416c905dcda6ebf96d41" category="list-text">Astra Controlで管理するクラスタへのアクセスが必要です。</block>
+  <block id="e79045292ac242d3c1a91d2615c41ef8" category="inline-link-macro">Astra Controlを使用して、クラスタ管理のための環境を準備する</block>
+  <block id="dadca91e6ec143a55e85acab971da96f" category="admonition">Kubernetes 1.25以降のクラスタのデフォルトであるポッドセキュリティアドミッション適用がクラスタに設定されている場合は、適切なネームスペースに対してPSA制限を有効にする必要があります。を参照してください <block ref="43de17e09b552a43292c1bd8c4ae14f6" category="inline-link-macro-rx"></block> 手順については、を参照し</block>
+  <block id="43ab194768f3f7aeec2a16d677b90acc" category="list-text">Kubernetesの宣言ワークフローを使用して管理するクラスタにAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> が作成され、設定がネームスペースに適用されます。</block>
+  <block id="bb067eb8af0a21790f055c64251d9a79" category="list-text">トークンを使用してシークレットを作成します。&lt;API_TOKEN&gt;を、Astra Controlから受け取ったトークンに置き換えます。</block>
+  <block id="99d56ece0d76a0aaa456be40a57654b9" category="list-text">Astra Connectorイメージの取得に使用するDockerシークレットを作成します。括弧&lt;&gt;の値は、環境の情報で置き換えます。</block>
+  <block id="c0e44c19b002d338ea7349bbebc6b185" category="admonition">&lt;ASTRA_CONTROL_ACCOUNT_ID&gt;はAstra Control Web UIで確認できます。Web UIで、ページの右上にある図アイコンを選択し、*[API access]*を選択します。</block>
+  <block id="fff80cdd2f7437a87cfb1039bab24adf" category="list-text">&lt;ASTRA_CONTROL_ACCOUNT_ID&gt;：前の手順でAstra Control Web UIから取得。</block>
+  <block id="418e0bc869410b7cea5c4ec2f7cfedad" category="list-text">&lt;CLUSTER_NAME&gt;：このクラスタをAstra Controlで割り当てる名前。</block>
+  <block id="02919393c3215473898bd73efdcab254" category="list-text">&lt;ASTRA_CONTROL_URL&gt;：Astra ControlのWeb UI URL。例：</block>
+  <block id="152bd63676ee23bad02f75c472aadc5c" category="list-text">Astra Control Web UIの*[Clusters]*ページで、管理対象クラスタのリストにクラスタが表示されることを確認します。</block>
+  <block id="ae145a4e59321514fcc818f6234d42ea" category="paragraph">Astra Control Serviceでは、以前のバージョンのAstra Connectorを使用して、Astra Control Serviceと非Kubernetesネイティブのワークフローで管理されるプライベートクラスタの間の通信を可能にします。Kubernetesネイティブでないワークフローで管理するプライベートクラスタにAstra Connectorをインストールする必要があります。</block>
+  <block id="dc1e99798a3474c6f53219c06f7195f2" category="paragraph">以前のバージョンのAstra Connectorでは、非Kubernetesネイティブのワークフローで管理される次のタイプのプライベートクラスタがサポートされていました。</block>
+  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">Red Hat OpenShift Container Platform（オンプレミス）</block>
+  <block id="36d5f594791128c06a9a2e269fe98439" category="list-text">Kubernetesネイティブでないワークフローで管理するプライベートクラスタに、以前のAstra Connectorオペレータをインストールします。このコマンドを実行すると、ネームスペース<block ref="c6ead53be77481f9e0a3f904f9a88686" prefix=" " category="inline-code"></block> が作成され、設定がネームスペースに適用されます。</block>
+  <block id="93e728f3cef8a701d22805c3347d946a" category="inline-link-macro">Kubernetesネイティブではないワークフローで管理されるプライベートクラスタ用に、以前のバージョンのAstra Connectorをインストール</block>
+  <block id="8dc028a3d902834a7e6f010e1a35e554" category="paragraph">プライベートクラスタを追加する前に、Astra Controlがクラスタと通信できるように、クラスタにAstra Connectorをインストールする必要があります。を参照してください <block ref="12c939bcb32d435c20b0ec67c951c270" category="inline-link-macro-rx"></block> 手順については、を参照し</block>
+  <block id="9b06baba613e90a3ed72891e00a4cdf1" category="sidebar">プライベートクラスタ用の以前のバージョンのAstra Connectorをインストール</block>
+  <block id="d3cb2575aeb827f8b18b8b3f4aef77de" category="sidebar">宣言型Kubernetesクラスタ用のAstra Connectorのインストール</block>
 </blocks>

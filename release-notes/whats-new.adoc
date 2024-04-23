@@ -18,8 +18,21 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 
 == 2024年3月14日
 
-.新機能とサポート
-これはマイナーバグ修正リリースです。
+.（テクニカルプレビュー）宣言型Kubernetesワークフロー
+このAstra Control Centerリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。
+
+この機能は、Astra Control Service Early Adopter Program（EAP）インスタンスでのみ使用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。
+
+のインストール後 link:../get-started/install-astra-connector-declarative.html["Astra Connector"] 管理するクラスタでは、UIまたはCRから次のCRベースのクラスタ操作を実行できます。
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource["カスタムリソースを使用したアプリケーションの定義"]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource["バケットを定義する"]
+* link:../use/back-up-full-cluster.html["クラスタ全体の保護"]
+* link:../use/protect-apps.html#create-a-backup["アプリケーションのバックアップ"]
+* link:../use/protect-apps.html#create-a-snapshot["Snapshot を作成します"]
+* link:../use/protect-apps.html#configure-a-protection-policy["スナップショットまたはバックアップのスケジュールを作成する"]
+* link:../use/restore-apps.html["Snapshotまたはバックアップからアプリケーションをリストアする"]
+
 
 
 
