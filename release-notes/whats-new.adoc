@@ -19,7 +19,7 @@ summary: ネットアップは Astra Control Service を定期的に更新して
 == 2024年3月14日
 
 .（テクニカルプレビュー）宣言型Kubernetesワークフロー
-このAstra Control Centerリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。
+このAstra Control Serviceリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。
 
 この機能は、Astra Control Service Early Adopter Program（EAP）インスタンスでのみ使用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。
 

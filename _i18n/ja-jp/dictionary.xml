@@ -2307,7 +2307,6 @@
   <block id="25c0fc647d4495551197e1366ffb88c1" category="inline-link-macro">実行フック機能を有効にする</block>
   <block id="d18d82128e00bde35f6e0d2869d5bf4d" category="list-text">*実行フックはデフォルトでオフになっています*:このリリース以降、実行フック機能は次のようになります。 <block ref="5fbd6d349444ac17373b392afcdaf677" category="inline-link-macro-rx"></block> または、セキュリティを強化するために無効にします（デフォルトでは無効になっています）。Astra Controlで使用する実行フックをまだ作成していない場合は、 <block ref="85c1cb9c60d373b225cb02cebdd0fa71" category="inline-link-macro-rx"></block> フックの作成を開始します。このリリースより前に実行フックを作成した場合、実行フック機能は有効なままになり、通常どおりフックを使用できます。</block>
   <block id="cbcb0d5fc851d3d299a5b4094fe28e88" category="paragraph">任意<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> ネームスペース名/ IDによるRBACの制約があるユーザは、同じクラスタまたは組織のアカウントにある他のクラスタの新しいネームスペースにアプリケーションをクローニングまたはリストアできます。ただし、同じユーザが、クローニングまたはリストアされたアプリケーションに新しいネームスペースからアクセスすることはできません。クローン処理またはリストア処理で新しいネームスペースが作成されると、アカウントの管理者/所有者は<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 影響を受けるユーザーが新しい名前空間へのアクセスを許可するためのユーザーアカウントの制約を更新します。</block>
-  <block id="212a5202776ec83aae2e348c300b284e" category="list-text"><block ref="ba01bb34315cdda27da30f151a6b3a93" category="inline-xref-macro-rx"></block></block>
   <block id="2a9637886ec18ac79339d54fd59c3dac" category="list-text"><block ref="e6692a6ca085ac5ca4d1b661f3b80574" category="inline-xref-macro-rx"></block></block>
   <block id="6d00a00b6023f439cef44dc10b9b46f4" category="list-text"><block ref="025a13f8160290a685803adf4afe8791" category="inline-xref-macro-rx"></block></block>
   <block id="389f816f6fc3ba34f8ccf0ecdb3fcbb6" category="section-title">ONTAP NASエコノミーストレージクラスへのIn Placeリストア処理が失敗する</block>
@@ -2794,7 +2793,6 @@ Astra Control が新しい導入モデルで提供されるようになりまし
   <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">別のデフォルトバケットを設定する</block>
   <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">バケットを追加すると、デフォルトのバケットインジケータで1つのバケットがAstra Controlによってマークされます。最初に作成したバケットがデフォルトバケットになります。バケットを追加する際、あとでを選択できます <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>。</block>
   <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">（テクニカルプレビュー）宣言型Kubernetesワークフロー</block>
-  <block id="a70f47b04c91a98499e8d350fa135250" category="paragraph">このAstra Control Centerリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。</block>
   <block id="0addefdac9fea093ab0631c42bf63154" category="paragraph">この機能は、Astra Control Service Early Adopter Program（EAP）インスタンスでのみ使用できます。EAPへの参加については、NetAppの営業担当者にお問い合わせください。</block>
   <block id="1d649712f351065ae3623bc575a29774" category="inline-link-macro">Astra Connector</block>
   <block id="9edf27bb0e7572b9900e7980f47a9346" category="paragraph">のインストール後 <block ref="124c0a76592741cd24122aa865f475c8" category="inline-link-macro-rx"></block> 管理するクラスタでは、UIまたはCRから次のCRベースのクラスタ操作を実行できます。</block>
@@ -2886,4 +2884,5 @@ Astra Control が新しい導入モデルで提供されるようになりまし
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
   <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights のドキュメント</block>
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
+  <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">このAstra Control Serviceリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。</block>
 </blocks>
