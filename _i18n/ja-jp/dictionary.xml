@@ -1630,7 +1630,6 @@
   <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">バケットは、_Astra -backup-rg_というリソースグループに属している必要があります。</block>
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">Azureストレージアカウントインスタンスのパフォーマンス設定が「Premium」に設定されている場合は、「Premium account type」設定を「Block blobs」に設定する必要があります。</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">ネットアップTV</block>
-  <block id="b504b02d5498a8b09080b1e621f4d1aa" category="admonition">Azure Marketplaceのサブスクリプションプロセスのデモビデオを見るには、を参照してください<block ref="bfd2f59ca3f14f5fb5037b1bda5b7515" category="inline-link-rx"></block>。</block>
   <block id="ccd62d676165e34c2e9c6d088c06e70f" category="paragraph">実行フックは、管理対象アプリケーションのデータ保護操作と組み合わせて実行するように構成できるカスタムアクションです。たとえば、データベースアプリケーションがある場合、実行フックを使用して、スナップショットの前にすべてのデータベーストランザクションを一時停止し、スナップショットの完了後にトランザクションを再開できます。これにより、アプリケーションと整合性のある Snapshot を作成できます。</block>
   <block id="99dc882fc0f61d1db87631ed9f156913" category="section-title">実行フックフィルタ</block>
   <block id="7caae75448dbc59fcadd621099e170b3" category="inline-link">正規表現2（RE2）構文のサポート</block>
@@ -1761,7 +1760,6 @@
   <block id="ed732ea9c1e91d97f98c7332ade8ccdc" category="inline-link-macro">Astra Controlによるデータ保護</block>
   <block id="efe10d9d842c9e231cc488725ee92859" category="paragraph">の詳細を確認してください <block ref="0675148237c2e40e6d4648cd7be7bdff" category="inline-link-macro-rx"></block>。</block>
   <block id="b9e1d0bf223b6f7300505413ba804bf8" category="paragraph">Astra Control Serviceを取り上げた最新のビデオコンテンツについては、NetApp TVをご覧ください。NetApp TVには、Astra Control Serviceの特定の機能を紹介するビデオや、特定の一般的なタスクの実行方法を紹介するビデオがあります。</block>
-  <block id="7e55cbece21210bf38e3d4b07e57e7d1" category="paragraph"><block ref="7e55cbece21210bf38e3d4b07e57e7d1" category="inline-link-rx"></block></block>
   <block id="316180edc15beeaf2a295663e1d94065" category="paragraph">Astra Control Serviceを使用して、AKSでプライベートAzure Kubernetes Service（AKS）クラスタとプライベートRed Hat OpenShiftクラスタを管理できます。ここでは、プライベートAKSまたはOpenShiftクラスタがすでに作成されており、リモートからアクセスするための安全な方法が用意されていることを前提としています。プライベートAKSまたはOpenShiftクラスタの作成とアクセスの詳細については、次のドキュメントを参照してください。</block>
   <block id="1aea4b3a5f6138ad98f153802fc6de6d" category="inline-link">プライベートAKSクラスタに関するAzureのドキュメント</block>
   <block id="cba64c917541f4eafce8c12475f555c6" category="list-text"><block ref="cba64c917541f4eafce8c12475f555c6" category="inline-link-rx"></block></block>
@@ -2885,4 +2883,6 @@ Astra Control が新しい導入モデルで提供されるようになりまし
   <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights のドキュメント</block>
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
   <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">このAstra Control Serviceリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。</block>
+  <block id="7da594e16f0a75f632446ae54fcebe05" category="paragraph"><block ref="7da594e16f0a75f632446ae54fcebe05" category="inline-link-rx"></block></block>
+  <block id="f5a6b606e4d3218555a81c4263520975" category="admonition">Azure Marketplaceのサブスクリプションプロセスのチュートリアルビデオを見るには、にアクセスしてください<block ref="f66ebb92a2b0ab499cd7d4ec1bb5ea24" category="inline-link-rx"></block>。</block>
 </blocks>
