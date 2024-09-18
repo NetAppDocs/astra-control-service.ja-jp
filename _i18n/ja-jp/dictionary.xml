@@ -972,7 +972,6 @@
   <block id="a11a0e1d242df8616f3c50d7c65bb304" category="list-text">「 remove 」と入力して操作を確認します。</block>
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">「 * Yes 、 remove bucket * 」を選択します。</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">詳細については、こちらをご覧ください</block>
-  <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra Control Center は、 AutoSupport と Active IQ のエコシステムに完全に統合されており、ユーザとネットアップサポートにトラブルシューティングと使用に関する情報を提供します。</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166-32</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">Astra Control のユーザロールとネームスペースについて説明し、それらを使用して組織内のリソースへのアクセスを制御する方法を説明します。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">ユーザロール</block>
@@ -2885,4 +2884,5 @@ Astra Control が新しい導入モデルで提供されるようになりまし
   <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">このAstra Control Serviceリリースには、ネイティブのKubernetesカスタムリソース（CR）からデータ管理を実行できるKubernetesの宣言機能が含まれています。</block>
   <block id="7da594e16f0a75f632446ae54fcebe05" category="paragraph"><block ref="7da594e16f0a75f632446ae54fcebe05" category="inline-link-rx"></block></block>
   <block id="f5a6b606e4d3218555a81c4263520975" category="admonition">Azure Marketplaceのサブスクリプションプロセスのチュートリアルビデオを見るには、にアクセスしてください<block ref="f66ebb92a2b0ab499cd7d4ec1bb5ea24" category="inline-link-rx"></block>。</block>
+  <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">Astra Control Centerは、AutoSupportとActive IQのデジタルアドバイザ（デジタルアドバイザとも呼ばれます）エコシステムに完全に統合されており、ユーザとNetAppサポートにトラブルシューティングと使用状況の情報を提供します。</block>
 </blocks>
